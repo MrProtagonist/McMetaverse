@@ -1,0 +1,52 @@
+money: '4040.75'
+geolocation: United States
+lastAccountName: Shaunticlair
+timestamps:
+  login: 1426223430842
+  lastteleport: 1424567295689
+  logout: 1426227995283
+ipAddress: 173.169.109.100
+lastlocation:
+  world: Metacurse
+  x: -313.22498306295523
+  y: 62.0
+  z: -1274.3110847167263
+  yaw: 62.159668
+  pitch: 37.34998
+homes:
+  arena:
+    world: Metacurse
+    x: -346.42549953083125
+    y: 70.0
+    z: -1443.6292238807698
+    yaw: 357.95642
+    pitch: 26.399992
+  quis:
+    world: Metacurse
+    x: -321.8701848747405
+    y: 66.0
+    z: -1283.8120670013868
+    yaw: 268.55643
+    pitch: 43.350025
+  infierno:
+    world: Metacurse_nether
+    x: -31.342440312410922
+    y: 82.0
+    z: -154.30011881210498
+    yaw: 88.70636
+    pitch: 25.350039
+  blaze:
+    world: Metacurse_nether
+    x: -74.74881512152642
+    y: 77.0
+    z: -609.3495339173719
+    yaw: 178.55829
+    pitch: 28.949987
+logoutlocation:
+  world: Metacurse
+  x: 2.7224923840723916
+  y: 70.0
+  z: -124.84457978864307
+  yaw: -105.98435
+  pitch: 17.549997
+afk: false

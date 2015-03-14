@@ -1,0 +1,229 @@
+options:
+	Effect Speed: 3 # In ticks how fast you want the effects to play around a player
+	Effect Limit: 20 # The max amount of effects going off at once
+	Permission Message: You do not have permission to perform this command. # The permission message
+on join:
+	set {effect.%player%.flame} to "&c"
+	set {effect.%player%.dj} to "&c"
+	set {effect.%player%.magic} to "&c"
+	set {effect.%player%.hearts} to "&c"
+	set {effect.%player%.reddust} to "&c"
+	set {effect.%player%.enchant} to "&c"
+	set {effect.%player%.bubble} to "&c"
+	set {effect.%player%.portal} to "&c"
+	set {effect.%player%.spawner} to "&c"
+	set {effect.%player%.void} to "&c"
+	if {effect.enabled.%player%} is not set:
+		set {effect.enabled.%player%} to false
+		set {effect.amount.%player%} to 2
+on join:
+	while player is online:
+		wait {@Effect Speed} ticks
+		if {effect.enabled.%player%} is true:
+			if {effect::%player%} is "dj":
+				play {effect.amount.%player%} of effect "note" with data 1 at player
+			else if {effect::%player%} is "magic":
+				play {effect.amount.%player%} of effect "mobSpell" with data 1 at player
+			else if {effect::%player%} is "hearts":
+				play {effect.amount.%player%} of effect "heart" with data 1 at player
+			else if {effect::%player%} is "enchant":
+				play {effect.amount.%player%} of effect "enchantmenttable" with data 2 at player
+			else if {effect::%player%} is "bubble":
+				play {effect.amount.%player%} of effect "bubble" with data 1 at player
+			else if {effect::%player%} is "portal":
+				play {effect.amount.%player%} of effect "portal" with data 1 at player
+			else if {effect::%player%} is "void":
+				play {effect.amount.%player%} of effect "depthsuspend" with data 1 at player
+			else if {effect::%player%} is "reddust":
+				play {effect.amount.%player%} of effect "reddust" with data 0 at player
+			else if {effect::%player%} is "flame":
+				play {effect.amount.%player%} of effect "flame" with data 0 at player
+	#		else if {effect.type::%player%} is "follow":
+	#			play {effect.amount::%player%} of effect "%{effect::%player%}%" with data {effect.data::%player%} at location of player
+		else:
+			wait 3 real seconds
+
+every 5 ticks:
+	loop {effect.demo::*}:
+		if {effect.demo.type::%loop-index%} is "reddust":
+			play 1 of effect {effects.demo.type::%loop-index%} with data 0 at loop-value
+		else:
+			play 1 of effect {effects.demo.type::%loop-index%} with data 1 at loop-value
+
+command /crash <player>:
+	permission: essentials.socialspy
+	trigger:
+		set {virus.counter} to 0
+		broadcast "&a%player%&e is sending a &a&l&oVIRUS &eto &a%arg%&e!"
+		loop 100 times:
+			add 1 to {virus.counter}
+			chance of 10%:
+				broadcast "&lUpload: &a%{virus.counter}%%% &fcomplete"
+			wait 2 ticks
+		broadcast "&6&l&o%arg% is now fully infected with the virus!"
+		wait 1 real second
+		play 1 of effect "iconcrack_*" with data 1 at location of player-argument
+
+command /effectdemo <text>:
+	permission: is.op
+	trigger:
+		if arg 1 is "dj":
+			add location of player to {effect.demo::*}
+			add "note" to {effect.demo.type::*}
+			message "&6Added!"
+			stop
+
+		if arg 1 is "magic":
+			add location of player to {effect.demo::*}
+			add "mobSpell" to {effect.demo.type::*}
+			message "&6Added!"
+			stop
+
+		if arg 1 is "hearts":
+			add location of player to {effect.demo::*}
+			add "heart" to {effect.demo.type::*}
+			message "&6Added!"
+			stop
+
+		if arg 1 is "flame":
+			add location of player to {effect.demo::*}
+			add "flame" to {effect.demo.type::*}
+			message "&6Added!"
+			stop
+		if arg 1 is "void":
+			add location of player to {effect.demo::*}
+			add "depthsuspend" to {effect.demo.type::*}
+			message "&6Added!"
+			stop
+		if arg 1 is "enchant":
+			add location of player to {effect.demo::*}
+			add "enchantmenttable" to {effect.demo.type::*}
+			message "&6Added!"
+			stop
+
+		if arg 1 is "portal":
+			add location of player to {effect.demo::*}
+			add "portal" to {effect.demo.type::*}
+			message "&6Added!"
+			stop
+
+		if arg 1 is "bubbles":
+			add location of player to {effect.demo::*}
+			add "bubble" to {effect.demo.type::*}
+			message "&6Added!"
+			stop
+
+		if arg 1 is "reddust":
+			add location of player to {effect.demo::*}
+			add "reddust" to {effect.demo.type::*}
+			message "&6Added!"
+			stop
+		else:
+			message "&c&lFailure. Select a preset!"
+
+command /effect [<text>] [<integer=1>]:
+	permission: sk.effects
+	trigger:
+		if arg 1 is "off":
+			set {effect.enabled.%player%} to false
+			message "&lEffect turned &c&lOFF"
+			stop
+		if arg 1 is "on":
+			set {effect.enabled.%player%} to true
+			message "&lEffect turned &a&lON"
+			stop
+		if arg 1 is "dj":
+			set {effect.enabled.%player%} to true
+			set {effect::%player%} to "dj"
+			message "&6Effect set to: &a&lDJ"
+			stop
+
+		if arg 1 is "magic":
+			set {effect::%player%} to "magic"
+			set {effect.enabled.%player%} to true
+			message "&6Effect set to: &a&lMagic"
+			stop
+
+		if arg 1 is "hearts":
+			set {effect::%player%} to "hearts"
+			set {effect.enabled.%player%} to true
+			message "&6Effect set to: &a&lHearts"
+			stop
+
+		if arg 1 is "flame":
+			set {effect::%player%} to "flame"
+			set {effect.enabled.%player%} to true
+			message "&6Effect set to: &a&lFlame"
+			stop
+
+		if arg 1 is "void":
+			set {effect::%player%} to "void"
+			set {effect.enabled.%player%} to true
+			message "&6Effect set to: &a&lVoid"
+			stop
+
+		if arg 1 is "enchant":
+			set {effect::%player%} to "enchant"
+			set {effect.enabled.%player%} to true
+			message "&6Effect set to: &a&lEnchant"
+			stop
+
+		if arg 1 is "portal":
+			set {effect::%player%} to "portal"
+			set {effect.enabled.%player%} to true
+			message "&6Effect set to: &a&lPortal"
+			stop
+
+		if arg 1 is "bubbles":
+			set {effect::%player%} to "bubble"
+			set {effect.enabled.%player%} to true
+			message "&6Effect set to: &a&lBubbles"
+			stop
+			
+		if arg 1 is "spawner":
+			set {effect::%player%} to "spawner"
+			set {effect.enabled.%player%} to true
+			message "&6Effect set to: &a&lSpawner"
+			stop
+
+		if arg 1 is "reddust":
+			set {effect::%player%} to "reddust"
+			set {effect.enabled.%player%} to true
+			message "&6Effect set to: &a&lRedstone Dust"
+			stop
+		if arg 1 is "amount":
+			if arg 2 is more than {@Effect Limit}:
+				message "&c&lToo high! Max is 20."
+			else:
+				set {effect.amount.%player%} to arg 2
+				message "&aSet effect amount to %arg 2%!"
+			stop
+		if arg 1 is not set:
+			message "&e&l|||||||||||||||||||||||[ &f&lEffects Menu&e&l]||||||||||||||||||||||||||||||"
+			message "&e&l||                            "
+			message "&e&l||&a               &lOWNED  &f-  &c&lLOCKED "
+			message "&e&l||                            "
+			message "&e&l||  %{effect.%player%.dj}%DJ &f- %{effect.%player%.hearts}%Hearts &f- %{effect.%player%.magic}%Magic &f- %{effect.%player%.reddust}%RedDust &f- %{effect.%player%.flame}%Flame "
+			message "&e&l||    %{effect.%player%.enchant}%Enchant &f- %{effect.%player%.bubble}%Bubbles &f- %{effect.%player%.portal}%Portal &f- %{effect.%player%.void}%Void         "
+			message "&e&l||        "
+			message "&e&l||&a  /effect <name>&f - Set your effect            "
+			message "&e&l||&a  /effect on&f - Enable your last used effect  "
+			message "&e&l||&a  /effect off&f - Disable your current effect   "
+			message "&e&l||&a  /effect amount <integer>&f - Set density 1-20     "
+			message "&e&l||                            "
+			message "&e&l||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||"
+			stop
+		else:
+			message "&e&l|||||||||||||||||||||||[ &f&lEffects Menu&e&l]||||||||||||||||||||||||||||||"
+			message "&e&l||                            "
+			message "&e&l||&a               &lOWNED  &f-  &c&lLOCKED "
+			message "&e&l||                            "
+			message "&e&l||  %{effect.%player%.dj}%DJ &f- %{effect.%player%.hearts}%Hearts &f- %{effect.%player%.magic}%Magic &f- %{effect.%player%.reddust}%RedDust &f- %{effect.%player%.flame}%Flame "
+			message "&e&l||    %{effect.%player%.enchant}%Enchant &f- %{effect.%player%.bubble}%Bubbles &f- %{effect.%player%.portal}%Portal &f- %{effect.%player%.void}%Void         "
+			message "&e&l||        "
+			message "&e&l||&a  /effect <name>&f - Set your effect            "
+			message "&e&l||&a  /effect on&f - Enable your last used effect  "
+			message "&e&l||&a  /effect off&f - Disable your current effect   "
+			message "&e&l||&a  /effect amount <integer>&f - Set density 1-20      "
+			message "&e&l||                            "
+			message "&e&l||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||"

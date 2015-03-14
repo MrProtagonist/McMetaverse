@@ -1,0 +1,241 @@
+on script load:
+	loop all players:
+		set {special.%loop-player%.last} to 0
+	if {special.day} is not set:
+		set {special.day} to 0
+	add 1 to {special.day}
+on join:
+	{special.%player%.last} is not set:
+		set {special.%player%.last} to 0
+command /setspecial:
+	permission: is.op
+	trigger:
+		set {specialblock} to location of player
+		message "Set special block location!"
+command /setdoor:
+	permission: is.op
+	trigger:
+		if {settingdoor.%player%} is not set:
+			set {cmd.doorspot} to location of player
+			set {settingdoor.%player%} to true
+			message "Now setting magic door..."
+		else:
+			delete {settingdoor.%player%}
+			message "&aDone!"
+on break:
+	{settingdoor.%player%} is true
+	cancel event
+	add location of event-block to {cmd.door::*}
+	message "Added to the list!"
+
+every 2 ticks:
+	set {_loopcounta} to 0
+	loop all players in radius 3 around block at {cmd.doorspot}:
+		add 1 to {_loopcounta}
+		if {cmddoor.open} is not set:
+			set {cmddoor.open} to true
+			wait 1 real second
+			execute console command "/playsound dig.stone %loop-player%"
+			loop {cmd.door::*}:
+				set block at location of block at loop-value to cobblestone
+			wait 2 real seconds
+			execute console command "/playsound dig.stone %loop-player%"
+			loop {cmd.door::*}:
+				set block at location of block at loop-value to air
+	if {_loopcounta} is 0:
+		loop {cmd.door::*}:
+			set block at location of block at loop-value to stone
+		delete {cmddoor.open}
+			
+every 2 ticks:
+	spawn 40 of portal data 1 offset with 2, 2, 2 at {specialblock}
+	spawn 30 of portal data 1 offset with 0, 2, 0 at {specialblock}
+	loop all players in radius 3 around block at {specialblock}:
+		if {special.%loop-player%.last} is not {special.day}:
+			set {special.%loop-player%.last} to {special.day}
+			send "&f[&aSERVER&f] &eYou may now present &aNotch&e with your prayer." to loop-player
+			send "&f[&aSERVER&f] &eBe sure what you say includes the word &aNotch&e." to loop-player
+			set {special.%loop-player%.enable} to true
+
+on chat:
+	if {special.%player%.enable} is true:
+		delete {special.%player%.enable}
+		cancel event
+		if message contains "Notch":
+			send "%display name of player%: %message%" to player
+			execute console command "playsound note.pling %player%"
+			wait 2 real seconds
+			send "&f[&aSERVER&f] &eToday &aNotch&e thinks you deserve..." to player
+			wait 1 real second
+			strike lightning effect at the player
+			set {_randomnum} to a random integer between 1 and 43
+			if {_randomnum} is 1:
+				give a egg to player
+				send "&f[&aSERVER&f] &aA single egg." to player
+			if {_randomnum} is 2:
+				give a coal to player
+				send "&f[&aSERVER&f] &aA lump of coal for you." to player
+			if {_randomnum} is 3:
+				give a cake to player
+				send "&f[&aSERVER&f] &aA cake! Happy Birthday!" to player
+			if {_randomnum} is 4:
+				execute console command "/bless %player%"
+			if {_randomnum} is 5:
+				execute console command "/give %player% 397:3 1 player:MrProtagonist"
+				send "&f[&aSERVER&f] &aA skull of MrProtagonist!" to player
+			if {_randomnum} is 6:
+				execute console command "/give %player% 397:3 1 player:Notch"
+				send "&f[&aSERVER&f] &aA skull of Notch!" to player
+			if {_randomnum} is 7:
+				execute console command "/give %player% 397:3 1 player:Herobrine"
+				send "&f[&aSERVER&f] &aA skull of Herobrine!" to player
+			if {_randomnum} is 8:
+				execute console command "/give %player% 397:3 1 player:dinoppar"
+				send "&f[&aSERVER&f] &aA skull of dinoppar!" to player
+			if {_randomnum} is 9:
+				ignite player
+				send "&f[&aSERVER&f] &4&lIGNITED! &cVisit more often and the Gods will smile upon you!" to player
+			if {_randomnum} is 10:
+				give player a diamond
+				send "&f[&aSERVER&f] &aA diamond for your troubles." to player
+			if {_randomnum} is 11:
+				if difference between {special.%player%.last} and now is greater than 3 days:
+					execute console command "/eco take %player% 300"
+					send "&f[&aSERVER&f] &cYou lost $300 for not being a loyal follower." to player
+				else:
+					execute console command "/eco give %player% 300"
+					send "&f[&aSERVER&f] &a$300 cash money for your faith in the Gods!" to player
+			if {_randomnum} is 12:
+				loop 20 times:
+					send "&4&lFAIL FAIL FAIL FAIL FAIL FAIL FAIL FAIL FAIL" to player
+					send "&4  &lFAIL FAIL FAIL FAIL FAIL FAIL FAIL FAIL" to player
+			if {_randomnum} is 13:
+				execute console command "/givetoken %player%"
+			if {_randomnum} is 14:
+				execute console command "/manuaddp %player% skript.collectible"
+				send "&f[&aSERVER&f] &aYou now have access to the special /collectible block!" to player
+			if {_randomnum} is 15:
+				send "&f[&aSERVER&f] &6Knock knock." to player
+				wait 2 real second
+				send "%display name of player%&f: &eWho's there?" to player
+				wait 2 real seconds
+				send "&f[&aSERVER&f] &6Europe." to player
+				wait 2 real second
+				send "%display name of player%&f: &eEurope who?" to player
+				wait 2 real seconds
+				send "&f[&aSERVER&f] &6No, you're a poo." to player
+			if {_randomnum} is 16:
+				execute console command "/give %player% 339 1 name:Tissue_for_your_tears lore:The_Gods_did_not_shine_on_you_today"
+				send "&f[&aSERVER&f] &aYou got a tissue for your issue!" to player
+			if {_randomnum} is 17:
+				spawn a baby pig at player
+				wait 1 tick
+				make player leash spawned entity
+				send "&f[&aSERVER&f] &aA pig!" to player
+			if {_randomnum} is 18:
+				spawn a baby pig at player
+				wait 1 tick
+				send "&f[&aSERVER&f] &aA pig! His name is Jared!" to player
+				wait 5 real seconds
+				kill spawned entity
+				send "&f[&aSERVER&f] &cHis blood is on your hands!" to player
+				execute console command "/give %player% redstone 1 name:&6Blood_of_Jared lore:Killed_in_cold_blood_by_%player%"
+			if {_randomnum} is 19:
+				send "&f[&aSERVER&f] &cNothing happened. Very rare. You must be extremely unfaithful to the Gods." to player
+			if {_randomnum} is 20:
+				give player a dirt
+				send "&f[&aSERVER&f] &cA peice of dirt." to player
+			if {_randomnum} is 21:
+				give player a rose
+				send "&f[&aSERVER&f] &aA rose, because you are beautiful on the inside!" to player
+				wait 2 real seconds
+				send "&f[&aSERVER&f] &aBut only on the inside." to player
+			if {_randomnum} is 22:
+				send "&f[&aSERVER&f] &aA prank on everybody else!" to player
+				broadcast "&e%player% left the game."
+			if {_randomnum} is 23:
+				broadcast "&e%player% likes lamp."
+			if {_randomnum} is 24:
+				give player an apple
+				send "&f[&aSERVER&f] &aAn apple, to promote good health!" to player
+			if {_randomnum} is 25:
+				send "&f[&aSERVER&f] &cJailtime!" to player
+				execute console command "/jail %player% cell4 10s"
+			if {_randomnum} is 26:
+				send "&f[&aSERVER&f] &cThe boot! Sorry!" to player
+				wait 3 real seconds
+				kick player due to "Not believing in Notch!"
+			if {_randomnum} is 27:
+				execute console command "enjin addpoints %player% 25"
+			if {_randomnum} is 28:
+				give player a strad disc
+				send "&f[&aSERVER&f] &aThe Strad music disc!"
+			if {_randomnum} is 29:
+				give player a stal disc
+				send "&f[&aSERVER&f] &aThe Stal music disc!"
+			if {_randomnum} is 30:
+				give player a chirp disc
+				send "&f[&aSERVER&f] &aThe Chirp music disc!"
+			if {_randomnum} is 31:
+				give player a 13-disc
+				send "&f[&aSERVER&f] &aThe 13 music disc!"
+			if {_randomnum} is 32:
+				give player a ender chest
+				send "&f[&aSERVER&f] &aAn ender chest!" to player
+			if {_randomnum} is 33:
+				send "&f[&aSERVER&f] &aA life quote! &eBelieve nothing you hear and only half of what you see."
+			if {_randomnum} is 34:
+				apply potion of strength 2 to the player for 30 minutes
+				send "&f[&aSERVER&f] &aThirty minutes of Strength 2!"
+			if {_randomnum} is 35:
+				apply potion of swiftness 2 to the player for 30 minutes
+				send "&f[&aSERVER&f] &aThirty minutes of Swiftness 2!"
+			if {_randomnum} is 36:
+				apply potion of water breathing to the player for 30 minutes
+				send "&f[&aSERVER&f] &aThirty minutes of Water Breathing!"
+			if {_randomnum} is 37:
+				apply potion of regeneration 2 to the player for 30 minutes
+				send "&f[&aSERVER&f] &aThirty minutes of Regeneration 2!"
+			if {_randomnum} is 38:
+				apply potion of strength 2 to the player for 30 minutes
+				send "&f[&aSERVER&f] &aThirty minutes of Strength 2!"
+			if {_randomnum} is 39:
+				apply potion of night vision to the player for 30 minutes
+				send "&f[&aSERVER&f] &aThirty minutes of Night Vision!"	
+			if {_randomnum} is 40:
+				give player 5 mycelium
+				send "&f[&aSERVER&f] &aFive Mycelium!"	
+			if {_randomnum} is 41:
+				give player dirt of knockback 10 and sharpness 10 and fire aspect 10 named "&aBattle Dirt"
+				send "&f[&aSERVER&f] &aAn enchanted block of dirt!"	
+			if {_randomnum} is 42:
+				spawn a chicken at location of player
+				send "&f[&aSERVER&f] &aA ride on a chicken!"	
+				make player ride spawned entity
+				wait 1 tick
+				while player's vehicle is spawned entity:
+					push spawned entity in direction of player at speed 0.1
+					if block in front of player is not air:
+						push spawned entity upwards at speed 0.1
+					wait 1 tick
+				wait 10 real seconds
+				kill spawned entity
+			if {_randomnum} is 43:
+				set {blocking.%player%} to true
+				send "&f[&aSERVER&f] &cYou are blocked from leaving or opening your inventory for one minute!"
+				set {blockstart.%player%} to now
+				while {blocking.%player%} is true:
+					if difference between {blockstart.%player%} and now is greater than 1 minute:
+						delete {blocking.%player%}
+						delete {blockstart.%player%}
+						send "&f[&aSERVER&f] &aYou restrictions have been lifted. Sorry about that!"
+						stop
+					close inventory of player
+					wait 1 tick
+			stop
+		else:
+			cancel event
+			message "&f[&aSERVER&f] &cYou blew your chance to pray to &aNotch&c today."
+			wait 5 real seconds
+			message "&f[&aSERVER&f] &cNext time, be sure your prayer contains the word &aNotch&c in it."
+			delete {special.%player%.enable}

@@ -1,0 +1,21 @@
+interval: 500
+ignoredIPs: []
+responsesLimit: -1
+ping1:
+  motd: '&f&l&k.&f&l&k,&f&l&k.&a&l THE METAVERSE &f&l&k.&f&l&k,&f&l&k. &eMcMetaverse.com               &a&oNew
+    Mob Arena!'
+  players: []
+ping2:
+  motd: '&a&l&k.&f&l&k,&f&l&k.&a&l THE METAVERSE &f&l&k.&f&l&k,&a&l&k. &eMcMetaverse.com               &b&oNew
+    Premium Perks!'
+  players: []
+ping3:
+  motd: '&f&l&k.&a&l&k,&f&l&k.&a&l THE METAVERSE &f&l&k.&a&l&k,&f&l&k. &eMcMetaverse.com               &c&oNew
+    Ranks!'
+  players: []
+ping4:
+  motd: '&f&l&k.&f&l&k,&f&l&k.&a&l THE METAVERSE &f&l&k.&f&l&k,&f&l&k. &eMcMetaverse.com               &d&oNew
+    Quiz Plugin!'
+  players: []
+iconpath:
+  players: []

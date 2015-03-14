@@ -1,0 +1,38 @@
+geolocation: United States
+lastlocation:
+  world: Metacurse
+  x: -1982.5307167173996
+  y: 64.0
+  z: -1200.699999988079
+  yaw: -84.15022
+  pitch: 29.100006
+lastAccountName: TailsBFox
+timestamps:
+  login: 1426303616287
+  lastteleport: 1426304741763
+  logout: 1426305061969
+ipAddress: 68.104.249.212
+money: '1611.5'
+logoutlocation:
+  world: Metacurse
+  x: -2128.8773305355853
+  y: 61.0
+  z: -1091.3029784997789
+  yaw: 178.49915
+  pitch: 37.650043
+homes:
+  home:
+    world: Metacurse
+    x: -2128.5962754385228
+    y: 64.0
+    z: -1091.370280298325
+    yaw: 86.99902
+    pitch: 49.50003
+  temple:
+    world: Metacurse
+    x: -6555.097632583126
+    y: 40.0
+    z: -1932.8150169770634
+    yaw: 162.02953
+    pitch: 39.0
+afk: false

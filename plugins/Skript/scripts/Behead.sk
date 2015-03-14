@@ -1,0 +1,59 @@
+# ###################################
+# ##    Beheaded By Hanging 1.0    ##
+# ###################################
+# ## Author: MrProtagonist         ##
+# ## Created for: The Metaverse    ##
+# ## Web: McMetaverse.com          ##
+# ## IP: S12.hosthorde.com:25573   ##
+# ###################################
+#
+# To make this work, simply add some code that lets you set a variable to the position of a redstone block you placed below an upward facing piston.
+#
+# When a command block is triggered with the command 'hang' in it, it will remove the redstone block for a moment and kill the player standing on the piston.
+#
+# The one who pressed the button receives the head of the deceased.
+#
+# This looks like they are being hung if you make the propper stage for it.
+#
+#on click:
+#	clicked block is redstone block
+#	player is "MrProtagonist"
+#	set {sk.behead} to location of clicked block
+#	cancel event
+#	message "OK!"
+#on click:
+#	clicked block is piston
+#	player is "MrProtagonist"
+#	set {sk.piston} to location of clicked block
+#	cancel event
+#	message "OK!"
+#on click:
+#	clicked block is stone button
+#	player is "MrProtagonist"
+#	set {sk.switch} to location of clicked block
+#	cancel event
+#	message "OK!"
+on piston retract:
+	location of event-block is {sk.piston}
+	{behead.killer} is set
+	loop players in radius 2 around event-location:
+		loop-player is not {behead.killer}
+		set {behead.player} to loop-player
+		execute console command "/give %{behead.killer}% 397:3 1 player:%loop-player%"
+		kill loop-player
+		stop
+
+on right click:
+	event-block is stone button
+	location of event-block is {sk.switch}
+	set {behead.killer} to player
+	set block at {sk.behead} to air
+	wait 3 real seconds
+	set block at {sk.behead} to redstone block
+	delete {behead.killer}
+
+on death of player:
+	{behead.player} is player
+	delete {behead.player}
+	set death message to "&e%player% was decapitated by %{behead.killer}%."
+	delete {behead.killer}

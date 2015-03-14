@@ -1,0 +1,12 @@
+command /nightvision:
+    description: See at night!
+    permission: skript.nightvision
+    trigger:
+        if {nightvision.%player%} is not true:
+            message "&a&oEnabled &8&oNightVision"
+            apply night vision 3 to the player for 600000 seconds
+            set {nightvision.%player%} to true
+        else:
+            message "&c&oDisabled &8&oNightVision"
+            remove night vision from the player
+            set {nightvision.%player%} to false

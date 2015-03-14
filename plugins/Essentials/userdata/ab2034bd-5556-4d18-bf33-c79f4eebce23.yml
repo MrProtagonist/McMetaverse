@@ -1,0 +1,66 @@
+money: '1524.25'
+geolocation: United States
+lastAccountName: Interprise
+timestamps:
+  login: 1426298007860
+  lastteleport: 1426313167537
+  logout: 1426313227576
+ipAddress: 98.208.36.111
+lastlocation:
+  world: Metacurse
+  x: 1728.275698041535
+  y: 58.92385454289936
+  z: 4394.856234655032
+  yaw: 20.632738
+  pitch: 9.599988
+homes:
+  home:
+    world: Metacurse
+    x: -2409.4828648633447
+    y: 50.0
+    z: -2878.366860599889
+    yaw: 0.68915033
+    pitch: 40.199993
+  cavespider:
+    world: Metacurse
+    x: -2475.8545544440226
+    y: 15.0
+    z: -2911.4349119186677
+    yaw: -190.56439
+    pitch: 10.200046
+  mush:
+    world: Metacurse
+    x: -2294.279786612307
+    y: 72.0
+    z: -1077.3779810154213
+    yaw: 186.53949
+    pitch: -1.8001148
+  haven:
+    world: Metacurse
+    x: 5599.047241751213
+    y: 84.0
+    z: 5772.373051395087
+    yaw: 56.01062
+    pitch: 37.350063
+  blaze:
+    world: Metacurse_nether
+    x: -68.53627296310546
+    y: 53.0
+    z: -375.12736404351483
+    yaw: 179.6391
+    pitch: 3.1500041
+  lounge:
+    world: Metacurse
+    x: 1720.3734158397235
+    y: 48.0
+    z: 4409.415178144616
+    yaw: 175.86967
+    pitch: 17.849966
+logoutlocation:
+  world: Metacurse
+  x: 1728.507703154774
+  y: 40.0
+  z: 4393.478487611094
+  yaw: 48.08273
+  pitch: 5.849987
+afk: false

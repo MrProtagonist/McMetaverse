@@ -1,0 +1,108 @@
+money: '36598.24'
+lastlocation:
+  world: Metacurse
+  x: -462.2734047554652
+  y: 70.0
+  z: 5443.738135342336
+  yaw: -296.06018
+  pitch: -7.366618
+geolocation: United States
+lastAccountName: scatzbro
+timestamps:
+  login: 1426307769225
+  lastteleport: 1426313997022
+  logout: 1426315113251
+ipAddress: 72.24.150.159
+homes:
+  seamine:
+    world: Metacurse
+    x: 526.9665186624669
+    y: 14.0
+    z: 6048.795826072802
+    yaw: 293.6041
+    pitch: 16.049887
+  bigfarm:
+    world: Metacurse
+    x: -4271.8201806286015
+    y: 76.0
+    z: -1974.1564613116466
+    yaw: 177.64418
+    pitch: 11.849995
+  fishing:
+    world: Metacurse
+    x: -4510.368838390814
+    y: 65.0
+    z: -1873.4744634826607
+    yaw: 88.91544
+    pitch: 14.09994
+  desert:
+    world: Metacurse
+    x: 1031.3454645650284
+    y: 71.0
+    z: -100.5060028660659
+    yaw: -156.68317
+    pitch: 6.4500027
+  end:
+    world: Metacurse_the_end
+    x: -13.887747048375672
+    y: 68.0
+    z: 15.503116862106037
+    yaw: 251.1181
+    pitch: 30.599987
+  swamp:
+    world: Metacurse
+    x: -3659.707188810073
+    y: 63.0
+    z: -1523.2270694832196
+    yaw: 288.4956
+    pitch: -0.60000163
+  spiders:
+    world: Metacurse
+    x: 486.30000001192093
+    y: 15.0
+    z: 6019.300000011921
+    yaw: 323.37543
+    pitch: 21.749638
+  sno:
+    world: Metacurse
+    x: -7181.316246288649
+    y: 69.0
+    z: -2720.81998854718
+    yaw: -117.93325
+    pitch: 20.249882
+  temple:
+    world: Metacurse
+    x: -6915.701003983582
+    y: 66.0
+    z: -3927.425547598407
+    yaw: -66.78931
+    pitch: 14.100005
+  watertemple:
+    world: Metacurse
+    x: -6915.701003983582
+    y: 66.0
+    z: -3927.425547598407
+    yaw: -66.78931
+    pitch: 14.100005
+  village:
+    world: Metacurse
+    x: 1861.0489624842633
+    y: 69.0
+    z: -395.048045390806
+    yaw: 57.206543
+    pitch: 19.799961
+  village2:
+    world: Metacurse
+    x: -4516.983235490634
+    y: 65.0
+    z: -2445.25552344725
+    yaw: 5.599121
+    pitch: -41.700096
+logoutlocation:
+  world: Metacurse
+  x: -4303.283579082389
+  y: 78.68466779392558
+  z: -1984.687493932972
+  yaw: 85.09418
+  pitch: 32.999977
+afk: false

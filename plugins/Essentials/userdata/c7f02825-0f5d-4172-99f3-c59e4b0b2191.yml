@@ -1,0 +1,59 @@
+geolocation: Canada
+lastlocation:
+  world: Metacurse
+  x: -4134.91662188917
+  y: 10.0
+  z: -2224.463679316949
+  yaw: 87.951164
+  pitch: 5.6998053
+lastAccountName: CuddlyCanadian
+timestamps:
+  login: 1426294134203
+  lastteleport: 1426294154124
+  logout: 1426294267645
+ipAddress: 65.94.212.74
+homes:
+  home:
+    world: Metacurse
+    x: -3707.4412946340835
+    y: 70.0
+    z: -2123.0864854549786
+    yaw: -133.59749
+    pitch: 15.718433
+  eskimo:
+    world: Metacurse
+    x: -576.3796902479703
+    y: 76.0
+    z: -221.17093793057484
+    yaw: 31.38759
+    pitch: 17.249992
+  mobs:
+    world: Metacurse
+    x: -653.0855343680612
+    y: 17.0
+    z: -91.06858772657665
+    yaw: 272.94342
+    pitch: 23.249931
+  village:
+    world: Metacurse
+    x: -4378.440666431989
+    y: 71.0
+    z: -2703.4850643880736
+    yaw: 359.2364
+    pitch: 18.326061
+  mine:
+    world: Metacurse
+    x: -4010.598340098614
+    y: 10.0
+    z: -2224.699999988079
+    yaw: 87.201195
+    pitch: 21.000017
+logoutlocation:
+  world: Metacurse
+  x: -3691.486849487067
+  y: 69.0
+  z: -2114.8939711450635
+  yaw: -197.19745
+  pitch: 21.418453
+afk: false
+money: '4001.2274999999999997'

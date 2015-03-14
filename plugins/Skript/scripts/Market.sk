@@ -1,0 +1,200 @@
+
+command /submit:
+	trigger:
+		loop 10 times:
+			message " "
+		message "             &8&l&k.&b&l&k.&a&l&k.&b&l&k.&8&l&k.&b&l&k.&a&l&k.&b&l&k.&8&l&k. &6&lSUBMIT YOUR SHOP &8&l&k.&b&l&k.&a&l&k.&b&l&k.&8&l&k.&b&l&k.&a&l&k.&b&l&k.&8&l&k."
+		message "    &eHere you can add your shop to the &a/shop &emenu"
+		message " "
+		message "      &c&lCOST: &a$8,000"
+		message "&c&lREQUIRES: &fA stocked shop that is fully claimed"
+		message "                &fA name and short description of your shop"
+		message "                &fDecided on an item you want for the shop icon"
+		message " "
+		message "&eIf you have completed all the requirements, type &a/continue"
+		set {submit.%player%} to 0
+
+command /continue:
+	trigger:
+		if {submit.%player%} is 0:
+			loop 10 times:
+				message " "
+			message "             &8&l&k.&b&l&k.&a&l&k.&b&l&k.&8&l&k.&b&l&k.&a&l&k.&b&l&k.&8&l&k. &6&lSUBMIT YOUR SHOP &8&l&k.&b&l&k.&a&l&k.&b&l&k.&8&l&k.&b&l&k.&a&l&k.&b&l&k.&8&l&k."
+			message " "
+			message "&eIn chat, type the name of the category your shop should be listed under."
+			message " "
+			message "&f&l1.&6 General"
+			message "&f&l2.&6 Combat"
+			message "&f&l3.&6 Block"
+			message "&f&l4.&6 Food"
+			message "&f&l5.&6 Mechanical"
+			set {submit.%player%} to 1
+
+on chat:
+	if {submit.%player%} is 1:
+		cancel event
+		if message contains "general" or "combat" or "block" or "food" or "mechanical":
+			loop 10 times:
+				message " "
+			message "             &8&l&k.&b&l&k.&a&l&k.&b&l&k.&8&l&k.&b&l&k.&a&l&k.&b&l&k.&8&l&k. &6&lSUBMIT YOUR SHOP &8&l&k.&b&l&k.&a&l&k.&b&l&k.&8&l&k.&b&l&k.&a&l&k.&b&l&k.&8&l&k."
+			message " "
+			message "&aSet category to: &6%message%"
+			set {submit.%player%.category} to message
+			wait 1 real second
+			message " "
+			message "&eIn chat, please type the name of your shop &lEXACTLY &ehow you want it to appear."
+			set {submit.%player%} to 2
+			stop
+		else:
+			loop 10 times:
+				message " "
+			message "             &8&l&k.&b&l&k.&a&l&k.&b&l&k.&8&l&k.&b&l&k.&a&l&k.&b&l&k.&8&l&k. &6&lSUBMIT YOUR SHOP &8&l&k.&b&l&k.&a&l&k.&b&l&k.&8&l&k.&b&l&k.&a&l&k.&b&l&k.&8&l&k."
+			message " "
+			message "&cPlease type a valid category name."
+			message " "
+			message "&f&l1.&6 General"
+			message "&f&l2.&6 Combat"
+			message "&f&l3.&6 Block"
+			message "&f&l4.&6 Food"
+			message "&f&l5.&6 Mechanical"
+			stop
+	if {submit.%player%} is 2:
+		cancel event
+		loop 10 times:
+			message " "
+		message "             &8&l&k.&b&l&k.&a&l&k.&b&l&k.&8&l&k.&b&l&k.&a&l&k.&b&l&k.&8&l&k. &6&lSUBMIT YOUR SHOP &8&l&k.&b&l&k.&a&l&k.&b&l&k.&8&l&k.&b&l&k.&a&l&k.&b&l&k.&8&l&k."
+		message " "
+		set {submit.%player%.name} to message
+		message "&aSet shop name to: &6%message%"
+		wait 1 real second
+		set {submit.%player%} to 3
+		message " "
+		message "&eIn chat, type the full description for your shop &lEXACTLY &ehow you want it to appear."
+		stop
+	if {submit.%player%} is 3:
+		cancel event
+		loop 10 times:
+			message " "
+		message "             &8&l&k.&b&l&k.&a&l&k.&b&l&k.&8&l&k.&b&l&k.&a&l&k.&b&l&k.&8&l&k. &6&lSUBMIT YOUR SHOP &8&l&k.&b&l&k.&a&l&k.&b&l&k.&8&l&k.&b&l&k.&a&l&k.&b&l&k.&8&l&k."
+		message " "
+		if length of message is less than 90:
+			set {submit.%player%.desc} to message
+			message "&aSet shop description to: &6%message%"
+			wait 1 real second
+			set {submit.%player%} to 4
+			message " "
+			message "&eFinally, hold your chosen icon item. Then stand in the EXACT spot you wish to warp players to."
+			message " "
+			message "&eDo not chat while you are performing this task. When done as instructed, say &adone&e. To quit submission, say &aquit&e."
+			message " "
+			message "&c&oWARNING:&f Saying &adone&f will submit your shop to be added to the menu, and you will be charged &a$10,000&f."
+			stop
+		else:
+			message "&cTOO LONG! Try again, but shorter."
+			stop
+	if {submit.%player%} is 4:
+		cancel event
+		if message contains "done":
+			loop 20 times:
+				message " "
+			if player's balance is less than 8000:
+				message "&c&lYou can't afford this!"
+				stop
+			execute console command "eco take %player% 8000"
+			message " "
+			add {submit.%player%.name} to {submissions.name::*}
+			add {submit.%player%.desc} to {submissions.desc::*}
+			add {submit.%player%.category} to {submissions.category::*}
+			add player to {submissions.user::*}
+			if {shopwarp.count} is not set:
+				set {shopwarp.count} to 0
+			add 1 to {shopwarp.count}
+			add {shopwarp.count} to {submissions.warps::*}
+			set {market.name.%{shopwarp.count}%} to {submit.%player%.name}
+			set {market.warps.%{shopwarp.count}%} to player's location
+			add id of player's tool to {submissions.id::*}
+			add data value of player's tool to {submissions.datavalue::*}
+			play note pling at player with pitch 1
+			play note pling at player with pitch 1
+			play note bass drum at player with pitch 1.4
+			play note snare drum at player with pitch 1.5
+			wait 5.5 ticks
+			play note pling at player with pitch 1
+			play note pling at player with pitch 1
+			play note snare drum at player with pitch 1.6
+			wait 5.5 ticks
+			play note pling at player with pitch 1
+			play note pling at player with pitch 1
+			play note bass drum at player with pitch 1.6
+			play note snare drum at player with pitch 1.6
+			wait 5.5 ticks
+			play note pling at player with pitch 1
+			play note pling at player with pitch 1.4
+			set {submit.%player%} to 0
+			message "&a&oShop submitted! Please allow up to 72 hours for your submission to be approved and posted."
+			stop
+		if message contains "quit":
+			loop 20 times:
+				message " "
+			message "&c&oCanceled shop submission."
+			set {submit.%player%} to 0
+			stop
+		else:
+			message "&cTo declare your shop warp and icon, type &adone&c. Otherwise, type &6quit&c."
+command /shopwarp <integer>:
+	trigger:
+		message "&a&oNow traveling to %{market.name.%arg%}%&a."
+		set {lastwarp.%player%} to now
+		push the player upwards at speed 10
+		execute console command "/playsound random.explode %player% ~0 ~0 ~0 20 50"
+		execute console command "consolewarp %player%"
+		wait 38 ticks
+		teleport the player to {market.warps.%arg%}
+command /moveshop <integer>:
+	permission: sk.submissions
+	trigger:
+		set {market.warps.%arg%} to location of player
+		message "&aMoved warp for %{market.name.%arg%}% to here!"
+command /submissions [<text>] [<text>]:
+	permission: sk.submissions
+	trigger:
+		if arg 1 is not set:
+			message "             &8&l&k.&b&l&k.&a&l&k.&b&l&k.&8&l&k.&b&l&k.&a&l&k.&b&l&k.&8&l&k. &6&lPENDING SUBMISSIONS &8&l&k.&b&l&k.&a&l&k.&b&l&k.&8&l&k.&b&l&k.&a&l&k.&b&l&k.&8&l&k."
+			loop {submissions.user::*}:
+				message "-----------------------------------------------------"
+				message "&a&l%loop-index%. &b%loop-value%"
+				message "&a&lCategory: &f%{submissions.category::%loop-index%}%"
+				message "&a&lName: &f%{submissions.name::%loop-index%}%"
+				message "&a&lIcon ID: &f%{submissions.id::%loop-index%}%"
+				message "&a&lIcon Data-Value: &f%{submissions.datavalue::%loop-index%}%"
+				message "&a&lDescription: &f%{submissions.desc::%loop-index%}%"
+				message "&a&lWarp: &f%{submissions.warps::%loop-index%}%"
+		if arg 1 is "delete":
+			if {submissions.name::%arg 2%} is set:
+				remove {submissions.name::%arg 2%} from {submissions.name::*}
+				remove {submissions.desc::%arg 2%} from {submissions.desc::*}
+				remove {submissions.id::%arg 2%} from {submissions.id::*}
+				remove {submissions.warps::%arg 2%} from {submissions.warps::*}
+				remove {submissions.datavalue::%arg 2%} from {submissions.datavalue::*}
+				remove {submissions.category::%arg 2%} from {submissions.category::*}
+				remove {submissions.user::%arg 2%} from {submissions.user::*}
+				message "&aSuccessfully deleted entry!"
+			else:
+				message "&cInvalid entry number!"
+command /testgui:
+	trigger:
+		set {_temp} to name of player's held item
+		wait 1 real second
+		set name of player's held item to "&4&l5"
+		wait 1 real second
+		set name of player's held item to "&c&l4"
+		wait 1 real second
+		set name of player's held item to "&6&l3"
+		wait 1 real second
+		set name of player's held item to "&e&l2"
+		wait 1 real second
+		set name of player's held item to "&a&l1"
+		wait 1 real second
+		set name of player's held item to "&a&lGO!"
+		wait 5 real seconds
+		set name of player's held item to {_temp}

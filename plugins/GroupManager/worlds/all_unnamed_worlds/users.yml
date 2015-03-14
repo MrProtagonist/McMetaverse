@@ -1,0 +1,22 @@
+users:
+  ElgarL:
+    group: Moderator
+    subgroups: []
+    permissions:
+    - groupmanager.noofflineperms
+  KHobbits:
+    group: Moderator
+    subgroups: []
+    permissions:
+    - groupmanager.noofflineperms
+  kristycream:
+    group: Default
+    subgroups: []
+    permissions: []
+    info:
+      suffix: §f [&bDonut§f]
+  snowleo:
+    group: Builder
+    subgroups: []
+    permissions:
+    - groupmanager.noofflineperms

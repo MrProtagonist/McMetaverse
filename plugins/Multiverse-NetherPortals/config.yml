@@ -1,0 +1,5 @@
+bounceback: true
+worlds:
+  Metacurse:
+    portalgoesto:
+      NETHER: Metacurse_nether

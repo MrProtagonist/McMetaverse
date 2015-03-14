@@ -1,0 +1,95 @@
+﻿on sign change:
+	line 1 of block is "[vc]"
+	if {vc.%player%.max} is equal to {vc.%player%.count}:
+		message "&c&oYou don't have permission to make more virtual chests!"
+		stop
+	set {vc.temp.%player%.vcnumber} to line 2 of block
+	set {vc.%player%::%{vc.temp.%player%.vcnumber}%} to location of block 1 meters behind block
+	set line 1 of block to "&aVirtual Chest"
+	set line 2 of block to "&l%{vc.temp.%player%.vcnumber}%"
+	set line 3 of block to "Owned by"
+	set line 4 of block to player's name
+	message "&aVirtual chest &6%{vc.temp.%player%.vcnumber}% at %{vc.%player%::%{vc.temp.%player%.vcnumber}%}%&a created."
+	add 1 to {vc.%player%.count}
+	
+command /vc [<text>] [<text>]:
+	trigger:
+		if {vc.%player%.count} is not set:
+			set {vc.%player%.count} to 0
+		if {vc.%player%.max} is not set:
+			set {vc.%player%.max} to 0
+		if player has the permission "vc.2":
+			{vc.%player%.max} is less than 2
+			set {vc.%player%.max} to 2
+		if player has the permission "vc.4":
+			{vc.%player%.max} is less than 4
+			set {vc.%player%.max} to 4
+		if player has the permission "vc.6":
+			{vc.%player%.max} is less than 6
+			set {vc.%player%.max} to 6
+		if player has the permission "vc.8":
+			{vc.%player%.max} is less than 8
+			set {vc.%player%.max} to 8
+		if player has the permission "vc.10":
+			{vc.%player%.max} is less than 10
+			set {vc.%player%.max} to 10
+		if player has the permission "vc.12":
+			{vc.%player%.max} is less than 12
+			set {vc.%player%.max} to 12
+		if player has the permission "vc.14":
+			{vc.%player%.max} is less than 14
+			set {vc.%player%.max} to 14
+		if player has the permission "vc.16":
+			{vc.%player%.max} is less than 16
+			set {vc.%player%.max} to 16
+		if player has the permission "vc.18":
+			{vc.%player%.max} is less than 18
+			set {vc.%player%.max} to 18
+		if player has the permission "vc.20":
+			{vc.%player%.max} is less than 20
+			set {vc.%player%.max} to 20
+		if player has the permission "vc.unlimited":
+			{vc.%player%.max} is not 1337
+			set {vc.%player%.max} to 1337
+		if arg 1 is "list":
+			set {_vctempcount} to 0
+			loop {vc.%player%::*}:
+				add 1 to {_vctempcount}
+			set {vc.%player%.count} to {_vctempcount}
+			message "&l- - - [ &b&l&oMy Virtual Chests&r&l ] - - -"
+			loop {vc.%player%::*}:
+				message " &a&l%loop-index% &r- %loop-value%"
+			message " "
+			message "You have used %{vc.%player%.count}% / %{vc.%player%.max}% virtual chests available to you."
+			stop
+		if arg 1 is "remove":
+			loop {vc.%player%::*}:
+				loop-index is arg 2
+				delete {vc.%player%::%arg 2%}
+				message "&cDeleted"
+				subtract 1 from {vc.%player%.count}
+				stop
+			message "&c&oFound no chest by that name!"
+		if arg 1 is set:
+			if arg 2 is not set:
+				if {vc.%player%::%arg 1%} is set:
+					message "&a&oOpening your virtual chest..."
+					execute console command "playsound portal.travel %player%"
+					wait 1 real second
+					open the inventory of the block at {vc.%player%::%arg 1%} to the player
+				else:
+					message "&cThis virtual chest does not exist."
+		else:
+			message " "
+			message "&l- - - [ &b&l&oVirtual Chest Menu &r&l] - - -"
+			message "&a/vc <name>&r - Open an existing virtual chest"
+			message "&a/vc list&r - List your virtual chests"
+			message "&a/vc remove <name>&r - Delete a virtual chest"
+			message " "
+			message "&l- - - [ &6Making a Virtual Chest &r&l] - - -"
+			message " Simply place a sign &con the ground in front of&r any container."
+
+			message "  &eWrite the following:"
+			message "                    |       [vc]       |"  
+			message "                    |   Some name   |"
+			

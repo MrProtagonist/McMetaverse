@@ -1,0 +1,891 @@
+2013-11-30 21-12
+=============================== GM ERROR LOG ===============================
+= ERROR REPORT START - 2.0 (2.12.1) (Phoenix) =
+
+java.lang.NullPointerException
+	at org.anjocaido.groupmanager.GroupManager.onEnable(GroupManager.java:171)
+	at org.anjocaido.groupmanager.GroupManager.onCommand(GroupManager.java:1872)
+	at org.bukkit.command.PluginCommand.execute(PluginCommand.java:44)
+	at org.bukkit.command.SimpleCommandMap.dispatch(SimpleCommandMap.java:192)
+	at org.bukkit.craftbukkit.v1_7_R1.CraftServer.dispatchCommand(CraftServer.java:543)
+	at org.bukkit.craftbukkit.v1_7_R1.CraftServer.dispatchServerCommand(CraftServer.java:530)
+	at net.minecraft.server.v1_7_R1.DedicatedServer.aw(DedicatedServer.java:279)
+	at net.minecraft.server.v1_7_R1.DedicatedServer.u(DedicatedServer.java:244)
+	at net.minecraft.server.v1_7_R1.MinecraftServer.t(MinecraftServer.java:535)
+	at net.minecraft.server.v1_7_R1.MinecraftServer.run(MinecraftServer.java:447)
+	at net.minecraft.server.v1_7_R1.ThreadServerApplication.run(SourceFile:617)
+
+============================================================================
+
+2013-11-30 21-36
+=============================== GM ERROR LOG ===============================
+= ERROR REPORT START - 2.0 (2.12.1) (Phoenix) =
+
+java.lang.IllegalArgumentException: The following file couldn't pass on Parser.
+plugins/GroupManager/worlds/metaverse/groups.yml
+	at org.anjocaido.groupmanager.dataholder.WorldDataHolder.loadGroups(WorldDataHolder.java:496)
+	at org.anjocaido.groupmanager.dataholder.WorldDataHolder.loadGroups(WorldDataHolder.java:416)
+	at org.anjocaido.groupmanager.dataholder.worlds.WorldsHolder.loadWorld(WorldsHolder.java:678)
+	at org.anjocaido.groupmanager.dataholder.worlds.WorldsHolder.loadWorld(WorldsHolder.java:640)
+	at org.anjocaido.groupmanager.dataholder.worlds.WorldsHolder.initialWorldLoading(WorldsHolder.java:110)
+	at org.anjocaido.groupmanager.dataholder.worlds.WorldsHolder.initialLoad(WorldsHolder.java:100)
+	at org.anjocaido.groupmanager.dataholder.worlds.WorldsHolder.resetWorldsHolder(WorldsHolder.java:92)
+	at org.anjocaido.groupmanager.GroupManager.onEnable(GroupManager.java:171)
+	at org.anjocaido.groupmanager.GroupManager.onCommand(GroupManager.java:1872)
+	at org.bukkit.command.PluginCommand.execute(PluginCommand.java:44)
+	at org.bukkit.command.SimpleCommandMap.dispatch(SimpleCommandMap.java:192)
+	at org.bukkit.craftbukkit.v1_7_R1.CraftServer.dispatchCommand(CraftServer.java:543)
+	at net.minecraft.server.v1_7_R1.PlayerConnection.handleCommand(PlayerConnection.java:923)
+	at net.minecraft.server.v1_7_R1.PlayerConnection.a(PlayerConnection.java:803)
+	at net.minecraft.server.v1_7_R1.PacketPlayInChat.a(PacketPlayInChat.java:28)
+	at net.minecraft.server.v1_7_R1.PacketPlayInChat.handle(PacketPlayInChat.java:47)
+	at net.minecraft.server.v1_7_R1.NetworkManager.a(NetworkManager.java:146)
+	at net.minecraft.server.v1_7_R1.ServerConnection.c(SourceFile:134)
+	at net.minecraft.server.v1_7_R1.MinecraftServer.u(MinecraftServer.java:645)
+	at net.minecraft.server.v1_7_R1.DedicatedServer.u(DedicatedServer.java:243)
+	at net.minecraft.server.v1_7_R1.MinecraftServer.t(MinecraftServer.java:535)
+	at net.minecraft.server.v1_7_R1.MinecraftServer.run(MinecraftServer.java:447)
+	at net.minecraft.server.v1_7_R1.ThreadServerApplication.run(SourceFile:617)
+Caused by: while scanning an anchor
+ in "<reader>", line 165, column 16:
+          prefix: '&r&f[&e&l&oLegend&r] '
+                   ^
+expected alphabetic or numeric character, but found &(38)
+ in "<reader>", line 165, column 18:
+          prefix: '&r&f[&e&l&oLegend&r] '
+                     ^
+
+	at org.yaml.snakeyaml.scanner.ScannerImpl.scanAnchor(ScannerImpl.java:1169)
+	at org.yaml.snakeyaml.scanner.ScannerImpl.fetchAnchor(ScannerImpl.java:782)
+	at org.yaml.snakeyaml.scanner.ScannerImpl.fetchMoreTokens(ScannerImpl.java:315)
+	at org.yaml.snakeyaml.scanner.ScannerImpl.checkToken(ScannerImpl.java:179)
+	at org.yaml.snakeyaml.parser.ParserImpl$ParseBlockMappingKey.produce(ParserImpl.java:563)
+	at org.yaml.snakeyaml.parser.ParserImpl.peekEvent(ParserImpl.java:161)
+	at org.yaml.snakeyaml.parser.ParserImpl.checkEvent(ParserImpl.java:146)
+	at org.yaml.snakeyaml.composer.Composer.composeMappingNode(Composer.java:230)
+	at org.yaml.snakeyaml.composer.Composer.composeNode(Composer.java:160)
+	at org.yaml.snakeyaml.composer.Composer.composeMappingNode(Composer.java:237)
+	at org.yaml.snakeyaml.composer.Composer.composeNode(Composer.java:160)
+	at org.yaml.snakeyaml.composer.Composer.composeMappingNode(Composer.java:237)
+	at org.yaml.snakeyaml.composer.Composer.composeNode(Composer.java:160)
+	at org.yaml.snakeyaml.composer.Composer.composeMappingNode(Composer.java:237)
+	at org.yaml.snakeyaml.composer.Composer.composeNode(Composer.java:160)
+	at org.yaml.snakeyaml.composer.Composer.composeDocument(Composer.java:123)
+	at org.yaml.snakeyaml.composer.Composer.getSingleNode(Composer.java:106)
+	at org.yaml.snakeyaml.constructor.BaseConstructor.getSingleData(BaseConstructor.java:121)
+	at org.yaml.snakeyaml.Yaml.loadFromReader(Yaml.java:480)
+	at org.yaml.snakeyaml.Yaml.load(Yaml.java:423)
+	at org.anjocaido.groupmanager.dataholder.WorldDataHolder.loadGroups(WorldDataHolder.java:491)
+	... 22 more
+
+============================================================================
+
+2014-02-20 21-14
+=============================== GM ERROR LOG ===============================
+= ERROR REPORT START - 2.0 (2.12.1) (Phoenix) =
+
+java.lang.IllegalArgumentException: The following file couldn't pass on Parser.
+plugins/GroupManager/worlds/metaverse/groups.yml
+	at org.anjocaido.groupmanager.dataholder.WorldDataHolder.loadGroups(WorldDataHolder.java:496)
+	at org.anjocaido.groupmanager.dataholder.WorldDataHolder.loadGroups(WorldDataHolder.java:416)
+	at org.anjocaido.groupmanager.dataholder.worlds.WorldsHolder.loadWorld(WorldsHolder.java:678)
+	at org.anjocaido.groupmanager.dataholder.worlds.WorldsHolder.loadWorld(WorldsHolder.java:640)
+	at org.anjocaido.groupmanager.dataholder.worlds.WorldsHolder.initialWorldLoading(WorldsHolder.java:110)
+	at org.anjocaido.groupmanager.dataholder.worlds.WorldsHolder.initialLoad(WorldsHolder.java:100)
+	at org.anjocaido.groupmanager.dataholder.worlds.WorldsHolder.resetWorldsHolder(WorldsHolder.java:92)
+	at org.anjocaido.groupmanager.GroupManager.onEnable(GroupManager.java:171)
+	at org.anjocaido.groupmanager.GroupManager.onCommand(GroupManager.java:1872)
+	at org.bukkit.command.PluginCommand.execute(PluginCommand.java:44)
+	at org.bukkit.command.SimpleCommandMap.dispatch(SimpleCommandMap.java:175)
+	at org.bukkit.craftbukkit.v1_7_R1.CraftServer.dispatchCommand(CraftServer.java:683)
+	at net.minecraft.server.v1_7_R1.PlayerConnection.handleCommand(PlayerConnection.java:952)
+	at net.minecraft.server.v1_7_R1.PlayerConnection.a(PlayerConnection.java:814)
+	at net.minecraft.server.v1_7_R1.PacketPlayInChat.a(PacketPlayInChat.java:28)
+	at net.minecraft.server.v1_7_R1.PacketPlayInChat.handle(PacketPlayInChat.java:47)
+	at net.minecraft.server.v1_7_R1.NetworkManager.a(NetworkManager.java:146)
+	at net.minecraft.server.v1_7_R1.ServerConnection.c(SourceFile:134)
+	at net.minecraft.server.v1_7_R1.MinecraftServer.u(MinecraftServer.java:655)
+	at net.minecraft.server.v1_7_R1.DedicatedServer.u(DedicatedServer.java:250)
+	at net.minecraft.server.v1_7_R1.MinecraftServer.t(MinecraftServer.java:545)
+	at net.minecraft.server.v1_7_R1.MinecraftServer.run(MinecraftServer.java:457)
+	at net.minecraft.server.v1_7_R1.ThreadServerApplication.run(SourceFile:617)
+Caused by: while parsing a block mapping
+ in "<reader>", line 11, column 1:
+    groups:
+    ^
+expected <block end>, but found BlockMappingStart
+ in "<reader>", line 238, column 2:
+     Mod:
+     ^
+
+	at org.yaml.snakeyaml.parser.ParserImpl$ParseBlockMappingKey.produce(ParserImpl.java:575)
+	at org.yaml.snakeyaml.parser.ParserImpl.peekEvent(ParserImpl.java:161)
+	at org.yaml.snakeyaml.parser.ParserImpl.checkEvent(ParserImpl.java:146)
+	at org.yaml.snakeyaml.composer.Composer.composeMappingNode(Composer.java:230)
+	at org.yaml.snakeyaml.composer.Composer.composeNode(Composer.java:160)
+	at org.yaml.snakeyaml.composer.Composer.composeDocument(Composer.java:123)
+	at org.yaml.snakeyaml.composer.Composer.getSingleNode(Composer.java:106)
+	at org.yaml.snakeyaml.constructor.BaseConstructor.getSingleData(BaseConstructor.java:121)
+	at org.yaml.snakeyaml.Yaml.loadFromReader(Yaml.java:480)
+	at org.yaml.snakeyaml.Yaml.load(Yaml.java:423)
+	at org.anjocaido.groupmanager.dataholder.WorldDataHolder.loadGroups(WorldDataHolder.java:491)
+	... 22 more
+
+============================================================================
+
+2014-03-10 21-31
+=============================== GM ERROR LOG ===============================
+= ERROR REPORT START - 2.0 (2.12.1) (Phoenix) =
+
+java.lang.IllegalArgumentException: The following file couldn't pass on Parser.
+plugins/GroupManager/worlds/metaverse/users.yml
+	at org.anjocaido.groupmanager.dataholder.WorldDataHolder.loadUsers(WorldDataHolder.java:758)
+	at org.anjocaido.groupmanager.dataholder.WorldDataHolder.loadUsers(WorldDataHolder.java:433)
+	at org.anjocaido.groupmanager.dataholder.worlds.WorldsHolder.loadWorld(WorldsHolder.java:684)
+	at org.anjocaido.groupmanager.dataholder.worlds.WorldsHolder.loadWorld(WorldsHolder.java:640)
+	at org.anjocaido.groupmanager.dataholder.worlds.WorldsHolder.initialWorldLoading(WorldsHolder.java:110)
+	at org.anjocaido.groupmanager.dataholder.worlds.WorldsHolder.initialLoad(WorldsHolder.java:100)
+	at org.anjocaido.groupmanager.dataholder.worlds.WorldsHolder.resetWorldsHolder(WorldsHolder.java:92)
+	at org.anjocaido.groupmanager.GroupManager.onEnable(GroupManager.java:171)
+	at org.anjocaido.groupmanager.GroupManager.onCommand(GroupManager.java:1872)
+	at org.bukkit.command.PluginCommand.execute(PluginCommand.java:44)
+	at org.bukkit.command.SimpleCommandMap.dispatch(SimpleCommandMap.java:175)
+	at org.bukkit.craftbukkit.v1_7_R1.CraftServer.dispatchCommand(CraftServer.java:704)
+	at net.minecraft.server.v1_7_R1.PlayerConnection.handleCommand(PlayerConnection.java:972)
+	at net.minecraft.server.v1_7_R1.PlayerConnection.a(PlayerConnection.java:817)
+	at net.minecraft.server.v1_7_R1.PacketPlayInChat.a(PacketPlayInChat.java:28)
+	at net.minecraft.server.v1_7_R1.PacketPlayInChat.handle(PacketPlayInChat.java:65)
+	at net.minecraft.server.v1_7_R1.NetworkManager.a(NetworkManager.java:147)
+	at net.minecraft.server.v1_7_R1.ServerConnection.c(ServerConnection.java:77)
+	at net.minecraft.server.v1_7_R1.MinecraftServer.u(MinecraftServer.java:700)
+	at net.minecraft.server.v1_7_R1.DedicatedServer.u(DedicatedServer.java:273)
+	at net.minecraft.server.v1_7_R1.MinecraftServer.t(MinecraftServer.java:562)
+	at net.minecraft.server.v1_7_R1.MinecraftServer.run(MinecraftServer.java:469)
+	at net.minecraft.server.v1_7_R1.ThreadServerApplication.run(SourceFile:617)
+Caused by: while scanning an anchor
+ in 'reader', line 1106, column 19:
+          suffix: &f [&4Mr.Redstone&7&f]
+                      ^
+expected alphabetic or numeric character, but found .(46)
+ in 'reader', line 1106, column 23:
+          suffix: &f [&4Mr.Redstone&7&f]
+                          ^
+
+	at org.yaml.snakeyaml.scanner.ScannerImpl.scanAnchor(ScannerImpl.java:1446)
+	at org.yaml.snakeyaml.scanner.ScannerImpl.fetchAnchor(ScannerImpl.java:939)
+	at org.yaml.snakeyaml.scanner.ScannerImpl.fetchMoreTokens(ScannerImpl.java:370)
+	at org.yaml.snakeyaml.scanner.ScannerImpl.checkToken(ScannerImpl.java:226)
+	at org.yaml.snakeyaml.parser.ParserImpl$ParseFlowSequenceEntry.produce(ParserImpl.java:629)
+	at org.yaml.snakeyaml.parser.ParserImpl$ParseFlowSequenceFirstEntry.produce(ParserImpl.java:617)
+	at org.yaml.snakeyaml.parser.ParserImpl.peekEvent(ParserImpl.java:158)
+	at org.yaml.snakeyaml.parser.ParserImpl.checkEvent(ParserImpl.java:143)
+	at org.yaml.snakeyaml.composer.Composer.composeSequenceNode(Composer.java:203)
+	at org.yaml.snakeyaml.composer.Composer.composeNode(Composer.java:157)
+	at org.yaml.snakeyaml.composer.Composer.composeMappingNode(Composer.java:237)
+	at org.yaml.snakeyaml.composer.Composer.composeNode(Composer.java:159)
+	at org.yaml.snakeyaml.composer.Composer.composeMappingNode(Composer.java:237)
+	at org.yaml.snakeyaml.composer.Composer.composeNode(Composer.java:159)
+	at org.yaml.snakeyaml.composer.Composer.composeMappingNode(Composer.java:237)
+	at org.yaml.snakeyaml.composer.Composer.composeNode(Composer.java:159)
+	at org.yaml.snakeyaml.composer.Composer.composeMappingNode(Composer.java:237)
+	at org.yaml.snakeyaml.composer.Composer.composeNode(Composer.java:159)
+	at org.yaml.snakeyaml.composer.Composer.composeDocument(Composer.java:122)
+	at org.yaml.snakeyaml.composer.Composer.getSingleNode(Composer.java:105)
+	at org.yaml.snakeyaml.constructor.BaseConstructor.getSingleData(BaseConstructor.java:120)
+	at org.yaml.snakeyaml.Yaml.loadFromReader(Yaml.java:481)
+	at org.yaml.snakeyaml.Yaml.load(Yaml.java:424)
+	at org.anjocaido.groupmanager.dataholder.WorldDataHolder.loadUsers(WorldDataHolder.java:753)
+	... 22 more
+
+============================================================================
+
+2014-03-10 21-38
+=============================== GM ERROR LOG ===============================
+= ERROR REPORT START - 2.0 (2.12.1) (Phoenix) =
+
+java.lang.IllegalArgumentException: The following file couldn't pass on Parser.
+plugins/GroupManager/worlds/metaverse/users.yml
+	at org.anjocaido.groupmanager.dataholder.WorldDataHolder.loadUsers(WorldDataHolder.java:758)
+	at org.anjocaido.groupmanager.dataholder.WorldDataHolder.loadUsers(WorldDataHolder.java:433)
+	at org.anjocaido.groupmanager.dataholder.worlds.WorldsHolder.loadWorld(WorldsHolder.java:684)
+	at org.anjocaido.groupmanager.dataholder.worlds.WorldsHolder.loadWorld(WorldsHolder.java:640)
+	at org.anjocaido.groupmanager.dataholder.worlds.WorldsHolder.initialWorldLoading(WorldsHolder.java:110)
+	at org.anjocaido.groupmanager.dataholder.worlds.WorldsHolder.initialLoad(WorldsHolder.java:100)
+	at org.anjocaido.groupmanager.dataholder.worlds.WorldsHolder.resetWorldsHolder(WorldsHolder.java:92)
+	at org.anjocaido.groupmanager.GroupManager.onEnable(GroupManager.java:171)
+	at org.anjocaido.groupmanager.GroupManager.onCommand(GroupManager.java:1872)
+	at org.bukkit.command.PluginCommand.execute(PluginCommand.java:44)
+	at org.bukkit.command.SimpleCommandMap.dispatch(SimpleCommandMap.java:175)
+	at org.bukkit.craftbukkit.v1_7_R1.CraftServer.dispatchCommand(CraftServer.java:704)
+	at org.bukkit.craftbukkit.v1_7_R1.CraftServer.dispatchServerCommand(CraftServer.java:691)
+	at net.minecraft.server.v1_7_R1.DedicatedServer.aw(DedicatedServer.java:309)
+	at net.minecraft.server.v1_7_R1.DedicatedServer.u(DedicatedServer.java:274)
+	at net.minecraft.server.v1_7_R1.MinecraftServer.t(MinecraftServer.java:562)
+	at net.minecraft.server.v1_7_R1.MinecraftServer.run(MinecraftServer.java:469)
+	at net.minecraft.server.v1_7_R1.ThreadServerApplication.run(SourceFile:617)
+Caused by: while scanning an anchor
+ in 'reader', line 1106, column 19:
+          suffix: &f [&4Mr.Redstone&7&f]
+                      ^
+expected alphabetic or numeric character, but found .(46)
+ in 'reader', line 1106, column 23:
+          suffix: &f [&4Mr.Redstone&7&f]
+                          ^
+
+	at org.yaml.snakeyaml.scanner.ScannerImpl.scanAnchor(ScannerImpl.java:1446)
+	at org.yaml.snakeyaml.scanner.ScannerImpl.fetchAnchor(ScannerImpl.java:939)
+	at org.yaml.snakeyaml.scanner.ScannerImpl.fetchMoreTokens(ScannerImpl.java:370)
+	at org.yaml.snakeyaml.scanner.ScannerImpl.checkToken(ScannerImpl.java:226)
+	at org.yaml.snakeyaml.parser.ParserImpl$ParseFlowSequenceEntry.produce(ParserImpl.java:629)
+	at org.yaml.snakeyaml.parser.ParserImpl$ParseFlowSequenceFirstEntry.produce(ParserImpl.java:617)
+	at org.yaml.snakeyaml.parser.ParserImpl.peekEvent(ParserImpl.java:158)
+	at org.yaml.snakeyaml.parser.ParserImpl.checkEvent(ParserImpl.java:143)
+	at org.yaml.snakeyaml.composer.Composer.composeSequenceNode(Composer.java:203)
+	at org.yaml.snakeyaml.composer.Composer.composeNode(Composer.java:157)
+	at org.yaml.snakeyaml.composer.Composer.composeMappingNode(Composer.java:237)
+	at org.yaml.snakeyaml.composer.Composer.composeNode(Composer.java:159)
+	at org.yaml.snakeyaml.composer.Composer.composeMappingNode(Composer.java:237)
+	at org.yaml.snakeyaml.composer.Composer.composeNode(Composer.java:159)
+	at org.yaml.snakeyaml.composer.Composer.composeMappingNode(Composer.java:237)
+	at org.yaml.snakeyaml.composer.Composer.composeNode(Composer.java:159)
+	at org.yaml.snakeyaml.composer.Composer.composeMappingNode(Composer.java:237)
+	at org.yaml.snakeyaml.composer.Composer.composeNode(Composer.java:159)
+	at org.yaml.snakeyaml.composer.Composer.composeDocument(Composer.java:122)
+	at org.yaml.snakeyaml.composer.Composer.getSingleNode(Composer.java:105)
+	at org.yaml.snakeyaml.constructor.BaseConstructor.getSingleData(BaseConstructor.java:120)
+	at org.yaml.snakeyaml.Yaml.loadFromReader(Yaml.java:481)
+	at org.yaml.snakeyaml.Yaml.load(Yaml.java:424)
+	at org.anjocaido.groupmanager.dataholder.WorldDataHolder.loadUsers(WorldDataHolder.java:753)
+	... 17 more
+
+============================================================================
+
+2014-03-10 21-38
+=============================== GM ERROR LOG ===============================
+= ERROR REPORT START - 2.0 (2.12.1) (Phoenix) =
+
+java.lang.IllegalArgumentException: The following file couldn't pass on Parser.
+plugins/GroupManager/worlds/metaverse/users.yml
+	at org.anjocaido.groupmanager.dataholder.WorldDataHolder.loadUsers(WorldDataHolder.java:758)
+	at org.anjocaido.groupmanager.dataholder.WorldDataHolder.loadUsers(WorldDataHolder.java:433)
+	at org.anjocaido.groupmanager.dataholder.worlds.WorldsHolder.loadWorld(WorldsHolder.java:684)
+	at org.anjocaido.groupmanager.dataholder.worlds.WorldsHolder.loadWorld(WorldsHolder.java:640)
+	at org.anjocaido.groupmanager.dataholder.worlds.WorldsHolder.initialWorldLoading(WorldsHolder.java:110)
+	at org.anjocaido.groupmanager.dataholder.worlds.WorldsHolder.initialLoad(WorldsHolder.java:100)
+	at org.anjocaido.groupmanager.dataholder.worlds.WorldsHolder.resetWorldsHolder(WorldsHolder.java:92)
+	at org.anjocaido.groupmanager.GroupManager.onEnable(GroupManager.java:171)
+	at org.anjocaido.groupmanager.GroupManager.onCommand(GroupManager.java:1872)
+	at org.bukkit.command.PluginCommand.execute(PluginCommand.java:44)
+	at org.bukkit.command.SimpleCommandMap.dispatch(SimpleCommandMap.java:175)
+	at org.bukkit.craftbukkit.v1_7_R1.CraftServer.dispatchCommand(CraftServer.java:704)
+	at org.bukkit.craftbukkit.v1_7_R1.CraftServer.dispatchServerCommand(CraftServer.java:691)
+	at net.minecraft.server.v1_7_R1.DedicatedServer.aw(DedicatedServer.java:309)
+	at net.minecraft.server.v1_7_R1.DedicatedServer.u(DedicatedServer.java:274)
+	at net.minecraft.server.v1_7_R1.MinecraftServer.t(MinecraftServer.java:562)
+	at net.minecraft.server.v1_7_R1.MinecraftServer.run(MinecraftServer.java:469)
+	at net.minecraft.server.v1_7_R1.ThreadServerApplication.run(SourceFile:617)
+Caused by: while scanning an anchor
+ in 'reader', line 1106, column 19:
+          suffix: &f [&4Mr.Redstone&7&f]
+                      ^
+expected alphabetic or numeric character, but found .(46)
+ in 'reader', line 1106, column 23:
+          suffix: &f [&4Mr.Redstone&7&f]
+                          ^
+
+	at org.yaml.snakeyaml.scanner.ScannerImpl.scanAnchor(ScannerImpl.java:1446)
+	at org.yaml.snakeyaml.scanner.ScannerImpl.fetchAnchor(ScannerImpl.java:939)
+	at org.yaml.snakeyaml.scanner.ScannerImpl.fetchMoreTokens(ScannerImpl.java:370)
+	at org.yaml.snakeyaml.scanner.ScannerImpl.checkToken(ScannerImpl.java:226)
+	at org.yaml.snakeyaml.parser.ParserImpl$ParseFlowSequenceEntry.produce(ParserImpl.java:629)
+	at org.yaml.snakeyaml.parser.ParserImpl$ParseFlowSequenceFirstEntry.produce(ParserImpl.java:617)
+	at org.yaml.snakeyaml.parser.ParserImpl.peekEvent(ParserImpl.java:158)
+	at org.yaml.snakeyaml.parser.ParserImpl.checkEvent(ParserImpl.java:143)
+	at org.yaml.snakeyaml.composer.Composer.composeSequenceNode(Composer.java:203)
+	at org.yaml.snakeyaml.composer.Composer.composeNode(Composer.java:157)
+	at org.yaml.snakeyaml.composer.Composer.composeMappingNode(Composer.java:237)
+	at org.yaml.snakeyaml.composer.Composer.composeNode(Composer.java:159)
+	at org.yaml.snakeyaml.composer.Composer.composeMappingNode(Composer.java:237)
+	at org.yaml.snakeyaml.composer.Composer.composeNode(Composer.java:159)
+	at org.yaml.snakeyaml.composer.Composer.composeMappingNode(Composer.java:237)
+	at org.yaml.snakeyaml.composer.Composer.composeNode(Composer.java:159)
+	at org.yaml.snakeyaml.composer.Composer.composeMappingNode(Composer.java:237)
+	at org.yaml.snakeyaml.composer.Composer.composeNode(Composer.java:159)
+	at org.yaml.snakeyaml.composer.Composer.composeDocument(Composer.java:122)
+	at org.yaml.snakeyaml.composer.Composer.getSingleNode(Composer.java:105)
+	at org.yaml.snakeyaml.constructor.BaseConstructor.getSingleData(BaseConstructor.java:120)
+	at org.yaml.snakeyaml.Yaml.loadFromReader(Yaml.java:481)
+	at org.yaml.snakeyaml.Yaml.load(Yaml.java:424)
+	at org.anjocaido.groupmanager.dataholder.WorldDataHolder.loadUsers(WorldDataHolder.java:753)
+	... 17 more
+
+============================================================================
+
+2014-03-10 21-42
+=============================== GM ERROR LOG ===============================
+= ERROR REPORT START - 2.0 (2.12.1) (Phoenix) =
+
+java.lang.IllegalArgumentException: The following file couldn't pass on Parser.
+plugins/GroupManager/worlds/metaverse/users.yml
+	at org.anjocaido.groupmanager.dataholder.WorldDataHolder.loadUsers(WorldDataHolder.java:758)
+	at org.anjocaido.groupmanager.dataholder.WorldDataHolder.loadUsers(WorldDataHolder.java:433)
+	at org.anjocaido.groupmanager.dataholder.worlds.WorldsHolder.loadWorld(WorldsHolder.java:684)
+	at org.anjocaido.groupmanager.dataholder.worlds.WorldsHolder.loadWorld(WorldsHolder.java:640)
+	at org.anjocaido.groupmanager.dataholder.worlds.WorldsHolder.initialWorldLoading(WorldsHolder.java:110)
+	at org.anjocaido.groupmanager.dataholder.worlds.WorldsHolder.initialLoad(WorldsHolder.java:100)
+	at org.anjocaido.groupmanager.dataholder.worlds.WorldsHolder.resetWorldsHolder(WorldsHolder.java:92)
+	at org.anjocaido.groupmanager.dataholder.worlds.WorldsHolder.<init>(WorldsHolder.java:59)
+	at org.anjocaido.groupmanager.GroupManager.onEnable(GroupManager.java:169)
+	at org.anjocaido.groupmanager.GroupManager.onEnable(GroupManager.java:93)
+	at org.bukkit.plugin.java.JavaPlugin.setEnabled(JavaPlugin.java:250)
+	at org.bukkit.plugin.java.JavaPluginLoader.enablePlugin(JavaPluginLoader.java:350)
+	at org.bukkit.plugin.SimplePluginManager.enablePlugin(SimplePluginManager.java:390)
+	at org.bukkit.craftbukkit.v1_7_R1.CraftServer.loadPlugin(CraftServer.java:460)
+	at org.bukkit.craftbukkit.v1_7_R1.CraftServer.enablePlugins(CraftServer.java:380)
+	at net.minecraft.server.v1_7_R1.MinecraftServer.m(MinecraftServer.java:348)
+	at net.minecraft.server.v1_7_R1.MinecraftServer.g(MinecraftServer.java:325)
+	at net.minecraft.server.v1_7_R1.MinecraftServer.a(MinecraftServer.java:281)
+	at net.minecraft.server.v1_7_R1.DedicatedServer.init(DedicatedServer.java:186)
+	at net.minecraft.server.v1_7_R1.MinecraftServer.run(MinecraftServer.java:437)
+	at net.minecraft.server.v1_7_R1.ThreadServerApplication.run(SourceFile:617)
+Caused by: while scanning an anchor
+ in 'reader', line 1106, column 19:
+          suffix: &f [&4Mr.Redstone&7&f]
+                      ^
+expected alphabetic or numeric character, but found .(46)
+ in 'reader', line 1106, column 23:
+          suffix: &f [&4Mr.Redstone&7&f]
+                          ^
+
+	at org.yaml.snakeyaml.scanner.ScannerImpl.scanAnchor(ScannerImpl.java:1446)
+	at org.yaml.snakeyaml.scanner.ScannerImpl.fetchAnchor(ScannerImpl.java:939)
+	at org.yaml.snakeyaml.scanner.ScannerImpl.fetchMoreTokens(ScannerImpl.java:370)
+	at org.yaml.snakeyaml.scanner.ScannerImpl.checkToken(ScannerImpl.java:226)
+	at org.yaml.snakeyaml.parser.ParserImpl$ParseFlowSequenceEntry.produce(ParserImpl.java:629)
+	at org.yaml.snakeyaml.parser.ParserImpl$ParseFlowSequenceFirstEntry.produce(ParserImpl.java:617)
+	at org.yaml.snakeyaml.parser.ParserImpl.peekEvent(ParserImpl.java:158)
+	at org.yaml.snakeyaml.parser.ParserImpl.checkEvent(ParserImpl.java:143)
+	at org.yaml.snakeyaml.composer.Composer.composeSequenceNode(Composer.java:203)
+	at org.yaml.snakeyaml.composer.Composer.composeNode(Composer.java:157)
+	at org.yaml.snakeyaml.composer.Composer.composeMappingNode(Composer.java:237)
+	at org.yaml.snakeyaml.composer.Composer.composeNode(Composer.java:159)
+	at org.yaml.snakeyaml.composer.Composer.composeMappingNode(Composer.java:237)
+	at org.yaml.snakeyaml.composer.Composer.composeNode(Composer.java:159)
+	at org.yaml.snakeyaml.composer.Composer.composeMappingNode(Composer.java:237)
+	at org.yaml.snakeyaml.composer.Composer.composeNode(Composer.java:159)
+	at org.yaml.snakeyaml.composer.Composer.composeMappingNode(Composer.java:237)
+	at org.yaml.snakeyaml.composer.Composer.composeNode(Composer.java:159)
+	at org.yaml.snakeyaml.composer.Composer.composeDocument(Composer.java:122)
+	at org.yaml.snakeyaml.composer.Composer.getSingleNode(Composer.java:105)
+	at org.yaml.snakeyaml.constructor.BaseConstructor.getSingleData(BaseConstructor.java:120)
+	at org.yaml.snakeyaml.Yaml.loadFromReader(Yaml.java:481)
+	at org.yaml.snakeyaml.Yaml.load(Yaml.java:424)
+	at org.anjocaido.groupmanager.dataholder.WorldDataHolder.loadUsers(WorldDataHolder.java:753)
+	... 20 more
+
+============================================================================
+
+2014-07-31 21-24
+=============================== GM ERROR LOG ===============================
+= ERROR REPORT START - 2.1.20 (Phoenix) =
+
+java.lang.IllegalArgumentException: The following file couldn't pass on Parser.
+plugins/GroupManager/worlds/metaverse/groups.yml
+	at org.anjocaido.groupmanager.dataholder.WorldDataHolder.loadGroups(WorldDataHolder.java:577)
+	at org.anjocaido.groupmanager.dataholder.WorldDataHolder.loadGroups(WorldDataHolder.java:497)
+	at org.anjocaido.groupmanager.dataholder.worlds.WorldsHolder.loadWorld(WorldsHolder.java:678)
+	at org.anjocaido.groupmanager.dataholder.worlds.WorldsHolder.loadWorld(WorldsHolder.java:640)
+	at org.anjocaido.groupmanager.dataholder.worlds.WorldsHolder.initialWorldLoading(WorldsHolder.java:110)
+	at org.anjocaido.groupmanager.dataholder.worlds.WorldsHolder.initialLoad(WorldsHolder.java:100)
+	at org.anjocaido.groupmanager.dataholder.worlds.WorldsHolder.resetWorldsHolder(WorldsHolder.java:92)
+	at org.anjocaido.groupmanager.GroupManager.onEnable(GroupManager.java:181)
+	at org.anjocaido.groupmanager.GroupManager.onCommand(GroupManager.java:1827)
+	at org.bukkit.command.PluginCommand.execute(PluginCommand.java:44)
+	at org.bukkit.command.SimpleCommandMap.dispatch(SimpleCommandMap.java:181)
+	at org.bukkit.craftbukkit.v1_7_R4.CraftServer.dispatchCommand(CraftServer.java:767)
+	at net.minecraft.server.v1_7_R4.PlayerConnection.handleCommand(PlayerConnection.java:1016)
+	at net.minecraft.server.v1_7_R4.PlayerConnection.a(PlayerConnection.java:846)
+	at net.minecraft.server.v1_7_R4.PacketPlayInChat.a(PacketPlayInChat.java:28)
+	at net.minecraft.server.v1_7_R4.PacketPlayInChat.handle(PacketPlayInChat.java:65)
+	at net.minecraft.server.v1_7_R4.NetworkManager.a(NetworkManager.java:184)
+	at net.minecraft.server.v1_7_R4.ServerConnection.c(ServerConnection.java:81)
+	at net.minecraft.server.v1_7_R4.MinecraftServer.v(MinecraftServer.java:731)
+	at net.minecraft.server.v1_7_R4.DedicatedServer.v(DedicatedServer.java:289)
+	at net.minecraft.server.v1_7_R4.MinecraftServer.u(MinecraftServer.java:584)
+	at net.minecraft.server.v1_7_R4.MinecraftServer.run(MinecraftServer.java:490)
+	at net.minecraft.server.v1_7_R4.ThreadServerApplication.run(SourceFile:628)
+Caused by: while scanning a simple key
+ in 'reader', line 516, column 3:
+      Super Legend
+      ^
+could not found expected ':'
+ in 'reader', line 517, column 12:
+        default: false
+               ^
+
+	at org.yaml.snakeyaml.scanner.ScannerImpl.stalePossibleSimpleKeys(ScannerImpl.java:465)
+	at org.yaml.snakeyaml.scanner.ScannerImpl.needMoreTokens(ScannerImpl.java:280)
+	at org.yaml.snakeyaml.scanner.ScannerImpl.checkToken(ScannerImpl.java:225)
+	at org.yaml.snakeyaml.parser.ParserImpl$ParseBlockMappingKey.produce(ParserImpl.java:558)
+	at org.yaml.snakeyaml.parser.ParserImpl.peekEvent(ParserImpl.java:158)
+	at org.yaml.snakeyaml.parser.ParserImpl.checkEvent(ParserImpl.java:143)
+	at org.yaml.snakeyaml.composer.Composer.composeMappingNode(Composer.java:230)
+	at org.yaml.snakeyaml.composer.Composer.composeNode(Composer.java:159)
+	at org.yaml.snakeyaml.composer.Composer.composeMappingNode(Composer.java:237)
+	at org.yaml.snakeyaml.composer.Composer.composeNode(Composer.java:159)
+	at org.yaml.snakeyaml.composer.Composer.composeMappingNode(Composer.java:237)
+	at org.yaml.snakeyaml.composer.Composer.composeNode(Composer.java:159)
+	at org.yaml.snakeyaml.composer.Composer.composeMappingNode(Composer.java:237)
+	at org.yaml.snakeyaml.composer.Composer.composeNode(Composer.java:159)
+	at org.yaml.snakeyaml.composer.Composer.composeDocument(Composer.java:122)
+	at org.yaml.snakeyaml.composer.Composer.getSingleNode(Composer.java:105)
+	at org.yaml.snakeyaml.constructor.BaseConstructor.getSingleData(BaseConstructor.java:120)
+	at org.yaml.snakeyaml.Yaml.loadFromReader(Yaml.java:481)
+	at org.yaml.snakeyaml.Yaml.load(Yaml.java:424)
+	at org.anjocaido.groupmanager.dataholder.WorldDataHolder.loadGroups(WorldDataHolder.java:572)
+	... 22 more
+
+============================================================================
+
+2014-11-03 11-46
+=============================== GM ERROR LOG ===============================
+= ERROR REPORT START - 2.1.20 (Phoenix) =
+
+java.lang.IllegalArgumentException: The following file couldn't pass on Parser.
+plugins/GroupManager/worlds/schematics/users.yml
+	at org.anjocaido.groupmanager.dataholder.WorldDataHolder.loadUsers(WorldDataHolder.java:839)
+	at org.anjocaido.groupmanager.dataholder.WorldDataHolder.loadUsers(WorldDataHolder.java:514)
+	at org.anjocaido.groupmanager.dataholder.worlds.WorldsHolder.loadWorld(WorldsHolder.java:684)
+	at org.anjocaido.groupmanager.dataholder.worlds.WorldsHolder.loadWorld(WorldsHolder.java:640)
+	at org.anjocaido.groupmanager.dataholder.worlds.WorldsHolder.loadAllSearchedWorlds(WorldsHolder.java:160)
+	at org.anjocaido.groupmanager.dataholder.worlds.WorldsHolder.initialLoad(WorldsHolder.java:104)
+	at org.anjocaido.groupmanager.dataholder.worlds.WorldsHolder.resetWorldsHolder(WorldsHolder.java:92)
+	at org.anjocaido.groupmanager.dataholder.worlds.WorldsHolder.<init>(WorldsHolder.java:59)
+	at org.anjocaido.groupmanager.GroupManager.onEnable(GroupManager.java:179)
+	at org.anjocaido.groupmanager.GroupManager.onEnable(GroupManager.java:103)
+	at org.bukkit.plugin.java.JavaPlugin.setEnabled(JavaPlugin.java:316)
+	at org.bukkit.plugin.java.JavaPluginLoader.enablePlugin(JavaPluginLoader.java:332)
+	at org.bukkit.plugin.SimplePluginManager.enablePlugin(SimplePluginManager.java:417)
+	at org.bukkit.craftbukkit.v1_7_R4.CraftServer.loadPlugin(CraftServer.java:476)
+	at org.bukkit.craftbukkit.v1_7_R4.CraftServer.enablePlugins(CraftServer.java:394)
+	at net.minecraft.server.v1_7_R4.MinecraftServer.n(MinecraftServer.java:360)
+	at net.minecraft.server.v1_7_R4.MinecraftServer.g(MinecraftServer.java:334)
+	at net.minecraft.server.v1_7_R4.MinecraftServer.a(MinecraftServer.java:290)
+	at net.minecraft.server.v1_7_R4.DedicatedServer.init(DedicatedServer.java:210)
+	at net.minecraft.server.v1_7_R4.MinecraftServer.run(MinecraftServer.java:458)
+	at net.minecraft.server.v1_7_R4.ThreadServerApplication.run(SourceFile:628)
+Caused by: java.lang.NullPointerException
+	at org.anjocaido.groupmanager.dataholder.WorldDataHolder.loadUsers(WorldDataHolder.java:836)
+	... 20 more
+
+============================================================================
+
+2015-01-27 17-03
+=============================== GM ERROR LOG ===============================
+= ERROR REPORT START - 2.1.20 (Phoenix) =
+
+java.lang.IllegalArgumentException: The following file couldn't pass on Parser.
+plugins/GroupManager/worlds/newmeta/groups.yml
+	at org.anjocaido.groupmanager.dataholder.WorldDataHolder.loadGroups(WorldDataHolder.java:577)
+	at org.anjocaido.groupmanager.dataholder.WorldDataHolder.loadGroups(WorldDataHolder.java:497)
+	at org.anjocaido.groupmanager.dataholder.worlds.WorldsHolder.loadWorld(WorldsHolder.java:678)
+	at org.anjocaido.groupmanager.dataholder.worlds.WorldsHolder.loadWorld(WorldsHolder.java:640)
+	at org.anjocaido.groupmanager.dataholder.worlds.WorldsHolder.loadAllSearchedWorlds(WorldsHolder.java:160)
+	at org.anjocaido.groupmanager.dataholder.worlds.WorldsHolder.initialLoad(WorldsHolder.java:104)
+	at org.anjocaido.groupmanager.dataholder.worlds.WorldsHolder.resetWorldsHolder(WorldsHolder.java:92)
+	at org.anjocaido.groupmanager.GroupManager.onEnable(GroupManager.java:181)
+	at org.anjocaido.groupmanager.GroupManager.onCommand(GroupManager.java:1827)
+	at org.bukkit.command.PluginCommand.execute(PluginCommand.java:44)
+	at org.bukkit.command.SimpleCommandMap.dispatch(SimpleCommandMap.java:141)
+	at org.bukkit.craftbukkit.v1_8_R1.CraftServer.dispatchCommand(CraftServer.java:645)
+	at net.minecraft.server.v1_8_R1.PlayerConnection.handleCommand(PlayerConnection.java:1115)
+	at net.minecraft.server.v1_8_R1.PlayerConnection.a(PlayerConnection.java:950)
+	at net.minecraft.server.v1_8_R1.PacketPlayInChat.a(PacketPlayInChat.java:26)
+	at net.minecraft.server.v1_8_R1.PacketPlayInChat.a(PacketPlayInChat.java:53)
+	at net.minecraft.server.v1_8_R1.PacketHandleTask.run(SourceFile:13)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:471)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:262)
+	at net.minecraft.server.v1_8_R1.MinecraftServer.z(MinecraftServer.java:683)
+	at net.minecraft.server.v1_8_R1.DedicatedServer.z(DedicatedServer.java:316)
+	at net.minecraft.server.v1_8_R1.MinecraftServer.y(MinecraftServer.java:623)
+	at net.minecraft.server.v1_8_R1.MinecraftServer.run(MinecraftServer.java:526)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: while scanning for the next token
+found character 	 '\t(TAB)' that cannot start any token. (Do not use \t(TAB) for indentation)
+ in 'reader', line 16, column 1:
+    	- -essentials.sethome
+    ^
+
+	at org.yaml.snakeyaml.scanner.ScannerImpl.fetchMoreTokens(ScannerImpl.java:420)
+	at org.yaml.snakeyaml.scanner.ScannerImpl.checkToken(ScannerImpl.java:226)
+	at org.yaml.snakeyaml.parser.ParserImpl$ParseIndentlessSequenceEntry.produce(ParserImpl.java:530)
+	at org.yaml.snakeyaml.parser.ParserImpl.peekEvent(ParserImpl.java:158)
+	at org.yaml.snakeyaml.parser.ParserImpl.checkEvent(ParserImpl.java:143)
+	at org.yaml.snakeyaml.composer.Composer.composeSequenceNode(Composer.java:203)
+	at org.yaml.snakeyaml.composer.Composer.composeNode(Composer.java:157)
+	at org.yaml.snakeyaml.composer.Composer.composeMappingNode(Composer.java:237)
+	at org.yaml.snakeyaml.composer.Composer.composeNode(Composer.java:159)
+	at org.yaml.snakeyaml.composer.Composer.composeMappingNode(Composer.java:237)
+	at org.yaml.snakeyaml.composer.Composer.composeNode(Composer.java:159)
+	at org.yaml.snakeyaml.composer.Composer.composeMappingNode(Composer.java:237)
+	at org.yaml.snakeyaml.composer.Composer.composeNode(Composer.java:159)
+	at org.yaml.snakeyaml.composer.Composer.composeDocument(Composer.java:122)
+	at org.yaml.snakeyaml.composer.Composer.getSingleNode(Composer.java:105)
+	at org.yaml.snakeyaml.constructor.BaseConstructor.getSingleData(BaseConstructor.java:120)
+	at org.yaml.snakeyaml.Yaml.loadFromReader(Yaml.java:481)
+	at org.yaml.snakeyaml.Yaml.load(Yaml.java:424)
+	at org.anjocaido.groupmanager.dataholder.WorldDataHolder.loadGroups(WorldDataHolder.java:572)
+	... 23 more
+
+============================================================================
+
+2015-01-28 00-04
+=============================== GM ERROR LOG ===============================
+= ERROR REPORT START - 2.1.20 (Phoenix) =
+
+java.lang.IllegalArgumentException: The following file couldn't pass on Parser.
+plugins/GroupManager/worlds/newmeta/groups.yml
+	at org.anjocaido.groupmanager.dataholder.WorldDataHolder.loadGroups(WorldDataHolder.java:577)
+	at org.anjocaido.groupmanager.dataholder.WorldDataHolder.loadGroups(WorldDataHolder.java:497)
+	at org.anjocaido.groupmanager.dataholder.worlds.WorldsHolder.loadWorld(WorldsHolder.java:678)
+	at org.anjocaido.groupmanager.dataholder.worlds.WorldsHolder.loadWorld(WorldsHolder.java:640)
+	at org.anjocaido.groupmanager.dataholder.worlds.WorldsHolder.loadAllSearchedWorlds(WorldsHolder.java:160)
+	at org.anjocaido.groupmanager.dataholder.worlds.WorldsHolder.initialLoad(WorldsHolder.java:104)
+	at org.anjocaido.groupmanager.dataholder.worlds.WorldsHolder.resetWorldsHolder(WorldsHolder.java:92)
+	at org.anjocaido.groupmanager.dataholder.worlds.WorldsHolder.<init>(WorldsHolder.java:59)
+	at org.anjocaido.groupmanager.GroupManager.onEnable(GroupManager.java:179)
+	at org.anjocaido.groupmanager.GroupManager.onEnable(GroupManager.java:103)
+	at org.bukkit.plugin.java.JavaPlugin.setEnabled(JavaPlugin.java:321)
+	at org.bukkit.plugin.java.JavaPluginLoader.enablePlugin(JavaPluginLoader.java:335)
+	at org.bukkit.plugin.SimplePluginManager.enablePlugin(SimplePluginManager.java:405)
+	at org.bukkit.craftbukkit.v1_8_R1.CraftServer.loadPlugin(CraftServer.java:355)
+	at org.bukkit.craftbukkit.v1_8_R1.CraftServer.enablePlugins(CraftServer.java:315)
+	at net.minecraft.server.v1_8_R1.MinecraftServer.q(MinecraftServer.java:402)
+	at net.minecraft.server.v1_8_R1.MinecraftServer.k(MinecraftServer.java:370)
+	at net.minecraft.server.v1_8_R1.MinecraftServer.a(MinecraftServer.java:325)
+	at net.minecraft.server.v1_8_R1.DedicatedServer.init(DedicatedServer.java:211)
+	at net.minecraft.server.v1_8_R1.MinecraftServer.run(MinecraftServer.java:494)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: while scanning for the next token
+found character 	 '\t(TAB)' that cannot start any token. (Do not use \t(TAB) for indentation)
+ in 'reader', line 16, column 1:
+    	- -essentials.sethome
+    ^
+
+	at org.yaml.snakeyaml.scanner.ScannerImpl.fetchMoreTokens(ScannerImpl.java:420)
+	at org.yaml.snakeyaml.scanner.ScannerImpl.checkToken(ScannerImpl.java:226)
+	at org.yaml.snakeyaml.parser.ParserImpl$ParseIndentlessSequenceEntry.produce(ParserImpl.java:530)
+	at org.yaml.snakeyaml.parser.ParserImpl.peekEvent(ParserImpl.java:158)
+	at org.yaml.snakeyaml.parser.ParserImpl.checkEvent(ParserImpl.java:143)
+	at org.yaml.snakeyaml.composer.Composer.composeSequenceNode(Composer.java:203)
+	at org.yaml.snakeyaml.composer.Composer.composeNode(Composer.java:157)
+	at org.yaml.snakeyaml.composer.Composer.composeMappingNode(Composer.java:237)
+	at org.yaml.snakeyaml.composer.Composer.composeNode(Composer.java:159)
+	at org.yaml.snakeyaml.composer.Composer.composeMappingNode(Composer.java:237)
+	at org.yaml.snakeyaml.composer.Composer.composeNode(Composer.java:159)
+	at org.yaml.snakeyaml.composer.Composer.composeMappingNode(Composer.java:237)
+	at org.yaml.snakeyaml.composer.Composer.composeNode(Composer.java:159)
+	at org.yaml.snakeyaml.composer.Composer.composeDocument(Composer.java:122)
+	at org.yaml.snakeyaml.composer.Composer.getSingleNode(Composer.java:105)
+	at org.yaml.snakeyaml.constructor.BaseConstructor.getSingleData(BaseConstructor.java:120)
+	at org.yaml.snakeyaml.Yaml.loadFromReader(Yaml.java:481)
+	at org.yaml.snakeyaml.Yaml.load(Yaml.java:424)
+	at org.anjocaido.groupmanager.dataholder.WorldDataHolder.loadGroups(WorldDataHolder.java:572)
+	... 20 more
+
+============================================================================
+
+2015-01-28 02-02
+=============================== GM ERROR LOG ===============================
+= ERROR REPORT START - 2.1.20 (Phoenix) =
+
+java.lang.IllegalArgumentException: The following file couldn't pass on Parser.
+plugins/GroupManager/worlds/newmeta/groups.yml
+	at org.anjocaido.groupmanager.dataholder.WorldDataHolder.loadGroups(WorldDataHolder.java:577)
+	at org.anjocaido.groupmanager.dataholder.WorldDataHolder.loadGroups(WorldDataHolder.java:497)
+	at org.anjocaido.groupmanager.dataholder.worlds.WorldsHolder.loadWorld(WorldsHolder.java:678)
+	at org.anjocaido.groupmanager.dataholder.worlds.WorldsHolder.loadWorld(WorldsHolder.java:640)
+	at org.anjocaido.groupmanager.dataholder.worlds.WorldsHolder.loadAllSearchedWorlds(WorldsHolder.java:160)
+	at org.anjocaido.groupmanager.dataholder.worlds.WorldsHolder.initialLoad(WorldsHolder.java:104)
+	at org.anjocaido.groupmanager.dataholder.worlds.WorldsHolder.resetWorldsHolder(WorldsHolder.java:92)
+	at org.anjocaido.groupmanager.dataholder.worlds.WorldsHolder.<init>(WorldsHolder.java:59)
+	at org.anjocaido.groupmanager.GroupManager.onEnable(GroupManager.java:179)
+	at org.anjocaido.groupmanager.GroupManager.onEnable(GroupManager.java:103)
+	at org.bukkit.plugin.java.JavaPlugin.setEnabled(JavaPlugin.java:321)
+	at org.bukkit.plugin.java.JavaPluginLoader.enablePlugin(JavaPluginLoader.java:335)
+	at org.bukkit.plugin.SimplePluginManager.enablePlugin(SimplePluginManager.java:405)
+	at org.bukkit.craftbukkit.v1_8_R1.CraftServer.loadPlugin(CraftServer.java:355)
+	at org.bukkit.craftbukkit.v1_8_R1.CraftServer.enablePlugins(CraftServer.java:315)
+	at net.minecraft.server.v1_8_R1.MinecraftServer.q(MinecraftServer.java:402)
+	at net.minecraft.server.v1_8_R1.MinecraftServer.k(MinecraftServer.java:370)
+	at net.minecraft.server.v1_8_R1.MinecraftServer.a(MinecraftServer.java:325)
+	at net.minecraft.server.v1_8_R1.DedicatedServer.init(DedicatedServer.java:211)
+	at net.minecraft.server.v1_8_R1.MinecraftServer.run(MinecraftServer.java:494)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: while scanning for the next token
+found character 	 '\t(TAB)' that cannot start any token. (Do not use \t(TAB) for indentation)
+ in 'reader', line 16, column 1:
+    	- -essentials.sethome
+    ^
+
+	at org.yaml.snakeyaml.scanner.ScannerImpl.fetchMoreTokens(ScannerImpl.java:420)
+	at org.yaml.snakeyaml.scanner.ScannerImpl.checkToken(ScannerImpl.java:226)
+	at org.yaml.snakeyaml.parser.ParserImpl$ParseIndentlessSequenceEntry.produce(ParserImpl.java:530)
+	at org.yaml.snakeyaml.parser.ParserImpl.peekEvent(ParserImpl.java:158)
+	at org.yaml.snakeyaml.parser.ParserImpl.checkEvent(ParserImpl.java:143)
+	at org.yaml.snakeyaml.composer.Composer.composeSequenceNode(Composer.java:203)
+	at org.yaml.snakeyaml.composer.Composer.composeNode(Composer.java:157)
+	at org.yaml.snakeyaml.composer.Composer.composeMappingNode(Composer.java:237)
+	at org.yaml.snakeyaml.composer.Composer.composeNode(Composer.java:159)
+	at org.yaml.snakeyaml.composer.Composer.composeMappingNode(Composer.java:237)
+	at org.yaml.snakeyaml.composer.Composer.composeNode(Composer.java:159)
+	at org.yaml.snakeyaml.composer.Composer.composeMappingNode(Composer.java:237)
+	at org.yaml.snakeyaml.composer.Composer.composeNode(Composer.java:159)
+	at org.yaml.snakeyaml.composer.Composer.composeDocument(Composer.java:122)
+	at org.yaml.snakeyaml.composer.Composer.getSingleNode(Composer.java:105)
+	at org.yaml.snakeyaml.constructor.BaseConstructor.getSingleData(BaseConstructor.java:120)
+	at org.yaml.snakeyaml.Yaml.loadFromReader(Yaml.java:481)
+	at org.yaml.snakeyaml.Yaml.load(Yaml.java:424)
+	at org.anjocaido.groupmanager.dataholder.WorldDataHolder.loadGroups(WorldDataHolder.java:572)
+	... 20 more
+
+============================================================================
+
+2015-02-01 13-08
+=============================== GM ERROR LOG ===============================
+= ERROR REPORT START - 2.1.20 (Phoenix) =
+
+java.lang.IllegalArgumentException: The following file couldn't pass on Parser.
+plugins/GroupManager/worlds/newspawn/groups.yml
+	at org.anjocaido.groupmanager.dataholder.WorldDataHolder.loadGroups(WorldDataHolder.java:577)
+	at org.anjocaido.groupmanager.dataholder.WorldDataHolder.loadGroups(WorldDataHolder.java:497)
+	at org.anjocaido.groupmanager.dataholder.worlds.WorldsHolder.loadWorld(WorldsHolder.java:678)
+	at org.anjocaido.groupmanager.dataholder.worlds.WorldsHolder.loadWorld(WorldsHolder.java:640)
+	at org.anjocaido.groupmanager.dataholder.worlds.WorldsHolder.loadAllSearchedWorlds(WorldsHolder.java:160)
+	at org.anjocaido.groupmanager.dataholder.worlds.WorldsHolder.initialLoad(WorldsHolder.java:104)
+	at org.anjocaido.groupmanager.dataholder.worlds.WorldsHolder.resetWorldsHolder(WorldsHolder.java:92)
+	at org.anjocaido.groupmanager.GroupManager.onEnable(GroupManager.java:181)
+	at org.anjocaido.groupmanager.GroupManager.onCommand(GroupManager.java:1827)
+	at org.bukkit.command.PluginCommand.execute(PluginCommand.java:44)
+	at org.bukkit.command.SimpleCommandMap.dispatch(SimpleCommandMap.java:141)
+	at org.bukkit.craftbukkit.v1_8_R1.CraftServer.dispatchCommand(CraftServer.java:645)
+	at net.minecraft.server.v1_8_R1.PlayerConnection.handleCommand(PlayerConnection.java:1115)
+	at net.minecraft.server.v1_8_R1.PlayerConnection.a(PlayerConnection.java:950)
+	at net.minecraft.server.v1_8_R1.PacketPlayInChat.a(PacketPlayInChat.java:26)
+	at net.minecraft.server.v1_8_R1.PacketPlayInChat.a(PacketPlayInChat.java:53)
+	at net.minecraft.server.v1_8_R1.PacketHandleTask.run(SourceFile:13)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:471)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:262)
+	at net.minecraft.server.v1_8_R1.MinecraftServer.z(MinecraftServer.java:683)
+	at net.minecraft.server.v1_8_R1.DedicatedServer.z(DedicatedServer.java:316)
+	at net.minecraft.server.v1_8_R1.MinecraftServer.y(MinecraftServer.java:623)
+	at net.minecraft.server.v1_8_R1.MinecraftServer.run(MinecraftServer.java:526)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: while scanning a simple key
+ in 'reader', line 154, column 5:
+        info:v
+        ^
+could not found expected ':'
+ in 'reader', line 155, column 13:
+          prefix: '&r&f[&cRegul
+                ^
+
+	at org.yaml.snakeyaml.scanner.ScannerImpl.stalePossibleSimpleKeys(ScannerImpl.java:465)
+	at org.yaml.snakeyaml.scanner.ScannerImpl.needMoreTokens(ScannerImpl.java:280)
+	at org.yaml.snakeyaml.scanner.ScannerImpl.checkToken(ScannerImpl.java:225)
+	at org.yaml.snakeyaml.parser.ParserImpl$ParseIndentlessSequenceEntry.produce(ParserImpl.java:530)
+	at org.yaml.snakeyaml.parser.ParserImpl.peekEvent(ParserImpl.java:158)
+	at org.yaml.snakeyaml.parser.ParserImpl.checkEvent(ParserImpl.java:143)
+	at org.yaml.snakeyaml.composer.Composer.composeSequenceNode(Composer.java:199)
+	at org.yaml.snakeyaml.composer.Composer.composeNode(Composer.java:153)
+	at org.yaml.snakeyaml.composer.Composer.composeMappingNode(Composer.java:231)
+	at org.yaml.snakeyaml.composer.Composer.composeNode(Composer.java:155)
+	at org.yaml.snakeyaml.composer.Composer.composeMappingNode(Composer.java:231)
+	at org.yaml.snakeyaml.composer.Composer.composeNode(Composer.java:155)
+	at org.yaml.snakeyaml.composer.Composer.composeMappingNode(Composer.java:231)
+	at org.yaml.snakeyaml.composer.Composer.composeNode(Composer.java:155)
+	at org.yaml.snakeyaml.composer.Composer.composeDocument(Composer.java:122)
+	at org.yaml.snakeyaml.composer.Composer.getSingleNode(Composer.java:105)
+	at org.yaml.snakeyaml.constructor.BaseConstructor.getSingleData(BaseConstructor.java:120)
+	at org.yaml.snakeyaml.Yaml.loadFromReader(Yaml.java:481)
+	at org.yaml.snakeyaml.Yaml.load(Yaml.java:424)
+	at org.anjocaido.groupmanager.dataholder.WorldDataHolder.loadGroups(WorldDataHolder.java:572)
+	... 23 more
+
+============================================================================
+
+2015-02-01 13-08
+=============================== GM ERROR LOG ===============================
+= ERROR REPORT START - 2.1.20 (Phoenix) =
+
+java.lang.IllegalArgumentException: The following file couldn't pass on Parser.
+plugins/GroupManager/worlds/newspawn/groups.yml
+	at org.anjocaido.groupmanager.dataholder.WorldDataHolder.loadGroups(WorldDataHolder.java:577)
+	at org.anjocaido.groupmanager.dataholder.WorldDataHolder.loadGroups(WorldDataHolder.java:497)
+	at org.anjocaido.groupmanager.dataholder.worlds.WorldsHolder.loadWorld(WorldsHolder.java:678)
+	at org.anjocaido.groupmanager.dataholder.worlds.WorldsHolder.loadWorld(WorldsHolder.java:640)
+	at org.anjocaido.groupmanager.dataholder.worlds.WorldsHolder.loadAllSearchedWorlds(WorldsHolder.java:160)
+	at org.anjocaido.groupmanager.dataholder.worlds.WorldsHolder.initialLoad(WorldsHolder.java:104)
+	at org.anjocaido.groupmanager.dataholder.worlds.WorldsHolder.resetWorldsHolder(WorldsHolder.java:92)
+	at org.anjocaido.groupmanager.GroupManager.onEnable(GroupManager.java:181)
+	at org.anjocaido.groupmanager.GroupManager.onCommand(GroupManager.java:1827)
+	at org.bukkit.command.PluginCommand.execute(PluginCommand.java:44)
+	at org.bukkit.command.SimpleCommandMap.dispatch(SimpleCommandMap.java:141)
+	at org.bukkit.craftbukkit.v1_8_R1.CraftServer.dispatchCommand(CraftServer.java:645)
+	at net.minecraft.server.v1_8_R1.PlayerConnection.handleCommand(PlayerConnection.java:1115)
+	at net.minecraft.server.v1_8_R1.PlayerConnection.a(PlayerConnection.java:950)
+	at net.minecraft.server.v1_8_R1.PacketPlayInChat.a(PacketPlayInChat.java:26)
+	at net.minecraft.server.v1_8_R1.PacketPlayInChat.a(PacketPlayInChat.java:53)
+	at net.minecraft.server.v1_8_R1.PacketHandleTask.run(SourceFile:13)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:471)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:262)
+	at net.minecraft.server.v1_8_R1.MinecraftServer.z(MinecraftServer.java:683)
+	at net.minecraft.server.v1_8_R1.DedicatedServer.z(DedicatedServer.java:316)
+	at net.minecraft.server.v1_8_R1.MinecraftServer.y(MinecraftServer.java:623)
+	at net.minecraft.server.v1_8_R1.MinecraftServer.run(MinecraftServer.java:526)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: while scanning a simple key
+ in 'reader', line 154, column 5:
+        info:v
+        ^
+could not found expected ':'
+ in 'reader', line 155, column 13:
+          prefix: '&r&f[&cRegul
+                ^
+
+	at org.yaml.snakeyaml.scanner.ScannerImpl.stalePossibleSimpleKeys(ScannerImpl.java:465)
+	at org.yaml.snakeyaml.scanner.ScannerImpl.needMoreTokens(ScannerImpl.java:280)
+	at org.yaml.snakeyaml.scanner.ScannerImpl.checkToken(ScannerImpl.java:225)
+	at org.yaml.snakeyaml.parser.ParserImpl$ParseIndentlessSequenceEntry.produce(ParserImpl.java:530)
+	at org.yaml.snakeyaml.parser.ParserImpl.peekEvent(ParserImpl.java:158)
+	at org.yaml.snakeyaml.parser.ParserImpl.checkEvent(ParserImpl.java:143)
+	at org.yaml.snakeyaml.composer.Composer.composeSequenceNode(Composer.java:199)
+	at org.yaml.snakeyaml.composer.Composer.composeNode(Composer.java:153)
+	at org.yaml.snakeyaml.composer.Composer.composeMappingNode(Composer.java:231)
+	at org.yaml.snakeyaml.composer.Composer.composeNode(Composer.java:155)
+	at org.yaml.snakeyaml.composer.Composer.composeMappingNode(Composer.java:231)
+	at org.yaml.snakeyaml.composer.Composer.composeNode(Composer.java:155)
+	at org.yaml.snakeyaml.composer.Composer.composeMappingNode(Composer.java:231)
+	at org.yaml.snakeyaml.composer.Composer.composeNode(Composer.java:155)
+	at org.yaml.snakeyaml.composer.Composer.composeDocument(Composer.java:122)
+	at org.yaml.snakeyaml.composer.Composer.getSingleNode(Composer.java:105)
+	at org.yaml.snakeyaml.constructor.BaseConstructor.getSingleData(BaseConstructor.java:120)
+	at org.yaml.snakeyaml.Yaml.loadFromReader(Yaml.java:481)
+	at org.yaml.snakeyaml.Yaml.load(Yaml.java:424)
+	at org.anjocaido.groupmanager.dataholder.WorldDataHolder.loadGroups(WorldDataHolder.java:572)
+	... 23 more
+
+============================================================================
+
+2015-02-15 19-40
+=============================== GM ERROR LOG ===============================
+= ERROR REPORT START - 2.1.20 (Phoenix) =
+
+java.lang.IllegalArgumentException: The following file couldn't pass on Parser.
+plugins/GroupManager/worlds/metacurse/groups.yml
+	at org.anjocaido.groupmanager.dataholder.WorldDataHolder.loadGroups(WorldDataHolder.java:577)
+	at org.anjocaido.groupmanager.dataholder.WorldDataHolder.loadGroups(WorldDataHolder.java:497)
+	at org.anjocaido.groupmanager.dataholder.worlds.WorldsHolder.loadWorld(WorldsHolder.java:678)
+	at org.anjocaido.groupmanager.dataholder.worlds.WorldsHolder.loadWorld(WorldsHolder.java:640)
+	at org.anjocaido.groupmanager.dataholder.worlds.WorldsHolder.initialWorldLoading(WorldsHolder.java:110)
+	at org.anjocaido.groupmanager.dataholder.worlds.WorldsHolder.initialLoad(WorldsHolder.java:100)
+	at org.anjocaido.groupmanager.dataholder.worlds.WorldsHolder.resetWorldsHolder(WorldsHolder.java:92)
+	at org.anjocaido.groupmanager.dataholder.worlds.WorldsHolder.<init>(WorldsHolder.java:59)
+	at org.anjocaido.groupmanager.GroupManager.onEnable(GroupManager.java:179)
+	at org.anjocaido.groupmanager.GroupManager.onEnable(GroupManager.java:103)
+	at org.bukkit.plugin.java.JavaPlugin.setEnabled(JavaPlugin.java:321)
+	at org.bukkit.plugin.java.JavaPluginLoader.enablePlugin(JavaPluginLoader.java:335)
+	at org.bukkit.plugin.SimplePluginManager.enablePlugin(SimplePluginManager.java:405)
+	at org.bukkit.craftbukkit.v1_8_R1.CraftServer.loadPlugin(CraftServer.java:355)
+	at org.bukkit.craftbukkit.v1_8_R1.CraftServer.enablePlugins(CraftServer.java:315)
+	at net.minecraft.server.v1_8_R1.MinecraftServer.q(MinecraftServer.java:402)
+	at net.minecraft.server.v1_8_R1.MinecraftServer.k(MinecraftServer.java:370)
+	at net.minecraft.server.v1_8_R1.MinecraftServer.a(MinecraftServer.java:325)
+	at net.minecraft.server.v1_8_R1.DedicatedServer.init(DedicatedServer.java:211)
+	at net.minecraft.server.v1_8_R1.MinecraftServer.run(MinecraftServer.java:494)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: while scanning for the next token
+found character 	 '\t(TAB)' that cannot start any token. (Do not use \t(TAB) for indentation)
+ in 'reader', line 133, column 1:
+    	- essentials.sethome.multiple.r ... 
+    ^
+
+	at org.yaml.snakeyaml.scanner.ScannerImpl.fetchMoreTokens(ScannerImpl.java:420)
+	at org.yaml.snakeyaml.scanner.ScannerImpl.checkToken(ScannerImpl.java:226)
+	at org.yaml.snakeyaml.parser.ParserImpl$ParseIndentlessSequenceEntry.produce(ParserImpl.java:530)
+	at org.yaml.snakeyaml.parser.ParserImpl.peekEvent(ParserImpl.java:158)
+	at org.yaml.snakeyaml.parser.ParserImpl.checkEvent(ParserImpl.java:143)
+	at org.yaml.snakeyaml.composer.Composer.composeSequenceNode(Composer.java:199)
+	at org.yaml.snakeyaml.composer.Composer.composeNode(Composer.java:153)
+	at org.yaml.snakeyaml.composer.Composer.composeMappingNode(Composer.java:231)
+	at org.yaml.snakeyaml.composer.Composer.composeNode(Composer.java:155)
+	at org.yaml.snakeyaml.composer.Composer.composeMappingNode(Composer.java:231)
+	at org.yaml.snakeyaml.composer.Composer.composeNode(Composer.java:155)
+	at org.yaml.snakeyaml.composer.Composer.composeMappingNode(Composer.java:231)
+	at org.yaml.snakeyaml.composer.Composer.composeNode(Composer.java:155)
+	at org.yaml.snakeyaml.composer.Composer.composeDocument(Composer.java:122)
+	at org.yaml.snakeyaml.composer.Composer.getSingleNode(Composer.java:105)
+	at org.yaml.snakeyaml.constructor.BaseConstructor.getSingleData(BaseConstructor.java:120)
+	at org.yaml.snakeyaml.Yaml.loadFromReader(Yaml.java:481)
+	at org.yaml.snakeyaml.Yaml.load(Yaml.java:424)
+	at org.anjocaido.groupmanager.dataholder.WorldDataHolder.loadGroups(WorldDataHolder.java:572)
+	... 20 more
+
+============================================================================
+
+2015-02-16 12-11
+=============================== GM ERROR LOG ===============================
+= ERROR REPORT START - 2.1.20 (Phoenix) =
+
+java.lang.IllegalArgumentException: The following file couldn't pass on Parser.
+plugins/GroupManager/worlds/metacurse/groups.yml
+	at org.anjocaido.groupmanager.dataholder.WorldDataHolder.loadGroups(WorldDataHolder.java:577)
+	at org.anjocaido.groupmanager.dataholder.WorldDataHolder.loadGroups(WorldDataHolder.java:497)
+	at org.anjocaido.groupmanager.dataholder.worlds.WorldsHolder.loadWorld(WorldsHolder.java:678)
+	at org.anjocaido.groupmanager.dataholder.worlds.WorldsHolder.loadWorld(WorldsHolder.java:640)
+	at org.anjocaido.groupmanager.dataholder.worlds.WorldsHolder.initialWorldLoading(WorldsHolder.java:110)
+	at org.anjocaido.groupmanager.dataholder.worlds.WorldsHolder.initialLoad(WorldsHolder.java:100)
+	at org.anjocaido.groupmanager.dataholder.worlds.WorldsHolder.resetWorldsHolder(WorldsHolder.java:92)
+	at org.anjocaido.groupmanager.dataholder.worlds.WorldsHolder.<init>(WorldsHolder.java:59)
+	at org.anjocaido.groupmanager.GroupManager.onEnable(GroupManager.java:179)
+	at org.anjocaido.groupmanager.GroupManager.onEnable(GroupManager.java:103)
+	at org.bukkit.plugin.java.JavaPlugin.setEnabled(JavaPlugin.java:321)
+	at org.bukkit.plugin.java.JavaPluginLoader.enablePlugin(JavaPluginLoader.java:335)
+	at org.bukkit.plugin.SimplePluginManager.enablePlugin(SimplePluginManager.java:405)
+	at org.bukkit.craftbukkit.v1_8_R1.CraftServer.loadPlugin(CraftServer.java:355)
+	at org.bukkit.craftbukkit.v1_8_R1.CraftServer.enablePlugins(CraftServer.java:315)
+	at net.minecraft.server.v1_8_R1.MinecraftServer.q(MinecraftServer.java:402)
+	at net.minecraft.server.v1_8_R1.MinecraftServer.k(MinecraftServer.java:370)
+	at net.minecraft.server.v1_8_R1.MinecraftServer.a(MinecraftServer.java:325)
+	at net.minecraft.server.v1_8_R1.DedicatedServer.init(DedicatedServer.java:211)
+	at net.minecraft.server.v1_8_R1.MinecraftServer.run(MinecraftServer.java:494)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: while scanning for the next token
+found character 	 '\t(TAB)' that cannot start any token. (Do not use \t(TAB) for indentation)
+ in 'reader', line 133, column 1:
+    	- essentials.sethome.multiple.r ... 
+    ^
+
+	at org.yaml.snakeyaml.scanner.ScannerImpl.fetchMoreTokens(ScannerImpl.java:420)
+	at org.yaml.snakeyaml.scanner.ScannerImpl.checkToken(ScannerImpl.java:226)
+	at org.yaml.snakeyaml.parser.ParserImpl$ParseIndentlessSequenceEntry.produce(ParserImpl.java:530)
+	at org.yaml.snakeyaml.parser.ParserImpl.peekEvent(ParserImpl.java:158)
+	at org.yaml.snakeyaml.parser.ParserImpl.checkEvent(ParserImpl.java:143)
+	at org.yaml.snakeyaml.composer.Composer.composeSequenceNode(Composer.java:199)
+	at org.yaml.snakeyaml.composer.Composer.composeNode(Composer.java:153)
+	at org.yaml.snakeyaml.composer.Composer.composeMappingNode(Composer.java:231)
+	at org.yaml.snakeyaml.composer.Composer.composeNode(Composer.java:155)
+	at org.yaml.snakeyaml.composer.Composer.composeMappingNode(Composer.java:231)
+	at org.yaml.snakeyaml.composer.Composer.composeNode(Composer.java:155)
+	at org.yaml.snakeyaml.composer.Composer.composeMappingNode(Composer.java:231)
+	at org.yaml.snakeyaml.composer.Composer.composeNode(Composer.java:155)
+	at org.yaml.snakeyaml.composer.Composer.composeDocument(Composer.java:122)
+	at org.yaml.snakeyaml.composer.Composer.getSingleNode(Composer.java:105)
+	at org.yaml.snakeyaml.constructor.BaseConstructor.getSingleData(BaseConstructor.java:120)
+	at org.yaml.snakeyaml.Yaml.loadFromReader(Yaml.java:481)
+	at org.yaml.snakeyaml.Yaml.load(Yaml.java:424)
+	at org.anjocaido.groupmanager.dataholder.WorldDataHolder.loadGroups(WorldDataHolder.java:572)
+	... 20 more
+
+============================================================================
+

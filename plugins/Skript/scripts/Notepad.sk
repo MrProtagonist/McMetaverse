@@ -1,0 +1,32 @@
+command /note <text> [<text>]:
+	usage: /note <add/remove/list> <Text/Note Id>
+	trigger:
+		if arg 1 is "delete":
+			if {notes.%player%::%arg 2%} exists:
+				remove {notes.%player%::%arg 2%} from {notes.%player%::*}
+				message "&cRemoved note!"
+				stop
+			else:
+				message "&cCould not find that note!"
+				stop
+		if arg 1 is "add":
+			add arg 2 to {notes.%player%::*}
+			message "&aNote added!"
+			stop
+		if arg 1 is "list":
+			if arg 2 is set:
+				player has permission "essentials.socialspy"
+				message " "
+				message "&6&l%arg 2%'s Notes"
+				loop {notes.%arg 2%::*}:
+					message "&l%loop-index%. &a%loop-value%"
+				stop
+			else:
+				message " "
+				message "&6&lYOUR NOTES"
+				loop {notes.%player%::*}:
+					message "&l%loop-index%. &a%loop-value%"
+				stop
+		else:
+			message "&cError. Please use &a/note add/list/delete"
+			stop

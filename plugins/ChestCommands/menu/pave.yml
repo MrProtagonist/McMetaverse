@@ -1,0 +1,106 @@
+######################
+#+                  +#
+#   MENU SETTINGS    #
+#+                  +#
+######################
+
+
+menu-settings:
+  name: '&f- &6&lPave Material &f-'
+  rows: 1
+  command: 'pave'
+######################
+#+                  +#
+#       ITEMS        #
+#+                  +#
+######################
+
+pavestone:
+  COMMAND: 'pave2 stone'
+  NAME: '&eStone'
+  LORE:
+    - 'Pave with stone.'
+  ID: 1
+#  DATA-VALUE: 11
+  POSITION-X: 1
+  POSITION-Y: 1
+
+pavecobble:
+  COMMAND: 'pave2 cobblestone'
+  NAME: '&eCobblestone'
+  LORE:
+    - 'Pave with cobblestone.'
+  ID: 4
+#  DATA-VALUE: 11
+  POSITION-X: 2
+  POSITION-Y: 1
+
+pavedirt:
+  COMMAND: 'pave2 dirt'
+  NAME: '&eDirt'
+  LORE:
+    - 'Pave with dirt.'
+  ID: 3
+#  DATA-VALUE: 11
+  POSITION-X: 3
+  POSITION-Y: 1
+  
+pavesand:
+  COMMAND: 'pave2 sand'
+  NAME: '&eSand'
+  LORE:
+    - 'Pave with sand.'
+  ID: 12
+#  DATA-VALUE: 11
+  POSITION-X: 4
+  POSITION-Y: 1
+  
+pavesandstone:
+  COMMAND: 'pave2 sandstone'
+  NAME: '&eSandstone'
+  LORE:
+    - 'Pave with sandstone.'
+  ID: 24
+#  DATA-VALUE: 11
+  POSITION-X: 5
+  POSITION-Y: 1
+  
+pavegravel:
+  COMMAND: 'pave2 gravel'
+  NAME: '&eGravel'
+  LORE:
+    - 'Pave with gravel.'
+  ID: 13
+#  DATA-VALUE: 11
+  POSITION-X: 6
+  POSITION-Y: 1
+  
+pavebrick:
+  COMMAND: 'pave2 brick'
+  NAME: '&eBrick'
+  LORE:
+    - 'Pave with brick.'
+  ID: 45
+#  DATA-VALUE: 11
+  POSITION-X: 7
+  POSITION-Y: 1
+
+pavestonebrick:
+  COMMAND: 'pave2 stone brick'
+  NAME: '&eStone Brick'
+  LORE:
+    - 'Pave with stone brick.'
+  ID: 98
+#  DATA-VALUE: 11
+  POSITION-X: 8
+  POSITION-Y: 1
+
+pavequartz:
+  COMMAND: 'pave2 quartz block'
+  NAME: '&eQuartz'
+  LORE:
+    - 'Pave with quartz.'
+  ID: 155
+#  DATA-VALUE: 11
+  POSITION-X: 9
+  POSITION-Y: 1

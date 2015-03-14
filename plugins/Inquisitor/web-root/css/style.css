@@ -1,0 +1,387 @@
+body {
+    font-family: sans-serif;
+    font-size: 12px;
+    background-image: url(../img/background-1.png);
+    background-size: 200px 200px;
+
+}
+
+body>.background {
+    background-image: url(../img/background-2.png);
+    background-size: 200px 50px;
+    background-repeat: repeat-x;
+    padding-top: 60px;
+    padding-bottom: 40px;
+}
+
+.container_16 {
+    background-color: rgba(255,255,255,0.8);
+}
+
+#topNavigation {
+    padding-top: 0;
+    padding-bottom: 1em;
+    text-align: left;
+}
+
+#topNavigation ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 3px 0 0 0;
+}
+
+#topNavigation li {
+    display: inline;
+    height: 100%;
+    margin: 0;
+}
+
+#topNavigation li a {
+    font-weight: bold;
+    font-size: 20px;
+    color: white;
+    background: url(../img/nav-background.png) repeat-x 0 100%;
+    text-align: center;
+    padding: 6px 10px 12px 10px;
+    text-decoration: none;
+}
+
+#topNavigation li a:hover {
+    background: url(../img/nav-background-hover.png) repeat-x 0 100%;
+}
+
+#playerSearch {
+    padding-top: 1em;
+    padding-bottom: 1em;
+    text-align: right;
+}
+
+#playerSearchInput {
+    width: 200px;
+}
+
+#footer {
+    padding-top: 100px;
+    padding-bottom: 10px;
+    text-align: center;
+    font-size: 80%;
+    color: #808080;
+}
+
+#footer p {
+    margin: 0;
+}
+
+#footer img {
+    width: 5%;
+    height: 5%;
+    text-decoration: none;
+}
+
+#player {
+}
+
+#player>h1 {
+    padding: 0.5em;
+}
+
+#player h2 {
+    font-size: 130%;
+    border-bottom: 1px solid gray;
+    margin-bottom: 0.2em;
+}
+
+#player h3 {
+    font-size: 120%;
+    margin-bottom: 0.1em;
+}
+
+#player .stats-block {
+    background-color: rgba(0,0,0,0.1);
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+}
+
+#player .stats-block h2, #player .stats-block h3 {
+    padding: 3px;
+}
+
+#player .stats-block .baseStat {
+    padding-left: 3px;
+    padding-right: 3px;
+}
+
+#player .stats-block table {
+    margin: 3px;
+}
+
+#playerFooter {
+    padding-top: 1em;
+    padding-bottom: 1em;
+    text-align: center;
+    font-size: 90%;
+    color: #444444;
+}
+
+#playerNotFound {
+    text-align: center;
+    padding-top: 2em;
+    padding-bottom: 2em;
+    font-size: 130%;
+    font-weight: bold;
+}
+
+#player .subCategory {
+    border-left: 1px solid gray;
+    margin-left: 2px;
+}
+
+#player .subCategory.alpha {
+    border-left: none;
+    margin-left: 0;
+}
+
+#player div.clear.spacer {
+    height: 2em;
+}
+
+#player table {
+    margin: 0 0 1em 0;
+    border-collapse: collapse;
+    width: 90%;
+   /* border: 1px solid rgba(255,255,255,0.5);*/
+}
+
+#player td {
+    /*border: 1px solid rgba(255,255,255,0.5);*/
+}
+
+#player td.number {
+    text-align: right;
+}
+
+#player td.name {
+    font-weight: bold;
+/*    background-color: rgba(0, 0, 0, 0.5);*/
+}
+
+#player table tr.none td {
+    font-style: italic;
+}
+
+#player table.inventory {
+    width: auto;
+}
+
+#player table.inventory tr.spacer {
+    height: 10px;
+}
+
+#player table.inventory td.slot {
+    border: 2px ridge white;
+    padding: 0;
+    background-color: #a0a0a0;
+    width: 34px;
+    height: 34px;
+}
+
+#player div.slot {
+    position: relative;
+}
+
+#player div.slot.enchanted {
+    background-image: url(../img/enchanted.gif)
+}
+
+#player div.slot .amount {
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    position: absolute;
+    bottom: 2px;
+    right: 0;
+    margin-bottom: -5px;
+}
+
+#player div.slot .damage {
+    width: 28px;
+    height: 3px;
+    background-color: black;
+    position: absolute;
+    bottom: 3px;
+    left: 2px;
+}
+
+#player div.slot .damage .bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 2px;
+}
+
+#player div.slot .damage .bar.normal {
+    background-color: lime;
+}
+
+#player div.slot .damage .bar.critical {
+    background-color: red;
+}
+
+#players #columnChooserButton {
+    float: right;
+    margin: 5px 0;
+}
+
+#players p {
+    margin-bottom: 5px;
+}
+
+#players table {
+    border-collapse: collapse;
+    margin: 0;
+    width: 100%;
+}
+
+#players th {
+    padding: 3px 4px;
+    font-weight: bold;
+    background-color: #cccccc;
+    border: 1px solid grey;
+    text-align: center;
+    vertical-align: bottom;
+}
+
+#players th.sortedASC {
+    padding-right: 20px;
+    background: #bbbbbb url(../img/arrow-up-med.png) no-repeat right bottom;
+}
+
+#players th.sortedDESC {
+    padding-right: 20px;
+    background: #bbbbbb url(../img/arrow-down-med.png) no-repeat right bottom;
+}
+
+#players th a {
+    text-decoration: none;
+    color: black;
+}
+
+#players td {
+    padding: 0.2em 0.5em;
+    border: 1px solid grey;
+}
+
+#players td.sorted {
+    background: lightgray;
+}
+
+#players td.number {
+    text-align: right;
+}
+
+#players td.nowrap {
+    white-space: nowrap;
+}
+
+#players td.name {
+    white-space: nowrap;
+}
+
+#players td.name a {
+    text-decoration: none;
+    color: black;
+}
+
+#players td.name div.face {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    background-repeat: no-repeat;
+    background-position: -16px -16px;
+    background-size: 128px 64px;
+    vertical-align: middle;
+}
+
+#players td.name div.name {
+    margin-left: 5px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+#players .paginator {
+    padding-top: 10px;
+    float: left;
+}
+
+#columnChooser {
+    /*overflow: hidden;*/
+}
+
+#columnChooser ul {
+    list-style-type: none;
+}
+
+#columnChooser ul li {
+    float: left;
+    width: 15em;
+    margin-left: 0;
+}
+
+.paginator .previous {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    background: url(../img/arrow-left.png) no-repeat;
+    vertical-align: middle;
+}
+
+.paginator .next {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    background: url(../img/arrow-right.png) no-repeat;
+    vertical-align: middle;
+}
+
+.paginator .disabled {
+    opacity: 0.5;
+    filter: alpha(opacity=50);
+}
+
+.paginator .prePages, .paginator .postPages{
+    display: inline;
+    font-weight: bold;
+    vertical-align: middle;
+}
+
+.paginator .pages {
+    display: inline;
+    vertical-align: middle;
+}
+
+.paginator .page {
+    display: inline-block;
+    padding: 0 1px;
+    text-align: center;
+    color: gray;
+}
+
+.paginator a {
+    display: inline-block;
+    text-decoration: none;
+    color: black;
+    width: 100%;
+    font-weight: bold;
+}
+
+.iconMeter img {
+    margin-left: -2px;
+}
+
+/* JQuery UI overrides */
+
+.ui-autocomplete .ui-menu-item em {
+    font-weight: bold;
+    font-size: 120%;
+    font-style: normal;
+}

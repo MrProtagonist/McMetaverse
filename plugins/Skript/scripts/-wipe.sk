@@ -1,0 +1,11 @@
+on join:
+    {%player%.wiped} is not set
+    set {%player%.wiped} to true
+    execute console command "eco reset %player%"
+    send "Welcome to Metaverse Generation 5, we have done a complete wipe but your homes still exist and you can visit it soon. HAVE FUN IN 1.8!!!" to player
+    execute console command "sudo %player% spawn"
+	
+	
+on command "/ss":
+    cancel event
+    send "This command is out of order. Sorry!" to player

@@ -1,0 +1,26 @@
+on pickup:
+	player is in world "Vanilla"
+	cancel event
+	message "&f[&aSERVER&f] &cYou may not acquire items in this world. Type &a&o/spawn&c to return to the main world."
+on click:
+	player is in world "Vanilla"
+	event-block is chest
+	cancel event
+	message "&f[&aSERVER&f] &cYou may not interact with chests in this world. Type &a&o/spawn&c to return to the main world."
+on place:
+	player is in world "Vanilla"
+	cancel event
+	message "&f[&aSERVER&f] &cYou may not build	in this world. Type &a&o/spawn&c to return to the main world."
+on break:
+	player is in world "Vanilla"
+	cancel event
+	message "&f[&aSERVER&f] &cYou may not break blocks in this world. Type &a&o/spawn&c to return to the main world."
+on explosion:
+	entity is tnt
+	entity is in world "Sandbox"
+	cancel event
+on explosion prime:
+	entity is in world "Sandbox"
+	cancel event
+	
+	

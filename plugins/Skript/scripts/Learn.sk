@@ -1,0 +1,67 @@
+#-------------------------
+# Command
+#-------------------------
+command /learn <text>:
+    description: Text tutorials
+    usage: /learn [shops/claiming/ranks/mcmmo]
+    trigger:
+        if arg is "shops":
+            message " "			
+            message "         &f-&7 -&8 -&0 -&8 -&7 -&f -[&6&l SHOPS &f]-&7 -&8 -&0 -&8 -&7 -&f -"
+            message "    &f&l- &e&oAll players may buy from any shop"
+            message "    &f&l- &e&oBuy the &b&oCreate Shop&e&o perm at &a&o/permshop&e&o to make your own"
+            message " &c&oCREATING A SHOP"
+            message "    &f&l- &e&oHold item and hit chest. Then type the price in chat"
+            message "    &f&l- &e&oUse &a&o/qs buy&e&o to make your shop buy instead of sell"
+            message "    &f&l- &e&oRestock sell shops. They quit working when chest is empty"
+            message "    &f&l- &e&oBuy shops pay from your balance. Do not run out of money"
+
+            message "   &f-&7 -&8 -&0 -&8 -&7 -&f -[&d&o Questions welcome &f]-&7 -&8 -&0 -&8 -&7 -&f -"
+            stop
+        if arg is "mcmmo": 
+            message "      &f-&7 -&8 -&0 -&8 -&7 -&f -[&6&l MCMMO &f]-&7 -&8 -&0 -&8 -&7 -&f -"
+            message "   &f&l- &e&oMcmmo is an RPG style leveling system"
+            message "   &f&l- &e&oTyping &a&o/stats&e&o will show you the skills and your levels"
+            message "   &f&l- &e&oLevels gradually get more difficult, but reward you with abilities "
+            message "   &f&l- &e&oRight click to use an ability"
+            message "   &f&l- &e&oNote: Abilities do have a cooldown period"
+            message "   &f&l- &e&oIf you want to learn more command use &a&o/help mcmmo"
+            
+            message "   &f-&7 -&8 -&0 -&8 -&7 -&f -[&d&o Questions welcome &f]-&7 -&8 -&0 -&8 -&7 -&f -"
+            stop
+        if arg is "claiming":
+            message " "			
+            message "      &f-&7 -&8 -&0 -&8 -&7 -&f -[&6&l CLAIMING &f]-&7 -&8 -&0 -&8 -&7 -&f -"
+            message "   &f&l- &e&oAny unclaimed land is available to claim"
+            message "   &f&l- &e&oHold a stick and right click to see claims"
+            message "   &f&l- &e&oEarn claim blocks by playing longer, or buy at &a&o/spawn"
+            message "   &f&l- &e&oYou need a &6&oGOLD SHOVEL &e&oto claim or expand"
+            message " &c&oCREATING A CLAIM"
+            message "   &f&l- &e&oHold shovel, then right click the ground. Dia blocks appear"
+            message "   &f&l- &e&oRight click the opposite corner of the area you want"
+            message " &c&oCOMMANDS"
+            message "   &f&l- &a&o/trust (name)&e&o lets a friend build in the claim"
+            message "   &f&l- &a&o/claimslist&e&o gets coordinates and size of your claims"
+            message "   &f&l- &a&o/abandonclaim&e&o deletes the claim you are standing in"
+            message " &f-&7 -&8 -&0 -&8 -&7 -&f -[&d&o Questions welcome &f]-&7 -&8 -&0 -&8 -&7 -&f -"
+            stop
+        if arg is "ranks":
+            message " "			
+            message "       &f-&7 -&8 -&0 -&8 -&7 -&f -[&6&l RANKS &f]-&7 -&8 -&0 -&8 -&7 -&f -"
+            message "       &r[&d&oVisitor&r] &l- &e&oAll new players"
+            message "       &r[&d&oNewbie&r] &l- &e&oObtained by joining &a&oMcMetaverse.com"
+            message "       &r[&e&oCitizen&r]"
+            message "       &r[&c&oApprentice&r]"
+            message "       &r[&b&oNovice&r]"
+            message "       &r[&3&oAdept&r]"
+            message "       &r[&6&oJourneyman&r] "
+            message "       &r[&9&oElite&r] "
+            message "       &r[&4&oMaster&r] "
+            message "       &r[&a&oNoble&r]"
+            message "       &r[&6&oLEGEND&r] &l- &e&oUnobtainable to normal players"
+            message "         &e&oEarn ranks by buying perms at &a&o/permshop"
+            message " &f-&7 -&8 -&0 -&8 -&7 -&f -[&d&o Questions welcome &f]-&7 -&8 -&0 -&8 -&7 -&f -"
+            stop
+        else:
+            message "You can only learn shops, claiming, mcmmo, or ranks."
+		

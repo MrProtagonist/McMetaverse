@@ -1,0 +1,6 @@
+Limit-map-by-server: 0
+Limit-map-by-player: 0
+collect-data: true
+import-maps: false
+send-entire-maps: 0
+map_path: Metacurse

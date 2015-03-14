@@ -1,0 +1,11 @@
+edit-wand: !!org.bukkit.Material 'AIR'
+view-owner: !!org.bukkit.Material 'STICK'
+set-owner: !!org.bukkit.Material 'FEATHER'
+use-lwc: true
+database:
+  url: jdbc:sqlite:plugins/SimpleSignEdit/signs.db
+  class: org.sqlite.JDBC
+sneaking: both
+default-owner: placer
+break-protect: false
+auto-save: true

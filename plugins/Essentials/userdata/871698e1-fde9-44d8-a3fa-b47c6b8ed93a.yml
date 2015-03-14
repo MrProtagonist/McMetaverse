@@ -1,0 +1,23 @@
+money: '25.0'
+lastlocation:
+  world: Metacurse
+  x: -3.869158924741872
+  y: 70.0
+  z: -135.03300554842647
+  yaw: -89.93312
+  pitch: 17.400011
+geolocation: United States
+lastAccountName: jemz_bond
+timestamps:
+  login: 1425594247196
+  lastteleport: 1425594515278
+  logout: 1425597046186
+ipAddress: 162.239.200.16
+logoutlocation:
+  world: Metacurse
+  x: 1869.1370326853844
+  y: 97.0
+  z: -472.18292916987684
+  yaw: -311.49573
+  pitch: 41.10001
+afk: false

@@ -1,0 +1,6 @@
+playerData:
+  bedSpawnLocation: wo:Metaverse;x:1795.0;y:61.0;z:3645.0;pi:0.0;ya:0.0
+  inventoryContents: 0:t:261;d:7/1:t:262;#:40/2:t:268;d:42/3:t:364;#:23/4:t:334;#:3/5:t:363;#:5/6:t:365;#:3/7:t:35/8:t:6/9:t:50/10:t:6;d:5/11:t:3;#:3/13:t:319;#:3/34:t:288;#:4
+  potions: ''
+  armorContents: 0:t:309;d:37/1:t:308;d:37/2:t:307;d:37/3:t:306;d:113;e:PROTECTION_ENVIRONMENTAL:2
+  stats: hp:20;ft:-20;el:0;ex:1.0109925;ma:300;sa:0.0;fl:13;txp:0;ra:300;fd:0.0;xp:0.0

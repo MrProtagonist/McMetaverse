@@ -1,0 +1,47 @@
+####################################################################################
+#  ____                  ____               __  __                                 #
+# | __ )  ___  ___ ___  | __ )  __ _ _ __  |  \/  | ___  ___ ___  __ _  __ _  ___  #
+# |  _ \ / _ \/ __/ __| |  _ \ / _` | '__| | |\/| |/ _ \/ __/ __|/ _` |/ _` |/ _ \ #
+# | |_) | (_) \__ \__ \ | |_) | (_| | |    | |  | |  __/\__ \__ \ (_| | (_| |  __/ #
+# |____/ \___/|___/___/ |____/ \__,_|_|    |_|  |_|\___||___/___/\__,_|\__, |\___| #
+#                                                                      |___/       #
+####################################################################################
+
+#################
+# Update Check
+# Set to true to
+# notify on updates.
+update-check: true
+
+#################
+# Forever Message
+# If true only one message will
+# be displayed, forever.
+forever-message: false
+
+# What you want to be in it
+forever-contents: '&3I will stay the same throughout time!'
+
+# NOTHING BELOW IS IMPLEMENTED
+
+#################
+# Announcements
+# If set to true, Boss Bar Message will become an 
+# announcement plugin that uses the boss bar.
+timed: false
+
+# Below only applies if the above is set to true.
+# Time to display each message. (In seconds)
+time: 30
+
+# Interval between each message. (In seconds)
+# (If this is larger than the time set above, the 
+# message will disappear for however long the difference
+# is before the next one comes up.
+interval: 30
+
+# Messages displayed. (Color codes supported.)
+messages:
+    - '&3Boss Bar Message is so cool!'
+    - '&bDonate to our server!'
+    - '&3Woooooo!!'

@@ -1,0 +1,17 @@
+# Here you have to specify a list of whitelisted ips.
+# Note that you do not need to specify bungee IPs here. 
+# Those are automatically imported from your bukkit.yml.
+# Set them there if you didn't already.
+whitelist: 
+- 192.99.18.49
+
+# Here you have to specify the message sent to the player when kicked.
+playerKickMessage: '&cYou have to join through &aplay.mcmetaverse.com'
+
+# Put this to true to print the real IP of every player attempting to connect.
+debug: false
+
+# Setup mode, enabled on first run, will automatically whitelist the IP of any
+# connecting player that is detected to come through bungeecord.
+# WARNING : This should be set to false once you have whitelisted your bungeecord !
+setup: true

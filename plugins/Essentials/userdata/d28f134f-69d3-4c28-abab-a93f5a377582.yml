@@ -1,0 +1,54 @@
+lastAccountName: CaptainStupid
+timestamps:
+  login: 1426214255878
+  logout: 1426218088146
+  lastteleport: 1426217683986
+ipAddress: 76.178.138.67
+lastlocation:
+  world: Metacurse
+  x: 323.3080180985853
+  y: 35.015625
+  z: -6946.722335756055
+  yaw: -181.85028
+  pitch: 5.408834
+afk: false
+logoutlocation:
+  world: Metacurse
+  x: -2136.911867071364
+  y: 80.47897899397842
+  z: -1055.7845533254458
+  yaw: -293.51746
+  pitch: 18.265158
+money: '1513.0'
+homes:
+  home:
+    world: Metacurse
+    x: 117.48499304534711
+    y: 84.52569051153326
+    z: 263.0178885797758
+    yaw: 265.68738
+    pitch: 52.85657
+  spawner:
+    world: Metacurse
+    x: 173.85793950573594
+    y: 26.0
+    z: -6839.561200369044
+    yaw: -286.81012
+    pitch: 4.4161882
+  temple:
+    world: Metacurse
+    x: 315.5800229162778
+    y: 40.0
+    z: -6985.801189718719
+    yaw: -243.26491
+    pitch: 53.575478
+  deadtemple:
+    world: Metacurse
+    x: -328.85512728076634
+    y: 40.0
+    z: -6948.96899669333
+    yaw: -262.77734
+    pitch: 28.379766
+godmode: false
+socialspy: false
+teleportenabled: false

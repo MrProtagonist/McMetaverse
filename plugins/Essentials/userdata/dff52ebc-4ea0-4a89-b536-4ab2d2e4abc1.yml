@@ -1,0 +1,31 @@
+geolocation: United States
+lastAccountName: joyboy801
+timestamps:
+  login: 1425847347044
+  lastteleport: 1425848168266
+  logout: 1425848624397
+ipAddress: 72.209.196.236
+lastlocation:
+  world: Metacurse
+  x: -151.5878407888139
+  y: 67.0
+  z: -1203.72877655256
+  yaw: -227.79291
+  pitch: 48.450012
+money: '250'
+homes:
+  home:
+    world: Metacurse
+    x: -114.69197487456746
+    y: 74.0
+    z: -1184.514082688868
+    yaw: 75.95689
+    pitch: -10.35001
+afk: false
+logoutlocation:
+  world: Metacurse
+  x: -118.40432742234405
+  y: 74.875
+  z: -1183.3339966491574
+  yaw: 275.1573
+  pitch: 70.95003

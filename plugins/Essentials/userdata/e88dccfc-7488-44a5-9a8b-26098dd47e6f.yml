@@ -1,0 +1,38 @@
+geolocation: United States
+lastlocation:
+  world: Metacurse
+  x: -1210.2192733799122
+  y: 88.0
+  z: 2220.9145128677415
+  yaw: 274.86517
+  pitch: 20.850208
+lastAccountName: anxietymachine
+timestamps:
+  login: 1426299804714
+  lastteleport: 1426314728894
+  logout: 1426315113251
+ipAddress: 71.239.155.247
+homes:
+  home:
+    world: Metacurse
+    x: -1305.4275625458547
+    y: 69.0
+    z: 1553.671313876616
+    yaw: 172.25635
+    pitch: 34.95006
+  _cave_:
+    world: Metacurse
+    x: -1128.980564776444
+    y: 80.0
+    z: 2200.277597386093
+    yaw: -87.534935
+    pitch: -24.149921
+money: '3594.94'
+logoutlocation:
+  world: Metacurse
+  x: -1305.004567562732
+  y: 69.0
+  z: 1552.762499988079
+  yaw: 277.40656
+  pitch: 18.149961
+afk: false

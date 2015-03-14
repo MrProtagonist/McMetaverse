@@ -1,0 +1,23 @@
+command /nightvision:
+    description: See at night!
+    permission: skript.nightvision
+    aliases: /nv
+    trigger:
+        if {nightvision.%player%} is not true:
+            message "&a&oEnabled &8&oNightVision"
+            apply night vision 3 to the player for 600000 seconds
+            set {nightvision.%player%} to true
+        else:
+            message "&c&oDisabled &8&oNightVision"
+            remove night vision from the player
+            set {nightvision.%player%} to false
+on quit:
+    set {nightvision.%player%} to false
+on disconnect:
+    set {nightvision.%player%} to false
+command /sync:
+    trigger:
+        message " "
+        message "&fOpen page: &bhttp://mcmetaverse.com/dashboard/characters"
+        message "&eClick the Add Character button and follow the instructions to sync your Minecraft account."
+        message " "

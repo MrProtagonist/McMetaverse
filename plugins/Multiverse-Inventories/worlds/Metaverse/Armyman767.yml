@@ -1,0 +1,6 @@
+playerData:
+  armorContents: 3:t:91
+  inventoryContents: 0:t:276;d:164;e:DAMAGE_UNDEAD:4,DURABILITY:3,FIRE_ASPECT:2/1:t:280/9:t:323;#:11/10:t:262;#:36/11:t:331;#:59/12:t:387/13:t:284/14:t:262;#:64/15:t:364;#:30/16:t:326/17:t:344;#:13/18:t:278;d:420;e:DURABILITY:3,LOOT_BONUS_BLOCKS:2,DIG_SPEED:4/19:t:279;d:1494/20:t:277;d:929/21:t:261;d:151;e:DURABILITY:3,ARROW_KNOCKBACK:1
+  potions: ''
+  bedSpawnLocation: wo:Metaverse;x:-2693.0;y:82.0;z:-3894.0;pi:0.0;ya:0.0
+  stats: ra:300;ex:3.9520311;fd:0.0;hp:24;sa:0.0;el:0;txp:0;ma:300;fl:18;xp:0.0;ft:-20

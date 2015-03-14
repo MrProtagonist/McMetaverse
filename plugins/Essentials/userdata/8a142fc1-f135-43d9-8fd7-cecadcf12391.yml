@@ -1,0 +1,23 @@
+money: '1549.0'
+geolocation: United States
+lastAccountName: trich159
+timestamps:
+  login: 1424301119845
+  lastteleport: 1424303527653
+  logout: 1424306260449
+ipAddress: 63.118.72.114
+lastlocation:
+  world: Metacurse
+  x: 1978.5
+  y: 137.0
+  z: 2334.5
+  yaw: -157.62419
+  pitch: 17.550053
+logoutlocation:
+  world: Metacurse
+  x: 2006.156541908225
+  y: 77.0
+  z: 2346.460342467198
+  yaw: 86.21063
+  pitch: 35.55
+afk: false

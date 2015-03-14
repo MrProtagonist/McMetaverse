@@ -1,0 +1,260 @@
+######################
+#+                  +#
+#   MENU SETTINGS    #
+#+                  +#
+######################
+
+menu-settings:
+
+  # name - appears as the title - REQUIRED
+  name: '&a&lFOOD SHOPS'
+
+  # rows - the number of rows of the chest - REQUIRED
+  rows: 6
+
+  # command - OPTIONAL (you can remove this or set it to '')
+  # Bind multiple commands using ; (command: 'menu; m; me')
+  command: ''
+
+  # The sound played whenever the menu is opened.
+  # List of sounds:
+  # jd.bukkit.org/rb/apidocs/org/bukkit/Sound.html
+  open-sound: NOTE_PLING
+
+  # open-with-item - OPTIONAL
+  # The menu will open only right-clicking with orange wool [35:1]
+  open-with-item:
+    item-id: wool
+    left-click: false
+    right-click: false
+    data-value: 1
+
+
+######################
+#+                  +#
+#       ITEMS        #
+#+                  +#
+######################
+#
+# NEVER USE A ' IN ANY OF YOUR TEXT!
+#
+# Example start
+#proglass:
+#  COMMAND: 'shoptp proshop'
+#  NAME: '&d[p] &aPro&fGlass &d[p]'
+#  LORE:
+#    - '&f&oEvery type of glass, always in stock!'
+#  ID: glass
+#  KEEP-OPEN: false
+#  POSITION-X: 2
+#  POSITION-Y: 1
+#  DATA-VALUE: 2
+# Remove the # from the line above to use the data value setting
+# Example end
+
+divider1:
+  NAME: ''
+  ID: 160
+  KEEP-OPEN: true
+  POSITION-X: 1
+  POSITION-Y: 1
+  DATA-VALUE: 0
+Ryanfoodshop:
+  COMMAND: 'shopwarp 4'
+  NAME: '&d[p] &aRyans Bakery &d[p]'
+  LORE:
+    - '&f&oFor all your food needs! :D'
+  ID: 103
+  KEEP-OPEN: false
+  POSITION-X: 2
+  POSITION-Y: 1
+divider2:
+  NAME: ''
+  ID: 160
+  KEEP-OPEN: true
+  POSITION-X: 3
+  POSITION-Y: 1
+  DATA-VALUE: 0
+divider3:
+  NAME: ''
+  ID: 160
+  KEEP-OPEN: true
+  POSITION-X: 5
+  POSITION-Y: 1
+  DATA-VALUE: 0
+divider4:
+  NAME: ''
+  ID: 160
+  KEEP-OPEN: true
+  POSITION-X: 7
+  POSITION-Y: 1
+  DATA-VALUE: 0
+divider5:
+  NAME: ''
+  ID: 160
+  KEEP-OPEN: true
+  POSITION-X: 9
+  POSITION-Y: 1
+  DATA-VALUE: 0
+divider6:
+  NAME: ''
+  ID: 160
+  KEEP-OPEN: true
+  POSITION-X: 2
+  POSITION-Y: 2
+  DATA-VALUE: 0
+divider7:
+  NAME: ''
+  ID: 160
+  KEEP-OPEN: true
+  POSITION-X: 4
+  POSITION-Y: 2
+  DATA-VALUE: 0
+divider8:
+  NAME: ''
+  ID: 160
+  KEEP-OPEN: true
+  POSITION-X: 6
+  POSITION-Y: 2
+  DATA-VALUE: 0
+divider9:
+  NAME: ''
+  ID: 160
+  KEEP-OPEN: true
+  POSITION-X: 8
+  POSITION-Y: 2
+  DATA-VALUE: 0
+divider10:
+  NAME: ''
+  ID: 160
+  KEEP-OPEN: true
+  POSITION-X: 1
+  POSITION-Y: 3
+  DATA-VALUE: 0
+divider11:
+  NAME: ''
+  ID: 160
+  KEEP-OPEN: true
+  POSITION-X: 3
+  POSITION-Y: 3
+  DATA-VALUE: 0
+divider12:
+  NAME: ''
+  ID: 160
+  KEEP-OPEN: true
+  POSITION-X: 5
+  POSITION-Y: 3
+  DATA-VALUE: 0
+divider13:
+  NAME: ''
+  ID: 160
+  KEEP-OPEN: true
+  POSITION-X: 7
+  POSITION-Y: 3
+  DATA-VALUE: 0
+divider14:
+  NAME: ''
+  ID: 160
+  KEEP-OPEN: true
+  POSITION-X: 9
+  POSITION-Y: 3
+  DATA-VALUE: 0
+divider15:
+  NAME: ''
+  ID: 160
+  KEEP-OPEN: true
+  POSITION-X: 2
+  POSITION-Y: 4
+  DATA-VALUE: 0
+divider16:
+  NAME: ''
+  ID: 160
+  KEEP-OPEN: true
+  POSITION-X: 4
+  POSITION-Y: 4
+  DATA-VALUE: 0
+divider17:
+  NAME: ''
+  ID: 160
+  KEEP-OPEN: true
+  POSITION-X: 6
+  POSITION-Y: 4
+  DATA-VALUE: 0
+divider18:
+  NAME: ''
+  ID: 160
+  KEEP-OPEN: true
+  POSITION-X: 8
+  POSITION-Y: 4
+  DATA-VALUE: 0
+divider0:
+  NAME: ''
+  ID: 160
+  KEEP-OPEN: true
+  POSITION-X: 1
+  POSITION-Y: 5
+  DATA-VALUE: 0
+divider19:
+  NAME: ''
+  ID: 160
+  KEEP-OPEN: true
+  POSITION-X: 3
+  POSITION-Y: 5
+  DATA-VALUE: 0
+divider20:
+  NAME: ''
+  ID: 160
+  KEEP-OPEN: true
+  POSITION-X: 5
+  POSITION-Y: 5
+  DATA-VALUE: 0
+divider21:
+  NAME: ''
+  ID: 160
+  KEEP-OPEN: true
+  POSITION-X: 7
+  POSITION-Y: 5
+  DATA-VALUE: 0
+divider22:
+  NAME: ''
+  ID: 160
+  KEEP-OPEN: true
+  POSITION-X: 9
+  POSITION-Y: 5
+  DATA-VALUE: 0
+divider23:
+  NAME: ''
+  ID: 160
+  KEEP-OPEN: true
+  POSITION-X: 2
+  POSITION-Y: 6
+  DATA-VALUE: 0
+divider24:
+  NAME: ''
+  ID: 160
+  KEEP-OPEN: true
+  POSITION-X: 4
+  POSITION-Y: 6
+  DATA-VALUE: 0
+divider25:
+  NAME: ''
+  ID: 160
+  KEEP-OPEN: true
+  POSITION-X: 6
+  POSITION-Y: 6
+  DATA-VALUE: 0
+divider26:
+  NAME: ''
+  ID: 160
+  KEEP-OPEN: true
+  POSITION-X: 8
+  POSITION-Y: 6
+  DATA-VALUE: 0
+
+return-to-main:
+  COMMAND: 'open:main-menu.yml'
+  NAME: '&6[arrow_left] &f&oBack to the &b&ocategories &f&opage'
+  ID: nether_star
+  KEEP-OPEN: true
+  POSITION-X: 9
+  POSITION-Y: 6

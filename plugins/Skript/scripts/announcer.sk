@@ -1,0 +1,33 @@
+on script load:
+	delete {randommessage::*}
+
+variables:
+	{randommessage::1} = "Highly detailed statistics are gathered about each player."
+	{randommessage::2} = "You get paid for welcoming players who join! Be a good neighbor!"
+	{randommessage::3} = "If you have any problems or concerns, please submit a &a&o/ticket&e&o."
+	{randommessage::4} = "Like us on Facebook for special offers and inside information!"
+	{randommessage::5} = "&5&oPremium&e&o members get a large assortment of customizable effects and other perks!"
+	{randommessage::6} = "&d&oNewbies &e&ocan get free kits in the &a/&obuy&e&o menu using their &6&oMeta&a&oPoints&e&o. Earn more by participating on the website!"
+	{randommessage::7} = "Visit &a&oMcMetaverse.com&e&o often to stay informed!"
+	{randommessage::8} = "You can join a private &a&o/chat&e&o channel with friends!"
+	{randommessage::9} = "Be sure you are familiar with the &a&o/rules&e&o."
+	{randommessage::10} = "New content is constantly added. Check back often for new things to do and see!"
+	{randommessage::11} = "You can catch mobs with some redstone and eggs!"
+	{randommessage::12} = "Never ask an &c&oAdmin&e&o or &a&oDev &e&oto fix something in chat! They only respond to &a&o/ticket&e&os"
+	{randommessage::13} = "Cursing is allowed, but unnecessarily profane remarks or harassment are not tolerated."
+	{randommessage::14} = "Start an item auction by typing &a&o/auc start &e&o<&a&oprice&e&o>, then place the item you want to auction in the popup inventory!"
+	{randommessage::15} = "Feeling generous? Buy all your fellow community members a drop party for only $1 in the &a&o/buy&e&o menu."
+every 7 real minutes:
+	set {_num} to a random integer between 1 and 15
+	if {announce.last} is {_num}:
+		add 1 to {_num}
+	if {_num} is 16:
+		set {_num} to 1
+	set {announce.last} to {_num}
+	broadcast "&f[&aSERVER&f] &e&o%{randommessage::%{_num}%}%"
+	if {_num} is 1:
+		loop all players:
+			send "&f[&aSERVER&f] &eFind yours at &ahttp://s12.hosthorde.com:8080/player/%loop-player%" to loop-player
+command /msgmeplz:
+	trigger:
+		send "&f[&aSERVER&f] &eFind yours at &a&o&nhttp://s12.hosthorde.com:8080/player/%player%" to player

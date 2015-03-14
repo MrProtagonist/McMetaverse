@@ -1,0 +1,402 @@
+﻿on login:
+	set {joinedparty.%player%} to false
+	add 1 to {login.dropparty}
+	{login.dropparty} is 12
+	{dropparty.donetoday} is false
+	set {dropparty.donetoday} to true
+	wait 10 seconds
+	broadcast "&f[&aSERVER&f] &eEnough players are logged in to trigger the daily drop party!"
+	loop all players:
+		execute console command "/playsound note.pling %loop-player%"
+	wait 2 real seconds
+	execute console command "/startdrop"
+	
+command /forcedropparty:
+	permission: is.op
+	trigger:
+		broadcast "&f[&aSERVER&f] &eEnough players are logged in to trigger the daily drop party!"
+		loop all players:
+			execute console command "/playsound note.pling %loop-player%"
+		wait 2 real seconds
+		execute console command "/startdrop"
+on quit:
+	remove 1 from {login.dropparty}
+on script load:
+	set {dropparty.donetoday} to false
+	set {dropparty.freeze} to false
+	set {login.dropparty} to 0
+	set {dropparty.starting} to false
+command /stopdrop:
+	permission:drop.op
+	trigger:
+		set {dropparty.freeze} to true
+		message "&c&lDrop party will not go."
+command /setdrop:
+	description: Set location for drop party.
+	permission: drop.set
+	trigger:
+		set {sk.dropparty} to location of player
+		message "<lime>Drop party point set!"
+		stop	
+command /dropparty:
+	description: Shows if a drop party has been done today.
+	usage: /dropparty
+	trigger:
+		if {dropparty.donetoday} is true:
+			send "<white><italic>A drop party <green><bold>HAS<white><italic> been done today at %{dropparty.last}%." to player
+			send " "
+			send "<white><italic>We may do another if we are busy enough, but you will never know when!" to player
+			send " " to player
+			send "<white><italic>You can also buy an INSTANT drop party on our website for only &a$1&r!" to player
+		else:
+			send "<white><italic>A drop party <green><bold>HAS NOT<white><italic> been done today." to player
+			send " "
+			send "<white><italic>Stick around and you may get to be a part of it, but never ask for one!" to player
+			send " "
+			send "<white><italic>You can also buy an INSTANT drop party on our website for only &a$1&r!" to player
+
+command /givetoken <player>:
+	permission: is.op
+	trigger:
+		execute console command "/give %arg% 175 1 name:§a§l§oD§b§l§oR§c§l§oO§d§l§oP_§e§l§oP§1§l§oA§2§l§oR§3§l§oT§4§l§oY§6§o§l_Token lore:&f&oHold_and_right_click_to_start_an_instant_drop_party!"
+		send "&6&oYou just received a &a&l&oD&b&l&oR&c&l&oO&d&l&oP &e&l&oP&1&l&oA&2&l&oR&3&l&oT&4&l&oY&6&o token!" to arg
+on right click with double plant:
+	name of player's tool contains "token"
+	remove 1 double plant from player
+	broadcast "&a&o&l%player%&r&6&o just used a &a&l&oD&b&l&oR&c&l&oO&d&l&oP &e&l&oP&1&l&oA&2&l&oR&3&l&oT&4&l&oY&6&o token!"
+	wait 3 real seconds
+	execute console command "/startdrop"
+command /drop:
+	description: Warp to the drop party area.
+	trigger:
+		message "&a&oYou are whisked away to the Drop Party area."
+		set {warping.%player%} to true
+		push the player upwards at speed 10
+		execute console command "/playsound random.explode %player% ~0 ~0 ~0 20 50"
+		loop 33 times:
+			spawn 50 of mob spell data 1 offset with 1, 0, 1 at location of block 1 meter above player
+			wait 1 tick
+		spawn 12 of huge explosion data 1 offset with 2, 2, 2 at location of player
+		wait 5 ticks
+		teleport player to {sk.dropparty}
+		wait 5 ticks
+		delete {warping.%player%}
+command /toggledrop:
+	permission: is.op
+	trigger:
+		if {drop.toggle} is true:
+			set {drop.toggle} to false
+			message "Now False"
+			wait 1 real second
+			set block at {drop.togglepos} to redstone block
+			set block 23 meters above {drop.togglepos} to air
+			set block 22 meters above {drop.togglepos} to air
+			set block 21 meters above {drop.togglepos} to air
+			set block 20 meters above {drop.togglepos} to air
+			set block 19 meters above {drop.togglepos} to air
+			set block 18 meters above {drop.togglepos} to air
+			set block 17 meters above {drop.togglepos} to air
+			set block 16 meters above {drop.togglepos} to air
+			set block 15 meters above {drop.togglepos} to air
+			set block 14 meters above {drop.togglepos} to air
+			set block 13 meters above {drop.togglepos} to air
+			set block 12 meters above {drop.togglepos} to air
+			set block 11 meters above {drop.togglepos} to air
+			set block 10 meters above {drop.togglepos} to air
+			set block 9 meters above {drop.togglepos} to air
+			set block 8 meters above {drop.togglepos} to air
+			set block 7 meters above {drop.togglepos} to air
+			set block 6 meters above {drop.togglepos} to air
+			set block 5 meters above {drop.togglepos} to air
+		else if {drop.toggle} is false:
+			set {drop.toggle} to true
+			message "Now True"
+			set block at {drop.togglepos} to air
+			wait 2 real second
+command /dropnow:
+	description: Start the party
+	permission: essentials.socialspy
+	trigger:
+		{dropparty.starting} is false
+		set {dropparty.freeze} to false
+		set {dropparty.starting} to true
+		set {bossbar.using} to true
+		execute console command "bm 15 &a&lDROP PARTY COUNTDOWN"
+		set block 21 meters above {drop.togglepos} to diamond block
+		set block 20 meters above {drop.togglepos} to diamond block
+		set block 19 meters above {drop.togglepos} to diamond block
+		set block 18 meters above {drop.togglepos} to diamond block
+		set block 17 meters above {drop.togglepos} to diamond block
+		set block 16 meters above {drop.togglepos} to diamond block
+		set block 15 meters above {drop.togglepos} to diamond block
+		set block 14 meters above {drop.togglepos} to diamond block
+		set block 13 meters above {drop.togglepos} to diamond block
+		set block 12 meters above {drop.togglepos} to diamond block
+		set block 11 meters above {drop.togglepos} to diamond block
+		set block 10 meters above {drop.togglepos} to diamond block
+		set block 9 meters above {drop.togglepos} to diamond block
+		set block 8 meters above {drop.togglepos} to diamond block
+		set block 7 meters above {drop.togglepos} to diamond block
+		set block 6 meters above {drop.togglepos} to diamond block
+		loop all players:
+			set {joinedparty.%loop-player%} to false
+		broadcast "&o&lA speedy &a&l&oD&b&l&oR&c&l&oO&d&l&oP &e&l&oP&1&l&oA&2&l&oR&3&l&oT&4&l&oY&f&o&l will start in 15 seconds. Type &a&o/join&f&o&l to participate!"
+		wait 13 second
+		broadcast "&a&l&oD&b&l&oR&c&l&oO&d&l&oP &e&l&oP&1&l&oA&2&l&oR&3&l&oT&4&l&oY&f&o will start in 3."
+		wait 1 second
+		broadcast "&a&l&oD&b&l&oR&c&l&oO&d&l&oP &e&l&oP&1&l&oA&2&l&oR&3&l&oT&4&l&oY&f&o will start in 2."
+		wait 1 second
+		broadcast "&a&l&oD&b&l&oR&c&l&oO&d&l&oP &e&l&oP&1&l&oA&2&l&oR&3&l&oT&4&l&oY&f&o will start in 1."
+		wait 1 second
+		broadcast "&a&l&oD&b&l&oR&c&l&oO&d&l&oP &e&l&oP&1&l&oA&2&l&oR&3&l&oT&4&l&oY&5&l&o!"
+		set {dropparty.donetoday} to true
+		set {dropparty.starting} to false
+		set {dropparty.last} to now
+		execute console command "/partyloop"
+		loop all players:
+			if {joinedparty.%loop-player%} is true:
+				teleport loop-player to {sk.dropparty}
+				set {joinedparty.%loop-player%} to false
+			else:
+				message "&e&oYou can join the drop party late by typing &a&l/drop&e&o!" to loop-player
+		wait 1 real second
+		execute console command "/toggledrop"
+command /startdrop:
+	description: Start the party
+	permission: essentials.socialspy
+	trigger:
+		{dropparty.starting} is false
+		set {dropparty.freeze} to false
+		set {dropparty.starting} to true
+		set block 21 meters above {drop.togglepos} to diamond block
+		set block 20 meters above {drop.togglepos} to diamond block
+		set block 19 meters above {drop.togglepos} to diamond block
+		set block 18 meters above {drop.togglepos} to diamond block
+		set block 17 meters above {drop.togglepos} to diamond block
+		set block 16 meters above {drop.togglepos} to diamond block
+		set block 15 meters above {drop.togglepos} to diamond block
+		set block 14 meters above {drop.togglepos} to diamond block
+		set block 13 meters above {drop.togglepos} to diamond block
+		set block 12 meters above {drop.togglepos} to diamond block
+		set block 11 meters above {drop.togglepos} to diamond block
+		set block 10 meters above {drop.togglepos} to diamond block
+		set block 9 meters above {drop.togglepos} to diamond block
+		set block 8 meters above {drop.togglepos} to diamond block
+		set block 7 meters above {drop.togglepos} to diamond block
+		set block 6 meters above {drop.togglepos} to diamond block
+		execute console command "bm 120 &a&lDROP PARTY COUNTDOWN"
+		loop all players:
+			set {joinedparty.%loop-player%} to false
+		broadcast "&a&l&oD&b&l&oR&c&l&oO&d&l&oP &e&l&oP&1&l&oA&2&l&oR&3&l&oT&4&l&oY&f&o will start in 2 minutes. Type &a&o/join&f&o to participate!"
+		wait 60 second
+		broadcast "&a&l&oD&b&l&oR&c&l&oO&d&l&oP &e&l&oP&1&l&oA&2&l&oR&3&l&oT&4&l&oY&f&o will start in 1 minute. Type &a&o/join&f&o to participate!"
+		wait 30 second
+		broadcast "&a&l&oD&b&l&oR&c&l&oO&d&l&oP &e&l&oP&1&l&oA&2&l&oR&3&l&oT&4&l&oY&f&o will start in 30 seconds. Be sure you cleared your inventory!"
+		wait 15 second
+		broadcast "&a&l&oD&b&l&oR&c&l&oO&d&l&oP &e&l&oP&1&l&oA&2&l&oR&3&l&oT&4&l&oY&f&o will start in 15 seconds. Type &a&o/join&f&o to participate!"
+		wait 13 second
+		broadcast "&a&l&oD&b&l&oR&c&l&oO&d&l&oP &e&l&oP&1&l&oA&2&l&oR&3&l&oT&4&l&oY&f&o will start in 3."
+		wait 1 second
+		broadcast "&a&l&oD&b&l&oR&c&l&oO&d&l&oP &e&l&oP&1&l&oA&2&l&oR&3&l&oT&4&l&oY&f&o will start in 2."
+		wait 1 second
+		broadcast "&a&l&oD&b&l&oR&c&l&oO&d&l&oP &e&l&oP&1&l&oA&2&l&oR&3&l&oT&4&l&oY&f&o will start in 1."
+		wait 1 second
+		broadcast "&a&l&oD&b&l&oR&c&l&oO&d&l&oP &e&l&oP&1&l&oA&2&l&oR&3&l&oT&4&l&oY&5&l&o!"
+		set {dropparty.donetoday} to true
+		set {dropparty.starting} to false
+		set {dropparty.last} to now
+		execute console command "/partyloop"
+		loop all players:
+			if {joinedparty.%loop-player%} is true:
+				teleport loop-player to {sk.dropparty}
+				set {joinedparty.%loop-player%} to false
+			else:
+				message "&e&oYou can join the drop party late by typing &a&l/drop&e&o!" to loop-player
+		wait 1 real second
+		execute console command "/toggledrop"
+command /partyloop:
+	permission: is.consoleorop
+	trigger:
+		if {dropparty.freeze} is false:
+			execute console command "bm 75 &a&lDROP PARTY TIMER"
+			execute console command "/blockparty"
+			set block 21 meters above {drop.togglepos} to redstone block
+			wait 5 second
+			execute console command "/blockparty" 
+			set block 20 meters above {drop.togglepos} to redstone block			
+			wait 5 second
+			execute console command "/blockparty"
+			set block 19 meters above {drop.togglepos} to redstone block
+			wait 5 second
+			execute console command "/blockparty"
+			set block 18 meters above {drop.togglepos} to redstone block			
+			wait 5 second
+			execute console command "/blockparty"
+			set block 17 meters above {drop.togglepos} to redstone block
+			wait 5 second
+			execute console command "/blockparty"
+			set block 16 meters above {drop.togglepos} to redstone block
+			wait 5 second
+			execute console command "/blockparty"
+			set block 15 meters above {drop.togglepos} to redstone block
+			wait 5 second
+			execute console command "/blockparty"
+			set block 14 meters above {drop.togglepos} to redstone block
+			wait 5 second
+			execute console command "/blockparty"
+			set block 13 meters above {drop.togglepos} to redstone block
+			wait 5 second
+			execute console command "/blockparty"
+			set block 12 meters above {drop.togglepos} to redstone block			
+			wait 5 second
+			execute console command "/blockparty"
+			set block 11 meters above {drop.togglepos} to redstone block
+			wait 5 second
+			execute console command "/blockparty"
+			set block 10 meters above {drop.togglepos} to redstone block			
+			wait 5 second
+			execute console command "/blockparty"
+			set block 9 meters above {drop.togglepos} to redstone block
+			wait 5 second
+			execute console command "/blockparty"
+			set block 8 meters above {drop.togglepos} to redstone block
+			wait 5 second
+			execute console command "/blockparty"
+			set block 7 meters above {drop.togglepos} to redstone block
+			wait 5 second
+			execute console command "/blockparty"
+			set block 6 meters above {drop.togglepos} to redstone block
+			broadcast " "
+			broadcast "&a&l&oD&b&l&oR&c&l&oO&d&l&oP &e&l&oP&1&l&oA&2&l&oR&3&l&oT&4&l&oY&f&o finished!"
+			set {bossbar.using} to false
+			broadcast " "
+			set {drop.lastused} to now
+			execute console command "/toggledrop"
+			stop
+		else:
+			message "Drop Party was canceled"
+command /join:
+	description: Choose to join the drop party.
+	trigger:  
+		if {dropparty.starting} is true:
+			set {joinedparty.%player%} to true
+			message "&e&oYou will be teleported to the drop party when it starts."	
+		else:
+			message "&c&oNo drop party to join!"
+command /blockparty:
+	description: Starts it
+	permission: sk.blockparty
+	trigger:
+		set {_radius} to 11
+		set {_chance} to 1
+		set {_py} to y-coordinate of {sk.dropparty}
+		loop blocks in radius {_radius} around {sk.dropparty}:
+			loop-block is air:
+				chance of {_chance}%:
+					set {_location} to location of loop-block
+					set {_testy} to y-coordinate of {_location}
+					set {_diff} to {_testy}
+					subtract {_py} from {_diff}
+					{_diff} is less than 5:
+						{_diff} is more than 0:
+							spawn 10 of mob spell data 1 offset with 0, 0, 0 at location of loop-block
+							chance of 1%:
+								drop 1 diamond block at {_location}
+							chance of 2%:
+								drop 2 diamonds at {_location}
+							chance of 2%:
+								drop 2 note blocks at {_location}
+							chance of 2%:
+								drop 6 Gold Ingot at {_location}
+							chance of 2%:
+								drop 1 Emerald at {_location}
+							chance of 5%:
+								drop 5 Egg at {_location}
+							chance of 3%:
+								drop 5 Redstone at {_location}
+							chance of 3%:
+								drop 1 Redstone Lamp at {_location}
+							chance of 1%:
+								drop 1 Ender Chest at {_location}
+							chance of 1%:
+								drop 1 Ender Pearl at {_location}
+							chance of 2%:
+								drop 2 Ghast Tear at {_location}
+							chance of 3%:
+								drop 4 Iron Ingot at {_location}
+							chance of 3%:
+								drop 1 Golden Apple at {_location}
+							chance of 1%:
+								drop 1 Enchantment Table  at {_location}
+							chance of 8%:
+								drop 3 Glowstone at {_location}
+							chance of 3%:
+								drop 6 Obsidian at {_location}
+							chance of 2%:
+								drop 2 Sponge at {_location}
+							chance of 5%:
+								drop 1 block of coal at {_location}
+							chance of 5%:
+								drop 2 hay block at {_location}
+							chance of 10%:
+								drop 5 arrow at {_location}
+							chance of 1%:
+								drop 1 diamond sword at {_location}
+							chance of 1%:
+								drop 1 diamond pick at {_location}
+							chance of 3%:
+								drop 2 flint at {_location}
+							chance of 10%:
+								drop 5 Xp Bottle at {_location}
+							chance of 2%:
+								drop 1 blaze rod at {_location}
+							chance of 3%:
+								drop 2 firework star at {_location}
+							chance of 3%:
+								drop 1 name tag at {_location}
+							chance of 5%:
+								drop 5 Feather at {_location}
+							chance of 3%:
+								drop 5 sugar at {_location}
+							chance of 2%:
+								drop 3 snow at {_location}
+							chance of 2%:
+								drop 4 ice at {_location}
+							chance of 1%:
+								drop 1 coal at {_location}
+							chance of 3%:
+								drop 1 trapped chest at {_location}
+							chance of 3%:
+								drop 1 chest at {_location}
+							chance of 3%:
+								drop 3 cookie at {_location}
+							chance of 3%:
+								drop 1 cake at {_location}
+							chance of 2%:
+								drop 2 cocoa beans at {_location}
+							chance of 1%:
+								drop 1 gold block at {_location}
+							chance of 5%:
+								drop 3 torch at {_location}
+							chance of 2%:
+								drop 1 bookshelf at {_location}
+							chance of 2%:
+								drop 2 nether warts at {_location}
+							chance of 2%:
+								drop 2 cobwebs at {_location}
+							chance of 1%:
+								drop 1 burning furnace at {_location}
+							chance of 2%:
+								drop 1 jukebox at {_location}
+							chance of 2%:
+								drop 4 netherrack at {_location}
+							chance of 2%:
+								drop 4 soul sand at {_location}
+							chance of 2%:
+								drop 1 mycelium at {_location}
+							chance of 2%:
+								drop 1 brewing stand at {_location}
+							chance of 2%:
+								drop 1 cauldron at {_location}
+							chance of 5%:
+								drop 1 painting at {_location}

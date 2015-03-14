@@ -1,0 +1,157 @@
+# command /warpeffect [<text>]:
+#	permission: skript.warpeffect
+#	trigger:
+#		if arg is set:
+#			if arg is "huge explosion":
+#				if player has permission "is.vip":
+#					set {warpeffect.%player%} to arg
+#					message "&aWarp effect set to: &e%arg%"
+#				else:
+#					message "&cUnfortunately, this particular effect is reserved for our top supporters."
+#					stop
+#			else:
+#				set {warpeffect.%player%} to arg
+#				message "&aWarp effect set to: &e%arg%"
+#		else:
+#			message "&a&lAll available warp particles:"
+#			message "%all enum values of particle%"
+#			message "&a/warpeffect <particle>&f - Set your Warp effect."
+
+command /setss:
+	description: Set location for perm shop.
+	permission: essentials.socialspy
+	trigger:
+		set {sk.ss} to location of player
+		message "<lime>Warp point set!"
+		stop   
+#command /consolewarp <player>:
+#	description: The warp effects handler
+#	permission: is.console
+#	executable by: console
+#	trigger:
+#		if arg has the permission "skript.warpeffect":
+#			if {warpeffect.%arg%} is set:
+#				loop 33 times:
+#					if {warpeffect.%arg%} is "heart":
+#						spawn 20 of heart data 1 offset with 1, 1, 1 at location of arg
+#					if {warpeffect.%arg%} is "splash":
+#						spawn 20 of splash data 1 offset with 1, 1, 1 at location of arg
+#					if {warpeffect.%arg%} is "lava":
+#						spawn 20 of lava data 1 offset with 1, 1, 1 at location of arg
+#					if {warpeffect.%arg%} is "happy villager":
+#						spawn 20 of happy villager data 1 offset with 1, 1, 1 at location of arg
+#					if {warpeffect.%arg%} is "snow shovel":
+#						spawn 20 of snow shovel data 1 offset with 1, 1, 1 at location of arg
+#					if {warpeffect.%arg%} is "snowball poof":
+#						spawn 20 of snowball poof data 1 offset with 1, 1, 1 at location of arg
+#					if {warpeffect.%arg%} is "spell":
+#						spawn 20 of spell data 1 offset with 1, 1, 1 at location of arg
+#					if {warpeffect.%arg%} is "mob spell":
+#						spawn 20 of mob spell data 1 offset with 1, 1, 1 at location of arg
+#					if {warpeffect.%arg%} is "explode":
+#						spawn 20 of explode data 1 offset with 1, 1, 1 at location of arg
+#					if {warpeffect.%arg%} is "portal":
+#						spawn 20 of portal data 1 offset with 1, 1, 1 at location of arg
+#					if {warpeffect.%arg%} is "witch magic":
+#						spawn 20 of witch magic data 1 offset with 1, 1, 1 at location of arg
+#					if {warpeffect.%arg%} is "flame":
+#						spawn 20 of flame data 1 offset with 1, 1, 1 at location of arg
+#					if {warpeffect.%arg%} is "huge explosion":
+#						spawn 20 of huge explosion data 1 offset with 1, 1, 1 at location of arg
+#					if {warpeffect.%arg%} is "large explode":
+#						spawn 20 of large explode data 1 offset with 1, 1, 1 at location of arg
+#					if {warpeffect.%arg%} is "fireworks spark":
+#						spawn 20 of fireworks spark data 1 offset with 1, 1, 1 at location of arg
+#					if {warpeffect.%arg%} is "suspended":
+#						spawn 20 of suspended data 1 offset with 1, 1, 1 at location of arg
+#					if {warpeffect.%arg%} is "depth suspend":
+#						spawn 20 of depth suspend data 1 offset with 1, 1, 1 at location of arg
+#					if {warpeffect.%arg%} is "town aura":
+#						spawn 20 of town aura data 1 offset with 1, 1, 1 at location of arg
+#					if {warpeffect.%arg%} is "crit":
+#						spawn 20 of crit data 1 offset with 1, 1, 1 at location of arg
+#					if {warpeffect.%arg%} is "magic crit":
+#						spawn 20 of magic crit data 1 offset with 1, 1, 1 at location of arg
+#					if {warpeffect.%arg%} is "smoke":
+#						spawn 20 of smoke data 1 offset with 1, 1, 1 at location of arg
+#					if {warpeffect.%arg%} is "mob spell ambient":
+#						spawn 20 of mob spell ambient data 1 offset with 1, 1, 1 at location of arg
+#					if {warpeffect.%arg%} is "instant spell":
+#						spawn 20 of instant spell data 1 offset with 1, 1, 1 at location of arg
+#					if {warpeffect.%arg%} is "note":
+#						spawn 20 of note data 1 offset with 1, 1, 1 at location of arg
+#					if {warpeffect.%arg%} is "enchantment table":
+#						spawn 20 of enchantment table data 1 offset with 1, 1, 1 at location of arg
+#					if {warpeffect.%arg%} is "footstep":
+#						spawn 20 of footstep data 1 offset with 1, 1, 1 at location of arg
+#					if {warpeffect.%arg%} is "drip water":
+#						spawn 20 of drip water data 1 offset with 1, 1, 1 at location of arg
+#					if {warpeffect.%arg%} is "drip lava":
+#						spawn 20 of drip lava data 1 offset with 1, 1, 1 at location of arg
+#					if {warpeffect.%arg%} is "slime":
+#						spawn 20 of slime data 1 offset with 1, 1, 1 at location of arg
+#					if {warpeffect.%arg%} is "angry villager":
+#						spawn 20 of angry villager data 1 offset with 1, 1, 1 at location of arg
+#					if {warpeffect.%arg%} is "large smoke":
+#						spawn 20 of large smoke data 1 offset with 1, 1, 1 at location of arg
+#					if {warpeffect.%arg%} is "splash":
+#						spawn 20 of splash data 1 offset with 1, 1, 1 at location of arg
+#					if {warpeffect.%arg%} is "cloud":
+#						spawn 20 of cloud data 1 offset with 1, 1, 1 at location of arg
+#					if {warpeffect.%arg%} is "red dust":
+#						spawn 20 of red dust data 1 offset with 1, 1, 1 at location of arg
+#					wait 1 tick
+#			else:
+#				loop 33 times:
+#					spawn 20 of mob spell data 1 offset with 1, 1, 1 at location of arg
+#					wait 1 tick
+#		if arg does not have permission "skript.warpeffect":
+#			loop 33 times:
+#				spawn 20 of mob spell data 1 offset with 1, 1, 1 at location of arg
+#				wait 1 tick
+#		spawn 12 of huge explosion data 1 offset with 2, 2, 2 at location of arg
+#		wait 5 ticks
+command /ss:
+	description: Warp to the perm shop.
+	trigger:
+		set {lastwarp.%player%} to now
+		wait 1 tick
+		push the player upwards at speed 10
+		execute console command "/playsound random.explode %player% ~0 ~0 ~0 20 50"
+		message "&a&oYou are whisked away to a far away land."
+		execute console command "consolewarp %player%"
+		wait 38 ticks
+		teleport player to {sk.ss}
+on damage:
+	if difference between {lastwarp.%player%} and now is less than 3 seconds:
+		cancel event
+
+command /sandbox:
+	trigger:
+		message "&a&oYou are whisked away to The Sandbox."
+		set {lastwarp.%player%} to now
+		push the player upwards at speed 10
+		execute console command "/playsound random.explode %player% ~0 ~0 ~0 20 50"
+		execute console command "consolewarp %player%"
+		wait 38 ticks
+		execute console command "mvtp %player% sandbox"
+		
+command /spawn:
+	trigger:
+		message "&a&oYou are whisked away to the server spawn."
+		set {lastwarp.%player%} to now
+		push the player upwards at speed 10
+		execute console command "/playsound random.explode %player% ~0 ~0 ~0 20 50"
+		execute console command "consolewarp %player%"
+		wait 38 ticks
+		teleport the player to {spawn}
+
+# every 2 ticks:
+#	spawn 30 of portal data 1 offset with 2, 2, 2 at {spawn}
+#	spawn 20 of portal data 1 offset with 0, 2, 0 at {spawn}
+		
+command /setspawn:
+	permission: is.op
+	trigger:
+		set {spawn} to player's location
+		message "&a&lDONE!"

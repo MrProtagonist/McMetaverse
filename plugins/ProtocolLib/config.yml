@@ -1,0 +1,9 @@
+global:
+  auto updater:
+    notify: true
+    download: false
+    delay: 43200
+    last: 1369184904
+  metrics: true
+  background compiler: true
+  debug: false

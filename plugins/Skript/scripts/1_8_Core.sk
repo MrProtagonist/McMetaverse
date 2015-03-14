@@ -1,0 +1,144 @@
+﻿on join:
+	player has permission "essentials.socialspy"
+	{staff.members::%player%} is not set
+	set {staff.members::%player%} to "now"
+on command "/sethome":
+	if player can't build at location of player:
+		cancel event
+		message "&cCan't set a home in a place you can't build!"
+on quit:
+	player has permission "essentials.socialspy"
+	set {staff.members::%player%} to now
+every 10 real seconds:
+	loop all entities in world "Never_End":
+		loop-entity is ender dragon
+		kill loop-entity
+		broadcast "Found and killed an ender dragon!"
+on chat:
+	replace all "never end" or "neverend" or "never-end" with "&8&oNever End&f" in the message
+on script load:
+	set {_broken} to 0
+	set {_placed} to 0
+	loop {the.never.end.broken::*}:
+		set block at loop-value to end stone
+		add 1 to {_broken}
+		wait 1 tick
+	broadcast "&f[&aSERVER&f] &eReplaced &6%{_broken}%&e broken blocks in&8&o The Never End&e."
+	delete {the.never.end.broken::*}
+	loop {the.never.end.placed::*}:
+		set block at loop-value to air
+		add 1 to {_placed}
+		wait 1 tick
+	broadcast "&f[&aSERVER&f] &eRemoved &6%{_placed}%&e placed blocks in&8&o The Never End&e."
+	delete {the.never.end.placed::*}
+on break of end stone:
+	event-player's world is "Never_End"
+	add location of event-block to {the.never.end.broken::*}
+on place:
+	event-player's world is "Never_End"
+	add location of event-block to {the.never.end.placed::*}
+every 5 real seconds:
+	loop all players:
+		loop-player has permission "essentials.socialspy"
+		set {staff.members::%loop-player%} to "now"
+command /staff [<text>] [<text>]:
+	trigger:
+		if arg 1 is set:
+			if arg 1 is "delete":
+				if {staff.members::%arg 2%} is set:
+					message "&aRemoved from staff list!"
+					remove {staff.members::%arg 2%} from {staff.members::*}
+					stop
+				else:
+					message "&cEntry not found!"
+					stop
+		else:
+			loop {staff.members::*}:
+				if loop-value is "now":
+					message "&a%loop-index%&f &eis online."
+				else:
+					set {_time} to difference between {staff.members::%loop-index%} and now
+					message "&a%loop-index%&f was online &e%{_time}%&f ago."
+on script load:
+	loop all players:
+		loop-player has permission "essentials.socialspy"
+		{staff.members::%loop-player%} is not set
+		set {staff.members::%loop-player%} to "now"
+
+
+on spawn:
+	entity's world is "Schematics"
+	cancel event
+		
+
+# ###################################
+# ##       RocketTeleport 1.1      ##
+# ###################################
+# ## Author: MrProtagonist	       ##
+# ## Created for: McMetaverse      ##
+# ## Web: McMetaverse.com	       ##
+# ## IP: Play.McMetaverse.com      ##
+# ###################################
+# Very easy to use. Just place your pressure plate, then type /launchpad <pad name>, and follow the easy instructions.
+command /launchpad [<text>] [<text>]:
+	aliases: landing
+	permission: is.op
+	trigger:
+		if arg 1 is set:
+			if arg 1 is "list":
+				loop {lp.landing::*}:
+					message "%loop-index% %{lp.pads::%loop-index%}% - %{lp.landing::%loop-index%}%"
+			if arg 1 is "delete":
+				loop {lp.name::*}:
+					loop-value is arg 2
+					message "&aFound and deleted!"
+					remove {lp.name::%loop-value%} from {lp.name::*}
+					remove {lp.landing::%loop-value%} from {lp.landing::*}
+					remove {lp.pads::%loop-value%} from {lp.pads::*}
+					stop
+				message "&cCould not find. =/"
+				       
+			else:
+				set {lp.%player%} to true
+				add arg 1 to {lp.name::*}
+				message "&eClick your launch pad."
+		else:
+			if {lp.%player%} is false:
+				delete {lp.%player%}
+				add location of player to {lp.landing::*}
+				message "&eDone!"
+			       
+		       
+command /clearlaunchpads:
+	permission: essentials.socialspy
+	trigger:
+		delete {lp.pads::*}
+		delete {lp.landing::*}
+		delete {lp.name::*}
+		delete {lp.%player%}
+		message "&cDeleted all launch pads"
+on break of pressure plate:
+	loop {lp.pads::*}:
+		location of event-block is {lp.pads::%loop-index%}
+		remove {lp.pads::%loop-index%} from {lp.pads::*}
+		remove {lp.landing::%loop-index%} from {lp.landing::*}
+		message "&a&oFound and removed a launch pad."
+	
+on left click on pressure plate:
+	if {lp.%player%} is true:
+		cancel event
+		add location of clicked block to {lp.pads::*}
+		message "&eNow stand in your landing spot and do /landing"
+		set {lp.%player%} to false
+ 
+on stepping on pressure plate:
+	loop {lp.pads::*}:
+		location of event-block is {lp.pads::%loop-index%}
+		set {lastwarp.%player%} to now
+		wait 1 tick
+		push the player upwards at speed 3
+		execute console command "/playsound random.explode %player% ~0 ~0 ~0 20 50"
+		message "&a&oYou are whisked away to a far away land."
+		execute console command "consolewarp %player%"
+		wait 38 ticks
+		teleport player to {lp.landing::%loop-index%}

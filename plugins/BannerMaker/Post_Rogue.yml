@@ -1,0 +1,97 @@
+'1424930513326':
+  ==: org.bukkit.inventory.ItemStack
+  type: BANNER
+  damage: 2
+  meta:
+    ==: ItemMeta
+    meta-type: BANNER
+    patterns:
+    - ==: Pattern
+      color: BLACK
+      pattern: vh
+    - ==: Pattern
+      color: BLACK
+      pattern: gru
+    - ==: Pattern
+      color: WHITE
+      pattern: mr
+    - ==: Pattern
+      color: WHITE
+      pattern: cre
+'1425709634848':
+  ==: org.bukkit.inventory.ItemStack
+  type: BANNER
+  damage: 4
+  meta:
+    ==: ItemMeta
+    meta-type: BANNER
+    patterns:
+    - ==: Pattern
+      color: WHITE
+      pattern: dls
+    - ==: Pattern
+      color: WHITE
+      pattern: drs
+    - ==: Pattern
+      color: RED
+      pattern: cr
+    - ==: Pattern
+      color: WHITE
+      pattern: cs
+    - ==: Pattern
+      color: WHITE
+      pattern: ms
+    - ==: Pattern
+      color: RED
+      pattern: sc
+'1425710720479':
+  ==: org.bukkit.inventory.ItemStack
+  type: BANNER
+  meta:
+    ==: ItemMeta
+    meta-type: BANNER
+    patterns:
+    - ==: Pattern
+      color: WHITE
+      pattern: gru
+    - ==: Pattern
+      color: GRAY
+      pattern: mr
+    - ==: Pattern
+      color: BLACK
+      pattern: mr
+    - ==: Pattern
+      color: SILVER
+      pattern: mc
+    - ==: Pattern
+      color: BLACK
+      pattern: mc
+'1425862830587':
+  ==: org.bukkit.inventory.ItemStack
+  type: BANNER
+  damage: 15
+  meta:
+    ==: ItemMeta
+    meta-type: BANNER
+    patterns:
+    - ==: Pattern
+      color: BLACK
+      pattern: ts
+    - ==: Pattern
+      color: WHITE
+      pattern: cs
+    - ==: Pattern
+      color: ORANGE
+      pattern: ms
+    - ==: Pattern
+      color: RED
+      pattern: hhb
+    - ==: Pattern
+      color: WHITE
+      pattern: bo
+    - ==: Pattern
+      color: YELLOW
+      pattern: ms
+    - ==: Pattern
+      color: WHITE
+      pattern: bs

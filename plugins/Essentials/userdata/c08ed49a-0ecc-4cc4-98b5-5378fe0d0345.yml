@@ -1,0 +1,22 @@
+geolocation: Canada
+lastAccountName: LucaBuddy
+timestamps:
+  login: 1422474531772
+  lastteleport: 1422377849868
+  logout: 1422474570234
+ipAddress: 70.27.192.130
+lastlocation:
+  world: Metaverse
+  x: -3937.919483390025
+  y: 77.0
+  z: -4741.710366987621
+  yaw: 18.30017
+  pitch: 25.799997
+logoutlocation:
+  world: newMeta
+  x: -4071.2314131546896
+  y: 70.0
+  z: -654.0473275421447
+  yaw: 96.8868
+  pitch: 66.9
+money: '0.0'

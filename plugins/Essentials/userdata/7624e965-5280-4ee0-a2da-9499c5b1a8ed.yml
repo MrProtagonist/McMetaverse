@@ -1,0 +1,33 @@
+money: '702.0'
+lastlocation:
+  world: Metacurse
+  x: -2260.324169540232
+  y: 53.0
+  z: -885.0197954288253
+  yaw: 116.2926
+  pitch: -12.299996
+geolocation: United States
+lastAccountName: dpw750
+timestamps:
+  login: 1425865489478
+  lastteleport: 1425841218448
+  logout: 1425866655320
+  jail: 0
+ipAddress: 107.2.214.105
+homes:
+  home:
+    world: Metacurse
+    x: -2178.597963759748
+    y: 116.0
+    z: -1090.7211969379912
+    yaw: 163.84357
+    pitch: 40.199978
+logoutlocation:
+  world: Metacurse
+  x: -2166.614475523603
+  y: 78.0
+  z: -1011.1950055009808
+  yaw: 287.7373
+  pitch: 10.649979
+afk: false
+jailed: false

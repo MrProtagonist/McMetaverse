@@ -1,0 +1,122 @@
+GriefPrevention:
+  SeaLevelOverrides:
+    Metacurse: -1
+    Metacurse_nether: -1
+    Metacurse_the_end: -1
+    Creative: -1
+    Minigame: -1
+    Sandbox: -1
+    Never_End: -1
+    Vanilla: -1
+  Claims:
+    Mode:
+      Minigame: Survival
+      Metacurse_nether: Disabled
+      Never_End: Disabled
+      Metacurse: Survival
+      Sandbox: Survival
+      Metacurse_the_end: Disabled
+      Creative: Creative
+      Vanilla: Survival
+    PreventTheft: true
+    ProtectCreatures: true
+    PreventButtonsSwitches: true
+    LockWoodenDoors: false
+    LockTrapDoors: false
+    LockFenceGates: true
+    EnderPearlsRequireAccessTrust: true
+    ProtectFires: false
+    ProtectHorses: true
+    InitialBlocks: 500
+    BlocksAccruedPerHour: 150
+    MaxAccruedBlocks: 100000000
+    AbandonReturnRatio: 1.0
+    AutomaticNewPlayerClaimsRadius: 4
+    ExtendIntoGroundDistance: 5
+    MinimumSize: 5
+    MaximumDepth: 0
+    InvestigationTool: STICK
+    ModificationTool: GOLD_SPADE
+    Expiration:
+      ChestClaimDays: 7
+      UnusedClaimDays: 14
+      AllClaimDays: 0
+      AutomaticNatureRestoration:
+        SurvivalWorlds: false
+    MaximumNumberOfClaimsPerPlayer: 0
+    CreationRequiresWorldGuardBuildPermission: true
+    PortalGenerationRequiresPermission: false
+    CommandsRequiringAccessTrust: /sethome
+  Spam:
+    Enabled: true
+    LoginCooldownSeconds: 60
+    MonitorSlashCommands: /me;/tell;/global;/local;/w;/msg;/r;/t
+    WarningMessage: Please reduce your noise level.  Spammers will be banned.
+    BanOffenders: false
+    BanMessage: Banned for spam.
+    AllowedIpAddresses: 1.2.3.4; 5.6.7.8
+    DeathMessageCooldownSeconds: 60
+  PvP:
+    RulesEnabledInWorld:
+      Metacurse: true
+      Metacurse_nether: true
+      Metacurse_the_end: true
+      Creative: true
+      Minigame: true
+      Sandbox: true
+      Never_End: true
+      Vanilla: true
+    ProtectFreshSpawns: true
+    PunishLogout: true
+    CombatTimeoutSeconds: 15
+    AllowCombatItemDrop: false
+    BlockedSlashCommands: /home;/vanish;/spawn;/tpa
+    ProtectPlayersInLandClaims:
+      PlayerOwnedClaims: true
+      AdministrativeClaims: true
+      AdministrativeSubdivisions: true
+  Economy:
+    ClaimBlocksPurchaseCost: 2.0
+    ClaimBlocksSellValue: 1.0
+  ProtectItemsDroppedOnDeath:
+    PvPWorlds: false
+    NonPvPWorlds: true
+  BlockSurfaceCreeperExplosions: true
+  BlockSurfaceOtherExplosions: true
+  LimitSkyTrees: true
+  LimitTreeGrowth: false
+  LimitPistonsToLandClaims: true
+  FireSpreads: false
+  FireDestroys: false
+  AdminsGetWhispers: true
+  AdminsGetSignNotifications: true
+  WhisperCommands: /tell;/pm;/r;/w;/whisper;/t;/msg
+  SmartBan: true
+  Siege:
+    Worlds: []
+    BreakableBlocks:
+    - DIRT
+    - GRASS
+    - LONG_GRASS
+    - COBBLESTONE
+    - GRAVEL
+    - SAND
+    - GLASS
+    - THIN_GLASS
+    - WOOD
+    - WOOL
+    - SNOW
+  EndermenMoveBlocks: false
+  SilverfishBreakBlocks: false
+  CreaturesTrampleCrops: false
+  HardModeZombiesBreakDoors: false
+  Database:
+    URL: jdbc:mysql://localhost:3306/430
+    UserName: '430'
+    Password: bf56ae2042
+  Mods:
+    BlockIdsRequiringAccessTrust: []
+    BlockIdsRequiringContainerTrust:
+    - 99999:*:Example - ID 99999, all data values.
+    BlockIdsExplodable: []
+    PlayersIgnoringAllClaims: []

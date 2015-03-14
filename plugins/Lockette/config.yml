@@ -1,0 +1,29 @@
+enable-messages-user: true
+enable-messages-owner: false
+enable-messages-admin: true
+enable-messages-error: true
+enable-messages-help: true
+explosion-protection-all: true
+enable-chest-rotation: false
+enable-permissions: false
+enable-protection-doors: true
+enable-protection-trapdoors: true
+allow-admin-snoop: true
+allow-admin-bypass: true
+allow-admin-break: true
+enable-quick-protect: false
+enable-color-tags: true
+default-door-timer: 3
+custom-lockable-block-list:
+- 116
+- 84
+- 145
+- 154
+linked-plugin-ignore-list:
+- mcMMO
+broadcast-snoop-target: '[Operators]'
+broadcast-break-target: '[Everyone]'
+broadcast-reload-target: '[Operators]'
+strings-file-name: strings-en.yml
+enable-uuid-support: false
+enable-hopper-blocking: true

@@ -1,0 +1,194 @@
+users:
+  18psimpson:
+    group: Default
+    subgroups: []
+    permissions: []
+    info:
+      suffix: §f [&6&lThor &8&lOdinson§f]
+  bluedemon0015:
+    group: Admin
+    subgroups: []
+    permissions: []
+  CaptainStupid:
+    group: Default
+    subgroups: []
+    permissions: []
+    info:
+      prefix: '§f[&4Hater§f] '
+      suffix: §f [&eI'm a thing§f]
+  Cartatwin:
+    group: Default
+    subgroups: []
+    permissions: []
+    info:
+      suffix: §f [Leah§f]
+  darkeye932:
+    group: Default
+    subgroups: []
+    permissions: []
+    info:
+      suffix: §f [&c&oIron&e&oMan§f]
+  dinoppar:
+    group: Default
+    subgroups: []
+    permissions: []
+    info:
+      prefix: '§f[&3Architect§f] '
+  DrBloodbathMC:
+    group: Default
+    subgroups: []
+    permissions: []
+    info:
+      suffix: §f [&2Mr.Slimestone§f]
+  DrieIceyGirl:
+    group: Default
+    subgroups: []
+    permissions: []
+    info:
+      suffix: §f [&3&lIc&b&ley§f]
+  ElgarL:
+    group: Moderator
+    subgroups: []
+    permissions:
+    - groupmanager.noofflineperms
+  EvilLittleThing:
+    group: Default
+    subgroups: []
+    permissions: []
+    info:
+      prefix: ''
+      suffix: §f [&b&oMee&3&oMaw§f]
+  FoxTrotMC:
+    group: Default
+    subgroups: []
+    permissions: []
+    info:
+      suffix: §f [&bS&1k&ai&2t&ct&4l&de&5s§f]
+  green11:
+    group: Default
+    subgroups: []
+    permissions: []
+    info:
+      suffix: §f [&4 Mrs.Grinch§f]
+  gussy05:
+    group: Default
+    subgroups: []
+    permissions: []
+    info:
+      suffix: §f [&bMrsProtagonist§f]
+  Hobbitsyfeet:
+    group: Builder
+    subgroups: []
+    permissions: []
+  KHobbits:
+    group: Moderator
+    subgroups: []
+    permissions:
+    - groupmanager.noofflineperms
+  kristycream:
+    group: Default
+    subgroups: []
+    permissions: []
+    info:
+      suffix: §f [&a&oPanda§f]
+  Kyokokat:
+    group: Default
+    subgroups: []
+    permissions: []
+    info:
+      suffix: §f [&6 Boucey Tiger§f]
+  lordlankovic:
+    group: Default
+    subgroups: []
+    permissions: []
+    info:
+      suffix: §f [&6Ska§f]
+  Luna482:
+    group: Default
+    subgroups: []
+    permissions: []
+    info:
+      suffix: §f [&5MommaSquirrel§f]
+  MrProtagonist:
+    group: Default
+    subgroups: []
+    permissions: []
+    info:
+      prefix: '§f[&aFounder§f] '
+      suffix: §f [&c&oRetired§f]
+  Nitrogengaming1:
+    group: Default
+    subgroups: []
+    permissions: []
+    info:
+      suffix: §f [&aRectal&fThermometer§f]
+  Post_Rogue:
+    group: Admin
+    subgroups: []
+    permissions: []
+  pumpkinpepper:
+    group: Default
+    subgroups: []
+    permissions: []
+    info:
+      prefix: '§f[&o&3Legend&r§f] '
+      suffix: §f [&eBluh§f]
+  retroville268773:
+    group: Default
+    subgroups: []
+    permissions: []
+    info:
+      suffix: §f [&bBoo§f]
+  rfcroc:
+    group: Default
+    subgroups: []
+    permissions: []
+    info:
+      suffix: §f [&2 Genuine© Original§f]
+  RubySerpent:
+    group: Default
+    subgroups: []
+    permissions: []
+    info:
+      suffix: §f [&4Red Comet§f]
+  shadow007uk:
+    group: Default
+    subgroups: []
+    permissions: []
+    info:
+      suffix: §f [&3 mama shadow§f]
+  shaunticlair:
+    group: Default
+    subgroups: []
+    permissions: []
+    info:
+      suffix: §f [Mycelium Kitty§f]
+  Sherlock1010:
+    group: Default
+    subgroups: []
+    permissions: []
+    info:
+      suffix: §f [&4Kewl &cGamer§f]
+  snowleo:
+    group: Builder
+    subgroups: []
+    permissions:
+    - groupmanager.noofflineperms
+  swordassassin54:
+    group: Default
+    subgroups: []
+    permissions: []
+    info:
+      suffix: §f [IDK§f]
+  x_Odysseus_x:
+    group: Default
+    subgroups: []
+    permissions: []
+    info:
+      suffix: §f [&4Lord Israphel§f]
+  xLegendaryFlamex:
+    group: Default
+    subgroups: []
+    permissions: []
+    info:
+      suffix: §f [&bHyrulian§f]

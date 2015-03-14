@@ -1,0 +1,362 @@
+# Group inheritance
+#
+# Any inherited groups prefixed with a g: are global groups
+# and are inherited from the GlobalGroups.yml.
+#
+# Groups without the g: prefix are groups local to this world
+# and are defined in the this groups.yml file.
+#
+# Local group inheritances define your promotion tree when using 'manpromote/mandemote'
+
+groups:
+  Visitor:
+    default: true
+    permissions:
+    - automessage.receive.default
+    - citizens.npc.talk
+    - citizens.talk.*
+    - citizens.use.*
+    - essentials.list
+    - essentials.motd
+    - essentials.ping
+    - essentials.chat.url
+    - essentials.help
+    - essentials.helpop
+    - essentials.ignore
+    - essentials.home.delete
+    - essentials.home.del
+    - essentials.pay
+    - killermoney.getcash
+    - essentials.mail
+    - essentials.mail.send
+    - essentials.me
+    - essentials.msg
+    - essentials.msg.url
+    - essentials.signs.use.*
+    - essentials.balance
+    - essentials.balance.others
+    - essentials.balancetop
+    - essentials.seen
+    - essentials.tpaccept
+    - mcmmo.ability.*
+    - mobarena.use.*
+    - mcmmo.chat.partychat
+    - mcmmo.commands.defaults
+    - mcmmo.commands.inspect.*
+    - mcmmo.skills.all
+    - quickshop.use
+    - TogglePVP.toggle
+    - irc.listbots
+    - irc.message.join
+    - irc.message.quit
+    - irc.tablist
+    - automessage.receive.default
+    - automessage.receive.message-list
+    - essentials.afk
+    - essentials.back
+    - essentials.back.ondeath
+    - groupmanager.notify.self
+    inheritance:
+    - g:bukkit_default
+    - g:essentials_default
+    info:
+      prefix: '&r&f[&d&oVisitor&r] '
+      build: true
+      suffix: ''
+  Citizen:
+    default: false
+    permissions:
+    - -vanish.*
+    inheritance:
+    - newbie
+    info:
+      prefix: '&r&f[&e&oCitizen&r] '
+      build: true
+      suffix: ''
+  Newbie:
+    default: false
+    permissions:
+    - -vanish.*
+    - is.member
+    inheritance:
+    - visitor
+    info:
+      prefix: '&r&f[&d&oNewbie&r] '
+      build: true
+      suffix: ''
+  Apprentice:
+    default: false
+    permissions:
+    - -vanish.*
+    inheritance:
+    - citizen
+    info:
+      prefix: '&r&f[&c&oApprentice&r] '
+      build: true
+      suffix: ''
+  Novice:
+    default: false
+    permissions:
+    - -vanish.*
+    inheritance:
+    - apprentice
+    info:
+      prefix: '&r&f[&b&oNovice&r] '
+      build: true
+      suffix: ''
+  Adept:
+    default: false
+    permissions:
+    - -vanish.*
+    inheritance:
+    - novice
+    info:
+      prefix: '&r&f[&3&oAdept&r] '
+      build: true
+      suffix: ''
+  Journeyman:
+    default: false
+    permissions:
+    - -vanish.*
+    inheritance:
+    - adept
+    info:
+      prefix: '&r&f[&6&oJourneyman&r] '
+      build: true
+      suffix: ''
+  Elite:
+    default: false
+    permissions:
+    - -vanish.*
+    inheritance:
+    - journeyman
+    info:
+      prefix: '&r&f[&9&oElite&r] '
+      build: true
+      suffix: ''
+  Master:
+    default: false
+    permissions:
+    - -vanish.*
+    inheritance:
+    - elite
+    info:
+      prefix: '&r&f[&4&oMaster&r] '
+      build: true
+      suffix: ''
+  Noble:
+    default: false
+    permissions:
+    - -vanish.*
+    inheritance:
+    - master
+    info:
+      prefix: '&r&f[&a&oNoble&r] '
+      build: true
+      suffix: '''
+  Legend:
+    default: false
+    permissions:
+    - -vanish.*
+    inheritance:
+    - noble
+    - obsidian
+    info:
+      prefix: '&r&f[&e&l&oLegend&r] '
+      build: true
+      suffix: ''
+  Mod:
+    default: false
+    permissions:
+    - -vanish.*
+    inheritance:
+    - noble
+    info:
+      prefix: '&r&f[&9MOD&r] '
+      build: true
+      suffix: ''
+  Builder:
+    default: false
+    permissions:
+    - -vanish.*
+    inheritance:
+    - mod
+    info:
+      prefix: '&r&f[&3Architect&r] '
+      build: true
+      suffix: ''
+  Admin:
+    default: false
+    permissions:
+    - -vanish.*
+    inheritance:
+    - mod
+    info:
+      prefix: '&r&f[&2ADMIN&r] '
+      build: true
+      suffix: ''
+  SOwner:
+    default: false
+    permissions:
+    - '*'
+    inheritance:
+    - admin
+    info:
+      prefix: '&r&f[&7Soc &aOWNER&r] '
+      build: true
+      suffix: ''
+  DOwner:
+    default: false
+    permissions:
+    - '*'
+    inheritance:
+    - sowner
+    info:
+      prefix: '&r&f[&7Dev &aOWNER&r] '
+      build: true
+      suffix: ''
+  Stone:
+    default: false
+    permissions:
+    - essentials.chat.color
+    - essentials.chat.format
+    - essentials.chat.magic
+    - essentials.fly.safelogin
+    - essentials.fly
+    - essentials.gamemode
+    - essentials.sethome.multiple.unlimited
+    - essentials.signs.format
+    - essentials.signs.magic
+    - limitedcreative.keepinventory
+    - limitedcreative.nolimit.*
+    - limitedcreative.nolimit.chest
+    - limitedcreative.nolimit.use
+    - wirelessredstone.create.*
+    - wirelessredstone.remove.*
+    - is.stone
+    inheritance: []
+  Iron:
+    default: false
+    permissions:
+    - -is.stone
+    - essentials.chat.color
+    - essentials.chat.format
+    - essentials.chat.magic
+    - essentials.fly.safelogin
+    - essentials.fly
+    - essentials.gamemode
+    - essentials.sethome.multiple.unlimited
+    - essentials.signs.format
+    - essentials.signs.magic
+    - limitedcreative.keepinventory
+    - limitedcreative.nolimit.*
+    - limitedcreative.nolimit.chest
+    - limitedcreative.nolimit.use
+    - wirelessredstone.create.*
+    - wirelessredstone.remove.*
+    - is.iron
+    inheritance: []
+    info:
+      prefix: ''
+      build: true
+      suffix: ''
+  Gold:
+    default: false
+    permissions:
+    - -is.iron
+    - essentials.chat.color
+    - essentials.chat.format
+    - essentials.chat.magic
+    - essentials.fly.safelogin
+    - essentials.fly
+    - essentials.gamemode
+    - essentials.sethome.multiple.unlimited
+    - essentials.signs.format
+    - essentials.signs.magic
+    - limitedcreative.keepinventory
+    - limitedcreative.nolimit.*
+    - limitedcreative.nolimit.chest
+    - limitedcreative.nolimit.use
+    - wirelessredstone.create.*
+    - wirelessredstone.remove.*
+    - is.gold
+    inheritance: []
+    info:
+      prefix: ''
+      build: true
+      suffix: ''
+  Diamond:
+    default: false
+    permissions:
+    - -is.gold
+    - essentials.chat.color
+    - essentials.chat.format
+    - essentials.chat.magic
+    - essentials.fly.safelogin
+    - essentials.fly
+    - essentials.gamemode
+    - essentials.sethome.multiple.unlimited
+    - essentials.signs.format
+    - essentials.signs.magic
+    - limitedcreative.keepinventory
+    - limitedcreative.nolimit.*
+    - limitedcreative.nolimit.chest
+    - limitedcreative.nolimit.use
+    - wirelessredstone.create.*
+    - wirelessredstone.remove.*
+    - is.diamond
+    inheritance: []
+    info:
+      prefix: ''
+      build: true
+      suffix: ''
+  Lapis:
+    default: false
+    permissions:
+    - -is.diamond
+    - essentials.chat.color
+    - essentials.chat.format
+    - essentials.chat.magic
+    - essentials.fly.safelogin
+    - essentials.fly
+    - essentials.gamemode
+    - essentials.sethome.multiple.unlimited
+    - essentials.signs.format
+    - essentials.signs.magic
+    - limitedcreative.keepinventory
+    - limitedcreative.nolimit.*
+    - limitedcreative.nolimit.chest
+    - limitedcreative.nolimit.use
+    - wirelessredstone.create.*
+    - wirelessredstone.remove.*
+    - is.lapis
+    inheritance: []
+    info:
+      prefix: ''
+      build: true
+      suffix: ''
+  Obsidian:
+    default: false
+    permissions:
+    - -is.lapis
+    - essentials.chat.color
+    - essentials.chat.format
+    - essentials.chat.magic
+    - essentials.fly.safelogin
+    - essentials.fly
+    - essentials.gamemode
+    - essentials.sethome.multiple.unlimited
+    - essentials.signs.format
+    - essentials.signs.magic
+    - limitedcreative.keepinventory
+    - limitedcreative.nolimit.*
+    - limitedcreative.nolimit.chest
+    - limitedcreative.nolimit.use
+    - wirelessredstone.create.*
+    - wirelessredstone.remove.*
+    - is.obsidian
+    inheritance: []
+    info:
+      prefix: ''
+      build: true
+      suffix: ''

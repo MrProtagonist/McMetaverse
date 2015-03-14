@@ -1,0 +1,20 @@
+lastAccountName: BloodDetective
+timestamps:
+  login: 1425848027501
+  logout: 1425848423689
+ipAddress: 81.167.150.160
+geolocation: Norway
+lastlocation:
+  world: Metacurse
+  x: -64.81109273667597
+  y: 129.49330928292022
+  z: -16.8869932208168
+  yaw: -179.22871
+  pitch: 4.0011096
+logoutlocation:
+  world: Metacurse
+  x: -66.50114974726202
+  y: 70.0
+  z: -71.04776949470397
+  yaw: 179.3819
+  pitch: 1.2685432

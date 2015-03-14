@@ -1,0 +1,31 @@
+geolocation: United States
+lastlocation:
+  world: Metacurse
+  x: -66.86497869820734
+  y: 70.0
+  z: -64.96131454937078
+  yaw: 162.06726
+  pitch: -11.399988
+lastAccountName: bradleysgirl
+timestamps:
+  login: 1425345842830
+  lastteleport: 1425346700350
+  logout: 1425347240516
+ipAddress: 71.236.170.216
+afk: false
+money: '347.0'
+homes:
+  home:
+    world: Metacurse
+    x: 612.8914383384517
+    y: 72.0
+    z: -1296.7385531405057
+    yaw: 43.256912
+    pitch: 24.749949
+logoutlocation:
+  world: Metacurse
+  x: 612.6778215361124
+  y: 72.0
+  z: -1297.5657642045614
+  yaw: -81.69356
+  pitch: 34.20001

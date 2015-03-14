@@ -1,0 +1,182 @@
+﻿# on join:
+#	wait 1 tick
+#	if player has the permission "is.premium":
+#		if player has the permission "is.op":
+#			execute console command "/nick %player% &a&o%player%"
+#		else:
+#			execute console command "/nick %player% &5&o%player%"
+
+# on script load:
+#	loop all players:
+#		if loop-player has the permission "is.premium":
+#			if loop-player has the permission "is.op":
+#				execute console command "/nick %loop-player% &a&o%loop-player%"
+#			else:
+#				execute console command "/nick %loop-player% &5&o%loop-player%"
+variables:
+	{day.count} = 1
+
+on skript start:
+	add 1 to {day.count}
+
+every 10 real seconds:
+	loop all players:
+		wait 3 ticks
+		loop-player does not have permission "is.op"
+		if loop-player has the permission "is.premium":
+			set loop-player's display name to "&5%name of loop-player%"
+#			broadcast "&f[&aDEBUG&f] &6%loop-player%&e passed."
+		else:
+			set loop-player's display name to "%name of loop-player%"
+
+command "/donor":
+	aliases: premium,perks
+	trigger:
+		if player has permission "is.premium":
+			message "&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-"
+			message "&a&lYOUR PREMIUM BENEFITS:"
+		else:
+			message "&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-"
+			message "&a&lPREMIUM BENEFITS:"
+		message " &a- /tracer&6  Set an arrow trail! &cBEING FIXED"
+		message " &a- /suffix&6  Set a custom suffix! Keep it short and appropriate."
+		message " &a- /prefix&6  Set a custom prefix! Keep it short and appropriate."
+		message " &a- /trails&6  Set a personal particle effect!"
+		message " &a- /greeting&6  Set a custom join message!"
+		message " &a- /farewell&6  Set a custom quit message!"
+		message " &a- /death&6  Custom death messages for any damage cause!"
+		message " &a- /head&6  Get any players head! One a day."
+		message " &a- /hat&6  Wear whatever you want as a hat!"
+		message " &a- /rename&6  Name any unnamed entity! One a day."
+		message " &a- /name&6  Change the name of any item! One a day."
+		message " &a- /lore&6  Change the lore of any item! One a day."
+		message " &a- /warpeffect&6  Change your warping effect! &cBEING FIXED"
+		message " &a- &aReserved Login!&6  Never be denied entry, even when full."
+		if player does not have permission "is.premium":
+			message "&cYou must purchase Premium to receive these benefits."
+		message "&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-"
+
+		
+command /head <text>:
+	executable by: players
+	permission: is.premium
+	trigger:
+		if argument is set:
+			if player has permission "essentials.socialspy":
+				execute console command "/give %player% 397:3 1 player:%arg 1%"
+			else:
+				if {day.count.%player%.head} is not {day.count}:
+					execute console command "/give %player% 397:3 1 player:%arg 1%"
+					message "&aYou just received &6%arg%&a's head!"
+					set {day.count.%player%.head} to {day.count}
+				else:
+					message "&cSorry, you can only use this command once a day. =["
+		else:
+			message "&cYou must declare the full username of the head you want!"
+
+command /name <text>:
+	permission: is.premium
+	trigger:
+		if argument is set:
+			if player has permission "essentials.socialspy":
+				set the name of player's tool to "%colored arg%"
+				message "&aItem successfully renamed!"
+			else:
+				if {day.count.%player%.name} is not {day.count}:
+					set the name of player's tool to "%colored arg%"
+					message "&aItem successfully renamed!"
+					set {day.count.%player%.name} to {day.count}
+				else:
+					message "&cSorry, you can only use this command once a day. =["
+		else:
+			message "&cYou must declare an name for the item you are holding!"
+
+command /lore <text>:
+	permission: is.premium
+	trigger:
+		if argument is set:
+			if player has permission "essentials.socialspy":
+				set the 1st line of lore of player's tool to "%colored arg%"
+				message "&aItem lore set successfully!"
+			else:
+				if {day.count.%player%.name} is not {day.count}:
+					set the 1st line of lore of player's tool to "%colored arg%"
+					message "&aItem lore set successfully!"
+					set {day.count.%player%.name} to {day.count}
+				else:
+					message "&cSorry, you can only use this command once a day. =["
+					stop
+		else:
+			message "&cYou must declare the lore for the item you are holding!"
+			
+command /rename <text>:
+	permission: is.premium
+	usage: /rename (New name of mob you are looking at. Supports color)
+	trigger:
+		if argument is set:
+			if name of target entity is " ":
+				if player has permission "essentials.socialspy":
+					set name of target entity to "&6&l%colored arg%"
+					message "&aRenamed targeted entity!"
+					stop
+				else:
+					if {day.count.%player%.rename} is not {day.count}:
+						if player can build at location of target entity:
+							set {day.count.%player%.rename} to {day.count}
+							set name of target entity to "&6&l%colored arg%"
+							message "&aRenamed targeted entity!"
+							stop
+						else:
+							message "&cYou can't rename an entity where you can't build!"
+							stop
+			else:
+				message "&cThis either isn't an an entity or it already has a name."
+				stop
+		else:
+			message "&cYou must declare a name for the unnamed villager you are looking at!"
+on chat:
+	if message is "home home":
+		cancel event
+		message "&cYou forgot the &a/&c and almost made a fool of yourself! Let me fix that for you. =]"
+		wait 5 ticks
+		make player execute "/home home"
+	if message is "spawn":
+		cancel event
+		message "&cYou forgot the &a/&c and almost made a fool of yourself! Let me fix that for you. =]"
+		wait 5 ticks
+		make player execute "/spawn"
+
+command /bottle max:
+	trigger:
+		make player execute "bottles max"
+
+command /myvillager <player> <text> [<text>]:
+	permission: my.mob
+	usage: /myvillager (player) (profession) (name)
+	trigger:
+		if arg 2 is "villager":
+			spawn 1 villager at location of arg 1
+		if arg 2 is "blacksmith":
+			spawn 1 blacksmith at location of arg 1
+		if arg 2 is "priest":
+			spawn 1 priest at location of arg 1
+		if arg 2 is "farmer":
+			spawn 1 farmer at location of arg 1
+		if arg 2 is "librarian":
+			spawn 1 librarian at location of arg 1
+		if arg 2 is "butcher":
+			spawn 1 butcher at location of arg 1
+		loop all entities in radius 2 of arg 1:
+			set name of loop-entity to "&6&l%arg 3%"
+		send "&f[&aSERVER&f] &eSay hello to your new %arg 2% &6&l%arg 3%&e!" to arg 1
+
+on rightclick on villager or librarian or butcher or farmer or priest or blacksmith:
+	name of clicked entity contains "&6&l"
+	cancel event
+	send "&cSorry, you can't trade with this villager!" to player
+
+on damage:
+	victim is villager
+	name of victim is not " "
+	cancel event
+	send "&cSorry, you can't damage this villager!" to attacker

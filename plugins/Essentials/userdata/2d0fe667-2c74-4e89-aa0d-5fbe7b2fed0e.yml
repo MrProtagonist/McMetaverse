@@ -1,0 +1,30 @@
+money: '1499.5'
+geolocation: United Kingdom
+lastAccountName: JammyBoy112
+timestamps:
+  login: 1425144158648
+  logout: 1425146058788
+  lastteleport: 1425145538068
+ipAddress: 2.31.232.183
+logoutlocation:
+  world: Metacurse
+  x: -700.5383828483006
+  y: 87.0
+  z: 307.69999998807907
+  yaw: -5.5791845
+  pitch: 29.25
+lastlocation:
+  world: Metacurse
+  x: 1717.5114926063552
+  y: 46.0
+  z: 3431.4811123793943
+  yaw: 73.79813
+  pitch: 1.800119
+homes:
+  home:
+    world: Metacurse
+    x: -699.5812836900861
+    y: 87.0
+    z: 303.8523775585203
+    yaw: 2.0706787
+    pitch: -2.5500054

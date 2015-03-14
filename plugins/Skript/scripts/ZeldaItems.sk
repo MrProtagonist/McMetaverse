@@ -1,0 +1,60 @@
+options:
+    # Hammer Item
+    zelda.hammer: diamond hoe
+    # Bow Item
+    zelda.bow: bow
+    # Hookshot Item
+    zelda.hookshot: fishing rod
+on damage:
+    attacker's tool is {@zelda.hammer}
+    attacker is a player
+    attacker is holding Diamond Hoe
+    name of attacker's tool is "Megaton Hammer"
+    apply slowness 10 to victim for 3 seconds
+    apply blindness 1 to victim for 3 seconds
+every 5 seconds:
+    loop players:
+        boots of loop-player are leather boots:
+            name of boots of loop-player is "Iron Boots"
+            apply jump -4 to loop-player for 5 seconds
+            apply slowness 2 to loop-player for 5 seconds
+        chestplate of loop-player are leather tunic:
+            name of chestplate of loop-player is "Zora Tunic"
+            apply water breathing 1 to loop-player for 5 seconds
+#on projectile hit:
+#    shooter's tool is {@zelda.hookshot}
+#    name of shooter's tool is "Hookshot"
+#    event-block is oak log
+#    wait 2 real seconds
+#    teleport shooter to location of projectile
+
+on right click with fishing rod:
+    name of player's tool is "Hookshot"
+    cancel event
+    shoot arrow from player at speed 2.0
+    remove 1 arrow from player
+on projectile hit:
+    shooter's tool is {@zelda.hookshot}
+    name of shooter's tool is "Hookshot"
+    projectile is arrow
+    set {_block} to location of the projectile
+    set {_hookshottemp} to location of block 1 meter below {_block}
+    set {_hookblock} to block at location {_hookshottemp}
+    message "%{_hookblock}%" to shooter
+    block at {_hookblock} is oak log
+    wait 2 real seconds 
+    loop entities in radius 20 of shooter:
+        loop-entity is a arrow
+        loop-entity exists
+        teleport shooter to projectile
+on walking on grass:
+    if player has permission "essentials.socialspy":
+        boots of player are leather boots
+        name of boots of player is "Hover Boots":
+            message "falling"
+            wait 2 real seconds
+            
+        
+        
+            
+    

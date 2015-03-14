@@ -1,0 +1,31 @@
+AngryVillager: []
+Cloud: []
+Criticals: []
+DripLava: []
+DripWater: []
+Enchantment: []
+Spark: []
+Flame:
+- 29262a24-70aa-4824-83ec-5ec43f9a7d29
+HappyVillager: []
+InstantSpell: []
+LargeSmoke:
+- 29262a24-70aa-4824-83ec-5ec43f9a7d29
+Lava: []
+MagicCrit: []
+MobSpell: []
+MobSpellAmbient: []
+Note: []
+Portal: []
+RedDust: &id001 []
+ColoredRedDust: *id001
+Slime: []
+SnowShovel: []
+SnowballPoof: []
+Spell: []
+Splash: []
+TownAura: []
+Wake: []
+WitchMagic: []
+Hearts: []
+EnderSignal: []

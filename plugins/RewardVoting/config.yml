@@ -1,0 +1,84 @@
+################################
+####RewardVoting Config file####
+################################
+
+#WARNING: You CANT just put a new sentence in here and think it will work...
+#If you found any bugs or have ideas email me: cherwinsupport@hotmail.com
+
+#A specific item!
+itemid1: 0
+itemamount1: 0
+#A specific item!
+itemid2: 0
+itemamount2: 0
+#A specific item!
+itemid3: 0
+itemamount3: 0
+#A specific item!
+itemid4: 0
+itemamount4: 0
+#A specific item!
+itemid5: 0
+itemamount5: 0
+#A specific item!
+itemid6: 0
+itemamount6: 0
+
+#A specific potion!
+#Replace the 0 at potion1/potion2 with 373 to enable the specific potion!
+potion1: 0
+potionamount1: 0
+potionmeta1: 0
+
+#A specific potion!
+#Replace the 0 at potion1/potion2 with 373 to enable the specific potion!
+potion2: 0
+potionamount2: 0
+potionmeta2: 0
+
+#Amount of money a player get for voting!
+money: 200
+
+#Vote sites
+votesite1: "http://topg.org/Minecraft/in-371518"
+votesite2: "http://www.mc-index.com/2969-metaverse-8211-24-7-griefless-economy-job-server/vote"
+votesite3: "http://www.planetminecraft.com/server/mcmetaversecom-survival-server-247/vote/"
+
+#Message that the server broadcasts when someone voted. it is {playername} [Broadcast Message]
+broadcastmessage: "voted for us and got a cash reward!"
+
+#Set the message you get when you reloaded the plugin using /vreload
+reloadmessage: "Succesfully reloaded the plugin!"
+
+#Message shown when a player does /rewardvoting freediamonds
+freediamonds: "Did you really think you get free diamonds?!"
+
+###############################
+####RewardVoting changelog!####
+###############################
+# 5.3
+#
+# Added a strength potion & iron ingots to config.yml
+# Added specific items
+# Added RewardVoting command (which allows you to do /RewardVoting support:info:reload
+# Removed vreload command
+# Removed vfr command
+# Removed succesmessage
+# The plugin now works on CraftBukkit 1.7.2 - R0.1
+#
+# 5.4
+#
+# Added /rewardvoting vote command!
+# Added a specific potion
+# Added a max of 3 vote websites to config!
+# Fixed some bugs
+#
+# 5.5
+# 
+# Removed default items
+# Added 3 more specific items and 1 more specific potion!
+# Removed vault support because it was too buggy
+# The money now only works for economy plugins which use /pay [player] [amount] (Like essentials, BOSEconomy)
+# Added /rewardvoting freediamonds  command (only shows a message. configurable in the config)
+# Added /vote  command
+#

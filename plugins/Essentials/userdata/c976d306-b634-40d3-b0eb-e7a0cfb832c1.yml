@@ -1,0 +1,31 @@
+money: '5050.15'
+lastlocation:
+  world: Metacurse
+  x: -4586.697644656665
+  y: 84.0
+  z: 914.3000000119209
+  yaw: -116.718025
+  pitch: -70.08882
+geolocation: United States
+lastAccountName: lacerfacerxd
+timestamps:
+  login: 1426306326648
+  logout: 1426306789730
+  lastteleport: 1426280469829
+ipAddress: 50.159.121.144
+logoutlocation:
+  world: Metacurse
+  x: -4582.844718037813
+  y: 86.0
+  z: 908.319289498383
+  yaw: 284.3589
+  pitch: 4.1617994
+homes:
+  home:
+    world: Metacurse
+    x: -4590.7961309188995
+    y: 99.0
+    z: 877.9674872502958
+    yaw: 217.80646
+    pitch: 26.268549
+afk: false

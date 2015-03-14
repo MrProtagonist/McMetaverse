@@ -1,0 +1,321 @@
+######################
+#+                  +#
+#   MENU SETTINGS    #
+#+                  +#
+######################
+
+menu-settings:
+
+  # name - appears as the title - REQUIRED
+  name: '&a&lSHOP CATEGORIES'
+
+  # rows - the number of rows of the chest - REQUIRED
+  rows: 4
+
+  # command - OPTIONAL (you can remove this or set it to '')
+  command: 'shop'
+
+  # The sound played whenever the menu is opened.
+  # List of sounds:
+  # jd.bukkit.org/rb/apidocs/org/bukkit/Sound.html
+  open-sound: NOTE_PLING
+
+  # open-with-item - OPTIONAL (you can remove this or
+  # set the item-id/data-value to 0)
+  # In this case it will open with a book (right click)
+  open-with-item:
+    item-id: 340
+    left-click: false
+    right-click: false
+#   data-value: 0
+
+######################
+#+                  +#
+#       ITEMS        #
+#+                  +#
+######################
+
+General:
+  COMMAND: 'open:general.yml'
+  NAME: '&d[p] &e&lGeneral &d[p]'
+  LORE:
+    - '&f&oThese shops sell a wide variety of items'
+  ID: chest
+  KEEP-OPEN: true
+  POSITION-X: 3
+  POSITION-Y: 2
+
+Combat:
+  COMMAND: 'open:combat.yml'
+  NAME: '&d[p] &c&lCombat &d[p]'
+  LORE:
+    - '&f&oFor all your armor and weapon needs'
+  ID: diamond_sword
+  KEEP-OPEN: true
+  POSITION-X: 4
+  POSITION-Y: 3
+  
+Block:
+  COMMAND: 'open:block.yml'
+  NAME: '&d[p] &6&lBlock &d[p]'
+  LORE:
+    - '&f&oBuilding and decorative blocks'
+  ID: 5
+  KEEP-OPEN: true
+  POSITION-X: 5
+  POSITION-Y: 2
+  DATA-VALUE: 2
+
+Food:
+  COMMAND: 'open:food.yml'
+  NAME: '&d[p] &a&lFood &d[p]'
+  LORE:
+    - '&f&oFood and other health related items'
+  ID: bread
+  KEEP-OPEN: true
+  POSITION-X: 6
+  POSITION-Y: 3
+
+Mechanical:
+  COMMAND: 'open:mechanical.yml'
+  NAME: '&d[p] &9&lMechanical &d[p]'
+  LORE:
+    - '&f&oRedstone, rails, boats, levers, etc. '
+  ID: 33
+  KEEP-OPEN: true
+  POSITION-X: 7
+  POSITION-Y: 2
+
+dividerma1:
+  NAME: ''
+  ID: 160
+  KEEP-OPEN: true
+  POSITION-X: 1
+  POSITION-Y: 1
+  DATA-VALUE: 0
+
+dividerma2:
+  NAME: ''
+  ID: 160
+  KEEP-OPEN: true
+  POSITION-X: 2
+  POSITION-Y: 1
+  DATA-VALUE: 0
+
+dividerma3:
+  NAME: ''
+  ID: 160
+  KEEP-OPEN: true
+  POSITION-X: 3
+  POSITION-Y: 1
+  DATA-VALUE: 0
+
+dividerma4:
+  NAME: ''
+  ID: 160
+  KEEP-OPEN: true
+  POSITION-X: 4
+  POSITION-Y: 1
+  DATA-VALUE: 0
+
+dividerma5:
+  NAME: ''
+  ID: 160
+  KEEP-OPEN: true
+  POSITION-X: 5
+  POSITION-Y: 1
+  DATA-VALUE: 0
+
+dividerma6:
+  NAME: ''
+  ID: 160
+  KEEP-OPEN: true
+  POSITION-X: 6
+  POSITION-Y: 1
+  DATA-VALUE: 0
+
+dividerma7:
+  NAME: ''
+  ID: 160
+  KEEP-OPEN: true
+  POSITION-X: 7
+  POSITION-Y: 1
+  DATA-VALUE: 0
+
+dividerma8:
+  NAME: ''
+  ID: 160
+  KEEP-OPEN: true
+  POSITION-X: 8
+  POSITION-Y: 1
+  DATA-VALUE: 0
+
+dividerma9:
+  NAME: ''
+  ID: 160
+  KEEP-OPEN: true
+  POSITION-X: 9
+  POSITION-Y: 1
+  DATA-VALUE: 0
+
+dividerma10:
+  NAME: ''
+  ID: 160
+  KEEP-OPEN: true
+  POSITION-X: 1
+  POSITION-Y: 2
+  DATA-VALUE: 0
+
+dividerma11:
+  NAME: ''
+  ID: 160
+  KEEP-OPEN: true
+  POSITION-X: 2
+  POSITION-Y: 2
+  DATA-VALUE: 0
+
+dividerma12:
+  NAME: ''
+  ID: 160
+  KEEP-OPEN: true
+  POSITION-X: 4
+  POSITION-Y: 2
+  DATA-VALUE: 0
+dividerma13:
+  NAME: ''
+  ID: 160
+  KEEP-OPEN: true
+  POSITION-X: 6
+  POSITION-Y: 2
+  DATA-VALUE: 0
+dividerma14:
+  NAME: ''
+  ID: 160
+  KEEP-OPEN: true
+  POSITION-X: 8
+  POSITION-Y: 2
+  DATA-VALUE: 0
+dividerma15:
+  NAME: ''
+  ID: 160
+  KEEP-OPEN: true
+  POSITION-X: 9
+  POSITION-Y: 2
+  DATA-VALUE: 0
+dividerma16:
+  NAME: ''
+  ID: 160
+  KEEP-OPEN: true
+  POSITION-X: 1
+  POSITION-Y: 3
+  DATA-VALUE: 0
+dividerma17:
+  NAME: ''
+  ID: 160
+  KEEP-OPEN: true
+  POSITION-X: 2
+  POSITION-Y: 3
+  DATA-VALUE: 0
+dividerma18:
+  NAME: ''
+  ID: 160
+  KEEP-OPEN: true
+  POSITION-X: 3
+  POSITION-Y: 3
+  DATA-VALUE: 0
+dividerma19:
+  NAME: ''
+  ID: 160
+  KEEP-OPEN: true
+  POSITION-X: 5
+  POSITION-Y: 3
+  DATA-VALUE: 0
+dividerma20:
+  NAME: ''
+  ID: 160
+  KEEP-OPEN: true
+  POSITION-X: 7
+  POSITION-Y: 3
+  DATA-VALUE: 0
+dividerma21:
+  NAME: ''
+  ID: 160
+  KEEP-OPEN: true
+  POSITION-X: 8
+  POSITION-Y: 3
+  DATA-VALUE: 0
+dividerma22:
+  NAME: ''
+  ID: 160
+  KEEP-OPEN: true
+  POSITION-X: 9
+  POSITION-Y: 3
+  DATA-VALUE: 0
+dividerma23:
+  NAME: ''
+  ID: 160
+  KEEP-OPEN: true
+  POSITION-X: 1
+  POSITION-Y: 4
+  DATA-VALUE: 0
+dividerma24:
+  NAME: ''
+  ID: 160
+  KEEP-OPEN: true
+  POSITION-X: 2
+  POSITION-Y: 4
+  DATA-VALUE: 0
+dividerma25:
+  NAME: ''
+  ID: 160
+  KEEP-OPEN: true
+  POSITION-X: 3
+  POSITION-Y: 4
+  DATA-VALUE: 0
+dividerma26:
+  NAME: ''
+  ID: 160
+  KEEP-OPEN: true
+  POSITION-X: 4
+  POSITION-Y: 4
+  DATA-VALUE: 0
+dividerma27:
+  NAME: ''
+  ID: 160
+  KEEP-OPEN: true
+  POSITION-X: 5
+  POSITION-Y: 4
+  DATA-VALUE: 0
+dividerma28:
+  NAME: ''
+  ID: 160
+  KEEP-OPEN: true
+  POSITION-X: 6
+  POSITION-Y: 4
+  DATA-VALUE: 0
+dividerma29:
+  NAME: ''
+  ID: 160
+  KEEP-OPEN: true
+  POSITION-X: 7
+  POSITION-Y: 4
+  DATA-VALUE: 0
+dividerma30:
+  NAME: ''
+  ID: 160
+  KEEP-OPEN: true
+  POSITION-X: 8
+  POSITION-Y: 4
+  DATA-VALUE: 0
+
+shop:
+  COMMAND: 'open:simple-shop.yml'
+  NAME: '&d[p] &d&lMobile Server Shop &d[p]'
+  LORE:
+    - '&f&oBuy and sell anywhere from the server'
+    - ' '
+    - '&f&oYou can get better deals at player shops'
+  ID: emerald
+  KEEP-OPEN: true
+  POSITION-X: 9
+  POSITION-Y: 4

@@ -1,0 +1,44 @@
+configversion: 2
+plugins:
+  force-enable-later: []
+  ensure-enable:
+  - WorldGuard
+hooks:
+  prevent-add: []
+  set-speed:
+    enabled: false
+    fly-speed: 0.1
+    walk-speed: 0.2
+  player-class:
+    enabled: false
+    exempt-names:
+    - Shadow007uk
+    exempt-all: true
+    class-names:
+    - SpoutPlayerSnapshot
+    - SpoutClientPlayer
+    - SpoutCraftPlayer
+    - CraftPlayer
+    - SpoutPlayer
+    super-class: true
+  block-break:
+    enabled: true
+    exempt-names:
+    - ArtificialBlockBreakEvent
+    - FakeBlockBreakEvent
+  block-place:
+    enabled: true
+    exempt-names:
+    - ArtificialBlockPlaceEvent
+  insta-break:
+    enabled: true
+  citizens2:
+    enabled: true
+  mcmmo:
+    enabled: true
+    use-insta-break-hook: true
+    clickspersecond: 20
+  entity-damage-by-entity:
+    enabled: true
+    exempt-names:
+    - WeaponDamageEntityEvent

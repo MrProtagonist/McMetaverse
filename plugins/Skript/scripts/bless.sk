@@ -1,0 +1,25 @@
+on quit:
+	delete {bless.%player%}
+
+command /bless <player>:
+	permission: essentials.socialspy
+	trigger:
+		if {bless.%arg%} is not set:
+			send "&d&lYou have been blessed by the gods!" to arg
+			set {bless.%arg%} to true
+			message "&aYou have blessed %arg%!"
+			play 50 of effect "hearts" with data 1 at argument
+			apply swiftness 2 to the arg for 30 seconds
+			strike lightning effect at the argument
+			heal the argument
+			loop all items in argument's inventory:
+				loop-item is tool or armor
+				repair loop-item
+			wait 4 real seconds
+			send "&oYou and all of your items have been regenerated to full health!" to arg
+		else:
+			message "&cThis player has already been blessed!"
+on command "/reload":
+	player is op
+	cancel event
+	message "&c&lDUMBASS! Never do that."

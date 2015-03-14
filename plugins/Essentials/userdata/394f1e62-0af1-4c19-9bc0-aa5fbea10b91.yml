@@ -1,0 +1,45 @@
+money: '4369.0'
+lastlocation:
+  world: Metacurse
+  x: -3576.7473766764633
+  y: 78.66206926996726
+  z: -5901.265996676476
+  yaw: -231.02325
+  pitch: -10.949861
+geolocation: United States
+lastAccountName: ROLAND2011A
+timestamps:
+  login: 1426294498544
+  lastteleport: 1426302747978
+  logout: 1426302810559
+ipAddress: 97.97.153.159
+logoutlocation:
+  world: Metacurse
+  x: -3748.432420858057
+  y: 70.0
+  z: -5948.612478361024
+  yaw: -165.91486
+  pitch: 11.549847
+homes:
+  home:
+    world: Metacurse
+    x: -3749.3906508169803
+    y: 70.0
+    z: -5957.941505518419
+    yaw: -46.36487
+    pitch: 22.049858
+  nether:
+    world: Metacurse_nether
+    x: -434.4211227302406
+    y: 78.0
+    z: -685.9265710606248
+    yaw: -1.6498168
+    pitch: 22.350004
+  clay:
+    world: Metacurse
+    x: 1993.5623608215158
+    y: 93.0
+    z: -46.810851730811045
+    yaw: -97.28186
+    pitch: 17.849983
+afk: false

@@ -1,0 +1,4 @@
+#CoreProtect-Anti-Xray Config
+
+#Do you want the plugin to collect anonymous usage data?
+useMetrics: true

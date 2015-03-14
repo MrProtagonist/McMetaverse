@@ -1,0 +1,23 @@
+geolocation: United States
+lastAccountName: megaswag2000
+timestamps:
+  login: 1426304530599
+  lastteleport: 1426288587770
+  logout: 1426304840770
+ipAddress: 65.114.252.5
+lastlocation:
+  world: Metacurse
+  x: -79.12007284063077
+  y: 69.0
+  z: -34.42703918367322
+  yaw: 90.516815
+  pitch: 25.94999
+money: '10355.0'
+afk: false
+logoutlocation:
+  world: Metacurse
+  x: -1113.5961989182047
+  y: 63.0
+  z: -3474.837494180712
+  yaw: 53.15395
+  pitch: 41.850014

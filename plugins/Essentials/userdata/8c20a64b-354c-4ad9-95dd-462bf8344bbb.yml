@@ -1,0 +1,22 @@
+geolocation: Netherlands
+lastlocation:
+  world: Metacurse
+  x: -525.0946491813024
+  y: 133.89847772625302
+  z: -365.01603968802203
+  yaw: -318.08328
+  pitch: 37.19999
+lastAccountName: djdeelen
+timestamps:
+  login: 1424722223359
+  lastteleport: 1424722323854
+  logout: 1424722623939
+ipAddress: 81.206.156.53
+logoutlocation:
+  world: Metacurse
+  x: -66.5
+  y: 70.0
+  z: -71.5
+  yaw: 117.81691
+  pitch: 23.099997
+money: '36.0'

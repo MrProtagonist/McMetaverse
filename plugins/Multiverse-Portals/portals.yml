@@ -1,0 +1,41 @@
+portals:
+  creativeto:
+    entryfee:
+      currency: -1
+      amount: 0.0
+    safeteleport: true
+    teleportnonplayers: false
+    owner: bluedemon0015
+    location: -828.0,67.0,435.0:-826.0,67.0,437.0
+    world: Vanilla
+    destination: Creative
+  creative:
+    entryfee:
+      currency: -1
+      amount: 0.0
+    safeteleport: true
+    teleportnonplayers: false
+    owner: bluedemon0015
+    location: -98.0,100.0,66.0:-95.0,100.0,67.0
+    world: Metaverse
+    destination: Creative
+  outcontest:
+    entryfee:
+      currency: -1
+      amount: 0.0
+    safeteleport: true
+    teleportnonplayers: false
+    owner: bluedemon0015
+    location: 1913.0,3.0,-519.0:1915.0,6.0,-519.0
+    world: Creative
+    destination: e:Metaverse:-56.41387822945807,101.0,21.54605336274876:1.3499659:-0.4500284
+  tocontest:
+    entryfee:
+      currency: -1
+      amount: 0.0
+    safeteleport: true
+    teleportnonplayers: false
+    owner: bluedemon0015
+    location: -103.0,100.0,66.0:-100.0,100.0,67.0
+    world: Metaverse
+    destination: e:Creative:1914.4640684677206,4.0,-516.4248380288083:0.1499534:0.15003373

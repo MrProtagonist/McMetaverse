@@ -1,0 +1,21 @@
+geolocation: United States
+lastlocation:
+  world: Metacurse
+  x: -38.30000001192092
+  y: 67.0
+  z: -541.3000000119209
+  yaw: 288.67493
+  pitch: 4.499979
+lastAccountName: ROBUSCU
+timestamps:
+  login: 1423939700289
+  logout: 1423940750108
+ipAddress: 72.189.197.2
+logoutlocation:
+  world: Metacurse
+  x: -371.79742803590796
+  y: 64.0
+  z: -88.10959160044798
+  yaw: -167.10066
+  pitch: -0.90003914
+money: '12.0'

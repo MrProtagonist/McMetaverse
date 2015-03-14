@@ -1,0 +1,27 @@
+every 20 real seconds:
+    loop all players:
+        if loop-player has permission "skript.extrahealth10":
+            set max health of loop-player to 20
+        else if loop-player has permission "skript.extrahealth8":
+            set max health of loop-player to 18
+        else if loop-player has permission "skript.extrahealth6":
+            set max health of loop-player to 16
+        else if loop-player has permission "skript.extrahealth4":
+            set max health of loop-player to 14
+        else if loop-player has permission "skript.extrahealth2":
+            set max health of loop-player to 12
+command /healthreset:
+    trigger:
+        loop all players:
+            if loop-player has permission "skript.extrahealth10":
+                set {sethealth.%loop-player%.10} to false
+            if loop-player has permission "skript.extrahealth8":
+                set {sethealth.%loop-player%.8} to false
+            if loop-player has permission "skript.extrahealth6":
+                set {sethealth.%loop-player%.6} to false
+            if loop-player has permission "skript.extrahealth4":
+                set {sethealth.%loop-player%.4} to false
+            if loop-player has permission "skript.extrahealth2":
+                set {sethealth.%loop-player%.2} to false
+        
+        

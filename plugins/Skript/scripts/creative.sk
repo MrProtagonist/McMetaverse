@@ -1,0 +1,30 @@
+on spawn:
+	event-entity is not a player
+	world is "Sandbox"
+	cancel event
+every 2 real seconds:
+	loop all players:
+		{autofill.%loop-player%} is not set:
+			set {autofill.%loop-player%} to false
+		loop-player's gamemode is creative:
+			{autofill.%loop-player%} is true
+			set {autofill.%loop-player%} to false
+			execute console command "manuaddp %loop-player% -autoitem.replaceon.place"
+			send "&e&oDisabling AutoFill for you. &f=]" to loop-player
+		loop-player's gamemode is survival:
+			loop-player has the permission "-autoitem.replaceon.place"
+			{autofill.%loop-player%} is not true
+			set {autofill.%loop-player%} to true
+			execute console command "manudelp %loop-player% -autoitem.replaceon.place"
+			send "&e&oEnabling AutoFill for you. &f=]" to loop-player
+			
+command /stalk:
+	permission: essentials.socialspy
+	trigger:
+		if player's gamemode is survival:
+			execute console command "gamemode 3 %player%"
+			message "&f[&aSERVER&f] &aGo my child. Make me proud."
+			stop
+		else:
+			execute console command "gamemode 0 %player%"
+			message "&f[&aSERVER&f] &aYou have done well my child."

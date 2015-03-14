@@ -1,0 +1,19 @@
+command /poke <player>:
+	trigger:
+		if arg is online:
+			{lastpoke.%player%} is not set:
+				set {lastpoke.%player%} to 0
+			if {lastpoke.%player%} is 0:
+				set {lastpoke.%player%} to 30
+				message "&6&oNow poking %arg%..."
+				message "&fDO NOT ABUSE THIS FEATURE, AS IT CAN BE CONSIDERED HARASSMENT"
+				send "&a&oYou were just poked by %player%! Did they get your attention?" to arg
+				execute console command "playsound mob.ghast.affectionate_scream %arg%"
+				while {lastpoke.%player%} is not 0:
+					wait 1 real second
+					subtract 1 from {lastpoke.%player%}
+			else:
+				message "&cYou must wait %{lastpoke.%player%}% seconds before performing another poke."
+				stop
+		else:
+			message "&cUnable to find a player named &6%arg%&c. Check your spelling and verify they are online."

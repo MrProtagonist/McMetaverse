@@ -1,0 +1,5 @@
+# This file stores all uuids of players that Autorank has looked up before.
+# Each file stores accounts with the starting letter of the player's name.
+Varanta:
+  uuid: 0c376ecc-a0ee-4042-8250-0b4288a6264c
+  updateTime: 1426191697831

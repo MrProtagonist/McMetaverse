@@ -1,0 +1,5 @@
+playerData:
+  inventoryContents: ''
+  armorContents: ''
+  potions: ''
+  stats: ft:0;sa:5.0;ma:300;hp:24;ra:300;txp:0;fl:20;fd:0.0;el:0;ex:0.0;xp:0.0

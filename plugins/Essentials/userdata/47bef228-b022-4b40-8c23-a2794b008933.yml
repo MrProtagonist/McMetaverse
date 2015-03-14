@@ -1,0 +1,22 @@
+geolocation: United States
+lastlocation:
+  world: Metacurse
+  x: -67.0
+  y: 70.0
+  z: -72.0
+  yaw: 0.0
+  pitch: 0.0
+lastAccountName: zell963s
+timestamps:
+  login: 1424760706500
+  logout: 1424761012442
+  lastteleport: 1424759788920
+ipAddress: 173.30.66.220
+logoutlocation:
+  world: Metacurse
+  x: 1965.699999988079
+  y: 74.0
+  z: 2349.300000011921
+  yaw: -120.06804
+  pitch: 71.69999
+money: '204.0'

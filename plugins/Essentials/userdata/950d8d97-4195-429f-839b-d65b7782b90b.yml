@@ -1,0 +1,137 @@
+lastAccountName: gussy05
+timestamps:
+  login: 1426292240495
+  lastteleport: 1426297289227
+  logout: 1426298110954
+ipAddress: 2.26.88.78
+homes:
+  survival:
+    world: Metaverse
+    x: 5361.416683016663
+    y: 72.0
+    z: 289.6654958884482
+    yaw: -79.34533
+    pitch: 13.649924
+  home:
+    world: newMeta
+    x: -3431.6075473587243
+    y: 63.0
+    z: -1483.5571788912432
+    yaw: 281.08673
+    pitch: -30.449717
+  gus:
+    world: Metacurse
+    x: -3385.5827030608984
+    y: 76.0
+    z: -1478.1829534692893
+    yaw: 54.793457
+    pitch: 27.900171
+  clay:
+    world: Metacurse
+    x: 245.94372143295288
+    y: 62.596999858256616
+    z: -7188.3759391712065
+    yaw: -167.54526
+    pitch: 50.09999
+  temple:
+    world: Metacurse
+    x: -312.5561378440736
+    y: 63.4246509743978
+    z: -6951.836558756249
+    yaw: -68.69519
+    pitch: 48.89996
+  templey:
+    world: Metacurse
+    x: -311.67984551176613
+    y: 48.0
+    z: -6962.705427106134
+    yaw: -129.59485
+    pitch: 90.0
+  sheep:
+    world: Metacurse
+    x: -3410.219754422169
+    y: 76.0
+    z: -2357.2712142456735
+    yaw: 239.59282
+    pitch: 33.90007
+  basement:
+    world: Metacurse
+    x: -3372.1271917066283
+    y: 68.0
+    z: -1464.0138683378755
+    yaw: 179.59364
+    pitch: 21.150164
+  mine:
+    world: Metacurse
+    x: -3362.4492667956833
+    y: 4.0
+    z: -1585.3448024293143
+    yaw: 255.20062
+    pitch: 26.850117
+  shaft:
+    world: Metacurse
+    x: -4406.5
+    y: 26.0
+    z: -923.5
+    yaw: 48.425262
+    pitch: 20.249992
+  bedrock:
+    world: Metacurse
+    x: -3267.8463883087547
+    y: 4.0
+    z: -1577.3396652014294
+    yaw: 105.95044
+    pitch: 18.899656
+  dark:
+    world: Metacurse
+    x: -3168.69030394312
+    y: 63.0
+    z: -1420.300000011921
+    yaw: 359.29272
+    pitch: 19.350042
+  ape:
+    world: Metacurse
+    x: -3250.823494942214
+    y: 77.0
+    z: -1575.9844903556211
+    yaw: 76.58657
+    pitch: 47.849888
+  shop:
+    world: Metacurse
+    x: -3444.034051421525
+    y: 65.0625
+    z: -1493.7084471194773
+    yaw: 178.84348
+    pitch: 20.700169
+  info:
+    world: Metacurse
+    x: -17.160985070722926
+    y: 68.0
+    z: -6.503198814556807
+    yaw: 354.21765
+    pitch: 42.74998
+  lava:
+    world: Metacurse
+    x: -4495.91158332008
+    y: 11.0
+    z: -915.2042423651317
+    yaw: 195.12233
+    pitch: 68.850235
+lastlocation:
+  world: Metacurse
+  x: 2724.7326751224664
+  y: 79.35106520271474
+  z: -1042.3693917452251
+  yaw: 61.749695
+  pitch: 18.900003
+afk: false
+money: '16148.23'
+socialspy: true
+logoutlocation:
+  world: Metacurse
+  x: -3376.011583121698
+  y: 84.0
+  z: -1457.1955170809345
+  yaw: 286.399
+  pitch: -12.1500025
+godmode: false

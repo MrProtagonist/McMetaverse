@@ -1,0 +1,56 @@
+#  ----------------------------------------------------
+#  AutoMessage Configuration File
+#  ----------------------------------------------------
+#  Message Configuration:
+#     Messages are handled in lists to allow for advanced customization!
+#     Feel free to add color codes by using & in your messages!
+#     To split a message onto multiple lines use the \n delimiter!
+#     Lines starting with / will be run as a command!
+#     To add single apostrophes into a message use ''.
+#     For a complete tutorial go to http://dev.bukkit.org/server-mods/automessage.
+#     If you are unfamiliar with YAML use the in-game commands: /am help
+
+settings:
+  enabled: true
+  min-players: 2
+  log-to-console: false
+  auto-update: false
+message-lists:
+  staff:
+    enabled: true
+    interval: 250
+    expiry: -1
+    random: true
+    prefix: '&f[&b&lSTAFF&r&f] '
+    messages:
+    - '&a/Warp staff&c often to see the latest player notes and other information.'
+    - '&cIf you are going to be offline for an extended period, let us know and keep
+      in contact as best as you can through our site, or you may log in to be demoted.'
+    - '&cRemember to participate in Admin and Applicant comments on applications.
+      We need your opinion.'
+    - '&cLaggy? &a/lagg &cwill let you check, clear, and search for laggy parts of
+      the server.'
+    - '&cBe sure to pick up a copy of the latest Staff Handbook in the Lounge!'
+    - '&cArguing with another staff in game is not allowed. PM, or wait for an Owner.'
+  default:
+    enabled: true
+    interval: 200
+    expiry: -1
+    random: true
+    prefix: '&f[&e&lTIP&r&f] '
+    messages:
+    - '&6You can &a/warp hub&6 to instantly go to the server portal room.'
+    - '&6All donations are recorded and compiled. Once reaching VIP, that status follows you for all of our servers.'
+    - '&6Never ask to be staff. You must apply on our website for staff review.'
+    - '&6If you log off for 1 month, your claims may disappear!'
+    - '&6 Be sure to check &a&lMcMetaverse.com&r&6 daily for important news!'
+    - '&6Voting gives you 20 diamonds daily!'
+    - '&6Type &c/warp Market&6 for player shops, or visit the Servers Shops at &c/warp
+      SS&6.'
+    - '&6Type &c/helpop &omessage here&6 to send an important message or question to all
+      staff & veteran players.'
+    - '&6Visit often to participate in our daily drop partys! Based on traffic, sometimes more than one a day.'
+    - '&6Be sure to like us on Facebook, as well as follow our Twitter, YouTube, and
+      Tumblr accounts!'
+    - '&6Feel free to broadcast us on your blog or website. We love newcomers!'
+    - '&9Participate in our new Redstone Contest! &c&l/warp contest&r&d to build!'

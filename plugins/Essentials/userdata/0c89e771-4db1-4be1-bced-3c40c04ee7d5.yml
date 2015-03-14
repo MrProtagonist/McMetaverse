@@ -1,0 +1,83 @@
+money: '43720.8'
+lastAccountName: dinoppar
+timestamps:
+  login: 1426207830584
+  logout: 1426208297892
+  lastteleport: 1426131665985
+ipAddress: 76.168.178.156
+afk: false
+logoutlocation:
+  world: Metacurse
+  x: -487.34135816038616
+  y: 78.5
+  z: -2216.5787888158357
+  yaw: -96.09393
+  pitch: 28.950006
+lastlocation:
+  world: Metacurse
+  x: 319.131726830282
+  y: 47.0
+  z: -2480.148086904117
+  yaw: 95.41803
+  pitch: 49.65
+socialspy: true
+godmode: true
+homes:
+  home:
+    world: Metacurse
+    x: 327.30000001192093
+    y: 54.0
+    z: -2461.300000011921
+    yaw: 193.06787
+    pitch: 44.999985
+  mobarena:
+    world: Metacurse
+    x: -1368.5
+    y: 83.0
+    z: -8.5
+    yaw: 1.5597912
+    pitch: 38.700005
+  portal:
+    world: Metacurse_nether
+    x: 40.211737462934686
+    y: 32.0
+    z: -301.7220074479941
+    yaw: 13.967651
+    pitch: 2.699989
+  evil:
+    world: Metacurse
+    x: -3332.5
+    y: 69.0
+    z: -3669.5
+    yaw: 45.350258
+    pitch: -1.0500079
+  map:
+    world: Metacurse
+    x: 71.5
+    y: 70.0
+    z: -113.5
+    yaw: 271.26877
+    pitch: -17.099958
+  piss:
+    world: Metacurse
+    x: 1790.147233653548
+    y: 131.0
+    z: -5913.222418646402
+    yaw: 179.00688
+    pitch: 23.549995
+  loot:
+    world: Metacurse
+    x: 319.53528597291273
+    y: 47.0
+    z: -2477.4479980463416
+    yaw: 140.86804
+    pitch: 19.499994
+  cairo:
+    world: Metacurse
+    x: -469.5
+    y: 77.0
+    z: -2202.5
+    yaw: 179.9062
+    pitch: 13.799991
+geolocation: United States
+teleportenabled: true

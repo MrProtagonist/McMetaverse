@@ -1,0 +1,181 @@
+'1424930451024':
+  ==: org.bukkit.inventory.ItemStack
+  type: BANNER
+  damage: 13
+  meta:
+    ==: ItemMeta
+    meta-type: BANNER
+    patterns:
+    - ==: Pattern
+      color: BLACK
+      pattern: cre
+    - ==: Pattern
+      color: BLACK
+      pattern: gra
+'1424930496023':
+  ==: org.bukkit.inventory.ItemStack
+  type: BANNER
+  damage: 12
+  meta:
+    ==: ItemMeta
+    meta-type: BANNER
+    patterns:
+    - ==: Pattern
+      color: BLACK
+      pattern: gra
+    - ==: Pattern
+      color: BLACK
+      pattern: cbo
+'1424930566327':
+  ==: org.bukkit.inventory.ItemStack
+  type: BANNER
+  damage: 2
+  meta:
+    ==: ItemMeta
+    meta-type: BANNER
+    patterns:
+    - ==: Pattern
+      color: BLACK
+      pattern: moj
+'1425174912406':
+  ==: org.bukkit.inventory.ItemStack
+  type: BANNER
+  damage: 15
+  meta:
+    ==: ItemMeta
+    meta-type: BANNER
+    patterns:
+    - ==: Pattern
+      color: BLACK
+      pattern: mc
+    - ==: Pattern
+      color: WHITE
+      pattern: mc
+    - ==: Pattern
+      color: BLACK
+      pattern: tt
+    - ==: Pattern
+      color: WHITE
+      pattern: cr
+    - ==: Pattern
+      color: BLACK
+      pattern: cbo
+    - ==: Pattern
+      color: WHITE
+      pattern: bts
+'1425175094474':
+  ==: org.bukkit.inventory.ItemStack
+  type: BANNER
+  damage: 15
+  meta:
+    ==: ItemMeta
+    meta-type: BANNER
+    patterns:
+    - ==: Pattern
+      color: BLACK
+      pattern: mc
+    - ==: Pattern
+      color: WHITE
+      pattern: flo
+    - ==: Pattern
+      color: WHITE
+      pattern: cr
+    - ==: Pattern
+      color: BLACK
+      pattern: tt
+    - ==: Pattern
+      color: BLACK
+      pattern: cbo
+    - ==: Pattern
+      color: WHITE
+      pattern: bts
+    - ==: Pattern
+      color: WHITE
+      pattern: cr
+'1425512866091':
+  ==: org.bukkit.inventory.ItemStack
+  type: BANNER
+  damage: 6
+  meta:
+    ==: ItemMeta
+    meta-type: BANNER
+    patterns:
+    - ==: Pattern
+      color: BLACK
+      pattern: cr
+    - ==: Pattern
+      color: LIGHT_BLUE
+      pattern: gra
+    - ==: Pattern
+      color: BLUE
+      pattern: gru
+    - ==: Pattern
+      color: WHITE
+      pattern: cbo
+    - ==: Pattern
+      color: BLACK
+      pattern: flo
+    - ==: Pattern
+      color: WHITE
+      pattern: mc
+    - ==: Pattern
+      color: BLACK
+      pattern: bo
+'1425512949778':
+  ==: org.bukkit.inventory.ItemStack
+  type: BANNER
+  damage: 6
+  meta:
+    ==: ItemMeta
+    meta-type: BANNER
+    patterns:
+    - ==: Pattern
+      color: BLACK
+      pattern: cr
+    - ==: Pattern
+      color: LIGHT_BLUE
+      pattern: gra
+    - ==: Pattern
+      color: BLUE
+      pattern: gru
+    - ==: Pattern
+      color: WHITE
+      pattern: cbo
+    - ==: Pattern
+      color: BLACK
+      pattern: flo
+    - ==: Pattern
+      color: PURPLE
+      pattern: mc
+    - ==: Pattern
+      color: BLACK
+      pattern: bo
+'1425512978710':
+  ==: org.bukkit.inventory.ItemStack
+  type: BANNER
+  damage: 6
+  meta:
+    ==: ItemMeta
+    meta-type: BANNER
+    patterns:
+    - ==: Pattern
+      color: BLACK
+      pattern: cr
+    - ==: Pattern
+      color: LIGHT_BLUE
+      pattern: gra
+    - ==: Pattern
+      color: BLUE
+      pattern: gru
+    - ==: Pattern
+      color: WHITE
+      pattern: cbo
+    - ==: Pattern
+      color: BLACK
+      pattern: flo
+    - ==: Pattern
+      color: CYAN
+      pattern: mc
+    - ==: Pattern
+      color: BLACK
+      pattern: bo

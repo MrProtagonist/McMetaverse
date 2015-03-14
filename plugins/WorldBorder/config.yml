@@ -1,0 +1,34 @@
+cfg-version: 9
+message: '&cYou have reached the edge of this world.'
+round-border: true
+debug-mode: false
+whoosh-effect: false
+portal-redirection: true
+knock-back-dist: 3.0
+timer-delay-ticks: 5
+remount-delay-ticks: 0
+dynmap-border-enabled: true
+dynmap-border-message: The border of the world.
+player-killed-bad-spawn: false
+deny-enderpearl: false
+fill-autosave-frequency: 30
+bypass-list: []
+worlds:
+  Metaverse:
+    x: -56.45794313820742
+    z: 21.66801139929879
+    radiusX: 11000
+    radiusZ: 11000
+    wrapping: false
+  newMeta:
+    x: -4071.541082103222
+    z: -652.4395909499951
+    radiusX: 8000
+    radiusZ: 8000
+    wrapping: false
+  Metacurse:
+    x: -66.5
+    z: -71.5
+    radiusX: 10000
+    radiusZ: 10000
+    wrapping: false

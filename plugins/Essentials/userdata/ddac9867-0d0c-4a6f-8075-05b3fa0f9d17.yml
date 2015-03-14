@@ -1,0 +1,37 @@
+geolocation: Canada
+lastlocation:
+  world: Metacurse
+  x: -1197.0542045740992
+  y: 69.0
+  z: -313.7081361925151
+  yaw: 219.71916
+  pitch: 13.654714
+lastAccountName: PuggieGurl
+timestamps:
+  login: 1426040301845
+  logout: 1426041487114
+  lastteleport: 1426041163756
+ipAddress: 50.70.52.75
+homes:
+  home:
+    world: Metacurse
+    x: -1192.6642546637484
+    y: 69.0
+    z: -323.9260862154188
+    yaw: -71.110596
+    pitch: 27.957727
+  wilderness:
+    world: Metacurse
+    x: -3218.9501078664466
+    y: 63.0
+    z: -1313.1772826351748
+    yaw: 77.40271
+    pitch: 13.091984
+logoutlocation:
+  world: Metacurse
+  x: -1203.3954969040021
+  y: 69.0
+  z: -322.8242069013834
+  yaw: -19.21164
+  pitch: 1.8371158
+money: '6149.0'

@@ -1,0 +1,56 @@
+variables:
+    {mhf::Blaze} = "MHF_Blaze"
+    {mhf::CaveSpider} = "MHF_CaveSpider"
+    {mhf::Chicken} = "MHF_Chicken"
+    {mhf::Cow} = "MHF_Cow"
+    {mhf::Enderman} = "MHF_Enderman"
+    {mhf::Ghast} = "MHF_Ghast"
+    {mhf::Golem} = "MHF_Golem"
+    {mhf::Herobrine} = "MHF_Herobrine"
+    {mhf::LavaSlime} = "MHF_LavaSlime"
+    {mhf::MushroomCow} = "MHF_MushroomCow"
+    {mhf::Ocelot} = "MHF_Ocelot"
+    {mhf::Pig} = "MHF_Pig"
+    {mhf::PigZombie} = "MHF_PigZombie"
+    {mhf::Sheep} = "MHF_Sheep"
+    {mhf::Slime} = "MHF_Slime"
+    {mhf::Spider} = "MHF_Spider"
+    {mhf::Squid} = "MHF_Squid"
+    {mhf::Villager} = "MHF_Villager"
+    {mhf::Cactus} = "MHF_Cactus"
+    {mhf::Cake} = "MHF_Cake"
+    {mhf::Chest} = "MHF_Chest"
+    {mhf::Melon} = "MHF_Melon"
+    {mhf::OakLog} = "MHF_OakLog"
+    {mhf::Pumpkin} = "MHF_Pumpkin"
+    {mhf::TNT} = "MHF_TNT"
+    {mhf::TNT2} = "MHF_TNT2"
+    {mhf::ArrowUp} = "MHF_ArrowUp"
+    {mhf::ArrowDown} = "MHF_ArrowDown"
+    {mhf::ArrowLeft} = "MHF_ArrowLeft"
+    {mhf::ArrowRight} = "MHF_ArrowRight"
+    {mhf::Exclamation} = "MHF_Exclamation"
+    {mhf::Question} = "MHF_Question"
+command /microblock [<text>]:
+    executable by: players
+    permission: essentials.socialspy
+    trigger:
+        if argument is set:
+            set {_err} to "Types:"
+            loop {mhf::*}:
+                set {_err} to "%{_err}%, %loop-index%"
+                argument is loop-index
+                set {_head} to loop-value
+                set {wrkarnd::*} to "%{_head}%" parsed as offline player
+                set {_head} to {wrkarnd::1}
+            if {_head} is not set:
+                message "&cInvalid Type."
+                message "&9%{_err}%"
+            else:
+                give 64 of {_head}'s skull named "&9Microblock" to player
+        else:
+            message "&cPlease set argument 2! :)"
+            stop
+on break of head:
+    cancel event
+    set block to air

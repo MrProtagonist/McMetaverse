@@ -1,0 +1,17 @@
+﻿command /laggy:
+	permission: essentials.socialspy
+	trigger:
+		message "&f[&aSERVER&f] &bNow beginning lag check routine... &6Watch closely!"
+		wait 3 real seconds
+		message "&f[&aSERVER&f] &fChecking Ticks Per Second... (Should be 19+)"
+		make player execute "tps"
+		wait 3 real seconds
+		message "&f[&aSERVER&f] &fChecking Entities and Memory..."
+		make player execute "memory"
+		wait 3 real seconds
+		message "&f[&aSERVER&f] &bChecking for Redstone Clocks"
+		make player execute "rcd 5"
+		wait 7 real seconds
+		message "&f[&aSERVER&f] &a&lROUTINE COMPLETE!"
+		message "&f[&aSERVER&f] &eIf you saw results for Redstone Clock check, execute &a&o/rcd tp ##"
+		

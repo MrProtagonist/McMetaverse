@@ -1,0 +1,38 @@
+money: '82.32'
+geolocation: Canada
+lastAccountName: RubySerpent
+timestamps:
+  login: 1426315446151
+  logout: 1426315113251
+  lastteleport: 1426313777137
+ipAddress: 216.211.69.14
+afk: false
+logoutlocation:
+  world: Metacurse
+  x: 1712.0485485801908
+  y: 40.0
+  z: 4408.832587414706
+  yaw: 107.161865
+  pitch: -19.800295
+lastlocation:
+  world: Metacurse
+  x: -2.9334695440198937
+  y: 70.0
+  z: -88.57345058831797
+  yaw: -91.43294
+  pitch: 22.05001
+homes:
+  home:
+    world: Metacurse
+    x: 2748.466224011461
+    y: 71.0
+    z: 6375.938334905696
+    yaw: 90.95471
+    pitch: 11.550365
+  club:
+    world: Metacurse
+    x: 1716.6550129451755
+    y: 40.0
+    z: 4407.94594736452
+    yaw: 91.85797
+    pitch: 13.350037

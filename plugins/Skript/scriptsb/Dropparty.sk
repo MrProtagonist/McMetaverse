@@ -1,0 +1,222 @@
+﻿on login:
+    set {joinedparty.%player%} to false
+    add 1 to {login.dropparty}
+    if {login.dropparty} is 15:
+        wait 10 seconds
+        execute console command "/droppartystart"
+on quit:
+    remove 1 from {login.dropparty}
+on skript start:
+    set {dropparty.donetoday} to false
+
+    
+command /setdrop:
+    description: Set location for drop party.
+    permission: drop.set
+    trigger:
+        set {sk.dropparty} to location of player
+        message "<lime>Drop party point set!"
+        stop    
+command /dropparty:
+    description: Shows if a drop party has been done today.
+    usage: /dropparty
+    trigger:
+        if {dropparty.donetoday} is true:
+            send "<white><italic>A drop party <green><bold>HAS<white><italic> been done today at %{dropparty.last}%." to player
+            send " "
+            send "<white><italic>We may do another if we are busy enough, but you will never know when!" to player
+            send " " to player
+            send "<white><italic>You can also buy an INSTANT drop party on our website for only &a$1&r!" to player
+        else:
+            send "<white><italic>A drop party <green><bold>HAS NOT<white><italic> been done today." to player
+            send " "
+            send "<white><italic>Stick around and you may get to be a part of it, but never ask for one!" to player
+            send " "
+            send "<white><italic>You can also buy an INSTANT drop party on our website for only &a$1&r!" to player
+
+command /droppartyfalse:
+    trigger:
+        set {dropparty.donetoday} to false
+        send "<white><italic>Drop party successfully unregistered." to player
+
+    
+command /setdropwarp:
+    description: Set location for perm shop.
+    trigger:
+        set {sk.drop} to location of player
+        message "<lime>Warp point set!"
+        stop   
+command /drop:
+    description: Warp to the perm shop.
+    trigger:
+        teleport player to {sk.drop}
+command /startdrop:
+    description: Start the party
+    permission: essentials.socialspy
+    trigger:
+        set {dropparty.starting} to true
+        loop all players:
+            set {joinedparty.%loop-player%} to false
+        broadcast "&a&l&oD&b&l&oR&c&l&oO&d&l&oP &e&l&oP&1&l&oA&2&l&oR&3&l&oT&4&l&oY&f&o will start in 2 minutes. Type &a&o/join&f&o to participate!"
+        wait 60 second
+        broadcast "&a&l&oD&b&l&oR&c&l&oO&d&l&oP &e&l&oP&1&l&oA&2&l&oR&3&l&oT&4&l&oY&f&o will start in 1 minute. Type &a&o/join&f&o to participate!"
+        wait 30 second
+        broadcast "&a&l&oD&b&l&oR&c&l&oO&d&l&oP &e&l&oP&1&l&oA&2&l&oR&3&l&oT&4&l&oY&f&o will start in 30 seconds. Be sure you cleared your inventory!"
+        wait 15 second
+        broadcast "&a&l&oD&b&l&oR&c&l&oO&d&l&oP &e&l&oP&1&l&oA&2&l&oR&3&l&oT&4&l&oY&f&o will start in 15 seconds. Type &a&o/join&f&o to participate!"
+        wait 13 second
+        broadcast "&a&l&oD&b&l&oR&c&l&oO&d&l&oP &e&l&oP&1&l&oA&2&l&oR&3&l&oT&4&l&oY&f&o will start in 3."
+        wait 1 second
+        broadcast "&a&l&oD&b&l&oR&c&l&oO&d&l&oP &e&l&oP&1&l&oA&2&l&oR&3&l&oT&4&l&oY&f&o will start in 2."
+        wait 1 second
+        broadcast "&a&l&oD&b&l&oR&c&l&oO&d&l&oP &e&l&oP&1&l&oA&2&l&oR&3&l&oT&4&l&oY&f&o will start in 1."
+        wait 1 second
+        broadcast "&a&l&oD&b&l&oR&c&l&oO&d&l&oP &e&l&oP&1&l&oA&2&l&oR&3&l&oT&4&l&oY&5&l&o!"
+        loop all players:
+            if {joinedparty.%loop-player%} is true:
+                teleport loop-player to {sk.dropparty}
+                set {joinedparty.%loop-player%} to false
+            else:
+                message "&e&oYou can join the drop party late by typing &a&l/drop&e&o!" to loop-player
+        set {dropparty.donetoday} to true
+        set {dropparty.starting} to false
+        set {dropparty.last} to now
+        execute console command "/blockparty"
+        wait 5 second
+        execute console command "/blockparty"                
+        wait 5 second
+        execute console command "/blockparty"
+        wait 5 second
+        execute console command "/blockparty"                
+        wait 5 second
+        execute console command "/blockparty"
+        wait 5 second
+        execute console command "/blockparty"
+        wait 5 second
+        execute console command "/blockparty"
+        wait 5 second
+        execute console command "/blockparty"
+        wait 5 second
+        execute console command "/blockparty"
+        wait 5 second
+        execute console command "/blockparty"                
+        wait 5 second
+        execute console command "/blockparty"
+        wait 5 second
+        execute console command "/blockparty"                
+        wait 5 second
+        execute console command "/blockparty"
+        wait 5 second
+        execute console command "/blockparty"
+        wait 5 second
+        execute console command "/blockparty"
+        wait 5 second
+        execute console command "/blockparty"
+        broadcast " "
+        broadcast "&a&l&oD&b&l&oR&c&l&oO&d&l&oP &e&l&oP&1&l&oA&2&l&oR&3&l&oT&4&l&oY&f&o finished!"
+        broadcast " "
+        set {drop.lastused} to now
+        stop
+command /join:
+    description: Choose to join the drop party.
+    trigger:  
+        if {dropparty.starting} is true:
+            set {joinedparty.%player%} to true
+            message "&e&oYou will be teleported to the drop party when it starts."	
+        else:
+            message "&c&oNo drop party to join!"
+command /blockparty:
+    description: Starts it
+    permission: sk.blockparty
+    trigger:
+        set {_radius} to 15
+        set {_chance} to 1
+        set {_py} to y-coordinate of {sk.dropparty}
+        loop blocks in radius {_radius} around {sk.dropparty}:
+            loop-block is air:
+                chance of {_chance}%:
+                    set {_location} to location of loop-block
+                    set {_testy} to y-coordinate of {_location}
+                    set {_diff} to {_testy}
+                    subtract {_py} from {_diff}
+                    {_diff} is less than 5:
+                        {_diff} is more than 0:
+                            chance of 1%:
+                                drop 1 diamond block at {_location}
+                            chance of 2%:
+                                drop 2 diamond at {_location}
+                            chance of 2%:
+                                drop 6 Gold Ingot at {_location}
+                            chance of 2%:
+                                drop 1 Emerald at {_location}
+                            chance of 5%:
+                                drop 5 Egg at {_location}
+                            chance of 3%:
+                                drop 5 Redstone at {_location}
+                            chance of 3%:
+                                drop 1 Redstone Lamp at {_location}
+                            chance of 1%:
+                                drop 1 Ender Chest at {_location}
+                            chance of 1%:
+                                drop 1 Ender Pearl at {_location}
+                            chance of 2%:
+                                drop 2 Ghast Tear at {_location}
+                            chance of 3%:
+                                drop 4 Iron Ingot at {_location}
+                            chance of 3%:
+                                drop 1 Golden Apple at {_location}
+                            chance of 1%:
+                                drop 1 Enchantment Table  at {_location}
+                            chance of 8%:
+                                drop 3 Glowstone at {_location}
+                            chance of 3%:
+                                drop 6 Obsidian at {_location}
+                            chance of 2%:
+                                drop 2 Sponge at {_location}
+                            chance of 5%:
+                                drop 1 block of coal at {_location}
+                            chance of 5%:
+                                drop 2 hay block at {_location}
+                            chance of 10%:
+                                drop 5 arrow at {_location}
+                            chance of 1%:
+                                drop 1 diamond sword at {_location}
+                            chance of 1%:
+                                drop 1 diamond pick at {_location}
+                            chance of 3%:
+                                drop 2 flint at {_location}
+                            chance of 10%:
+                                drop 5 Xp Bottle at {_location}
+                            chance of 2%:
+                                drop 1 blaze rod at {_location}
+                            chance of 3%:
+                                drop 2 firework star at {_location}
+                            chance of 3%:
+                                drop 1 name tag at {_location}
+                            chance of 5%:
+                                drop 5 Feather at {_location}
+                            chance of 3%:
+                                drop 5 sugar at {_location}
+                            chance of 2%:
+                                drop 3 snow at {_location}
+                            chance of 2%:
+                                drop 4 ice at {_location}
+                            chance of 1%:
+                                drop 1 coal at {_location}
+                            chance of 3%:
+                                drop 1 trapped chest at {_location}
+                            chance of 3%:
+                                drop 1 chest at {_location}
+                            chance of 3%:
+                                drop 3 cookie at {_location}
+                            chance of 3%:
+                                drop 1 cake at {_location}
+                            chance of 2%:
+                                drop 2 cocoa beans at {_location}
+                            chance of 1%:
+                                drop 1 gold block at {_location}
+                            chance of 5%:
+                                drop 3 torch at {_location}
+                            chance of 2%:
+                                drop 1 bookshelf at {_location}
+                            

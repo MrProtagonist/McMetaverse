@@ -1,0 +1,4632 @@
+# === Skript's variable storage ===
+# Please do not modify this file manually!
+#
+# version: 2.1.2
+
+_fengo.wiped, boolean, 01
+accepting.welcomes, boolean, 00
+alcohol.pumpkinpepper, long, 0000000000000001
+announce.last, long, 0000000000000006
+arena.going, boolean, 00
+bonus, double, 4036000000000000
+bossbar.using, boolean, 00
+boughtteir.<player>, long, 0000000000000000
+captainstupid.wiped, boolean, 01
+certify.evillittlething, long, 0000000000000000
+certify.quisalas, long, 0000000000000000
+certifytemp.evillittlething::desc, string, 801D7468652076696C6C61676572732061726520696E2076696C6C61676573
+certifytemp.evillittlething::name, string, 801D7965616820746865792061726520696E207468652076696C6C61676573
+chat.is.muted, boolean, 00
+chatspy.captainstupid, boolean, 01
+chatspy.darkeye932, boolean, 01
+chatspy.dinoppar, boolean, 01
+chatspy.drbloodbathmc, boolean, 01
+chatspy.evillittlething, boolean, 01
+chatspy.gussy05, boolean, 01
+chatspy.hobbitsyfeet, boolean, 01
+chatspy.infiniterose, boolean, 01
+chatspy.mrprotagonist, boolean, 01
+chatspy.post_rogue, boolean, 01
+chatspy.scatzbro, boolean, 01
+chatspy.shadow007uk, boolean, 01
+cobblehunt.blockset, boolean, 00
+damagetype._fengo, damagecause, 0446414C4C
+damagetype._wadee_, damagecause, 0446414C4C
+damagetype.adnap09, damagecause, 0446414C4C
+damagetype.atomicburgerflip, damagecause, 0446414C4C
+damagetype.batman1120002, damagecause, 0446414C4C
+damagetype.beagle5555, damagecause, 0446414C4C
+damagetype.brightenstar, damagecause, 10454E544954595F4558504C4F53494F4E
+damagetype.captainstupid, damagecause, 0446414C4C
+damagetype.coolcoolcool64, damagecause, 0446414C4C
+damagetype.cr4zy21fr34k, damagecause, 0446414C4C
+damagetype.creeperkiller830, damagecause, 06504F49534F4E
+damagetype.danikachoo, damagecause, 0446414C4C
+damagetype.darkeye932, damagecause, 07434F4E54414354
+damagetype.ddigitaldog, damagecause, 0446414C4C
+damagetype.deer1jet, damagecause, 0446414C4C
+damagetype.dpw750, damagecause, 0D454E544954595F41545441434B
+damagetype.fifatord, damagecause, 0446414C4C
+damagetype.forddude04, damagecause, 0446414C4C
+damagetype.gourneyz, damagecause, 0446414C4C
+damagetype.green11, damagecause, 0A50524F4A454354494C45
+damagetype.gussy05, damagecause, 0D454E544954595F41545441434B
+damagetype.jameyporter28, damagecause, 07434F4E54414354
+damagetype.jammyboy112, damagecause, 10454E544954595F4558504C4F53494F4E
+damagetype.jazzwalgar, damagecause, 0A50524F4A454354494C45
+damagetype.justknowigame, damagecause, 0D454E544954595F41545441434B
+damagetype.kristycream, damagecause, 0A50524F4A454354494C45
+damagetype.lacerfacerxd, damagecause, 0446414C4C
+damagetype.lexiefox, damagecause, 0A50524F4A454354494C45
+damagetype.lordlankovic, damagecause, 0D454E544954595F41545441434B
+damagetype.lucky_shots69, damagecause, 0446414C4C
+damagetype.lukeblaster9, damagecause, 0446414C4C
+damagetype.mscarapace, damagecause, 0D454E544954595F41545441434B
+damagetype.nitrogengaming1, damagecause, 0446414C4C
+damagetype.ozo, damagecause, 0446414C4C
+damagetype.pumpkinpepper, damagecause, 0D454E544954595F41545441434B
+damagetype.quisalas, damagecause, 07434F4E54414354
+damagetype.raventhegreat, damagecause, 0446414C4C
+damagetype.robuscu, damagecause, 0446414C4C
+damagetype.roxybear5000, damagecause, 0446414C4C
+damagetype.rubyserpent, damagecause, 0A50524F4A454354494C45
+damagetype.scatzbro, damagecause, 0D454E544954595F41545441434B
+damagetype.scorrpine, damagecause, 0446414C4C
+damagetype.seradane, damagecause, 0446414C4C
+damagetype.shadow007uk, damagecause, 09464952455F5449434B
+damagetype.shionskaii, damagecause, 0446414C4C
+damagetype.shortmanstamey, damagecause, 0D454E544954595F41545441434B
+damagetype.stanthemanfan, damagecause, 0446414C4C
+damagetype.stupidape3000, damagecause, 0D454E544954595F41545441434B
+damagetype.tailsbfox, damagecause, 10454E544954595F4558504C4F53494F4E
+damagetype.trich159, damagecause, 0D454E544954595F41545441434B
+damagetype.trytheswordfish, damagecause, 0A50524F4A454354494C45
+damagetype.uberwookie, damagecause, 0B535546464F434154494F4E
+damagetype.varanta, damagecause, 0446414C4C
+damagetype.warriorchad414, damagecause, 07434F4E54414354
+damagetype.white_knight16, damagecause, 0D454E544954595F41545441434B
+damagetype.zell963s, damagecause, 0D454E544954595F41545441434B
+death.captainstupid.last, damagecause, 10454E544954595F4558504C4F53494F4E
+death.darkeye932.last, damagecause, 0446414C4C
+death.drbloodbathmc.last, damagecause, 06435553544F4D
+death.evillittlething.last, damagecause, 0D454E544954595F41545441434B
+death.gussy05.last, damagecause, 0A50524F4A454354494C45
+death.infiniterose.last, damagecause, 0D454E544954595F41545441434B
+death.kristycream.last, damagecause, 07434F4E54414354
+death.kyokokat.last, damagecause, 0D454E544954595F41545441434B
+death.lordlankovic.last, damagecause, 0D454E544954595F41545441434B
+death.post_rogue.last, damagecause, 0A50524F4A454354494C45
+death.quisalas::fall, string, 801E747269656420746F20666C792C2062757420677261766974792073616964
+death.quisalas::fire_tick, string, 8018697320612063726973707920637269747465722066726F6D
+death.quisalas.last, damagecause, 0446414C4C
+death.rubyserpent.last, damagecause, 0B535546464F434154494F4E
+death.shadow007uk.last, damagecause, 0446414C4C
+death.shaunticlair.last, damagecause, 09464952455F5449434B
+dinoppar.wiped, boolean, 01
+donationlevel._wadee_, string, 80076E6F7468696E67
+donationlevel.adnap09, string, 80076E6F7468696E67
+donationlevel.aflyingduck, string, 80076E6F7468696E67
+donationlevel.aiden_h1, string, 80076E6F7468696E67
+donationlevel.anonymous_404, string, 80076E6F7468696E67
+donationlevel.atomicburgerflip, string, 80076E6F7468696E67
+donationlevel.batman1120002, string, 80076E6F7468696E67
+donationlevel.beagle5555, string, 80076E6F7468696E67
+donationlevel.brightenstar, string, 80076E6F7468696E67
+donationlevel.clymate, string, 80076E6F7468696E67
+donationlevel.coolcoolcool64, string, 80076E6F7468696E67
+donationlevel.cr4zy21fr34k, string, 80076E6F7468696E67
+donationlevel.danikachoo, string, 80076E6F7468696E67
+donationlevel.ddigitaldog, string, 80076E6F7468696E67
+donationlevel.deer1jet, string, 80076E6F7468696E67
+donationlevel.derpy26, string, 80076E6F7468696E67
+donationlevel.diskdinomite, string, 80076E6F7468696E67
+donationlevel.djzzadoks3, string, 80076E6F7468696E67
+donationlevel.ermmahhhhhhh, string, 80076E6F7468696E67
+donationlevel.fifatord, string, 80076E6F7468696E67
+donationlevel.fillin3, string, 80076E6F7468696E67
+donationlevel.fireknight92, string, 80076E6F7468696E67
+donationlevel.forddude04, string, 80076E6F7468696E67
+donationlevel.freesbe, string, 80076E6F7468696E67
+donationlevel.fwiter, string, 80076E6F7468696E67
+donationlevel.gerald_fenwick, string, 80076E6F7468696E67
+donationlevel.golumpa, string, 80076E6F7468696E67
+donationlevel.gourneyz, string, 80076E6F7468696E67
+donationlevel.gussy05, string, 80076E6F7468696E67
+donationlevel.idafox, string, 80076E6F7468696E67
+donationlevel.jameyporter28, string, 80076E6F7468696E67
+donationlevel.jammyboy112, string, 80076E6F7468696E67
+donationlevel.justknowigame, string, 80076E6F7468696E67
+donationlevel.kingkitkat69, string, 80076E6F7468696E67
+donationlevel.lego7711, string, 80076E6F7468696E67
+donationlevel.lexiefox, string, 80076E6F7468696E67
+donationlevel.lucky_shots69, string, 80076E6F7468696E67
+donationlevel.lukeblaster9, string, 80076E6F7468696E67
+donationlevel.mike15444, string, 80076E6F7468696E67
+donationlevel.moddyboy1231, string, 80076E6F7468696E67
+donationlevel.mscarapace, string, 80076E6F7468696E67
+donationlevel.ozo, string, 80076E6F7468696E67
+donationlevel.ozombieturdo, string, 80076E6F7468696E67
+donationlevel.pumpkinpepper, string, 80076E6F7468696E67
+donationlevel.robuscu, string, 80076E6F7468696E67
+donationlevel.roxybear5000, string, 80076E6F7468696E67
+donationlevel.saphrana, string, 80076E6F7468696E67
+donationlevel.scorrpine, string, 80076E6F7468696E67
+donationlevel.seradane, string, 80076E6F7468696E67
+donationlevel.sharkboy5432, string, 80076E6F7468696E67
+donationlevel.shionskaii, string, 80076E6F7468696E67
+donationlevel.shortmanstamey, string, 80076E6F7468696E67
+donationlevel.stanthemanfan, string, 80076E6F7468696E67
+donationlevel.statiikxkaleb, string, 80076E6F7468696E67
+donationlevel.stupidape3000, string, 80076E6F7468696E67
+donationlevel.swimmer117, string, 80076E6F7468696E67
+donationlevel.tailsbfox, string, 80076E6F7468696E67
+donationlevel.thegreatcrafter7, string, 80076E6F7468696E67
+donationlevel.todd112000, string, 80076E6F7468696E67
+donationlevel.toncker, string, 80076E6F7468696E67
+donationlevel.varanta, string, 80076E6F7468696E67
+donationlevel.warriorchad414, string, 80076E6F7468696E67
+donationlevel.whitetiger007uk, string, 80076E6F7468696E67
+donationlevel.yoshijosh2001, string, 80076E6F7468696E67
+donationlevel.zell963s, string, 80076E6F7468696E67
+donationlevel.zombiehugger4, string, 80076E6F7468696E67
+dpw750.wiped, boolean, 01
+drop.lastused, date, 810974696D657374616D70040000014B944F078E
+dropparty.donetoday, boolean, 00
+dropparty.freeze, boolean, 00
+dropparty.last, date, 810974696D657374616D70040000014B944DE1FD
+dropparty.starting, boolean, 00
+drugs.<player>, long, 0000000000000000
+drugs.<player>.weed.brokenup, long, 0000000000000000
+drugs.dinoppar.weed.breakingup, boolean, 00
+drugs.dinoppar.weed.brokenup, double, 3FF0000000000000
+drugs.evillittlething, double, 3FF0000000000000
+evillittlething.wiped, boolean, 01
+flogincount, double, 4073E00000000000
+green11.wiped, boolean, 01
+hobbitsyfeet.wiped, boolean, 01
+joinedparty._fengo, boolean, 00
+joinedparty._wadee_, boolean, 00
+joinedparty.adnap09, boolean, 00
+joinedparty.aflyingduck, boolean, 00
+joinedparty.aiden_h1, boolean, 00
+joinedparty.anonymous_404, boolean, 00
+joinedparty.atomicburgerflip, boolean, 00
+joinedparty.batman1120002, boolean, 00
+joinedparty.beagle5555, boolean, 00
+joinedparty.brightenstar, boolean, 00
+joinedparty.canadianeatfresh, boolean, 00
+joinedparty.captainstupid, boolean, 00
+joinedparty.clymate, boolean, 00
+joinedparty.coolcoolcool64, boolean, 00
+joinedparty.cr4zy21fr34k, boolean, 00
+joinedparty.creeperkiller830, boolean, 00
+joinedparty.danikachoo, boolean, 00
+joinedparty.darkeye932, boolean, 00
+joinedparty.ddigitaldog, boolean, 00
+joinedparty.deer1jet, boolean, 00
+joinedparty.derpy26, boolean, 00
+joinedparty.dinoppar, boolean, 00
+joinedparty.diskdinomite, boolean, 00
+joinedparty.djzzadoks3, boolean, 00
+joinedparty.dpw750, boolean, 00
+joinedparty.drbloodbathmc, boolean, 00
+joinedparty.ermmahhhhhhh, boolean, 00
+joinedparty.esfavorie, boolean, 00
+joinedparty.evillittlething, boolean, 00
+joinedparty.fifatord, boolean, 00
+joinedparty.fillin3, boolean, 00
+joinedparty.fireknight92, boolean, 00
+joinedparty.forddude04, boolean, 00
+joinedparty.freesbe, boolean, 00
+joinedparty.fwiter, boolean, 00
+joinedparty.gerald_fenwick, boolean, 00
+joinedparty.golumpa, boolean, 00
+joinedparty.gourneyz, boolean, 00
+joinedparty.green11, boolean, 00
+joinedparty.gussy05, boolean, 00
+joinedparty.hobbitsyfeet, boolean, 00
+joinedparty.hunterboy57, boolean, 00
+joinedparty.idafox, boolean, 00
+joinedparty.infiniterose, boolean, 00
+joinedparty.itsdanielbro, boolean, 00
+joinedparty.jameyporter28, boolean, 00
+joinedparty.jammyboy112, boolean, 00
+joinedparty.jazzwalgar, boolean, 00
+joinedparty.justknowigame, boolean, 00
+joinedparty.katekitkat9, boolean, 00
+joinedparty.kingkitkat69, boolean, 00
+joinedparty.kristycream, boolean, 00
+joinedparty.kyokokat, boolean, 00
+joinedparty.lacerfacerxd, boolean, 00
+joinedparty.lego7711, boolean, 00
+joinedparty.lexiefox, boolean, 00
+joinedparty.lordlankovic, boolean, 00
+joinedparty.lucky_shots69, boolean, 00
+joinedparty.lukeblaster9, boolean, 00
+joinedparty.luna482, boolean, 00
+joinedparty.mike15444, boolean, 00
+joinedparty.moddyboy1231, boolean, 00
+joinedparty.mrprotagonist, boolean, 00
+joinedparty.mscarapace, boolean, 00
+joinedparty.nitrogengaming1, boolean, 00
+joinedparty.ozo, boolean, 00
+joinedparty.ozombieturdo, boolean, 00
+joinedparty.post_rogue, boolean, 00
+joinedparty.pumpkinpepper, boolean, 00
+joinedparty.quisalas, boolean, 00
+joinedparty.raventhegreat, boolean, 00
+joinedparty.retroville268773, boolean, 00
+joinedparty.rfcroc, boolean, 00
+joinedparty.robuscu, boolean, 00
+joinedparty.roland2011a, boolean, 00
+joinedparty.roxybear5000, boolean, 00
+joinedparty.rubyserpent, boolean, 00
+joinedparty.ryan1450, boolean, 00
+joinedparty.saphrana, boolean, 00
+joinedparty.scatzbro, boolean, 00
+joinedparty.scorrpine, boolean, 00
+joinedparty.seradane, boolean, 00
+joinedparty.shadow007uk, boolean, 00
+joinedparty.sharkboy5432, boolean, 00
+joinedparty.shaunticlair, boolean, 00
+joinedparty.shinx, boolean, 00
+joinedparty.shionskaii, boolean, 00
+joinedparty.shortmanstamey, boolean, 00
+joinedparty.ski32, boolean, 00
+joinedparty.stanthemanfan, boolean, 00
+joinedparty.statiikxkaleb, boolean, 00
+joinedparty.stupidape3000, boolean, 00
+joinedparty.swimmer117, boolean, 00
+joinedparty.tailsbfox, boolean, 00
+joinedparty.thegreatcrafter7, boolean, 00
+joinedparty.todd112000, boolean, 00
+joinedparty.toncker, boolean, 00
+joinedparty.trich159, boolean, 00
+joinedparty.trytheswordfish, boolean, 00
+joinedparty.uberwookie, boolean, 00
+joinedparty.varanta, boolean, 00
+joinedparty.warriorchad414, boolean, 00
+joinedparty.white_knight16, boolean, 00
+joinedparty.whitetiger007uk, boolean, 00
+joinedparty.xxladykaixx, boolean, 00
+joinedparty.yoshijosh2001, boolean, 00
+joinedparty.zell963s, boolean, 00
+joinedparty.zombiehugger4, boolean, 00
+kyokokat.wiped, boolean, 01
+lastpoke.green11, double, 0000000000000000
+lastpoke.mrprotagonist, double, 0000000000000000
+lastpoke.nitrogengaming1, double, 0000000000000000
+lastwarp._fengo, date, 810974696D657374616D70040000014B80F617DE
+lastwarp.aflyingduck, date, 810974696D657374616D70040000014B8FCE4737
+lastwarp.anonymous_404, date, 810974696D657374616D70040000014B6BAC03AC
+lastwarp.atomicburgerflip, date, 810974696D657374616D70040000014B673A573D
+lastwarp.captainstupid, date, 810974696D657374616D70040000014B9EAEEDD7
+lastwarp.cr4zy21fr34k, date, 810974696D657374616D70040000014B8B19FAAC
+lastwarp.creeperkiller830, date, 810974696D657374616D70040000014B99150892
+lastwarp.danikachoo, date, 810974696D657374616D70040000014B95A360D8
+lastwarp.darkeye932, date, 810974696D657374616D70040000014BA041709F
+lastwarp.derpy26, date, 810974696D657374616D70040000014B9489EFF9
+lastwarp.dinoppar, date, 810974696D657374616D70040000014BA665A825
+lastwarp.dpw750, date, 810974696D657374616D70040000014B654F6C52
+lastwarp.drbloodbathmc, date, 810974696D657374616D70040000014B81255419
+lastwarp.evillittlething, date, 810974696D657374616D70040000014BA76812A1
+lastwarp.fireknight92, date, 810974696D657374616D70040000014B9EAA2CE7
+lastwarp.fwiter, date, 810974696D657374616D70040000014BA4F25D9B
+lastwarp.green11, date, 810974696D657374616D70040000014BA86F5ECA
+lastwarp.gussy05, date, 810974696D657374616D70040000014BA428195A
+lastwarp.hobbitsyfeet, date, 810974696D657374616D70040000014B985A5C20
+lastwarp.infiniterose, date, 810974696D657374616D70040000014B8BCAFB40
+lastwarp.jameyporter28, date, 810974696D657374616D70040000014B8AB1F217
+lastwarp.jammyboy112, date, 810974696D657374616D70040000014BA7E217BD
+lastwarp.katekitkat9, date, 810974696D657374616D70040000014B80F7BEE1
+lastwarp.kristycream, date, 810974696D657374616D70040000014B9E0A2BF2
+lastwarp.kyokokat, date, 810974696D657374616D70040000014B9EEAFCC4
+lastwarp.lacerfacerxd, date, 810974696D657374616D70040000014B8099AD51
+lastwarp.lordlankovic, date, 810974696D657374616D70040000014BA3BAC743
+lastwarp.lucky_shots69, date, 810974696D657374616D70040000014B94122BE2
+lastwarp.luna482, date, 810974696D657374616D70040000014B656E1F29
+lastwarp.mrprotagonist, date, 810974696D657374616D70040000014B9B579803
+lastwarp.mscarapace, date, 810974696D657374616D70040000014BA515687C
+lastwarp.nitrogengaming1, date, 810974696D657374616D70040000014B945E7B85
+lastwarp.ozombieturdo, date, 810974696D657374616D70040000014B94B9FEB8
+lastwarp.post_rogue, date, 810974696D657374616D70040000014BA4D12F90
+lastwarp.pumpkinpepper, date, 810974696D657374616D70040000014B90AE85FA
+lastwarp.quisalas, date, 810974696D657374616D70040000014B9EEC930D
+lastwarp.retroville268773, date, 810974696D657374616D70040000014B9030D7AA
+lastwarp.rfcroc, date, 810974696D657374616D70040000014BA5CA8846
+lastwarp.rubyserpent, date, 810974696D657374616D70040000014BA7E1AEA7
+lastwarp.ryan1450, date, 810974696D657374616D70040000014BA4AC67D8
+lastwarp.scatzbro, date, 810974696D657374616D70040000014B904D8A29
+lastwarp.shadow007uk, date, 810974696D657374616D70040000014B9D13F174
+lastwarp.shaunticlair, date, 810974696D657374616D70040000014B8A6AEB0B
+lastwarp.shionskaii, date, 810974696D657374616D70040000014B9893C7E7
+lastwarp.shortmanstamey, date, 810974696D657374616D70040000014BA4113E88
+lastwarp.statiikxkaleb, date, 810974696D657374616D70040000014B6FD5A9BA
+lastwarp.tailsbfox, date, 810974696D657374616D70040000014B9ED8046D
+lastwarp.todd112000, date, 810974696D657374616D70040000014B8ADF35F7
+lastwarp.toncker, date, 810974696D657374616D70040000014B8A9E8593
+lastwarp.trich159, date, 810974696D657374616D70040000014B8A8FAC7D
+lastwarp.trytheswordfish, date, 810974696D657374616D70040000014B8AFF31EC
+lastwarp.uberwookie, date, 810974696D657374616D70040000014BA87456A3
+lastwarp.varanta, date, 810974696D657374616D70040000014B6818FDC7
+lastwarp.warriorchad414, date, 810974696D657374616D70040000014B81514798
+lastwarp.zombiehugger4, date, 810974696D657374616D70040000014B65854303
+locked.darkeye932, boolean, 00
+locked.darkeye932.pos, location, 86037961770843507EEF0570697463680841B2CCAF017A0940A8C455A7371FC1017909405348E5D536DE4D05776F726C6480FF0000000281046E616D652080094D657461637572736501780940B9924841498129
+locked.dinoppar, boolean, 00
+locked.dinoppar.pos, location, 860379617708435302C4057069746368084223D498017A0940562D9384CCCE3C017909406244C00A7E468505776F726C6480FF0000000281046E616D652080094D6574616375727365017809C095FA26E2CDA8F9
+locked.drbloodbathmc, boolean, 00
+locked.drbloodbathmc.pos, location, 860379617708439BAA640570697463680842139979017A09C0711A1E579AFBCA01790940585FFEE3E89BAA05776F726C6480FF0000000281046E616D652080094D6574616375727365017809C0B7F9A1CB2C0122
+locked.evillittlething, boolean, 00
+locked.evillittlething.pos, location, 860379617708C2EF46BC0570697463680841AF32CD017A09C0AC1133062B35D601790940545EDADBE11CC505776F726C6480FF0000000281046E616D652080094D6574616375727365017809C0AA97B9143AA67E
+locked.fireknight92, boolean, 00
+locked.fireknight92.pos, location, 860379617708C3963AF40570697463680840961362017A09C08735DB7C61530C017909404EC0000000000005776F726C6480FF0000000281046E616D652080094D6574616375727365017809C0A897A0DE9F589F
+locked.gussy05, boolean, 00
+locked.gussy05.pos, location, 8603796177084381C5A50570697463680842439986017A09C097718308E274E80179094052D5BB8C578F8F05776F726C6480FF0000000281046E616D652080094D6574616375727365017809C0AADBD0FD375E0A
+locked.hunterboy57, boolean, 00
+locked.hunterboy57.pos, location, 86037961770843A4FEA50570697463680842555B0C017A0940547B3333400000017909405140000000000005776F726C6480FF0000000281046E616D652080094D6574616375727365017809C0808CDC625D414A
+locked.infiniterose, boolean, 00
+locked.infiniterose.pos, location, 86037961770842BA81300570697463680842486653017A09C09380BE91D84DC30179094052D01D5311210405776F726C6480FF0000000281046E616D652080094D657461637572736501780940A8E80CB56B5B37
+locked.jameyporter28, boolean, 00
+locked.jameyporter28.pos, location, 860379617708C2F4ED200570697463680841E66664017A094066ABD13A9B54A3017909405100000000000005776F726C6480FF0000000281046E616D652080094D6574616375727365017809C07DE6ABF2F39486
+locked.kristycream, boolean, 00
+locked.kristycream.pos, location, 860379617708C2B71E2D05706974636808418D99A3017A09C096B151949A1B60017909405119D8E822947105776F726C6480FF0000000281046E616D652080094D6574616375727365017809C0AAF290AE731D6A
+locked.mrprotagonist, boolean, 00
+locked.mrprotagonist.pos, location, 860379617708C2B0428205706974636808415F3332017A09C0833FB38298ACAE017909405040000000000005776F726C6480FF0000000281046E616D652080094D6574616375727365017809C0A35C24DA7450BD
+locked.nitrogengaming1, boolean, 00
+locked.nitrogengaming1.pos, location, 8603796177084397F0170570697463680841C5FFF8017A09C08B4D8B415F5056017909405000000000000005776F726C6480FF0000000281046E616D652080094D6574616375727365017809C0B0FA7C493F3C95
+locked.scatzbro, boolean, 00
+locked.scatzbro.pos, location, 860379617708439F5ADF0570697463680840DCC972017A0940B7854D382463EC017909402E00000000000005776F726C6480FF0000000281046E616D652080094D6574616375727365017809407E79BC05995FA2
+locked.shadow007uk, boolean, 00
+locked.shadow007uk.pos, location, 86037961770842AA403805706974636808413D99C8017A09C094D14B302D9078017909405840000000000005776F726C6480FF0000000281046E616D652080094D6574616375727365017809C0B74D51A2D27D60
+locked.shionskaii, boolean, 00
+locked.shionskaii.pos, location, 86037961770841114C60057069746368084131995F017A09C07C425C2856DE39017909405000000000000005776F726C6480FF0000000281046E616D652080094D6574616375727365017809C08A948639724591
+locked.tailsbfox, boolean, 00
+locked.tailsbfox.pos, location, 86037961770841BFECC00570697463680841EA0016017A09C09323ABEFA2E812017909403200000000000005776F726C6480FF0000000281046E616D652080094D6574616375727365017809C0A0CB20CEDB269E
+locked.white_knight16, boolean, 00
+locked.white_knight16.pos, location, 86037961770843026CB405706974636808410BC1FB017A09C08667C397431182017909405140000000000005776F726C6480FF0000000281046E616D652080094D6574616375727365017809C0A8C5BD7930EBCA
+login.dropparty, double, 4000000000000000
+logincount, double, 40C68A0000000000
+luna482.wiped, boolean, 01
+market.name.1, string, 800B4576696C27732053686F70
+market.name.2, string, 80285265676769657320636C617373792073686F7020666F7220636C61737379206D656368616E696373
+market.name.3, string, 80114576696C73204C6974746C652053686F70
+market.warps.1, location, 860379617708403C1A980570697463680841199996017A0940BB4E9313F67E09017909405100000000000005776F726C6480FF0000000281046E616D652080094D657461637572736501780940A339EBADAD1721
+market.warps.2, location, 860379617708C38771260570697463680841368EB0017A09C0953BD1ECD3B7E2017909404F80000000000005776F726C6480FF0000000281046E616D652080094D6574616375727365017809C0AAF43BDCFE22AE
+market.warps.3, location, 860379617708405CAF000570697463680840499B75017A0940AACEC1C11AD637017909404400000000000005776F726C6480FF0000000281046E616D652080094D6574616375727365017809409ADFD3235FCE9A
+mhf::arrowdown, string, 800D4D48465F4172726F77446F776E
+mhf::arrowleft, string, 800D4D48465F4172726F774C656674
+mhf::arrowright, string, 800E4D48465F4172726F775269676874
+mhf::arrowup, string, 800B4D48465F4172726F775570
+mhf::blaze, string, 80094D48465F426C617A65
+mhf::cactus, string, 800A4D48465F436163747573
+mhf::cake, string, 80084D48465F43616B65
+mhf::cavespider, string, 800E4D48465F43617665537069646572
+mhf::chest, string, 80094D48465F4368657374
+mhf::chicken, string, 800B4D48465F436869636B656E
+mhf::cow, string, 80074D48465F436F77
+mhf::enderman, string, 800C4D48465F456E6465726D616E
+mhf::exclamation, string, 800F4D48465F4578636C616D6174696F6E
+mhf::ghast, string, 80094D48465F4768617374
+mhf::golem, string, 80094D48465F476F6C656D
+mhf::herobrine, string, 800D4D48465F4865726F6272696E65
+mhf::lavaslime, string, 800D4D48465F4C617661536C696D65
+mhf::melon, string, 80094D48465F4D656C6F6E
+mhf::mushroomcow, string, 800F4D48465F4D757368726F6F6D436F77
+mhf::oaklog, string, 800A4D48465F4F616B4C6F67
+mhf::ocelot, string, 800A4D48465F4F63656C6F74
+mhf::pigzombie, string, 800D4D48465F5069675A6F6D626965
+mhf::pig, string, 80074D48465F506967
+mhf::pumpkin, string, 800B4D48465F50756D706B696E
+mhf::question, string, 800C4D48465F5175657374696F6E
+mhf::sheep, string, 80094D48465F5368656570
+mhf::slime, string, 80094D48465F536C696D65
+mhf::spider, string, 800A4D48465F537069646572
+mhf::squid, string, 80094D48465F5371756964
+mhf::tnt2, string, 80084D48465F544E5432
+mhf::tnt, string, 80074D48465F544E54
+mhf::villager, string, 800C4D48465F56696C6C61676572
+mossman.<none>, boolean, 01
+mrprotagonist.wiped, boolean, 01
+new._wadee_, boolean, 00
+new.adnap09, boolean, 01
+new.aflyingduck, boolean, 00
+new.aiden_h1, boolean, 01
+new.anonymous_404, boolean, 01
+new.atomicburgerflip, boolean, 00
+new.batman1120002, boolean, 01
+new.beagle5555, boolean, 00
+new.brightenstar, boolean, 00
+new.clymate, boolean, 01
+new.coolcoolcool64, boolean, 00
+new.cr4zy21fr34k, boolean, 00
+new.danikachoo, boolean, 00
+new.ddigitaldog, boolean, 01
+new.deer1jet, boolean, 00
+new.derpy26, boolean, 00
+new.diskdinomite, boolean, 01
+new.djzzadoks3, boolean, 00
+new.ermmahhhhhhh, boolean, 00
+new.fifatord, boolean, 00
+new.fillin3, boolean, 01
+new.fireknight92, boolean, 00
+new.forddude04, boolean, 00
+new.freesbe, boolean, 00
+new.fwiter, boolean, 00
+new.gerald_fenwick, boolean, 01
+new.golumpa, boolean, 01
+new.gourneyz, boolean, 00
+new.gussy05, boolean, 00
+new.idafox, boolean, 01
+new.jameyporter28, boolean, 00
+new.jammyboy112, boolean, 00
+new.justknowigame, boolean, 00
+new.kingkitkat69, boolean, 00
+new.lego7711, boolean, 00
+new.lexiefox, boolean, 00
+new.lucky_shots69, boolean, 00
+new.lukeblaster9, boolean, 00
+new.mike15444, boolean, 01
+new.moddyboy1231, boolean, 00
+new.mscarapace, boolean, 00
+new.ozo, boolean, 00
+new.ozombieturdo, boolean, 01
+new.pumpkinpepper, boolean, 00
+new.robuscu, boolean, 00
+new.roxybear5000, boolean, 00
+new.saphrana, boolean, 01
+new.scorrpine, boolean, 00
+new.seradane, boolean, 00
+new.sharkboy5432, boolean, 00
+new.shionskaii, boolean, 00
+new.shortmanstamey, boolean, 00
+new.stanthemanfan, boolean, 00
+new.statiikxkaleb, boolean, 01
+new.stupidape3000, boolean, 00
+new.swimmer117, boolean, 00
+new.tailsbfox, boolean, 00
+new.thegreatcrafter7, boolean, 00
+new.todd112000, boolean, 01
+new.toncker, boolean, 00
+new.varanta, boolean, 00
+new.warriorchad414, boolean, 00
+new.whitetiger007uk, boolean, 01
+new.yoshijosh2001, boolean, 01
+new.zell963s, boolean, 00
+new.zombiehugger4, boolean, 00
+newest.player, offlineplayer, 81046E616D6520800864696E6F70706172
+nightvision._fengo, boolean, 00
+nightvision._wadee_, boolean, 00
+nightvision.adnap09, boolean, 00
+nightvision.aflyingduck, boolean, 00
+nightvision.aiden_h1, boolean, 00
+nightvision.anonymous_404, boolean, 00
+nightvision.atomicburgerflip, boolean, 00
+nightvision.batman1120002, boolean, 00
+nightvision.beagle5555, boolean, 00
+nightvision.brightenstar, boolean, 00
+nightvision.canadianeatfresh, boolean, 00
+nightvision.captainstupid, boolean, 00
+nightvision.clymate, boolean, 00
+nightvision.coolcoolcool64, boolean, 00
+nightvision.cr4zy21fr34k, boolean, 00
+nightvision.creeperkiller830, boolean, 00
+nightvision.danikachoo, boolean, 00
+nightvision.darkeye932, boolean, 00
+nightvision.ddigitaldog, boolean, 00
+nightvision.deer1jet, boolean, 00
+nightvision.derpy26, boolean, 00
+nightvision.dinoppar, boolean, 00
+nightvision.diskdinomite, boolean, 00
+nightvision.djzzadoks3, boolean, 00
+nightvision.dpw750, boolean, 00
+nightvision.drbloodbathmc, boolean, 00
+nightvision.ermmahhhhhhh, boolean, 00
+nightvision.esfavorie, boolean, 00
+nightvision.evillittlething, boolean, 00
+nightvision.fifatord, boolean, 00
+nightvision.fillin3, boolean, 00
+nightvision.fireknight92, boolean, 00
+nightvision.forddude04, boolean, 00
+nightvision.freesbe, boolean, 00
+nightvision.fwiter, boolean, 00
+nightvision.gerald_fenwick, boolean, 00
+nightvision.golumpa, boolean, 00
+nightvision.gourneyz, boolean, 00
+nightvision.green11, boolean, 00
+nightvision.gussy05, boolean, 00
+nightvision.hobbitsyfeet, boolean, 00
+nightvision.hunterboy57, boolean, 00
+nightvision.idafox, boolean, 00
+nightvision.infiniterose, boolean, 00
+nightvision.itsdanielbro, boolean, 00
+nightvision.jameyporter28, boolean, 00
+nightvision.jammyboy112, boolean, 00
+nightvision.jazzwalgar, boolean, 00
+nightvision.justknowigame, boolean, 00
+nightvision.katekitkat9, boolean, 00
+nightvision.kingkitkat69, boolean, 00
+nightvision.kristycream, boolean, 00
+nightvision.kyokokat, boolean, 00
+nightvision.lacerfacerxd, boolean, 00
+nightvision.lego7711, boolean, 00
+nightvision.lexiefox, boolean, 00
+nightvision.lordlankovic, boolean, 00
+nightvision.lucky_shots69, boolean, 00
+nightvision.lukeblaster9, boolean, 00
+nightvision.luna482, boolean, 00
+nightvision.mike15444, boolean, 00
+nightvision.moddyboy1231, boolean, 00
+nightvision.mrprotagonist, boolean, 00
+nightvision.mscarapace, boolean, 00
+nightvision.nitrogengaming1, boolean, 00
+nightvision.ozo, boolean, 00
+nightvision.ozombieturdo, boolean, 00
+nightvision.post_rogue, boolean, 00
+nightvision.pumpkinpepper, boolean, 00
+nightvision.quisalas, boolean, 00
+nightvision.raventhegreat, boolean, 00
+nightvision.retroville268773, boolean, 00
+nightvision.rfcroc, boolean, 00
+nightvision.robuscu, boolean, 00
+nightvision.roland2011a, boolean, 00
+nightvision.roxybear5000, boolean, 00
+nightvision.rubyserpent, boolean, 00
+nightvision.ryan1450, boolean, 00
+nightvision.saphrana, boolean, 00
+nightvision.scatzbro, boolean, 00
+nightvision.scorrpine, boolean, 00
+nightvision.seradane, boolean, 00
+nightvision.shadow007uk, boolean, 00
+nightvision.sharkboy5432, boolean, 00
+nightvision.shaunticlair, boolean, 00
+nightvision.shinx, boolean, 00
+nightvision.shionskaii, boolean, 00
+nightvision.shortmanstamey, boolean, 00
+nightvision.ski32, boolean, 00
+nightvision.stanthemanfan, boolean, 00
+nightvision.statiikxkaleb, boolean, 00
+nightvision.stupidape3000, boolean, 00
+nightvision.swimmer117, boolean, 00
+nightvision.tailsbfox, boolean, 00
+nightvision.thegreatcrafter7, boolean, 00
+nightvision.todd112000, boolean, 00
+nightvision.toncker, boolean, 00
+nightvision.trich159, boolean, 00
+nightvision.trytheswordfish, boolean, 00
+nightvision.uberwookie, boolean, 00
+nightvision.varanta, boolean, 00
+nightvision.warriorchad414, boolean, 00
+nightvision.white_knight16, boolean, 00
+nightvision.whitetiger007uk, boolean, 00
+nightvision.xxladykaixx, boolean, 00
+nightvision.yoshijosh2001, boolean, 00
+nightvision.zell963s, boolean, 00
+nightvision.zombiehugger4, boolean, 00
+npcs.names::1, string, 80055361726168
+npcs.names::2, string, 80074D617474686577
+npcs.names::3, string, 8004506F7374
+npcs.names::4, string, 8004706F7374
+npcs.names::5, string, 8002416C
+npcs.names::6, string, 8003427564
+npcs.names::7, string, 800F74727974686573776F726466697368
+npcs.names::8, string, 80087472696368313539
+permshop.dinoppar.enable, boolean, 00
+permshop.dinoppar.screen, long, 0000000000000000
+pin.<player>, string, 80046E756C6C
+pin.darkeye932, string, 80203566346463633362356161373635643631643833323764656238383263663939
+pin.dinoppar, string, 80203566313764643837316461636336313833343233346139636435616133373564
+pin.drbloodbathmc, string, 80206131316639653533336632383539333736386562663837303735616233346632
+pin.evillittlething, string, 80203361633735613664363032373165666162343165623137343764313732363139
+pin.fireknight92, string, 80203566373033396231626236323838303534383163623538353630613132303862
+pin.gussy05, string, 80203933386364623039376633336630666562396331326630373239653865363936
+pin.hunterboy57, string, 80203831646339626462353264303464633230303336646264383331336564303535
+pin.infiniterose, string, 80206530333136633738313565303830363930343537363831323962663533653666
+pin.jameyporter28, string, 80203061333061393830653335343065353165623235343233636161373966306362
+pin.kristycream, string, 80203437346265306262306331623633333764623139323861613935363137376634
+pin.mrprotagonist, string, 80203936326535366138613062303432306438373237326136383262666431653533
+pin.nitrogengaming1, string, 80203336336231323263353238663534646634613034343662366261623035353135
+pin.raventhegreat, string, 80203436326436373564613037623336653433633433633165643165366461323332
+pin.scatzbro, string, 80203062393664383166303439346664653534323863376165613234336339313537
+pin.shadow007uk, string, 80203263313734336133393133303566626633363764663865346630363966396639
+pin.shionskaii, string, 80203633626664366538663236643164333533376634633530333832363465663336
+pin.tailsbfox, string, 80203035346162383937303233363435636437616436393532356334363939326130
+pin.white_knight16, string, 80203831646339626462353264303464633230303336646264383331336564303535
+poll.<player>.voted, boolean, 00
+poll._fengo.voted, boolean, 00
+poll._wadee_.voted, boolean, 00
+poll.adnap09.voted, boolean, 00
+poll.aflyingduck.voted, boolean, 00
+poll.aiden_h1.voted, boolean, 00
+poll.anonymous_404.voted, boolean, 00
+poll.atomicburgerflip.voted, boolean, 00
+poll.batman1120002.voted, boolean, 00
+poll.beagle5555.voted, boolean, 00
+poll.brightenstar.voted, boolean, 00
+poll.canadianeatfresh.voted, boolean, 00
+poll.captainstupid.voted, boolean, 00
+poll.clymate.voted, boolean, 00
+poll.coolcoolcool64.voted, boolean, 00
+poll.cr4zy21fr34k.voted, boolean, 00
+poll.creeperkiller830.voted, boolean, 00
+poll.danikachoo.voted, boolean, 00
+poll.darkeye932.voted, boolean, 00
+poll.ddigitaldog.voted, boolean, 00
+poll.deer1jet.voted, boolean, 00
+poll.derpy26.voted, boolean, 00
+poll.dinoppar.voted, boolean, 00
+poll.diskdinomite.voted, boolean, 00
+poll.djzzadoks3.voted, boolean, 00
+poll.dpw750.voted, boolean, 00
+poll.drbloodbathmc.voted, boolean, 00
+poll.ermmahhhhhhh.voted, boolean, 00
+poll.esfavorie.voted, boolean, 00
+poll.evillittlething.voted, boolean, 00
+poll.fifatord.voted, boolean, 00
+poll.fillin3.voted, boolean, 00
+poll.fireknight92.voted, boolean, 00
+poll.forddude04.voted, boolean, 00
+poll.freesbe.voted, boolean, 00
+poll.fwiter.voted, boolean, 00
+poll.gerald_fenwick.voted, boolean, 00
+poll.going, boolean, 00
+poll.golumpa.voted, boolean, 00
+poll.gourneyz.voted, boolean, 00
+poll.green11.voted, boolean, 00
+poll.gussy05.voted, boolean, 00
+poll.hobbitsyfeet.voted, boolean, 00
+poll.hunterboy57.voted, boolean, 00
+poll.idafox.voted, boolean, 00
+poll.infiniterose.voted, boolean, 00
+poll.itsdanielbro.voted, boolean, 00
+poll.jameyporter28.voted, boolean, 00
+poll.jammyboy112.voted, boolean, 00
+poll.jazzwalgar.voted, boolean, 00
+poll.justknowigame.voted, boolean, 00
+poll.katekitkat9.voted, boolean, 00
+poll.kingkitkat69.voted, boolean, 00
+poll.kristycream.voted, boolean, 00
+poll.kyokokat.voted, boolean, 00
+poll.lacerfacerxd.voted, boolean, 00
+poll.lego7711.voted, boolean, 00
+poll.lexiefox.voted, boolean, 00
+poll.lordlankovic.voted, boolean, 00
+poll.lucky_shots69.voted, boolean, 00
+poll.lukeblaster9.voted, boolean, 00
+poll.luna482.voted, boolean, 00
+poll.mike15444.voted, boolean, 00
+poll.moddyboy1231.voted, boolean, 00
+poll.mrprotagonist.voted, boolean, 00
+poll.mscarapace.voted, boolean, 00
+poll.nitrogengaming1.voted, boolean, 00
+poll.no, double, 4000000000000000
+poll.ozo.voted, boolean, 00
+poll.ozombieturdo.voted, boolean, 00
+poll.post_rogue.voted, boolean, 00
+poll.pumpkinpepper.voted, boolean, 00
+poll.question, string, 8032446F20796F7520686176652061207370656369616C20736F6D65626F647920666F722056616C656E74696E6573204461793F
+poll.quisalas.voted, boolean, 00
+poll.raventhegreat.voted, boolean, 00
+poll.retroville268773.voted, boolean, 00
+poll.rfcroc.voted, boolean, 00
+poll.robuscu.voted, boolean, 00
+poll.roland2011a.voted, boolean, 00
+poll.roxybear5000.voted, boolean, 00
+poll.rubyserpent.voted, boolean, 00
+poll.ryan1450.voted, boolean, 00
+poll.saphrana.voted, boolean, 00
+poll.scatzbro.voted, boolean, 00
+poll.scorrpine.voted, boolean, 00
+poll.seradane.voted, boolean, 00
+poll.shadow007uk.voted, boolean, 00
+poll.sharkboy5432.voted, boolean, 00
+poll.shaunticlair.voted, boolean, 00
+poll.shinx.voted, boolean, 00
+poll.shionskaii.voted, boolean, 00
+poll.shortmanstamey.voted, boolean, 00
+poll.ski32.voted, boolean, 00
+poll.stanthemanfan.voted, boolean, 00
+poll.statiikxkaleb.voted, boolean, 00
+poll.stupidape3000.voted, boolean, 00
+poll.swimmer117.voted, boolean, 00
+poll.tailsbfox.voted, boolean, 00
+poll.thegreatcrafter7.voted, boolean, 00
+poll.todd112000.voted, boolean, 00
+poll.toncker.voted, boolean, 00
+poll.trich159.voted, boolean, 00
+poll.trytheswordfish.voted, boolean, 00
+poll.uberwookie.voted, boolean, 00
+poll.varanta.voted, boolean, 00
+poll.warriorchad414.voted, boolean, 00
+poll.white_knight16.voted, boolean, 00
+poll.whitetiger007uk.voted, boolean, 00
+poll.xxladykaixx.voted, boolean, 00
+poll.yes, double, 3FF0000000000000
+poll.yoshijosh2001.voted, boolean, 00
+poll.zell963s.voted, boolean, 00
+poll.zombiehugger4.voted, boolean, 00
+post_rogue.wiped, boolean, 01
+pvp.fireknight92, long, 0000000000000001
+pvp.infiniterose, long, 0000000000000001
+pvp.mscarapace, long, 0000000000000000
+pvp.mscarapace.lastused, date, 810974696D657374616D70040000014B9074D20F
+pvp.quisalas, long, 0000000000000000
+pvp.quisalas.lastused, date, 810974696D657374616D70040000014B7B175301
+pvp.shionskaii, long, 0000000000000001
+pvp.shionskaii.lastused, date, 810974696D657374616D70040000014B8B880A23
+pvp.tailsbfox, long, 0000000000000000
+pvp.tailsbfox.lastused, date, 810974696D657374616D70040000014B993B8D9D
+pvp.uberwookie, long, 0000000000000000
+pvp.uberwookie.lastused, date, 810974696D657374616D70040000014BA02173BA
+question.last, offlineplayer, 81046E616D6520800A506F73745F526F677565
+quisalas.wiped, boolean, 01
+quiz.answer, string, 8003332D31
+quiz.going, boolean, 00
+quiz.question, string, 805D496E20746865206669727374204D6172696F2067616D6520666F72204E45532C2077686174206C6576656C20646F20796F7520706572666F726D20547572746C652054697070696E6720666F7220696E66696E697465206C697665733F
+randommessage::1, string, 803A486967686C792064657461696C65642073746174697374696373206172652067617468657265642061626F7574206561636820706C617965722E
+randommessage::2, string, 8040596F7520676574207061696420666F722077656C636F6D696E6720706C61796572732077686F206A6F696E21204265206120676F6F64206E65696768626F7221
+randommessage::3, string, 804A496620796F75206861766520616E792070726F626C656D73206F7220636F6E6365726E732C20706C65617365207375626D6974206120C2A761C2A76F2F7469636B6574C2A765C2A76F2E
+randommessage::4, string, 803E4C696B65207573206F6E2046616365626F6F6B20666F72207370656369616C206F666665727320616E6420696E7369646520696E666F726D6174696F6E21
+randommessage::5, string, 805BC2A735C2A76F5072656D69756DC2A765C2A76F206D656D62657273206765742061206C61726765206173736F72746D656E74206F6620637573746F6D697A61626C65206566666563747320616E64206F74686572207065726B7321
+randommessage::6, string, 8097C2A764C2A76F4E65776269657320C2A765C2A76F63616E206765742066726565206B69747320696E2074686520C2A7612FC2A76F627579C2A765C2A76F206D656E75207573696E6720746865697220C2A736C2A76F4D657461C2A761C2A76F506F696E7473C2A765C2A76F2E204561726E206D6F72652062792070617274696369706174696E67206F6E20746865207765627369746521
+randommessage::7, string, 8039566973697420C2A761C2A76F4D634D65746176657273652E636F6DC2A765C2A76F206F6674656E20746F207374617920696E666F726D656421
+randommessage::8, string, 803E596F752063616E206A6F696E2061207072697661746520C2A761C2A76F2F63686174C2A765C2A76F206368616E6E656C207769746820667269656E647321
+randommessage::9, string, 80354265207375726520796F75206172652066616D696C69617220776974682074686520C2A761C2A76F2F72756C6573C2A765C2A76F2E
+randommessage::10, string, 804F4E657720636F6E74656E7420697320636F6E7374616E746C792061646465642E20436865636B206261636B206F6674656E20666F72206E6577207468696E677320746F20646F20616E642073656521
+randommessage::11, string, 802F596F752063616E206361746368206D6F6273207769746820736F6D652072656473746F6E6520616E64206567677321
+randommessage::12, string, 80754E657665722061736B20616E20C2A763C2A76F41646D696EC2A765C2A76F206F7220C2A761C2A76F44657620C2A765C2A76F746F2066697820736F6D657468696E6720696E2063686174212054686579206F6E6C7920726573706F6E6420746F20C2A761C2A76F2F7469636B6574C2A765C2A76F73
+randommessage::13, string, 805643757273696E6720697320616C6C6F7765642C2062757420756E6E65636573736172696C792070726F66616E652072656D61726B73206F72206861726173736D656E7420617265206E6F7420746F6C6572617465642E
+randommessage::14, string, 808B537461727420616E206974656D2061756374696F6E20627920747970696E6720C2A761C2A76F2F61756320737461727420C2A765C2A76F3CC2A761C2A76F7072696365C2A765C2A76F3E2C207468656E20706C61636520746865206974656D20796F752077616E7420746F2061756374696F6E20696E2074686520706F70757020696E76656E746F727921
+randommessage::15, string, 806E4665656C696E672067656E65726F75733F2042757920616C6C20796F75722066656C6C6F7720636F6D6D756E697479206D656D6265727320612064726F7020706172747920666F72206F6E6C7920243120696E2074686520C2A761C2A76F2F627579C2A765C2A76F206D656E752E
+realty.desc::1, string, 80184E6F206465736372697074696F6E2070726F76696465642E
+realty.prices::1, string, 800B35303020646F6C6C617273
+realty.seller::1, string, 800767757373793035
+realty.signspots::1, location, 860379617708C2B400000570697463680880000000017A09C096AE0000000000017909405020000000000005776F726C6480FF0000000281046E616D652080094D6574616375727365017809C0AAEF0000000000
+realty.tempdesc::1, string, 80184E6F206465736372697074696F6E2070726F76696465642E
+realty.tempdesc::2, string, 80184E6F206465736372697074696F6E2070726F76696465642E
+realty.tempprices::1, string, 800B35303020646F6C6C617273
+realty.tempseller::1, string, 800767757373793035
+realty.tempspots::1, location, 860379617708C2B400000570697463680880000000017A09C096AE0000000000017909405020000000000005776F726C6480FF0000000281046E616D652080094D6574616375727365017809C0AAEF0000000000
+realty.tempwarps::1, location, 860379617708C38745C0057069746368084202334C017A09C096AF889C69D36B017909405000000000000005776F726C6480FF0000000281046E616D652080094D6574616375727365017809C0AAE9332B43FA41
+realty.warps::1, location, 860379617708C38745C0057069746368084202334C017A09C096AF889C69D36B017909405000000000000005776F726C6480FF0000000281046E616D652080094D6574616375727365017809C0AAE9332B43FA41
+refer.fifth, long, 0000000000000001
+refer.first, long, 0000000000000005
+refer.fourth, long, 0000000000000002
+refer.second, long, 0000000000000004
+refer.third, long, 0000000000000003
+refered._wadee_, boolean, 00
+refered.adnap09, boolean, 00
+refered.aflyingduck, boolean, 00
+refered.aiden_h1, boolean, 00
+refered.anonymous_404, boolean, 00
+refered.atomicburgerflip, boolean, 00
+refered.batman1120002, boolean, 00
+refered.beagle5555, boolean, 00
+refered.brightenstar, boolean, 00
+refered.clymate, boolean, 00
+refered.coolcoolcool64, boolean, 00
+refered.cr4zy21fr34k, boolean, 00
+refered.danikachoo, boolean, 00
+refered.ddigitaldog, boolean, 00
+refered.deer1jet, boolean, 00
+refered.derpy26, boolean, 00
+refered.diskdinomite, boolean, 00
+refered.djzzadoks3, boolean, 00
+refered.ermmahhhhhhh, boolean, 00
+refered.fifatord, boolean, 00
+refered.fillin3, boolean, 00
+refered.fireknight92, boolean, 00
+refered.forddude04, boolean, 00
+refered.freesbe, boolean, 00
+refered.fwiter, boolean, 00
+refered.gerald_fenwick, boolean, 00
+refered.golumpa, boolean, 00
+refered.gourneyz, boolean, 00
+refered.gussy05, boolean, 00
+refered.idafox, boolean, 00
+refered.jameyporter28, boolean, 00
+refered.jammyboy112, boolean, 00
+refered.justknowigame, boolean, 00
+refered.kingkitkat69, boolean, 00
+refered.lego7711, boolean, 00
+refered.lexiefox, boolean, 00
+refered.lucky_shots69, boolean, 00
+refered.lukeblaster9, boolean, 00
+refered.mike15444, boolean, 00
+refered.moddyboy1231, boolean, 00
+refered.mscarapace, boolean, 00
+refered.ozo, boolean, 00
+refered.ozombieturdo, boolean, 00
+refered.pumpkinpepper, boolean, 00
+refered.robuscu, boolean, 00
+refered.roxybear5000, boolean, 00
+refered.saphrana, boolean, 00
+refered.scorrpine, boolean, 00
+refered.seradane, boolean, 00
+refered.sharkboy5432, boolean, 00
+refered.shionskaii, boolean, 00
+refered.shortmanstamey, boolean, 00
+refered.stanthemanfan, boolean, 00
+refered.statiikxkaleb, boolean, 00
+refered.stupidape3000, boolean, 00
+refered.swimmer117, boolean, 00
+refered.tailsbfox, boolean, 00
+refered.thegreatcrafter7, boolean, 00
+refered.todd112000, boolean, 00
+refered.toncker, boolean, 00
+refered.varanta, boolean, 00
+refered.warriorchad414, boolean, 00
+refered.whitetiger007uk, boolean, 00
+refered.yoshijosh2001, boolean, 00
+refered.zell963s, boolean, 00
+refered.zombiehugger4, boolean, 00
+reward._fengo.day, long, 0000000000000000
+reward._wadee_.day, long, 0000000000000000
+reward.adnap09.day, long, 0000000000000000
+reward.aflyingduck.day, long, 0000000000000000
+reward.aiden_h1.day, long, 0000000000000000
+reward.anonymous_404.day, long, 0000000000000000
+reward.atomicburgerflip.day, long, 0000000000000000
+reward.batman1120002.day, long, 0000000000000000
+reward.beagle5555.day, long, 0000000000000000
+reward.brightenstar.day, long, 0000000000000000
+reward.canadianeatfresh.day, long, 0000000000000000
+reward.captainstupid.day, long, 0000000000000000
+reward.clymate.day, long, 0000000000000000
+reward.coolcoolcool64.day, long, 0000000000000000
+reward.count, double, 4036000000000000
+reward.cr4zy21fr34k.day, long, 0000000000000000
+reward.creeperkiller830.day, long, 0000000000000000
+reward.danikachoo.day, long, 0000000000000000
+reward.darkeye932.day, long, 0000000000000000
+reward.ddigitaldog.day, long, 0000000000000000
+reward.deer1jet.day, long, 0000000000000000
+reward.derpy26.day, long, 0000000000000000
+reward.dinoppar.day, long, 0000000000000000
+reward.diskdinomite.day, long, 0000000000000000
+reward.djzzadoks3.day, long, 0000000000000000
+reward.dpw750.day, long, 0000000000000000
+reward.drbloodbathmc.day, long, 0000000000000000
+reward.ermmahhhhhhh.day, long, 0000000000000000
+reward.esfavorie.day, long, 0000000000000000
+reward.evillittlething.day, long, 0000000000000000
+reward.fifatord.day, long, 0000000000000000
+reward.fillin3.day, long, 0000000000000000
+reward.fireknight92.day, long, 0000000000000000
+reward.forddude04.day, long, 0000000000000000
+reward.freesbe.day, long, 0000000000000000
+reward.fwiter.day, long, 0000000000000000
+reward.gerald_fenwick.day, long, 0000000000000000
+reward.golumpa.day, long, 0000000000000000
+reward.gourneyz.day, long, 0000000000000000
+reward.green11.day, long, 0000000000000000
+reward.gussy05.day, long, 0000000000000000
+reward.hobbitsyfeet.day, long, 0000000000000000
+reward.hunterboy57.day, long, 0000000000000000
+reward.idafox.day, long, 0000000000000000
+reward.infiniterose.day, long, 0000000000000000
+reward.itsdanielbro.day, long, 0000000000000000
+reward.jameyporter28.day, long, 0000000000000000
+reward.jammyboy112.day, long, 0000000000000000
+reward.jazzwalgar.day, long, 0000000000000000
+reward.justknowigame.day, long, 0000000000000000
+reward.katekitkat9.day, long, 0000000000000000
+reward.kingkitkat69.day, long, 0000000000000000
+reward.kristycream.day, long, 0000000000000000
+reward.kyokokat.day, long, 0000000000000000
+reward.lacerfacerxd.day, long, 0000000000000000
+reward.lego7711.day, long, 0000000000000000
+reward.lexiefox.day, long, 0000000000000000
+reward.lordlankovic.day, long, 0000000000000000
+reward.lucky_shots69.day, long, 0000000000000000
+reward.lukeblaster9.day, long, 0000000000000000
+reward.luna482.day, long, 0000000000000000
+reward.mike15444.day, long, 0000000000000000
+reward.moddyboy1231.day, long, 0000000000000000
+reward.mrprotagonist.day, long, 0000000000000000
+reward.mscarapace.day, long, 0000000000000000
+reward.nitrogengaming1.day, long, 0000000000000000
+reward.ozo.day, long, 0000000000000000
+reward.ozombieturdo.day, long, 0000000000000000
+reward.post_rogue.day, long, 0000000000000000
+reward.pumpkinpepper.day, long, 0000000000000000
+reward.quisalas.day, long, 0000000000000000
+reward.raventhegreat.day, long, 0000000000000000
+reward.retroville268773.day, long, 0000000000000000
+reward.rfcroc.day, long, 0000000000000000
+reward.robuscu.day, long, 0000000000000000
+reward.roland2011a.day, long, 0000000000000000
+reward.roxybear5000.day, long, 0000000000000000
+reward.rubyserpent.day, long, 0000000000000000
+reward.ryan1450.day, long, 0000000000000000
+reward.saphrana.day, long, 0000000000000000
+reward.scatzbro.day, long, 0000000000000000
+reward.scorrpine.day, long, 0000000000000000
+reward.seradane.day, long, 0000000000000000
+reward.shadow007uk.day, long, 0000000000000000
+reward.sharkboy5432.day, long, 0000000000000000
+reward.shaunticlair.day, long, 0000000000000000
+reward.shinx.day, long, 0000000000000000
+reward.shionskaii.day, long, 0000000000000000
+reward.shortmanstamey.day, long, 0000000000000000
+reward.ski32.day, long, 0000000000000000
+reward.stanthemanfan.day, long, 0000000000000000
+reward.statiikxkaleb.day, long, 0000000000000000
+reward.stupidape3000.day, long, 0000000000000000
+reward.swimmer117.day, long, 0000000000000000
+reward.tailsbfox.day, long, 0000000000000000
+reward.thegreatcrafter7.day, long, 0000000000000000
+reward.todd112000.day, long, 0000000000000000
+reward.toncker.day, long, 0000000000000000
+reward.trich159.day, long, 0000000000000000
+reward.trytheswordfish.day, long, 0000000000000000
+reward.uberwookie.day, long, 0000000000000000
+reward.varanta.day, long, 0000000000000000
+reward.warriorchad414.day, long, 0000000000000000
+reward.white_knight16.day, long, 0000000000000000
+reward.whitetiger007uk.day, long, 0000000000000000
+reward.xxladykaixx.day, long, 0000000000000000
+reward.yoshijosh2001.day, long, 0000000000000000
+reward.zell963s.day, long, 0000000000000000
+reward.zombiehugger4.day, long, 0000000000000000
+rfcroc.wiped, boolean, 01
+rubyserpent.wiped, boolean, 01
+ryan1450.wiped, boolean, 01
+setpin.<player>, boolean, 00
+setpin.darkeye932, boolean, 01
+setpin.dinoppar, boolean, 01
+setpin.drbloodbathmc, boolean, 01
+setpin.evillittlething, boolean, 01
+setpin.fireknight92, boolean, 01
+setpin.gussy05, boolean, 01
+setpin.hunterboy57, boolean, 01
+setpin.infiniterose, boolean, 01
+setpin.jameyporter28, boolean, 01
+setpin.kristycream, boolean, 01
+setpin.mrprotagonist, boolean, 01
+setpin.nitrogengaming1, boolean, 01
+setpin.raventhegreat, boolean, 01
+setpin.scatzbro, boolean, 01
+setpin.shadow007uk, boolean, 01
+setpin.shionskaii, boolean, 01
+setpin.tailsbfox, boolean, 01
+setpin.white_knight16, boolean, 01
+shaunticlair.wiped, boolean, 01
+shopwarp.count, double, 4008000000000000
+signed._wadee_, date, 810974696D657374616D70040000014B8C3FC1D5
+signed.aflyingduck, date, 810974696D657374616D70040000014B8C494411
+signed.atomicburgerflip, date, 810974696D657374616D70040000014B668B7793
+signed.beagle5555, date, 810974696D657374616D70040000014B66728318
+signed.brightenstar, date, 810974696D657374616D70040000014B90A70DC8
+signed.coolcoolcool64, date, 810974696D657374616D70040000014B662AC125
+signed.cr4zy21fr34k, date, 810974696D657374616D70040000014B8B0D337E
+signed.danikachoo, date, 810974696D657374616D70040000014B9595CA2D
+signed.deer1jet, date, 810974696D657374616D70040000014B99180721
+signed.derpy26, date, 810974696D657374616D70040000014B8B27C9C2
+signed.djzzadoks3, date, 810974696D657374616D70040000014B88FA79C1
+signed.ermmahhhhhhh, date, 810974696D657374616D70040000014B88F29541
+signed.fifatord, date, 810974696D657374616D70040000014B795452B8
+signed.fireknight92, date, 810974696D657374616D70040000014B6B5B8441
+signed.forddude04, date, 810974696D657374616D70040000014B85B9F93E
+signed.freesbe, date, 810974696D657374616D70040000014B9C2C5C21
+signed.fwiter, date, 810974696D657374616D70040000014B765F048B
+signed.gourneyz, date, 810974696D657374616D70040000014B8B28C024
+signed.gussy05, date, 810974696D657374616D70040000014B8917882F
+signed.jameyporter28, date, 810974696D657374616D70040000014B8AB016D6
+signed.jammyboy112, date, 810974696D657374616D70040000014BA7C6C0D7
+signed.justknowigame, date, 810974696D657374616D70040000014B99AFB73F
+signed.kingkitkat69, date, 810974696D657374616D70040000014B8B523CA9
+signed.lego7711, date, 810974696D657374616D70040000014B692C4C07
+signed.lexiefox, date, 810974696D657374616D70040000014B9B0D0316
+signed.lucky_shots69, date, 810974696D657374616D70040000014B8AA043CA
+signed.lukeblaster9, date, 810974696D657374616D70040000014B907F91CE
+signed.moddyboy1231, date, 810974696D657374616D70040000014B991CC352
+signed.mscarapace, date, 810974696D657374616D70040000014B81CF6741
+signed.ozo, date, 810974696D657374616D70040000014B99293922
+signed.pumpkinpepper, date, 810974696D657374616D70040000014B670E1293
+signed.robuscu, date, 810974696D657374616D70040000014B894B2D5C
+signed.roxybear5000, date, 810974696D657374616D70040000014B800905DF
+signed.scorrpine, date, 810974696D657374616D70040000014B705014FE
+signed.seradane, date, 810974696D657374616D70040000014B80EB3EFE
+signed.sharkboy5432, date, 810974696D657374616D70040000014B687F40EF
+signed.shionskaii, date, 810974696D657374616D70040000014B8AA5E5D0
+signed.shortmanstamey, date, 810974696D657374616D70040000014BA3FBFF6F
+signed.stanthemanfan, date, 810974696D657374616D70040000014B85BD57A6
+signed.stupidape3000, date, 810974696D657374616D70040000014B93A380F5
+signed.swimmer117, date, 810974696D657374616D70040000014B67E53750
+signed.tailsbfox, date, 810974696D657374616D70040000014B99339A5D
+signed.thegreatcrafter7, date, 810974696D657374616D70040000014B6C2468DF
+signed.toncker, date, 810974696D657374616D70040000014B8A9DC2DD
+signed.varanta, date, 810974696D657374616D70040000014B66A54830
+signed.warriorchad414, date, 810974696D657374616D70040000014B7A8F4194
+signed.zell963s, date, 810974696D657374616D70040000014B9FD59134
+signed.zombiehugger4, date, 810974696D657374616D70040000014B69989C1D
+sk.behead, location, 860379617708000000000570697463680800000000017A09C0398000000000000179094050E0000000000005776F726C6480FF0000000281046E616D652080094D6574616375727365017809C048400000000000
+sk.dropparty, location, 86037961770843B36EF40570697463680842B40000017A09C0585C5B3A149EF70179094051C0000000000005776F726C6480FF0000000281046E616D652080094D6574616375727365017809C04446C1CBBCA976
+sk.piston, location, 860379617708C2B4000005706974636808C240D9D7017A09C039800000000000017909405120000000000005776F726C6480FF0000000281046E616D652080094D6574616375727365017809C048400000000000
+sk.ss, location, 860379617708C3B3BDD70570697463680840819996017A09C06156C8CBE77DAB017909405180000000000005776F726C6480FF0000000281046E616D652080094D6574616375727365017809C003533E92FB1C28
+sk.switch, location, 860379617708C33400000570697463680880000000017A09C038800000000000017909405160000000000005776F726C6480FF0000000281046E616D652080094D6574616375727365017809C046400000000000
+spawn, location, 86037961770843343787057069746368084168CCCF017A09C051E00000000000017909405180000000000005776F726C6480FF0000000281046E616D652080094D6574616375727365017809C050A00000000000
+special._fengo.last, long, 0000000000000000
+special._wadee_.last, long, 0000000000000000
+special.adnap09.last, long, 0000000000000000
+special.aflyingduck.last, long, 0000000000000000
+special.aiden_h1.last, long, 0000000000000000
+special.anonymous_404.last, long, 0000000000000000
+special.atomicburgerflip.last, long, 0000000000000000
+special.batman1120002.last, long, 0000000000000000
+special.beagle5555.last, long, 0000000000000000
+special.brightenstar.last, long, 0000000000000000
+special.canadianeatfresh.last, long, 0000000000000000
+special.captainstupid.last, long, 0000000000000000
+special.clymate.last, long, 0000000000000000
+special.coolcoolcool64.last, long, 0000000000000000
+special.cr4zy21fr34k.last, long, 0000000000000000
+special.creeperkiller830.last, long, 0000000000000000
+special.danikachoo.last, long, 0000000000000000
+special.darkeye932.last, long, 0000000000000000
+special.day, double, 4036000000000000
+special.ddigitaldog.last, long, 0000000000000000
+special.deer1jet.last, long, 0000000000000000
+special.derpy26.last, long, 0000000000000000
+special.dinoppar.last, long, 0000000000000000
+special.diskdinomite.last, long, 0000000000000000
+special.djzzadoks3.last, long, 0000000000000000
+special.dpw750.last, long, 0000000000000000
+special.drbloodbathmc.last, long, 0000000000000000
+special.ermmahhhhhhh.last, long, 0000000000000000
+special.esfavorie.last, long, 0000000000000000
+special.evillittlething.last, long, 0000000000000000
+special.fifatord.last, long, 0000000000000000
+special.fillin3.last, long, 0000000000000000
+special.fireknight92.last, long, 0000000000000000
+special.forddude04.last, long, 0000000000000000
+special.freesbe.last, long, 0000000000000000
+special.fwiter.last, long, 0000000000000000
+special.gerald_fenwick.last, long, 0000000000000000
+special.golumpa.last, long, 0000000000000000
+special.gourneyz.last, long, 0000000000000000
+special.green11.last, long, 0000000000000000
+special.gussy05.last, long, 0000000000000000
+special.hobbitsyfeet.last, long, 0000000000000000
+special.hunterboy57.last, long, 0000000000000000
+special.idafox.last, long, 0000000000000000
+special.infiniterose.last, long, 0000000000000000
+special.itsdanielbro.last, long, 0000000000000000
+special.jameyporter28.last, long, 0000000000000000
+special.jammyboy112.last, long, 0000000000000000
+special.jazzwalgar.last, long, 0000000000000000
+special.justknowigame.last, long, 0000000000000000
+special.katekitkat9.last, long, 0000000000000000
+special.kingkitkat69.last, long, 0000000000000000
+special.kristycream.last, long, 0000000000000000
+special.kyokokat.last, long, 0000000000000000
+special.lacerfacerxd.last, long, 0000000000000000
+special.lego7711.last, long, 0000000000000000
+special.lexiefox.last, long, 0000000000000000
+special.lordlankovic.last, long, 0000000000000000
+special.lucky_shots69.last, long, 0000000000000000
+special.lukeblaster9.last, long, 0000000000000000
+special.luna482.last, long, 0000000000000000
+special.mike15444.last, long, 0000000000000000
+special.moddyboy1231.last, long, 0000000000000000
+special.mrprotagonist.last, long, 0000000000000000
+special.mscarapace.last, long, 0000000000000000
+special.nitrogengaming1.last, long, 0000000000000000
+special.ozo.last, long, 0000000000000000
+special.ozombieturdo.last, long, 0000000000000000
+special.post_rogue.last, long, 0000000000000000
+special.pumpkinpepper.last, long, 0000000000000000
+special.quisalas.last, long, 0000000000000000
+special.raventhegreat.last, long, 0000000000000000
+special.retroville268773.last, long, 0000000000000000
+special.rfcroc.last, long, 0000000000000000
+special.robuscu.last, long, 0000000000000000
+special.roland2011a.last, long, 0000000000000000
+special.roxybear5000.last, long, 0000000000000000
+special.rubyserpent.last, long, 0000000000000000
+special.ryan1450.last, long, 0000000000000000
+special.saphrana.last, long, 0000000000000000
+special.scatzbro.last, long, 0000000000000000
+special.scorrpine.last, long, 0000000000000000
+special.seradane.last, long, 0000000000000000
+special.shadow007uk.last, long, 0000000000000000
+special.sharkboy5432.last, long, 0000000000000000
+special.shaunticlair.last, long, 0000000000000000
+special.shinx.last, long, 0000000000000000
+special.shionskaii.last, long, 0000000000000000
+special.shortmanstamey.last, long, 0000000000000000
+special.ski32.last, long, 0000000000000000
+special.stanthemanfan.last, long, 0000000000000000
+special.statiikxkaleb.last, long, 0000000000000000
+special.stupidape3000.last, long, 0000000000000000
+special.swimmer117.last, long, 0000000000000000
+special.tailsbfox.last, long, 0000000000000000
+special.thegreatcrafter7.last, long, 0000000000000000
+special.todd112000.last, long, 0000000000000000
+special.toncker.last, long, 0000000000000000
+special.trich159.last, long, 0000000000000000
+special.trytheswordfish.last, long, 0000000000000000
+special.uberwookie.last, long, 0000000000000000
+special.varanta.last, long, 0000000000000000
+special.warriorchad414.last, long, 0000000000000000
+special.white_knight16.last, long, 0000000000000000
+special.whitetiger007uk.last, long, 0000000000000000
+special.xxladykaixx.last, long, 0000000000000000
+special.yoshijosh2001.last, long, 0000000000000000
+special.zell963s.last, long, 0000000000000000
+special.zombiehugger4.last, long, 0000000000000000
+spent.<player>, long, 0000000000000000
+spleef.fifth.wins, long, 0000000000000001
+spleef.first.wins, long, 0000000000000005
+spleef.fourth.wins, long, 0000000000000002
+spleef.second.wins, long, 0000000000000004
+spleef.third.wins, long, 0000000000000003
+staff.members::captainstupid, date, 810974696D657374616D70040000014B9EECCE76
+staff.members::darkeye932, date, 810974696D657374616D70040000014BA4E6B9D4
+staff.members::dinoppar, string, 80036E6F77
+staff.members::drbloodbathmc, date, 810974696D657374616D70040000014BA031894C
+staff.members::evillittlething, string, 80036E6F77
+staff.members::gussy05, date, 810974696D657374616D70040000014BA442C93A
+staff.members::hobbitsyfeet, date, 810974696D657374616D70040000014BA5D9B814
+staff.members::infiniterose, date, 810974696D657374616D70040000014B963BD095
+staff.members::mrprotagonist, date, 810974696D657374616D70040000014B9B6FCFAF
+staff.members::post_rogue, date, 810974696D657374616D70040000014BA8A0BFD6
+staff.members::scatzbro, date, 810974696D657374616D70040000014BA5F6CC8C
+staff.members::shadow007uk, date, 810974696D657374616D70040000014BA2C6E85F
+submit.evillittlething, long, 0000000000000000
+submit.evillittlething.category, string, 800747656E6572616C
+submit.evillittlething.desc, string, 8024492073656C6C2061206C6974746C6520626974206F662065766572797468696E67203A29
+submit.evillittlething.name, string, 80114576696C73204C6974746C652053686F70
+submit.fwiter, long, 0000000000000000
+submit.fwiter.category, string, 800A6D656368616E6963616C
+submit.fwiter.desc, string, 803A4120737570657220636865617020737475666620666F7220616C6C20796F757220636C61737379206D656368616E6963616C206E656564732121
+submit.fwiter.name, string, 80285265676769657320636C617373792073686F7020666F7220636C61737379206D656368616E696373
+teir1, long, 00000000000055F0
+teir2, long, 000000000000D6D8
+teir3, long, 0000000000015F90
+teir4, long, 0000000000027100
+teir5, long, 0000000000061A80
+teir6, long, 00000000000AAE60
+teir7, long, 00000000000DBBA0
+teir8, long, 0000000000124F80
+useris.darkeye932, boolean, 00
+useris.dinoppar, boolean, 01
+useris.drbloodbathmc, boolean, 00
+useris.evillittlething, boolean, 01
+useris.fireknight92, boolean, 00
+useris.gussy05, boolean, 00
+useris.hunterboy57, boolean, 00
+useris.infiniterose, boolean, 00
+useris.jameyporter28, boolean, 00
+useris.kristycream, boolean, 00
+useris.mrprotagonist, boolean, 00
+useris.nitrogengaming1, boolean, 00
+useris.raventhegreat, boolean, 00
+useris.scatzbro, boolean, 00
+useris.shadow007uk, boolean, 00
+useris.shionskaii, boolean, 00
+useris.tailsbfox, boolean, 00
+useris.white_knight16, boolean, 00
+vc.hobbitsyfeet.count, long, 0000000000000000
+vc.hobbitsyfeet.max, long, 0000000000000000
+vc.lacerfacerxd::cobble, location, 860379617708C33400000570697463680880000000017A09408C7C00000000000179094055A0000000000005776F726C6480FF0000000281046E616D652080094D6574616375727365017809C0B1E38000000000
+vc.lacerfacerxd.count, long, 0000000000000001
+vc.lacerfacerxd.max, long, 0000000000000012
+vc.nitrogengaming1::money, location, 860379617708C2B400000570697463680880000000017A09C08B3C0000000000017909404EC0000000000005776F726C6480FF0000000281046E616D652080094D6574616375727365017809C0B0F18000000000
+vc.nitrogengaming1.count, long, 0000000000000001
+vc.nitrogengaming1.max, long, 000000000000000A
+vc.rfcroc::coal, location, 860379617708C33400000570697463680880000000017A09C080EC0000000000017909405960000000000005776F726C6480FF0000000281046E616D652080094D6574616375727365017809C0AEF30000000000
+vc.rfcroc::dirt, location, 860379617708C33400000570697463680880000000017A09C080EC0000000000017909405960000000000005776F726C6480FF0000000281046E616D652080094D6574616375727365017809C0AEFD0000000000
+vc.rfcroc::drops, location, 86037961770842B400000570697463680880000000017A09C081140000000000017909405960000000000005776F726C6480FF0000000281046E616D652080094D6574616375727365017809C0AEF10000000000
+vc.rfcroc::food, location, 86037961770842B400000570697463680880000000017A09C081040000000000017909405960000000000005776F726C6480FF0000000281046E616D652080094D6574616375727365017809C0AEF10000000000
+vc.rfcroc::metals, location, 860379617708C33400000570697463680880000000017A09C080EC0000000000017909405960000000000005776F726C6480FF0000000281046E616D652080094D6574616375727365017809C0AF0F0000000000
+vc.rfcroc::potions, location, 860379617708C33400000570697463680880000000017A09C080EC0000000000017909405960000000000005776F726C6480FF0000000281046E616D652080094D6574616375727365017809C0AF1D0000000000
+vc.rfcroc::sale, location, 860379617708000000000570697463680880000000017A09C081340000000000017909405960000000000005776F726C6480FF0000000281046E616D652080094D6574616375727365017809C0AEF70000000000
+vc.rfcroc::tools, location, 86037961770842B400000570697463680880000000017A09C0812C00000000000179094059A0000000000005776F726C6480FF0000000281046E616D652080094D6574616375727365017809C0AF150000000000
+vc.rfcroc::wood, location, 860379617708C33400000570697463680880000000017A09C080EC0000000000017909405960000000000005776F726C6480FF0000000281046E616D652080094D6574616375727365017809C0AF090000000000
+vc.rfcroc.count, double, 4022000000000000
+vc.rfcroc.max, long, 000000000000000A
+vc.temp.lacerfacerxd.vcnumber, string, 8006436F62626C65
+vc.temp.nitrogengaming1.vcnumber, string, 80056D6F6E6579
+vc.temp.rfcroc.vcnumber, string, 8005746F6F6C73
+vote.against, long, 0000000000000000
+vote.for, double, 3FF0000000000000
+voted._fengo, boolean, 00
+voted._wadee_, boolean, 00
+voted.adnap09, boolean, 00
+voted.aflyingduck, boolean, 00
+voted.aiden_h1, boolean, 00
+voted.anonymous_404, boolean, 00
+voted.atomicburgerflip, boolean, 00
+voted.batman1120002, boolean, 00
+voted.beagle5555, boolean, 00
+voted.brightenstar, boolean, 00
+voted.canadianeatfresh, boolean, 00
+voted.captainstupid, boolean, 00
+voted.clymate, boolean, 00
+voted.coolcoolcool64, boolean, 00
+voted.cr4zy21fr34k, boolean, 00
+voted.creeperkiller830, boolean, 00
+voted.danikachoo, boolean, 00
+voted.darkeye932, boolean, 00
+voted.ddigitaldog, boolean, 00
+voted.deer1jet, boolean, 00
+voted.derpy26, boolean, 00
+voted.dinoppar, boolean, 00
+voted.diskdinomite, boolean, 00
+voted.djzzadoks3, boolean, 00
+voted.dpw750, boolean, 00
+voted.drbloodbathmc, boolean, 00
+voted.ermmahhhhhhh, boolean, 00
+voted.esfavorie, boolean, 00
+voted.evillittlething, boolean, 00
+voted.fifatord, boolean, 00
+voted.fillin3, boolean, 00
+voted.fireknight92, boolean, 00
+voted.forddude04, boolean, 00
+voted.freesbe, boolean, 00
+voted.fwiter, boolean, 00
+voted.gerald_fenwick, boolean, 00
+voted.golumpa, boolean, 00
+voted.gourneyz, boolean, 00
+voted.green11, boolean, 00
+voted.gussy05, boolean, 00
+voted.hobbitsyfeet, boolean, 00
+voted.hunterboy57, boolean, 00
+voted.idafox, boolean, 00
+voted.infiniterose, boolean, 00
+voted.itsdanielbro, boolean, 00
+voted.jameyporter28, boolean, 00
+voted.jammyboy112, boolean, 00
+voted.jazzwalgar, boolean, 00
+voted.justknowigame, boolean, 00
+voted.katekitkat9, boolean, 00
+voted.kingkitkat69, boolean, 00
+voted.kristycream, boolean, 00
+voted.kyokokat, boolean, 00
+voted.lacerfacerxd, boolean, 00
+voted.lego7711, boolean, 00
+voted.lexiefox, boolean, 00
+voted.lordlankovic, boolean, 00
+voted.lucky_shots69, boolean, 00
+voted.lukeblaster9, boolean, 00
+voted.luna482, boolean, 00
+voted.mike15444, boolean, 00
+voted.moddyboy1231, boolean, 00
+voted.mrprotagonist, boolean, 00
+voted.mscarapace, boolean, 00
+voted.nitrogengaming1, boolean, 00
+voted.ozo, boolean, 00
+voted.ozombieturdo, boolean, 00
+voted.post_rogue, boolean, 00
+voted.pumpkinpepper, boolean, 00
+voted.quisalas, boolean, 00
+voted.raventhegreat, boolean, 00
+voted.retroville268773, boolean, 00
+voted.rfcroc, boolean, 00
+voted.robuscu, boolean, 00
+voted.roland2011a, boolean, 00
+voted.roxybear5000, boolean, 00
+voted.rubyserpent, boolean, 00
+voted.ryan1450, boolean, 00
+voted.saphrana, boolean, 00
+voted.scatzbro, boolean, 00
+voted.scorrpine, boolean, 00
+voted.seradane, boolean, 00
+voted.shadow007uk, boolean, 00
+voted.sharkboy5432, boolean, 00
+voted.shaunticlair, boolean, 00
+voted.shinx, boolean, 00
+voted.shionskaii, boolean, 00
+voted.shortmanstamey, boolean, 00
+voted.ski32, boolean, 00
+voted.stanthemanfan, boolean, 00
+voted.statiikxkaleb, boolean, 00
+voted.stupidape3000, boolean, 00
+voted.swimmer117, boolean, 00
+voted.tailsbfox, boolean, 00
+voted.thegreatcrafter7, boolean, 00
+voted.todd112000, boolean, 00
+voted.toncker, boolean, 00
+voted.trich159, boolean, 00
+voted.trytheswordfish, boolean, 00
+voted.uberwookie, boolean, 00
+voted.varanta, boolean, 00
+voted.warriorchad414, boolean, 00
+voted.white_knight16, boolean, 00
+voted.whitetiger007uk, boolean, 00
+voted.xxladykaixx, boolean, 00
+voted.yoshijosh2001, boolean, 00
+voted.zell963s, boolean, 00
+voted.zombiehugger4, boolean, 00
+warnings.<player>, long, 0000000000000000
+warnings.coolcoolcool64, double, 4000000000000000
+warnings.coolcoolcool64.by::1, offlineplayer, 81046E616D6520800D4D7250726F7461676F6E697374
+warnings.coolcoolcool64.by::2, offlineplayer, 81046E616D6520800A506F73745F526F677565
+warnings.coolcoolcool64.reason::1, string, 801F4164766572746973696E6720616E6F74686572207365727665722773204950
+warnings.coolcoolcool64.reason::2, string, 800B6164766572746973696E67
+warnings.coolcoolcool64.time::1, date, 810974696D657374616D70040000014B668E1209
+warnings.coolcoolcool64.time::2, date, 810974696D657374616D70040000014B669523FC
+wchat::-.-, string, 8007E0B2A05FE0B2A0
+wchat::/accept, string, 8010C2A761C2A76F2F616363657074C2A772
+wchat::/agree, string, 800FC2A761C2A76F2F6167726565C2A772
+wchat::/back, string, 800EC2A761C2A76F2F6261636BC2A772
+wchat::/buy, string, 800DC2A761C2A76F2F627579C2A772
+wchat::/dash, string, 800EC2A761C2A76F2F64617368C2A772
+wchat::/death, string, 800FC2A761C2A76F2F6465617468C2A772
+wchat::/delhome, string, 8011C2A761C2A76F2F64656C686F6D65C2A772
+wchat::/donate, string, 8010C2A761C2A76F2F646F6E617465C2A772
+wchat::/drop, string, 800EC2A761C2A76F2F64726F70C2A772
+wchat::/home, string, 800EC2A761C2A76F2F686F6D65C2A772
+wchat::/hub, string, 800DC2A761C2A76F2F687562C2A772
+wchat::/hyperverse, string, 8014C2A761C2A76F2F68797065727665727365C2A772
+wchat::/hyper, string, 800FC2A761C2A76F2F6879706572C2A772
+wchat::/hy, string, 800DC2A761C2A76F2F687970C2A772
+wchat::/lobby, string, 800FC2A761C2A76F2F6C6F626279C2A772
+wchat::/menu, string, 800EC2A761C2A76F2F6D656E75C2A772
+wchat::/meta, string, 800EC2A761C2A76F2F6D657461C2A772
+wchat::/msg, string, 800DC2A761C2A76F2F6D7367C2A772
+wchat::/pay, string, 800DC2A761C2A76F2F706179C2A772
+wchat::/permshop, string, 8012C2A761C2A76F2F7065726D73686F70C2A772
+wchat::/premium, string, 8011C2A761C2A76F2F7072656D69756DC2A772
+wchat::/pvpoff, string, 8010C2A761C2A76F2F7076706F6666C2A772
+wchat::/pvpon, string, 800FC2A761C2A76F2F7076706F6EC2A772
+wchat::/pvp, string, 800DC2A761C2A76F2F707670C2A772
+wchat::/rules, string, 800FC2A761C2A76F2F72756C6573C2A772
+wchat::/sandbox, string, 8011C2A761C2A76F2F73616E64626F78C2A772
+wchat::/sethome, string, 8011C2A761C2A76F2F736574686F6D65C2A772
+wchat::/shop, string, 800EC2A761C2A76F2F73686F70C2A772
+wchat::/spawn, string, 800FC2A761C2A76F2F737061776EC2A772
+wchat::/ss, string, 800CC2A761C2A76F2F7373C2A772
+wchat::/staff, string, 800FC2A761C2A76F2F7374616666C2A772
+wchat::/submit, string, 8010C2A761C2A76F2F7375626D6974C2A772
+wchat::/tell, string, 800EC2A761C2A76F2F74656C6CC2A772
+wchat::/ticket, string, 8010C2A761C2A76F2F7469636B6574C2A772
+wchat::/tpaccept, string, 8012C2A761C2A76F2F7470616363657074C2A772
+wchat::/tpahere, string, 8011C2A761C2A76F2F74706168657265C2A772
+wchat::/tpa, string, 800DC2A761C2A76F2F747061C2A772
+wchat::/tracer, string, 8010C2A761C2A76F2F747261636572C2A772
+wchat::/trails, string, 8010C2A761C2A76F2F747261696C73C2A772
+wchat::/warpeffect, string, 8014C2A761C2A76F2F77617270656666656374C2A772
+wchat::<3, string, 8003E299A5
+wchat::[downvote], string, 8009C2A739E296BCC2A772
+wchat::[upvote], string, 8009C2A736E296B2C2A772
+wchat::mcmetaverse.com, string, 8018C2A761C2A76F4D634D65746176657273652E636F6DC2A772
+wedding.going, boolean, 00
+welcomed._fengo, offlineplayer, 81046E616D652080087472696368313539
+welcomed._wadee_, string, 80054E6F746368
+welcomed.adnap09, string, 80054E6F746368
+welcomed.aflyingduck, offlineplayer, 81046E616D6520800C466972654B6E696768743932
+welcomed.aiden_h1, string, 80054E6F746368
+welcomed.anonymous_404, string, 80054E6F746368
+welcomed.atomicburgerflip, offlineplayer, 81046E616D6520800B6B7269737479637265616D
+welcomed.batman1120002, string, 80054E6F746368
+welcomed.beagle5555, string, 80054E6F746368
+welcomed.brightenstar, string, 80054E6F746368
+welcomed.canadianeatfresh, offlineplayer, 81046E616D6520800C496E66696E697465726F7365
+welcomed.captainstupid, offlineplayer, 81046E616D65208006726663726F63
+welcomed.clymate, string, 80054E6F746368
+welcomed.coolcoolcool64, string, 80054E6F746368
+welcomed.cr4zy21fr34k, string, 80054E6F746368
+welcomed.creeperkiller830, offlineplayer, 81046E616D6520800B736861646F77303037756B
+welcomed.danikachoo, offlineplayer, 81046E616D6520800C486F62626974737966656574
+welcomed.darkeye932, offlineplayer, 81046E616D65208006467769746572
+welcomed.ddigitaldog, string, 80054E6F746368
+welcomed.deer1jet, string, 80054E6F746368
+welcomed.derpy26, offlineplayer, 81046E616D65208008476F75726E65797A
+welcomed.dinoppar, offlineplayer, 81046E616D65208007677265656E3131
+welcomed.diskdinomite, string, 80054E6F746368
+welcomed.djzzadoks3, offlineplayer, 81046E616D6520800C736861756E7469636C616972
+welcomed.dpw750, offlineplayer, 81046E616D6520800B6B7269737479637265616D
+welcomed.drbloodbathmc, offlineplayer, 81046E616D6520800C486F62626974737966656574
+welcomed.ermmahhhhhhh, string, 80054E6F746368
+welcomed.esfavorie, string, 80054E6F746368
+welcomed.evillittlething, offlineplayer, 81046E616D6520800851756973616C6173
+welcomed.fifatord, string, 80054E6F746368
+welcomed.fillin3, string, 80054E6F746368
+welcomed.fireknight92, offlineplayer, 81046E616D6520800767757373793035
+welcomed.forddude04, string, 80054E6F746368
+welcomed.freesbe, string, 80054E6F746368
+welcomed.fwiter, offlineplayer, 81046E616D6520800A4D734361726170616365
+welcomed.gerald_fenwick, string, 80054E6F746368
+welcomed.golumpa, string, 80054E6F746368
+welcomed.gourneyz, offlineplayer, 81046E616D6520800C536861726B626F7935343332
+welcomed.green11, offlineplayer, 81046E616D6520800A75626572776F6F6B6965
+welcomed.gussy05, offlineplayer, 81046E616D6520800C45726D6D6168686868686868
+welcomed.hobbitsyfeet, offlineplayer, 81046E616D65208006726663726F63
+welcomed.hunterboy57, offlineplayer, 81046E616D6520800C4372347A793231467233346B
+welcomed.idafox, string, 80054E6F746368
+welcomed.infiniterose, offlineplayer, 81046E616D6520800766696C6C696E33
+welcomed.itsdanielbro, string, 80054E6F746368
+welcomed.jameyporter28, string, 80054E6F746368
+welcomed.jammyboy112, string, 80054E6F746368
+welcomed.jazzwalgar, offlineplayer, 81046E616D6520800A6461726B657965393332
+welcomed.justknowigame, offlineplayer, 81046E616D6520800B6B7269737479637265616D
+welcomed.katekitkat9, offlineplayer, 81046E616D6520800B5275627953657270656E74
+welcomed.kingkitkat69, string, 80054E6F746368
+welcomed.kristycream, offlineplayer, 81046E616D6520800864696E6F70706172
+welcomed.kyokokat, offlineplayer, 81046E616D6520800B736861646F77303037756B
+welcomed.lacerfacerxd, offlineplayer, 81046E616D6520800D4D7250726F7461676F6E697374
+welcomed.lego7711, string, 80054E6F746368
+welcomed.lexiefox, string, 80054E6F746368
+welcomed.lordlankovic, offlineplayer, 81046E616D65208007677265656E3131
+welcomed.lucky_shots69, offlineplayer, 81046E616D6520800767757373793035
+welcomed.lukeblaster9, string, 80054E6F746368
+welcomed.luna482, offlineplayer, 81046E616D6520800C466972654B6E696768743932
+welcomed.mike15444, string, 80054E6F746368
+welcomed.moddyboy1231, string, 80054E6F746368
+welcomed.mrprotagonist, offlineplayer, 81046E616D6520800851756973616C6173
+welcomed.mscarapace, offlineplayer, 81046E616D652080085279616E31343530
+welcomed.nitrogengaming1, offlineplayer, 81046E616D6520800F4576696C4C6974746C655468696E67
+welcomed.ozo, string, 80054E6F746368
+welcomed.ozombieturdo, string, 80054E6F746368
+welcomed.post_rogue, offlineplayer, 81046E616D6520800A6461726B657965393332
+welcomed.pumpkinpepper, offlineplayer, 81046E616D6520800D4472426C6F6F64626174684D43
+welcomed.quisalas, offlineplayer, 81046E616D6520800A506F73745F526F677565
+welcomed.raventhegreat, offlineplayer, 81046E616D65208006647077373530
+welcomed.retroville268773, offlineplayer, 81046E616D6520800B5275627953657270656E74
+welcomed.rfcroc, offlineplayer, 81046E616D65208006647077373530
+welcomed.robuscu, string, 80054E6F746368
+welcomed.roland2011a, offlineplayer, 81046E616D652080085279616E31343530
+welcomed.roxybear5000, string, 80054E6F746368
+welcomed.rubyserpent, offlineplayer, 81046E616D6520800864696E6F70706172
+welcomed.ryan1450, offlineplayer, 81046E616D65208006467769746572
+welcomed.saphrana, string, 80054E6F746368
+welcomed.scatzbro, offlineplayer, 81046E616D6520800851756973616C6173
+welcomed.scorrpine, string, 80054E6F746368
+welcomed.seradane, string, 80054E6F746368
+welcomed.shadow007uk, offlineplayer, 81046E616D65208006467769746572
+welcomed.sharkboy5432, string, 80054E6F746368
+welcomed.shaunticlair, string, 80054E6F746368
+welcomed.shinx, string, 80054E6F746368
+welcomed.shionskaii, offlineplayer, 81046E616D652080085279616E31343530
+welcomed.shortmanstamey, string, 80054E6F746368
+welcomed.ski32, string, 80054E6F746368
+welcomed.stanthemanfan, string, 80054E6F746368
+welcomed.statiikxkaleb, string, 80054E6F746368
+welcomed.stupidape3000, offlineplayer, 81046E616D6520800F4576696C4C6974746C655468696E67
+welcomed.swimmer117, string, 80054E6F746368
+welcomed.tailsbfox, offlineplayer, 81046E616D65208007677265656E3131
+welcomed.thegreatcrafter7, string, 80054E6F746368
+welcomed.todd112000, string, 80054E6F746368
+welcomed.toncker, string, 80054E6F746368
+welcomed.trich159, offlineplayer, 81046E616D65208006726663726F63
+welcomed.trytheswordfish, offlineplayer, 81046E616D6520800766696C6C696E33
+welcomed.uberwookie, offlineplayer, 81046E616D6520800E73686F72746D616E7374616D6579
+welcomed.varanta, offlineplayer, 81046E616D6520800A64616E696B6163686F6F
+welcomed.warriorchad414, offlineplayer, 81046E616D65208008736361747A62726F
+welcomed.white_knight16, offlineplayer, 81046E616D652080087472696368313539
+welcomed.whitetiger007uk, string, 80054E6F746368
+welcomed.xxladykaixx, offlineplayer, 81046E616D6520800864696E6F70706172
+welcomed.yoshijosh2001, string, 80054E6F746368
+welcomed.zell963s, string, 80054E6F746368
+welcomed.zombiehugger4, string, 80054E6F746368
+zombiehugger4.wiped, boolean, 01
+
+cmddoor.open, null, 
+staff.members::evillittlething, string, 80036E6F77
+staff.members::dinoppar, string, 80036E6F77
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+staff.members::evillittlething, string, 80036E6F77
+staff.members::dinoppar, string, 80036E6F77
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+staff.members::evillittlething, string, 80036E6F77
+staff.members::dinoppar, string, 80036E6F77
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+staff.members::evillittlething, string, 80036E6F77
+staff.members::dinoppar, string, 80036E6F77
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+staff.members::evillittlething, string, 80036E6F77
+staff.members::dinoppar, string, 80036E6F77
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+staff.members::evillittlething, string, 80036E6F77
+staff.members::dinoppar, string, 80036E6F77
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+staff.members::evillittlething, string, 80036E6F77
+staff.members::dinoppar, string, 80036E6F77
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+staff.members::evillittlething, string, 80036E6F77
+staff.members::dinoppar, string, 80036E6F77
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+staff.members::evillittlething, string, 80036E6F77
+staff.members::dinoppar, string, 80036E6F77
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+staff.members::evillittlething, string, 80036E6F77
+staff.members::dinoppar, string, 80036E6F77
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+staff.members::evillittlething, string, 80036E6F77
+staff.members::dinoppar, string, 80036E6F77
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+lastwarp.dinoppar, date, 810974696D657374616D70040000014BA8C913ED
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+staff.members::evillittlething, string, 80036E6F77
+staff.members::dinoppar, string, 80036E6F77
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+staff.members::evillittlething, string, 80036E6F77
+staff.members::dinoppar, string, 80036E6F77
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+staff.members::evillittlething, string, 80036E6F77
+staff.members::dinoppar, string, 80036E6F77
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+staff.members::evillittlething, string, 80036E6F77
+staff.members::dinoppar, string, 80036E6F77
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+staff.members::evillittlething, string, 80036E6F77
+staff.members::dinoppar, string, 80036E6F77
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+staff.members::evillittlething, string, 80036E6F77
+staff.members::dinoppar, string, 80036E6F77
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+staff.members::evillittlething, string, 80036E6F77
+staff.members::dinoppar, string, 80036E6F77
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+staff.members::evillittlething, string, 80036E6F77
+staff.members::dinoppar, string, 80036E6F77
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+question.last, offlineplayer, 81046E616D6520800851756973616C6173
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+staff.members::evillittlething, string, 80036E6F77
+staff.members::dinoppar, string, 80036E6F77
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+staff.members::evillittlething, string, 80036E6F77
+staff.members::dinoppar, string, 80036E6F77
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+staff.members::evillittlething, string, 80036E6F77
+staff.members::dinoppar, string, 80036E6F77
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+staff.members::evillittlething, string, 80036E6F77
+staff.members::dinoppar, string, 80036E6F77
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+staff.members::evillittlething, string, 80036E6F77
+staff.members::dinoppar, string, 80036E6F77
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+staff.members::evillittlething, string, 80036E6F77
+staff.members::dinoppar, string, 80036E6F77
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+staff.members::evillittlething, string, 80036E6F77
+staff.members::dinoppar, string, 80036E6F77
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+staff.members::evillittlething, string, 80036E6F77
+staff.members::dinoppar, string, 80036E6F77
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+staff.members::evillittlething, string, 80036E6F77
+staff.members::dinoppar, string, 80036E6F77
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+damagetype.uberwookie, damagecause, 0446414C4C
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+staff.members::evillittlething, string, 80036E6F77
+staff.members::dinoppar, string, 80036E6F77
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+staff.members::evillittlething, string, 80036E6F77
+staff.members::dinoppar, string, 80036E6F77
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+staff.members::evillittlething, string, 80036E6F77
+staff.members::dinoppar, string, 80036E6F77
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+staff.members::evillittlething, string, 80036E6F77
+staff.members::dinoppar, string, 80036E6F77
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+staff.members::evillittlething, string, 80036E6F77
+staff.members::dinoppar, string, 80036E6F77
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+staff.members::evillittlething, string, 80036E6F77
+staff.members::dinoppar, string, 80036E6F77
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+staff.members::evillittlething, string, 80036E6F77
+staff.members::dinoppar, string, 80036E6F77
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+staff.members::evillittlething, string, 80036E6F77
+staff.members::dinoppar, string, 80036E6F77
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+staff.members::evillittlething, string, 80036E6F77
+staff.members::dinoppar, string, 80036E6F77
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+staff.members::evillittlething, string, 80036E6F77
+staff.members::dinoppar, string, 80036E6F77
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+staff.members::evillittlething, string, 80036E6F77
+staff.members::dinoppar, string, 80036E6F77
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+staff.members::evillittlething, string, 80036E6F77
+staff.members::dinoppar, string, 80036E6F77
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+staff.members::evillittlething, string, 80036E6F77
+staff.members::dinoppar, string, 80036E6F77
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+staff.members::evillittlething, string, 80036E6F77
+staff.members::dinoppar, string, 80036E6F77
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+staff.members::evillittlething, string, 80036E6F77
+staff.members::dinoppar, string, 80036E6F77
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+staff.members::evillittlething, string, 80036E6F77
+staff.members::dinoppar, string, 80036E6F77
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+staff.members::evillittlething, string, 80036E6F77
+staff.members::dinoppar, string, 80036E6F77
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+staff.members::evillittlething, string, 80036E6F77
+staff.members::dinoppar, string, 80036E6F77
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+staff.members::evillittlething, string, 80036E6F77
+staff.members::dinoppar, string, 80036E6F77
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+staff.members::evillittlething, string, 80036E6F77
+staff.members::dinoppar, string, 80036E6F77
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+staff.members::evillittlething, string, 80036E6F77
+staff.members::dinoppar, string, 80036E6F77
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+staff.members::evillittlething, string, 80036E6F77
+staff.members::dinoppar, string, 80036E6F77
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+staff.members::evillittlething, string, 80036E6F77
+staff.members::dinoppar, string, 80036E6F77
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+staff.members::evillittlething, string, 80036E6F77
+staff.members::dinoppar, string, 80036E6F77
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+staff.members::evillittlething, string, 80036E6F77
+staff.members::dinoppar, string, 80036E6F77
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+staff.members::evillittlething, string, 80036E6F77
+staff.members::dinoppar, string, 80036E6F77
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+staff.members::evillittlething, string, 80036E6F77
+staff.members::dinoppar, string, 80036E6F77
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+staff.members::evillittlething, string, 80036E6F77
+staff.members::dinoppar, string, 80036E6F77
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+staff.members::evillittlething, string, 80036E6F77
+staff.members::dinoppar, string, 80036E6F77
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+staff.members::evillittlething, string, 80036E6F77
+staff.members::dinoppar, string, 80036E6F77
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+staff.members::evillittlething, string, 80036E6F77
+staff.members::dinoppar, string, 80036E6F77
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+staff.members::evillittlething, string, 80036E6F77
+staff.members::dinoppar, string, 80036E6F77
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+cmddoor.open, null, 
+staff.members::evillittlething, string, 80036E6F77
+staff.members::dinoppar, string, 80036E6F77
+cmddoor.open, null, 

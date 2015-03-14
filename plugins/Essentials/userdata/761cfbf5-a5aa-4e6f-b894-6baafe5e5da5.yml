@@ -1,0 +1,52 @@
+money: '255.09'
+geolocation: Canada
+lastAccountName: Nitrogengaming1
+timestamps:
+  login: 1424528049252
+  logout: 1424528349050
+  lastteleport: 1424526419183
+ipAddress: 99.224.166.174
+lastlocation:
+  world: Metacurse
+  x: -484.3555093360293
+  y: 70.0
+  z: 5454.357571498203
+  yaw: 176.78088
+  pitch: -1.4999913
+logoutlocation:
+  world: Metacurse
+  x: -5054.4963222210945
+  y: 63.0
+  z: -1096.190677014412
+  yaw: 43.625916
+  pitch: 72.299995
+homes:
+  home:
+    world: Metacurse
+    x: -4349.699999988079
+    y: 64.0
+    z: -867.8788307306756
+    yaw: 264.87582
+    pitch: 12.599976
+  vault:
+    world: Metacurse
+    x: -4405.5
+    y: 70.0
+    z: -821.5
+    yaw: 240.87073
+    pitch: 13.950034
+  shop:
+    world: Metacurse
+    x: -459.1656454762926
+    y: 64.0
+    z: 5468.916279337783
+    yaw: 177.8246
+    pitch: 5.849932
+  farm:
+    world: Metacurse
+    x: -5055.365965126398
+    y: 63.0
+    z: -1124.9993277060762
+    yaw: -4.2239437
+    pitch: 25.499939
+afk: false

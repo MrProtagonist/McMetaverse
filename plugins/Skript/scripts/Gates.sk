@@ -1,0 +1,133 @@
+# ================================================================
+# ----------------------------------------------------------------
+#                    _________  _________________
+#                   / ____/   |/_  __/ ____/ ___/
+#                  / / __/ /| | / / / __/  \__ \ 
+#                 / /_/ / ___ |/ / / /___ ___/ / 
+#                 \____/_/  |_/_/ /_____//____/  
+#
+#                • Automatic gates with fences •
+# 
+# ----------------------------------------------------------------
+# ================================================================
+#
+#
+# Author: GeekWithAChick
+#
+#
+# Version 3.2
+#
+# With region support!
+#
+
+# All text starting with a "#" is a comment and won't be executed
+
+
+#                 Config:
+# -----------------------------------------
+
+options:
+	prefix: <gold>[Gates]<light cyan>
+	gate.types: fence, nether bricks fence or bars
+
+	
+
+#          The code of the skript
+# -----------------------------------------
+ 
+ 
+# command "/gate" to toggle between editing modus and normal modus
+command /gate:
+	description: Toggle between editing mode and normal modus
+	usage: /gate
+	permission: sk.create.gate
+	permission message: Nope you can't use this
+	executable by: players
+	trigger:
+		if {placing.gate.%player%} is not set:
+			set {placing.gate.%player%} to true
+			send "{@prefix} You're now in editing mode"
+			send "{@prefix} Place fences to create gates"
+			send "{@prefix} Break fences to remove gates"
+			send "{@prefix} Gates won't work for you in editing mode"
+			send "{@prefix} To stop, use /gate"
+		else:
+			delete {placing.gate.%player%}
+			send "{@prefix} You stopped creating gates"
+			
+# When you place a fence in editing modus, it will be added to the gates list		
+on place of {@gate.types}:
+	{placing.gate.%player%} is true
+	set {gates::%location of event-block%} to location of event-block
+	
+
+# When you break a fence in editing mode,it will be removed from the gates list
+on break of {@gate.types}:
+	{placing.gate.%player%} is true
+	delete {gates::%event-location%}
+
+	
+# When a player quits in editing mode, set it back to normal mode
+on quit:
+	{placing.gate.%player%} is true
+	delete {placing.gate.%player%}
+	
+# a variable starting with an underscore is a local variable and only stored it the trigger (not saved in the variables list) Example: {_local}
+	
+# This code checks every second if there is a player around. If set it to more than 1, the gate will be slower.
+every 20 ticks:
+	loop {gates::*}:
+		set {_loc} to loop-value
+		set {_player.found} to false
+		
+		loop players in radius 12 around block at {_loc}:
+			if {placing.gate.%loop-player%} is true:
+				set {_player.found} to false
+				stop loop
+			else:
+				set {_player.found} to true
+				
+		loop blocks in radius 10 around block at {_loc}:
+			loop-block is sign
+			line 1 of loop-block is "Gate"
+			line 2 of loop-block is "<red>OFF"
+			set {_player.found} to false
+			
+		if {_player.found} is true:
+			block below block at {_loc} is not {@gate.types}
+			block above block at {_loc} is {@gate.types}
+			add {_loc} to {_list.up::*}
+			
+		else:
+			block at {_loc} is air
+			block above block at {_loc} is {@gate.types}
+			add {_loc} to {_list.down::*}
+			
+		set {_player.found} to false
+	
+	wait 1 tick
+	loop {_list.up::*}:
+		set {_loc} to loop-value
+		set block at {_loc} to air
+	loop {_list.down::*}:
+		set {_loc} to loop-value
+		set {_type} to type of block above block at {_loc}
+		set block at {_loc} to {_type}
+		
+		
+on right click on sign:
+	line 1 is "Gate"
+	cancel event
+	player can build at clicked block
+	if line 2 is "<red>OFF":
+		set line 2 to "<green>ON"
+	else:
+		set line 2 to "<red>OFF"
+		
+on sign change:
+	line 1 is "Gate"
+	if player doesn't have permission "sk.create.gate.sign":
+		cancel event
+		send "You don't have the permission to do this"
+	else:
+		set line 2 to "<green>ON"

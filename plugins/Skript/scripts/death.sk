@@ -1,0 +1,43 @@
+on death of a player:
+	victim has the permission "is.premium"
+	set {death.%victim%.last} to damage cause
+	if {death.%victim%::%damage cause%} is set:
+		set death message to "&e%victim% %{death.%victim%::%damage cause%}% %damage cause%."
+		stop
+	wait 10 real seconds
+	send "&6[&aSERVER&6] You can change the message displayed when you die from &e%{death.%victim%.last}%&6 by typing &a/death&f." to victim
+on damage:
+	victim is online
+	set {damagetype.%victim%} to damage cause
+on join:
+	delete {damagetype.%player%}
+command /death:
+	permission: is.premium
+	trigger:
+		{damagetype.%player%} is set
+		message "&6[&aSERVER&6] You are allowed to enter text to fill in the following area:"
+		message "&6[&aSERVER&6] &e%player% &f_______________________ &e%{damagetype.%player%}%"
+		wait 5 real seconds
+		message "&6[&aSERVER&6] In chat, please type the text you want to appear in the blank space."
+		set {death.%player%.setting} to 1
+on chat:
+	if {death.%player%.setting} is 1:
+		cancel event
+		message "&6[&aSERVER&6] This is how your message will appear:"
+		wait 2 real second
+		message "&e%player% %message% a %{damagetype.%player%}%"
+		set {death.%player%.temp} to message
+		wait 2 real seconds
+		message "&6[&aSERVER&6] Is this correct? Say &aYes&f or &cNo&f."
+		set {death.%player%.setting} to 2
+		stop
+	if {death.%player%.setting} is 2:
+		cancel event
+		if message contains "yes":
+			message "&6[&aSERVER&6] &a&oSuccessfully saved custom death message!"
+			set {death.%player%::%{damagetype.%player%}%} to {death.%player%.temp}
+		if message contains "no":
+			message "&6[&aSERVER&6] &c&oCanceled operation!"
+		delete {death.%player%.setting}
+		delete {death.%player%.temp}
+		stop

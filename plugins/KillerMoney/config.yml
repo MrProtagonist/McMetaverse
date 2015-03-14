@@ -1,0 +1,198 @@
+#Prefix of the Message
+MessagePrefix: "&4[&fKillerMoney&4]"
+
+# %currency value (e.g. Dollar, Forint, Euro or symbol)
+Currency: "$"
+
+#If you reloaded the config, you will get this message
+MessageConfigReload: "The configuration file reloaded"
+
+# Command permission
+MessageNoPermission: "You have not permission for this command!"
+
+# Player message, if  the config is bad
+MessageConfigError: "Config Error! Please report to admin!"
+
+# Set True, if you want give money if the player kill mobs in the MobArena
+WorkInMobArena: true
+
+# Multiworld support, you can disable this plugin on some worlds. Use "," if you would like add more worlds. ( E.g.: world_nether,world_the_end )
+# Use "nothing" if you wouldn't like this feature.
+DisableOnThisWorlds: nothing
+
+# This option disable that the player get cash, if the mob spawned from spawner or spawner egg.
+DisableSpawnerFarming: true
+
+#KillerStat - Not working yet!
+KillerStat:
+   Enabled: false
+
+# First line: The mob's name, do not change it!
+# Second line (Enabled): If you want give money for this mob kill
+# Third line (MinMoney): The minimum money for kill
+# Foth line (MaxMoney): The maximum money for kill
+# Fifth line (Message): The player get this message, if he/she killed a mob
+
+# String List:
+# %currency = Currency value
+# %money = Earned money
+# %playername = Killer player's name
+# %victim = Killed player's name
+
+# If you would like give fix money, then must MinMoney equal with MaxMoney!
+
+Pig:
+   Enabled: true
+   MinMoney: 3
+   MaxMoney: 3
+   Message: "&7You killed a &6PIG&7! You earned: &6%currency%money"
+   
+Sheep:
+   Enabled: true
+   MinMoney: 3
+   MaxMoney: 3
+   Message: "&7You killed a &6SHEEP&7! You earned: &6%currency%money"
+   
+Chicken:
+   Enabled: true
+   MinMoney: 3
+   MaxMoney: 3
+   Message: "&7You killed a &6CHICKEN&7! You earned: &6%currency%money"
+   
+Cow:
+   Enabled: true
+   MinMoney: 3
+   MaxMoney: 3
+   Message: "&7You killed a &6COW&7! You earned: &6%currency%money"
+
+Horse:
+   Enabled: true
+   MinMoney: 5
+   MaxMoney: 5
+   Message: "&7You killed a &6HORSE&7! You earned: &6%currency%money"
+   
+Wolf:
+   Enabled: true
+   MinMoney: 5
+   MaxMoney: 5
+   Message: "&7You killed a &6WOLF&7! You earned: &6%currency%money"
+   
+Ocelot:
+   Enabled: true
+   MinMoney: 5
+   MaxMoney: 5
+   Message: "&7You killed an &6OCELOT&7! You earned: &6%currency%money"
+   
+Bat:
+   Enabled: true
+   MinMoney: 5
+   MaxMoney: 5
+   Message: "&7You killed a &6BAT&7! You earned: &6%currency%money"
+   
+Blaze:
+   Enabled: true
+   MinMoney: 20
+   MaxMoney: 20
+   Message: "&7You killed a &6BLAZE&7! You earned: &6%currency%money"
+   
+CaveSpider:
+   Enabled: true
+   MinMoney: 15
+   MaxMoney: 15
+   Message: "&7You killed a &6CAVE SPIDER&7! You earned: &6%currency%money"
+   
+Creeper:
+   Enabled: true
+   MinMoney: 10
+   MaxMoney: 10
+   Message: "&7You killed a &6CREEPER&7! You earned: &6%currency%money"
+   
+Enderdragon:
+   Enabled: true
+   MinMoney: 500
+   MaxMoney: 500
+   Message: "&7You killed the &6ENDER DRAGON&7! You earned: &6%currency%money"
+   
+Enderman:
+   Enabled: true
+   MinMoney: 25
+   MaxMoney: 25
+   Message: "&7You killed an &6ENDERMAN&7! You earned: &6%currency%money"
+   
+Ghast:
+   Enabled: true
+   MinMoney: 30
+   MaxMoney: 30
+   Message: "&7You killed a &6GHAST&7! You earned: &6%currency%money"
+   
+MagmaCube:
+   Enabled: true
+   MinMoney: 10
+   MaxMoney: 10
+   Message: "&7You killed a &6MAGMA CUBE&7! You earned: &6%currency%money"
+   
+MushroomCow:
+   Enabled: true
+   MinMoney: 5
+   MaxMoney: 5
+   Message: "&7You killed a &6MUSHROOM COW&7! You earned: &6%currency%money"
+   
+PigZombie:
+   Enabled: true
+   MinMoney: 25
+   MaxMoney: 25
+   Message: "&7You killed a &6PIG ZOMBIE&7! You earned: &6%currency%money"
+   
+Player:
+   Enabled: false
+   MinMoney: 0
+   MaxMoney: 0
+   Message: "You don't earn money for killing players. Only shame."
+   
+Silverfish:
+   Enabled: true
+   MinMoney: 10
+   MaxMoney: 10
+   Message: "&7You killed a &6SILVERFISH&7! You earned: &6%currency%money"
+   
+Skeleton:
+   Enabled: true
+   MinMoney: 12
+   MaxMoney: 12
+   Message: "&7You killed a &6SKELETON&7! You earned: &6%currency%money"
+   
+Slime:
+   Enabled: true
+   MinMoney: 5
+   MaxMoney: 5
+   Message: "&7You killed a &6SLIME&7! You earned: &6%currency%money"
+   
+Spider:
+   Enabled: true
+   MinMoney: 12
+   MaxMoney: 12
+   Message: "&7You killed a &6SPIDER&7! You earned: &6%currency%money"
+   
+Squid:
+   Enabled: true
+   MinMoney: 5
+   MaxMoney: 5
+   Message: "&7You killed a &6SQUID&7! You earned: &6%currency%money"
+   
+Witch:
+   Enabled: true
+   MinMoney: 35
+   MaxMoney: 35
+   Message: "&7You killed a &6WITCH&7! You earned: &6%currency%money"
+   
+Wither:
+   Enabled: true
+   MinMoney: 350
+   MaxMoney: 350
+   Message: "&7You killed a &6WITHER&7! You earned: &6%currency%money"
+   
+Zombie:
+   Enabled: true
+   MinMoney: 12
+   MaxMoney: 12
+   Message: "&7You killed a &6ZOMBIE&7! You earned: &6%currency%money"

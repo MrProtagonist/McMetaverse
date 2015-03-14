@@ -1,0 +1,373 @@
+######################
+#+                  +#
+#   MENU SETTINGS    #
+#+                  +#
+######################
+
+
+menu-settings:
+  name: '&5Shop'
+  rows: 6
+
+
+######################
+#+                  +#
+#       ITEMS        #
+#+                  +#
+######################
+
+
+buy-diamond:
+  PRICE: 100
+  COMMAND: 'give: diamond'
+  NAME: '&aBuy'
+  LORE:
+    - 'Diamond x1'
+    - 'at $100'
+  ID: diamond
+  KEEP-OPEN: true
+  POSITION-X: 1
+  POSITION-Y: 1
+
+
+buy-gold:
+  PRICE: 50
+  COMMAND: 'give: gold_ingot'
+  NAME: '&aBuy'
+  LORE:
+    - 'Gold Ingot x1'
+    - 'at $50'
+  ID: gold_ingot
+  KEEP-OPEN: true
+  POSITION-X: 2
+  POSITION-Y: 1
+
+
+buy-iron:
+  PRICE: 10
+  COMMAND: 'give: iron_ingot'
+  NAME: '&aBuy'
+  LORE:
+    - 'Iron Ingot x1'
+    - 'at $10'
+  ID: iron_ingot
+  KEEP-OPEN: true
+  POSITION-X: 3
+  POSITION-Y: 1
+
+
+buy-cake:
+  PRICE: 50
+  COMMAND: 'give: cake'
+  NAME: '&aBuy'
+  LORE:
+    - 'Cake x1'
+    - 'at $50'
+  ID: cake
+  KEEP-OPEN: true
+  POSITION-X: 1
+  POSITION-Y: 2
+
+
+buy-apple:
+  PRICE: 5
+  COMMAND: 'give: apple'
+  NAME: '&aBuy'
+  LORE:
+    - 'Apple x1'
+    - 'at $5'
+  ID: apple
+  KEEP-OPEN: true
+  POSITION-X: 2
+  POSITION-Y: 2
+
+
+buy-helmet:
+  PRICE: 50
+  COMMAND: 'give: iron_helmet'
+  NAME: '&aBuy'
+  LORE:
+    - 'Iron Helmet x1'
+    - 'at $50'
+  ID: iron_helmet
+  KEEP-OPEN: true
+  POSITION-X: 6
+  POSITION-Y: 1
+
+
+buy-chest:
+  PRICE: 80
+  COMMAND: 'give: iron_chestplate'
+  NAME: '&aBuy'
+  LORE:
+    - 'Iron Chestplate x1'
+    - 'at $80'
+  ID: iron_chestplate
+  KEEP-OPEN: true
+  POSITION-X: 7
+  POSITION-Y: 1
+
+
+buy-leg:
+  PRICE: 70
+  COMMAND: 'give: iron_leggings'
+  NAME: '&aBuy'
+  LORE:
+    - 'Iron Leggings x1'
+    - 'at $70'
+  ID: iron_leggings
+  KEEP-OPEN: true
+  POSITION-X: 8
+  POSITION-Y: 1
+
+
+buy-boots:
+  PRICE: 40
+  COMMAND: 'give: iron_boots'
+  NAME: '&aBuy'
+  LORE:
+    - 'Iron Boots x1'
+    - 'at $40'
+  ID: iron_boots
+  KEEP-OPEN: true
+  POSITION-X: 9
+  POSITION-Y: 1
+
+
+buy-sword:
+  PRICE: 200
+  COMMAND: 'give: diamond_sword'
+  NAME: '&aBuy'
+  LORE:
+    - 'Diamond Sword x1'
+    - 'at $200'
+  ID: diamond_sword
+  KEEP-OPEN: true
+  POSITION-X: 7
+  POSITION-Y: 2
+
+
+buy-bow:
+  PRICE: 20
+  COMMAND: 'give: bow'
+  NAME: '&aBuy'
+  LORE:
+    - 'Bow x1'
+    - 'at $20'
+  ID: bow
+  KEEP-OPEN: true
+  POSITION-X: 8
+  POSITION-Y: 2
+
+
+buy-arrows:
+  PRICE: 50
+  COMMAND: 'give: arrow, 10'
+  NAME: '&aBuy'
+  LORE:
+    - 'Arrows x10'
+    - 'at $50'
+  ID: arrow
+  AMOUNT: 10
+  KEEP-OPEN: true
+  POSITION-X: 9
+  POSITION-Y: 2
+
+
+sell-cobble:
+  REQUIRED-ITEM: 'cobblestone, 64'
+  COMMAND: 'givemoney: 10'
+  NAME: '&dSell'
+  LORE:
+    - 'Cobblestone x64'
+    - 'at $10'
+  ID: cobblestone
+  AMOUNT: 64
+  KEEP-OPEN: true
+  POSITION-X: 1
+  POSITION-Y: 4
+
+
+sell-dirt:
+  REQUIRED-ITEM: 'dirt, 64'
+  COMMAND: 'givemoney: 5'
+  NAME: '&dSell'
+  LORE:
+    - 'Dirt x64'
+    - 'at $5'
+  ID: dirt
+  AMOUNT: 64
+  KEEP-OPEN: true
+  POSITION-X: 2
+  POSITION-Y: 4
+
+
+sell-orange-wool:
+  REQUIRED-ITEM: 'wool:1, 10'
+  COMMAND: 'givemoney: 20'
+  NAME: '&dSell'
+  LORE:
+    - 'Orange wool x10'
+    - 'at $20'
+  ID: wool
+  DATA-VALUE: 1
+  AMOUNT: 10
+  KEEP-OPEN: true
+  POSITION-X: 3
+  POSITION-Y: 4
+
+
+sell-obsidian:
+  REQUIRED-ITEM: 'obsidian'
+  COMMAND: 'givemoney: 5'
+  NAME: '&dSell'
+  LORE:
+    - 'Obsidian x1'
+    - 'at $5'
+  ID: obsidian
+  KEEP-OPEN: true
+  POSITION-X: 4
+  POSITION-Y: 4
+
+
+sell-bone:
+  REQUIRED-ITEM: 'bone'
+  COMMAND: 'givemoney: 3'
+  NAME: '&dSell'
+  LORE:
+    - 'Bone x1'
+    - 'at $3'
+  ID: bone
+  KEEP-OPEN: true
+  POSITION-X: 7
+  POSITION-Y: 4
+
+
+sell-rotten-flesh:
+  REQUIRED-ITEM: 'rotten_flesh, 64'
+  COMMAND: 'givemoney: 10'
+  NAME: '&dSell'
+  LORE:
+    - 'Rotten Flesh x64'
+    - 'at $10'
+  ID: rotten_flesh
+  AMOUNT: 64
+  KEEP-OPEN: true
+  POSITION-X: 8
+  POSITION-Y: 4
+
+
+sell-ghast-tear:
+  REQUIRED-ITEM: 'ghast_tear'
+  COMMAND: 'givemoney: 50'
+  NAME: '&dSell'
+  LORE:
+    - 'Ghast Tear x1'
+    - 'at $50'
+  ID: ghast_tear
+  KEEP-OPEN: true
+  POSITION-X: 9
+  POSITION-Y: 4
+
+
+separator1:
+  NAME: '&a[arrow_up] Buy items here [arrow_up]'
+  LORE:
+    - ''
+    - '&d[arrow_down] Sell items here [arrow_down]'
+  ID: thin_glass
+  KEEP-OPEN: true
+  POSITION-X: 1
+  POSITION-Y: 3
+separator2:
+  NAME: '&a[arrow_up] Buy items here [arrow_up]'
+  LORE:
+    - ''
+    - '&d[arrow_down] Sell items here [arrow_down]'
+  ID: thin_glass
+  KEEP-OPEN: true
+  POSITION-X: 2
+  POSITION-Y: 3
+separator3:
+  NAME: '&a[arrow_up] Buy items here [arrow_up]'
+  LORE:
+    - ''
+    - '&d[arrow_down] Sell items here [arrow_down]'
+  ID: thin_glass
+  KEEP-OPEN: true
+  POSITION-X: 3
+  POSITION-Y: 3
+separator4:
+  NAME: '&a[arrow_up] Buy items here [arrow_up]'
+  LORE:
+    - ''
+    - '&d[arrow_down] Sell items here [arrow_down]'
+  ID: thin_glass
+  KEEP-OPEN: true
+  POSITION-X: 4
+  POSITION-Y: 3
+separator5:
+  NAME: '&a[arrow_up] Buy items here [arrow_up]'
+  LORE:
+    - ''
+    - '&d[arrow_down] Sell items here [arrow_down]'
+  ID: thin_glass
+  KEEP-OPEN: true
+  POSITION-X: 5
+  POSITION-Y: 3
+separator6:
+  NAME: '&a[arrow_up] Buy items here [arrow_up]'
+  LORE:
+    - ''
+    - '&d[arrow_down] Sell items here [arrow_down]'
+  ID: thin_glass
+  KEEP-OPEN: true
+  POSITION-X: 6
+  POSITION-Y: 3
+separator7:
+  NAME: '&a[arrow_up] Buy items here [arrow_up]'
+  LORE:
+    - ''
+    - '&d[arrow_down] Sell items here [arrow_down]'
+  ID: thin_glass
+  KEEP-OPEN: true
+  POSITION-X: 7
+  POSITION-Y: 3
+separator8:
+  NAME: '&a[arrow_up] Buy items here [arrow_up]'
+  LORE:
+    - ''
+    - '&d[arrow_down] Sell items here [arrow_down]'
+  ID: thin_glass
+  KEEP-OPEN: true
+  POSITION-X: 8
+  POSITION-Y: 3
+separator9:
+  NAME: '&a[arrow_up] Buy items here [arrow_up]'
+  LORE:
+    - ''
+    - '&d[arrow_down] Sell items here [arrow_down]'
+  ID: thin_glass
+  KEEP-OPEN: true
+  POSITION-X: 9
+  POSITION-Y: 3
+
+
+money-emerald:
+  COMMAND: 'money'
+  NAME: '&aMoney'
+  LORE:
+    - '/money'
+  ID: emerald
+  KEEP-OPEN: true
+  POSITION-X: 8
+  POSITION-Y: 6
+
+
+return-to-main:
+  COMMAND: 'open:main-menu.yml'
+  NAME: '&6[arrow_left] Back to the main menu'
+  ID: nether_star
+  KEEP-OPEN: true
+  POSITION-X: 9
+  POSITION-Y: 6

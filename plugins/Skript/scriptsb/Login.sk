@@ -1,0 +1,101 @@
+variables:
+    {setpassword.%player%} = false
+    {password.%player%} = "null"
+on join:
+    wait 1 real seconds
+    if {setpassword.%player%} is false:
+        wait 10 real seconds
+        message " "
+        message "&e&oYou have not set a login password. You can make one with &a&o/setpassword&e&o."
+        player has permission "essentials.socialspy":
+            message "&c&l&oMANDATORY FOR STAFF"
+        stop
+    else:
+        set {locked.%player%} to true
+        message " "
+        message "&e&oPlease &a&o/login&e&o."
+    
+on command:
+    {setpassword.%player%} is true
+    {locked.%player%} is true
+    command is not "login"
+    message "&e&oYou must first &a&o/login&e&o."
+    cancel the event
+command /login <text>:
+    description: Login.
+    usage: /login {password}
+    trigger:
+        {locked.%player%} is true
+        if arg is {password.%player%}:
+            message "  "
+            message "             &a&lVERIFIED ACCOUNT OWNERSHIP"
+            message "  &e&oYou are now unlocked until the next time you log in."
+            message " "
+            set {useris.%player%} to true
+            set {locked.%player%} to false
+        else:
+            message "  "
+            message "                       &4&lINCORRECT"
+            broadcast "&a&o%player%&e&o just failed a login attempt!"
+            log "%player% typed [%arg%] from [%IP of player%]                                                                                                                                                                      " to "Suspicious.log"
+command /setpassword <text> [<text>]:
+    description: Set a password.
+    usage: /setpassword {password} {newpassword}
+    trigger:
+        if arg 2 is not set:
+            if {setpassword.%player%} is not true:
+                set {password.%player%} to argument 1
+                set {setpassword.%player%} to true
+                message " "
+                message "&a&oPassword set!"
+            else:
+                message " "
+                message "&a&oUsage: /setpassword {password} {newpassword}"
+        else if arg 1 is {password.%player%}:
+            set {password.%player%} to arg 2
+            set {setpassword.%player%} to true
+            message " "
+            message "&a&oPassword set!"
+        else:
+            message "&c&oFailed to confirm password. Request denied."
+command /deletepassword <text>:
+    description: Delete password.
+    usage: /deletepassword {password}
+    trigger:
+        if arg is {password.%player%}:
+            set {password.%player%} to "null"
+            set {setpassword.%player%} to false
+            message " "
+            message "&a&oPassword removed!"
+        else:
+            message "  "
+            message "         &4&lINCORRECT"
+command /forgotpassword <text>:
+    description: Delete a password somebody forgot.
+    usage: /forgotpassword {full username}
+    trigger:
+        player is op
+        if {setpassword.%argument%} is true:
+            set {password.%argument%} to "null"
+            set {locked.%argument%} to false
+            set {setpassword.%argument%} to false
+            message " "
+            message "&a&oPassword removed for %argument%!"
+        else:
+            message "  "
+            message "&6&o%argument%&e&o could not be found!"
+on chat:
+    {locked.%player%} is true
+    cancel the event
+    message "&e&oYou must first &a&o/login&e&o."
+on quit:
+    {password.%player%} is not "null"
+    set {useris.%player%} to false
+on rightclick:
+    {locked.%player%} is true
+    cancel the event
+    message "&e&oYou must first &a&o/login&e&o."
+on leftclick:
+    {locked.%player%} is true
+    cancel the event
+    message "&e&oYou must first &a&o/login&e&o."

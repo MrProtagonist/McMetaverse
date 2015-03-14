@@ -1,0 +1,21 @@
+geolocation: United States
+lastlocation:
+  world: Metacurse
+  x: -66.5
+  y: 70.0
+  z: -71.5
+  yaw: 0.06689453
+  pitch: -1.799998
+lastAccountName: Frosty_Tacos
+timestamps:
+  login: 1425347860651
+  logout: 1425347886248
+ipAddress: 72.241.148.67
+logoutlocation:
+  world: Metacurse
+  x: -66.31350254808044
+  y: 70.0
+  z: -79.25585891880374
+  yaw: -184.87593
+  pitch: 20.615887
+money: '1095.0'

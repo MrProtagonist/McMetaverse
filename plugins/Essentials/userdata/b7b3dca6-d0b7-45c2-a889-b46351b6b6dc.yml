@@ -1,0 +1,30 @@
+geolocation: United Kingdom
+lastlocation:
+  world: Metacurse
+  x: -68.09633241077738
+  y: 70.0
+  z: -72.6437465895104
+  yaw: 123.966896
+  pitch: 21.750002
+lastAccountName: mmboom257
+timestamps:
+  login: 1424625703177
+  lastteleport: 1424628575689
+  logout: 1424628947702
+ipAddress: 2.30.119.201
+homes:
+  home:
+    world: Metacurse
+    x: -275.7299886915333
+    y: 99.0
+    z: -255.31155942369458
+    yaw: -9.827466
+    pitch: 13.54325
+money: '864.5'
+logoutlocation:
+  world: Metacurse
+  x: -273.23750001192093
+  y: 99.0
+  z: -246.33749699587685
+  yaw: 1.1225153
+  pitch: 23.743252

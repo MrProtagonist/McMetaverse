@@ -1,0 +1,93 @@
+money: '516.0'
+lastlocation:
+  world: Metacurse
+  x: 5329.5
+  y: 94.38327662751304
+  z: 2377.5
+  yaw: 152.08945
+  pitch: 59.38666
+geolocation: United States
+lastAccountName: Luna482
+timestamps:
+  login: 1424023234411
+  lastteleport: 1424023320371
+  logout: 1424023679272
+ipAddress: 71.93.238.152
+homes:
+  icespike:
+    world: Metacurse
+    x: 7914.216283549143
+    y: 86.61555274079092
+    z: -329.5559907842767
+    yaw: 19.142723
+    pitch: 27.460941
+  sea:
+    world: Metacurse
+    x: 5865.829742158115
+    y: 69.0
+    z: 5267.353020167558
+    yaw: 59.269787
+    pitch: 16.245552
+  tree:
+    world: Metacurse
+    x: 4100.075516970222
+    y: 155.00305541850847
+    z: 4181.761499604523
+    yaw: 75.74695
+    pitch: 70.40745
+  darkoak:
+    world: Metacurse
+    x: 6402.414088037673
+    y: 75.0
+    z: 2794.314308535073
+    yaw: 139.93811
+    pitch: 28.867556
+  mine:
+    world: Metacurse
+    x: 5192.316700210328
+    y: 25.709427143353167
+    z: -5081.952774016852
+    yaw: 21.157145
+    pitch: 42.99679
+  mine2:
+    world: Metacurse
+    x: 4148.307420427248
+    y: 30.0
+    z: 4019.345290993605
+    yaw: -78.245514
+    pitch: -2.1224384
+  cow:
+    world: Metacurse
+    x: 7048.627041158675
+    y: 68.0
+    z: 2186.8945356469685
+    yaw: 189.21576
+    pitch: 22.744972
+  ice:
+    world: Metacurse
+    x: 4149.323465708976
+    y: 101.72839811434078
+    z: 393.95800527830113
+    yaw: 239.78418
+    pitch: -55.33631
+  temple:
+    world: Metacurse
+    x: 5329.6414310989185
+    y: 85.99837121964505
+    z: 2377.623122820241
+    yaw: 136.4531
+    pitch: 23.969412
+  mineshaft:
+    world: Metacurse
+    x: 5142.300000011921
+    y: 26.0
+    z: -5111.300000011921
+    yaw: 199.83319
+    pitch: 11.347246
+logoutlocation:
+  world: Metacurse
+  x: 4089.1262271481237
+  y: 149.36555455871155
+  z: 4171.023246236563
+  yaw: 167.11584
+  pitch: 65.79819

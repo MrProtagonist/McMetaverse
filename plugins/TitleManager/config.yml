@@ -1,0 +1,17 @@
+usingConfig: true
+config-version: 1
+
+tabmenu:
+  enabled: true
+  header: '&b&lThe Metaverse'
+  footer: 'animation:test1'
+welcome_message:
+  enabled: false
+  title: '&5Welcome back {PLAYER}!'
+  subtitle: '&dWe missed you!'
+  fadeIn: -1
+  stay: -1
+  fadeOut: -1
+  first-join:
+    title: '&5Welcome to The Metaverse {PLAYER}'
+    subtitle: '&dWe hope you will enjoy your stay here!'

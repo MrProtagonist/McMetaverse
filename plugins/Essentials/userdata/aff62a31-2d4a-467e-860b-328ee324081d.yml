@@ -1,0 +1,22 @@
+geolocation: United States
+lastlocation:
+  world: Metacurse
+  x: -67.0
+  y: 70.0
+  z: -72.0
+  yaw: 0.0
+  pitch: 0.0
+lastAccountName: adnap09
+timestamps:
+  login: 1423460202614
+  lastteleport: 1423462244536
+  logout: 1423463706027
+ipAddress: 174.62.175.139
+logoutlocation:
+  world: Metacurse
+  x: 1997.0591580999526
+  y: 79.0
+  z: 2419.300000011921
+  yaw: -180.01794
+  pitch: 11.35676
+money: '114.0'

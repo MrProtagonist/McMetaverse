@@ -1,0 +1,499 @@
+# Group inheritance
+#
+# Any inherited groups prefixed with a g: are global groups
+# and are inherited from the GlobalGroups.yml.
+#
+# Groups without the g: prefix are groups local to this world
+# and are defined in the this groups.yml file.
+#
+# Local group inheritances define your promotion tree when using 'manpromote/mandemote'
+
+groups:
+  Visitor:
+    default: true
+    permissions:
+    - -bukkit.command.tell
+    - -minecraft.command.tell
+    - -marry.marry
+    - auction.bid
+    - auction.info
+    - auction.receive
+    - auction.start
+    - automessage.receive.default
+    - automessage.receive.message-list
+    - chestcommands.command
+    - chestcommands.command.open
+    - chestcommands.command.open.example
+    - chestcommands.command.open.example.yml
+    - chestcommands.command.open.main-menu
+    - chestcommands.command.open.main-menu.yml
+    - chestcommands.command.open.menu
+    - chestcommands.command.open.menu.yml
+    - chestcommands.command.open.personal.yml
+    - chestcommands.open.billboard.yml
+    - chestcommands.open.block.yml
+    - chestcommands.open.combat.yml
+    - chestcommands.open.food.yml
+    - chestcommands.open.general.yml
+    - chestcommands.open.main-menu.yml
+    - chestcommands.open.mcmmo.yml
+    - chestcommands.open.mechanical.yml
+    - chestcommands.open.personal.yml
+    - chestcommands.open.shop-menu.yml
+    - chestcommands.open.simple-shop.yml
+    - ChestShop.shop.buy
+    - citizens.npc.talk
+    - citizens.talk.*
+    - citizens.use.*
+    - csn.user
+    - es.warp.warps.ga
+    - essentials.afk
+    - essentials.back
+    - essentials.back.ondeath
+    - essentials.balance
+    - essentials.balance.others
+    - essentials.balancetop
+    - essentials.chat.url
+    - essentials.delhome
+    - essentials.help
+    - essentials.helpop
+    - essentials.home
+    - essentials.home.del
+    - essentials.home.delete
+    - essentials.ignore
+    - essentials.list
+    - essentials.mail
+    - essentials.mail.send
+    - essentials.motd
+    - essentials.msg
+    - essentials.msg.url
+    - essentials.pay
+    - essentials.ping
+    - essentials.seen
+    - essentials.sethome
+    - essentials.sethome.multiple.1
+    - essentials.sethome.multiple.default
+    - essentials.signs.use.*
+    - essentials.tpa
+    - essentials.tpaccept
+    - essentials.tpahere
+    - essentials.tpdeny
+    - essentials.warps.enchants
+    - essentials.warps.GA
+    - frameProtect.autoprotect
+    - frameProtect.autoprotect.*
+    - frameProtect.info.*
+    - frameProtect.place
+    - frameProtect.place.
+    - frameProtect.place.*
+    - frameProtect.protect.*
+    - gprealestate.buy
+    - griefprevention.lava
+    - irc.listbots
+    - irc.message.join
+    - irc.message.quit
+    - irc.tablist
+    - killermoney.getcash
+    - mcmmo.ability.*
+    - mcmmo.chat.party
+    - mcmmo.chat.partychat
+    - mcmmo.commands.defaults
+    - mcmmo.commands.inspect.*
+    - mcmmo.skills.all
+    - mobarena.use.*
+    - nametag.group.visitor
+    - quickshop.use
+    - sht.ticket
+    - sk.effects
+    - skriptspells
+    - TogglePVP.toggle
+    inheritance:
+    - g:bukkit_default
+    - g:essentials_default
+    info:
+      prefix: '&r&f[&d&oVisitor&r] '
+      build: true
+      suffix: ''
+  Rookie:
+    default: false
+    permissions:
+    - -vanish.*
+    - essentials.chat.link
+    - essentials.warp.list
+    - essentials.warps.BirchForest
+    - essentials.warps.bosham
+    - essentials.warps.contest
+    - essentials.warps.extreme
+    - essentials.warps.graveyard
+    - essentials.warps.hub
+    - essentials.warps.lake
+    - essentials.warps.marsh
+    - essentials.warps.mesa
+    - essentials.warps.RooftopForest
+    - essentials.warps.savanna
+    - essentials.warps.SpruceNoSnow
+    - essentials.warps.valhalla
+    - is.member
+    - is.newbie
+    - mobcatcher.catch.*
+    - nametag.group.member
+    - nametag.group.newbie
+    - nocheatplus.checks.chat.color
+    inheritance:
+    - visitor
+    info:
+      prefix: '&r&f[&e&oRookie&r] '
+      build: true
+      suffix: ''
+  Regular:
+    default: false
+    permissions:
+    - -bukkit.command.kill
+    inheritance:
+    - rookie
+    info:
+      prefix: '&r&f[&cRegular&r] '
+      build: true
+      suffix: ''
+  Citizen:
+    default: false
+    permissions:
+    - -bukkit.command.kill
+    inheritance:
+    - regular
+    info:
+      prefix: '&r&f[&6Citizen&r] '
+      build: true
+      suffix: ''
+  Novice:
+    default: false
+    permissions:
+    - -bukkit.command.kill
+    inheritance:
+    - citizen
+    info:
+      prefix: '&r&f[&8Novice&r] '
+      build: true
+      suffix: ''
+  Veteran:
+    default: false
+    permissions:
+    - -bukkit.command.kill
+    inheritance:
+    - ??
+    info:
+      prefix: '&r&f[&9Veteran&r] '
+      build: true
+      suffix: ''
+  Noble:
+    default: false
+    permissions:
+    - -bukkit.command.kill
+    inheritance:
+    - veteran
+    info:
+      prefix: '&r&f[&bNoble&r] '
+      build: true
+      suffix: ''
+  Elite:
+    default: false
+    permissions:
+    - -bukkit.command.kill
+    inheritance:
+    - noble
+    info:
+      prefix: '&r&f[&aElite&r] '
+      build: true
+      suffix: ''
+  Ultimate:
+    default: false
+    permissions:
+    - -bukkit.command.kill
+    inheritance:
+    - elite
+    info:
+      prefix: '&r&f[&4Ultimate&r] '
+      build: true
+      suffix: ''
+  Legend:
+    default: false
+    permissions:
+    - -bukkit.command.kill
+    inheritance:
+    - ultimate
+    info:
+      prefix: '&r&f[&1Legend&r] '
+      build: true
+      suffix: ''
+  Builder:
+    default: false
+    permissions:
+    - -vanish.*
+    - essentials.gamemode
+    - nametag.group.architect
+    - nametag.group.builder
+    - voxel.sniper
+    - worldedit.*
+    inheritance:
+    - admin
+    - newbie
+    info:
+      prefix: '&r&f[&3Architect&r] '
+      build: true
+      suffix: ''
+  Mod:
+    default: false
+    permissions:
+    - -vanish.*
+    - -BlockDisguise.disguise
+    - -citizens.admin.*
+    - -citizens.npc.*
+    - -essentials.kickall
+    - -essentials.speed
+    - -essentials.sudo
+    - -firework.cmd
+    - -gmlist.list
+    - -griefprevention.deleteclaims
+    - -icu.control
+    - -icu.stop
+    - -icu.use
+    - -quester.admin
+    - -quester.use.*
+    - -skriptspells.arrowstorm
+    - -skriptspells.lightning
+    - -skriptspells.meteor
+    - -skriptspells.smokebomb
+    - -skriptspells.snowgun
+    - -skriptspells.tntprojectile
+    - adminnotes.admin
+    - automessage.receive.staff
+    - bukkit.commands.plugins
+    - chestcommands.command.open.others
+    - coreprotect.*
+    - cpantixray.use
+    - drugdealer.*
+    - echopet.bat
+    - echopet.chicken
+    - echopet.cow
+    - echopet.echopet
+    - echopet.list
+    - echopet.mushroomcow
+    - echopet.name
+    - echopet.ocelot
+    - echopet.pig
+    - echopet.remove
+    - echopet.sheep
+    - echopet.type
+    - echopet.wolf
+    - esentials.togglevanish
+    - essentials.ban
+    - essentials.broadcast
+    - essentials.chat.color
+    - essentials.enderchest
+    - essentials.enderchest.others
+    - essentials.ext
+    - essentials.fly
+    - essentials.helpop.receive
+    - essentials.home.others
+    - essentials.invsee
+    - essentials.jail
+    - essentials.jail.*
+    - essentials.jails
+    - essentials.joinfullserver
+    - essentials.kick
+    - essentials.kittycannon
+    - essentials.msg.color
+    - essentials.mute
+    - essentials.seen
+    - essentials.sethome.multiple.unlimited
+    - essentials.setwarp
+    - essentials.signs.create.*
+    - essentials.socialspy
+    - essentials.tempban
+    - essentials.togglejail
+    - essentials.togglejail.offline
+    - essentials.top
+    - essentials.tp
+    - essentials.tphere
+    - essentials.tpo
+    - essentials.tpohere
+    - essentials.unban
+    - essentials.v
+    - essentials.vanish
+    - essentials.vtognointeract
+    - essentials.warp
+    - essentials.warp.*
+    - essentials.warp.list
+    - essentials.warp.self
+    - essentials.warps.*
+    - essentials.warps.list
+    - essentials.warps.ss
+    - essentials.whois
+    - essentialswars.*
+    - fd.broadcast
+    - griefprevention.*
+    - griefprevention.admin.*
+    - griefprevention.admin.claims
+    - griefprevention.adminclaims
+    - griefprevention.claims.delete
+    - griefprevention.claims.ignore
+    - GriefPrevention.Claims.InvestigationTool
+    - griefprevention.command.deleteclaim
+    - griefprevention.commands.ignoreclaims
+    - griefprevention.ignoreclaims
+    - griefprevention.restorenature
+    - groupmanager.manulistp
+    - mcmmo.chat.adminchat
+    - mcmmo.defaultsop
+    - nametag.group.mod
+    - nocheatplus.admin.exempt
+    - nocheatplus.admin.notify
+    - nocheatplus.checks.*
+    - preciousstones.*
+    - rocketteleport.command
+    - sht.admin
+    - simplesuffix
+    - simplesuffix.color
+    - simplesuffix.colours
+    - simplesuffix.set.suffix.self
+    - simplesufix.colors
+    - sk.nametag
+    - sk.warn
+    - skript.tracer
+    - skript.warn
+    - worldguard.notify
+    inheritance:
+    - noble
+    info:
+      prefix: '&r&f[&9MOD&r] '
+      build: true
+      suffix: ''
+  Admin:
+    default: false
+    permissions:
+    - -vanish.*
+    - -essentials.sudo.exempt
+    - -nametag.group.downer
+    - adminnotes.admin
+    - automessage.receive.staff
+    - BlockDisguise.disguise
+    - bukkit.commands.plugins
+    - chestcommands.command.open.others
+    - citizens.admin.*
+    - citizens.npc.*
+    - coreprotect.*
+    - drugdealer.*
+    - echopet
+    - echopet.bat
+    - echopet.chicken
+    - echopet.cow
+    - echopet.echopet
+    - echopet.list
+    - echopet.mushroomcow
+    - echopet.name
+    - echopet.ocelot
+    - echopet.pig
+    - echopet.remove
+    - echopet.sheep
+    - echopet.type
+    - echopet.wolf
+    - esentials.togglevanish
+    - essentials.ban
+    - essentials.broadcast
+    - essentials.chat.color
+    - essentials.enderchest
+    - essentials.enderchest.others
+    - essentials.ext
+    - essentials.fly
+    - essentials.helpop.receive
+    - essentials.home.others
+    - essentials.invsee
+    - essentials.jail
+    - essentials.jail.*
+    - essentials.jails
+    - essentials.joinfullserver
+    - essentials.jump
+    - essentials.kick
+    - essentials.kickall
+    - essentials.kittycannon
+    - essentials.msg.color
+    - essentials.mute
+    - essentials.seen
+    - essentials.sethome.multiple.unlimited
+    - essentials.setwarp
+    - essentials.signs.create.*
+    - essentials.socialspy
+    - essentials.speed
+    - essentials.sudo
+    - essentials.tempban
+    - essentials.togglejail
+    - essentials.togglejail.offline
+    - essentials.top
+    - essentials.tp
+    - essentials.tphere
+    - essentials.tpo
+    - essentials.tpohere
+    - essentials.unban
+    - essentials.v
+    - essentials.vanish
+    - essentials.vtognointeract
+    - essentials.warp
+    - essentials.warp.*
+    - essentials.warp.list
+    - essentials.warp.self
+    - essentials.warps.*
+    - essentials.warps.list
+    - essentials.warps.ss
+    - essentials.whois
+    - essentialswars.*
+    - fd.broadcast
+    - firework.cmd
+    - gmlist.list
+    - griefprevention.*
+    - griefprevention.admin.*
+    - griefprevention.adminclaims
+    - griefprevention.deleteclaims
+    - griefprevention.ignoreclaims
+    - icu.control
+    - icu.stop
+    - icu.use
+    - mcmmo.chat.adminchat
+    - mcmmo.defaultsop
+    - nocheatplus.admin.exempt
+    - nocheatplus.admin.notify
+    - nocheatplus.checks.*
+    - preciousstones.*
+    - quester.admin
+    - quester.use.*
+    - sht.admin
+    - simplesuffix
+    - simplesuffix.color
+    - simplesuffix.colours
+    - simplesuffix.set.suffix.self
+    - simplesufix.colors
+    - sk.warn
+    - skript.warn
+    - skriptspells.arrowstorm
+    - skriptspells.lightning
+    - skriptspells.meteor
+    - skriptspells.smokebomb
+    - skriptspells.snowgun
+    - skriptspells.tntprojectile
+    - worldguard.notify
+    inheritance:
+    - mod
+    info:
+      prefix: '&r&f[&2ADMIN&r] '
+      build: true
+      suffix: ''
+  Owner:
+    default: false
+    permissions:
+    - '*'
+    - -vanish.*
+    inheritance:
+    - admin
+    info:
+      prefix: '&r&f[&aOwner&r] '
+      build: true
+      suffix: ''

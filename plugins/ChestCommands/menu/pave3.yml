@@ -1,0 +1,46 @@
+######################
+#+                  +#
+#   MENU SETTINGS    #
+#+                  +#
+######################
+
+
+menu-settings:
+  name: '&f- &6&lPave Radius &f-'
+  rows: 1
+  command: 'pave3'
+######################
+#+                  +#
+#       ITEMS        #
+#+                  +#
+######################
+
+pave1:
+  COMMAND: 'pave4 1'
+  NAME: '&eOne'
+  LORE:
+    - 'Paves where you stand'
+  ID: 290
+#  DATA-VALUE: 11
+  POSITION-X: 4
+  POSITION-Y: 1
+
+pave2:
+  COMMAND: 'pave4 2'
+  NAME: '&eTwo'
+  LORE:
+    - 'Sets your path radius to two.'
+  ID: 291
+#  DATA-VALUE: 11
+  POSITION-X: 5
+  POSITION-Y: 1
+
+pave3:
+  COMMAND: 'pave4 3'
+  NAME: '&eThree'
+  LORE:
+    - 'Sets your path radius to three.'
+  ID: 292
+#  DATA-VALUE: 11
+  POSITION-X: 6
+  POSITION-Y: 1

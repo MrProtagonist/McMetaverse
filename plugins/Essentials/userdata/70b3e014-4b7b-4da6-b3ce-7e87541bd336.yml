@@ -1,0 +1,38 @@
+geolocation: United States
+lastlocation:
+  world: Metacurse
+  x: 1641.925000011921
+  y: 73.0
+  z: -426.285667526565
+  yaw: -121.21838
+  pitch: -4.010027
+lastAccountName: DoctorKamillya
+timestamps:
+  login: 1426299724549
+  lastteleport: 1426299839279
+  logout: 1426300980490
+ipAddress: 71.9.179.69
+homes:
+  home:
+    world: Metacurse
+    x: 1661.1447125312734
+    y: 100.0
+    z: -438.18617256117227
+    yaw: -86.03251
+    pitch: 16.980906
+  shop:
+    world: Metacurse
+    x: 753.3649418477372
+    y: 88.0
+    z: -1668.6340766660364
+    yaw: -275.66943
+    pitch: 6.085051
+logoutlocation:
+  world: Metacurse
+  x: 1648.0711657748334
+  y: 73.0
+  z: -432.1028073350064
+  yaw: -296.14832
+  pitch: 46.46506
+money: '3777.5'
+afk: false

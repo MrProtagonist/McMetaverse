@@ -1,0 +1,241 @@
+#	name-menu-0 : The name of menu
+#	command-menu-0 :  The executable command
+#	command-executer-0 : The executer is console or player
+#	maxmenu is the number of options which you set-up
+options:
+	maxmenu : 10
+	name-menu-1 : Spawn
+	command-menu-1 : spawn
+	command-executer-1 : player
+	name-menu-2 : About
+	command-menu-2 : aboutmenu
+	command-executer-2 : player
+	name-menu-3 : -
+	command-menu-3 : -
+	command-executer-3 : player
+	name-menu-4 : Test option
+	command-menu-4 : -
+	command-executer-4 : player
+	name-menu-5 : next one
+	command-menu-5 : -
+	command-executer-5 : player
+	name-menu-6 : -
+	command-menu-6 : -
+	command-executer-6 : player
+	name-menu-7 : Free wood
+	command-menu-7 : -
+	command-executer-7 : player
+	name-menu-8 : Free BAN
+	command-menu-8 : -
+	command-executer-8 : player
+	name-menu-9 : nothing^^
+	command-menu-9 : -
+	command-executer-9 : player
+	name-menu-10 : LAST option
+	command-menu-10 : -
+	command-executer-10 : player
+
+
+
+
+
+
+
+
+
+on script load:
+	set {option.saomenu::0} to ""
+	set {option.saomenu::1} to "{@name-menu-1}"
+	set {option.saomenu::2} to "{@name-menu-2}"
+	set {option.saomenu::3} to "{@name-menu-3}"
+	set {option.saomenu::4} to "{@name-menu-4}"
+	set {option.saomenu::5} to "{@name-menu-5}"
+	set {option.saomenu::6} to "{@name-menu-6}"
+	set {option.saomenu::7} to "{@name-menu-7}"
+	set {option.saomenu::8} to "{@name-menu-8}"
+	set {option.saomenu::9} to "{@name-menu-9}"
+	set {option.saomenu::10} to "{@name-menu-10}"
+	set {option.saomenu::11} to ""
+	set {anima.10} to "[]"
+	set {anima.9} to "[ ]"
+	set {anima.8} to "[  ]"
+	set {anima.7} to "[   ]"
+	set {anima.6} to "[    ]"
+	set {anima.5} to "[     ]"
+	set {anima.4} to "[    ]"
+	set {anima.3} to "[   ]"
+	set {anima.2} to "[  ]"
+	set {anima.1} to "[ ]"
+on quit:
+	player can build at {menubase::%name of player%}
+	player can build at {mainsign::%name of player%}
+	player can build at {rightsign::%name of player%}
+	player can build at {exrightsign::%name of player%}
+	set block at {exrightsign::%name of player%} to air
+	wait 2 ticks
+	set block at {mainsign::%name of player%} to air
+	set block at {rightsign::%name of player%} to air
+	wait 2 ticks
+	set block at {menubase::%name of player%} to air
+on leftclick with hand:
+	set {horizontalclicked::%name of player%} to false
+	if player's facing is not down:
+		player's facing is not up
+		set {horizontalclicked::%name of player%} to true
+		wait 3 ticks
+		set {horizontalclicked::%name of player%} to false
+	player's facing is down
+	while {horizontalclicked::%name of player%} is false:
+		wait 2 ticks
+	{horizontalclicked::%name of player%} is true
+	if player's horizontal facing is north:
+		set {facingforward.saomenu::%name of player%} to north
+		set {facingright.saomenu::%name of player%} to east
+		set {facingbehind.saomenu::%name of player%} to south
+		set {item.frontsign::%name of player%} to wall sign:3
+		set {item.leftsign::%name of player%} to wall sign:4
+		set {item.rightsign::%name of player%} to wall sign:5
+		set {item.fencegate::%name of player%} to fence gate:4
+	if player's horizontal facing is south:
+		set {facingforward.saomenu::%name of player%} to south
+		set {facingright.saomenu::%name of player%} to west
+		set {facingbehind.saomenu::%name of player%} to north
+		set {item.frontsign::%name of player%} to wall sign:2
+		set {item.leftsign::%name of player%} to wall sign:5
+		set {item.rightsign::%name of player%} to wall sign:4
+		set {item.fencegate::%name of player%} to fence gate:6
+	if player's horizontal facing is east:
+		set {facingforward.saomenu::%name of player%} to east
+		set {facingright.saomenu::%name of player%} to south
+		set {facingbehind.saomenu::%name of player%} to west
+		set {item.frontsign::%name of player%} to wall sign:4
+		set {item.leftsign::%name of player%} to wall sign:2
+		set {item.rightsign::%name of player%} to wall sign:3
+		set {item.fencegate::%name of player%} to fence gate:5
+	if player's horizontal facing is west:
+		set {facingforward.saomenu::%name of player%} to west
+		set {facingright.saomenu::%name of player%} to north
+		set {facingbehind.saomenu::%name of player%} to east
+		set {item.frontsign::%name of player%} to wall sign:5
+		set {item.leftsign::%name of player%} to wall sign:3
+		set {item.rightsign::%name of player%} to wall sign:2
+		set {item.fencegate::%name of player%} to fence gate:7
+	set {main.inmenu::%name of player%} to "Base"
+	set {right.inmenu::%name of player%} to "Option"
+	set {number.saomenu::%name of player%} to 1
+	set {menubase::%name of player%} to block {facingforward.saomenu::%name of player%} block {facingforward.saomenu::%name of player%} block {facingforward.saomenu::%name of player%} block above player
+	set {mainsign::%name of player%} to block {facingbehind.saomenu::%name of player%} {menubase::%name of player%}
+	set {rightsign::%name of player%} to block {facingright.saomenu::%name of player%} {menubase::%name of player%}
+	set {exrightsign::%name of player%} to block {facingbehind.saomenu::%name of player%} {rightsign::%name of player%}
+	block at {menubase::%name of player%} is air
+	block at {mainsign::%name of player%} is air
+	block at {rightsign::%name of player%} is air
+	block at {exrightsign::%name of player%} is air
+	player can build at {menubase::%name of player%}
+	player can build at {mainsign::%name of player%}
+	player can build at {rightsign::%name of player%}
+	player can build at {exrightsign::%name of player%}
+	set block at {menubase::%name of player%} to oak wood plank
+	set block at {mainsign::%name of player%} to {item.frontsign::%name of player%}
+	set block at {rightsign::%name of player%} to {item.rightsign::%name of player%}
+	wait 2 ticks
+	set block at {menubase::%name of player%} to {item.fencegate::%name of player%}
+	set line 1 of block at {rightsign::%name of player%} to "§1->"
+	set {_timer} to 40
+	while target block is not sign:
+		wait 1 ticks
+		remove 1 from {_timer}
+		{_timer} is less than 1
+		message "%{_Timer}%"
+		exit loop
+	while target block is sign:
+		wait 1 tick
+		set {+1number.saomenu::%name of player%} to {number.saomenu::%name of player%} + 1
+		set {-1number.saomenu::%name of player%} to {number.saomenu::%name of player%} - 1
+		set line 1 of block at {mainsign::%name of player%} to "§1[--]"
+		set line 2 of block at {mainsign::%name of player%} to "%{option.saomenu::%{-1number.saomenu::%name of player%}%}%"
+		set line 3 of block at {mainsign::%name of player%} to "> %{option.saomenu::%{number.saomenu::%name of player%}%}% <"
+		set line 4 of block at {mainsign::%name of player%} to "%{option.saomenu::%{+1number.saomenu::%name of player%}%}%"
+		if line 1 of target block is "§1->":
+			set block at {rightsign::%name of player%} to oak wood plank
+			wait 1 tick
+			set block at {exrightsign::%name of player%} to {item.frontsign::%name of player%}
+			set block at {menubase::%name of player%} to oak wood plank
+			wait 1 tick
+			set block at {rightsign::%name of player%} to {item.rightsign::%name of player%}
+			wait 1 tick
+			set block at {menubase::%name of player%} to {item.fencegate::%name of player%}
+			set line 1 of {exrightsign::%name of player%} to "§1[->]"
+			set {right.inmenu::%name of player%} to "Option"
+			while line 1 of target block is "§1[->]":
+				wait 1 tick
+				if {right.inmenu::%name of player%} is "Option":
+					if {_Counter} is not set:
+						set {_Counter} to 1.01
+					set line 2 of block at {exrightsign::%name of player%} to "To select,"
+					set line 3 of block at {exrightsign::%name of player%} to "hold it for %{_Counter}%"
+					set line 4 of block at {exrightsign::%name of player%} to "seconds"
+					wait 0.1 second
+					if {_Counter} is more than 0:
+						remove 0.1 from {_Counter}
+					else:
+						set {executable.saomenu::%name of player%} to true
+						clear {_Counter}
+						set {right.inmenu::%name of player%} to "Accepted"
+				if {right.inmenu::%name of player%} is "Accepted":
+					if {option.saomenu::%{number.saomenu::%name of player%}%} is "%{option.saomenu::1}%":
+						execute {@command-executer-1} command "{@command-menu-1}"
+					if {option.saomenu::%{number.saomenu::%name of player%}%} is "%{option.saomenu::2}%":
+						execute {@command-executer-2} command "{@command-menu-2}"
+					if {option.saomenu::%{number.saomenu::%name of player%}%} is "%{option.saomenu::3}%":
+						execute {@command-executer-3} command "{@command-menu-3}"
+					if {option.saomenu::%{number.saomenu::%name of player%}%} is "%{option.saomenu::4}%":
+						execute {@command-executer-4} command "{@command-menu-4}"
+					if {option.saomenu::%{number.saomenu::%name of player%}%} is "%{option.saomenu::5}%":
+						execute {@command-executer-5} command "{@command-menu-5}"
+					if {option.saomenu::%{number.saomenu::%name of player%}%} is "%{option.saomenu::6}%":
+						execute {@command-executer-6} command "{@command-menu-6}"
+					if {option.saomenu::%{number.saomenu::%name of player%}%} is "%{option.saomenu::7}%":
+						execute {@command-executer-7} command "{@command-menu-7}"
+					if {option.saomenu::%{number.saomenu::%name of player%}%} is "%{option.saomenu::8}%":
+						execute {@command-executer-8} command "{@command-menu-8}"
+					if {option.saomenu::%{number.saomenu::%name of player%}%} is "%{option.saomenu::9}%":
+						execute {@command-executer-9} command "{@command-menu-9}"
+					if {option.saomenu::%{number.saomenu::%name of player%}%} is "%{option.saomenu::10}%":
+						execute {@command-executer-10} command "{@command-menu-10}"
+					set {right.inmenu::%name of player%} to "Executed"
+				if {right.inmenu::%name of player%} is "Executed":
+					if {_anima} is not set:
+						set {_anima} to 10
+					set line 2 of block at {exrightsign::%name of player%} to "Waiting for"
+					set line 3 of block at {exrightsign::%name of player%} to "execution..."
+					set line 4 of block at {exrightsign::%name of player%} to "%{anima.%{_anima}%}%"
+					wait 1 ticks
+					if {_anima} is more than 1:
+						remove 1 from {_anima}
+					else:
+						set {_anima} to 10
+			set block at {exrightsign::%name of player%} to air
+			set {right.inmenu::%name of player%} to "Option"
+			set line 1 of block at {rightsign::%name of player%} to "§1->"
+			clear {_Counter}
+	set block at {exleftsign::%name of player%} to air
+	set block at {exrightsign::%name of player%} to air
+	wait 2 ticks
+	set block at {mainsign::%name of player%} to air
+	set block at {leftsign::%name of player%} to air
+	set block at {rightsign::%name of player%} to air
+	wait 2 ticks
+	set block at {menubase::%name of player%} to air
+	clear {inSubmenu::%player%}
+on leftclick on sign:
+	if block at {mainsign::%name of player%} is clicked sign:
+		if {number.saomenu::%name of player%} is more than 1:
+			remove 1 from {number.saomenu::%name of player%}
+on rightclick on sign:
+	if block at {mainsign::%name of player%} is clicked sign:
+		if {number.saomenu::%name of player%} is less than {@maxmenu}:
+			add 1 to {number.saomenu::%name of player%}
+command /aboutmenu:
+	trigger:
+		message "§cSAO Menü &7by Alex207 :) totally license free"

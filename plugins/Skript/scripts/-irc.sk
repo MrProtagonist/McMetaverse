@@ -1,0 +1,18 @@
+command /ircoff:
+    description: Toggles irc.
+    usage: /ircoff
+    trigger:
+        execute console command "manuaddp %player% -irc.message.chat"
+        message "IRC turned off."
+command /ircon:
+    description: Toggles irc.
+    usage: /ircon
+    trigger:
+        execute console command "manudelp %player% -irc.message.chat"
+        message "IRC turned on."
+		
+command /ircmute <text>:
+	permission: essentials.socialspy
+	trigger:
+		execute console command "irc mute Metaverse ##mcmetaverse %arg%"
+		message "&a&oMuted &6&o%arg% &a&ofrom irc on this server until further notice."

@@ -1,0 +1,31 @@
+geolocation: United States
+lastlocation:
+  world: Metacurse
+  x: -62.88329475186954
+  y: 70.0
+  z: -67.93192719276111
+  yaw: 119.4669
+  pitch: 7.6500034
+lastAccountName: Cehpore
+timestamps:
+  login: 1426314650849
+  logout: 1426315120774
+  lastteleport: 1425940806122
+ipAddress: 70.162.156.146
+afk: false
+money: '193.33'
+homes:
+  home:
+    world: Metacurse
+    x: -2189.526419599732
+    y: 66.0
+    z: -1108.4104215210346
+    yaw: 180.44794
+    pitch: 29.24986
+logoutlocation:
+  world: Metacurse
+  x: -2197.867124862817
+  y: 64.0625
+  z: -1120.0441176164982
+  yaw: 321.74756
+  pitch: 19.19983

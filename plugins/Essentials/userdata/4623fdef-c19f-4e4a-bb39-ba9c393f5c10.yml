@@ -1,0 +1,23 @@
+geolocation: United States
+lastlocation:
+  world: Metacurse
+  x: -162.10455990199517
+  y: 63.0
+  z: -1197.0107298468063
+  yaw: 22.566875
+  pitch: -26.896
+lastAccountName: pikachu_ketchup
+timestamps:
+  login: 1425822893487
+  lastteleport: 1425823364369
+  logout: 1425823979937
+ipAddress: 71.58.69.212
+money: '225'
+afk: false
+logoutlocation:
+  world: Metacurse
+  x: -4316.740941903098
+  y: 74.0
+  z: -787.5410323069809
+  yaw: 0.23048268
+  pitch: 16.695791

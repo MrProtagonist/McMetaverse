@@ -1,0 +1,129 @@
+﻿#on shoot:
+#	if shooter has the permission "skript.tracer":
+#		{tracer.%shooter%} is set
+#		if {tracer.%shooter%} is "heart":
+#			trail projectile with heart
+#		if {tracer.%shooter%} is "splash":
+#			trail projectile with splash
+#		if {tracer.%shooter%} is "lava":
+#			trail projectile with lava
+#		if {tracer.%shooter%} is "happy villager":
+#			trail projectile with happy villager
+#		if {tracer.%shooter%} is "snow shovel":
+#			trail projectile with snow shovel
+#		if {tracer.%shooter%} is "snowball poof":
+#			trail projectile with snowball poof
+#		if {tracer.%shooter%} is "spell":
+#			trail projectile with spell
+#		if {tracer.%shooter%} is "mob spell":
+#			trail projectile with mob spell
+#		if {tracer.%shooter%} is "explode":
+#			trail projectile with explode
+#		if {tracer.%shooter%} is "portal":
+#			trail projectile with portal
+#		if {tracer.%shooter%} is "witch magic":
+#			trail projectile with witch magic
+#		if {tracer.%shooter%} is "flame":
+#			trail projectile with flame
+#		if {tracer.%shooter%} is "huge explosion":
+#			trail projectile with huge explosion
+#		if {tracer.%shooter%} is "large explode":
+#			trail projectile with large explode
+#		if {tracer.%shooter%} is "fireworks spark":
+#			trail projectile with fireworks spark
+#		if {tracer.%shooter%} is "bubble":
+#			trail projectile with bubble
+#		if {tracer.%shooter%} is "suspended":
+#			trail projectile with suspended
+#		if {tracer.%shooter%} is "depth suspend":
+#			trail projectile with depth suspend
+#		if {tracer.%shooter%} is "town aura":
+#			trail projectile with town aura
+#		if {tracer.%shooter%} is "crit":
+#			trail projectile with crit
+#		if {tracer.%shooter%} is "magic crit":
+#			trail projectile with magic crit
+#		if {tracer.%shooter%} is "smoke":
+#			trail projectile with smoke
+#		if {tracer.%shooter%} is "mob spell ambient":
+#			trail projectile with mob spell ambient
+#		if {tracer.%shooter%} is "instant spell":
+#			trail projectile with instant spell
+#		if {tracer.%shooter%} is "note":
+#			trail projectile with note
+#		if {tracer.%shooter%} is "enchantment table":
+#			trail projectile with enchantment table
+#		if {tracer.%shooter%} is "footstep":
+#			trail projectile with footstep
+#		if {tracer.%shooter%} is "drip water":
+#			trail projectile with drip water
+#		if {tracer.%shooter%} is "drip lava":
+#			trail projectile with drip lava
+#		if {tracer.%shooter%} is "slime":
+#			trail projectile with slime
+#		if {tracer.%shooter%} is "angry villager":
+#			trail projectile with angry villager
+#		if {tracer.%shooter%} is "large smoke":
+#			trail projectile with large smoke
+#		if {tracer.%shooter%} is "splash":
+#			trail projectile with splash
+#		if {tracer.%shooter%} is "cloud":
+#			trail projectile with cloud
+#		if {tracer.%shooter%} is "red dust":
+#			trail projectile with red dust
+#		stop
+#	else:
+#		shooter has the permission "skript.trail":
+#			trail projectile with fireworks spark
+
+
+command /tracer [<text>]:
+	permission: skript.tracer
+	trigger:
+		if arg is set:
+			if arg is "off":
+				delete {tracer.%player%}
+				message "&cProjectile tracer disabled."
+			else:
+				if arg is "huge explosion":
+					if player has permission "is.vip":
+						set {tracer.%player%} to arg
+						message "&aProjectile tracer set to: &e%arg%"
+					else:
+						message "&cUnfortunately, this particular effect is reserved for our top supporters."
+						stop
+				else:
+					set {tracer.%player%} to arg
+					message "&aProjectile tracer set to: &e%arg%"
+		else:
+			message "&a&lAll available particles:"
+			message "%all enum values of particle%"
+			message "&a/tracer off&f - Turn your projectile tracer off."
+			message "&a/tracer <particle>&f - Set your projectile tracer."
+		
+		
+command /collectible:
+	permission: skript.collectible
+	trigger:
+		player is holding air:
+			give player 64 collectible
+			message "&a&oCollectible block given."
+			set name of tool to "&6&oCollectible Block"
+		else:
+			message "Must be holding nothing to get this block."
+on place:
+	event-block is collectible
+	wait 1 tick
+	player is holding air
+	give player 64 collectible
+	message "&a&o&lRefueled."
+on left click on chest:
+	player is holding collectible
+	cancel event
+	message "&c&oYou can not sell this block!"
+on tool change:
+	if tool will be collectible:
+		set name of tool to "&6&oCollectible Block"
+on drop of collectible:
+	cancel event
+	message "&c&oNo giving or selling this block!"

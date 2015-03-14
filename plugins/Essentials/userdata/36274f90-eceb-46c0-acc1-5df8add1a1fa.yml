@@ -1,0 +1,103 @@
+geolocation: United States
+lastlocation:
+  world: Metacurse
+  x: -4239.746673651628
+  y: 63.27876436215069
+  z: -1960.418713364077
+  yaw: 62.1326
+  pitch: 18.000067
+lastAccountName: Ashlerose
+timestamps:
+  login: 1426313411072
+  lastteleport: 1426315030930
+  logout: 1426315113251
+ipAddress: 97.119.149.19
+logoutlocation:
+  world: Metacurse
+  x: 2680.699999988079
+  y: 40.0
+  z: 1145.699999988079
+  yaw: 252.66704
+  pitch: 39.600002
+money: '49870.00'
+homes:
+  home:
+    world: Metacurse
+    x: 1699.9584177223167
+    y: 73.0
+    z: -881.337792155925
+    yaw: 298.2699
+    pitch: 16.950008
+  d:
+    world: Metacurse
+    x: -5347.607839022632
+    y: 68.0
+    z: -1211.3302057287665
+    yaw: 154.93094
+    pitch: 12.150003
+  h:
+    world: Metacurse
+    x: -5389.4493604757845
+    y: 80.0
+    z: -1272.1574973631957
+    yaw: -46.069397
+    pitch: -16.649996
+  homee:
+    world: Metacurse
+    x: -341.8639800489301
+    y: 64.0
+    z: -2650.6011710970165
+    yaw: 272.15414
+    pitch: 48.450005
+  eh:
+    world: Metacurse
+    x: -645.3636462450559
+    y: 113.0
+    z: 1217.1254640182042
+    yaw: -30.484694
+    pitch: 15.749982
+  l:
+    world: Metacurse
+    x: -1872.5
+    y: 40.0
+    z: -3383.5
+    yaw: 271.2643
+    pitch: 16.199986
+  temple:
+    world: Metacurse
+    x: 2663.5678724835466
+    y: 62.94772032495505
+    z: 1159.628973084844
+    yaw: 313.56772
+    pitch: 75.15001
+  templee:
+    world: Metacurse
+    x: 2667.3311676266567
+    y: 40.0
+    z: 1180.3602877624683
+    yaw: 256.41705
+    pitch: 28.34999
+  for:
+    world: Metacurse
+    x: -4185.699999988079
+    y: 63.0
+    z: -1069.0433922326931
+    yaw: 47.8491
+    pitch: 23.399935
+  po:
+    world: Metacurse
+    x: -876.7006331435405
+    y: 21.5
+    z: -481.8141648400425
+    yaw: 91.85623
+    pitch: 23.850004
+  cavern:
+    world: Metacurse
+    x: 1746.5
+    y: 12.0
+    z: 1507.5
+    yaw: 212.01686
+    pitch: 22.499994
+afk: false
+mail:
+- §6[§rtsarmiento00§6] §rHelp..

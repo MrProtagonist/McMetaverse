@@ -1,0 +1,52 @@
+protect: Rightclick an item frame/painting to protect it.
+remove: Rightclick an item frame/painting to remove its protection.
+reload: config.yml reloaded.
+info: Rightclick an item frame/painting to get its owner.
+owner: Rightclick an item frame/painting to set its owner.
+help1: Help
+help2: Protect an item frame/painting.
+help3: Remove the protection from an item frame/painting.
+help4: Get infos about an item frame/painting.
+help5: Set the owner of a protected item frame/painting.
+help7: Reloads the config.yml
+help8: Change the language.
+blockPlaceFrame: You can't place a block over an item frame!
+blockPlacePainting: You can't place a block over a painting!
+blockDestroyBlock: You can't destroy this block!
+allreadyFrame: There allready is an item frame!
+cantPlaceFrame: You don't have the permission to place item frames!
+cantPlacePainting: You don't have the permission to place paintings!
+createdFrame: Successfully created a private item frame.
+createdPainting: Successfully created a private painting.
+cantDestroyFrame: You don't have the permission to remove item frames!
+cantDestroyPainting: You don't have the permission to remove paintings!
+destroyedFrame: Private item frame removed.
+destroyedPainting: Private painting removed.
+destroyedOtherFrame: Private item frame by {player} removed.
+destroyedOtherPainting: Private painting by {player} removed.
+notYourFrame: This is not your item frame!
+notYourPainting: This is not your painting!
+showOwnerFrame: '{player} is the owner of this item frame.'
+showOwnerPainting: '{player} is the owner of this painting.'
+notProtectedFrame: This item frame is not protected!
+notProtectedPainting: This painting is not protected!
+noInfosFrame: You don't have the permission to get infos about item frames!
+noInfosPainting: You don't have the permission to get infos about paintings!
+setOwnerFrame: You've changed the owner of this item frame from {owner} to {player}.
+setOwnerPainting: You've changed the owner of this painting from {owner} to {player}.
+setOwnerErrorFrame: You have to protect this item frame before you can change the owner!
+setOwnerErrorPainting: You have to protect this painting before you can change the owner!
+allreadyProtectedYouFrame: This item frame is allready protected by you!
+allreadyProtectedYouPainting: This painting is allready protected by you!
+allreadyProtectedFrame: This item frame is allready protected!
+allreadyProtectedPainting: This painting is allready protected!
+noProtectFrame: You don't have the permission to protect item frames!
+noProtectPainting: You don't have the permission to protect paintings!
+deprotectedFrame: You've deprotected this item frame!
+deprotectedPainting: You've deprotected this painting!
+deprotectedOtherFrame: You've deprotected {owner}s item frame!
+deprotectedOtherPainting: You've deprotected {owner}s painting!
+noDeprotectFrame: You don't have the permission to get deprotect item frames!
+noDeprotectPainting: You don't have the permission to get deprotect paintings!
+noCreative: You can't add items to item frames in gamemode creative!
+langChanged: The language was changed to English.

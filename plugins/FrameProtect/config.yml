@@ -1,0 +1,16 @@
+language: EN
+disable_consoleMessages: false
+disable_create_and_destroy_messages: false
+disable_not_yours_messages: false
+disable_natural_breaking: false
+disable_breaking_by_mobs: true
+protect_blocks: true
+stop_block_placing_over_frames: true
+use_MySql: false
+mysql_host: localhost
+mysql_port: '3306'
+mysql_database: database
+mysql_username: username
+mysql_password: password
+do_not_change_this: false
+resetDataBase: false

@@ -1,0 +1,22 @@
+geolocation: United States
+lastAccountName: HushJay
+timestamps:
+  login: 1425738411334
+  logout: 1425739073917
+  lastteleport: 1425688603639
+ipAddress: 107.3.101.55
+lastlocation:
+  world: Metacurse
+  x: -1385.0093481901586
+  y: 126.00784420873696
+  z: -98.22332709075549
+  yaw: 25.48648
+  pitch: 45.465607
+logoutlocation:
+  world: Metacurse
+  x: -66.47726917784894
+  y: 70.0
+  z: -81.23339890058116
+  yaw: 182.06009
+  pitch: 13.321202
+money: '225'

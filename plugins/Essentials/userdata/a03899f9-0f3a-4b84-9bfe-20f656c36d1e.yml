@@ -1,0 +1,46 @@
+money: '1972.81'
+lastlocation:
+  world: Metacurse
+  x: -3867.0045691323385
+  y: 11.0
+  z: -1222.6600518074529
+  yaw: 302.2503
+  pitch: 58.949905
+geolocation: United States
+lastAccountName: Infiniterose
+timestamps:
+  login: 1426295582870
+  logout: 1426296082828
+  lastteleport: 1426295568175
+ipAddress: 76.127.217.161
+logoutlocation:
+  world: Metacurse
+  x: 3220.03370900624
+  y: 72.0
+  z: -1270.217036278481
+  yaw: 179.5022
+  pitch: 16.350012
+homes:
+  temple:
+    world: Metacurse
+    x: 3218.47680077924
+    y: 40.0
+    z: 110.48682934156314
+    yaw: 140.20117
+    pitch: 19.200026
+  home:
+    world: Metacurse
+    x: 3231.426583314279
+    y: 72.0
+    z: -1276.785223887844
+    yaw: -160.69763
+    pitch: 90.0
+  attic:
+    world: Metacurse
+    x: 3221.631187206204
+    y: 87.0
+    z: -1264.0408944613605
+    yaw: -271.54767
+    pitch: 16.499992
+afk: false
+socialspy: true

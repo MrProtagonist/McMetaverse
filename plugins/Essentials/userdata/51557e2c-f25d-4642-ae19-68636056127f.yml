@@ -1,0 +1,21 @@
+geolocation: Australia
+lastlocation:
+  world: Metacurse
+  x: -66.5
+  y: 70.0
+  z: -71.5
+  yaw: 0.06689453
+  pitch: -1.799998
+lastAccountName: AussieVortex
+timestamps:
+  login: 1425114926778
+  logout: 1425114933928
+ipAddress: 144.136.154.184
+logoutlocation:
+  world: Metacurse
+  x: -66.50471482611101
+  y: 69.5
+  z: -82.45940643793018
+  yaw: -180.0759
+  pitch: 0.51589215
+money: '0.0'

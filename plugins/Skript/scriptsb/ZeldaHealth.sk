@@ -1,0 +1,125 @@
+On click:
+    if player's world is "LoZ":
+        player has permission "essentials.socialspy"
+        if {zelda.heartcounter.%player%} is 0:
+            set max health of player to 3
+        
+    else:
+        player has permission "essentials.socialspy"
+        set max health of player to 10
+
+on pick up:
+    player has permission "essentials.socialspy"
+    player's world is "LoZ"
+    if item is rose red:
+        set {zelda.heartcounter.%player%} to {zelda.heartcounter.%player%}+1
+        if {zelda.heartcounter.%player%} is 1:
+            set max health of player to 4
+            heal player
+        if {zelda.heartcounter.%player%} is 2:
+            set max health of player to 5
+            heal player
+        if {zelda.heartcounter.%player%} is 3:
+            set max health of player to 6
+            heal player
+        if {zelda.heartcounter.%player%} is 4:
+            set max health of player to 7
+            heal player        
+        if {zelda.heartcounter.%player%} is 5:
+            set max health of player to 8
+            heal player
+        if {zelda.heartcounter.%player%} is 6:
+            set max health of player to 9
+            heal player
+        if {zelda.heartcounter.%player%} is 7:
+            set max health of player to 10
+            heal player
+        if {zelda.heartcounter.%player%} is 8:
+            set max health of player to 11
+            heal player        
+        if {zelda.heartcounter.%player%} is 9:
+            set max health of player to 12
+            heal player
+        if {zelda.heartcounter.%player%} is 10:
+            set max health of player to 13
+            heal player
+        if {zelda.heartcounter.%player%} is 11:
+            set max health of player to 14
+            heal player
+        if {zelda.heartcounter.%player%} is 12:
+            set max health of player to 15
+            heal player
+        if {zelda.heartcounter.%player%} is 13:
+            set max health of player to 16
+            heal player        
+        if {zelda.heartcounter.%player%} is 14:
+            set max health of player to 17
+            heal player
+        if {zelda.heartcounter.%player%} is 15:
+            set max health of player to 18
+            heal player
+        if {zelda.heartcounter.%player%} is 16:
+            set max health of player to 19
+            heal player
+        if {zelda.heartcounter.%player%} is 17:
+            set max health of player to 20
+            heal player         
+    else:
+        if {zelda.heartcounter.%player%} is 1:
+            set max health of player to 4
+            heal player
+        if {zelda.heartcounter.%player%} is 2:
+            set max health of player to 5
+            heal player
+        if {zelda.heartcounter.%player%} is 3:
+            set max health of player to 6
+            heal player
+        if {zelda.heartcounter.%player%} is 4:
+            set max health of player to 7
+            heal player        
+        if {zelda.heartcounter.%player%} is 5:
+            set max health of player to 8
+            heal player
+        if {zelda.heartcounter.%player%} is 6:
+            set max health of player to 9
+            heal player
+        if {zelda.heartcounter.%player%} is 7:
+            set max health of player to 10
+            heal player
+        if {zelda.heartcounter.%player%} is 8:
+            set max health of player to 11
+            heal player        
+        if {zelda.heartcounter.%player%} is 9:
+            set max health of player to 12
+            heal player
+        if {zelda.heartcounter.%player%} is 10:
+            set max health of player to 13
+            heal player
+        if {zelda.heartcounter.%player%} is 11:
+            set max health of player to 14
+            heal player
+        if {zelda.heartcounter.%player%} is 12:
+            set max health of player to 15
+            heal player
+        if {zelda.heartcounter.%player%} is 13:
+            set max health of player to 16
+            heal player        
+        if {zelda.heartcounter.%player%} is 14:
+            set max health of player to 17
+            heal player
+        if {zelda.heartcounter.%player%} is 15:
+            set max health of player to 18
+            heal player
+        if {zelda.heartcounter.%player%} is 16:
+            set max health of player to 19
+            heal player
+        if {zelda.heartcounter.%player%} is 17:
+            set max health of player to 20
+            heal player         
+            
+command /rh:
+    trigger:
+        set {zelda.heartcounter.%player%} to 0
+        set max health of player to 3
+ 
+        

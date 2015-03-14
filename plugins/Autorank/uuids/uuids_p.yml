@@ -1,0 +1,23 @@
+# This file stores all uuids of players that Autorank has looked up before.
+# Each file stores accounts with the starting letter of the player's name.
+Post_Rogue:
+  uuid: 799c4fd6-0201-4d1e-b345-b70e5f24f567
+  updateTime: 1426215911177
+pumpkinpepper:
+  uuid: 97cb8bf8-c6ee-4511-b6bd-d00dc1bc4fbb
+  updateTime: 1425531062742
+PlacedObsidian:
+  uuid: d6a7d4e1-9b3f-46b3-b050-28d321b271d5
+  updateTime: 1425848124047
+PuggieGurl:
+  uuid: ddac9867-0d0c-4a6f-8075-05b3fa0f9d17
+  updateTime: 1426037006834
+pikachu_ketchup:
+  uuid: 4623fdef-c19f-4e4a-bb39-ba9c393f5c10
+  updateTime: 1425758744583
+PeculiarPhillip:
+  uuid: 53125f19-3102-4ed5-81a2-6facfcf22f3f
+  updateTime: 1426291033025
+PacificSummer1:
+  uuid: 373bff57-44b0-4323-95fc-d92ab3713d51
+  updateTime: 1426298552638

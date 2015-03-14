@@ -1,0 +1,30 @@
+money: '31.0'
+geolocation: United States
+lastAccountName: Ski32
+timestamps:
+  login: 1425214323424
+  lastteleport: 1425215493066
+  logout: 1425216149977
+ipAddress: 73.13.114.110
+lastlocation:
+  world: Metacurse
+  x: -476.6900371606254
+  y: 69.0
+  z: 666.0628999689147
+  yaw: 265.8819
+  pitch: 46.649952
+logoutlocation:
+  world: Metacurse
+  x: 682.334897326054
+  y: 75.0
+  z: -2811.6230501890936
+  yaw: 54.97569
+  pitch: 15.000013
+homes:
+  home:
+    world: Metacurse
+    x: -481.92500001192093
+    y: 69.0
+    z: 667.8560619739394
+    yaw: -91.86957
+    pitch: 65.1

@@ -1,0 +1,30 @@
+geolocation: United States
+lastlocation:
+  world: Metacurse
+  x: -4.96376644688539
+  y: 70.0
+  z: -127.27609085068923
+  yaw: 210.21716
+  pitch: -3.4499924
+lastAccountName: Derpy26
+timestamps:
+  login: 1424136762814
+  logout: 1424137061009
+  lastteleport: 1424126522986
+ipAddress: 50.108.55.246
+money: '9.0'
+logoutlocation:
+  world: Metacurse
+  x: -1133.5997526894075
+  y: 67.0
+  z: -4049.692101361098
+  yaw: 211.72095
+  pitch: -0.89991546
+homes:
+  home:
+    world: Metacurse
+    x: -1138.9989985463653
+    y: 67.0
+    z: -4052.5732670757766
+    yaw: -43.73337
+    pitch: 10.350065

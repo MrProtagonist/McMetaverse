@@ -1,0 +1,338 @@
+users:
+  18psimpson:
+    group: Visitor
+    subgroups: []
+    permissions: []
+    info:
+      suffix: §f [&6&lThor &8&lOdinson§f]
+  abdomen9:
+    group: Visitor
+    subgroups: []
+    permissions: []
+    info:
+      suffix: §f [Gabe§f]
+  Armyman767:
+    group: Visitor
+    subgroups: []
+    permissions: []
+    info:
+      prefix: ''
+  Awesome1887:
+    group: Visitor
+    subgroups: []
+    permissions: []
+    info:
+      suffix: §f [&b&l*&5&lB&4&l3&5&lAST&b&l*§f]
+  bluedemon0015:
+    group: Admin
+    subgroups: []
+    permissions: []
+    info:
+      suffix: §f [&1noot§f]
+  CaptainStupid:
+    group: Visitor
+    subgroups: []
+    permissions: []
+    info:
+      prefix: '§f[&4Hater§f] '
+      suffix: §f [&eI'm a thing§f]
+  Cartatwin:
+    group: Visitor
+    subgroups: []
+    permissions: []
+    info:
+      suffix: §f [Leah§f]
+  celtbane:
+    group: Visitor
+    subgroups: []
+    permissions: []
+    info:
+      suffix: §f [&9K&2uni§f]
+  Chaos9863:
+    group: Visitor
+    subgroups: []
+    permissions: []
+    info:
+      suffix: §f [&dg§f]
+  DaBomb1661:
+    group: Visitor
+    subgroups: []
+    permissions: []
+    info:
+      suffix: §f [&4Boom&3Stick§f]
+  darkeye932:
+    group: Visitor
+    subgroups: []
+    permissions: []
+    info:
+      suffix: §f [&c&oIron&e&oMan§f]
+  dinoppar:
+    group: Admin
+    subgroups: []
+    permissions: []
+    info:
+      prefix: '§f[&3Architect§f] '
+      suffix: §f [&3Snorlax§f]
+  DrBloodbathMC:
+    group: Visitor
+    subgroups: []
+    permissions: []
+    info:
+      prefix: '§f[&2ADMIN§f] '
+      suffix: §f [&2Mr.Slimestone§f]
+  DrieIceyGirl:
+    group: Visitor
+    subgroups: []
+    permissions: []
+    info:
+      suffix: §f [&3&lIc&b&ley§f]
+  ElgarL:
+    group: Visitor
+    subgroups: []
+    permissions:
+    - groupmanager.noofflineperms
+  EvilLittleThing:
+    group: Visitor
+    subgroups: []
+    permissions: []
+    info:
+      prefix: ''
+      suffix: §f [&b&oMee&3&oMaw§f]
+  f01a2307-e90d-4503-9f19-640806fa8808:
+    lastname: MrProtagonist
+    group: Visitor
+    subgroups: []
+    permissions: []
+    info:
+      prefix: '§f[&aFounder§f] '
+      suffix: §f [&c&oRetired§f]
+  FoxTrotMC:
+    group: Visitor
+    subgroups: []
+    permissions: []
+    info:
+      prefix: ''
+      suffix: §f [&bS&1k&ai&2t&ct&4l&de&5s§f]
+  ghost482:
+    group: Visitor
+    subgroups: []
+    permissions: []
+    info:
+      suffix: §f [&3*&bYETI&3*§f]
+  green11:
+    group: Visitor
+    subgroups: []
+    permissions: []
+    info:
+      suffix: §f [&4 Mrs.Grinch§f]
+  gussy05:
+    group: Visitor
+    subgroups: []
+    permissions: []
+    info:
+      suffix: §f [&bMrsProtagonist§f]
+  Hobbitsyfeet:
+    group: Builder
+    subgroups: []
+    permissions: []
+    info:
+      suffix: §f [&cC&6A&eN&2A&aD&bI&3A&9N§f]
+  Icespot744:
+    group: Visitor
+    subgroups: []
+    permissions: []
+    info:
+      suffix: ''
+  Infiniterose:
+    group: Visitor
+    subgroups: []
+    permissions: []
+    info:
+      suffix: §f [&4Qu&6ee&en &aOf &2Qu&3ee&1rs§f]
+  ItsDanielBro:
+    group: Visitor
+    subgroups: []
+    permissions: []
+    info:
+      suffix: §f [&4A&6r&ei&2a&an&ba&3t&1o&5r§f]
+  KHobbits:
+    group: Visitor
+    subgroups: []
+    permissions:
+    - groupmanager.noofflineperms
+  kristycream:
+    group: Visitor
+    subgroups: []
+    permissions: []
+    info:
+      suffix: §f [&a&oPanda§f]
+  Kyokokat:
+    group: Visitor
+    subgroups: []
+    permissions: []
+    info:
+      suffix: §f [&6 Boucey Tiger§f]
+  lacerfacerxd:
+    group: Visitor
+    subgroups: []
+    permissions: []
+    info:
+      suffix: §f [&cL&6A&eC&aI&2F&3E&9R§f]
+  lordlankovic:
+    group: Visitor
+    subgroups: []
+    permissions: []
+    info:
+      suffix: §f [&6Ska§f]
+  Luna482:
+    group: Visitor
+    subgroups: []
+    permissions: []
+    info:
+      suffix: §f [&5MommaSquirrel§f]
+  McNicholas:
+    group: Visitor
+    subgroups: []
+    permissions: []
+    info:
+      suffix: §f [&7&4╪Toki Wartooth╪§f]
+  Nitrogengaming1:
+    group: Visitor
+    subgroups: []
+    permissions: []
+    info:
+      suffix: §f [&aRectal&fThermometer§f]
+  PalMac14:
+    group: Visitor
+    subgroups: []
+    permissions: []
+    info:
+      suffix: §f [PayPal§f]
+  platipus50:
+    group: Visitor
+    subgroups: []
+    permissions: []
+    info:
+      suffix: §f [&2Plat§f]
+  PoisonousKoala:
+    group: Visitor
+    subgroups: []
+    permissions: []
+    info:
+      suffix: §f [&aPGang§f]
+  Post_Rogue:
+    group: Admin
+    subgroups: []
+    permissions: []
+    info:
+      prefix: ''
+      suffix: §f [&2PBC§f]
+  pumpkinpepper:
+    group: Visitor
+    subgroups: []
+    permissions: []
+    info:
+      prefix: '§f[&o&3Legend&r§f] '
+      suffix: §f [&eBluh§f]
+  Quisalas:
+    group: Visitor
+    subgroups: []
+    permissions: []
+    info:
+      prefix: ''
+  retroville268773:
+    group: Visitor
+    subgroups: []
+    permissions: []
+    info:
+      suffix: §f [&bBoo§f]
+  rfcroc:
+    group: Visitor
+    subgroups: []
+    permissions: []
+    info:
+      suffix: §f [&2 Genuine© Original§f]
+  RubySerpent:
+    group: Visitor
+    subgroups: []
+    permissions: []
+    info:
+      suffix: §f [&4Red Comet§f]
+  Sarahliz:
+    group: Visitor
+    subgroups: []
+    permissions: []
+    info:
+      suffix: §f [&1S&2Y&3C&4O&5P&6H&7A&8N&9T&dA§f]
+  scatzbro:
+    group: Visitor
+    subgroups: []
+    permissions: []
+    info:
+      suffix: §f [&4CHRIS§f]
+  shadow007uk:
+    group: Visitor
+    subgroups: []
+    permissions: []
+    info:
+      suffix: §f [&3 mama shadow§f]
+  shaunticlair:
+    group: Visitor
+    subgroups: []
+    permissions: []
+    info:
+      suffix: §f [Mycelium Kitty§f]
+  Sherlock1010:
+    group: Visitor
+    subgroups: []
+    permissions: []
+    info:
+      suffix: §f [&4Kewl &cGamer§f]
+  snowleo:
+    group: Builder
+    subgroups: []
+    permissions:
+    - groupmanager.noofflineperms
+  Sompor:
+    group: Visitor
+    subgroups: []
+    permissions: []
+    info:
+      suffix: §f [Husky§f]
+  swordassassin54:
+    group: Visitor
+    subgroups: []
+    permissions: []
+    info:
+      suffix: §f [IDK§f]
+  uberwookie:
+    group: Visitor
+    subgroups: []
+    permissions: []
+    info:
+      prefix: '§f[&bNOT Staff§f] '
+      suffix: §f [&bJerkface§f]
+  x_Odysseus_x:
+    group: Visitor
+    subgroups: []
+    permissions: []
+    info:
+      suffix: §f [&4Lord Israphel§f]
+  xLegendaryFlamex:
+    group: Visitor
+    subgroups: []
+    permissions: []
+    info:
+      suffix: §f [&bHyrulian§f]
+  ZombieGirl159:
+    group: Visitor
+    subgroups: []
+    permissions: []
+    info:
+      suffix: §f [&4Th&6ee &eon&2e a&bnd &5On&dly§f]
+  zthemonster:
+    group: Visitor
+    subgroups: []
+    permissions: []
+    info:
+      suffix: §f [&5Pixie&4Dust§f]

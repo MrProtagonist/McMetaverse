@@ -1,0 +1,31 @@
+money: '2708.0'
+geolocation: United States
+lastAccountName: jazzwalgar
+timestamps:
+  login: 1425452115724
+  lastteleport: 1425456107470
+  logout: 1425457005110
+ipAddress: 68.83.143.150
+lastlocation:
+  world: Metacurse
+  x: -3835.604006820451
+  y: 74.0
+  z: -1178.4567521950453
+  yaw: 284.99966
+  pitch: 43.5
+homes:
+  home:
+    world: Metacurse
+    x: -3833.5
+    y: 83.0
+    z: -1216.5
+    yaw: 206.39967
+    pitch: 16.94998
+logoutlocation:
+  world: Metacurse
+  x: -4598.067207529575
+  y: 11.0
+  z: -1860.6743539100853
+  yaw: 78.91989
+  pitch: 19.799988
+afk: false

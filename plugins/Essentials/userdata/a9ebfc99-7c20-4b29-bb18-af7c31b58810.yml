@@ -1,0 +1,21 @@
+money: '0.0'
+geolocation: United States
+lastlocation:
+  world: Metacurse
+  x: -108.72358166890763
+  y: 130.99330928292025
+  z: -111.89926359986934
+  yaw: -58.1185
+  pitch: 89.88169
+lastAccountName: E_Miner_Man
+timestamps:
+  login: 1423097488522
+  logout: 1423097767076
+ipAddress: 73.169.0.10
+logoutlocation:
+  world: Metacurse
+  x: -150.46164754062053
+  y: 67.0
+  z: -39.42379525044552
+  yaw: -110.86341
+  pitch: 23.52772

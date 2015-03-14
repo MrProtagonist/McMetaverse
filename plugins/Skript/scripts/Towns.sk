@@ -1,0 +1,251 @@
+
+command /certify:
+	trigger:
+		if {certify.%player%} is not set:
+			loop 10 times:
+				message " "
+			message "&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-[ &aTOWN MENU &f&l]-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-"
+			message "  &eHere you can certify your town for public use."
+			message " "
+			message "      &c&lCOST: &a$8,000"
+			message "&c&lREQUIREMENTS: "
+			message " &a- &fTown owner must submit town"
+			message " &a- &fTown owner must agree to server town rules at the courthouse"
+			message " &a- &fTown must be fully claimed"
+			message " &a- &fTown must have at least 3 residents"
+			message " &a- &fTown must have town hall with rules posted"
+			message " "
+			message "&eType &a/courthouse&e to see server town rules."
+			message "&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l--&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-"
+			message "&eIf you meet all the requirements, type &a/certify&e again."
+			set {certify.%player%} to 0
+			stop
+		if {certify.%player%} is 0:
+			message "&f[&aSERVER&f] &eIn chat, please type the name of your town."
+			add 1 to {certify.%player%}
+			stop
+		if {certify.%player%} is 3:
+			if player's balance is less than 8000:
+				message "&c&lYou can't afford this!"
+				delete {certify.%player%}
+				stop
+			execute console command "eco take %player% 8000"
+			if {townwarp.count} is not set:
+				set {townwarp.count} to 0
+			add 1 to {townwarp.count}
+			set {towns.owner::%{townwarp.count}%} to player
+			set {towns.name::%{townwarp.count}%} to {certifytemp.%player%::name}
+			set {towns.desc::%{townwarp.count}%} to {certifytemp.%player%::desc}
+			add player to {towns.residents.%{townwarp.count}%::*}
+			set {towns.certified::%{townwarp.count}%} to "Never"
+			set {towns.biome::%{townwarp.count}%} to biome at the player
+			set {towns.warp::%{townwarp.count}%} to player's location
+			play note pling at player with pitch 1
+			play note pling at player with pitch 1
+			play note bass drum at player with pitch 1.4
+			play note snare drum at player with pitch 1.5
+			wait 5.5 ticks
+			play note pling at player with pitch 1
+			play note pling at player with pitch 1
+			play note snare drum at player with pitch 1.6
+			wait 5.5 ticks
+			play note pling at player with pitch 1
+			play note pling at player with pitch 1
+			play note bass drum at player with pitch 1.6
+			play note snare drum at player with pitch 1.6
+			wait 5.5 ticks
+			play note pling at player with pitch 1
+			play note pling at player with pitch 1.4
+			delete {certify.%player%}
+			message "&f[&aSERVER&f] &a&oTown submitted! Please allow up to 72 hours for your submission to be reviewed."
+			stop
+
+on chat:
+	if {certify.%player%} is 1:
+		cancel event
+		set {certifytemp.%player%::name} to message
+		message "&f[&aSERVER&f] &eSet town name to: &6%message%"
+		set {certify.%player%} to 2
+		message "&f[&aSERVER&f] &eIn chat, please type a short description of your town."
+		stop
+	if {certify.%player%} is 2:
+		cancel event
+		set {certifytemp.%player%::desc} to message
+		message "&f[&aSERVER&f] &eSet town description to: &6%message%"
+		set {certify.%player%} to 3
+		message "&f[&aSERVER&f] &eTo finish certification application, stand at your town spawn point in the Town Hall and type &a/certify&e."
+		message "&f[&aSERVER&f] &cTo abandon this progress and quit the application, type &4/quit&c."
+		stop
+command /quit:
+	trigger:
+		{certify.%player%} is set
+		delete {certify.%player%}
+		message "&f[&aSERVER&f] &cCanceled application."
+
+command /townwarp <integer>:
+	trigger:
+		message "&a&oNow traveling to &6%{towns.name::%arg%}%&a."
+		push the player upwards at speed 10
+		execute console command "/playsound random.explode %player% ~0 ~0 ~0 20 50"
+		loop 33 times:
+			spawn 20 of mob spell data 1 offset with 1, 0, 1 at location of player
+			wait 1 tick
+		spawn 10 of huge explosion data 1 offset with 2, 2, 2 at location of player
+		wait 5 ticks
+		teleport the player to {towns.warp::%arg%}
+command /towns [<text>] [<text>]:
+	permission: essentials.socialspy
+	trigger:
+		if arg 1 is not set:
+			message "&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-[ &aTOWN MENU &f&l]-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-"
+			message "&a&nALL TOWNS:"
+			loop {towns.name::*}:
+				message "&a&l%loop-index%. &b%loop-value%"
+				message "&a&lDescription: &f%{towns.desc::%loop-index%}%"
+				message "&a&lWarp: &f%{towns.warp::%loop-index%}%"
+				message "&a&lCertified: &f%{towns.certified::%loop-index%}%"
+				message " "
+			message "&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l--&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-"
+		if arg 1 is "certify":
+			if {towns.certified::%arg 2%} is set:
+				set {towns.certified::%arg 2%} to now
+				message "&aSuccessfully certified %{towns.name::%arg 2%}%!&e Be sure they have a warp in the &a/towns&e menu and at the server warp hub!"
+			else:
+				message "&cInvalid town id number!"
+command /owners:
+	trigger:
+		loop {towns.owner::*}:
+			message "&l%loop-index%&e %loop-value% &f- &a%{towns.name::%loop-index%}%"
+command /testtowns:
+	trigger:
+		loop {towns.name::*}:
+			message "%loop-index% &a%loop-value% &e%{towns.owner::%loop-index%}%"
+command /town [<text>] [<text>]:
+	trigger:
+		message "&cThis feature is under renovations. Please bear with us for a little while while we make it better for you!"
+		stop
+		if arg 1 is not set:
+			message "&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-[ &aTOWN MENU &f&l]-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-"
+			message "&eTOWNS YOU OWN:"
+			set {_ownedtowns} to 0
+			loop {towns.owner::*}:
+				if {towns.owner::%loop-index%} is player:
+					message " - &a&o%{towns.name::%loop-index%}%"
+					add 1 to {_ownedtowns}
+			if {_ownedtowns} is 0:
+				message " - &c&oYou own no certified towns"
+			set {_towns} to 0
+			message "&eTOWNS YOU RESIDE IN:"
+			loop {residency.%player%::*}:
+				message " - &a&o%loop-value%"
+				add 1 to {_towns}
+			if {_towns} is 0:
+				message " - &c&oNo certified town residency found"
+			message "&a/town list&e to see all official player towns."
+			message "&a/town view name&e to view a town's information."
+			message "&a/town edit name&e to manage a town you own."
+			message "&a/certify&e to apply your town for certification."
+			message "&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l--&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-"
+			stop
+		if arg 1 is "edit":
+			if arg 2 is set:
+				loop {towns.name::*}:
+					if arg 2 is loop-value:
+						if player is {towns.owner::%loop-index%}:
+							set {towns.%player%.editing} to loop-index
+							message "&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-[ &aTOWN MENU &f&l]-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-"
+							message "&a&nYou are now editing %arg 2%!"
+							message "&oYou can:"
+							message " &a/town add username&e to add somebody to your resident list."
+							message " &a/town remove username&e to remove somebody from your resident list."
+							message " &a/town movespawn&e to move your town's spawn to your current location."
+							message " &a/town theme add&e to add held block to your town's prefered material list."
+							message " &a/town theme remove&e to remove held block to your town's prefered material list."
+							message "&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l--&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-"
+							stop
+						else:
+							message "&cYou don't own this town!"
+							stop
+				message "&cFound no town by that name!"
+				stop
+			else:
+				message "&cYou didn't include which town you want to edit!"
+				stop
+		if arg 1 is "add":
+			if {towns.%player%.editing} is set:
+				if {special.%arg 2%.last} is set:
+					add arg 2 to {towns.residents.%{towns.%player%.editing}%::*}
+					message "&aAdded %arg 2% to resident list!"
+					add {towns.name::%{towns.%player%.editing}%} to {residency.%arg 2%::*}
+					stop
+				else:
+					message "&cYou must type the full username! Nobody ever logged in by that name!"
+					stop
+			else:
+				message "&cYou haven't selected a town to edit!"
+		if arg 1 is "remove":
+			if {towns.%player%.editing} is set:
+				loop {towns.residents.%{towns.%player%.editing}%::*}:
+					arg 2 is loop-value
+					remove {towns.residents.%{towns.%player%.editing}%::%loop-index%} from {towns.residents.%{towns.%player%.editing}%::*}
+					message "&aRemoved %arg 2% from resident list!"
+					loop {residency.%arg 2%::*}:
+						loop-value-2 is {towns.name::%{towns.%player%.editing}%}
+						remove {residency.%arg 2%::%loop-index-2%} from {residency.%arg 2%::*}
+					stop
+				message "&cCouldn't find a resident by that name!"
+				stop
+			else:
+				message "&cYou haven't selected a town to edit!"
+		if arg 1 is "theme":
+			if arg 2 is "add":
+				if {towns.%player%.editing} is set:
+					add type of player's tool to {towns.theme.%{towns.%player%.editing}%::*}
+					message "&aAdded %type of player's tool% to town theme list!"
+				else:
+					message "&cYou haven't selected a town to edit!"
+			if arg 2 is "remove":
+				if {towns.%player%.editing} is set:
+					loop {towns.theme.%{towns.%player%.editing}%::*}:
+						loop-value is type of player's tool
+						remove {towns.theme.%{towns.%player%.editing}%::%loop-index%} from {towns.theme.%{towns.%player%.editing}%::*}
+						message "&aRemoved %type of player's tool% from theme list!"
+						stop
+					message "&cCouldn't find %type of player's tool% in the theme list!"
+					stop
+				else:
+					message "&cYou haven't selected a town to edit!"
+		if arg 1 is "view" or "info":
+			if arg 2 is set:
+				loop {towns.name::*}:
+					arg 2 is loop-value
+					message "&6Information on &n%loop-value%&r&6:"
+					message "&e Owner: &a%{towns.owner::%loop-index%}%"
+					message "&e Location: &f%{towns.warp::%loop-index%}%"
+					message "&e Biome: &f%{towns.biome::%loop-index%}%"
+					message "&e Description: &f&o%{towns.desc::%loop-index%}%"
+					message "&e Residents:"
+					loop {towns.residents.%loop-index%::*}:
+						message "  &f  - &f&o%loop-value-2%"
+					message "&e Prefered Blocks:"
+					loop {towns.theme.%loop-index%::*}:
+						message "  &f  - &f&o%loop-value-2%"
+					message "&e Last certified: &f%{towns.certified::%loop-index%}%"
+					stop
+				message "&e&lALL OFFICAL TOWNS:"
+				loop {towns.name::*}:
+					message "&a&l%loop-index%. &b%loop-value%"
+					stop
+			else:
+				message "&e&lALL OFFICAL TOWNS:"
+				loop {towns.name::*}:
+					message "&a&l%loop-index%. &b%loop-value%"
+					stop
+		if arg 1 is "list":
+			message "&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-[ &aTOWN LIST &f&l]-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-"
+			message "&e&lALL OFFICAL TOWNS:"
+			loop {towns.name::*}:
+				message "&a&l%loop-index%. &b%loop-value%"
+			message "&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l--&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-"
+			stop
+			

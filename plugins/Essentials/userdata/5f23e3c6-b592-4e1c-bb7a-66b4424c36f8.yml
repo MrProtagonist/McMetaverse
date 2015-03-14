@@ -1,0 +1,115 @@
+money: '814.0'
+geolocation: Canada
+lastAccountName: Hobbitsyfeet
+timestamps:
+  login: 1426305724921
+  logout: 1426305824311
+  lastteleport: 1426216887180
+ipAddress: 208.98.235.2
+logoutlocation:
+  world: Metacurse
+  x: -2332.7176342959838
+  y: 70.0
+  z: -2882.5428009192524
+  yaw: 348.0831
+  pitch: -16.46693
+lastlocation:
+  world: Metacurse
+  x: -2331.4267650021998
+  y: 88.4435085070194
+  z: -4102.475515828824
+  yaw: -156.71191
+  pitch: 40.772266
+homes:
+  mine:
+    world: Metacurse
+    x: -154.0463072895028
+    y: 98.0
+    z: 1143.954850564737
+    yaw: -184.44055
+    pitch: 33.85918
+  office:
+    world: Metacurse
+    x: 64.1704242707556
+    y: 70.0
+    z: -100.60297676793441
+    yaw: 181.37463
+    pitch: 6.536274
+  spot1:
+    world: Metacurse
+    x: -100.06834099782195
+    y: 78.0
+    z: -872.4384065942546
+    yaw: 214.88292
+    pitch: 16.873312
+  flowers:
+    world: Metacurse
+    x: -2133.7114589219027
+    y: 90.0
+    z: -955.0520031553415
+    yaw: 54.271053
+    pitch: 42.537693
+  home:
+    world: Metacurse
+    x: -2331.324060313565
+    y: 97.0
+    z: -2879.3831462812523
+    yaw: 181.9956
+    pitch: 4.9943485
+  shaft:
+    world: Metacurse
+    x: -332.3886753999867
+    y: 47.0
+    z: 1181.1068704276763
+    yaw: 122.71405
+    pitch: 35.292442
+  arena:
+    world: Metacurse
+    x: -1371.6318213210236
+    y: 80.0
+    z: -12.761514344954108
+    yaw: 1.5450279
+    pitch: 31.309568
+  sungeon:
+    world: Metacurse
+    x: -200.63226630451305
+    y: 34.0
+    z: 976.2288041283931
+    yaw: -35.226784
+    pitch: 31.007736
+  lace:
+    world: Metacurse
+    x: -4577.755869838868
+    y: 86.0
+    z: 907.3531865581458
+    yaw: 288.79184
+    pitch: 13.767886
+  island:
+    world: Metacurse
+    x: -2466.95209571966
+    y: 66.0
+    z: -3742.432781656218
+    yaw: 1.6464233
+    pitch: 9.093513
+  flowerisland:
+    world: Metacurse
+    x: -2340.8601120269072
+    y: 90.0
+    z: -4134.716161898936
+    yaw: 257.9345
+    pitch: 16.757154
+  ice:
+    world: Metacurse
+    x: 3818.4417962250322
+    y: 108.0
+    z: 638.9092268593909
+    yaw: 56.46643
+    pitch: 19.19998
+  holyfuckhole:
+    world: Metacurse
+    x: 3617.8488158664004
+    y: 69.0
+    z: -3680.3238228988457
+    yaw: 274.71524
+    pitch: 58.64994
+afk: false

@@ -1,0 +1,21 @@
+money: '0.0'
+geolocation: United States
+lastlocation:
+  world: newMeta
+  x: -4070.5
+  y: 130.99330928292025
+  z: -651.5
+  yaw: -0.75
+  pitch: -0.14999998
+lastAccountName: ChivesSocks
+timestamps:
+  login: 1422772765407
+  logout: 1422773538132
+ipAddress: 67.163.250.108
+logoutlocation:
+  world: newMeta
+  x: -4545.101832318135
+  y: 65.0
+  z: -456.2308263848859
+  yaw: 67.33484
+  pitch: 13.79998

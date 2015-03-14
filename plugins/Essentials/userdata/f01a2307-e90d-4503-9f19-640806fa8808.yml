@@ -1,0 +1,45 @@
+lastAccountName: MrProtagonist
+timestamps:
+  login: 1426308105003
+  lastteleport: 1426299174810
+  logout: 1426315113251
+ipAddress: 96.18.6.121
+lastlocation:
+  world: Metacurse
+  x: -342.9530495178655
+  y: 115.73110542206764
+  z: -480.16185437772884
+  yaw: 348.66684
+  pitch: 20.099997
+logoutlocation:
+  world: Metacurse
+  x: 5239.8669252169975
+  y: 67.0
+  z: 5414.254444195175
+  yaw: 60.366447
+  pitch: 26.849987
+afk: false
+money: '4928851.0'
+mail:
+- §6[§rEvilLittleThing§6] §r4450 5553
+- §6[§rgreen11§6] §r-4271/78/-1354
+- §6[§rEvilLittleThing§6] §rx 1355 y 117 z -7579
+- §6[§rPeculiarPhillip§6] §rhey pro. what's up?
+- §6[§rPeculiarPhillip§6] §rHey pro. I have something for you. -720,66,-444. Thanks
+- §6[§rPeculiarPhillip§6] §rplease disregard the last mail. thanks
+godmode: false
+homes:
+  home:
+    world: Metacurse
+    x: 5277.727452669511
+    y: 73.0
+    z: 5444.5764208599985
+    yaw: 77.01642
+    pitch: 24.300001
+  flowers:
+    world: Metacurse
+    x: 5582.886321923275
+    y: 105.0
+    z: 5676.929588912474
+    yaw: -78.68334
+    pitch: 29.999975

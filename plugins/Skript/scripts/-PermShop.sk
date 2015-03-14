@@ -1,0 +1,588 @@
+﻿#Version 1.2.1
+#Added:
+#Permission (permsell.adminwarn) That sends a message when someone fakes a sign
+#Fixes for perms
+#Potential Fix for autotierer
+
+
+
+options: 
+    teir1: 30000 #citizen
+    teir2: 70000 #apprentice
+    teir3: 170000 #novice 247
+    teir4: 300000 #Adept387
+    teir5: 450000 #Journeyman587
+    teir6: 700000 #Elite867
+    teir7: 1000000 #Master1092
+    teir8: 1400000 #Noble1500ish
+    perm: permsell.admin
+    warningperm: permsell.adminwarn
+variables:
+    {spent.%player%} = 0
+    {boughtteir.%player%} = 0
+    {fixedteir.%player%.check4} = false
+command /setpermwarp:
+    description: Set location for perm shop.
+    permission: {@perm}
+    trigger:
+        set {sk.permshop} to location of player
+        message "<lime>Warp point set!"
+        stop   
+command /permshop:
+    description: Warp to the perm shop.
+    trigger:
+        teleport player to {sk.permshop}
+command /setcmdwarp:
+    description: Set location for cmd.
+    permission: {@perm}
+    trigger:
+        set {sk.cmd} to location of player
+        message "<lime>Warp point set!"
+        stop   
+command /cmd:
+    description: Warp to command center.
+    trigger:
+        teleport player to {sk.cmd}
+command /setss:
+    description: Set location for perm shop.
+    permission: {@perm}
+    trigger:
+        set {sk.ss} to location of player
+        message "<lime>Warp point set!"
+        stop   
+command /ss:
+    description: Warp to the perm shop.
+    trigger:
+        teleport player to {sk.ss}
+command /setmarket:
+    description: Set location for perm shop.
+    permission: {@perm}
+    trigger:
+        set {sk.market} to location of player
+        message "<lime>Warp point set!"
+        stop   
+command /market:
+    description: Warp to the perm shop.
+    trigger:
+        teleport player to {sk.market}
+on join:
+    {fixedteir.%player%.check4} is false:
+        set {fixedteir.%player%.check4} to true
+        log "Running autotier for %player%..."
+        make console execute "/fixtiers %player%"
+        
+        
+on sign change:
+    if line 1 of block is "[permsell]":
+        if player has permission "{@perm}":
+            set {_permission} to "null"
+            set {_text} to line 2
+            replace all " " with "_" in {_text}
+            
+            loop {permnick::*}:
+                if {_text} is loop-value:
+                    set {_permission} to loop-value
+                    set {_index} to loop-index
+                    stop loop
+                    
+            if {_permission} is "null":
+                message "&6&oCould not find compatible permission..."
+                stop     
+            log "%player% created a permsell sign"
+            set line 1 of block to "§a§lBUY"
+            set {_newtext} to {permnick::%{_index}%}
+            replace all "_" with " " in {_newtext}
+            set line 2 of block to "%{_newtext}%"
+            set line 4 of block to "§a§o$%line 3%"
+            if {ranknick::%{_index}%} is "null":
+                set line 3 of block to "&l&k. . . . . . . . . . ."
+            else:
+                set line 3 of block to "&4&l%{ranknick::%{_index}%}%"
+            stop
+    if line 1 of block is "&a&lBUY":
+        message "<red>You are not allowed to enter that on a sign!"
+        log "%player% tried to make a permsell sign and failed"
+#        loop all players:
+#            loop-player has permission "permsell.adminwarn":
+#                message loop-player "%player% tried to create an illigal Permsell sign at %block's location%"
+        set line 1 of block to "&f&lBLOCKED"
+
+command /perm <player> <integer> <text>:
+    permission: essentials.socialspy
+    trigger:
+        if arg 1's balance is greater than arg 2:
+            message "&aThey have the funds!"
+        else:
+            message "&cNot enough funds or could not verify!"
+            stop
+        message "&a&oBeginning to search for matching permission node to give..."
+        loop {permnick::*}:
+            if arg 3 is loop-value:
+                message "&aFound perm! Attempting to give %arg 1% permission for %arg 3% and charging them $%arg 2%..."
+                execute console command "eco take %arg 1% %arg 2%"
+                add arg 2 to {spent.%arg 1%}
+                execute console command "/manuaddp %arg 1% %{permnode::%loop-index%}%"
+                if {permnode2::%loop-index%} is not "null":
+                    execute console command "/manuaddp %arg 1% %{permnode2::%loop-index%}%"
+                if {permnode3::%loop-index%} is not "null":
+                    execute console command "/manuaddp %arg 1% %{permnode3::%loop-index%}%"
+                log "%arg 1% used a permsell sign and purchased %{node.%arg 1%}% and %{node2.%arg 1%}%"
+                send "&oYou just purchased &a&o%{node.%arg 1%}%&r&o!" to arg 1
+                add 1 to {credits.%arg 1%}
+
+                if {spent.%arg 1%} is greater than or equal to {@teir7}:
+                    {boughtteir.%arg 1%} is not {@teir7}
+                    Arg 1 does not have permission "is.master"
+                    execute console command "/manuadd %arg 1% master Metaverse"
+                    message "&6&o&lYou just got a promotion!" To arg 1
+                    broadcast "&a&o%arg 1%&e&o was just promoted to &4&oMaster&e&o!"
+                    set {boughtteir.%arg 1%} to {@teir7}
+                    stop
+                
+                if {spent.%arg 1%} is greater than or equal to {@teir6}:
+                    {boughtteir.%arg 1%} is not {@teir6}
+                    Arg 1 does not have permission "is.elite"
+                    execute console command "/manuadd %arg 1% elite Metaverse"
+                    message "&6&o&lYou just got a promotion!" To arg 1
+                    broadcast "&a&o%arg 1%&e&o was just promoted to &9&oElite&e&o!"
+                    set {boughtteir.%arg 1%} to {@teir6}
+                    stop
+                
+                if {spent.%arg 1%} is greater than or equal to {@teir5}:
+                    {boughtteir.%arg 1%} is not {@teir5}
+                    Arg 1 does not have permission "is.journeyman"
+                    execute console command "/manuadd %arg 1% journeyman Metaverse"
+                    message "&6&o&lYou just got a promotion!" To arg 1
+                    broadcast "&a&o%arg 1%&e&o was just promoted to &6&oJourneyman&e&o!"
+                    set {boughtteir.%arg 1%} to {@teir5}
+                    stop
+            
+                if {spent.%arg 1%} is greater than or equal to {@teir4}:
+                    {boughtteir.%arg 1%} is not {@teir4}
+                    Arg 1 does not have permission "is.adept"
+                    execute console command "/manuadd %arg 1% adept Metaverse"
+                    message "&6&o&lYou just got a promotion!" To arg 1
+                    broadcast "&a&o%arg 1%&e&o was just promoted to &3&oAdept&e&o!"
+                    set {boughtteir.%arg 1%} to {@teir4}
+                    stop
+                
+                if {spent.%arg 1%} is greater than or equal to {@teir3}:
+                    {boughtteir.%arg 1%} is not {@teir3}
+                    arg 1 does not have permission "is.novice"
+                    execute console command "/manuadd %arg 1% novice Metaverse"
+                    message "&6&o&lYou just got a promotion!" To arg 1
+                    broadcast "&a&o%arg 1%&e&o was just promoted to &b&oNovice&e&o!"
+                    set {boughtteir.%arg 1%} to {@teir3}
+                    stop
+            
+                if {spent.%arg 1%} is greater than or equal to {@teir2}:
+                    {boughtteir.%arg 1%} is not {@teir2}
+                    Arg 1 does not have permission "is.apprentice"
+                    execute console command "/manuadd %arg 1% apprentice Metaverse"
+                    message "&6&o&lYou just got a promotion!" To arg 1
+                    broadcast "&a&o%arg 1%&e&o was just promoted to &c&oApprentice&e&o!"
+                    set {boughtteir.%arg 1%} to {@teir2}
+                    stop
+                
+                if {spent.%arg 1%} is greater than or equal to {@teir1}:
+                    {boughtteir.%arg 1%} is not {@teir1}
+                    Arg 1 does not have permission "is.citizen"
+                    execute console command "/manuadd %arg 1% citizen Metaverse"
+                    message "&6&o&lYou just got a promotion!" To arg 1
+                    broadcast "&a&o%arg 1%&e&o was just promoted to &e&oCitizen&e&o!"
+                    set {boughtteir.%arg 1%} to {@teir1}
+                    stop
+                else:
+                    message "&e&oBuy more for a promotion!" To arg 1
+                    stop
+                stop
+        message "&c&lTotal failure. Check your command arguments."
+on right click on sign:
+    #Scan Line 1
+    line 1 of block is "§a§lBUY"
+    if {enable.%player%} is true:
+        stop
+    #Scan Line 2
+    set {_permission} to "null"
+    set {_text} to line 2
+    replace all " " with "_" in {_text}
+    loop {permnick::*}:
+        if {_text} is loop-value:
+            set {_permission} to loop-value
+            replace all "_" with " " in {_permission}
+            set {_index} to loop-index
+            stop loop
+    if {_permission} is "null":
+        message "<yellow>Incompatible Permission..."
+        stop  
+    #Scan Line 4
+    clear {rcost::*}
+    set {rcost::*} to line 4 parsed as "§a§o$%integer%"
+    if {rcost::*} is not set:
+        if parse error is set:
+            message "<red>Price is Invalid: %last parse error%"
+            stop
+        else:
+            message "<red>Something bad happened! Maybe you messed up the money line?"
+            stop
+    set {node.%player%} to {permnode::%{_index}%}
+    set {node2.%player%} to {permnode2::%{_index}%}
+    set {node3.%player%} to {permnode3::%{_index}%}
+    set {perm.%player%} to {_permission}
+    set {desc.%player%} to {permdesc::%{_index}%}
+
+
+    #MENU (shouldn't show if money isn't available.)
+    message " "
+    message "   &f-&7 -&8 -&0 -&8 -&7 -&f -[&d&l METAVERSE PERM SHOP &f]-&7 -&8 -&0 -&8 -&7 -&f -"
+    message " "
+    message "   &r&lNAME: &6 %{perm.%player%}%"
+    message "   &r&lPRICE: &a$%{rcost::1}%"
+    if {desc.%player%} is not "<none>":
+        message "   &r&lSUMMARY: &e&o%{desc.%player%}%"
+        message " "
+    if player has permission "%{node.%player%}%":
+        message "   &f-&7 -&8 -&0 -&8 -&7 -&f -[ &c&lYOU ALREADY OWN THIS!&r&f ]-&7 -&8 -&0 -&8 -&7 -&f -"
+        stop
+    if player's balance is less than {rcost::1}:
+        message "   &f-&7 -&8 -&0 -&8 -&7 -&f -[ &c&lYOU CANT AFFORD THIS!&r&f ]-&7 -&8 -&0 -&8 -&7 -&f -"
+        stop
+    if {ranknick::%{_index}%} is not "null":
+        if player does not have permission "%{ranknode::%{_index}%}%":
+            message "   &f-&7 -&8 -&0 -&8 -&7 -&f -[ &c&lINSUFFICIENT RANK!&r&f ]-&7 -&8 -&0 -&8 -&7 -&f -"
+            stop
+    if {ranknick::%{_index}%} is not "null":
+        if player does not have permission "%{ranknode::%{_index}%}%":
+            stop
+    message " &f-&7 -&8 -&0 -&8 -&7 -&f -[ &e&lType &a&l/confirm&r&e or &c&l/decline&f ]-&7 -&8 -&0 -&8 -&7 -&f -"
+    set {decided.%player%} to false
+    set {index.%player%} to {_index}
+    set {timer.%player%} to 10
+    set {enable.%player%} to true
+    wait 10 seconds
+    if {decided.%player%} is false:
+        message "&e&oTransaction timed out."
+        set {decided.%player%} to false
+        set {enable.%player%} to false
+    else:
+        message "&a&oTransaction completed."
+        set {decided.%player%} to false
+        set {enable.%player%} to false
+    set {enable.%player%} to false
+command /confirm:
+    description: Accepts a permission purchase.
+    usage: /confirm
+    trigger:
+        {enable.%player%} is true
+        set {decided.%player%} to true
+        if player's balance is less than {rcost::1}:
+            message "&c&l&oINSUFFICIENT FUNDS."
+            stop
+        else:
+            execute console command "/eco take %player% %{rcost::1}%"
+            add {rcost::1} to {spent.%player%}
+
+            execute console command "/manuaddp %player% %{node.%player%}%"
+            if {node2.%player%} is not "null":
+                execute console command "/manuaddp %player% %{node2.%player%}%"
+            if {node3.%player%} is not "null":
+                execute console command "/manuaddp %player% %{node3.%player%}%"
+            log "%player% used a permsell sign and purchased %{node.%player%}% and %{node2.%player%}%"
+            
+            message "&oYou just purchased &a&o%{perm.%player%}%&r&o!"
+            add 1 to {credits.%player%}
+            
+            
+                
+            if {spent.%player%} is greater than or equal to {@teir7}:
+                {boughtteir.%player%} is not {@teir7}
+                player does not have permission "is.master"
+                execute console command "/manuadd %player% master Metaverse"
+                message "&6&o&lYou just got a promotion!"
+                broadcast "&a&o%player%&e&o was just promoted to &4&oMaster&e&o!"
+                set {boughtteir.%player%} to {@teir7}
+                stop
+                
+            if {spent.%player%} is greater than or equal to {@teir6}:
+                {boughtteir.%player%} is not {@teir6}
+                player does not have permission "is.elite"
+                execute console command "/manuadd %player% elite Metaverse"
+                message "&6&o&lYou just got a promotion!"
+                broadcast "&a&o%player%&e&o was just promoted to &9&oElite&e&o!"
+                set {boughtteir.%player%} to {@teir6}
+                stop
+                
+            if {spent.%player%} is greater than or equal to {@teir5}:
+                {boughtteir.%player%} is not {@teir5}
+                player does not have permission "is.journeyman"
+                execute console command "/manuadd %player% journeyman Metaverse"
+                message "&6&o&lYou just got a promotion!"
+                broadcast "&a&o%player%&e&o was just promoted to &6&oJourneyman&e&o!"
+                set {boughtteir.%player%} to {@teir5}
+                stop
+            
+            if {spent.%player%} is greater than or equal to {@teir4}:
+                {boughtteir.%player%} is not {@teir4}
+                player does not have permission "is.adept"
+                execute console command "/manuadd %player% adept Metaverse"
+                message "&6&o&lYou just got a promotion!"
+                broadcast "&a&o%player%&e&o was just promoted to &3&oAdept&e&o!"
+                set {boughtteir.%player%} to {@teir4}
+                stop
+                
+            if {spent.%player%} is greater than or equal to {@teir3}:
+                {boughtteir.%player%} is not {@teir3}
+                player does not have permission "is.novice"
+                execute console command "/manuadd %player% novice Metaverse"
+                message "&6&o&lYou just got a promotion!"
+                broadcast "&a&o%player%&e&o was just promoted to &b&oNovice&e&o!"
+                set {boughtteir.%player%} to {@teir3}
+                stop
+            
+            if {spent.%player%} is greater than or equal to {@teir2}:
+                {boughtteir.%player%} is not {@teir2}
+                player does not have permission "is.apprentice"
+                execute console command "/manuadd %player% apprentice Metaverse"
+                message "&6&o&lYou just got a promotion!"
+                broadcast "&a&o%player%&e&o was just promoted to &c&oApprentice&e&o!"
+                set {boughtteir.%player%} to {@teir2}
+                stop
+                
+            if {spent.%player%} is greater than or equal to {@teir1}:
+                {boughtteir.%player%} is not {@teir1}
+                player does not have permission "is.citizen"
+                execute console command "/manuadd %player% citizen Metaverse"
+                message "&6&o&lYou just got a promotion!"
+                broadcast "&a&o%player%&e&o was just promoted to &e&oCitizen&e&o!"
+                set {boughtteir.%player%} to {@teir1}
+                stop
+                
+            message "&e&oBuy more for a promotion!"
+            
+            
+command /decline:
+    description: Declines a permission purchase.
+    usage: /decline
+    trigger:
+        message "&c&oTransaction canceled."
+        set {decided.%player%} to true
+        
+#/addperm name, nodename
+command /addperm <text> <text> [<text>]:
+    description: Add a permission to buy from a sign
+    permission: {@perm}
+    usage: /addperm name, nodename, desc
+    trigger:
+        loop {permnode::*}:
+            if {permnode::%loop-value%} is arg 1:
+                message "<red>That permission already Exists!"
+                stop
+              
+        add arg 1 to {permnick::*}
+        add arg 2 to {permnode::*}
+        add "null" to {permnode2::*}
+        add "null" to {permnode3::*}
+        add "null" to {ranknode::*}
+        add "null" to {ranknick::*}
+        if arg 3 is set:
+            add arg 3 to {permdesc::*}
+        else:
+            add "<none>" to {permdesc::*}
+        message "&a&oSuccessfully added!"
+
+command /addperms <text> <text> [<text>]:
+    description: Add additional perms to one sign
+    permission: {@perm}
+    usage: /addperms nickname node [node]
+    trigger:
+        message "&a&oStarting..."
+        loop {permnick::*}:
+            message "&a&oLooping..."
+            if loop-value is arg 1:
+                message "&a&oFound match!"
+                if arg 2 is not set:
+                    message "<red>You need to add at least one perm"
+                set {permnode2::%loop-index%} to arg 2
+                message "&a&oSuccessfully added!"
+                if arg 3 is set:
+                    set {permnode3::%loop-index%} to arg 3
+                    message "&a&oSuccessfully added another!"
+                stop trigger
+            message "&c&oNo match!"
+
+command /addrank <text> <text> <text>:
+    description: Add a rank that's required for buying a certain rank
+    permission: {@perm}
+    usage: /addrank perm ranknode ranknick
+    trigger:
+        loop {permnick::*}:
+            if loop-value is arg 1:
+                if {ranknode::%loop-index%} is not "null":
+                    message "%arg 1% already has a rank, overriding..."
+        loop {permnick::*}:
+            if loop-value is arg 1:
+                set {ranknode::%loop-index%} to arg 2
+                set {ranknick::%loop-index%} to arg 3
+                message "&aAdded %arg 3% to %arg 1%"
+                stop
+        message "&4%arg 1% is not a perm"
+
+command /delrank <text>:
+    description: Remove a rank connected to a perm
+    permission: {@perm}
+    usage: /delrank perm
+    trigger:
+        loop {permnick::*}:
+            if loop-value is arg 1:
+                if {ranknode::%loop-index%} is "null":
+                    message "%arg 1% does not have a rank!"
+                    stop
+        loop {permnick::*}:
+            if loop-value is arg 1:
+                message "&aRemoved %{ranknick::%loop-index%}% from %loop-value%"
+                set {ranknode::%loop-index%} to "null"
+                set {ranknick::%loop-index%} to "null"
+                stop
+
+command /clearranks:
+    description: Clear al ranks connected to perms
+    permission: {@perm}
+    usage: /clearranks
+    trigger:
+        loop {permnick::*}:
+            set {ranknode::%loop-index%} to "null"
+            set {ranknick::%loop-index%} to "null"
+        message "&4Cleared All Ranks"
+
+command /removeperm <text>:
+    description: Remove a permission from the list
+    permission: {@perm}
+    usage: /removeperm (name)
+    trigger:
+        loop {permnick::*}:
+            if loop-value is arg 1:
+                remove loop-value from {permnick::*}
+                remove {permnode::%loop-index%} from {permnode::*}
+                remove {permnode2::%loop-index%} from {permnode2::*}
+                remove {permnode3::%loop-index%} from {permnode3::*}
+                remove {permdesc::%loop-index%} from {permdesc::*}
+                if {ranknode::%loop-index%} is not "null":
+                    message "Debug: Found a rank, removing!"
+                    set {ranknode::%loop-index%} to "null"
+                    set {ranknick::%loop-index%} to "null"
+                message "Removed %arg 1%"
+                stop trigger
+        
+        message "<red>Could not find %arg 1%"
+        
+command /listperms:
+    description: List the permissions list
+    permission: {@perm}
+    usage: /listperms
+    trigger:
+        message "&6&lID &r&l- &6&lNAME &r&l-  &6&lNODE   &r&l-   &6&lDESC"
+        loop {permnick::*}:
+            message "&e%loop-index%&f&l - &e%{permnick::%loop-index%}%&r&l - &e%{permnode::%loop-index%}%&r&l  - &e%{permdesc::%loop-index%}%"
+            {permnode2::%loop-index%} is not "null"
+            message "&e                %{permnode2::%loop-index%}%"
+            {permnode3::%loop-index%} is not "null"
+            message "&e                %{permnode3::%loop-index%}%"
+        stop trigger
+        message "<red>No perms to display"
+
+command /clearperms:
+    description: Clear all perms [WARNING]
+    permission: {@perm}
+    usage: /clearperm
+    trigger:
+        clear {permnick::*}
+        clear {permnode::*}
+        clear {permnode2::*}
+        clear {permnode3::*}
+        clear {permdesc::*}
+        clear {ranknode::*}
+        clear {ranknick::*}
+        message "Cleared all saved perms"
+command /debug [<player>]:
+    description: Debug
+    permission: {@perm}
+    usage: /debug
+    trigger:
+        arg is not set:
+            message "Your worth is: %{spent.%player%}%. Bought teir: %{boughtteir.%player%}%."
+        else:
+            player has permission "{@perm}":
+                message "%arg%'s worth is: %{spent.%arg%}%. Bought teir: %{boughtteir.%arg%}%."
+            else:
+                message "&4You do not have the permission to use this command"
+command /resetworth:
+    description: Debug
+    usage: /debug
+    permission: {@perm}
+    trigger:
+        message "reset worth and stuffs"
+        set {boughtteir.%player%} to 0
+        set {spent.%player%} to 0
+        
+command /fixtiers <offline player>:
+    trigger:
+        log "Fixing teir for %arg%..."
+        arg has permission "is.noble":
+            set {boughtteir.%arg%} to {@teir8}
+#            set {spent.%player%} to {@teir8}
+            message "&3%arg% get's autoteired at {@teir8} for group noble. Fancy."
+            log "%arg% get's autoteired at {@teir8}"
+        else if arg has permission "is.master":
+            set {boughtteir.%arg%} to {@teir7}
+#            set {spent.%player%} to {@teir7}
+            message "&3%arg% get's autoteired at {@teir7} for group master"
+            log "%arg% get's autoteired at {@teir7}"
+        else if arg has permission "is.elite":
+            set {boughtteir.%arg%} to {@teir6}
+#            set {spent.%player%} to {@teir6}
+            message "&3%arg% get's autoteired at {@teir6} for group elite"
+            log "%arg% get's autoteired at {@teir6}"
+        else if arg has permission "is.journeyman":
+            set {boughtteir.%arg%} to {@teir5}
+#            set {spent.%player%} to {@teir5}
+            log "%arg% get's autoteired at {@teir5}"
+            message "&3%arg% get's autoteired at {@teir5} for group journeyman"
+        else if arg has permission "is.adept":
+            set {boughtteir.%arg%} to {@teir4}
+#            set {spent.%player%} to {@teir4}
+            message "&3%arg% get's autoteired at {@teir4} for group adept"
+            log "%arg% get's autoteired at {@teir4}"
+        else if arg has permission "is.novice":
+            set {boughtteir.%arg%} to {@teir3}
+#            set {spent.%player%} to {@teir3}
+            message "&3%arg% get's autoteired at {@teir3} for group novice"
+            log "%player% get's autoteired at {@teir3}"
+        else if arg has permission "is.apprentice":
+            set {boughtteir.%arg%} to {@teir2}
+#            set {spent.%player%} to {@teir2}
+            message "&3%arg% get's autoteired at {@teir2} for group apprentice"
+            log "%arg% get's autoteired at {@teir2}"
+        else if arg has permission "is.citizen":
+            set {boughtteir.%arg%} to {@teir1}
+ #           set {spent.%player%} to {@teir1}
+            message "&3%arg% get's autoteired at {@teir1} for group citizen"
+            log "%arg% get's autoteired at {@teir1}"
+        else:
+            set {boughtteir.%arg%} to 0
+            set {spent.%player%} to 0
+            message "&3%arg% has no documented rank, therefor has no teir"
+            log "%arg% has no rank, therefor has no teir"
+            
+command /resetlisteners [<player>]:
+    description: Debug
+    usage: /debug
+    permission: {@perm}
+    trigger:
+        arg is not set:
+            message "&eReset Listeners"
+            set {decided.%player%} to false
+            set {enable.%player%} to false
+        else:
+            message "&eReset Listeners"
+            set {decided.%arg%} to false
+            set {enable.%arg%} to false

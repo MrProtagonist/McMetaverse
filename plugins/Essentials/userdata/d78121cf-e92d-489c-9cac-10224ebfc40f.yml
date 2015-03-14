@@ -1,0 +1,52 @@
+geolocation: United States
+lastlocation:
+  world: Metacurse
+  x: 877.418770528371
+  y: 92.0
+  z: -3050.4881880913836
+  yaw: 4.3920736
+  pitch: -27.000011
+lastAccountName: Icespot744
+timestamps:
+  login: 1425956192609
+  lastteleport: 1425960068677
+  logout: 1425960143348
+ipAddress: 98.214.98.209
+logoutlocation:
+  world: Metacurse
+  x: 875.5856255393003
+  y: 87.0
+  z: -3039.4445781441054
+  yaw: -112.90793
+  pitch: 47.099968
+money: '17986.59'
+homes:
+  home:
+    world: Metacurse
+    x: 6537.405287137779
+    y: 81.0
+    z: 3146.1156280357945
+    yaw: 182.39874
+    pitch: 3.4500678
+  mountain:
+    world: Metacurse
+    x: 895.3492592876023
+    y: 70.0
+    z: -3047.180861796044
+    yaw: 222.0412
+    pitch: -43.950027
+  nether:
+    world: Metacurse_nether
+    x: -357.579298510001
+    y: 39.0
+    z: -2.58516315256933
+    yaw: 338.06445
+    pitch: 3.299995
+  fortress:
+    world: Metacurse_nether
+    x: -950.2611116933314
+    y: 60.0
+    z: 688.2436865138048
+    yaw: 291.9796
+    pitch: 7.6499066
+afk: false

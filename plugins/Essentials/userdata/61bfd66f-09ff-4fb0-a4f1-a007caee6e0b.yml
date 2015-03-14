@@ -1,0 +1,25 @@
+money: '329.0'
+lastlocation:
+  world: Metacurse
+  x: -37.28261760071193
+  y: 71.0
+  z: -90.9658649744356
+  yaw: 209.61688
+  pitch: 18.599974
+geolocation: United States
+lastAccountName: hellzkitten
+timestamps:
+  login: 1425525024146
+  lastteleport: 1425526453512
+  logout: 1425527104992
+  jail: 0
+ipAddress: 75.171.140.164
+logoutlocation:
+  world: Metacurse
+  x: -2167.054006058363
+  y: 78.0
+  z: -1008.9573581272766
+  yaw: 259.25903
+  pitch: 26.133995
+jailed: false
+afk: false

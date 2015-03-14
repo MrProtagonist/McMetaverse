@@ -1,0 +1,160 @@
+on command "/profile":
+	wait 2 real seconds
+	{profile.%player%.complete} is not set
+	{nickname.%player%} is set
+	{age.%player%} is set
+	{favoritecolor.%player%} is set
+	{favoritefood.%player%} is set
+	{favoriteanimal.%player%} is set
+	{interests.%player%} is set
+	{FavoriteMusic.%player%} is set
+	{favoritesport.%player%} is set
+	{favoritebrand.%player%} is set
+	{favoritecar.%player%} is set
+	message "&f[&aSERVER&f] &6Thank you for completing your profile! You earned 50 &6&oMeta&a&oPoints&e&o!"
+	set {profile.%player%.complete} to true
+	execute console command "/enjin addpoints %player% 50"
+every 30 real minutes:
+	loop all players:
+		{profile.%loop-player%.complete} is not set
+		send "&f[&aSERVER&f] &6You can get 50 free &6&oMeta&a&oPoints&e&o&6 by completing your &a/profile&6." to loop-player
+command /view:profile [<player>]:
+	trigger:
+		if argument 1 is set:
+			message "§b§l%arg player%'s Profile"
+			if {nickname.%arg player%} is set:
+				message "§eNickname: §a%{nickname.%arg player%}%"
+			else:
+				message "§eNickname: §7not set."
+			if {age.%arg player%} is set:
+				message "§eAge: §a%{age.%arg player%}%"
+			else:
+				message "§eAge: §7not set."
+			if {favoritecolor.%arg player%} is set:
+				message "§eFavorite color: §a%{favoritecolor.%arg player%}%"
+			else:
+				message "§eFavorite color: §7not set."
+			if {favoritefood.%arg player%} is set:
+				message "§eFavorite Food: §a%{favoritefood.%arg player%}%"
+			else:
+				message "§eFavorite Food: §7not set."
+			if {favoriteanimal.%arg player%} is set:
+				message "§eFavorite Animal: §a%{favoriteanimal.%arg player%}%"
+			else:
+				message "§eFavorite Animal: §7not set."
+			if {FavoriteMusic.%arg player%} is set:
+				message "§eFavorite Music Genre: §a%{FavoriteMusic.%arg player%}%"
+			else:
+				message "§eFavorite Music Genre: §7not set."
+			if {favoritesport.%arg player%} is set:
+				message "§eFavorite Sport: §a%{favoritesport.%arg player%}%"
+			else:
+				message "§eFavorite Sport:§7 not set."
+			if {favoritebrand.%arg player%} is set:
+				message "§eFavorite Brand: §a%{favoritebrand.%arg player%}%"
+			else:
+				message "§eFavorite Brand: §7not set."
+			if {favoritecar.%arg player%} is set:
+				message "§eFavorite Car: §a%{favoritecar.%arg player%}%"
+			else:
+				message "§eFavorite Car:§7 not set"
+			if {interests.%arg player%} is set:
+				message "§eInterests: §a%{interests.%arg player%}%"
+			else:
+				message "§eInterests: §7not set."
+
+command /age:profile [<integer>]:
+	trigger:
+		if argument 1 is set:
+			set {age.%player%} to argument 1
+			message "§aYour age was set to: %argument 1%"
+
+command /profile [<text>] [<text>]:
+	trigger:
+		if argument 1 is "view" or "v":
+			if argument 2 is set:
+				execute player command "/view:profile %argument 2%"
+			else:
+				message "§cYou must enter a playername."
+		else if argument 1 is "color" or "c":
+			if argument 2 is set:
+				set {favoritecolor.%player%} to argument 2
+				message "§aYour favorite color was set to: %argument 2%"
+			else:
+				message "§cMissing argument."
+				message "§cCommand: §e/profile color <color>"
+		else if argument 1 is "nickname" or "nick" or "n":
+			if argument 2 is set:
+				set {nickname.%player%} to colored argument 2
+				message "§aYour nickname was set to: %argument 2%"
+			else:
+				message "§cMissing argument."
+				message "§cCommand: §e/profile nickname <nickname>"
+		else if argument 1 is "age" or "a":
+			if argument 2 is set:
+				execute player command "/age:profile %argument 2%"
+			else:
+				message "§cYou must enter an age."
+		else if argument 1 is "food" or "f":
+			if argument 2 is set:
+				set {favoritefood.%player%} to argument 2
+				message "§aYour favorite food was set to: %argument 2%"
+			else:
+				message "§cMissing argument."
+				message "§cCommand: §e/profile food <Favorite Food>"
+		else if argument 1 is "animal" or "a":
+			if argument 2 is set:
+				set {favoriteanimal.%player%} to argument 2
+				message "§aYour favorite animal was set to: %argument 2%"
+			else:
+				message "§cMissing argument."
+				message "§cCommand: §e/profile animal <Favorite Animal>"
+		else if argument 1 is "interests" or "i":
+			if argument 2 is set:
+				set {interests.%player%} to argument 2
+				message "§aYour interests was set to: %argument 2%"
+			else:
+				message "§cMissing argument."
+				message "§cCommand: §e/profile interests <Interest(S)>"
+		else if argument 1 is "music" or "m":
+			if argument 2 is set:
+				set {FavoriteMusic.%player%} to argument 2
+				message "§aYour favorite music genre was set to: %argument 2%"
+			else:
+				message "§cMissing argument."
+				message "§cCommand: §e/profile music <Favorite Music>"
+		else if argument 1 is "brand" or "b":
+			if argument 2 is set:
+				set {favoritebrand.%player%} to argument 2
+				message "§aYour favorite brand was set to: %argument 2%"
+			else:
+				message "§cMissing argument."
+				message "§cCommand: §e/profile brand <Favorite Brand>"
+		else if argument 1 is "sport" or "s":
+			if argument 2 is set:
+				set {favoritesport.%player%} to argument 2
+				message "§aYour favorite sport was set to: %argument 2%"
+			else:
+				message "§cMissing argument."
+				message "§cCommand: §e/profile sport <Favorite Sport>"
+		else if argument 1 is "car":
+			if argument 2 is set:
+				set {favoritecar.%player%} to argument 2
+				message "§aYour favorite car was set to: %argument 2%"
+			else:
+				message "§cMissing argument."
+				message "§cCommand: §e/profile car <Favorite Car>"
+		else:
+			message "§aProfile Commands:"
+			message "§7[&4TIP§7]§a Click on a command for quick type."
+			send json of "§e/profile view <player>" suggest "/profile view" to player
+			send json of "§e/profile color <Favorite color>" suggest "/profile color" to player
+			send json of "§e/profile nickname <Nickname>" suggest "/profile nickname" to player
+			send json of "§e/profile age </Age>" suggest "/profile age" to player
+			send json of "§e/profile food <Favorite Food>" suggest "/profile food" to player
+			send json of "§e/profile animal <Favorite Animal>" suggest "/profile animal" to player
+			send json of "§e/profile interests <Favorite Interests>" suggest "/profile interests" to player
+			send json of "§e/profile music <Favorite Music>" suggest "/profile music" to player
+			send json of "§e/profile sport <Favorite Sport>" suggest "/profile sport" to player
+			send json of "§e/profile brand <Favorite Brand>" suggest "/profile brand" to player
+			send json of "§e/profile car <Favorite Car>" suggest "/profile car" to player

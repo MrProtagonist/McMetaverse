@@ -1,0 +1,132 @@
+# ============= #
+#  PistonsPlus  #
+# ============= #
+#
+# Adds more pistons
+#
+# Author: GeekWithAChick
+# Version: 1.0
+#
+
+# This will check the permissions
+# -------------------------------
+on sign change:
+	line 1 is "[store]":
+		player has permission "sk.pistonsplus.store":
+			block behind event-block is not piston:
+				cancel event
+				send "Put the sign on the back of a piston"
+				stop
+			send "Piston made"
+			stop
+		cancel event
+		send "You don't have the permission to do this"
+	line 1 is "[crush]":
+		player has permission "sk.pistonsplus.crush":
+			block behind event-block is not piston:
+				cancel event
+				send "Put the sign on the back of a piston"
+				stop
+			send "Piston made"
+			stop
+		cancel event
+		send "You don't have the permission to do this"
+	line 1 is "[move 2]" or "[move 3]" or "[move 4]":
+		player has permission "sk.pistonsplus.move":
+			block behind event-block is not piston:
+				cancel event
+				send "Put the sign on the back of a piston"
+				stop
+			send "Piston made"
+			stop
+		cancel event
+		send "You don't have the permission to do this"
+	line 1 is "[pull 2]" or "[pull 3]" or "[pull 4]":
+		player has permission "sk.pistonsplus.pull":
+			block behind event-block is not piston:
+				cancel event
+				send "Put the sign on the back of a piston"
+				stop
+			send "Piston made"
+			stop
+		cancel event
+		send "You don't have the permission to do this"
+
+
+# This code will execute when a piston extends
+# --------------------------------------------
+on piston extend:
+# ------------
+# store piston
+# ------------
+	block behind event-block is sign:
+		line 1 of block behind event-block is "[store]":
+			block 3 blocks in front of event-block is trapped chest
+			set {_item} to type of block in front of event-block 
+			set block in front of event-block to air
+			add {_item} to the inventory of block 3 blocks in front of event-block
+# ------------
+# crush piston
+# ------------
+		line 1 of block behind event-block is "[crush]":
+			set {_item} to type of block in front of event-block
+			set block in front of event-block to air
+			drop {_item} at block 2 blocks in front of event-block
+# -------------
+# move 2 piston
+# -------------
+		line 1 of block behind event-block is "[move 2]":
+			block 3 blocks in front of event-block is air
+			set {_item} to type of block in front of event-block
+			set block in front of event-block to air
+			set block 3 blocks in front of event-block to {_item}
+# -------------
+# move 3 piston
+# -------------
+		line 1 of block behind event-block is "[move 3]":
+			block 4 blocks in front of event-block is air
+			set {_item} to type of block in front of event-block
+			set block in front of event-block to air
+			set block 4 blocks in front of event-block to {_item}
+# -------------
+# move 4 piston
+# -------------
+		line 1 of block behind event-block is "[move 4]":
+			block 5 blocks in front of event-block is air
+			set {_item} to type of block in front of event-block
+			set block in front of event-block to air
+			set block 5 blocks in front of event-block to {_item}
+
+# This code will execute when a piston retracts
+# ---------------------------------------------
+on piston retract:
+	event-block is sticky piston
+	block behind event-block is sign:
+# -------------
+# pull 2 piston
+# -------------
+		line 1 of block behind event-block is "[pull 2]":
+			block 2 blocks in front of event-block is air
+			set {_item} to type of block 3 blocks in front of event-block
+			set block 3 blocks in front of event-block to air
+			wait 3 ticks
+			set block in front of event-block to {_item}
+# -------------
+# pull 3 piston
+# -------------
+		line 1 of block behind event-block is "[pull 3]":
+			block 2 blocks in front of event-block is air
+			set {_item} to type of block 4 blocks in front of event-block
+			set block 4 blocks in front of event-block to air
+			wait 3 ticks
+			set block in front of event-block to {_item}
+# -------------
+# pull 4 piston
+# -------------
+		line 1 of block behind event-block is "[pull 4]":
+			block 2 blocks in front of event-block is air
+			set {_item} to type of block 5 blocks in front of event-block
+			set block 5 blocks in front of event-block to air
+			wait 3 ticks
+			set block in front of event-block to {_item}
+		

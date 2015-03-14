@@ -1,0 +1,29 @@
+geolocation: United States
+lastAccountName: jawripper01
+timestamps:
+  login: 1425817856088
+  lastteleport: 1425818452354
+  logout: 1425818806297
+ipAddress: 72.209.196.236
+lastlocation:
+  world: Metacurse
+  x: -65.67787298281405
+  y: 70.0
+  z: -70.21188048897693
+  yaw: 7.3500133
+  pitch: 16.5
+homes:
+  home:
+    world: Metacurse
+    x: -125.6908574855838
+    y: 73.0
+    z: -1175.7255509811082
+    yaw: 265.4043
+    pitch: 84.15004
+logoutlocation:
+  world: Metacurse
+  x: -125.6908574855838
+  y: 73.0
+  z: -1175.7255509811082
+  yaw: 71.30432
+  pitch: -34.949986

@@ -1,0 +1,57 @@
+command /mossman:
+	permission: mossyman
+	description: Mossy cobblestone guy
+	trigger:
+		set {_spawning} to true
+		set {mossman.%spawned villager%} to true
+		set {mossman.spot} to location of player
+		wait 1 tick
+		spawn a priest
+		set name of spawned entity to "&a&lMoss Man"
+		set {%spawned villager%.mossycobble} to true
+on spawn of a priest:
+	{_spawning} is true
+	set {_spawning} to false
+	set name of the entity to "&a&oMoss Man"
+on damage of a priest:
+	{mossman.%victim%} is true
+	cancel event
+	send "&c&lCannot attack this entity!" to attacker
+on rightclick on a priest:
+	{mossman.%clicked villager%} is true
+	cancel event
+	set {_mosscount} to 0
+	message "&f[&aMoss Man&f]: I can transform your cobble and vines into mossy cobblestone!"
+	wait 3 real seconds
+	if player has 1 cobblestone and 1 vines:
+		message "&f[&aMoss Man&f]: You came prepared! Please wait while i work my magic."
+		wait 1 real second
+		while player has 1 vines and 1 cobblestone:
+			spawn 20 of mob spell data 1 offset with 1, 0, 1 at clicked villager
+			spawn 30 of portal data 1 offset with 1, 0, 1 at clicked villager
+			give 1 mossy cobblestone to the player
+			remove 1 cobblestone from the inventory of player
+			remove 1 vines from the inventory of the player
+			add 1 to {_mosscount}
+			wait 1 tick
+		message "&f[&aMoss Man&f]: You now have &6&l%{_mosscount}%&f mossy cobblestone! Come again!"
+		execute console command "/playsound note.pling %player%"
+		
+		
+on skript stop:
+	loop {npc.mossman::*}:
+		kill loop-value
+
+every 3 ticks:
+	loop {npc.mossman::*}:
+		teleport loop-value to {mossman.spot}
+
+on script load:
+	wait 5 real seconds
+	loop {npc.mossman::*}:
+		kill loop-value
+	delete {npc.mossman::*}
+	spawn priest at {mossman.spot}
+	set name of spawned entity to "&a&lMoss Man"
+	set {mossman.%spawned villager%} to true
+	add spawned entity to {npc.mossman::*}

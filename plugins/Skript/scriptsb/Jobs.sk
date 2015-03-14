@@ -1,0 +1,134 @@
+command /job [<text>] [<text>] [<text>]:
+	trigger:
+		if arg 1 is not set:
+			message " "
+			message "&l- &6&oJOB MENU &r&l-"
+			message " "
+			message "&6&oList Jobs &r- &a&o/job list"
+			message "&6&oPost a Job &r- &a&o/job post [price] [description]"
+			message "&6&oRemove a posting &r- &a&o/job delete"
+			message "&6&oAccept a Job &r- &a&o/job accept [employer]"
+			message "&6&oFinished a Job &r- &a&o/job done"
+			stop trigger
+		if arg 1 is "list":
+			if {job.player.%player%} is set:
+				{job.player.%player%} is not "null"
+				message " "
+				message "&l- &c&oYour Job &r&l-"
+				message "&a$%{job.pay.%player%}% &r- &e&o%{job.employer.%player%}%&r: &o%{job.%player%}%"
+			message " "
+			message "&l- &6&oPosted Jobs &r&l-"
+			loop {job.pending::*}:
+				message "&a$%{job.pay::%loop-index%}% &r- &e&o%{job.employer::%loop-index%}%&r: &o%{job.pending::%loop-index%}%"
+			message " "
+			message "&oTo accept a job, simply type &a&o/job accept [username]&r."
+		else if arg 1 is "post":
+			if arg 2 is set:
+				if arg 3 is set:
+					loop {job.employer::*}:
+						if loop-value is player:
+							message "&c&oYou already have a job posted! You may only post one at a time."
+					set {job.%player%.temp.price} to arg 2 parsed as integer
+					if player's balance is less than {job.%player%.temp.price}:
+						message "&c&oYou do not have &a&o%arg 2%&c&o."
+						stop trigger
+					if player's balance is greater than {job.%player%.temp.price}:
+						broadcast "&a&o%player% &ojust posted a new job! Check it out with &e&o/job list&r."
+						add arg 3 to {job.pending::*}
+						add arg 2 to {job.pay::*}
+						add player to {job.employer::*}
+						execute console command "/eco take %player% %arg 2%"
+						wait 5 real seconds
+						message "&6&oYour job has been posted, and &a&o$%arg 2%&6&o has been taken from your account to be paid to your employee upon completion."	
+						stop trigger
+				else:
+					message "USAGE: /job post [price] [description]"
+					stop trigger
+			else:
+				message "USAGE: /job post [price] [description]"
+				stop trigger
+		else if arg 1 is "delete":
+			loop {job.employer::*}:
+				if loop-value is player:
+					execute console command "/eco give %player% %{job.pay::%loop-index%}%"
+					remove {job.pending::%loop-index%} from {job.pending::*}
+					remove {job.pay::%loop-index%} from {job.pay::*}
+					message "&c&oJob removed and money refunded."
+					remove {job.employer::%loop-index%} from {job.employer::*}
+					stop trigger
+			message "<red>Could not find a job to delete."
+			stop trigger
+		else if arg 1 is "accept":
+			if arg 2 is set:
+				if {job.%player%} is set:
+					if {job.%player%} is not "null":
+						message "&c&oYou already have a job. Check in &a&o/job list&c&o."
+						stop trigger
+				loop {job.employer::*}:
+					if loop-value is arg 2:
+						message "&a&o%player%&e&o just accepted your job posting!" to {job.employer::%loop-index%}
+						execute console command "/mail send %player% You accepted job from %{job.employer::%loop-index%}% to %{job.pending::%loop-index%}% for $%{job.pay::%loop-index%}%."
+						execute console command "/sudo %player% mail send %{job.employer::%loop-index%}% Accepted your job offer! This serves as a promise I will do the job you requested for $%{job.pay::%loop-index%}%."
+						message "&oYou just sent a promise to that player stating you would do his job. Don't make him take that letter to court if you never finish! Get to work!"
+						set {job.%player%} to {job.pending::%loop-index%}
+						set {job.employer.%{job.employer::%loop-index%}%.employee} to player
+						set {job.pay.%player%} to {job.pay::%loop-index%}
+						set {job.employer.%player%} to {job.employer::%loop-index%}
+						set {job.employer.%{job.employer::%loop-index%}%.pay} to {job.pay::%loop-index%}
+						remove {job.pending::%loop-index%} from {job.pending::*}
+						remove {job.pay::%loop-index%} from {job.pay::*}
+						remove {job.employer::%loop-index%} from {job.employer::*}
+						wait 5 real seconds
+						message "&e&oType &a&o/job done&e&o when you have finished your job to get paid!"
+			else:
+				message "Input the name of whos job you are accepting."
+		else if arg 1 is "done":
+			if {job.%player%} is not "null":
+				{job.%player%} is set
+				message "&a&oApproval sent to employer for verification."
+				message "&a&o%player% claims to have finished their job for you. Please confirm or deny this with &e&o/job request [confirm/deny]&a&o." to {job.employer.%player%}
+				execute console command "mail send %{job.employer.%player%}% &a&o%player% claims to have finished their job for you. Please confirm or deny this with &e&o/job request [confirm/deny]&a&o."
+			else:
+				message "&c&oYou have no job!"
+		else if arg 1 is "request":
+			{job.employer.%player%.employee} is set
+			{job.employer.%player%.employee} is not "null"
+			if arg 2 is "confirm":
+				message "&a&oVerification received. &e&oYour business with %{job.employer.%player%.employee}% is now complete."
+				message "&e&o%player% confirmed you finished your job! You are now receiving the %{job.employer.%player%.pay}%" to {job.employer.%player%.employee}
+				execute console command "/eco give %{job.employer.%player%.employee}% %{job.employer.%player%.pay}%"
+				set {job.employer.%player%.pay} to "null"
+				set {job.employer.%player%.employee} to "null"
+				set {job.pay.%{job.employer.%player%.employee}%} to "null"
+				set {job.employer.%{job.employer.%player%.employee}%} to "null"
+				set {job.employer.%{job.employer.%player%.employee}%.pay} to "null"
+				set {job.%{job.employer.%{job.employer.%player%}%.employee}%} to "null"
+			else if arg 2 is "deny":
+				message "&c&oPlease tell the player why you denied their request and help them complete it."
+				message "&e&o%player% claims you have not finished your job. Please speak to them and finish it properly to get paid." to {job.employer.%player%.employee}
+		else:
+			message "&c&oUnidentified command!"
+			message " "
+			message "&6&oList Jobs &r- &a&o/job list"
+			message "&6&oPost a Job &r- &a&o/job post [price] [description]"
+			message "&6&oRemove a posting &r- &a&o/job delete"
+			message "&6&oAccept a Job &r- &a&o/job accept [employer]"
+			message "&6&oFinished a Job &r- &a&o/job done"
+			stop trigger
+every 5 minutes:
+	loop all players:
+		{job.%loop-player%} is set
+		{job.%loop-player%} is not "null"
+		message "&6&oYou have a job that is unfinished. Please be sure you are working on it. Check what it is with &a&o/job list&r&6&o." to loop-player
+every 4 minutes:
+	set {jobcount} to 0
+	loop {job.employer::*}:
+		add 1 to {jobcount}
+	if {jobcount} is greater than 1:
+		broadcast "&6&oThere are currently &b&l&o%{jobcount}%&r&6&o job(s) available. You can view them by using &a&o/Job list&r&6&o."
+	
+command /jobdebug:
+	trigger:
+		loop all players:
+			set {job.%loop-player%} to "null"
+			broadcast "&a&oReset value on: [&6&o%loop-player%&a&o]"

@@ -1,0 +1,178 @@
+######################
+#+                  +#
+#   MENU SETTINGS    #
+#+                  +#
+######################
+
+menu-settings:
+
+  # name - appears as the title - REQUIRED
+  name: '&4&lRANKS'
+
+  # rows - the number of rows of the chest - REQUIRED
+  rows: 1
+
+  # command - OPTIONAL (you can remove this or set it to '')
+  # Bind multiple commands using ; (command: 'menu; m; me')
+  command: 'rankup'
+
+  # The sound played whenever the menu is opened.
+  # List of sounds:
+  # jd.bukkit.org/rb/apidocs/org/bukkit/Sound.html
+  open-sound: NOTE_PLING
+
+  # open-with-item - OPTIONAL
+  # The menu will open only right-clicking with orange wool [35:1]
+  open-with-item:
+    item-id: wool
+    left-click: false
+    right-click: false
+    data-value: 1
+
+
+######################
+#+                  +#
+#       ITEMS        #
+#+                  +#
+######################
+#
+# NEVER USE A ' IN ANY OF YOUR TEXT!
+#
+# Example start
+#proglass:
+#  COMMAND: 'shopwarp 1'
+#  NAME: '&d[p] &aPro&fGlass &d[p]'
+#  LORE:
+#    - '&f&oEvery type of glass, always in stock!'
+#  ID: 20
+#  KEEP-OPEN: false
+#  POSITION-X: 2
+#  POSITION-Y: 1
+#  DATA-VALUE: 2
+# Remove the # from the line above to use the data value setting
+# Example end
+
+rookie:
+  COMMAND: 'testrank rookie'
+  NAME: '&d[p] &dRookie &d[p]'
+  LORE:
+    - '&f&oView the requirements to obtain rookie.'
+    - 'Permissions Granted to Rookies:'
+    - 'Set 2 &bhomes'
+    - 'Create Shops'
+    - 'Use &a&o/ci&r&7 to clear inventory'
+    - 'Use &a&o/recipe&r&7 to use recipes'
+    - 'Can put url/links into chat'
+  ID: 3
+  KEEP-OPEN: false
+  POSITION-X: 1
+  POSITION-Y: 1
+#  DATA-VALUE: 3
+regular:
+  COMMAND: 'testrank regular'
+  NAME: '&d[p] &cRegular &d[p]'
+  LORE:
+    - '&6PRICE: &a$5,000'
+    - 'Permissions Granted to Regulars:'
+    - 'Set 3 &bhomes'
+    - 'Sell real estate'
+    - 'Use &a&o/depth&r&7 to see your depth vs. sea level'
+    - 'Emote in chat with &a&o/me&r'
+    - 'Use &a&o/wb&r&7 for a virtual workbench'
+    - 'Can put an item up for &a&o/auction&r'
+  ID: 17
+  KEEP-OPEN: false
+  POSITION-X: 2
+  POSITION-Y: 1
+#  DATA-VALUE: 3
+citizen:
+  COMMAND: 'testrank citizen'
+  NAME: '&d[p] &eCitizen &d[p]'
+  LORE:
+    - '&6PRICE: &a$15,000'
+    - 'Permissions Granted to Citizens:'
+    - 'Set 4 &bhomes'
+    - 'Can format chat with &4c&6o&el&ao&br&5s&7,&r &lbold&r&7, &oitalics&r'
+    - 'Scavenger saves levels on death'
+    - 'Access to &a&o/jump&r'
+  ID: 1
+  KEEP-OPEN: false
+  POSITION-X: 3
+  POSITION-Y: 1
+#  DATA-VALUE: 3
+craftsman:
+  COMMAND: 'testrank craftsman'
+  NAME: '&d[p] &6Craftsman &d[p]'
+  LORE:
+    - '&6PRICE: &a$35,000'
+    - 'Permissions Granted to Craftsmen:'
+    - 'Set 5 &bhomes'
+    - '2 extra &4health hearts'
+    - 'Use &a&o/near&r&7 to see nearby players'
+    - 'Use &a&o/compass&r&7 to get your bearings'
+    - 'Use &a&o/suffix&r&7 to make your suffix'
+  ID: 173
+  KEEP-OPEN: false
+  POSITION-X: 4
+  POSITION-Y: 1
+#  DATA-VALUE: 3
+seasoned:
+  COMMAND: 'testrank seasoned'
+  NAME: '&d[p] &9Seasoned &d[p]'
+  LORE:
+    - '&6PRICE: &a$75,000'
+    - 'Permissions Granted to Seasoned:'
+    - 'Set 7 &bhomes'
+    - '4 extra &4health hearts'
+    - 'Scavenger saves items on death'
+    - 'Format signs with &4c&6o&el&ao&br&5s&7,&r &lbold&r&7, &oitalics&r'
+    - 'Use &a&o/top&r&7 to jump to the highest safe surface'
+  ID: 42
+  KEEP-OPEN: false
+  POSITION-X: 5
+  POSITION-Y: 1
+#  DATA-VALUE: 3
+noble:
+  COMMAND: 'testrank noble'
+  NAME: '&d[p] &bNoble &d[p]'
+  LORE:
+    - '&6PRICE: &a$125,000'
+    - 'Permissions Granted to Nobles:'
+    - 'Set 10 &bhomes'
+    - '6 extra &4health hearts'
+    - 'Format &a&o/suffix&r&7 with &4c&6o&el&ao&br&5s&7,&r &lbold&r&7, &oitalics&r'
+    - 'Use &a&o/hat&r&7 to wear the item in your hand as a hat'
+  ID: 41
+  KEEP-OPEN: false
+  POSITION-X: 6
+  POSITION-Y: 1
+#  DATA-VALUE: 3
+elite:
+  COMMAND: 'testrank elite'
+  NAME: '&d[p] &aElite &a[p]'
+  LORE:
+    - '&6PRICE: &a$250,000'
+    - 'Permissions Granted to Elites:'
+    - '8 extra &4health hearts'
+    - 'Use &a&o/ec&r&7 to access enderchest from anywhere'
+    - 'Use &a&o/nv&r&7 to enable night vision'
+  ID: 57
+  KEEP-OPEN: false
+  POSITION-X: 7
+  POSITION-Y: 1
+#  DATA-VALUE: 3
+champion:
+  COMMAND: 'testrank champion'
+  NAME: '&d[p] &4Champion &d[p]'
+  LORE:
+    - '&6PRICE: &a$500,000'
+    - 'Permissions Granted to Champions:'
+    - 'Set &runlimited &bhomes.'
+    - '10 extra &4health hearts'
+    - 'Use &a&o/ext&r&7 to extinguish yourself if you are on fire'
+    - 'Use &a&o/fly&r&7 to... fly.'
+  ID: 133
+  KEEP-OPEN: false
+  POSITION-X: 8
+  POSITION-Y: 1
+#  DATA-VALUE: 3

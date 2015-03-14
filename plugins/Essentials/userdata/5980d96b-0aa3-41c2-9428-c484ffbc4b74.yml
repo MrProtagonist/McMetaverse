@@ -1,0 +1,42 @@
+geolocation: United States
+lastlocation:
+  world: Metacurse
+  x: -427.91988782364587
+  y: 123.9933092829202
+  z: 5399.864153756309
+  yaw: -165.81616
+  pitch: 28.79999
+lastAccountName: Lucky_shots69
+timestamps:
+  login: 1426305815175
+  logout: 1426315113251
+  lastteleport: 1426314295638
+  jail: 0
+  mute: 0
+ipAddress: 75.97.108.164
+money: '1933.07'
+homes:
+  home:
+    world: Metacurse
+    x: -2448.1954698416007
+    y: 63.0
+    z: -630.8371877633284
+    yaw: 28.120094
+    pitch: 39.900005
+  storage:
+    world: Metacurse
+    x: -2447.5
+    y: 36.0
+    z: -598.5
+    yaw: 233.61826
+    pitch: 22.799911
+logoutlocation:
+  world: Metacurse
+  x: 5.0920840366251126
+  y: 70.0
+  z: -125.74835844476166
+  yaw: 0.5168762
+  pitch: 4.0499983
+afk: false
+jailed: false
+muted: false

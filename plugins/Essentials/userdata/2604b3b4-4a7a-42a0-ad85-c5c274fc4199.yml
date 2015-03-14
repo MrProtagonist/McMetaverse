@@ -1,0 +1,23 @@
+money: '200.0'
+geolocation: United States
+lastlocation:
+  world: Metacurse
+  x: -55.594509993730384
+  y: 68.0
+  z: -124.13749998807907
+  yaw: -9.1374
+  pitch: -13.049999
+lastAccountName: desrtdav
+timestamps:
+  login: 1423326269600
+  logout: 1423326404370
+ipAddress: 174.17.100.22
+jailed: true
+jail: cell1
+logoutlocation:
+  world: Metacurse
+  x: -56.253582373067616
+  y: 68.0
+  z: -123.63096277836966
+  yaw: -161.53745
+  pitch: -9.600013

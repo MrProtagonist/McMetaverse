@@ -1,0 +1,37 @@
+lastAccountName: McNicholas
+timestamps:
+  login: 1426218705946
+  lastteleport: 1426229847164
+  logout: 1426232486098
+ipAddress: 76.178.142.186
+lastlocation:
+  world: Metacurse
+  x: -61.927763240822756
+  y: 70.0
+  z: -73.91029470144315
+  yaw: 67.56702
+  pitch: 9.600005
+money: '450'
+afk: false
+homes:
+  home1:
+    world: Metacurse
+    x: 855.3889857644498
+    y: 109.90396844437436
+    z: 942.4937217886431
+    yaw: 148.32129
+    pitch: 25.799984
+  home2:
+    world: Metacurse
+    x: 5578.5
+    y: 102.0
+    z: 5697.5
+    yaw: -219.83295
+    pitch: 15.899992
+logoutlocation:
+  world: Metacurse
+  x: 5578.804217141683
+  y: 98.0
+  z: 5694.198816971908
+  yaw: -175.13297
+  pitch: 5.6999927

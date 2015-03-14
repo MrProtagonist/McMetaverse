@@ -1,0 +1,8 @@
+command /teamcreate <text>:
+    description: Creates a new team
+    usage: Do /teamcreate teamname
+    trigger:
+        broadcast "%arg% text" 
+        set {%player%.team} to arg
+        message "Joined %{%player%.team}%"  
+    

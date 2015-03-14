@@ -1,0 +1,22 @@
+money: '200.0'
+lastlocation:
+  world: Metacurse
+  x: -275.3855575921921
+  y: 88.0
+  z: -295.69999998807907
+  yaw: 185.79877
+  pitch: 16.364162
+geolocation: Canada
+lastAccountName: ItsDanielBro
+timestamps:
+  login: 1423353576969
+  logout: 1423353730823
+ipAddress: 99.248.132.67
+logoutlocation:
+  world: Metacurse
+  x: -98.3762674842267
+  y: 72.0
+  z: -55.210192804391156
+  yaw: 18.627594
+  pitch: 8.899211
+afk: false

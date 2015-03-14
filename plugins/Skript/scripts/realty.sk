@@ -1,0 +1,140 @@
+command /realestate [<text>]:
+	trigger:
+		if arg is not set:
+			message "&6&oThe following properties are for sale:"
+			message " "
+			message "&9&lID | Price | Seller | Short Description"
+			loop {realty.prices::*}:
+				if {realty.desc::%loop-index%} is "No description provided.":
+					message "&l%loop-index%&e | &a&l%{realty.prices::%loop-index%}%&e | &6%{realty.seller::%loop-index%}% &e| &8&o%{realty.desc::%loop-index%}%"
+				else:
+					message "&l%loop-index%&e | &a&l%{realty.prices::%loop-index%}%&e | &6%{realty.seller::%loop-index%}% &e| &f&o%{realty.desc::%loop-index%}%"
+			message " "
+			message "&a&oTo view one of the properties, simply type &b/realestate ##&a&o."
+			stop
+		else:
+#			if arg is "clear":
+#				player has the permission "is.op.as.fuck"
+#				delete {realty.signspots::*}
+#				delete {realty.seller::*}
+#				delete {realty.desc::*}
+#				delete {realty.prices::*}
+#				delete {realty.warps::*}
+#				message "Done!"
+#				stop
+			if {realty.warps::%arg%} is set:
+				message "&a&oNow traveling to view %{realty.seller::%arg%}%'s property."
+				set {warping.%player%} to true
+				push the player upwards at speed 10
+				execute console command "/playsound random.explode %player% ~0 ~0 ~0 20 50"
+				loop 33 times:
+					spawn 50 of mob spell data 1 offset with 1, 0, 1 at location of block 1 meter above player
+					wait 1 tick
+				spawn 12 of huge explosion data 1 offset with 2, 2, 2 at location of player
+				wait 5 ticks
+				teleport player to {realty.warps::%arg%}
+				wait 5 ticks
+				delete {warping.%player%}
+				wait 10 real seconds
+				message "&6If you have questions, please contact the owner using &a/mail send %{realty.seller::%arg%}% message here&6."
+				stop
+			else:
+				message "&c&oFound no property for sale with that ID. Try again."
+
+			
+on sign change:
+	line 1 of block is "[RealEstate]" or "[RE]"
+	set {_tempcounter} to 1
+	add player's location to {realty.warps::*}
+	add line 4 of block to {realty.prices::*}
+	add player to {realty.seller::*}
+	add location of event-block to {realty.signspots::*}
+	add "No description provided." to {realty.desc::*}
+	wait 2 real seconds
+	message "&6Your shop has been added to the &a/realestate&6 menu!"
+	message "&eYou have the option of adding a &a/description (Something descripting here)&6, but this is not required. You must be looking at your real estate sign to add a description."
+	
+on script load:
+	delete {realty.tempspots::*}
+	delete {realty.tempprices::*}
+	delete {realty.tempwarps::*}
+	delete {realty.tempdesc::*}
+	delete {realty.tempseller::*}
+	broadcast "&aDEBUG: &eBeginning daily Real Estate maintenance..."
+	set {_recount} to 0
+	loop {realty.signspots::*}:
+		block at loop-value is sign
+		add 1 to {_recount}
+		add loop-value to {realty.tempspots::*}
+		add line 3 of block at loop-value parsed as text to {realty.tempseller::*}
+		add line 4 of block at loop-value parsed as text to {realty.tempprices::*}
+		add {realty.warps::%loop-index%} to {realty.tempwarps::*}
+		add "No description provided." to {realty.tempdesc::*}
+		add {realty.desc::%loop-index%} to {realty.tempdesc::*}
+		wait 5 ticks
+	broadcast "&aDEBUG: &6Collected information on &b&l%{_recount}%&6 Real Estate signs!"
+	wait 2 real seconds
+	broadcast "&aDEBUG: &eNow performing Real Estate maintenance..."
+	delete {realty.signspots::*}
+	delete {realty.seller::*}
+	delete {realty.desc::*}
+	delete {realty.prices::*}
+	delete {realty.warps::*}
+	loop {realty.tempspots::*}:
+		add loop-value to {realty.signspots::*}
+		add {realty.tempseller::%loop-index%} to {realty.seller::*}
+		add {realty.tempprices::%loop-index%} to {realty.prices::*}
+		add {realty.tempdesc::%loop-index%} to {realty.desc::*}
+		add {realty.tempwarps::%loop-index%} to {realty.warps::*}
+	broadcast "&aDEBUG: &6&lReal Estate maintenance complete!"
+command /description [<text>]:
+	trigger:
+		if targeted block is sign:
+			broadcast "&aDEBUG: &fPassed event 1"
+		else:
+			message "&cPlease look at your real estate sign, then do &a/description Property description here&c."
+			stop
+		if arg is set:
+			loop {realty.signspots::*}:
+				location of targeted block is loop-value
+				broadcast "&aDEBUG: &fPassed event 2"
+				if player can build at targeted block:
+					broadcast "&aDEBUG: &6&lSuccessful!"
+					message "&aSet the description for this property to: &e%arg%"
+					set {realty.desc::%loop-index%} to arg
+					stop
+				else:
+					message "&cThis isn't yours!"
+					stop
+		else:
+			message "&cYou forgot to type a description!"
+			stop
+
+on right click:
+	event-block is air
+	player can build at location of event-block
+	loop {realty.signspots::*}:
+		if location of block at {realty.signspots::%loop-index%} is location of event-block:
+			execute console command "mail send %{realty.seller::%loop-index%}% %event-player% has purchased one of the homes you had for sale!"
+			remove {realty.signspots::%loop-index%} from {realty.signspots::*}
+			remove {realty.seller::%loop-index%} from {realty.seller::*}
+			remove {realty.desc::%loop-index%} from {realty.desc::*}
+			remove {realty.prices::%loop-index%} from {realty.prices::*}
+			remove {realty.warps::%loop-index%} from {realty.warps::*}
+			stop
+		
+		
+on break of sign:
+	line 1 of block is "[RealEstate]" or "[RE]"
+	loop {realty.signspots::*}:
+		if location of block at {realty.signspots::%loop-index%} is location of event-block:
+			execute console command "mail send %{realty.seller::%loop-index%}% %event-player% has purchased one of the homes you had for sale!"
+			remove {realty.signspots::%loop-index%} from {realty.signspots::*}
+			remove {realty.seller::%loop-index%} from {realty.seller::*}
+			remove {realty.desc::%loop-index%} from {realty.desc::*}
+			remove {realty.prices::%loop-index%} from {realty.prices::*}
+			remove {realty.warps::%loop-index%} from {realty.warps::*}
+			wait 1 real second
+			message "&a&oYour property was removed from the listing."
+			stop
+		

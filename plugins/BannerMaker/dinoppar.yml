@@ -1,0 +1,26 @@
+'1425244982340':
+  ==: org.bukkit.inventory.ItemStack
+  type: BANNER
+  damage: 15
+  meta:
+    ==: ItemMeta
+    meta-type: BANNER
+    patterns:
+    - ==: Pattern
+      color: SILVER
+      pattern: ss
+    - ==: Pattern
+      color: WHITE
+      pattern: cr
+    - ==: Pattern
+      color: GRAY
+      pattern: bo
+    - ==: Pattern
+      color: GRAY
+      pattern: tts
+    - ==: Pattern
+      color: GRAY
+      pattern: sc
+    - ==: Pattern
+      color: CYAN
+      pattern: flo

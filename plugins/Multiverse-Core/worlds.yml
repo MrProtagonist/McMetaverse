@@ -1,0 +1,282 @@
+worlds:
+  Creative:
+    seed: 274321253012509377
+    environment: NORMAL
+    type: FLAT
+    hidden: false
+    alias:
+      name: ''
+      color: WHITE
+    pvp: true
+    scale: 1.0
+    respawnworld: ''
+    allowweather: true
+    difficulty: EASY
+    animals:
+      spawn: false
+    monsters:
+      spawn: false
+    entryfee:
+      currency: -1
+      price: 0.0
+    hunger: true
+    autoheal: true
+    adjustspawn: true
+    portalform: ALL
+    gamemode: CREATIVE
+    keepspawninmemory: true
+    spawn:
+      x: 1011.0
+      y: 4.0
+      z: -454.0
+      pitch: 0.0
+      yaw: 0.0
+      world: Creative
+    autoload: true
+    bedrespawn: true
+  Minigame:
+    seed: 202961
+    environment: NORMAL
+    type: NORMAL
+    hidden: false
+    alias:
+      name: ''
+      color: WHITE
+    pvp: true
+    scale: 1.0
+    respawnworld: ''
+    allowweather: true
+    difficulty: EASY
+    animals:
+      spawn: false
+    monsters:
+      spawn: false
+    entryfee:
+      currency: -1
+      price: 0.0
+    hunger: false
+    autoheal: true
+    adjustspawn: true
+    portalform: ALL
+    gamemode: ADVENTURE
+    keepspawninmemory: true
+    spawn:
+      x: 54.00641988438229
+      y: 114.0
+      z: -38.40722662241998
+      pitch: 41.400112
+      yaw: 179.84998
+      world: Minigame
+    autoload: true
+    bedrespawn: true
+  Sandbox:
+    generator: PlotMe
+    seed: -2918288241109040941
+    environment: NORMAL
+    type: NORMAL
+    hidden: false
+    alias:
+      name: ''
+      color: WHITE
+    pvp: true
+    scale: 1.0
+    respawnworld: ''
+    allowweather: true
+    difficulty: EASY
+    animals:
+      spawn: true
+    monsters:
+      spawn: true
+    entryfee:
+      currency: -1
+      price: 0.0
+    hunger: true
+    autoheal: true
+    adjustspawn: true
+    portalform: ALL
+    gamemode: SURVIVAL
+    keepspawninmemory: true
+    spawn:
+      x: 3.5
+      y: 66.0
+      z: 3.5
+      pitch: 0.0
+      yaw: 0.0
+      world: Sandbox
+    autoload: true
+    bedrespawn: true
+  Never_End:
+    seed: -2263306213011844870
+    environment: THE_END
+    type: NORMAL
+    hidden: false
+    alias:
+      name: ''
+      color: WHITE
+    pvp: true
+    scale: 1.0
+    respawnworld: ''
+    allowweather: true
+    difficulty: EASY
+    animals:
+      spawn: true
+    monsters:
+      spawn: true
+    entryfee:
+      currency: -1
+      price: 0.0
+    hunger: true
+    autoheal: true
+    adjustspawn: true
+    portalform: ALL
+    gamemode: SURVIVAL
+    keepspawninmemory: true
+    spawn:
+      x: 0.0
+      y: 63.0
+      z: 0.0
+      pitch: 0.0
+      yaw: 0.0
+      world: Never_End
+    autoload: true
+    bedrespawn: true
+  Metacurse:
+    seed: 5804761707011619674
+    environment: NORMAL
+    type: NORMAL
+    hidden: false
+    alias:
+      name: ''
+      color: WHITE
+    pvp: true
+    scale: 1.0
+    respawnworld: ''
+    allowweather: true
+    difficulty: EASY
+    animals:
+      spawn: true
+    monsters:
+      spawn: true
+    entryfee:
+      currency: -1
+      price: 0.0
+    hunger: true
+    autoheal: true
+    adjustspawn: true
+    portalform: ALL
+    gamemode: SURVIVAL
+    keepspawninmemory: true
+    spawn:
+      x: -66.5
+      y: 70.0
+      z: -71.5
+      pitch: -1.799998
+      yaw: 0.06689453
+      world: Metacurse
+    autoload: true
+    bedrespawn: true
+  Metacurse_nether:
+    seed: 5804761707011619674
+    environment: NETHER
+    type: NORMAL
+    hidden: false
+    alias:
+      name: ''
+      color: WHITE
+    pvp: true
+    scale: 8.0
+    respawnworld: ''
+    allowweather: true
+    difficulty: EASY
+    animals:
+      spawn: true
+    monsters:
+      spawn: true
+    entryfee:
+      currency: -1
+      price: 0.0
+    hunger: true
+    autoheal: true
+    adjustspawn: true
+    portalform: ALL
+    gamemode: SURVIVAL
+    keepspawninmemory: true
+    spawn:
+      x: 0.0
+      y: 60.0
+      z: 0.0
+      pitch: 0.0
+      yaw: 0.0
+      world: Metacurse_nether
+    autoload: true
+    bedrespawn: true
+  Metacurse_the_end:
+    seed: 5804761707011619674
+    environment: THE_END
+    type: NORMAL
+    hidden: false
+    alias:
+      name: ''
+      color: WHITE
+    pvp: true
+    scale: 1.0
+    respawnworld: ''
+    allowweather: true
+    difficulty: EASY
+    animals:
+      spawn: true
+    monsters:
+      spawn: true
+    entryfee:
+      currency: -1
+      price: 0.0
+    hunger: true
+    autoheal: true
+    adjustspawn: true
+    portalform: ALL
+    gamemode: SURVIVAL
+    keepspawninmemory: true
+    spawn:
+      x: 0.0
+      y: 61.0
+      z: 0.0
+      pitch: 0.0
+      yaw: 0.0
+      world: Metacurse_the_end
+    autoload: true
+    bedrespawn: true
+  Vanilla:
+    seed: 1225919396829760140
+    environment: NORMAL
+    type: NORMAL
+    hidden: false
+    alias:
+      name: ''
+      color: WHITE
+    pvp: true
+    scale: 1.0
+    respawnworld: ''
+    allowweather: true
+    difficulty: EASY
+    animals:
+      spawn: true
+    monsters:
+      spawn: true
+    entryfee:
+      currency: -1
+      price: 0.0
+    hunger: true
+    autoheal: true
+    adjustspawn: true
+    portalform: ALL
+    gamemode: SURVIVAL
+    keepspawninmemory: true
+    spawn:
+      x: -783.0
+      y: 67.0
+      z: 464.0
+      pitch: 0.0
+      yaw: 0.0
+      world: Vanilla
+    autoload: true
+    bedrespawn: true

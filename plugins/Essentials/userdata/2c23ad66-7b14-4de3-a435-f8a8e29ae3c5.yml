@@ -1,0 +1,31 @@
+geolocation: United Kingdom
+lastlocation:
+  world: Metacurse
+  x: -0.38008828696546726
+  y: 70.0
+  z: -134.9341955372234
+  yaw: -267.98303
+  pitch: 4.4999967
+lastAccountName: chinmaster94
+timestamps:
+  login: 1425588269983
+  lastteleport: 1425532943662
+  logout: 1425588296092
+ipAddress: 5.68.64.243
+money: '8686.14'
+homes:
+  quarry:
+    world: Metacurse
+    x: -3413.3178577933495
+    y: 76.0
+    z: -1619.800051256336
+    yaw: 295.4371
+    pitch: 24.599943
+logoutlocation:
+  world: Metacurse
+  x: -3350.206213457492
+  y: 11.0
+  z: -1568.7742794609749
+  yaw: 150.64938
+  pitch: 58.500015
+afk: false

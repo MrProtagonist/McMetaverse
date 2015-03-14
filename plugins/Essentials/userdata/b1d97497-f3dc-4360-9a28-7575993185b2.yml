@@ -1,0 +1,45 @@
+geolocation: United States
+lastlocation:
+  world: Metacurse
+  x: -221.69766428033634
+  y: 72.0
+  z: -5324.767360986305
+  yaw: -90.21867
+  pitch: 11.699984
+lastAccountName: Brightenstar
+timestamps:
+  login: 1425673577751
+  logout: 1425680642630
+  lastteleport: 1425680539789
+ipAddress: 69.250.93.14
+logoutlocation:
+  world: Metacurse
+  x: -6660.074999988079
+  y: 67.0
+  z: -1633.7356226699958
+  yaw: 106.23035
+  pitch: 22.800045
+money: '2829.06'
+homes:
+  home:
+    world: Metacurse
+    x: -220.54674111690872
+    y: 71.0
+    z: -5324.204680634029
+    yaw: -267.66843
+    pitch: 11.25
+  island:
+    world: Metacurse
+    x: -6659.169829172308
+    y: 66.0
+    z: -1639.466633822947
+    yaw: 127.38006
+    pitch: -0.29998347
+  mine:
+    world: Metacurse
+    x: -167.92677872194437
+    y: 13.0
+    z: -5435.613946690557
+    yaw: 0.8303992
+    pitch: 2.4001558
+afk: false

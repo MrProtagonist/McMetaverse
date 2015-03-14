@@ -1,0 +1,33 @@
+money: '0.0'
+geolocation: United States
+lastAccountName: _Fengo
+timestamps:
+  login: 1424211714609
+  lastteleport: 1423797804890
+  logout: 1424212082359
+  jail: 0
+ipAddress: 63.153.230.105
+lastlocation:
+  world: Metacurse
+  x: -68.27721246032877
+  y: 70.0
+  z: -74.68187960305474
+  yaw: 330.96695
+  pitch: 19.800001
+logoutlocation:
+  world: Metacurse
+  x: -2108.4108646302448
+  y: 66.0
+  z: -1014.1354431445741
+  yaw: 239.14964
+  pitch: 20.0999
+homes:
+  home:
+    world: Metacurse
+    x: -2170.07235131631
+    y: 78.0
+    z: -1006.530654006723
+    yaw: 169.53903
+    pitch: 18.300053
+afk: false
+jailed: false

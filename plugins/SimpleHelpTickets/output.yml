@@ -1,0 +1,64 @@
+# &0 = Black  |  &1 = DarkGray
+# &2 = GRAY   |  &w = White
+# &r = Red    |  &R = DarkRed
+# &y = YELLOW |  &Y = Gold
+# &g = Green  |  &G = DarkGreen
+# &c = Cyan   |  &C = DarkCyan
+# &b = Blue   |  &B = DarkBlue
+# &p = Purple |  &P = DarkPurple
+# Extra Formatting:
+# %bold | %italic | %underline | %strike | %reset
+Prefix: '&2[SimpleHelpTickets] '
+UserCommandsMenu-helptickets: ' &w- Display the commands menu'
+UserCommandsMenu-helpme: ' &w- Explain how to open a ticket'
+UserCommandsMenu-Title: '&Y[ &wUser Commands &Y]'
+UserCommandsMenu-ticket: ' &w- Open a Help ticket [Stand @ Location]'
+UserCommandsMenu-tickets: ' &w- View your tickets'
+UserCommandsMenu-checkticket: ' &w- Check one of your tickets info'
+UserCommandsMenu-replyticket: ' &w- Reply to one of your tickets'
+UserCommandsMenu-closeticket: ' &w- Close one of your tickets'
+UserCommandsMenu-delticket: ' &w- Delete a ticket'
+AdminCommandsMenu-Title: '&Y[ &wAdmin Commands &Y]'
+AdminCommandsMenu-tickets: ' &w- List Open/All/Closed tickets'
+AdminCommandsMenu-taketicket: ' &w- Assign yourself to a ticket'
+AdminCommandsMenu-replyticket: ' &w- Reply to a ticket'
+AdminCommandsMenu-closeticket: ' &w- Close or Reopen a ticket'
+AdminCommandsMenu-delticket: ' &w- Delete a ticket'
+AdminCommandsMenu-purgeticket: ' &w- Purge expired, Closed or All tickets'
+AdminCommandsMenu-reload: ' &w- Reload the config'
+Error: '&rError:&w &arg'
+InvalidTicketNumber: '&rInvalid Ticket Number:&w &arg'
+TicketNotExist: '&rTicket&Y &arg &rdoes not exist'
+NotYourTicketToCheck: '&rThis is not your ticket to check'
+NotYourTicketToClose: '&rThis is not your ticket to close'
+NewConfig: '&rConfig.yml missing, generating a new one..."'
+NewOutput: '&rOutput.yml missing, generating a new one..."'
+ConfigReloaded: '&gConfig and output Reloaded'
+NoPermission: '&rYou do not have permission'
+TicketAlreadyClosed: '&rTicket&w &arg &ralready closed'
+TicketClosed: '&wTicket&Y &arg &wClosed'
+TicketClosedOWNER: '&Y&admin &whas closed your ticket #:&Y &arg'
+TicketClosedADMIN: '&Y&admin &whas closed ticket #:&Y &arg'
+TicketNotClosed: '&rTicket&Y &arg&r not closed'
+TicketReopened: '&wTicket&Y &arg &wReopened'
+TicketReopenedOWNER: '&Y &admin&w has reopened your ticket #:&Y &arg'
+TicketReopenedADMIN: '&Y &admin&w has reopened ticket #:&Y &arg'
+AllClosedTicketsPurged: '&gAll closed tickets successfully purged'
+AllTicketsPurged: '&gAll tickets successfully purged'
+AdminRepliedToTicket: '&wReplied to ticket:&Y &arg'
+AdminRepliedToTicketOWNER: '&Y&admin&w has replied to your help ticket'
+UserRepliedToTicket: '&Y%player &whas replied to ticket #:&Y &arg'
+CannotTakeClosedTicket: '&rCannot take a closed ticket'
+TakeTicketOWNER: '&Y&admin &wis reviewing your ticket #:&Y &arg'
+TakeTicketADMIN: '&Y&admin &wis reviewing ticket #:&Y &arg'
+TicketOpen: '&gYou have successfully opened a &YHelp Ticket&g, please wait for it
+  to be reviewed'
+TicketOpenADMIN: '&Y%player &whas opened a &YHelp Ticket'
+TicketMax: '&rYou have reached your limit of&Y &arg &rTickets'
+NoTickets: '&1No tickets to display'
+HelpMe_Line1: '&wTo request help or report grief, stand at the relevant location and
+  open a ticket with an informative description of the issue.'
+HelpMe_Line2: '&2For more information, type: &G/HelpTickets'
+AdminJoin: '&wThere are currently&Y &arg &wopen Help Tickets'
+UserJoin: '&wYou currently have &Y &arg &wopen Help Tickets'
+UserJoin-TicketReplied: '&wOne of your tickets has recieved a reply from an admin'

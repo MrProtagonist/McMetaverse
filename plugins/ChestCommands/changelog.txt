@@ -1,0 +1,7 @@
+Changelog for v2.2.3:
+
+--------------------------------
+      NORMAL CHANGES
+--------------------------------
+
+Added support for Bukkit 1.7.9.

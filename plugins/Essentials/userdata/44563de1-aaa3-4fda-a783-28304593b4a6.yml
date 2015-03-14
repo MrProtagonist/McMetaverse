@@ -1,0 +1,30 @@
+money: '192.0'
+lastlocation:
+  world: Metacurse
+  x: 779.8049815778005
+  y: 41.0
+  z: -151.42390692011048
+  yaw: -118.13341
+  pitch: 89.85
+geolocation: United States
+lastAccountName: crocatillian
+timestamps:
+  login: 1424482224102
+  lastteleport: 1422908030412
+  logout: 1424483344708
+ipAddress: 162.239.200.16
+homes:
+  home:
+    world: Metacurse
+    x: 771.9469146307973
+    y: 67.0
+    z: -146.62006218605134
+    yaw: -109.28339
+    pitch: 34.05001
+logoutlocation:
+  world: Metacurse
+  x: 772.8902384465156
+  y: 67.0
+  z: -145.39853756448304
+  yaw: 293.9181
+  pitch: 13.799956

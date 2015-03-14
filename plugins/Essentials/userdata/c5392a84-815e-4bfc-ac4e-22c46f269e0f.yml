@@ -1,0 +1,30 @@
+lastlocation:
+  world: Metacurse
+  x: -67.0
+  y: 70.0
+  z: -72.0
+  yaw: -0.75
+  pitch: 0.6
+geolocation: United States
+lastAccountName: KingKitkat69
+timestamps:
+  login: 1424072643222
+  logout: 1424073976201
+  lastteleport: 1424049204631
+ipAddress: 98.178.167.235
+logoutlocation:
+  world: Metacurse
+  x: -849.9813535138201
+  y: 64.0
+  z: -453.08644886715746
+  yaw: 191.02905
+  pitch: 38.099995
+homes:
+  home:
+    world: Metacurse
+    x: -844.9146386209582
+    y: 64.0
+    z: -454.57056684415625
+    yaw: 10.13559
+    pitch: 22.649996
+money: '324.0'

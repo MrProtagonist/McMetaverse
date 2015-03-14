@@ -1,0 +1,23 @@
+geolocation: United States
+lastlocation:
+  world: Metacurse
+  x: -466.0846435572172
+  y: 70.0
+  z: 5439.981015902762
+  yaw: -238.42383
+  pitch: -14.700024
+lastAccountName: Kudner
+timestamps:
+  login: 1426194746676
+  logout: 1426196230841
+  lastteleport: 1426195236146
+ipAddress: 108.40.13.129
+logoutlocation:
+  world: Metacurse
+  x: -41.49100268143988
+  y: 71.0
+  z: -89.25350676222727
+  yaw: 342.21686
+  pitch: 2.5499444
+afk: false
+money: '301.12'

@@ -1,0 +1,86 @@
+variables:
+	{refer.first} = 5
+	{refer.second} = 4
+	{refer.third} = 3
+	{refer.fourth} = 2
+	{refer.fifth} = 1
+on first join:
+	set {refered.%player%} to false
+command /code [<integer>]:
+	executable by: players and console
+	trigger:
+		if arg is not set:
+			if {refer.%player%} is not set:
+				message "&cYou don't have a code yet!"
+				wait 1 real second
+				message "&aGenerating code..."
+				set {refer.%player%} to a random integer between 100000 and 999999
+				add 0 to {refer.count::*}
+				add {refer.%player%} to {refer.codes::*}
+				add player to {refer.owner::*}
+				wait 2 real seconds
+			message "&a&oYour refer code is: &f&l%{refer.%player%}%"
+			wait 1 real second
+			message "&eJust have whoever you refer type &a/code (Your ##)&e and you both get a reward!"
+			stop
+		else:
+			if {refered.%player%} is false:
+				set {refer.search} to false
+				loop {refer.codes::*}:
+					arg is loop-value
+					if player is {refer.owner::%loop-index%}:
+						message "&c&oNice try..."
+					else:
+						message "&aYou were refered by &b&l%{refer.owner::%loop-index%}%&a!"
+						wait 1 real second
+						message "&eYou both get a reward!"
+						wait 1 real second
+						execute console command "eco give %player% 1000"
+						execute console command "eco give %{refer.owner::%loop-index%}% 1500"
+						execute console command "mail send %{refer.owner::%loop-index%}% You were paid $1500 for refering %player%! Keep it up!"
+						set {refered.%player%} to true
+						add 1 to {refer.count::%loop-index%}
+						set {refer.search} to true
+						if {refer.count::%loop-index%} is greater than or equal to {refer.first}:
+							set {refer.second} to {refer.first}
+							set {refer.second.player} to {refer.first.player}
+							set {refer.first} to {refer.count::%loop-index%}
+							set {refer.first.player} to {refer.owner::%loop-index%}
+							stop
+						if {refer.count::%loop-index%} is greater than or equal to {refer.second}:
+							set {refer.third} to {refer.second}
+							set {refer.third.player} to {refer.second.player}
+							set {refer.second} to {refer.count::%loop-index%}
+							set {refer.second.player} to {refer.owner::%loop-index%}
+							stop
+						if {refer.count::%loop-index%} is greater than or equal to {refer.third}:
+							set {refer.fourth} to {refer.third}
+							set {refer.fourth.player} to {refer.third.player}
+							set {refer.third} to {refer.count::%loop-index%}
+							set {refer.third.player} to {refer.owner::%loop-index%}
+							stop
+						if {refer.count::%loop-index%} is greater than or equal to {refer.fourth}:
+							set {refer.fifth} to {refer.fourth}
+							set {refer.fifth.player} to {refer.fourth.player}
+							set {refer.fourth} to {refer.count::%loop-index%}
+							set {refer.fourth.player} to {refer.owner::%loop-index%}
+							stop
+						if {refer.count::%loop-index%} is greater than {refer.fifth}:
+							set {refer.fifth} to {refer.count::%loop-index%}
+							set {refer.fifth.player} to {refer.owner::%loop-index%}
+							stop
+				{refer.search} is true
+				message "&cUnable to find that code. Try again."
+			else if {refered.%player%} is true:
+				message "&cAlready submitted referal code!"
+			else:
+				message "&cYou joined before codes were made!"
+command /refers:
+	trigger:
+		message "&b&l|||||||||||||||||| &f&lTop Advertisors &b&l||||||||||||||||||"
+		message "&b&l|| &a%{refer.first}% &b&l|| &6&l%{refer.first.player}%"
+		message "&b&l|| &a%{refer.second}% &b&l|| &6&l%{refer.second.player}%"
+		message "&b&l|| &a%{refer.third}% &b&l|| &6&l%{refer.third.player}%"
+		message "&b&l|| &a%{refer.fourth}% &b&l|| &6&l%{refer.fourth.player}%"
+		message "&b&l|| &a%{refer.fifth}% &b&l|| &6&l%{refer.fifth.player}%"
+		message "&b&l||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||"

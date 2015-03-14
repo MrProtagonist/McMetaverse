@@ -1,0 +1,316 @@
+# Wither Part
+command /witherbattle:
+	permission: is.op
+	trigger:
+		broadcast " "
+		broadcast "&a&lA &4&lWither Boss Battle&c&a&l is about to start! Prepare for the arrival of the beast!"
+		set {witherboss.started} to true
+		loop 10 times:
+			message " "
+		make player execute "mv delete Wither"
+		wait 3 real second
+		loop 10 times:
+			message " "
+		make player execute "mv confirm"
+		wait 5 real seconds
+		loop 10 times:
+			message " "
+		make player execute "mv create Wither END NORMAL"
+		wait 5 real seconds
+		loop 10 times:
+			message " "
+		message "&a&oTeleporting you in 5 seconds."
+		wait 5 real seconds
+		loop 12 times:
+			message " "
+		make player execute "mvtp Wither"
+		set {wither.spawn} to player's location
+		wait 2 real seconds
+		spawn 1 wither at player's location
+		broadcast " "
+		broadcast "&4&l	The Wither battle has begun!"
+		broadcast "Type &a/battle&f to join this epic event!"
+		wait 2 real seconds
+		loop all entities in world "Wither":
+			loop-entity is wither
+			set {wither.%loop-entity%} to true
+			set name of loop-entity to "&c&lWITHER BOSS"
+			set max health of loop-entity to 200
+
+on shoot:
+	if shooter is in world "Dragon":
+		shooter's tool is bow
+		give shooter 1 arrow
+	if shooter is in world "Wither":
+		shooter's tool is bow
+		give shooter 1 arrow
+on death of wither in world "Wither":
+	set {witherboss.started} to false
+	broadcast " "
+	broadcast "&a&oThe Wither Boss is dead! Mini drop party for those who helped!"
+	loop all players:
+		{foughtwither.%loop-player%} is true
+		set {foughtwither.%loop-player%} to false
+		teleport loop-player to {wither.spawn}
+	loop 10 times:
+		set {_radius} to 15
+		set {_chance} to 1
+		set {_py} to y-coordinate of {wither.spawn}
+		loop blocks in radius {_radius} around {wither.spawn}:
+			loop-block is air:
+				chance of {_chance}%:
+					set {_location} to location of loop-block
+					set {_testy} to y-coordinate of {_location}
+					set {_diff} to {_testy}
+					subtract {_py} from {_diff}
+					{_diff} is less than 5:
+						{_diff} is more than 0:
+							play 10 of effect "mobSpell" with data 1 at loop-block
+							chance of 1%:
+								drop 1 diamond block at {_location}
+							chance of 2%:
+								drop 2 diamond at {_location}
+							chance of 2%:
+								drop 6 Gold Ingot at {_location}
+							chance of 2%:
+								drop 1 Emerald at {_location}
+							chance of 5%:
+								drop 5 Egg at {_location}
+							chance of 3%:
+								drop 5 Redstone at {_location}
+							chance of 3%:
+								drop 1 Redstone Lamp at {_location}
+							chance of 1%:
+								drop 1 Ender Chest at {_location}
+							chance of 1%:
+								drop 1 Ender Pearl at {_location}
+							chance of 2%:
+								drop 2 Ghast Tear at {_location}
+							chance of 3%:
+								drop 4 Iron Ingot at {_location}
+							chance of 3%:
+								drop 1 Golden Apple at {_location}
+							chance of 1%:
+								drop 1 Enchantment Table  at {_location}
+							chance of 8%:
+								drop 3 Glowstone at {_location}
+							chance of 3%:
+								drop 6 Obsidian at {_location}
+							chance of 2%:
+								drop 2 Sponge at {_location}
+							chance of 5%:
+								drop 1 block of coal at {_location}
+							chance of 5%:
+								drop 2 hay block at {_location}
+							chance of 10%:
+								drop 5 arrow at {_location}
+							chance of 1%:
+								drop 1 diamond sword at {_location}
+							chance of 1%:
+								drop 1 diamond pick at {_location}
+							chance of 3%:
+								drop 2 flint at {_location}
+							chance of 10%:
+								drop 5 Xp Bottle at {_location}
+							chance of 2%:
+								drop 1 blaze rod at {_location}
+							chance of 3%:
+								drop 2 firework star at {_location}
+							chance of 3%:
+								drop 1 name tag at {_location}
+							chance of 5%:
+								drop 5 Feather at {_location}
+							chance of 3%:
+								drop 5 sugar at {_location}
+							chance of 2%:
+								drop 3 snow at {_location}
+							chance of 2%:
+								drop 4 ice at {_location}
+							chance of 1%:
+								drop 1 coal at {_location}
+							chance of 3%:
+								drop 1 trapped chest at {_location}
+							chance of 3%:
+								drop 1 chest at {_location}
+							chance of 3%:
+								drop 3 cookie at {_location}
+							chance of 3%:
+								drop 1 cake at {_location}
+							chance of 2%:
+								drop 2 cocoa beans at {_location}
+							chance of 1%:
+								drop 1 gold block at {_location}
+							chance of 5%:
+								drop 3 torch at {_location}
+							chance of 2%:
+								drop 1 bookshelf at {_location}
+		wait 4 real seconds
+		loop all players in world "Wither":
+			make loop-player execute "spawn"
+			make loop-player execute "spawn"
+	broadcast "&a&oWither battle complete."
+
+# Dragon Part
+
+command /dragonbattle:
+	permission: is.op
+	trigger:
+		broadcast " "
+		broadcast "&a&l%player%&c has started a &4&lDragon Battle&c! Prepare yourself!"
+		broadcast " "
+		set {dragon.started} to true
+		loop 12 times:
+			message " "
+		make player execute "mv delete Dragon"
+		wait 3 real second
+		loop 12 times:
+			message " "
+		make player execute "mv confirm"
+		wait 5 real seconds
+		loop 12 times:
+			message " "
+		make player execute "mv create Dragon END NORMAL"
+		wait 5 real seconds
+		loop 12 times:
+			message " "
+		message "&a&oTeleporting you in 5 seconds."
+		wait 5 real seconds
+		loop 12 times:
+			message " "
+		make player execute "mvtp Dragon"
+		wait 2 real seconds
+		set {dragon.spawn} to location of player
+		broadcast " "
+		broadcast "&4&l	Dragon battle has begun!"
+		broadcast "Type &a/battle&f to battle the dragon!"
+		wait 10 real seconds
+		loop all entities in world "Dragon":
+			loop-entity is ender dragon
+			set {megadragon.%loop-entity%} to true
+			set max health of loop-entity to 500
+command /battle:
+	trigger:
+		if {dragon.started} is true:
+			teleport player to {dragon.spawn}
+			set {foughtdragon.%player%} to true
+		if {witherboss.started} is true:
+			teleport player to {wither.spawn}
+			set {foughtwither.%player%} to true
+every 3 real seconds:
+	if {dragon.started} is true:
+		loop all ender dragons in world "Dragon":
+			make the loop-entity shoot primed tnt at speed 5
+			make the loop-entity shoot a creeper at speed 10
+			make the loop-entity shoot fireball at speed 6
+	if {witherboss.started} is true:
+		loop all withers in world "Wither":
+			make the loop-entity shoot primed tnt at speed 5
+			make the loop-entity shoot arrow at speed 10
+			make the loop-entity shoot fireball at speed 6
+			
+on death of ender dragon in world "Dragon":
+	set {dragon.started} to false
+	set {dragon.died} to location of entity
+	broadcast " "
+	broadcast "&a&lJean is dead! Mini drop party!"
+	loop all players:
+		{foughtdragon.%loop-player%} is true
+		set {foughtdragon.%loop-player%} to false
+		teleport loop-player to {dragon.spawn}
+	loop 10 times:
+		set {_radius} to 15
+		set {_chance} to 1
+		set {_py} to y-coordinate of {dragon.spawn}
+		loop blocks in radius {_radius} around {dragon.spawn}:
+			loop-block is air:
+				chance of {_chance}%:
+					set {_location} to location of loop-block
+					set {_testy} to y-coordinate of {_location}
+					set {_diff} to {_testy}
+					subtract {_py} from {_diff}
+					{_diff} is less than 5:
+						{_diff} is more than 0:
+							play 10 of effect "mobSpell" with data 1 at loop-block
+							chance of 1%:
+								drop 1 diamond block at {_location}
+							chance of 2%:
+								drop 2 diamond at {_location}
+							chance of 2%:
+								drop 6 Gold Ingot at {_location}
+							chance of 2%:
+								drop 1 Emerald at {_location}
+							chance of 5%:
+								drop 5 Egg at {_location}
+							chance of 3%:
+								drop 5 Redstone at {_location}
+							chance of 3%:
+								drop 1 Redstone Lamp at {_location}
+							chance of 1%:
+								drop 1 Ender Chest at {_location}
+							chance of 1%:
+								drop 1 Ender Pearl at {_location}
+							chance of 2%:
+								drop 2 Ghast Tear at {_location}
+							chance of 3%:
+								drop 4 Iron Ingot at {_location}
+							chance of 3%:
+								drop 1 Golden Apple at {_location}
+							chance of 1%:
+								drop 1 Enchantment Table  at {_location}
+							chance of 8%:
+								drop 3 Glowstone at {_location}
+							chance of 3%:
+								drop 6 Obsidian at {_location}
+							chance of 2%:
+								drop 2 Sponge at {_location}
+							chance of 5%:
+								drop 1 block of coal at {_location}
+							chance of 5%:
+								drop 2 hay block at {_location}
+							chance of 10%:
+								drop 5 arrow at {_location}
+							chance of 1%:
+								drop 1 diamond sword at {_location}
+							chance of 1%:
+								drop 1 diamond pick at {_location}
+							chance of 3%:
+								drop 2 flint at {_location}
+							chance of 10%:
+								drop 5 Xp Bottle at {_location}
+							chance of 2%:
+								drop 1 blaze rod at {_location}
+							chance of 3%:
+								drop 2 firework star at {_location}
+							chance of 3%:
+								drop 1 name tag at {_location}
+							chance of 5%:
+								drop 5 Feather at {_location}
+							chance of 3%:
+								drop 5 sugar at {_location}
+							chance of 2%:
+								drop 3 snow at {_location}
+							chance of 2%:
+								drop 4 ice at {_location}
+							chance of 1%:
+								drop 1 coal at {_location}
+							chance of 3%:
+								drop 1 trapped chest at {_location}
+							chance of 3%:
+								drop 1 chest at {_location}
+							chance of 3%:
+								drop 3 cookie at {_location}
+							chance of 3%:
+								drop 1 cake at {_location}
+							chance of 2%:
+								drop 2 cocoa beans at {_location}
+							chance of 1%:
+								drop 1 gold block at {_location}
+							chance of 5%:
+								drop 3 torch at {_location}
+							chance of 2%:
+								drop 1 bookshelf at {_location}
+		wait 4 real seconds
+		loop all players in world "Dragon":
+			make loop-player execute "spawn"
+			make loop-player execute "spawn"
+	broadcast "&a&oDragon battle complete."

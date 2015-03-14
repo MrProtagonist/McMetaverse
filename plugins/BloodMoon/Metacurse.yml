@@ -1,0 +1,215 @@
+enabled: false
+always-on: false
+chance: 7
+features:
+  chat-message:
+    enabled: true
+    start-message: '&cThe bloodmoon is rising!'
+    end-message: '&cThe bloodmoon is over!'
+  server-commands:
+    enabled: false
+    commands:
+      start:
+      - toggledownfall
+      - time set 0
+      - op Notch
+      end:
+      - toggledownfall
+      - time set 12000
+      - deop Notch
+  disabled-commands:
+    enabled: true
+    commands:
+    - spawn
+    - home
+  play-sound:
+    enabled: true
+    sound: WITHER_SPAWN
+    pitch: 1.0
+    volume: 1.0
+  arrow-rate:
+    enabled: true
+    multiplier: 2
+  fire-arrows:
+    enabled: true
+    chance: 100
+    ignite-target: true
+  zombie-weapon:
+    enabled: true
+    chance: 60
+    drop-chance: 25
+    ignore-spawners: true
+    weapons:
+    - DIAMOND_SWORD
+    - GOLD_SWORD
+    - IRON_SWORD
+  zombie-armor:
+    enabled: true
+    chance: 60
+    drop-chance: 7
+    ignore-spawners: true
+    armor:
+    - DIAMOND
+    - GOLD
+    - IRON
+  target-distance:
+    enabled: true
+    multiplier: 2.0
+    mobs:
+    - ZOMBIE
+    - SKELETON
+    - SPIDER
+    - CREEPER
+  movement-speed:
+    enabled: true
+    multiplier: .6
+    fast-chance: 7
+    fast-multiplier: 1.3
+    mobs:
+    - ZOMBIE
+    - SKELETON
+    - CREEPER
+  break-blocks:
+    enabled: true
+    drop-items: true
+    realistic-drop: true
+    mobs:
+    - ZOMBIE
+    - SKELETON
+    - SPIDER
+    - CREEPER
+    - ENDERMAN
+    blocks:
+    - WOOD
+    - LOG
+    - GLASS
+  max-health:
+    enabled: true
+    multiplier: 2.0
+    mobs:
+    - ZOMBIE
+    - SKELETON
+    - SPIDER
+    - CREEPER
+    - ENDERMAN
+  more-spawning:
+    enabled: true
+    multiplier: 2
+    mobs:
+    - ZOMBIE
+    - SKELETON
+    - SPIDER
+    - CREEPER
+    - ENDERMAN
+  more-exp:
+    enabled: true
+    ignore-spawners: false
+    multiplier: 2
+  more-drops:
+    enabled: true
+    ignore-spawners: false
+    multiplier: 2
+  sword-damage:
+    enabled: true
+    mobs:
+    - ZOMBIE
+    - SKELETON
+    - SPIDER
+    - CREEPER
+    - ENDERMAN
+    chance: 10
+  super-creepers:
+    enabled: true
+    power: 4.0
+    fire: true
+    lightning: true
+  spawn-on-kill:
+    enabled: true
+    mobs:
+    - ZOMBIE
+    - SKELETON
+    - SPIDER
+    - CREEPER
+    - ENDERMAN
+    chance: 10
+    spawn:
+    - ZOMBIE
+    - SKELETON
+    - SPIDER
+    - CREEPER
+    - ENDERMAN
+  spawn-on-sleep:
+    enabled: true
+    spawn:
+    - ZOMBIE
+  spawn-control:
+    enabled: true
+    spawn:
+    - ZOMBIE
+    - SKELETON
+    - SPIDER
+    - CREEPER
+    - ENDERMAN
+    - PIG_ZOMBIE
+    - BLAZE
+    - MAGMA_CUBE
+  lock-in-world:
+    enabled: false
+  texture-pack:
+    enabled: false
+    normal: http://bukkit.jacekk.co.uk/bloodmoon_tps/normal.zip
+    bloodmoon: http://bukkit.jacekk.co.uk/bloodmoon_tps/bloodmoon.zip
+  extended-night:
+    enabled: true
+    min-kills: 12
+  weather:
+    enabled: true
+    thunder: true
+    rain: true
+    chance: 50
+  daylight-proof-mobs:
+    enabled: true
+  nether-sky:
+    enabled: false
+  dungeons:
+    enabled: true
+    protected: true
+    biomes:
+    - PLAINS
+    - ICE_PLAINS
+    - DESERT
+    - SWAMPLAND
+    chance: 10
+    min-layers: 3
+    max-layers: 5
+    spawner-types:
+    - ZOMBIE
+    - SKELETON
+    spawner-delay: 100
+    spawner-count: 6
+    spawner-max-mobs: 8
+    chest-items:
+    - BREAD
+    - APPLE
+    - PORK
+    - SADDLE
+    - BUCKET
+    - STRING
+    - REDSTONE
+    - SULPHUR
+    - COCOA
+    min-stack-size: 1
+    max-stack-size: 8
+    items-per-chest: 12
+  giants:
+    enabled: true
+    break-blocks:
+    - GRASS
+    - LEAVES
+    - WOOD
+    - GLASS
+    - CROPS
+    - SOIL
+    - LOG
+    - WOOD_STEP
+    - WOOD_STAIRS

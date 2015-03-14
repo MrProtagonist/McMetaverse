@@ -1,0 +1,120 @@
+command /ss:
+    description: Warp to the perm shop.
+    trigger:
+        teleport player to {sk.ss}
+command /setmarket:
+    description: Set location for perm shop.
+    permission: {@perm}
+    trigger:
+        set {sk.market} to location of player
+        message "<lime>Warp point set!"
+        stop   
+command /dev:
+        description: Talks about the Dev team.
+        trigger:
+                message "<light green>Our current Development team is:"
+                message "   - <yellow>MrProtagonist"
+                message "   - <yellow>McNicholas"
+                message "   - <yellow>CaptainStupid"
+                message "   - <yellow>Colahdetank"
+                message "   - <yellow>Bluedemon0015"
+                message "   - <yellow>DrBloodbathMC"
+                message "<light green>Current project:<gold> %{dev.current}%"
+
+command /devstatus <text>:
+        description: Update current dev project.
+        trigger: 
+                set {dev.current} to argument
+                message "<light green>Dev project updated!"
+                broadcast "&a&oUpdated &a&l&oDEV&r&a&o project to: &e&o%{dev.current}%"
+on damage:
+        victim is a player
+        attacker is a player
+        {pvp.%attacker%} is 0:
+                attacker is a player
+                victim is a player
+                cancel event
+                send "<yellow>You can't attack while your PVP is turned off!" to attacker
+                stop trigger
+        {pvp.%victim%} is 0:
+                cancel event
+                send "<yellow>You can't attack players that have PVP turned off!" to attacker
+on damage:
+        attacker's gamemode is creative
+        victim is a player
+        {pvp.%victim%} is 1:
+                cancel event
+                send "<yellow>You cannot attack while in creative!" to attacker
+command /statepvp:
+        description: Shows if you have PVP turned on
+        usage: /statepvp
+        aliases: /pvpstate
+        executable by: players
+        trigger:
+                {@use permissions} is 1:
+                        player doesn't have the permission "TogglePVP.state":
+                                message "<red>You don't have the permission for this command!"
+                                stop
+
+                {pvp.%player%} is not set:
+                        set {pvp.%player%} to {pvpsetting.default}
+
+                {pvp.%player%} is 1:
+                        message "<yellow>Your PVP Status is: &c&oactivated&r<yellow>!"
+
+                {pvp.%player%} is 0:
+                        message "<yellow>Your PVP Status is: &a&odeactivated&r<yellow>!"
+
+command /kit [<text="help">] [<text>]:
+        permission: essentials.socialspy
+        trigger:
+                if argument 1 is "help":
+                        message "&7/kit <name> &e- Spawn a kit"
+                        message "&7/kit edit <name> &e- Create/Edit a kit"
+                        message "&7/kit delete <name> &e- Delete a kit"
+                else if argument 1 is "edit":
+                        if argument 2 is set:
+                                set {kplus.kit.%argument 2%::inv} to player's serialized inventory
+                                broadcast "DEBUG - &e&oSerialized inventory of %player%"
+                                set {kplus.kit.%argument 2%} to arg 2
+                                set {kplus.kit.%argument 2%::h} to player's helmet
+                                set {kplus.kit.%argument 2%::c} to player's chestplate
+                                set {kplus.kit.%argument 2%::l} to player's leggings
+                                set {kplus.kit.%argument 2%::b} to player's boots
+                                broadcast "DEBUG - &e&oSaved armor on %player%"
+                                message "&aKit &9'%uncolored argument 2%' &aedited successfully!"
+                        if value "permissions.%argument 2%" pulled from "KitsPlusConfig" is not set:
+                                put "skript.kitsplus.%uncolored argument 2%" for "permissions.%argument 2%" in "KitsPlusConfig"
+                        else: 
+                                message "&7/kit edit <name> &e- Create/Edit a kit"
+                else if argument 1 is "list":
+                        message "%{kplus.kit.%argument 2%::inv}%"
+                        message "%{kplus.kit.%argument 2%::h}%"
+                        message "%{kplus.kit.%argument 2%::c}%"
+                        message "%{kplus.kit.%argument 2%::l}%"
+                        message "%{kplus.kit.%argument 2%::b}%"
+                else if argument 1 is "delete":
+                        if argument 2 is set:
+                                if {kplus.kit.%argument 2%::*} is set:
+                                        clear {kplus.kit.%argument 2%::*}
+                                        message "&aKit &9'%uncolored argument 2%' &acleared successfully!"
+                                else:
+                                        message "&cInvalid kit."
+                        else: 
+                                message "&7/kit delete <name> &e- Delete a kit"
+                else if argument 1 is set:
+                        if argument 2 is not set:
+                                if {kplus.kit.%argument 1%} is set:
+                                        if player has permission "is.newbie":
+                                                message "&5&oAttempting to restore %argument 1% kit..."
+                                                restore inventory of player to {kplus.kit.%argument 1%::inv}
+                                                set player's helmet to {kplus.kit.%argument 1%::h}
+                                                set player's chestplate to {kplus.kit.%argument 1%::c}
+                                                set player's leggings to {kplus.kit.%argument 1%::l}
+                                                set player's boots to {kplus.kit.%argument 1%::b}
+                                        else:
+                                                message "&cNo permission."
+                                else:
+                                        message "&cInvalid kit."
+                        else:
+                                message "&7/kit <name> &e- Spawn a kit"

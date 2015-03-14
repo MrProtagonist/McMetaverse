@@ -1,0 +1,21 @@
+geolocation: United States
+lastlocation:
+  world: Metacurse
+  x: -2.7599632292913157
+  y: 83.23862783797085
+  z: -75.51537138782442
+  yaw: -325.8764
+  pitch: 42.21595
+lastAccountName: toncker
+timestamps:
+  login: 1425012506066
+  logout: 1425012540504
+ipAddress: 71.197.128.18
+logoutlocation:
+  world: Metacurse
+  x: 2520.617858786032
+  y: 63.0
+  z: 7011.79312492796
+  yaw: 24.689295
+  pitch: 20.54998
+money: '0.0'

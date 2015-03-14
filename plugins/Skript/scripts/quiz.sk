@@ -1,0 +1,37 @@
+command /quiz <text>:
+	permission: essentials.socialspy
+	trigger:
+		if arg is set:
+			message "&aSet question to: &f%arg%"
+			set {quiz.question} to arg
+			message "Please supply the answer with: &a/setanswer answer here"
+		else:
+			message "Try: /quiz Your full question here."
+command /setanswer <text>:
+	permission: essentials.socialspy
+	trigger:
+		if arg is set:
+			message "&aSet answer to: &f%arg%"
+			set {quiz.answer} to arg
+			set {quiz.going} to true
+			broadcast " "
+			broadcast "&6&l&oQUIZ:&f&o %{quiz.question}%"
+			broadcast "&6Input your answer using &a/answer &6<&aYour answer here&6>"
+			wait 45 real seconds
+			execute console command "bm 45 &6&lQUIZ TIMER"
+			{quiz.going} is true
+			set {quiz.going} to false
+			broadcast "&6&l&oQUIZ: &c&oNobody won. Correct answer: &b%{quiz.answer}%"
+		else:
+			message "Try: /setanswer Answer here"
+command /answer <text>:
+	trigger:
+		{quiz.going} is true
+		if {quiz.answer} contains arg:
+			broadcast " "
+			broadcast "&a%player%&6 correctly identified the quiz answer as: &a%arg%"
+			broadcast "&e&lThey have won one drop party token!"
+			execute console command "givetoken %player%"
+			set {quiz.going} to false
+		else:
+			broadcast "&a%player% &cincorrectly guessed:&a %arg%"

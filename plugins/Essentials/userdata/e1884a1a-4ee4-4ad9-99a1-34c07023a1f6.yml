@@ -1,0 +1,21 @@
+money: '0.0'
+geolocation: New Zealand
+lastlocation:
+  world: newMeta
+  x: -4070.5
+  y: 72.06318902629505
+  z: -651.5
+  yaw: 5.5499997
+  pitch: 31.5
+lastAccountName: xbrightknee
+timestamps:
+  login: 1422748118501
+  logout: 1422748237462
+ipAddress: 121.72.192.195
+logoutlocation:
+  world: newMeta
+  x: -4059.399986179171
+  y: 70.0
+  z: -652.1216596403476
+  yaw: 301.77737
+  pitch: 22.049932

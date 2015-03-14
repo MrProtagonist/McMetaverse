@@ -1,0 +1,64 @@
+# ###################################
+# ##    Public Poll Version 1.0    ##
+# ###################################
+# ## Author: MrProtagonist         ##
+# ## Created for: The Metaverse    ##
+# ## Web: McMetaverse.com          ##
+# ## IP: S12.hosthorde.com:25573   ##
+# ###################################
+# To start a poll, simply type /poll Fully punctuated sentence in the form of a yes or no question here.
+# Will be adding other poll types in future updates.
+variables:
+	{poll.%player%.voted} = false
+on script load:
+	set {poll.going} to false
+	loop all players:
+		set {poll.%loop-player%.voted} to false
+	
+on join:
+	set {poll.%player%.voted} to false
+command /poll <text>:
+	trigger:
+		if {poll.going} is false:
+			player has permission "essentials.socialspy"
+			if arg is "yes" or "no":
+				message "&cYou appear to have mistyped."
+				stop
+			set {poll.going} to true
+			set {poll.yes} to 0
+			set {poll.no} to 0
+			execute console command "bm 60 &6&lPOLL COUNTDOWN"
+			broadcast "&r[&6&lPOLL&r] &l%arg%"
+			set {poll.question} to arg
+			wait 2 real seconds
+			broadcast "&6Poll ends in 1 minute. Type &a/poll yes&6 or &c/poll no&6 to give your input."
+			wait 1 real minute
+			broadcast " "
+			broadcast "&l- - -[ &6POLL RESULTS&r&l ]- - -"
+			broadcast "&r[&6&lPOLL&r] &e%{poll.question}%"
+			broadcast "         &aYES: &a&l%{poll.yes}%  &r&l-  &cNO: &c&l%{poll.no}%"
+			broadcast "&l- - - - - - - - - - - - - "
+			set {poll.going} to false
+			wait 10 real seconds
+			loop all players:
+				{poll.%loop-player%.voted} is true
+				set {poll.%loop-player%.voted} to false
+				message "&aThank you for participating in the poll. Here is a reward." to loop-player
+				execute console command "/eco give %loop-player% 150"
+		else:
+			if {poll.%player%.voted} is true:
+				message "&cYou already voted!"
+				stop trigger
+			else:
+				if arg is "yes":
+					message "&eYou voted &aYES&e in the poll."
+					add 1 to {poll.yes}
+					set {poll.%player%.voted} to true
+					stop trigger
+				if arg is "no":
+					message "&eYou voted &cNO&e in the poll."
+					add 1 to {poll.no}
+					set {poll.%player%.voted} to true
+					stop trigger
+				else:
+					message "&cYou must select yes or no."

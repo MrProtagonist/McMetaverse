@@ -1,0 +1,104 @@
+﻿options:
+    # The variable containing the player's currency, or player's money for external plugin economies with Vaul
+    # This variable should always contain an numerical value.
+    
+    # --- Slots ---
+    # The inital amount of money to pay to play slots
+    slots-pay: 10
+    # The money recieved for minor wins
+    slots-win-minor: 100
+    # The money recieved for a jackpot
+    slots-jackpot: 1000
+on sign change:
+    player has permission "casino.slots"
+    if line 1 of block is "-Slots-":
+        set line 1 of block to "[&4Slots&r]"
+        set line 3 of block to "&a&oReady"
+on right click on sign:
+    if line 1 of block is "[&4Slots&r]":        
+        line 3 of block is "&a&oReady"
+        if player's balance is less than {@slots-pay} dollars:
+            message "&c&oInsufficient money to play this machine"
+            stop
+        remove {@slots-pay} dollars from player's balance
+        message "&a&o$10&r&o paid to the slot machine..."
+        set line 3 of block to "&e-Playing-"
+        loop 60 times:
+            set {_reel1} to a random integer between 1 and 10
+            set {_reel2} to a random integer between 1 and 10
+            set {_reel3} to a random integer between 1 and 10
+            if {_reel1} is 1:
+                set {_reel1} to "■"
+            if {_reel1} is 2:
+                set {_reel1} to "&c♥&r"
+            if {_reel1} is 3:
+                set {_reel1} to "&c♦&r"
+            if {_reel1} is 4:
+                set {_reel1} to "♣"
+            if {_reel1} is 5:
+                set {_reel1} to "♠"
+            if {_reel1} is 6:
+                set {_reel1} to "○"
+            if {_reel1} is 7:
+                set {_reel1} to "•"
+            if {_reel1} is 8:
+                set {_reel1} to "&e☼&r"
+            if {_reel1} is 9:
+                set {_reel1} to "&6▲&r"
+            if {_reel1} is 10:
+                set {_reel1} to "&9▼&r"
+            if {_reel2} is 1:
+                set {_reel2} to "■"
+            if {_reel2} is 2:
+                set {_reel2} to "&c♥&r"
+            if {_reel2} is 3:
+                set {_reel2} to "&c♦&r"
+            if {_reel2} is 4:
+                set {_reel2} to "♣"
+            if {_reel2} is 5:
+                set {_reel2} to "♠"
+            if {_reel2} is 6:
+                set {_reel2} to "○"
+            if {_reel2} is 7:
+                set {_reel2} to "•"
+            if {_reel2} is 8:
+                set {_reel2} to "&e☼&r"
+            if {_reel2} is 9:
+                set {_reel2} to "&6▲&r"
+            if {_reel2} is 10:
+                set {_reel2} to "&9▼&r"
+            if {_reel3} is 1:
+                set {_reel3} to "■"
+            if {_reel3} is 2:
+                set {_reel3} to "&c♥&r"
+            if {_reel3} is 3:
+                set {_reel3} to "&c♦&r"
+            if {_reel3} is 4:
+                set {_reel3} to "♣"
+            if {_reel3} is 5:
+                set {_reel3} to "♠"
+            if {_reel3} is 6:
+                set {_reel3} to "○"
+            if {_reel3} is 7:
+                set {_reel3} to "•"
+            if {_reel3} is 8:
+                set {_reel3} to "&e☼&r"
+            if {_reel3} is 9:
+                set {_reel3} to "&6▲&r"
+            if {_reel3} is 10:
+                set {_reel3} to "&9▼&r"
+            set line 2 of block to "%{_reel1}% %{_reel2}% %{_reel3}%"
+            wait 1 tick
+        set line 3 of block to "&a&oReady"
+        if {_reel1} is {_reel2}:
+            if {_reel1} is {_reel3}:
+                add {@slots-jackpot} dollars to player's balance
+                broadcast "&b%player% &6won the slots jackpot of &a$1000&6!"
+                stop
+            add {@slots-win-minor} dollars to player's balance
+            message "&e&oYou just won &a&o$100!"
+            stop
+        message "&c&oYou lose. Try again?"
+            
+            
+    

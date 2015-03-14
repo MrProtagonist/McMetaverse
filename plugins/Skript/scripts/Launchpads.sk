@@ -1,0 +1,73 @@
+# This is the script for personal pads. For the server launchpad list, look in 1_8_core
+
+every 15 real seconds:
+	loop all players:
+		if loop-player has permission "launchpad.2":
+			{lp.%loop-player%.limit} is less than 2
+			set {lp.%loop-player%.limit} to 2
+		if loop-player has permission "launchpad.4":
+			{lp.%loop-player%.limit} is less than 4
+			set {lp.%loop-player%.limit} to 4
+		if loop-player has permission "launchpad.6":
+			{lp.%loop-player%.limit} is less than 6
+			set {lp.%loop-player%.limit} to 6
+		if loop-player has permission "launchpad.8":
+			{lp.%loop-player%.limit} is less than 8
+			set {lp.%loop-player%.limit} to 8
+		if loop-player has permission "launchpad.10":
+			{lp.%loop-player%.limit} is not 10
+			set {lp.%loop-player%.limit} to 10
+
+
+command /rocket:
+	aliases: destination
+	trigger:     
+		if {lp.%player%.amount} is not set:
+			set {lp.%player%.amount} to 0
+		if {lp.personal.%player%} is not set:
+			if {lp.%player%.limit} is {lp.%player%.amount}:
+				message "&cYou only have permission to have %{lp.%player%.limit}% Rocket Pads!"
+				stop
+			set {lp.personal.%player%} to true
+			message "&ePlace the pressure plate you want to be a Rocket Pad."
+			stop
+		else:
+			if {lp.personal.%player%} is false:
+				delete {lp.personal.%player%}
+				add location of player to {lp.personal.landings::*}
+				add {lp.temp.%player%} to {lp.personal.pads::*}
+				add player to {lp.personal.owners::*}
+				delete {lp.temp.%player%}
+				add 1 to {lp.%player%.amount}
+				message "&aSuccessfully added a Rocket Pad!"
+
+on break of pressure plate:
+	loop {lp.personal.pads::*}:
+		location of event-block is {lp.personal.pads::%loop-index%}
+		remove {lp.personal.pads::%loop-index%} from {lp.personal.pads::*}
+		remove {lp.personal.landings::%loop-index%} from {lp.personal.landings::*}
+		message "&a&oRemoved a Rocket Pad!"
+		subtract 1 from {lp.%player%.amount}
+	
+on place of pressure plate:
+	if {lp.personal.%player%} is true:
+		cancel event
+		set {lp.temp.%player%} to location of event-block
+		message "&eNow stand in your landing spot and do &a/destination&e. They land in the exact direction you are looking when typing the command."
+		set {lp.personal.%player%} to false
+ 
+on stepping on pressure plate:
+	loop {lp.personal.pads::*}:
+		set {warping.%player%} to true
+		location of event-block is {lp.personal.pads::%loop-index%}
+		wait 1 tick
+		push the player upwards at speed 10
+		execute console command "/playsound random.explode %player% ~0 ~0 ~0 20 50"
+		message "&a&oYou are whisked away to a far away land."
+		loop 33 times:
+			spawn 20 of mob spell data 1 offset with 1, 0, 1 at location of player
+			wait 1 tick
+		spawn 10 of huge explosion data 1 offset with 2, 2, 2 at location of player
+		wait 5 ticks
+		teleport player to {lp.personal.landings::%loop-index%}
+		delete {warping.%player%}

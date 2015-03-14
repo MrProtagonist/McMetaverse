@@ -1,0 +1,55 @@
+every real minute:
+	set {voter.1} to line 3 of block at {voter.1.location}
+	set {voter.2} to line 3 of block at {voter.2.location}
+	set {voter.3} to line 3 of block at {voter.3.location}
+	set {topplayer.1} to line 3 of block at {topplayer.1.location}
+	set {topplayer.2} to line 3 of block at {topplayer.2.location}
+	set {topplayer.3} to line 3 of block at {topplayer.3.location}
+	
+on join:
+	if {reward.%player%.day} is not set:
+		set {reward.%player%.day} to 0
+	wait 15 real seconds
+	if player is {voter.1}:
+		{reward.%player%.day} is not {reward.count}
+		set {reward.%player%.day} to {reward.count}
+		message "&f[&6DAILY REWARD&f] &eYou earned 150 claim blocks for being the ##1 voter this month!"
+		execute console command "adjustbonusclaimblocks %player% 150"
+		stop
+	if player is {voter.2}:
+		{reward.%player%.day} is not {reward.count}
+		set {reward.%player%.day} to {reward.count}
+		message "&f[&6DAILY REWARD&f] &eYou earned 150 claim blocks for being the ##2 voter this month!"
+		execute console command "adjustbonusclaimblocks %player% 150"
+		stop
+	if player is {voter.3}:
+		{reward.%player%.day} is not {reward.count}
+		set {reward.%player%.day} to {reward.count}
+		message "&f[&6DAILY REWARD&f] &eYou earned 150 claim blocks for being the ##3 voter this month!"
+		execute console command "adjustbonusclaimblocks %player% 150"
+		stop
+	if player is {topplayer.1}:
+		{reward.%player%.day} is not {reward.count}
+		set {reward.%player%.day} to {reward.count}
+		message "&f[&6DAILY REWARD&f] &eYou earned 150 claim blocks for being the ##1 player this month!"
+		execute console command "adjustbonusclaimblocks %player% 150"
+		stop
+	if player is {topplayer.2}:
+		{reward.%player%.day} is not {reward.count}
+		set {reward.%player%.day} to {reward.count}
+		message "&f[&6DAILY REWARD&f] &eYou earned 150 claim blocks for being the ##2 player this month!"
+		execute console command "adjustbonusclaimblocks %player% 150"
+		stop
+	if player is {topplayer.3}:
+		{reward.%player%.day} is not {reward.count}
+		set {reward.%player%.day} to {reward.count}
+		message "&f[&6DAILY REWARD&f] &eYou earned 150 claim blocks for being the ##3 player this month!"
+		execute console command "adjustbonusclaimblocks %player% 150"
+		stop
+on script load:
+	if {reward.count} is not set:
+		set {reward.count} to 0
+	add 1 to {reward.count}
+	loop all players:
+		{reward.%loop-player%.day} is not set
+		set {reward.%loop-player%.day} to 0

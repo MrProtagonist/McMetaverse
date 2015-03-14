@@ -1,0 +1,15 @@
+# SimpleSuffix v1.6 Config
+# 
+# The predefined suffix is the layout of the suffix.
+# If a player would type '/suffix Example', the suffix would be [Example].
+predefined suffix: §f [%suffix%§f]
+predefined prefix: '§f[§5§o%prefix%§f] '
+chat format: <%prefix%%player%%suffix%> %message%
+character limit prefix: 20
+character limit suffix: 20
+censored words:
+- fuck
+- shit
+- porn
+verboselogging: true
+debug: false

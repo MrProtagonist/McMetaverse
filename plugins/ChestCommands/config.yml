@@ -1,0 +1,22 @@
+# ChestCommands configuration file.
+# Tutorial: http://dev.bukkit.org/bukkit-plugins/chest-commands
+
+update-notifications: true
+try-to-hide-attributes: true
+default-item-name-color: '&f'
+default-lore-color: '&7'
+messages:
+  not-enough-money: '&cYou don''t have enough money (&e%price%&c) for this command.'
+  no-item-permission: '&cTo use this item you need the permission &e%permission%&c.'
+  no-required-item: '&cYou must have &e%amount%x %material% &c(ID: %id%, data value:
+    %datavalue%) for this.'
+  cost-bypassed: '&aYou have the permission &echestcommands.economy.bypass &aand you
+    didn''t pay for the command.'
+  no-inventory-space: '&cYou didn''t have enough space, items were dropped.'
+default-color:
+  lore: '&7'
+  name: '&f'
+use-only-commands-without-args: true
+multiple-commands-separator: ;
+anti-click-spam-delay: 200
+use-console-colors: true

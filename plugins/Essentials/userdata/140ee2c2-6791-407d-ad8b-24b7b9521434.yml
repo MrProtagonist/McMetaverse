@@ -1,0 +1,31 @@
+money: '25.0'
+lastlocation:
+  world: Metacurse
+  x: -46.09392432373904
+  y: 71.0
+  z: -102.00936868009337
+  yaw: 265.8661
+  pitch: 53.99996
+geolocation: United States
+lastAccountName: esfavorie
+timestamps:
+  login: 1426045801358
+  lastteleport: 1426046696157
+  logout: 1426049591762
+ipAddress: 76.178.137.32
+homes:
+  home:
+    world: Metacurse
+    x: -443.19584734743177
+    y: 66.0
+    z: -363.6912352629634
+    yaw: -90.600044
+    pitch: 16.50001
+logoutlocation:
+  world: Metacurse
+  x: -46.09392432373904
+  y: 71.0
+  z: -102.00936868009337
+  yaw: 265.8661
+  pitch: 53.99996
+afk: false

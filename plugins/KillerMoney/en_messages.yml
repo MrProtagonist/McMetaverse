@@ -1,0 +1,137 @@
+MESSAGE:
+    Prefix: "&8[ &fKillerMoney &8]"
+    ConfigReloaded: "The configuration file and lang file reloaded"
+    NoPermission: "You have not permission for this command!"
+
+PIG:
+    Positive: "&bCongratulation &7%playername&b! &7You killed a &bPIG&7! You earned: &b%currency%money"
+    Negative: "&bOps! &7%playername&b, &7you lost &b%currency%money"
+        
+SHEEP:
+    Positive: "&bCongratulation &7%playername&b! &7You killed a &bSHEEP&7! You earned: &b%currency%money"
+    Negative: "&bOps! &7%playername&b, &7you lost &b%currency%money"
+        
+CHICKEN:
+    Positive: "&bCongratulation &7%playername&b! &7You killed a &bCHICKEN&7! You earned: &b%currency%money"
+    Negative: "&bOps! &7%playername&b, &7you lost &b%currency%money"
+   
+COW:
+    Positive: "&bCongratulation &7%playername&b! &7You killed a &bCOW&7! You earned: &b%currency%money"
+    Negative: "&bOps! &7%playername&b, &7you lost &b%currency%money"  
+        
+HORSE:
+    Positive: "&bCongratulation &7%playername&b! &7You killed a &bHORSE&7! You earned: &b%currency%money"
+    Negative: "&bOps! &7%playername&b, &7you lost &b%currency%money"
+
+RABBIT:
+    Positive: "&bCongratulation &7%playername&b! &7You killed a &bRABBIT&7! You earned: &b%currency%money"
+    Negative: "&bOps! &7%playername&b, &7you lost &b%currency%money"
+        
+WOLF:
+    Positive: "&bCongratulation &7%playername&b! &7You killed a &bWOLF&7! You earned: &b%currency%money"
+    Negative: "&bOps! &7%playername&b, &7you lost &b%currency%money"
+   
+OCELOT:
+    Positive: "&bCongratulation &7%playername&b! &7You killed an &bOCELOT&7! You earned: &b%currency%money"
+    Negative: "&bOps! &7%playername&b, &7you lost &b%currency%money"
+       
+BAT:
+    Positive: "&bCongratulation &7%playername&b! &7You killed a &bBAT&7! You earned: &b%currency%money"
+    Negative: "&bOps! &7%playername&b, &7you lost &b%currency%money"
+        
+BLAZE:
+    Positive: "&bCongratulation &7%playername&b! &7You killed a &bBLAZE&7! You earned: &b%currency%money"
+    Negative: "&bOps! &7%playername&b, &7you lost &b%currency%money"
+        
+CAVE_SPIDER:
+    Positive: "&bCongratulation &7%playername&b! &7You killed a &bCAVE SPIDER&7! You earned: &b%currency%money"
+    Negative: "&bOps! &7%playername&b, &7you lost &b%currency%money"
+      
+CREEPER:
+    Positive: "&bCongratulation &7%playername&b! &7You killed a &bCREEPER&7! You earned: &b%currency%money"
+    Negative: "&bOps! &7%playername&b, &7you lost &b%currency%money"
+        
+ENDER_DRAGON:
+    Positive: "&bCongratulation &7%playername&b! &7You killed the &bENDER DRAGON&7! You earned: &b%currency%money"
+    Negative: "&bOps! &7%playername&b, &7you lost &b%currency%money"
+        
+ENDERMAN:
+    Positive: "&bCongratulation &7%playername&b! &7You killed an &bENDERMAN&7! You earned: &b%currency%money"
+    Negative: "&bOps! &7%playername&b, &7you lost &b%currency%money"
+
+ENDERMITE:
+    Positive: "&bCongratulation &7%playername&b! &7You killed an &bENDERMITE&7! You earned: &b%currency%money"
+    Negative: "&bOps! &7%playername&b, &7you lost &b%currency%money"
+        
+GHAST:
+    Positive: "&bCongratulation &7%playername&b! &7You killed a &bGHAST&7! You earned: &b%currency%money"
+    Negative: "&bOps! &7%playername&b, &7you lost &b%currency%money"
+        
+GIANT:
+    Positive: "&bCongratulation &7%playername&b! &7You killed a &bGIANT&7! You earned: &b%currency%money"
+    Negative: "&bOps! &7%playername&b, &7you lost &b%currency%money"
+
+GUARDIAN:
+    Positive: "&bCongratulation &7%playername&b! &7You killed a &bGUARDIAN&7! You earned: &b%currency%money"
+    Negative: "&bOps! &7%playername&b, &7you lost &b%currency%money"
+
+IRON_GOLEM:
+    Positive: "&bCongratulation &7%playername&b! &7You killed an &bIRON GOLEM&7! You earned: &b%currency%money"
+    Negative: "&bOps! &7%playername&b, &7you lost &b%currency%money"
+        
+MAGMA_CUBE:
+    Positive: "&bCongratulation &7%playername&b! &7You killed a &bMAGMA CUBE&7! You earned: &b%currency%money"
+    Negative: "&bOps! &7%playername&b, &7you lost &b%currency%money"
+        
+MUSHROOM_COW:
+    Positive: "&bCongratulation &7%playername&b! &7You killed a &bMUSHROOM COW&7! You earned: &b%currency%money"
+    Negative: "&bOps! &7%playername&b, &7you lost &b%currency%money"
+        
+PIG_ZOMBIE:
+    Positive: "&bCongratulation &7%playername&b! &7You killed a &bPIG ZOMBIE&7! You earned: &b%currency%money"
+    Negative: "&bOps! &7%playername&b, &7you lost &b%currency%money"
+        
+PLAYER:
+    Positive: "&bCongratulation &7%playername&b! &7You killed a &bPLAYER&7 (&b%victim&7)&b! &7You earned: &b%currency%money"
+    Negative: "&bOps! &7%playername&b, &7you lost &b%currency%money"
+    ToVictim: "&7Ops&b! &7You lost &b%currency%money&7, because you killed by &b%playername&7!"
+        
+SILVERFISH:
+    Positive: "&bCongratulation &7%playername&b! &7You killed a &bSILVERFISH&7! You earned: &b%currency%money"
+    Negative: "&bOps! &7%playername&b, &7you lost &b%currency%money"
+        
+SKELETON:
+    Positive: "&bCongratulation &7%playername&b! &7You killed a &bSKELETON&7! You earned: &b%currency%money"
+    Negative: "&bOps! &7%playername&b, &7you lost &b%currency%money"
+        
+SLIME:
+    Positive: "&bCongratulation &7%playername&b! &7You killed a &bSLIME&7! You earned: &b%currency%money"
+    Negative: "&bOps! &7%playername&b, &7you lost &b%currency%money"
+
+SNOWMAN:
+    Positive: "&bCongratulation &7%playername&b! &7You killed a &bSNOWMAN&7! You earned: &b%currency%money"
+    Negative: "&bOps! &7%playername&b, &7you lost &b%currency%money"
+        
+SPIDER:
+    Positive: "&bCongratulation &7%playername&b! &7You killed a &bSPIDER&7! You earned: &b%currency%money"
+    Negative: "&bOps! &7%playername&b, &7you lost &b%currency%money"
+        
+SQUID:
+    Positive: "&bCongratulation &7%playername&b! &7You killed a &bSQUID&7! You earned: &b%currency%money"
+    Negative: "&bOps! &7%playername&b, &7you lost &b%currency%money"
+        
+VILLAGER:
+    Positive: "&bCongratulation &7%playername&b! &7You killed a &bVILLAGER&7! You earned: &b%currency%money"
+    Negative: "&bOps! &7%playername&b, &7you lost &b%currency%money"
+       
+WITCH:
+    Positive: "&bCongratulation &7%playername&b! &7You killed a &bWITCH&7! You earned: &b%currency%money"
+    Negative: "&bOps! &7%playername&b, &7you lost &b%currency%money"
+        
+WITHER:
+    Positive: "&bCongratulation &7%playername&b! &7You killed a &bWITHER&7! You earned: &b%currency%money"
+    Negative: "&bOps! &7%playername&b, &7you lost &b%currency%money"
+        
+ZOMBIE:
+    Positive: "&bCongratulation &7%playername&b! &7You killed a &bZOMBIE&7! You earned: &b%currency%money"
+    Negative: "&bOps! &7%playername&b, &7you lost &b%currency%money"

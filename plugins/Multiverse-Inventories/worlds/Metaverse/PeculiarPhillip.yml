@@ -1,0 +1,5 @@
+playerData:
+  potions: ''
+  inventoryContents: 0:t:276;d:44;e:DAMAGE_ALL:1/1:t:277;d:361;e:DIG_SPEED:2/2:t:278;d:526;e:DURABILITY:2/3:t:258;d:232;e:DIG_SPEED:1/4:t:326/5:t:297;#:42/6:t:50;#:51/7:t:261/9:t:280;#:9/10:t:17;#:5/11:t:50;#:28/20:t:155;#:64/21:t:155;#:16/34:t:262;#:64
+  armorContents: 0:t:313;d:84;e:PROTECTION_ENVIRONMENTAL:1,PROTECTION_FALL:1/1:t:312;d:84/2:t:311;d:81;e:DURABILITY:1,PROTECTION_PROJECTILE:1/3:t:310;d:84
+  stats: ra:300;el:27;xp:0.1698114;ma:300;ft:-20;hp:17;txp:700;fd:0.0;fl:20;ex:1.1269101;sa:3.6000001

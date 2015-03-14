@@ -1,0 +1,33 @@
+money: '1061.6'
+lastlocation:
+  world: Metacurse
+  x: -2164.3186313713168
+  y: 65.60000002384186
+  z: -1045.116537072239
+  yaw: 235.47818
+  pitch: 46.4727
+geolocation: United States
+lastAccountName: katekitkat9
+timestamps:
+  login: 1425784832853
+  lastteleport: 1424542660732
+  logout: 1425785269263
+  jail: 0
+ipAddress: 71.211.248.29
+homes:
+  home:
+    world: Metacurse
+    x: -2167.5138233741104
+    y: 64.0
+    z: -1047.7943608655467
+    yaw: 0.48239136
+    pitch: 11.86456
+afk: false
+logoutlocation:
+  world: Metacurse
+  x: -2019.2775222045873
+  y: 67.0
+  z: -1509.2716915985754
+  yaw: 191.30402
+  pitch: 32.397324
+jailed: false

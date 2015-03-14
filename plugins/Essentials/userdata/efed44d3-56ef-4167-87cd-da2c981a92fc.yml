@@ -1,0 +1,21 @@
+geolocation: United States
+lastAccountName: milobuster
+timestamps:
+  login: 1425873269637
+  lastteleport: 1425873363199
+  logout: 1425873950632
+ipAddress: 76.95.166.5
+lastlocation:
+  world: Metacurse
+  x: 19.354623958269475
+  y: 69.0
+  z: -91.98893544423642
+  yaw: -172.57613
+  pitch: 4.115896
+logoutlocation:
+  world: Metacurse
+  x: -340.69999998807907
+  y: 65.0
+  z: -4.699999988079068
+  yaw: 336.74878
+  pitch: 28.350044

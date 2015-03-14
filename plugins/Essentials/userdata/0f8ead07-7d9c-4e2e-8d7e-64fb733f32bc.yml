@@ -1,0 +1,29 @@
+lastlocation:
+  world: Metacurse
+  x: -66.5
+  y: 70.0
+  z: -71.5
+  yaw: 0.06689453
+  pitch: -1.799998
+geolocation: Ireland
+lastAccountName: james00754
+timestamps:
+  login: 1425487587536
+  logout: 1425488683788
+ipAddress: 78.17.17.63
+logoutlocation:
+  world: Metacurse
+  x: -628.896074024252
+  y: 62.23508363071972
+  z: 357.1934399756877
+  yaw: 243.4449
+  pitch: 9.807454
+homes:
+  home:
+    world: Metacurse
+    x: -521.1455667064799
+    y: 69.0
+    z: 170.3000000119209
+    yaw: 55.32749
+    pitch: 55.945633
+money: '27.0'

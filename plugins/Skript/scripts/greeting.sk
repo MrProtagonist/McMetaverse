@@ -1,0 +1,37 @@
+on join:
+	player has the permission "is.premium"
+	{greeting.%player%} is set
+	set join message to "&e%player% %{greeting.%player%}%"
+command /greeting <text>:
+	permission: is.premium
+	usage: /greeting (words to appear AFTER YOUR NAME when you greeting)
+	trigger:
+		if arg is set:
+			set {greeting.%player%} to arg
+			message "&aGreeting set! Here is how it will look when you greeting:"
+			message "&e%player% %arg%"
+			stop
+		else:
+			message "&eUsage: &a/greeting (words to appear AFTER YOUR NAME when you greeting)"
+			message "&eExample: &a/greeting is in the house!"
+			message "&eResult: &e%player% is in the house!"
+			stop
+
+on quit:
+	player has the permission "is.premium"
+	{farewell.%player%} is set
+	set leave message to "&e%player% %{farewell.%player%}%"
+command /farewell <text>:
+	permission: is.premium
+	usage: /farewell (words to appear AFTER YOUR NAME when you leave)
+	trigger:
+		if arg is set:
+			set {farewell.%player%} to arg
+			message "&aFarewell set! Here is how it will look when you leave the game:"
+			message "&e%player% %arg%"
+			stop
+		else:
+			message "&eUsage: &a/farewell (words to appear AFTER YOUR NAME when you leave)"
+			message "&eExample: &a/farewell is Minecrafted out and left."
+			message "&eResult: &e%player% is Minecrafted out and left.1555"
+			stop

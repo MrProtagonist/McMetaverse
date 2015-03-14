@@ -1,0 +1,96 @@
+# ###################################
+# ##   Parkour Timer Version 1.0   ##
+# ###################################
+# ## Author: MrProtagonist         ##
+# ## Created for: The Metaverse    ##
+# ## Web: McMetaverse.com          ##
+# ## IP: S12.hosthorde.com:25573   ##
+# ###################################
+variables:
+	{parkour.running} = false
+	{parkour.isused} = false
+	{parkour.time} = 0
+	{parkour.bounce} = 2
+	{parkour.launched} = false
+command /parkour:
+	trigger:
+		if {parkour.isused} is true:
+			message "&cSomebody is already on the track! Try again soon!"
+			stop
+		else:
+			set {parkour.isused} to true
+			set {parkour.player} to player
+			message "&6Your run and the timer will begin in 10 seconds."
+			message "&eGood luck!"
+			teleport player to {parkour.start}
+			wait 5 real seconds
+			message "&b&l5"
+			wait 1 real second
+			message "&b&l4"
+			wait 1 real second
+			message "&b&l3"
+			wait 1 real second
+			message "&b&l2"
+			wait 1 real second
+			message "&b&l1"
+			wait 1 real second
+			message "&a&lGO!"
+			set block at {parkour.gate} to air
+			set {parkour.running} to true
+every 1 real second:
+	{parkour.running} is true
+	add 1 to {parkour.time}
+command /finishedrun:
+	permission: is.console
+	trigger:
+		send "&aFinished run in: &6&l%{parkour.time}% &6seconds" to {parkour.player}
+		set {parkour.isused} to false
+		set {parkour.running} to false
+		if {parkour.time} is greater than {parkour.best}:
+			broadcast "&a&l%{parkour.player}%&ejust set the Parkour high score with &6&l%{parkour.time}%&e seconds!"
+on walk on sponge:
+	player is in world "Creative"
+	{parkour.launched} is false
+	set {parkour.launched} to true
+	push the player upwards at speed 1.8
+	wait 5 ticks
+	set {parkour.launched} to false
+#on damage of a player:
+#	{parkour.player} is player
+#	cancel event
+on right click with fishing rod:
+	name of player's tool is "Grappling Hook"
+	cancel event
+	{grappling.%player%.reloading} is not set:
+		set {grappling.%player%.reloading} to false
+	{parkour.hooked} is not set:
+		set {parkour.hooked} to false
+	{grappling.%player%.reloading} is true:
+		message "&cGrappling Hook not reloaded!"
+		stop
+	shoot arrow from player at speed 2.0
+	set {grappling.%player%.reloading} to true
+	wait 3 real seconds
+	set {parkour.hooked} to false
+	message "&a&o&lGrappling Hook reloaded!"
+	set {grappling.%player%.reloading} to false
+	
+on pickup:
+	{parkour.player} is player
+	cancel event
+	
+on projectile hit:
+	shooter's tool is fishing rod named "Grappling Hook"
+	projectile is arrow
+	set {_block} to location of the projectile
+	loop blocks in radius 2 of {_block}:
+		{parkour.hooked} is false
+		loop-block is oak log
+		message "&a&oThe hook latched!" to shooter
+		set {parkour.hooked} to true
+		wait 1 real second
+		teleport shooter to {_block}
+		stop
+	{parkour.hooked} is false
+	message "&c&oMissed!" to shooter
+	

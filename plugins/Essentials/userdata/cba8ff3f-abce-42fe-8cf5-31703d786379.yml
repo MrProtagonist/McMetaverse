@@ -1,0 +1,30 @@
+money: '325.0'
+lastlocation:
+  world: Metacurse
+  x: -641.7509283456368
+  y: 64.0
+  z: 99.73760425660797
+  yaw: -58.94171
+  pitch: 12.150075
+geolocation: United States
+lastAccountName: Mine_o_Cratian
+timestamps:
+  login: 1423266658650
+  lastteleport: 1423268993552
+  logout: 1423269441959
+ipAddress: 24.241.39.232
+homes:
+  home:
+    world: Metacurse
+    x: -654.8727345980504
+    y: 70.0
+    z: 99.23552281671051
+    yaw: -88.34131
+    pitch: 16.800053
+logoutlocation:
+  world: Metacurse
+  x: -653.8796151649807
+  y: 76.0
+  z: 90.65477279177867
+  yaw: 88.20877
+  pitch: 9.0001135

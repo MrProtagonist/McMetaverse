@@ -1,0 +1,147 @@
+﻿variables:
+	{drugs.%player%} = 0
+	{drugs.%player%.weed.brokenup} = 0
+on left click:
+	if {drugs.%player%} is 9:
+		player is sneaking
+		player is holding bone meal
+		set {drugs.%player%} to 0
+		apply wither 1 to player for 10 seconds
+		apply haste 2 to player for 20 seconds
+		apply speed 2 to player for 20 seconds
+		apply nausea 2 to player for 20 seconds
+		apply jump boost 2 to player for 20 seconds
+		remove 1 bone meal from player
+		kill player
+		message "&c&oYou've overdosed while smoking crack!"
+		stop
+	if player is holding bone meal:
+		player is sneaking
+		message "&f&oYou smoke some CRACK."
+		apply haste 2 to player for 20 seconds
+		apply speed 2 to player for 20 seconds
+		apply nausea 2 to player for 20 seconds
+		apply jump boost 2 to player for 20 seconds
+		remove 1 bone meal from player
+		add 1 to {drugs.%player%}
+		stop
+on rightclick:
+	player's tool is sugar:
+		player is sneaking
+		message "&f&oYou rail some coke and feel energized."
+		remove 1 sugar from player
+		poison player for 10 seconds
+		set player's walk speed to 0.5
+		set player's flying speed to 0.5
+		apply potion of strength of tier 2 to the player for 45 seconds
+		remove 1 sugar from player
+		wait 45 seconds
+		message "&f&oYou've come down."
+		set player's walk speed to 0.25
+		apply nausea 2 to player for 5 seconds
+		set player's flying speed to 0.25
+		stop
+	player's tool is brown mushroom:
+		player is sneaking
+		message "&f&oYou eat the shroom and start to trip out."
+		set player's walk speed to 0.10
+		set player's flying speed to 0.10
+		remove 1 brown mushroom from player
+		poison player for 5 seconds
+		apply nausea 2 to the player for 1.5 minutes
+		apply night vision to the player for 1.5 minutes
+		wait 1.5 minutes
+		set player's walk speed to 0.25
+		set player's flying speed to 0.25
+		message "&a&oYou've come down from your trip."
+		stop
+	player's tool is bowl:
+		player is sneaking
+		{drugs.%player%.weed.bowl.packed} is true:
+			message "&f&oYou take a hit and feel all your worries slip away."
+			set {drugs.%player%.weed.bowl.packed} to false
+			apply nausea 4 to the player for 40 seconds
+			apply slowness 3 to the player for 40 seconds
+			loop 20 times:
+				play 1 of effect "smoke" with data 1 at location of player
+				play 1 of effect "townaura" with data 1 at location of player
+				play 1 of effect "largesmoke" with data 1 at location of player
+				wait 1 tick
+		else:
+			message "&c&oThis bowl is not packed!"
+	#player's tool is blaze rod:
+	player's tool is long grass:
+		player is sneaking
+		message "&a&oYou have enough herb ground up for %{drugs.%player%.weed.brokenup}% bowls."
+	if {alcohol.%player%} is 7:
+		player is sneaking
+		message "&f&oYou are getting dangerously close to overdosing.."
+		remove 1 potion from player
+		add 1 to {alcohol.%player%}
+		set player's walk speed to 0.10
+		set player's flying speed to 0.10
+		apply nausea 1 to the player for 1.5 minutes
+		wait 1.5 minutes
+		set player's walk speed to 0.25
+		set player's flying speed to 0.25
+		poison player for 5 seconds
+		apply nausea 2 to the player for 20 seconds
+		wait 30 seconds
+		stop
+	if {alcohol.%player%} is 12:
+		player is holding potion
+		set {alcohol.%player%} to 0
+		remove 1 potion from player
+		message "&c&oYou've overdosed! You have died of alcohol poisioning!"
+		wait 2 seconds
+		kill player
+		stop
+	if player is holding potion:
+		player is sneaking
+		message "&f&oYou drink the beverage to help with the pain..."
+		remove 1 potion from player
+		add 1 to {alcohol.%player%}
+		set player's walk speed to 0.10
+		set player's flying speed to 0.10
+		apply nausea 1 to the player for 1.5 minutes
+		wait 1.5 minutes
+		set player's walk speed to 0.25
+		set player's flying speed to 0.25
+		poison player for 5 seconds
+		apply nausea 2 to the player for 20 seconds
+		wait 30 seconds
+		stop
+on leftclick:
+	player's tool is long grass:
+		player is sneaking
+		player has 1 long grass
+		if {drugs.%player%.weed.breakingup} is true:
+			message "&a&oAlreading grinding some herb!"
+			stop
+		message "&a&oYou start grinding some herb..."
+		wait 1 second
+		set {drugs.%player%.weed.breakingup} to true
+		if player has a clock:
+			message "&a&oLuckily you have your grinder! This won't take long."
+			wait 5 seconds
+		else:
+			message "&a&oIf only you had brought a grinder (clock)"
+			wait 15 seconds
+		remove 1 long grass from player
+		add 1 to {drugs.%player%.weed.brokenup}
+		message "&a&oFinished grinding weed! You have %{drugs.%player%.weed.brokenup}% hits ground up."		
+		set {drugs.%player%.weed.breakingup} to false
+	player's tool is bowl:
+		player is sneaking	
+		if {drugs.%player%.weed.bowl.packed} is true:
+			message "&a&oAlready packed!"
+			stop
+		if {drugs.%player%.weed.brokenup} is less than 1:
+			message "&c&oYou need to grind some weed before you pack a bowl. =["
+			stop
+		else:
+			remove 1 from {drugs.%player%.weed.brokenup}
+			message "&oLoading..."
+			set {drugs.%player%.weed.bowl.packed} to true
+			wait 2 real seconds
+			message "&a&oLoaded some dank herb in the bowl!"

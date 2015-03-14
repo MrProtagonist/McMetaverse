@@ -1,0 +1,31 @@
+geolocation: United States
+lastlocation:
+  world: Metacurse
+  x: -610.3795312811586
+  y: 72.0
+  z: -1523.155535223022
+  yaw: -214.89728
+  pitch: -3.7500257
+lastAccountName: coolcoolcool64
+timestamps:
+  login: 1423360348744
+  logout: 1423360579465
+  lastteleport: 1423353124173
+ipAddress: 68.195.66.72
+logoutlocation:
+  world: Metacurse
+  x: -693.3320117459926
+  y: 71.0
+  z: -1420.8057063983317
+  yaw: -327.3971
+  pitch: 29.250002
+money: '154.0'
+homes:
+  home:
+    world: Metacurse
+    x: -567.5736735128315
+    y: 55.0
+    z: -1547.2993090956204
+    yaw: 0.35235596
+    pitch: 8.700028
+afk: false

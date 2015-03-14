@@ -1,0 +1,30 @@
+lastlocation:
+  world: Metacurse
+  x: -10.424099392787333
+  y: 70.0
+  z: -134.93400257985525
+  yaw: -0.08302276
+  pitch: 11.549993
+geolocation: United States
+lastAccountName: pumpkinpepper
+timestamps:
+  login: 1425531062820
+  logout: 1425532314704
+  lastteleport: 1424061553042
+ipAddress: 98.193.44.48
+money: '1191.0'
+logoutlocation:
+  world: Metacurse
+  x: 678.8599441872748
+  y: 66.0
+  z: -867.6728522788038
+  yaw: 93.59684
+  pitch: 26.700003
+homes:
+  home:
+    world: Metacurse
+    x: 676.2783891452566
+    y: 66.0
+    z: -868.6775781999432
+    yaw: 3.899618
+    pitch: 13.650031

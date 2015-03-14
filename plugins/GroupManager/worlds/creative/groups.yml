@@ -1,0 +1,131 @@
+# Group inheritance
+#
+# Any inherited groups prefixed with a g: are global groups
+# and are inherited from the GlobalGroups.yml.
+#
+# Groups without the g: prefix are groups local to this world
+# and are defined in the this groups.yml file.
+#
+# Local group inheritances define your promotion tree when using 'manpromote/mandemote'
+
+groups:
+  Default:
+    default: true
+    permissions:
+    - -bukkit.command.kill
+    - -essentials.build.place.49
+    - -essentials.build.place.10
+    - -essentials.build.place.11
+    - -essentials.build.craft.49
+    - -essentials.build.place.327
+    - -griefprevention.claims
+    - -griefprevention.createclaims
+    - bukkit.command.spawn
+    - bukkit.spawn
+    - Claims.CreationRequiresPermission
+    - essentials.afk
+    - essentials.back
+    - essentials.back.ondeath
+    - essentials.build.*
+    - essentials.chat.question
+    - essentials.chat.shout
+    - essentials.compass
+    - essentials.delhome
+    - essentials.depth
+    - essentials.help
+    - essentials.helpop
+    - essentials.home
+    - essentials.home.bed
+    - essentials.home.del
+    - essentials.home.delete
+    - essentials.homes.delete
+    - essentials.ignore
+    - essentials.mail
+    - essentials.mail.send
+    - essentials.me
+    - essentials.motd
+    - essentials.msg
+    - essentials.mv.mvspawn
+    - essentials.ping
+    - essentials.rules
+    - essentials.sethome
+    - essentials.sethome.multiple.5
+    - essentials.sethome.multiple.7
+    - essentials.signs.use.*
+    - essentials.spawn
+    - essentials.tpa
+    - essentials.tpa.*
+    - essentials.tpaccept
+    - essentials.warp
+    - essentials.warp.hub
+    - essentials.warp.list
+    - essentials.warp.rules
+    - essentials.warps
+    - frameprotect.autoprotect.*
+    - frameprotect.place.*
+    - frameprotect.protect.*
+    - groupmanager.notify.self
+    - multiverse.access.*
+    - multiverse.access.metaverse
+    - multiverse.mvspawn
+    - multiverse.portal.access.*
+    - multiverse.portal.access.incontest
+    - multiverse.portal.access.metaverse
+    - multiverse.portal.access.outcontest
+    - mv.mvspawn
+    inheritance:
+    - g:bukkit_default
+    - g:essentials_default
+    info:
+      prefix: '&c&oCreative&r '
+      build: true
+      suffix: ''
+  Owner:
+    default: false
+    permissions:
+    - -vanish.*
+    - '*'
+    - essentials.tp
+    - essentials.tphere
+    - essentials.tpo
+    - essentials.tpohere
+    inheritance:
+    - pro
+    info:
+      prefix: '&a&oStaff&r '
+      build: true
+      suffix: ''
+  Pro:
+    default: false
+    permissions:
+    - essentials.protect.alerts.notrigger
+    - essentials.sethome
+    - essentials.sethome.multiple
+    - essentials.sethome.multiple.unlimited
+    - essentials.warp.*
+    - perms
+    - voxelsniper.sniper
+    - worldedit.*
+    inheritance:
+    - trusted
+    - g:essentials_builder
+    - g:towny_builder
+    info:
+      prefix: '&a&oPro Builder&r '
+      build: true
+      suffix: ''
+  Trusted:
+    default: false
+    permissions:
+    - essentials.protect.alerts.notrigger
+    - essentials.sethome.multiple.unlimited
+    - essentials.warps.decor
+    - voxelsniper.litesniper
+    inheritance:
+    - default
+    - g:essentials_builder
+    - g:towny_builder
+    info:
+      prefix: '&d&oVIP Builder&r '
+      build: true
+      suffix: ''

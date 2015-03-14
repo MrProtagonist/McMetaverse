@@ -1,0 +1,271 @@
+money: '180957.01875'
+geolocation: United States
+lastAccountName: Quisalas
+timestamps:
+  login: 1426310368639
+  lastteleport: 1426315115960
+  logout: 1426315113251
+ipAddress: 173.169.109.100
+lastlocation:
+  world: Metacurse
+  x: -302.7569879869532
+  y: 62.0
+  z: -1286.683086826377
+  yaw: -175.29562
+  pitch: 8.849991
+logoutlocation:
+  world: Metacurse
+  x: -483.5104311015143
+  y: 78.0
+  z: 5449.029997525622
+  yaw: -270.0724
+  pitch: 9.750008
+homes:
+  spawner:
+    world: Metacurse
+    x: -75.4010708497436
+    y: 31.0
+    z: -1233.4243278651043
+    yaw: 174.35376
+    pitch: 90.0
+  spawner_home:
+    world: Metacurse
+    x: -75.4010708497436
+    y: 31.0
+    z: -1233.4243278651043
+    yaw: 174.35376
+    pitch: 90.0
+  field:
+    world: Metacurse
+    x: -324.5906226904807
+    y: 66.0
+    z: -1283.9287126826073
+    yaw: -88.44556
+    pitch: 10.799993
+  skelly:
+    world: Metacurse
+    x: 177.10722118837094
+    y: 26.0
+    z: -6832.49797311569
+    yaw: -271.76367
+    pitch: 6.4499955
+  shop:
+    world: Metacurse
+    x: -1.9422036039371178
+    y: 70.0
+    z: -130.34413588065118
+    yaw: -93.37454
+    pitch: 8.688917
+  trich:
+    world: Metacurse
+    x: 2100.610227942593
+    y: 65.0
+    z: 2638.4907488124495
+    yaw: 178.85382
+    pitch: 64.64996
+  temple:
+    world: Metacurse
+    x: -5544.217730015782
+    y: 40.0
+    z: 4788.309179709056
+    yaw: 179.00476
+    pitch: 0.90006125
+  swamp:
+    world: Metacurse
+    x: -2333.5734597135324
+    y: 66.0
+    z: -55.65718854260717
+    yaw: 223.21423
+    pitch: 33.300056
+  horse1:
+    world: Metacurse
+    x: 430.22849175722587
+    y: 64.0
+    z: 1189.6507489159185
+    yaw: 37.55493
+    pitch: 36.75001
+  view:
+    world: Metacurse
+    x: 908.2777614175772
+    y: 123.85490691907043
+    z: 5556.306111881335
+    yaw: 40.404396
+    pitch: 89.7
+  zom:
+    world: Metacurse
+    x: -278.94347270470803
+    y: 24.0
+    z: -1445.6406195526415
+    yaw: 304.6848
+    pitch: 11.099984
+  wood:
+    world: Metacurse
+    x: 2211.12633072453
+    y: 69.0
+    z: 2421.087066666588
+    yaw: 86.90509
+    pitch: 8.699994
+  blaze:
+    world: Metacurse_nether
+    x: -74.76434242932237
+    y: 79.0
+    z: -603.3000000119209
+    yaw: 0.960083
+    pitch: -10.949999
+  town:
+    world: Metacurse
+    x: -482.5
+    y: 70.0
+    z: 5444.5
+    yaw: 274.57623
+    pitch: 10.799982
+  green:
+    world: Metacurse
+    x: -4319.148938859893
+    y: 78.23981944016288
+    z: -835.7918963025994
+    yaw: 119.51246
+    pitch: 10.050034
+  croc:
+    world: Metacurse
+    x: -3888.6765112603516
+    y: 102.97093708242392
+    z: -580.4784772787619
+    yaw: 82.913025
+    pitch: 12.600019
+  skeletons:
+    world: Metacurse
+    x: -3392.8520218054305
+    y: 29.0
+    z: -1662.962975123489
+    yaw: 188.2066
+    pitch: 22.949945
+  end:
+    world: Metacurse_the_end
+    x: 100.82916547111624
+    y: 49.0
+    z: 1.0148623531669787
+    yaw: 104.12305
+    pitch: 18.150003
+  fengo:
+    world: Metacurse
+    x: -2167.902788915457
+    y: 64.0
+    z: -1089.081209646059
+    yaw: -3.1099567
+    pitch: 9.599925
+  wither:
+    world: Metacurse_the_end
+    x: -21.392020215255464
+    y: 67.875
+    z: -0.3743240274144527
+    yaw: -349.02682
+    pitch: 44.399982
+  taiga:
+    world: Metacurse
+    x: 1200.5
+    y: 70.0
+    z: 4900.5
+    yaw: 325.7037
+    pitch: 21.300097
+  plateau:
+    world: Metacurse
+    x: 1400.5
+    y: 96.0
+    z: 4100.5
+    yaw: 325.7037
+    pitch: 21.300097
+  fieldtown:
+    world: Metacurse
+    x: 2367.422876490846
+    y: 90.0
+    z: 5441.461332289519
+    yaw: 254.60724
+    pitch: 69.00001
+  flowers:
+    world: Metacurse
+    x: -1545.301903821546
+    y: 114.46271510051615
+    z: -3492.997423783731
+    yaw: 176.60376
+    pitch: 46.50005
+  zomspawn:
+    world: Metacurse
+    x: -593.5270687280121
+    y: 32.0
+    z: 5206.542214798852
+    yaw: 247.12744
+    pitch: 11.549982
+  ice:
+    world: Metacurse
+    x: -6010.93866794398
+    y: 64.0
+    z: -3280.0995187106655
+    yaw: 140.76671
+    pitch: 20.699913
+  scatz:
+    world: Metacurse
+    x: -4274.5
+    y: 71.0
+    z: -1987.5
+    yaw: 172.6941
+    pitch: 11.399989
+  villager:
+    world: Metacurse
+    x: -4797.77576031663
+    y: 71.0
+    z: 3605.9425466253765
+    yaw: 255.80469
+    pitch: 6.899912
+  village:
+    world: Metacurse
+    x: 1861.3107752689277
+    y: 69.0
+    z: -394.37660470680555
+    yaw: 51.65455
+    pitch: 19.649975
+  temple1:
+    world: Metacurse
+    x: -2331.2921601379853
+    y: 64.0
+    z: -3327.7442841040365
+    yaw: 313.0921
+    pitch: 26.249928
+  mining:
+    world: Metacurse
+    x: -1403.5
+    y: 12.0
+    z: 5397.5
+    yaw: 173.48628
+    pitch: 29.099968
+  temple2:
+    world: Metacurse
+    x: 5229.260645491432
+    y: 70.40305236531158
+    z: -5353.270886870715
+    yaw: 273.51538
+    pitch: 80.4
+  noob:
+    world: Metacurse
+    x: 1218.7578359441998
+    y: 64.0
+    z: 5569.07702767627
+    yaw: 89.31247
+    pitch: -1.5000355
+  head:
+    world: Metacurse
+    x: -42.493490537334
+    y: 68.0
+    z: -25.054864309927495
+    yaw: 144.52548
+    pitch: 41.388916
+  mine:
+    world: Metacurse
+    x: -691.862969177474
+    y: 9.0
+    z: 4950.950625803076
+    yaw: 229.43555
+    pitch: 31.49993
+afk: false
+mail:
+- §6[§rLucky_shots69§6] §rdo you have armor I can buy frim you

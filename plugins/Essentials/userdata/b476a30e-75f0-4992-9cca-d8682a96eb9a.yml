@@ -1,0 +1,31 @@
+geolocation: United States
+lastlocation:
+  world: Metacurse
+  x: -11.245710798265442
+  y: 71.0
+  z: -136.76249998807907
+  yaw: -347.88458
+  pitch: 16.952452
+lastAccountName: AtomicBurgerFlip
+timestamps:
+  login: 1423365616115
+  logout: 1423367269359
+  lastteleport: 1423366322699
+ipAddress: 76.22.11.201
+homes:
+  home:
+    world: Metacurse
+    x: -860.217822377187
+    y: 72.0
+    z: 300.9274738545985
+    yaw: 287.53946
+    pitch: 83.24157
+money: '61.55'
+afk: false
+logoutlocation:
+  world: Metacurse
+  x: -858.605642503677
+  y: 72.0
+  z: 302.73471014998336
+  yaw: 348.1364
+  pitch: 39.004856

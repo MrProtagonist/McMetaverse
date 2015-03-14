@@ -1,0 +1,12 @@
+update-checker: true
+settings:
+  private-chat:
+    format: '&a[Partner] &7{Player}&f: &a{Message}'
+  chat-prefix:
+    use: true
+    format: '&4&l<3&r {OLD_FORMAT}'
+  request-expire: 60
+  enable-chatspy: true
+price:
+  '{command name}': 10.0
+  marry: 0.0
