@@ -8,17 +8,19 @@ variables:
 	{randommessage::7} = "Visit &a&oMcMetaverse.com&f&o often to stay informed!"
 	{randommessage::8} = "You can join a private &a&o/chat&f&o channel with friends!"
 	{randommessage::9} = "Be sure you are familiar with the &a/rules&f&o."
-	{randommessage::10} = "New Ranks are now fully operational.  Check out the &a&o/rankup&f&o menu to move on up!"
-	{randommessage::11} = "You can catch mobs with some redstone and eggs!"
-	{randommessage::12} = "Never ask an &c&oAdmin or &a&oDev &f&oto fix something in chat! They only respond to &a/ticket&f&os"
-	{randommessage::13} = "You can find a comprehensive guide on our home page."
-	{randommessage::14} = "Start an item auction by typing &a&o/auc start &f&o<&a&oPrice&f&o>, then place the item you want to auction in the popup inventory!"
-	{randommessage::15} = "Feeling generous? Buy all your fellow community members a drop party for only $1 in the &a/buy&f&o menu."
+    {randommessage::10} = "You can use the &a&o/rankup&f&o command to view perms and rank up."
+	{randommessage::11} = "New Ranks are now fully operational.  Check out the &a&o/rankup&f&o menu to move on up!"
+	{randommessage::12} = "You can catch mobs with some redstone and eggs!"
+	{randommessage::13} = "Never ask an &c&oAdmin or &a&oDev &f&oto fix something in chat! They only respond to &a/ticket&f&os"
+	{randommessage::14} = "You can find a comprehensive guide on our home page."
+	{randommessage::15} = "Start an item auction by typing &a&o/auc start &f&o<&a&oPrice&f&o>, then place the item you want to auction in the popup inventory!"
+	{randommessage::16} = "Feeling generous? Buy all your fellow community members a drop party for only $1 in the &a/buy&f&o menu."
+    {randommessage::17} = "&5&lPremium&f&o benefits have been updated and expanded! Use &a&o/premium&f&o to see them."
 every 10 real seconds:
-	set {_num} to a random integer between 1 and 15
+	set {_num} to a random integer between 1 and 17
 	if {announce.last} is {_num}:
 		add 1 to {_num}
-	if {_num} is 11:
+	if {_num} is 17:
 		set {_num} to 1
 	set {announce.last} to {_num}
 	broadcast "&f[&aSERVER&f] &o%{randommessage::%{_num}%}%"
