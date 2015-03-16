@@ -889,3 +889,64 @@ found character 	 '\t(TAB)' that cannot start any token. (Do not use \t(TAB) for
 
 ============================================================================
 
+2015-03-15 21-42
+=============================== GM ERROR LOG ===============================
+= ERROR REPORT START - 2.1.20 (Phoenix) =
+
+java.lang.IllegalArgumentException: The following file couldn't pass on Parser.
+plugins/GroupManager/worlds/metacurse/users.yml
+	at org.anjocaido.groupmanager.dataholder.WorldDataHolder.loadUsers(WorldDataHolder.java:839)
+	at org.anjocaido.groupmanager.dataholder.WorldDataHolder.loadUsers(WorldDataHolder.java:514)
+	at org.anjocaido.groupmanager.dataholder.worlds.WorldsHolder.loadWorld(WorldsHolder.java:684)
+	at org.anjocaido.groupmanager.dataholder.worlds.WorldsHolder.loadWorld(WorldsHolder.java:640)
+	at org.anjocaido.groupmanager.dataholder.worlds.WorldsHolder.initialWorldLoading(WorldsHolder.java:110)
+	at org.anjocaido.groupmanager.dataholder.worlds.WorldsHolder.initialLoad(WorldsHolder.java:100)
+	at org.anjocaido.groupmanager.dataholder.worlds.WorldsHolder.resetWorldsHolder(WorldsHolder.java:92)
+	at org.anjocaido.groupmanager.GroupManager.onEnable(GroupManager.java:181)
+	at org.anjocaido.groupmanager.GroupManager.onCommand(GroupManager.java:1827)
+	at org.bukkit.command.PluginCommand.execute(PluginCommand.java:44)
+	at org.bukkit.command.SimpleCommandMap.dispatch(SimpleCommandMap.java:141)
+	at org.bukkit.craftbukkit.v1_8_R1.CraftServer.dispatchCommand(CraftServer.java:645)
+	at net.minecraft.server.v1_8_R1.PlayerConnection.handleCommand(PlayerConnection.java:1115)
+	at net.minecraft.server.v1_8_R1.PlayerConnection.a(PlayerConnection.java:950)
+	at net.minecraft.server.v1_8_R1.PacketPlayInChat.a(PacketPlayInChat.java:26)
+	at net.minecraft.server.v1_8_R1.PacketPlayInChat.a(PacketPlayInChat.java:53)
+	at net.minecraft.server.v1_8_R1.PacketHandleTask.run(SourceFile:13)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:471)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:262)
+	at net.minecraft.server.v1_8_R1.MinecraftServer.z(MinecraftServer.java:683)
+	at net.minecraft.server.v1_8_R1.DedicatedServer.z(DedicatedServer.java:316)
+	at net.minecraft.server.v1_8_R1.MinecraftServer.y(MinecraftServer.java:623)
+	at net.minecraft.server.v1_8_R1.MinecraftServer.run(MinecraftServer.java:526)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: while scanning a simple key
+ in 'reader', line 1797, column 5:
+        permissions:[]
+        ^
+could not found expected ':'
+ in 'reader', line 1798, column 5:
+        info:
+        ^
+
+	at org.yaml.snakeyaml.scanner.ScannerImpl.stalePossibleSimpleKeys(ScannerImpl.java:465)
+	at org.yaml.snakeyaml.scanner.ScannerImpl.needMoreTokens(ScannerImpl.java:280)
+	at org.yaml.snakeyaml.scanner.ScannerImpl.checkToken(ScannerImpl.java:225)
+	at org.yaml.snakeyaml.parser.ParserImpl$ParseBlockMappingKey.produce(ParserImpl.java:558)
+	at org.yaml.snakeyaml.parser.ParserImpl.peekEvent(ParserImpl.java:158)
+	at org.yaml.snakeyaml.parser.ParserImpl.checkEvent(ParserImpl.java:143)
+	at org.yaml.snakeyaml.composer.Composer.composeMappingNode(Composer.java:226)
+	at org.yaml.snakeyaml.composer.Composer.composeNode(Composer.java:155)
+	at org.yaml.snakeyaml.composer.Composer.composeMappingNode(Composer.java:231)
+	at org.yaml.snakeyaml.composer.Composer.composeNode(Composer.java:155)
+	at org.yaml.snakeyaml.composer.Composer.composeMappingNode(Composer.java:231)
+	at org.yaml.snakeyaml.composer.Composer.composeNode(Composer.java:155)
+	at org.yaml.snakeyaml.composer.Composer.composeDocument(Composer.java:122)
+	at org.yaml.snakeyaml.composer.Composer.getSingleNode(Composer.java:105)
+	at org.yaml.snakeyaml.constructor.BaseConstructor.getSingleData(BaseConstructor.java:120)
+	at org.yaml.snakeyaml.Yaml.loadFromReader(Yaml.java:481)
+	at org.yaml.snakeyaml.Yaml.load(Yaml.java:424)
+	at org.anjocaido.groupmanager.dataholder.WorldDataHolder.loadUsers(WorldDataHolder.java:834)
+	... 23 more
+
+============================================================================
+

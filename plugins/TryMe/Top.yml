@@ -7,55 +7,37 @@ Top:
     Answers: 56
   '2':
     uuid: d5888bee-0de7-498e-9f93-39b9038f7ef9
-    Answers: 47
+    Answers: 51
   '3':
     uuid: ab2034bd-5556-4d18-bf33-c79f4eebce23
     Answers: 29
   '4':
+    uuid: f0db2f51-b275-4810-9121-3d2a0c8e4581
+    Answers: 29
+  '5':
+    uuid: f0db2f51-b275-4810-9121-3d2a0c8e4581
+    Answers: 29
+  '6':
     uuid: 799c4fd6-0201-4d1e-b345-b70e5f24f567
     Answers: 25
-  '5':
+  '7':
     uuid: 799c4fd6-0201-4d1e-b345-b70e5f24f567
-    Answers: 22
-  '6':
+    Answers: 25
+  '8':
     uuid: b1d97497-f3dc-4360-9a28-7575993185b2
     Answers: 19
-  '7':
-    uuid: f0db2f51-b275-4810-9121-3d2a0c8e4581
-    Answers: 18
-  '8':
-    uuid: f0db2f51-b275-4810-9121-3d2a0c8e4581
-    Answers: 18
   '9':
+    uuid: b2f7fd5f-f5a9-476f-bb94-a952c334974a
+    Answers: 18
+  '10':
     uuid: 0c376ecc-a0ee-4042-8250-0b4288a6264c
     Answers: 17
-  '10':
-    uuid: 891805c9-0d17-4a21-89f0-47545cf0d2b6
-    Answers: 15
   '11':
     uuid: b8b32a21-0563-4769-be9c-defd6068f7ab
     Answers: 17
   '12':
-    uuid: b2f7fd5f-f5a9-476f-bb94-a952c334974a
-    Answers: 13
-  '13':
-    uuid: 29262a24-70aa-4824-83ec-5ec43f9a7d29
-    Answers: 11
-  '14':
-    uuid: 29262a24-70aa-4824-83ec-5ec43f9a7d29
-    Answers: 9
-  '15':
-    uuid: 70b3e014-4b7b-4da6-b3ce-7e87541bd336
-    Answers: 3
-  '16':
-    uuid: 3a9cf485-9032-4b58-8844-afcc3b05f8d8
-    Answers: 3
-  '17':
-    uuid: 5980d96b-0aa3-41c2-9428-c484ffbc4b74
-    Answers: 3
-  '18':
-    uuid: 394f1e62-0af1-4c19-9bc0-aa5fbea10b91
-    Answers: 2
+    uuid: 891805c9-0d17-4a21-89f0-47545cf0d2b6
+    Answers: 15
 Data:
   0c89e771-4db1-4be1-bced-3c40c04ee7d5:
     Name: dinoppar
@@ -75,27 +57,27 @@ Data:
     Answers: 56
     AverageTime: 24.84
     FlashMode:
-      Answers: 22
-      AverageTime: 29.69
-      BestTime: 8.21
+      Answers: 23
+      AverageTime: 28.69
+      BestTime: 6.74
     DecodeMode:
-      Answers: 106
+      Answers: 108
       AverageTime: 11.33
       BestTime: 2.5
     BestTime: 2.12
   a03899f9-0f3a-4b84-9bfe-20f656c36d1e:
     Name: Infiniterose
-    Answers: 9
-    AverageTime: 19.55
+    Answers: 16
+    AverageTime: 15.24
     FlashMode:
       Answers: 1
       AverageTime: 26.4
       BestTime: 13.25
     DecodeMode:
-      Answers: 3
-      AverageTime: 62.21
+      Answers: 5
+      AverageTime: 50.48
       BestTime: 4.45
-    BestTime: 3.76
+    BestTime: 3.32
   f01a2307-e90d-4503-9f19-640806fa8808:
     Name: MrProtagonist
     Answers: 10
@@ -105,9 +87,9 @@ Data:
       AverageTime: 40.28
       BestTime: 6.1
     DecodeMode:
-      Answers: 1
-      AverageTime: 5.31
-      BestTime: 44.59
+      Answers: 2
+      AverageTime: 5.26
+      BestTime: 5.21
     BestTime: 9.65
   b22fb3fe-be5a-4b09-b3ea-d84143b53a76:
     Name: ForsakenLedgic
@@ -148,8 +130,8 @@ Data:
     BestTime: 2.41
   d5888bee-0de7-498e-9f93-39b9038f7ef9:
     Name: EvilLittleThing
-    Answers: 47
-    AverageTime: 19.14
+    Answers: 51
+    AverageTime: 18.25
     FlashMode:
       Answers: 1
       AverageTime: 56.48
@@ -158,18 +140,18 @@ Data:
       Answers: 4
       AverageTime: 23.78
       BestTime: 3.11
-    BestTime: 3.65
+    BestTime: 3.3
   29262a24-70aa-4824-83ec-5ec43f9a7d29:
     Name: RubySerpent
-    Answers: 11
-    AverageTime: 21.25
+    Answers: 13
+    AverageTime: 24.18
     FlashMode:
       Answers: 3
       AverageTime: 25.04
       BestTime: 12.4
     DecodeMode:
-      Answers: 20
-      AverageTime: 39.63
+      Answers: 23
+      AverageTime: 36.55
       BestTime: 3.81
     BestTime: 3.84
   2576d27f-a9c8-414f-83ec-bd8ce014c7bb:
@@ -225,8 +207,8 @@ Data:
     BestTime: 2.9
   36274f90-eceb-46c0-acc1-5df8add1a1fa:
     Name: Ashlerose
-    Answers: 4
-    AverageTime: 66.91
+    Answers: 5
+    AverageTime: 54.17
     FlashMode:
       Answers: 2
       AverageTime: 58.36
@@ -292,8 +274,8 @@ Data:
       Answers: 0
       AverageTime: 0
     DecodeMode:
-      Answers: 20
-      AverageTime: 21.6
+      Answers: 22
+      AverageTime: 20.83
       BestTime: 4.11
     BestTime: 3.51
   0c376ecc-a0ee-4042-8250-0b4288a6264c:
@@ -323,14 +305,14 @@ Data:
     BestTime: 3.41
   1bf47c3d-074e-47e8-bc37-e21c1ea0aeac:
     Name: rfcroc
-    Answers: 8
-    AverageTime: 14.78
+    Answers: 9
+    AverageTime: 13.88
     FlashMode:
       Answers: 0
       AverageTime: 0
     DecodeMode:
-      Answers: 3
-      AverageTime: 13.32
+      Answers: 5
+      AverageTime: 13.74
       BestTime: 2.85
     BestTime: 3.65
   2c23ad66-7b14-4de3-a435-f8a8e29ae3c5:
@@ -377,9 +359,9 @@ Data:
       AverageTime: 9.03
       BestTime: 2.85
     DecodeMode:
-      Answers: 6
-      AverageTime: 22.44
-      BestTime: 2.85
+      Answers: 9
+      AverageTime: 18.58
+      BestTime: 2.8
     BestTime: 2.5
   80702600-65f5-411a-8e4f-82886c4a7fcc:
     Name: Ryan1450
@@ -412,8 +394,9 @@ Data:
       Answers: 0
       AverageTime: 0
     DecodeMode:
-      Answers: 0
-      AverageTime: 0
+      Answers: 8
+      AverageTime: 22.23
+      BestTime: 2.5
     BestTime: 2.75
   61d131e0-9218-4be9-bd42-5d816155abd9:
     Name: Wolf43684
@@ -428,8 +411,8 @@ Data:
       AverageTime: 0
   3a9cf485-9032-4b58-8844-afcc3b05f8d8:
     Name: RavenTheGreat
-    Answers: 3
-    AverageTime: 12.62
+    Answers: 8
+    AverageTime: 12.18
     FlashMode:
       Answers: 0
       AverageTime: 0
@@ -458,8 +441,8 @@ Data:
       AverageTime: 11.51
       BestTime: 4.75
     DecodeMode:
-      Answers: 1
-      AverageTime: 7.54
+      Answers: 2
+      AverageTime: 55.11
       BestTime: 3.81
     BestTime: 9.4
   b86af675-4ef3-4b56-8b3a-61a76acc5523:
@@ -471,14 +454,14 @@ Data:
       AverageTime: 9.9
       BestTime: 8.21
     DecodeMode:
-      Answers: 7
-      AverageTime: 10.93
+      Answers: 8
+      AverageTime: 10.06
       BestTime: 2.92
     BestTime: 2.12
   e88dccfc-7488-44a5-9a8b-26098dd47e6f:
     Name: anxietymachine
-    Answers: 0
-    AverageTime: 0
+    Answers: 1
+    AverageTime: 205.34
     FlashMode:
       Answers: 5
       AverageTime: 33.37
@@ -487,6 +470,7 @@ Data:
       Answers: 2
       AverageTime: 10.45
       BestTime: 4.45
+    BestTime: 3.3
   218d86e9-db1b-4816-8b7b-06865413fa7b:
     Name: bradleysgirl
     Answers: 2
@@ -506,17 +490,17 @@ Data:
       Answers: 0
       AverageTime: 0
     DecodeMode:
-      Answers: 18
-      AverageTime: 12.14
+      Answers: 19
+      AverageTime: 11.86
       BestTime: 3.41
     BestTime: 3.65
   f0db2f51-b275-4810-9121-3d2a0c8e4581:
     Name: green11
-    Answers: 18
-    AverageTime: 18.62
+    Answers: 29
+    AverageTime: 14.38
     FlashMode:
-      Answers: 1
-      AverageTime: 9.91
+      Answers: 6
+      AverageTime: 9.58
       BestTime: 2.5
     DecodeMode:
       Answers: 16
@@ -622,11 +606,11 @@ Data:
     BestTime: 3.65
   5980d96b-0aa3-41c2-9428-c484ffbc4b74:
     Name: Lucky_shots69
-    Answers: 3
-    AverageTime: 14.83
+    Answers: 4
+    AverageTime: 12.45
     FlashMode:
-      Answers: 2
-      AverageTime: 9.67
+      Answers: 5
+      AverageTime: 9.61
       BestTime: 8.21
     DecodeMode:
       Answers: 3
@@ -645,37 +629,39 @@ Data:
       AverageTime: 7.8
   b2f7fd5f-f5a9-476f-bb94-a952c334974a:
     Name: CuddlyPanda
-    Answers: 13
-    AverageTime: 13.55
+    Answers: 18
+    AverageTime: 11.87
     FlashMode:
-      Answers: 16
-      AverageTime: 68.42
-      BestTime: 8.5
+      Answers: 18
+      AverageTime: 61.57
+      BestTime: 5.21
     DecodeMode:
-      Answers: 25
-      AverageTime: 17.52
+      Answers: 32
+      AverageTime: 14.76
       BestTime: 2.5
     BestTime: 2.5
   db82d942-2c14-428f-8865-b41a04981298:
     Name: ShionSkaii
-    Answers: 1
-    AverageTime: 7.12
+    Answers: 3
+    AverageTime: 25.11
     FlashMode:
       Answers: 0
       AverageTime: 0
     DecodeMode:
       Answers: 0
       AverageTime: 0
+    BestTime: 3.3
   53125f19-3102-4ed5-81a2-6facfcf22f3f:
     Name: PeculiarPhillip
-    Answers: 3
-    AverageTime: 9.54
+    Answers: 9
+    AverageTime: 9.66
     FlashMode:
-      Answers: 0
-      AverageTime: 0
+      Answers: 1
+      AverageTime: 9.42
+      BestTime: 2.5
     DecodeMode:
-      Answers: 2
-      AverageTime: 15.1
+      Answers: 8
+      AverageTime: 21.48
       BestTime: 2.8
     BestTime: 3.51
   c7f02825-0f5d-4172-99f3-c59e4b0b2191:
@@ -699,3 +685,89 @@ Data:
       Answers: 0
       AverageTime: 0
     BestTime: 2.12
+  25fcec68-75db-4621-ba25-301593ddae3c:
+    Name: Trey_P
+    Answers: 8
+    AverageTime: 9.81
+    FlashMode:
+      Answers: 0
+      AverageTime: 0
+    DecodeMode:
+      Answers: 13
+      AverageTime: 10.57
+      BestTime: 3.75
+    BestTime: 2.5
+  dad845b9-3211-4bbf-8a88-ae27a1bc7649:
+    Name: karen8520
+    Answers: 3
+    AverageTime: 31.11
+    FlashMode:
+      Answers: 3
+      AverageTime: 6.66
+      BestTime: 2.5
+    DecodeMode:
+      Answers: 2
+      AverageTime: 4.63
+      BestTime: 3.75
+    BestTime: 3.3
+  e378f617-59e2-4dbd-a6ac-fd709173b693:
+    Name: repersniper2
+    Answers: 0
+    AverageTime: 0
+    FlashMode:
+      Answers: 1
+      AverageTime: 18.55
+    DecodeMode:
+      Answers: 0
+      AverageTime: 0
+  c976d306-b634-40d3-b0eb-e7a0cfb832c1:
+    Name: lacerfacerxd
+    Answers: 0
+    AverageTime: 0
+    FlashMode:
+      Answers: 0
+      AverageTime: 0
+    DecodeMode:
+      Answers: 1
+      AverageTime: 2.87
+  5c907a6c-4dd6-468f-88f7-a149fce0caed:
+    Name: aFlyingDuck
+    Answers: 0
+    AverageTime: 0
+    FlashMode:
+      Answers: 0
+      AverageTime: 0
+    DecodeMode:
+      Answers: 1
+      AverageTime: 10.7
+  2c17ccde-072a-4678-af99-5b0b453aee2b:
+    Name: ROBUSCU
+    Answers: 0
+    AverageTime: 0
+    FlashMode:
+      Answers: 0
+      AverageTime: 0
+    DecodeMode:
+      Answers: 1
+      AverageTime: 3.74
+  6cb1752e-2474-407e-9441-ddd83ffb5dda:
+    Name: kidtitan1
+    Answers: 9
+    AverageTime: 19.02
+    FlashMode:
+      Answers: 0
+      AverageTime: 0
+    DecodeMode:
+      Answers: 0
+      AverageTime: 0
+    BestTime: 3.81
+  c9b13476-64f9-4737-8143-5cf570ad5517:
+    Name: ThatWeirdGirl
+    Answers: 1
+    AverageTime: 20.88
+    FlashMode:
+      Answers: 0
+      AverageTime: 0
+    DecodeMode:
+      Answers: 0
+      AverageTime: 0

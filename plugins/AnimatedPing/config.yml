@@ -1,4 +1,4 @@
-interval: 500
+interval: 300
 ignoredIPs: []
 responsesLimit: -1
 ping1:

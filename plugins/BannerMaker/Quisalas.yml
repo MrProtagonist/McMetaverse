@@ -179,3 +179,20 @@
     - ==: Pattern
       color: BLACK
       pattern: bo
+'1426323358711':
+  ==: org.bukkit.inventory.ItemStack
+  type: BANNER
+  damage: 11
+  meta:
+    ==: ItemMeta
+    meta-type: BANNER
+    patterns:
+    - ==: Pattern
+      color: ORANGE
+      pattern: hh
+    - ==: Pattern
+      color: RED
+      pattern: ts
+    - ==: Pattern
+      color: LIME
+      pattern: bs

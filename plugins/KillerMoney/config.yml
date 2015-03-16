@@ -1,37 +1,34 @@
-#Prefix of the Message
-MessagePrefix: "&4[&fKillerMoney&4]"
+# Locale settings. Supported at the moment: en (english), hu (hungarian)
+Locale: en
+
+# Update Check when starting the server
+CheckUpdate: true
 
 # %currency value (e.g. Dollar, Forint, Euro or symbol)
 Currency: "$"
 
-#If you reloaded the config, you will get this message
-MessageConfigReload: "The configuration file reloaded"
+# Set True, if you want give money if the player kill mobs in the MobArena - RESTART REQUIRED
+EarnMoneyInMobArena: true
 
-# Command permission
-MessageNoPermission: "You have not permission for this command!"
+# Multiworld support, you can disable this plugin on some worlds. ( e.g.: world_the_end )
+DisableOnTheseWorlds:
+#    - nothing
 
-# Player message, if  the config is bad
-MessageConfigError: "Config Error! Please report to admin!"
+# This option disable that the player earn money, if the mob spawned from spawner or spawner egg.
+AllowSpawnerFarming: false
 
-# Set True, if you want give money if the player kill mobs in the MobArena
-WorkInMobArena: true
+# You can enable or disable that, the players get message if he/she earn money.
+SendMessageWhenEarnMoney: true
 
-# Multiworld support, you can disable this plugin on some worlds. Use "," if you would like add more worlds. ( E.g.: world_nether,world_the_end )
-# Use "nothing" if you wouldn't like this feature.
-DisableOnThisWorlds: nothing
+# The money multiplier. You can change it on double coins weekend. Money * Multiplier.
+GlobalMultiplier: 1
 
-# This option disable that the player get cash, if the mob spawned from spawner or spawner egg.
-DisableSpawnerFarming: true
-
-#KillerStat - Not working yet!
-KillerStat:
-   Enabled: false
-
-# First line: The mob's name, do not change it!
-# Second line (Enabled): If you want give money for this mob kill
-# Third line (MinMoney): The minimum money for kill
-# Foth line (MaxMoney): The maximum money for kill
-# Fifth line (Message): The player get this message, if he/she killed a mob
+# 1st line: The mob's name, do not change it!
+# 2nd line (Enabled): If you want give money for this mob kill
+# 3rd line (Negative): If you want negative cash (withdraw) then set true
+# 4th line (MinMoney): The minimum money for kill
+# 5th line (MaxMoney): The maximum money for kill
+# 6th line (Chance): Chance for earn money - Min 1, max 100 (in percent)
 
 # String List:
 # %currency = Currency value
@@ -41,158 +38,235 @@ KillerStat:
 
 # If you would like give fix money, then must MinMoney equal with MaxMoney!
 
-Pig:
+PIG:
    Enabled: true
+   Negative: false
    MinMoney: 3
    MaxMoney: 3
-   Message: "&7You killed a &6PIG&7! You earned: &6%currency%money"
+   Chance: 100
    
-Sheep:
+SHEEP:
    Enabled: true
+   Negative: false
    MinMoney: 3
    MaxMoney: 3
-   Message: "&7You killed a &6SHEEP&7! You earned: &6%currency%money"
+   Chance: 100
    
-Chicken:
+CHICKEN:
    Enabled: true
+   Negative: false
    MinMoney: 3
    MaxMoney: 3
-   Message: "&7You killed a &6CHICKEN&7! You earned: &6%currency%money"
+   Chance: 100
    
-Cow:
+COW:
    Enabled: true
+   Negative: false
    MinMoney: 3
    MaxMoney: 3
-   Message: "&7You killed a &6COW&7! You earned: &6%currency%money"
+   Chance: 100
 
-Horse:
+HORSE:
    Enabled: true
+   Negative: false
    MinMoney: 5
    MaxMoney: 5
-   Message: "&7You killed a &6HORSE&7! You earned: &6%currency%money"
-   
-Wolf:
+   Chance: 100
+
+RABBIT:
    Enabled: true
+   Negative: false
+   MinMoney: 3
+   MaxMoney: 3
+   Chance: 100
+   
+WOLF:
+   Enabled: true
+   Negative: false
    MinMoney: 5
    MaxMoney: 5
-   Message: "&7You killed a &6WOLF&7! You earned: &6%currency%money"
+   Chance: 100
    
-Ocelot:
+OCELOT:
    Enabled: true
+   Negative: false
    MinMoney: 5
    MaxMoney: 5
-   Message: "&7You killed an &6OCELOT&7! You earned: &6%currency%money"
+   Chance: 100
    
-Bat:
+BAT:
    Enabled: true
+   Negative: false
    MinMoney: 5
    MaxMoney: 5
-   Message: "&7You killed a &6BAT&7! You earned: &6%currency%money"
+   Chance: 100
    
-Blaze:
+BLAZE:
    Enabled: true
+   Negative: false
    MinMoney: 20
    MaxMoney: 20
-   Message: "&7You killed a &6BLAZE&7! You earned: &6%currency%money"
+   Chance: 100
    
-CaveSpider:
+CAVE_SPIDER:
    Enabled: true
+   Negative: false
    MinMoney: 15
    MaxMoney: 15
-   Message: "&7You killed a &6CAVE SPIDER&7! You earned: &6%currency%money"
+   Chance: 100
    
-Creeper:
+CREEPER:
    Enabled: true
+   Negative: false
    MinMoney: 10
    MaxMoney: 10
-   Message: "&7You killed a &6CREEPER&7! You earned: &6%currency%money"
+   Chance: 100
    
-Enderdragon:
+ENDER_DRAGON:
    Enabled: true
+   Negative: false
    MinMoney: 500
    MaxMoney: 500
-   Message: "&7You killed the &6ENDER DRAGON&7! You earned: &6%currency%money"
+   Chance: 100
    
-Enderman:
+ENDERMAN:
    Enabled: true
+   Negative: false
    MinMoney: 25
    MaxMoney: 25
-   Message: "&7You killed an &6ENDERMAN&7! You earned: &6%currency%money"
-   
-Ghast:
+   Chance: 100
+
+ENDERMITE:
    Enabled: true
+   Negative: false
+   MinMoney: 10
+   MaxMoney: 10
+   Chance: 100
+   
+GHAST:
+   Enabled: true
+   Negative: false
    MinMoney: 30
    MaxMoney: 30
-   Message: "&7You killed a &6GHAST&7! You earned: &6%currency%money"
+   Chance: 100
    
-MagmaCube:
+GIANT:
    Enabled: true
-   MinMoney: 10
-   MaxMoney: 10
-   Message: "&7You killed a &6MAGMA CUBE&7! You earned: &6%currency%money"
-   
-MushroomCow:
+   Negative: false
+   MinMoney: 20
+   MaxMoney: 20
+   Chance: 100
+
+GUARDIAN:
    Enabled: true
-   MinMoney: 5
-   MaxMoney: 5
-   Message: "&7You killed a &6MUSHROOM COW&7! You earned: &6%currency%money"
-   
-PigZombie:
-   Enabled: true
+   Negative: false
    MinMoney: 25
    MaxMoney: 25
-   Message: "&7You killed a &6PIG ZOMBIE&7! You earned: &6%currency%money"
-   
-Player:
-   Enabled: false
-   MinMoney: 0
-   MaxMoney: 0
-   Message: "You don't earn money for killing players. Only shame."
-   
-Silverfish:
+   Chance: 100
+
+IRON_GOLEM:
    Enabled: true
+   Negative: true
+   MinMoney: 15
+   MaxMoney: 15
+   Chance: 100
+   
+MAGMA_CUBE:
+   Enabled: true
+   Negative: false
    MinMoney: 10
    MaxMoney: 10
-   Message: "&7You killed a &6SILVERFISH&7! You earned: &6%currency%money"
+   Chance: 100
    
-Skeleton:
+MUSHROOM_COW:
    Enabled: true
-   MinMoney: 12
-   MaxMoney: 12
-   Message: "&7You killed a &6SKELETON&7! You earned: &6%currency%money"
-   
-Slime:
-   Enabled: true
+   Negative: false
    MinMoney: 5
    MaxMoney: 5
-   Message: "&7You killed a &6SLIME&7! You earned: &6%currency%money"
+   Chance: 100
    
-Spider:
+PIG_ZOMBIE:
    Enabled: true
+   Negative: false
+   MinMoney: 25
+   MaxMoney: 25
+   Chance: 100
+   
+PLAYER:
+   Enabled: true
+   Negative: false
+   MinMoney: 0
+   MaxMoney: 0
+   CashTransferPercent: 10
+   CashTransferLimit: 0
+   Chance: 100
+   
+SILVERFISH:
+   Enabled: true
+   Negative: false
+   MinMoney: 10
+   MaxMoney: 10
+   Chance: 100
+   
+SKELETON:
+   Enabled: true
+   Negative: false
    MinMoney: 12
    MaxMoney: 12
-   Message: "&7You killed a &6SPIDER&7! You earned: &6%currency%money"
+   Chance: 100
    
-Squid:
+SLIME:
    Enabled: true
+   Negative: false
    MinMoney: 5
    MaxMoney: 5
-   Message: "&7You killed a &6SQUID&7! You earned: &6%currency%money"
-   
-Witch:
+   Chance: 100
+
+SNOWMAN:
    Enabled: true
+   Negative: true
+   MinMoney: 3
+   MaxMoney: 3
+   Chance: 100
+   
+SPIDER:
+   Enabled: true
+   Negative: false
+   MinMoney: 12
+   MaxMoney: 12
+   Chance: 100
+   
+SQUID:
+   Enabled: true
+   Negative: false
+   MinMoney: 5
+   MaxMoney: 5
+   Chance: 100
+   
+VILLAGER:
+   Enabled: true
+   Negative: true
+   MinMoney: 100
+   MaxMoney: 100
+   Chance: 100
+   
+WITCH:
+   Enabled: true
+   Negative: false
    MinMoney: 35
    MaxMoney: 35
-   Message: "&7You killed a &6WITCH&7! You earned: &6%currency%money"
+   Chance: 100
    
-Wither:
+WITHER:
    Enabled: true
+   Negative: false
    MinMoney: 350
    MaxMoney: 350
-   Message: "&7You killed a &6WITHER&7! You earned: &6%currency%money"
+   Chance: 100
    
-Zombie:
+ZOMBIE:
    Enabled: true
+   Negative: false
    MinMoney: 12
    MaxMoney: 12
-   Message: "&7You killed a &6ZOMBIE&7! You earned: &6%currency%money"
+   Chance: 100

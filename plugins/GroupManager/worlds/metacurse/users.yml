@@ -238,7 +238,7 @@ users:
       suffix: §f [&2old Saltie§f]
   1cbd2fe0-3402-47cb-bc9e-7ef7928c4a79:
     lastname: Quisalas
-    group: Builder
+    group: Admin
     subgroups:
     - Premium
     - Noble
@@ -251,6 +251,7 @@ users:
     - irc.tab
     - irc.tablist
     info:
+      prefix: '§f[§5§o&9Admin§f] '
       suffix: §f [&dWyrd&5&oSister§f]
   1d976471-acd8-43b9-9224-31d5715c84b8:
     lastname: null
@@ -291,7 +292,7 @@ users:
     permissions: []
   1f4acbe7-028b-4b97-a00d-27a7a69194e7:
     lastname: Armyman767
-    group: Mod
+    group: Elite
     subgroups:
     - Premium
     permissions:
@@ -302,7 +303,6 @@ users:
     - essentials.sethome.multiple.rookie
     - essentials.workbench
     - groupmanager*
-    - mcmmo.chat.adminchat
     - quickshop.create.buy
     - quickshop.create.changeprice
     - quickshop.create.sell
@@ -414,6 +414,13 @@ users:
     info:
       prefix: '[&bSr.Mod&f] &5'
       suffix: §f [maltesereater &5§f]
+  25fcec68-75db-4621-ba25-301593ddae3c:
+    lastname: Trey_P
+    group: Citizen
+    subgroups: []
+    permissions: []
+    info:
+      §r§f[§d§oRookie§r]: §r
   2604b3b4-4a7a-42a0-ad85-c5c274fc4199:
     lastname: null
     group: Rookie
@@ -476,6 +483,13 @@ users:
     permissions: []
     info:
       suffix: §f [&5Roob&aLetterman§f]
+  2c17ccde-072a-4678-af99-5b0b453aee2b:
+    lastname: ROBUSCU
+    group: Regular
+    subgroups: []
+    permissions: []
+    info:
+      §r§f[§d§oRookie§r]: §r
   2c23ad66-7b14-4de3-a435-f8a8e29ae3c5:
     lastname: chinmaster94
     group: Citizen
@@ -493,7 +507,7 @@ users:
     subgroups: []
     permissions: []
   2e47805e-8f4e-4910-a0c9-9299b11f9ecf:
-    lastname: null
+    lastname: Thekidletsplays
     group: Noble
     subgroups: []
     permissions:
@@ -543,7 +557,7 @@ users:
     subgroups: []
     permissions: []
   32946ba4-177a-4e25-8a9b-99cd0b4d7963:
-    lastname: null
+    lastname: Nellahj
     group: Elite
     subgroups: []
     permissions:
@@ -607,7 +621,8 @@ users:
   36274f90-eceb-46c0-acc1-5df8add1a1fa:
     lastname: Ashlerose
     group: Legend
-    subgroups: []
+    subgroups:
+    - Premium
     permissions:
     - -irc.message.chat
     - bukkit.commands.gamemode
@@ -617,8 +632,8 @@ users:
     - essentials.gamemode
     - essentials.top
     info:
-      prefix: '&d&oUNICORN&r&5 '
-      suffix: §f [&dBeyonce§f]
+      prefix: '§f[§5§oBright Star of Hate§f] '
+      suffix: §f [&4-Queen-§f]
   36bea955-572d-4721-84af-5fb44341e011:
     lastname: dead_creepers
     group: Rookie
@@ -709,10 +724,12 @@ users:
       suffix: §f [GunSlinger§f]
   3a9cf485-9032-4b58-8844-afcc3b05f8d8:
     lastname: RavenTheGreat
-    group: Rookie
+    group: Regular
     subgroups: []
     permissions:
     - essentials.sethome.multiple.rookie
+    info:
+      §r§f[§d§oRookie§r]: §r
   3ca00487-3dba-46d0-a56e-da994fa89ebd:
     lastname: null
     group: Citizen
@@ -751,7 +768,7 @@ users:
     - skript.collectible
   3feb7b1d-c91c-445a-b79d-6c233d6c341f:
     lastname: DrBloodbathMC
-    group: Admin
+    group: Dev
     subgroups: []
     permissions:
     - '*'
@@ -761,7 +778,7 @@ users:
     - regulars.admin.*
     - regulars.script.*
     info:
-      prefix: '§f[&2ADMIN§f] '
+      prefix: ''
       suffix: §f [&2Mr.Slimestone§f]
   446f017e-6453-4d5c-aaf6-011378eeccaa:
     lastname: null
@@ -1039,6 +1056,7 @@ users:
     - simplesuffix.setsuffix.self
     - skript.nightvision
     info:
+      prefix: ''
       suffix: §f [&cC&6A&eN&2A&aD&bI&3A&9N§f]
   5f7450de-391b-4fdb-bc40-68fcebecdaf9:
     lastname: commandostevo
@@ -1100,7 +1118,7 @@ users:
     - scavenger.level
     - skript.extrahealth2
   69fa5689-615f-4787-a824-80291b4b86d1:
-    lastname: null
+    lastname: HIRULE
     group: Craftsman
     subgroups: []
     permissions:
@@ -1121,11 +1139,18 @@ users:
     group: Rookie
     subgroups: []
     permissions: []
-  70b3e014-4b7b-4da6-b3ce-7e87541bd336:
-    lastname: DoctorKamillya
+  6cb1752e-2474-407e-9441-ddd83ffb5dda:
+    lastname: kidtitan1
     group: Rookie
     subgroups: []
     permissions: []
+  70b3e014-4b7b-4da6-b3ce-7e87541bd336:
+    lastname: DoctorKamillya
+    group: Regular
+    subgroups: []
+    permissions: []
+    info:
+      §r§f[§d§oRookie§r]: §r
   70e9c073-b6ca-4732-9972-cb3ca1ad1b8e:
     lastname: stupidape3000
     group: Seasoned
@@ -1228,13 +1253,14 @@ users:
     group: Admin
     subgroups: []
     permissions:
+    - -autoitem.replaceon.place
     - '*'
     - BlockDisguise.disguise
     - echopet.pet*
     - echopet.pet.slime
     - skript.nightvision
     info:
-      prefix: '[&2ADMIN&r] &2'
+      prefix: '§f[§5§o&2Head Admin§f] '
       suffix: §f [&2LoZ§f]
   7a636650-3cbf-4968-b6b4-8be3b20a7b93:
     lastname: scorrpine
@@ -1318,6 +1344,7 @@ users:
     - skript.nightvision
     - vc.2
     info:
+      prefix: '§f[§5§o&bDonut§f] '
       suffix: §f [&b&lMonkey§f]
   84c74359-91c8-4784-b5ca-fb8396ae569d:
     lastname: null
@@ -1771,32 +1798,24 @@ users:
     permissions: []
   a03899f9-0f3a-4b84-9bfe-20f656c36d1e:
     lastname: Infiniterose
-    group: Mod
-    subgroups:
-    - Stone
-    - Premium
+    group: Champion
+    subgroups: []
     permissions:
+    - -mcmmo.chat.adminchat
     - backpack.3
-    - echopet.pet.ride.bat
-    - echopet.pet.type.bat
     - essentials.book
     - essentials.book.title
     - essentials.chat.color
     - essentials.chat.format
     - essentials.chat.link
-    - essentials.chat.magic
     - essentials.clearinventory
     - essentials.compass
     - essentials.depth
-    - essentials.eco.loan
     - essentials.enderchest
     - essentials.ext
     - essentials.fly
     - essentials.fly.safelogin
-    - essentials.getpos
     - essentials.hat
-    - essentials.helpop.receive
-    - essentials.invsee
     - essentials.itemdb
     - essentials.me
     - essentials.near
@@ -1805,16 +1824,10 @@ users:
     - essentials.sethome.multiple.noble
     - essentials.sethome.multiple.rookie
     - essentials.signs.format
-    - essentials.signs.magic
-    - essentials.smite
     - essentials.suicide
     - essentials.top
-    - essentials.tptoggle
-    - essentials.warp
-    - essentials.warp.LIST
     - essentials.workbench
     - gprealestate.sell
-    - multiverse.portal.access.creative
     - quickshop.create.buy
     - quickshop.create.changeprice
     - quickshop.create.double
@@ -1919,7 +1932,7 @@ users:
     - skript.nightvision
     - vc.4
     info:
-      suffix: §f [What'sGoingOn§f]
+      suffix: §f [AcceptingJobs§f]
   ab9f26de-759f-4a4f-b877-41845bc62675:
     lastname: uberwookie
     group: Champion
@@ -2198,12 +2211,13 @@ users:
     - skript.extrahealth2
   b2f7fd5f-f5a9-476f-bb94-a952c334974a:
     lastname: CuddlyPanda
-    group: Craftsman
+    group: Seasoned
     subgroups:
     - Premium
     permissions: []
     info:
-      suffix: §f [&5LGBT§f]
+      prefix: '§f[§5§o&bPotato§f] '
+      suffix: §f [&aMoney &6Maker§f]
   b4210e40-160f-44df-b788-b7e8850648cf:
     lastname: null
     group: Regular
@@ -2227,7 +2241,8 @@ users:
     - essentials.sethome.multiple.regular
     - skript.collectible
     info:
-      suffix: §f [&3Baby&bPikachu§f]
+      prefix: '§f[§5§o&b<3§f] '
+      suffix: §f [&6G&3inger&bFox§f]
   b4dbec66-1a1f-4840-a678-4c5a14797657:
     lastname: TailsBFox
     group: Rookie
@@ -2311,9 +2326,11 @@ users:
     permissions: []
   bf683cfa-db8d-430c-a7fd-fbe0304021c8:
     lastname: TwitchBox20
-    group: Rookie
+    group: Citizen
     subgroups: []
     permissions: []
+    info:
+      §r§f[§d§oRookie§r]: §r
   Bfurfur1337:
     group: Rookie
     subgroups: []
@@ -2997,12 +3014,12 @@ users:
     permissions: []
   d5888bee-0de7-498e-9f93-39b9038f7ef9:
     lastname: EvilLittleThing
-    group: HeadMod
+    group: Admin
     subgroups:
-    - Diamond
     - Premium
     - Admin
     - HeadMod
+    - Champion
     permissions:
     - -bukkit.command.tell
     - -minecraft.command.tell
@@ -3052,6 +3069,7 @@ users:
     - skript.nightvision
     - skript.trail
     info:
+      prefix: '§f[§5§o&9Admin§f] '
       suffix: §f [&4EvilLady§f]
   d6a13032-42ac-4fc5-b509-52f40d26b782:
     lastname: White_Knight16
@@ -3144,6 +3162,11 @@ users:
     group: Rookie
     subgroups: []
     permissions: []
+  dad845b9-3211-4bbf-8a88-ae27a1bc7649:
+    lastname: karen8520
+    group: Rookie
+    subgroups: []
+    permissions: []
   dan2172:
     group: Regular
     subgroups: []
@@ -3228,8 +3251,11 @@ users:
   db82d942-2c14-428f-8865-b41a04981298:
     lastname: ShionSkaii
     group: Rookie
-    subgroups: []
+    subgroups:
+    - Premium
     permissions: []
+    info:
+      suffix: §f [&dForget Me Not§f]
   dbabd9ec-76a5-4c04-a79a-54e5ceede2c2:
     lastname: null
     group: Elite
@@ -3377,6 +3403,11 @@ users:
     - scavenger.exp
     - skript.extrahealth2
     - vc.2
+  e378f617-59e2-4dbd-a6ac-fd709173b693:
+    lastname: repersniper2
+    group: Rookie
+    subgroups: []
+    permissions: []
   e565bb7d-dd52-41e5-9ead-419f7812caa6:
     lastname: null
     group: Rookie
@@ -3404,7 +3435,7 @@ users:
     - essentials.warp.list
     - skript.extrahealth2
   e94c7811-4aac-4acc-9a71-e49e8c68908a:
-    lastname: null
+    lastname: Pixeltastic
     group: Citizen
     subgroups: []
     permissions:

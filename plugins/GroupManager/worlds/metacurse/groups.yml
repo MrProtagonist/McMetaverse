@@ -872,7 +872,6 @@ groups:
     - simplesuffix.colors
     - simplesuffix.format.bold
     - simplesuffix.format.italic
-    - simplesuffix.format.random
     - simplesuffix.format.reset
     - simplesuffix.format.strike
     - simplesuffix.format.underlined

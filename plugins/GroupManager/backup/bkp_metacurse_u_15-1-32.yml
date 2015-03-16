@@ -1,0 +1,3955 @@
+users:
+  004d639b-6875-4e21-af60-c1c63706e5d4:
+    lastname: null
+    group: Rookie
+    subgroups: []
+    permissions: []
+  02406128-6412-4aa6-838a-78af6797f261:
+    lastname: Dreadedone79
+    group: Rookie
+    subgroups: []
+    permissions: []
+  029f6f59-16af-4576-8e7c-7f8c96c4528f:
+    lastname: null
+    group: Noble
+    subgroups: []
+    permissions: []
+  03a3ce4e-7680-4ae8-85b7-d90866630a7f:
+    lastname: null
+    group: Rookie
+    subgroups: []
+    permissions: []
+  03ff2c84-83de-463e-b311-1e3155ae6dab:
+    lastname: null
+    group: Rookie
+    subgroups: []
+    permissions: []
+  0435c881-a2ce-4a06-8ffe-10b5d8aa71d5:
+    lastname: null
+    group: Legend
+    subgroups:
+    - Premium
+    permissions:
+    - essentials.gamemode
+    - voxelsniper.litesniper
+    - worldedit*
+    info:
+      suffix: §f [&1 Hayley§f]
+  044d42bc-7854-426e-9ec0-1fc068f6b4d7:
+    lastname: null
+    group: Rookie
+    subgroups: []
+    permissions: []
+  0965fdd8-3841-42fd-bf90-a59119713905:
+    lastname: Frosty_Tacos
+    group: Rookie
+    subgroups: []
+    permissions: []
+  0ad816de-2317-4d2e-8fd8-9a62227ed389:
+    lastname: null
+    group: Rookie
+    subgroups: []
+    permissions: []
+  0ae680a7-36ca-4143-b3ac-e4b9152e2584:
+    lastname: FatherGaben
+    group: Seasoned
+    subgroups: []
+    permissions:
+    - essentials.depth
+    - essentials.getpos
+    - essentials.hat
+    - essentials.itemdb
+    - essentials.me
+    - essentials.near
+    - essentials.sethome.multiple.citizen
+    - essentials.sethome.multiple.regular
+    - essentials.sethome.multiple.rookie
+    - essentials.suicide
+    - essentials.warp
+    - essentials.warp.LIST
+    - quickshop.create.*
+    - quickshop.create.buy
+    - quickshop.create.changeprice
+    - quickshop.create.double
+    - quickshop.create.sell
+    - scavenger.exp
+    - skript.nightvision
+  0c376ecc-a0ee-4042-8250-0b4288a6264c:
+    lastname: Varanta
+    group: Citizen
+    subgroups: []
+    permissions: []
+  0c89e771-4db1-4be1-bced-3c40c04ee7d5:
+    lastname: dinoppar
+    group: Builder
+    subgroups:
+    - Admin
+    permissions:
+    - -autoitem.replaceon.place
+    - '*'
+    - we
+    - worldedit
+    info:
+      suffix: §f [&3Snorlax§f]
+  0d3c3ea1-a69e-46ed-95cf-637a70caffb5:
+    lastname: null
+    group: Rookie
+    subgroups: []
+    permissions: []
+  0d4f0b5b-0296-4c0c-8d74-b7695036cd4c:
+    lastname: null
+    group: Rookie
+    subgroups: []
+    permissions: []
+  0d7e689c-9a34-4b5d-9915-31ce3667a25e:
+    lastname: null
+    group: Rookie
+    subgroups: []
+    permissions: []
+  0ea2754c-e8a8-4c6e-9c43-bc7958184d46:
+    lastname: null
+    group: Rookie
+    subgroups: []
+    permissions: []
+  100findme:
+    group: Rookie
+    subgroups: []
+    permissions: []
+  1181143d-e2a1-438c-ab4c-f5516010b5c4:
+    lastname: jazzwalgar
+    group: Rookie
+    subgroups: []
+    permissions: []
+  11def61b-394c-4955-9060-d44187893e90:
+    lastname: null
+    group: Regular
+    subgroups: []
+    permissions:
+    - essentials.compass
+    - essentials.me
+    - essentials.near
+    - essentials.sethome.multiple.regular
+    - essentials.sethome.multiple.rookie
+    - essentials.suicide
+    - scavenger.xp
+    - vc.2
+  1221baba-af31-4bdd-ab9d-2a116433fb23:
+    lastname: Chicken50Nuggets
+    group: Rookie
+    subgroups: []
+    permissions: []
+  12champ:
+    group: Rookie
+    subgroups: []
+    permissions: []
+  140ee2c2-6791-407d-ad8b-24b7b9521434:
+    lastname: esfavorie
+    group: Legend
+    subgroups:
+    - Premium
+    permissions:
+    - essentials.fly
+    - essentials.fly.safelogin
+    - essentials.gamemode
+    - essentials.gamemode.self
+  14fc82d7-c0b5-4273-9f17-48243387d4f9:
+    lastname: null
+    group: Regular
+    subgroups: []
+    permissions:
+    - essentials.me
+    - essentials.near
+    - essentials.sethome.multiple.rookie
+    - essentials.workbench
+    - scavenger.exp
+    - skript.extrahealth2
+  15a2702a-834f-4566-8c39-f42ef8a510d7:
+    lastname: null
+    group: Rookie
+    subgroups: []
+    permissions: []
+  1a6f808e-3511-439b-be29-ade61ec29673:
+    lastname: null
+    group: Rookie
+    subgroups: []
+    permissions: []
+  1aa3a8e7-fd01-4072-a739-611872527c56:
+    lastname: null
+    group: Visitor
+    subgroups: []
+    permissions:
+    - -essentials.helpop
+  1bf47c3d-074e-47e8-bc37-e21c1ea0aeac:
+    lastname: rfcroc
+    group: Champion
+    subgroups: []
+    permissions:
+    - chest.commands.open.pave3.yml
+    - chestcommands.open.pave.yml
+    - chestcommands.open.pave3.yml
+    - chestshop.shop.create
+    - essentials.book
+    - essentials.book.title
+    - essentials.chat.color
+    - essentials.chat.format
+    - essentials.chat.link
+    - essentials.compass
+    - essentials.depth
+    - essentials.enderchest
+    - essentials.ext
+    - essentials.fly
+    - essentials.fly.safelogin
+    - essentials.getpos
+    - essentials.hat
+    - essentials.itemdb
+    - essentials.me
+    - essentials.recipe
+    - essentials.safelogin
+    - essentials.sethome.multiple.champion
+    - essentials.sethome.multiple.craftsman
+    - essentials.sethome.multiple.elite
+    - essentials.sethome.multiple.noble
+    - essentials.sethome.multiple.regular
+    - essentials.sethome.multiple.rookie
+    - essentials.sethome.multiple.seasoned
+    - essentials.signs.format
+    - essentials.signs.magic
+    - essentials.suicide
+    - essentials.warp
+    - essentials.warp.list
+    - essentials.workbench
+    - launchpad.10
+    - quickshop.create.buy
+    - quickshop.create.changeprice
+    - quickshop.create.sell
+    - scavenger.level
+    - scavenger.scavenge
+    - simplesuffix.colors
+    - simplesuffix.format.*
+    - simplesuffix.set.suffix.self
+    - skript.extrahealth10
+    - skript.extrahealth6
+    - skript.nightvision
+    - skript.trail
+    - vc.10
+    - vc.6
+    - vc.8
+    info:
+      suffix: §f [&2old Saltie§f]
+  1cbd2fe0-3402-47cb-bc9e-7ef7928c4a79:
+    lastname: Quisalas
+    group: Builder
+    subgroups:
+    - Premium
+    - Noble
+    - Mod
+    permissions:
+    - essentials.me
+    - essentials.tppos
+    - irc
+    - irc.list
+    - irc.tab
+    - irc.tablist
+    info:
+      prefix: '§f[§5§o&5Mistress§f] '
+      suffix: §f [&dWyrd&5&oSister§f]
+  1d976471-acd8-43b9-9224-31d5715c84b8:
+    lastname: null
+    group: Rookie
+    subgroups: []
+    permissions: []
+  1db038fb-125d-41b9-a848-18755e5cb7e0:
+    lastname: null
+    group: Seasoned
+    subgroups:
+    - Stone
+    permissions:
+    - essentials.depth
+    - essentials.me
+    - essentials.sethome.multiple.regular
+    - essentials.sethome.multiple.rookie
+    - essentials.workbench
+    - scavenger.exp
+    - scavenger.scavenge
+    - skript.extrahealth2
+  1e1c3657-78d0-46a9-acd6-28aee2978666:
+    lastname: null
+    group: Regular
+    subgroups: []
+    permissions:
+    - essentials.sethome.multiple.regular
+  1e42de72-e955-4dfb-b921-56a74f7c36ae:
+    lastname: null
+    group: Seasoned
+    subgroups: []
+    permissions: []
+    info:
+      suffix: §f [&1Si§f]
+  1f498db3-3a2a-422f-8183-8fcac6e94e51:
+    lastname: null
+    group: Rookie
+    subgroups: []
+    permissions: []
+  1f4acbe7-028b-4b97-a00d-27a7a69194e7:
+    lastname: Armyman767
+    group: Mod
+    subgroups:
+    - Premium
+    permissions:
+    - chestcommands.command.reload
+    - essentials.gm
+    - essentials.hat
+    - essentials.me
+    - essentials.sethome.multiple.rookie
+    - essentials.workbench
+    - groupmanager*
+    - mcmmo.chat.adminchat
+    - quickshop.create.buy
+    - quickshop.create.changeprice
+    - quickshop.create.sell
+    - scavenger.scavenge
+    - sk.submissions
+    - skript.extrahealth2
+    - skript.nightvision
+    info:
+      suffix: §f [&6Henry§f]
+  1f6b40fb-0c50-46a8-92b6-4922dea465c6:
+    lastname: ALostWakingDream
+    group: Rookie
+    subgroups: []
+    permissions: []
+  217b714f-e01d-4988-b4d8-580bc5e1b891:
+    lastname: null
+    group: Elite
+    subgroups:
+    - Diamond
+    - Premium
+    permissions:
+    - essentials.helpop.receive
+    - essentials.me
+    - essentials.sethome.multiple.craftsman
+    - essentials.sethome.multiple.rookie
+    - essentials.warp
+    - essentials.warp.LIST
+    - essentials.warps.extreme
+    - essentials.workbench
+    - gprealestate.sell
+    - quickshop.create.*
+    - quickshop.create.buy
+    - quickshop.create.sell
+    - scavenger.exp
+    - scavenger.level
+    - scavenger.scavenge
+    - skript.extrahealth4
+    - skript.nightvision
+    info:
+      suffix: §f [&b&l*&5&lB&4&l3&5&lAST&b&l*§f]
+  226265c7-6ef3-4b1c-8228-38d489264572:
+    lastname: null
+    group: Citizen
+    subgroups: []
+    permissions:
+    - essentials.compass
+    - essentials.depth
+    - essentials.getpos
+    - essentials.me
+    - essentials.near
+    - essentials.recipe
+    - essentials.sethome.multiple.regular
+    - essentials.sethome.multiple.rookie
+    - essentials.suicide
+    - scavenger.xp
+    - vc.2
+  22jakob22:
+    group: Visitor
+    subgroups: []
+    permissions:
+    - essentials.fly.safelogin
+    - essentials.signs.color
+    - essentials.signs.magic
+  23d38cd7-94f0-4707-b5ac-8a51ea05d59f:
+    lastname: McNicholas
+    group: Owner
+    subgroups: []
+    permissions:
+    - -autoitem.replaceon.place
+    - essentials.gm
+    - essentials.hat
+    info:
+      prefix: '&f[&aFounder&f] &r'
+      suffix: §f [&7&4╪Toki Wartooth╪§f]
+  254bae6b-a6b5-4470-b71b-b74c452baed4:
+    lastname: null
+    group: Rookie
+    subgroups: []
+    permissions: []
+  2576d27f-a9c8-414f-83ec-bd8ce014c7bb:
+    lastname: shadow007uk
+    group: HeadMod
+    subgroups:
+    - Obsidian
+    - Premium
+    - HeadMod
+    - Mod
+    permissions:
+    - backpack.6
+    - essentials.compass
+    - essentials.depth
+    - essentials.eco
+    - essentials.me
+    - essentials.near
+    - essentials.recipe
+    - essentials.thru
+    - essentials.workbench
+    - limitedcreative.nolimit.*
+    - limitedcreative.nolimit.interact
+    - limitedcreative.nolimit.use
+    - multiverse.teleport.self.*
+    - scavenger.scavenge
+    - skript.collectible
+    - skript.extrahealth2
+    - skript.extrahealth4
+    - skript.extrahealth6
+    - skript.extrahealth8
+    - skript.nightvision
+    info:
+      prefix: '[&bSr.Mod&f] &5'
+      suffix: §f [maltesereater &5§f]
+  25fcec68-75db-4621-ba25-301593ddae3c:
+    lastname: Trey_P
+    group: Regular
+    subgroups: []
+    permissions: []
+    info:
+      §r§f[§d§oRookie§r]: §r
+  2604b3b4-4a7a-42a0-ad85-c5c274fc4199:
+    lastname: null
+    group: Rookie
+    subgroups: []
+    permissions: []
+  26276b02-df96-4774-9b64-d646c3387a93:
+    lastname: null
+    group: Rookie
+    subgroups: []
+    permissions:
+    - essentials.sethome.multiple.rookie
+  2684ae51-18fa-479f-a1aa-ba202a4a56fa:
+    lastname: fifatord
+    group: Rookie
+    subgroups: []
+    permissions: []
+  28cb7f00-76c4-41d8-9dd7-a1368add49b4:
+    lastname: null
+    group: Elite
+    subgroups: []
+    permissions:
+    - essentials.book
+    - essentials.book.title
+    - essentials.compass
+    - essentials.depth
+    - essentials.ext
+    - essentials.getpos
+    - essentials.hat
+    - essentials.helpop.receive
+    - essentials.invsee
+    - essentials.itemdb
+    - essentials.me
+    - essentials.near
+    - essentials.sethome.multiple.citizen
+    - essentials.sethome.multiple.craftsman
+    - essentials.sethome.multiple.regular
+    - essentials.sethome.multiple.rookie
+    - essentials.suicide
+    - essentials.top
+    - essentials.warp
+    - essentials.warp.list
+    - essentials.workbench
+    - quickshop.create.buy
+    - quickshop.create.changeprice
+    - quickshop.create.sell
+    - scavenger.exp
+    - scavenger.level
+    - scavenger.scavenge
+    - skript.extrahealth2
+    - skript.extrahealth4
+    - skript.extrahealth6
+    - skript.nightvision
+    info:
+      suffix: §f [&4A&6r&ei&2a&an&ba&3t&1o&5r§f]
+  29262a24-70aa-4824-83ec-5ec43f9a7d29:
+    lastname: RubySerpent
+    group: Legend
+    subgroups:
+    - Premium
+    permissions: []
+    info:
+      suffix: §f [&5Roob&aLetterman§f]
+  2c17ccde-072a-4678-af99-5b0b453aee2b:
+    lastname: ROBUSCU
+    group: Regular
+    subgroups: []
+    permissions: []
+    info:
+      §r§f[§d§oRookie§r]: §r
+  2c23ad66-7b14-4de3-a435-f8a8e29ae3c5:
+    lastname: chinmaster94
+    group: Citizen
+    subgroups:
+    - Premium
+    permissions:
+    - essentials.fly
+    - essentials.fly.safelogin
+    - essentials.fly.self
+    - essentials.sethome.multiple.rookie
+    - scavenger.xp
+  2d0fe667-2c74-4e89-aa0d-5fbe7b2fed0e:
+    lastname: JammyBoy112
+    group: Rookie
+    subgroups: []
+    permissions: []
+  2e47805e-8f4e-4910-a0c9-9299b11f9ecf:
+    lastname: Thekidletsplays
+    group: Noble
+    subgroups: []
+    permissions:
+    - essentials.clearinventory
+    - essentials.compass
+    - essentials.depth
+    - essentials.getpos
+    - essentials.me
+    - essentials.near
+    - essentials.recipe
+    - essentials.sethome.multiple.citizen
+    - essentials.sethome.multiple.craftsman
+    - essentials.sethome.multiple.regular
+    - essentials.sethome.multiple.rookie
+    - essentials.signs.format
+    - essentials.suicide
+    - launchpad.2
+    - launchpad.4
+    - launchpad.6
+    - scavenger.level
+    - scavenger.scavenge
+    - scavenger.xp
+    - skript.extrahealth2
+    - skript.extrahealth4
+    - skript.extrahealth6
+    - vc.2
+    - vc.4
+    - vc.6
+  30fa35a4-bfb6-4e79-8206-5d63664819f8:
+    lastname: Fwiter
+    group: Rookie
+    subgroups: []
+    permissions:
+    - essentials.sethome.multiple.rookie
+  31v15:
+    group: Regular
+    subgroups: []
+    permissions: []
+  326spiritman:
+    group: Rookie
+    subgroups: []
+    permissions:
+    - essentials.sethome.multiple.rookie
+  3284b922-454f-4748-b141-2d0e2cb00b3d:
+    lastname: null
+    group: Rookie
+    subgroups: []
+    permissions: []
+  32946ba4-177a-4e25-8a9b-99cd0b4d7963:
+    lastname: Nellahj
+    group: Elite
+    subgroups: []
+    permissions:
+    - essentials.book
+    - essentials.book.title
+    - essentials.chat.color
+    - essentials.chat.format
+    - essentials.compass
+    - essentials.depth
+    - essentials.ext
+    - essentials.getpos
+    - essentials.hat
+    - essentials.itemdb
+    - essentials.jump
+    - essentials.me
+    - essentials.near
+    - essentials.sethome.multiple.citizen
+    - essentials.sethome.multiple.craftsman
+    - essentials.sethome.multiple.noble
+    - essentials.sethome.multiple.regular
+    - essentials.sethome.multiple.rookie
+    - essentials.sethome.multiple.seasoned
+    - essentials.suicide
+    - essentials.top
+    - essentials.warp
+    - essentials.warp.list
+    - essentials.workbench
+    - multiverse.portal.access.creative
+    - quickshop.create.buy
+    - quickshop.create.changeprice
+    - quickshop.create.sell
+    - scavenger.exp
+    - scavenger.level
+    - scavenger.scavenge
+    - simplesuffix.colors
+    - simplesuffix.format.*
+    - simplesuffix.set.suffix.self
+    - skript.extrahealth4
+    - skript.extrahealth6
+    - skript.nightvision
+    - vc.10
+    - vc.6
+    - vc.8
+    - warp.GA
+  332d3ed8-a08e-4e49-b609-9fde64578604:
+    lastname: Swimmer117
+    group: Rookie
+    subgroups: []
+    permissions: []
+  35b06fa5-ffff-4a61-8f64-3a49b466c204:
+    lastname: null
+    group: Regular
+    subgroups: []
+    permissions:
+    - essentials.sethome.multiple.rookie
+    - essentials.warp
+    - essentials.warp.list
+    - scavenger.exp
+    - skript.extrahealth2
+    - vc.2
+  36274f90-eceb-46c0-acc1-5df8add1a1fa:
+    lastname: Ashlerose
+    group: Legend
+    subgroups:
+    - Premium
+    permissions:
+    - -irc.message.chat
+    - bukkit.commands.gamemode
+    - essentials.fly
+    - essentials.fly.safelogin
+    - essentials.fly.self
+    - essentials.gamemode
+    - essentials.top
+    info:
+      prefix: '§f[§5§oBright Star of Hate§f] '
+      suffix: §f [&4-Queen-§f]
+  36bea955-572d-4721-84af-5fb44341e011:
+    lastname: dead_creepers
+    group: Rookie
+    subgroups: []
+    permissions: []
+  377228cb-b308-4244-bacc-e4addd8b48c1:
+    lastname: null
+    group: Elite
+    subgroups: []
+    permissions:
+    - essentials.depth
+    - essentials.getpos
+    - essentials.hat
+    - essentials.itemdb
+    - essentials.near
+    - essentials.recipe
+    - essentials.sethome.multiple.citizen
+    - essentials.sethome.multiple.rookie
+    - essentials.suicide
+    - essentials.warp
+    - essentials.warp.LIST
+    - essentials.workbench
+    - quickshop.create.*
+    - quickshop.create.buy
+    - quickshop.create.sell
+    - scavenger.exp
+    info:
+      suffix: §f [Kaya§f]
+  394f1e62-0af1-4c19-9bc0-aa5fbea10b91:
+    lastname: ROLAND2011A
+    group: Champion
+    subgroups:
+    - Premium
+    permissions:
+    - chestcommands.open.pave.yml
+    - chestcommands.open.pave2.yml
+    - chestcommands.open.pave3.yml
+    - essentials.chat.format
+    - essentials.clearinventory
+    - essentials.compass
+    - essentials.depth
+    - essentials.enderchest
+    - essentials.fly
+    - essentials.fly.safelogin
+    - essentials.getpos
+    - essentials.hat
+    - essentials.me
+    - essentials.near
+    - essentials.recipe
+    - essentials.sell
+    - essentials.sethome.multiple.champion
+    - essentials.sethome.multiple.citizen
+    - essentials.sethome.multiple.craftsman
+    - essentials.sethome.multiple.elite
+    - essentials.sethome.multiple.noble
+    - essentials.sethome.multiple.regular
+    - essentials.sethome.multiple.rookie
+    - essentials.sethome.multiple.seasoned
+    - essentials.signs.color
+    - essentials.signs.format
+    - essentials.signs.magic
+    - essentials.suicide
+    - launchpad.10
+    - launchpad.2
+    - launchpad.4
+    - launchpad.6
+    - launchpad.8
+    - scavenger.level
+    - scavenger.scavenge
+    - scavenger.xp
+    - simplesuffix.colors
+    - simplesuffix.set.suffix.self
+    - skript.extrahealth10
+    - skript.extrahealth2
+    - skript.extrahealth4
+    - skript.extrahealth6
+    - skript.extrahealth8
+    - skript.nightvision
+    - skript.trail
+    - vc.10
+    - vc.2
+    - vc.4
+    - vc.6
+    - vc.8
+    - voxelsniper.sniper
+    - worldedit.*
+    info:
+      suffix: §f [GunSlinger§f]
+  3a9cf485-9032-4b58-8844-afcc3b05f8d8:
+    lastname: RavenTheGreat
+    group: Regular
+    subgroups: []
+    permissions:
+    - essentials.sethome.multiple.rookie
+    info:
+      §r§f[§d§oRookie§r]: §r
+  3ca00487-3dba-46d0-a56e-da994fa89ebd:
+    lastname: null
+    group: Citizen
+    subgroups: []
+    permissions:
+    - essentials.compass
+    - essentials.getpos
+    - essentials.me
+    - essentials.near
+    - essentials.recipe
+    - essentials.sethome.multiple.regular
+    - essentials.sethome.multiple.rookie
+    - essentials.suicide
+    - vc.2
+  3d56cabf-b63d-466f-ab5c-d32be56efc29:
+    lastname: null
+    group: Craftsman
+    subgroups: []
+    permissions:
+    - essentials.depth
+    - essentials.me
+    - essentials.near
+    - essentials.recipe
+    - essentials.sethome.multiple.citizen
+    - essentials.sethome.multiple.regular
+    - essentials.suicide
+    - launchpad.2
+    - scavenger.level
+    - vc.2
+  3e6caa14-8544-43ea-ae3d-3d3497e302ff:
+    lastname: null
+    group: Rookie
+    subgroups: []
+    permissions:
+    - essentials.sethome.multiple.rookie
+    - skript.collectible
+  3feb7b1d-c91c-445a-b79d-6c233d6c341f:
+    lastname: DrBloodbathMC
+    group: Admin
+    subgroups: []
+    permissions:
+    - '*'
+    - denizen.*
+    - denizen.admin
+    - regulars.*
+    - regulars.admin.*
+    - regulars.script.*
+    info:
+      prefix: '§f[&2ADMIN§f] '
+      suffix: §f [&2Mr.Slimestone§f]
+  446f017e-6453-4d5c-aaf6-011378eeccaa:
+    lastname: null
+    group: Seasoned
+    subgroups: []
+    permissions:
+    - 15k
+    - essentials.book
+    - essentials.book.title
+    - essentials.chat.color
+    - essentials.chat.format
+    - essentials.chat.link
+    - essentials.clearinventory
+    - essentials.compass
+    - essentials.depth
+    - essentials.getpos
+    - essentials.hat
+    - essentials.itemdb
+    - essentials.jump
+    - essentials.me
+    - essentials.near
+    - essentials.recipe
+    - essentials.sethome.multiple.citizen
+    - essentials.sethome.multiple.craftsman
+    - essentials.sethome.multiple.noble
+    - essentials.sethome.multiple.regular
+    - essentials.sethome.multiple.rookie
+    - essentials.sethome.multiple.seasoned
+    - essentials.signs.format
+    - essentials.signs.magic
+    - essentials.suicide
+    - essentials.top
+    - essentials.tptoggle
+    - essentials.workbench
+    - gprealestate.sell
+    - multiverse.portal.access.creative
+    - quickshop.create.*
+    - quickshop.create.buy
+    - quickshop.create.sell
+    - scavenger.exp
+    - scavenger.level
+    - scavenger.scavenge
+    - simplesuffix.colors
+    - simplesuffix.format.*
+    - simplesuffix.setsuffix.self
+    - skript.extrahealth2
+    - skript.extrahealth4
+    - skript.extrahealth6
+    - skript.extrahealth8
+    - skript.nightvision
+    info:
+      suffix: §f [&9K&2uni§f]
+  46726e48-7f12-4d6d-bdf6-187d96e9e3a9:
+    lastname: null
+    group: Rookie
+    subgroups: []
+    permissions: []
+  47bef228-b022-4b40-8c23-a2794b008933:
+    lastname: zell963s
+    group: Rookie
+    subgroups: []
+    permissions: []
+  47ec5af7-e48f-40fd-a10c-9391f0470504:
+    lastname: null
+    group: Regular
+    subgroups: []
+    permissions:
+    - -irc.message.chat
+    - essentials.suicide
+    - quickshop.create.*
+    - quickshop.create.buy
+    - quickshop.create.sell
+    - scavenger.exp
+  491151bb-a8b0-4365-ab59-8cc0ac418e40:
+    lastname: null
+    group: Rookie
+    subgroups: []
+    permissions: []
+  49b28295-94bc-4abc-befe-e9b724946d34:
+    lastname: null
+    group: Seasoned
+    subgroups: []
+    permissions:
+    - essentials.sethome.multiple.citizen
+    - essentials.workbench
+    - skript.nightvision
+  4a9792a8-d245-4375-beed-8f990356c5cd:
+    lastname: null
+    group: Elite
+    subgroups: []
+    permissions:
+    - essentials.chat.format
+    - essentials.compass
+    - essentials.getpos
+    - essentials.hat
+    - essentials.me
+    - essentials.near
+    - essentials.recipe
+    - essentials.sethome.multiple.citizen
+    - essentials.sethome.multiple.craftsman
+    - essentials.sethome.multiple.elite
+    - essentials.sethome.multiple.noble
+    - essentials.sethome.multiple.regular
+    - essentials.sethome.multiple.rookie
+    - essentials.sethome.multiple.seasoned
+    - essentials.signs.format
+    - launchpad.4
+    - launchpad.6
+    - launchpad.8
+    - marry.default
+    - scavenger.level
+    - scavenger.scavenge
+    - scavenger.xp
+    - simplesuffix.set.suffix.self
+    - skript.extrahealth2
+    - skript.extrahealth4
+    - skript.extrahealth6
+    - skript.extrahealth8
+    - vc.10
+    - vc.2
+    - vc.6
+    - vc.8
+  4ba9b7fb-9a9a-45d1-8923-bb69f1d03111:
+    lastname: null
+    group: Rookie
+    subgroups: []
+    permissions: []
+  4c907d31-9d9c-4212-b28f-9e6551a5be4b:
+    lastname: null
+    group: Rookie
+    subgroups: []
+    permissions: []
+  4dog:
+    group: Visitor
+    subgroups: []
+    permissions:
+    - essentials.chat.color
+    - essentials.chat.magic
+  52085f47-0e73-4dc6-8cbb-888ecc15c7ea:
+    lastname: xxLadyKaixx
+    group: Rookie
+    subgroups: []
+    permissions: []
+  522fb2ff-a860-44e1-9f9a-439a6dc9252c:
+    lastname: null
+    group: Rookie
+    subgroups: []
+    permissions: []
+  53125f19-3102-4ed5-81a2-6facfcf22f3f:
+    lastname: PeculiarPhillip
+    group: Regular
+    subgroups: []
+    permissions: []
+  57cab94b-c899-4c77-8fc2-3b7438ad0171:
+    lastname: null
+    group: Rookie
+    subgroups: []
+    permissions: []
+  57d1b460-9032-4b42-9e4d-49fbedd9742a:
+    lastname: null
+    group: Citizen
+    subgroups: []
+    permissions:
+    - essentials.compass
+    - essentials.me
+    - essentials.sethome.multiple.regular
+    - essentials.sethome.multiple.rookie
+    - essentials.warp
+    - essentials.warp.list
+    - essentials.workbench
+    - scavenger.exp
+    - scavenger.level
+    - scavenger.xp
+    - skript.extrahealth2
+    - vc.2
+  58896ad5-1aad-4b00-bc37-38819e7a038e:
+    lastname: null
+    group: Rookie
+    subgroups: []
+    permissions: []
+  593bebbc-8fb5-4639-8892-3b90a082c9b1:
+    lastname: stockw311
+    group: Rookie
+    subgroups: []
+    permissions:
+    - essentials.sethome.multiple.rookie
+    - scavenger.xp
+  5980d96b-0aa3-41c2-9428-c484ffbc4b74:
+    lastname: Lucky_shots69
+    group: Regular
+    subgroups: []
+    permissions: []
+    info:
+      §r§f[§d§oRookie§r]: §r
+  598536e3-bcad-49f3-a8dd-1973cfcdb056:
+    lastname: trytheswordfish
+    group: Rookie
+    subgroups: []
+    permissions: []
+  59e534e2-9421-4d54-8bf0-e71e4892d83e:
+    lastname: null
+    group: Rookie
+    subgroups: []
+    permissions: []
+  5a5347a4-248f-4909-a0a1-7400243eb52b:
+    lastname: null
+    group: Rookie
+    subgroups: []
+    permissions: []
+  5aee050f-7c46-41ef-8e9a-f6bfcd6bcd40:
+    lastname: null
+    group: Elite
+    subgroups: []
+    permissions: []
+    info:
+      suffix: §f [&4M.R.§f]
+  5ce2e28a-dc37-4d73-b55e-e0b8486f7126:
+    lastname: null
+    group: Rookie
+    subgroups: []
+    permissions: []
+  5e981139-bb43-446e-a509-fb885ff2e89e:
+    lastname: null
+    group: Rookie
+    subgroups: []
+    permissions: []
+  5f23e3c6-b592-4e1c-bb7a-66b4424c36f8:
+    lastname: Hobbitsyfeet
+    group: Builder
+    subgroups: []
+    permissions:
+    - essentials.book
+    - essentials.book.title
+    - essentials.chat.color
+    - essentials.chat.format
+    - essentials.chat.link
+    - essentials.clearinventory
+    - essentials.compass
+    - essentials.enderchest
+    - essentials.ext
+    - essentials.fly
+    - essentials.fly.safelogin
+    - essentials.hat
+    - essentials.invsee
+    - essentials.itemdb
+    - essentials.jump
+    - essentials.near
+    - essentials.powertool
+    - essentials.recipe
+    - essentials.sethome.multiple.citizen
+    - essentials.sethome.multiple.craftsman
+    - essentials.sethome.multiple.noble
+    - essentials.sethome.multiple.regular
+    - essentials.sethome.multiple.rookie
+    - essentials.sethome.multiple.seasoned
+    - essentials.signs.format
+    - essentials.signs.magic
+    - essentials.suicide
+    - essentials.top
+    - essentials.tptoggle
+    - essentials.warp
+    - essentials.warp.LIST
+    - essentials.workbench
+    - gprealestate.sell
+    - multiverse.portal.access.creative
+    - quickshop.create.*
+    - quickshop.create.buy
+    - quickshop.create.sell
+    - scavenger.exp
+    - scavenger.level
+    - scavenger.scavenge
+    - simplesuffix.colors
+    - simplesuffix.format.*
+    - simplesuffix.set.suffix.self
+    - simplesuffix.setsuffix.self
+    - skript.nightvision
+    info:
+      suffix: §f [&cC&6A&eN&2A&aD&bI&3A&9N§f]
+  5f7450de-391b-4fdb-bc40-68fcebecdaf9:
+    lastname: commandostevo
+    group: Regular
+    subgroups: []
+    permissions: []
+  61d131e0-9218-4be9-bd42-5d816155abd9:
+    lastname: Wolf43684
+    group: Rookie
+    subgroups: []
+    permissions:
+    - rookie
+  61f7f283-4cfe-4126-92cb-af32d4d05993:
+    lastname: null
+    group: Rookie
+    subgroups: []
+    permissions: []
+  62d0e493-d2d6-43b4-9e90-b66b89c7c554:
+    lastname: null
+    group: Regular
+    subgroups: []
+    permissions:
+    - essentials.me
+    - essentials.sethome.multiple.rookie
+    - skript.extrahealth2
+  648832f8-878b-444f-b631-40816ddc8701:
+    lastname: null
+    group: Rookie
+    subgroups: []
+    permissions:
+    - essentials.me
+    - essentials.sethome.multiple.rookie
+  6580b8ed-45c5-451c-a655-7b5a3a79031e:
+    lastname: null
+    group: Rookie
+    subgroups: []
+    permissions: []
+    info:
+      suffix: §f [IDK§f]
+  675b79d8-2786-494c-8e82-69b50205c2e8:
+    lastname: null
+    group: Craftsman
+    subgroups: []
+    permissions:
+    - essentials.sethome.multiple.citizen
+    - quickshop.create.buy
+    - quickshop.create.changeprice
+    - quickshop.create.sell
+  682ded59-b407-4909-8a60-f635c909a9eb:
+    lastname: null
+    group: Citizen
+    subgroups: []
+    permissions:
+    - essentials.me
+    - essentials.sethome.multiple.regular
+    - essentials.sethome.multiple.rookie
+    - essentials.warp
+    - essentials.warp.list
+    - scavenger.level
+    - skript.extrahealth2
+  69fa5689-615f-4787-a824-80291b4b86d1:
+    lastname: HIRULE
+    group: Craftsman
+    subgroups: []
+    permissions:
+    - essentials.sethome.multiple.regular
+    - essentials.sethome.multiple.rookie
+    - launchpad.2
+    - quickshop.create.buy
+    - quickshop.create.changeprice
+    - quickshop.create.sell
+    - scavenger.exp
+    - scavenger.level
+    - skript.extrahealth2
+    - vc.6
+    info:
+      suffix: §f [Purple Gecko§f]
+  6c82b501-f409-4941-972d-75c300f2658d:
+    lastname: null
+    group: Rookie
+    subgroups: []
+    permissions: []
+  70b3e014-4b7b-4da6-b3ce-7e87541bd336:
+    lastname: DoctorKamillya
+    group: Rookie
+    subgroups: []
+    permissions: []
+  70e9c073-b6ca-4732-9972-cb3ca1ad1b8e:
+    lastname: stupidape3000
+    group: Seasoned
+    subgroups: []
+    permissions:
+    - essentials.sethome.multiple.regular
+    - essentials.sethome.multiple.rookie
+    - scavenger.level
+    - scavenger.xp
+    - simplesuffix.format.*
+    - vc.4
+  721fde21-66c0-45c2-99b5-b549bd6e10c3:
+    lastname: null
+    group: Rookie
+    subgroups: []
+    permissions: []
+  728aea72-eb8d-4527-a8a0-d87b67a6a3b6:
+    lastname: null
+    group: Rookie
+    subgroups: []
+    permissions: []
+  72afdbe6-3256-4f4f-89b6-a86e7b91f004:
+    lastname: null
+    group: Rookie
+    subgroups: []
+    permissions: []
+  75254e70-9b7e-4a08-85cb-4a7c912a087a:
+    lastname: katekitkat9
+    group: Rookie
+    subgroups: []
+    permissions: []
+  752c4063-c0c7-4f42-a8ff-4afe7a1ade45:
+    lastname: null
+    group: Craftsman
+    subgroups: []
+    permissions: []
+    info:
+      suffix: §f [Tyler§f]
+  761cfbf5-a5aa-4e6f-b894-6baafe5e5da5:
+    lastname: Nitrogengaming1
+    group: Champion
+    subgroups:
+    - Rookie
+    permissions:
+    - chestcommands.open.pave.yml
+    - essentials.chat.format
+    - essentials.clearinventory
+    - essentials.compass
+    - essentials.depth
+    - essentials.enderchest
+    - essentials.ext
+    - essentials.fly
+    - essentials.getpos
+    - essentials.hat
+    - essentials.me
+    - essentials.near
+    - essentials.recipe
+    - essentials.sethome.multiple.champion
+    - essentials.sethome.multiple.citizen
+    - essentials.sethome.multiple.craftsman
+    - essentials.sethome.multiple.elite
+    - essentials.sethome.multiple.noble
+    - essentials.sethome.multiple.regular
+    - essentials.sethome.multiple.rookie
+    - essentials.sethome.multiple.seasoned
+    - essentials.signs.format
+    - essentials.suicide
+    - launchpad.10
+    - launchpad.2
+    - launchpad.4
+    - launchpad.6
+    - launchpad.8
+    - scavenger.level
+    - scavenger.scavenge
+    - scavenger.xp
+    - simplesuffix.colors
+    - simplesuffix.set.suffix.self
+    - skript.collectible
+    - skript.extrahealth10
+    - skript.extrahealth2
+    - skript.extrahealth4
+    - skript.extrahealth6
+    - skript.extrahealth8
+    - skript.nightvision
+    - skript.trail
+    - vc.10
+    - vc.2
+    - vc.4
+    - vc.6
+    - vc.8
+    info:
+      suffix: §f [&aSuffix§f]
+  7624e965-5280-4ee0-a2da-9499c5b1a8ed:
+    lastname: dpw750
+    group: Rookie
+    subgroups: []
+    permissions: []
+  799c4fd6-0201-4d1e-b345-b70e5f24f567:
+    lastname: Post_Rogue
+    group: Admin
+    subgroups: []
+    permissions:
+    - '*'
+    - BlockDisguise.disguise
+    - echopet.pet*
+    - echopet.pet.slime
+    - skript.nightvision
+    info:
+      prefix: '[&2ADMIN&r] &2'
+      suffix: §f [&2LoZ§f]
+  7a636650-3cbf-4968-b6b4-8be3b20a7b93:
+    lastname: scorrpine
+    group: Rookie
+    subgroups: []
+    permissions:
+    - essentials.sethome.multiple.rookie
+  7a9ab451-5edf-4d90-ba74-f0a567d0dc08:
+    lastname: null
+    group: Rookie
+    subgroups: []
+    permissions: []
+  7ba56188-add7-4d4a-81b6-7aa09cd5aff4:
+    lastname: null
+    group: Rookie
+    subgroups: []
+    permissions: []
+  7e04ca8f-1751-47e5-946c-93170c5db0b7:
+    lastname: null
+    group: Seasoned
+    subgroups: []
+    permissions:
+    - essentials.sethome.multiple.seasoned
+    - vc.2
+  7f59fd32-9e9d-43f1-b8fc-e2908e9dd0f9:
+    lastname: null
+    group: Regular
+    subgroups: []
+    permissions: []
+  80702600-65f5-411a-8e4f-82886c4a7fcc:
+    lastname: Ryan1450
+    group: Rookie
+    subgroups: []
+    permissions: []
+  81268b31-52b7-49ec-89e8-b940eaa0408b:
+    lastname: Cehpore
+    group: Rookie
+    subgroups: []
+    permissions: []
+  81b338a2-ac4b-4a89-98b1-9f370ee84faa:
+    lastname: kristycream
+    group: Noble
+    subgroups:
+    - Gold
+    - Diamond
+    - Rookie
+    - Premium
+    permissions:
+    - essentials.book
+    - essentials.book.title
+    - essentials.chat.color
+    - essentials.chat.format
+    - essentials.chat.link
+    - essentials.compass
+    - essentials.depth
+    - essentials.ext
+    - essentials.getpos
+    - essentials.helpop.receive
+    - essentials.itemdb
+    - essentials.me
+    - essentials.near
+    - essentials.sethome.multiple.craftsman
+    - essentials.sethome.multiple.regular
+    - essentials.sethome.multiple.rookie
+    - essentials.sethome.multiple.seasoned
+    - essentials.signs.format
+    - essentials.signs.magic
+    - essentials.suicide
+    - essentials.workbench
+    - gprealestate.sell
+    - multiverse.portal.access.creative
+    - quickshop.create.buy
+    - quickshop.create.changeprice
+    - quickshop.create.sell
+    - scavenger.exp
+    - scavenger.level
+    - scavenger.scavenge
+    - simplesuffix.colors
+    - simplesuffix.format.*
+    - simplesuffix.set.suffix.self
+    - skript.nightvision
+    - vc.2
+    info:
+      suffix: §f [&b&lMonkey§f]
+  84c74359-91c8-4784-b5ca-fb8396ae569d:
+    lastname: null
+    group: Rookie
+    subgroups: []
+    permissions:
+    - scavenger.xp
+  8509eae6-16d0-4123-af7a-2d974471bac4:
+    lastname: null
+    group: Rookie
+    subgroups: []
+    permissions: []
+  851dad9b-9371-470c-a64d-e90f75f9be66:
+    lastname: null
+    group: Visitor
+    subgroups: []
+    permissions:
+    - vc.2
+    - vc.6
+  8521c048-5164-446a-adf5-32523055bd62:
+    lastname: null
+    group: Citizen
+    subgroups: []
+    permissions:
+    - -irc.message.chat
+  871698e1-fde9-44d8-a3fa-b47c6b8ed93a:
+    lastname: jemz_bond
+    group: Rookie
+    subgroups: []
+    permissions: []
+  886968bb-6447-469a-895c-657e0f3465f0:
+    lastname: null
+    group: Elite
+    subgroups:
+    - Gold
+    permissions:
+    - essentials.book
+    - essentials.book.title
+    - essentials.chat.color
+    - essentials.chat.format
+    - essentials.chat.link
+    - essentials.clearinventory
+    - essentials.compass
+    - essentials.depth
+    - essentials.ext
+    - essentials.fly.safelogin
+    - essentials.getpos
+    - essentials.hat
+    - essentials.itemdb
+    - essentials.me
+    - essentials.near
+    - essentials.recipe
+    - essentials.seen
+    - essentials.sethome.multiple.citizen
+    - essentials.sethome.multiple.regular
+    - essentials.sethome.multiple.rookie
+    - essentials.signs.color
+    - essentials.signs.format
+    - essentials.signs.magic
+    - essentials.suicide
+    - essentials.tptoggle
+    - essentials.warp
+    - essentials.warp.LIST
+    - essentials.workbench
+    - gprealestate.sell
+    - launchpad.8
+    - multiverse.portal.access.creative
+    - nocheatplus.*
+    - nocheatplus.check.*
+    - nocheatplus.check.survivalfly
+    - nocheatplus.checks.exempt.*
+    - nocheatplus.checks.survivalfly
+    - nocheatplus.creativefly
+    - nocheatplus.exempt.*
+    - nocheatplus.exempt.checks.survivalfly
+    - quickshop.create.*
+    - quickshop.create.buy
+    - quickshop.create.sell
+    - regulars.npc.delete
+    - regulars.npc.lookclose
+    - regulars.npc.remove
+    - regulars.npc.select
+    - scavenger.exp
+    - scavenger.level
+    - scavenger.scavenge
+    - simplesuffix.colors
+    - simplesuffix.format.*
+    - simplesuffix.set.suffix.self
+    - skript.extrahealth4
+    - skript.extrahealth6
+    - skript.extrahealth8
+    - skript.head
+    - skript.nightvision
+    - vc.10
+    - vc.8
+    info:
+      suffix: §f [&3*&bYETI&3*§f]
+  88ba1606-4fce-49c9-a9ce-853159c54afc:
+    lastname: null
+    group: Rookie
+    subgroups: []
+    permissions: []
+  88e7cbdd-6fc1-4a40-9716-f7378d3a2be9:
+    lastname: null
+    group: Rookie
+    subgroups: []
+    permissions: []
+  891805c9-0d17-4a21-89f0-47545cf0d2b6:
+    lastname: qwazwak
+    group: Citizen
+    subgroups: []
+    permissions:
+    - essentials.sethome.multiple.citizen
+    - essentials.sethome.multiple.rookie
+    - essentials.warp
+    - essentials.warp.list
+    info:
+      suffix: ''
+  89dae256-eb0f-406c-9e09-99b25dc4c41e:
+    lastname: null
+    group: Rookie
+    subgroups: []
+    permissions: []
+  8a02304e-8e44-4668-abb9-a17ecab58dfd:
+    lastname: null
+    group: Rookie
+    subgroups: []
+    permissions: []
+  8a142fc1-f135-43d9-8fd7-cecadcf12391:
+    lastname: trich159
+    group: Rookie
+    subgroups: []
+    permissions: []
+  8ab2d85e-2721-4db6-845f-a36bb30e8b07:
+    lastname: null
+    group: Rookie
+    subgroups: []
+    permissions: []
+  8ccc18b9-5bad-4d25-a232-ff67f1b887aa:
+    lastname: null
+    group: Rookie
+    subgroups: []
+    permissions: []
+  8d992951-c494-41a8-8c3c-90359e4fcd81:
+    lastname: null
+    group: Elite
+    subgroups: []
+    permissions:
+    - essentials.sethome.multiple.citizen
+    - essentials.warp
+    - essentials.warp.list
+    info:
+      suffix: §f [&43.141&c59265§f]
+  91781e95-d6c2-4ce9-9ae9-59ac566792ed:
+    lastname: null
+    group: Noble
+    subgroups: []
+    permissions:
+    - essentials.book
+    - essentials.book.title
+    - essentials.chat.color
+    - essentials.chat.format
+    - essentials.clearinventory
+    - essentials.compass
+    - essentials.depth
+    - essentials.ext
+    - essentials.getpos
+    - essentials.hat
+    - essentials.itemdb
+    - essentials.me
+    - essentials.near
+    - essentials.recipe
+    - essentials.sethome.multiple.citizen
+    - essentials.sethome.multiple.craftsman
+    - essentials.sethome.multiple.regular
+    - essentials.sethome.multiple.rookie
+    - essentials.sethome.multiple.seasoned
+    - essentials.signs.format
+    - essentials.signs.magic
+    - essentials.suicide
+    - essentials.warp
+    - essentials.warp.list
+    - essentials.workbench
+    - gprealestate.sell
+    - quickshop.create.*
+    - quickshop.create.buy
+    - quickshop.create.sell
+    - scavenger.exp
+    - scavenger.level
+    - scavenger.scavenge
+    - simplesuffix.colors
+    - simplesuffix.format.*
+    - simplesuffix.set.suffix.self
+    - simplesuffix.setsuffix.self
+    - skript.nightvision
+    info:
+      suffix: §f [&dg§f]
+  928f0333-9df6-4692-8bd9-b8c437db3d4a:
+    lastname: null
+    group: Rookie
+    subgroups: []
+    permissions: []
+  93bf5278-0d7b-47ac-9cef-de208fc72b49:
+    lastname: null
+    group: Rookie
+    subgroups: []
+    permissions: []
+  94558927-ba01-43e0-8b5e-1a5d06db4c9f:
+    lastname: null
+    group: Rookie
+    subgroups: []
+    permissions: []
+  950d8d97-4195-429f-839b-d65b7782b90b:
+    lastname: gussy05
+    group: Admin
+    subgroups:
+    - Gold
+    - Obsidian
+    - Premium
+    permissions:
+    - essentials.book
+    - essentials.book.title
+    - essentials.chat.link
+    - essentials.compass
+    - essentials.enderchest
+    - essentials.hat
+    - essentials.helpop.receive
+    - essentials.invsee
+    - essentials.itemdb
+    - essentials.jump
+    - essentials.me
+    - essentials.near
+    - essentials.powertool
+    - essentials.suicide
+    - essentials.tptoggle
+    - essentials.workbench
+    - mcmmo.perks.xp.quadruple
+    - multiverse.portal.access.creative
+    - simplesuffix.colors
+    - simplesuffix.format.*
+    - skript.collectible
+    - skript.nightvision
+    - test.test
+    info:
+      '&f[&8Sr.': Mod&f] &f
+      suffix: §f [&bMrsProtagonist§f]
+  95578d78-da4f-485f-9b76-50f2441b8f31:
+    lastname: killer21000
+    group: Rookie
+    subgroups: []
+    permissions: []
+  97b199a4-02ab-4352-a9c6-1e468a81c7c2:
+    lastname: EMB_Beansickle
+    group: Rookie
+    subgroups: []
+    permissions: []
+  97cb8bf8-c6ee-4511-b6bd-d00dc1bc4fbb:
+    lastname: pumpkinpepper
+    group: Legend
+    subgroups:
+    - Noble
+    - Seasoned
+    - Citizen
+    - Rookie
+    - Elite
+    - Legend
+    permissions:
+    - clear.inventory
+    - clearinventory
+    - essentials.clearinventory
+    - essentials.tp
+    - essentials.tp.others
+    - essentials.weather
+    - hauntedhorse.cooldown.exempt
+    - scavenger.exp
+    - tpo
+    - tppohere
+    info:
+      suffix: §f [&eBluh§f]
+  97e3c594-e1d7-400f-839b-a5f1d3a8180e:
+    lastname: null
+    group: Elite
+    subgroups: []
+    permissions:
+    - essentials.sethome.multiple.seasoned
+    - multiverse.portal.access.creative
+    info:
+      suffix: §f [&bImperial§f]
+  99jacmar:
+    group: Rookie
+    subgroups: []
+    permissions: []
+  9b818cf0-70eb-4ece-bceb-9a014d64a420:
+    lastname: null
+    group: Noble
+    subgroups: []
+    permissions:
+    - essentials.book
+    - essentials.book.title
+    - essentials.chat.color
+    - essentials.chat.format
+    - essentials.chat.link
+    - essentials.clearinventory
+    - essentials.compass
+    - essentials.ext
+    - essentials.hat
+    - essentials.helpop.receive
+    - essentials.itemdb
+    - essentials.sethome.multiple.citizen
+    - essentials.sethome.multiple.craftsman
+    - essentials.sethome.multiple.regular
+    - essentials.sethome.multiple.rookie
+    - essentials.signs.format
+    - essentials.signs.magic
+    - essentials.top
+    - essentials.warp
+    - essentials.warp.list
+    - essentials.workbench
+    - multiverse.portal.access.creative
+    - scavenger.exp
+    - scavenger.level
+    - scavenger.scavenge
+    - simplesuffix.colors
+    - simplesuffix.format.*
+    - simplesuffix.set.suffix.self
+    - skript.extrahea
+    - skript.extrahealth2
+    - skript.extrahealth4
+  9c32777e-e745-46f2-81c4-dd719e9e898e:
+    lastname: shortmanstamey
+    group: Rookie
+    subgroups: []
+    permissions: []
+  9c5e4e25-d562-4aa2-afdc-463718c03445:
+    lastname: darkeye932
+    group: TrialDev
+    subgroups:
+    - Stone
+    - Premium
+    - Mod
+    permissions:
+    - chestcommands.command.open
+    - chestcommands.item.pave.yml
+    - chestcommands.item.pave3.yml
+    - chestcommands.open.pave.yml
+    - chestcommands.open.pave2.yml
+    - chestcommands.open.pave3.yml
+    - chestcommands.open.pave4.yml
+    - essentials.chat.color
+    - essentials.chat.format
+    - essentials.ext
+    - essentials.me
+    - essentials.sethome.multiple.citizen
+    - essentials.sethome.multiple.regular
+    - essentials.sethome.multiple.rookie
+    - essentials.signs.format
+    - essentials.signs.magic
+    - essentials.suicide
+    - essentials.warp
+    - essentials.warp.LIST
+    - essentials.workbench
+    - launchpad.2
+    - launchpad.6
+    - quickshop.create.*
+    - quickshop.create.buy
+    - quickshop.create.sell
+    - scavenger.exp
+    - scavenger.level
+    - scavenger.scavenge
+    - skript.collectible
+    - skript.extrahealth2
+    - spawnerchangergui.recoveronbreak
+    - vc.6
+    info:
+      prefix: '&f[&cTrial Dev&f] &f'
+      suffix: §f [&7Lil &3Mic§f]
+  9e048821-390d-48c9-944d-a64e599bd03b:
+    lastname: null
+    group: Rookie
+    subgroups: []
+    permissions: []
+  9e39376a-b3aa-468b-90b2-52f3feedf195:
+    lastname: null
+    group: Elite
+    subgroups: []
+    permissions:
+    - essentials.chat.format
+    - essentials.clearinventory
+    - essentials.depth
+    - essentials.enderchest
+    - essentials.getpos
+    - essentials.hat
+    - essentials.me
+    - essentials.near
+    - essentials.recipe
+    - essentials.sethome.multiple.citizen
+    - essentials.sethome.multiple.craftsman
+    - essentials.sethome.multiple.elite
+    - essentials.sethome.multiple.noble
+    - essentials.sethome.multiple.regular
+    - essentials.sethome.multiple.rookie
+    - essentials.sethome.multiple.seasoned
+    - essentials.signs.format
+    - launchpad.4
+    - launchpad.6
+    - launchpad.8
+    - marry.default
+    - marry.marry
+    - scavenger.level
+    - scavenger.scavenge
+    - scavenger.xp
+    - simplesuffix.set.suffix.self
+    - skript.extrahealth2
+    - skript.extrahealth4
+    - skript.extrahealth6
+    - skript.extrahealth8
+    - vc.2
+    - vc.6
+    - vc.8
+  9e8c5fad-e66c-4022-a3b4-11b9c4a70f8b:
+    lastname: null
+    group: Rookie
+    subgroups: []
+    permissions: []
+  9f1b1319-753c-406c-9794-74d21fd6dfef:
+    lastname: null
+    group: Citizen
+    subgroups: []
+    permissions:
+    - essentials.me
+    - essentials.sethome.multiple.citizen
+    - essentials.sethome.multiple.regular
+    - essentials.sethome.multiple.rookie
+    - essentials.warp
+    - essentials.warp.list
+    - essentials.workbench
+    - scavenger.exp
+    - scavenger.level
+    - skript.extrahealth2
+  _Adderhead_:
+    group: Rookie
+    subgroups: []
+    permissions: []
+  _MrStealth_:
+    group: Rookie
+    subgroups: []
+    permissions: []
+  _xPandeRx_:
+    group: Rookie
+    subgroups: []
+    permissions: []
+  a03899f9-0f3a-4b84-9bfe-20f656c36d1e:
+    lastname: Infiniterose
+    group: Mod
+    subgroups:
+    - Stone
+    - Premium
+    permissions:
+    - backpack.3
+    - echopet.pet.ride.bat
+    - echopet.pet.type.bat
+    - essentials.book
+    - essentials.book.title
+    - essentials.chat.color
+    - essentials.chat.format
+    - essentials.chat.link
+    - essentials.chat.magic
+    - essentials.clearinventory
+    - essentials.compass
+    - essentials.depth
+    - essentials.eco.loan
+    - essentials.enderchest
+    - essentials.ext
+    - essentials.fly
+    - essentials.fly.safelogin
+    - essentials.getpos
+    - essentials.hat
+    - essentials.helpop.receive
+    - essentials.invsee
+    - essentials.itemdb
+    - essentials.me
+    - essentials.near
+    - essentials.recipe
+    - essentials.sethome.multiple.citizen
+    - essentials.sethome.multiple.noble
+    - essentials.sethome.multiple.rookie
+    - essentials.signs.format
+    - essentials.signs.magic
+    - essentials.smite
+    - essentials.suicide
+    - essentials.top
+    - essentials.tptoggle
+    - essentials.warp
+    - essentials.warp.LIST
+    - essentials.workbench
+    - gprealestate.sell
+    - multiverse.portal.access.creative
+    - quickshop.create.buy
+    - quickshop.create.changeprice
+    - quickshop.create.double
+    - quickshop.create.sell
+    - scavenger.exp
+    - scavenger.level
+    - scavenger.scavenge
+    - simplesuffix.colors
+    - simplesuffix.format.*
+    - simplesuffix.set.suffix.self
+    - skript.collectible
+    - skript.extrahealth2
+    - skript.extrahealth4
+    - skript.extrahealth6
+    - skript.nightvision
+    - vc.10
+    info:
+      suffix: §f [&4Qu&6ee&en &aOf &2Qu&3ee&1rs§f]
+  a16ec5b5-db29-43f2-9b44-d5d319825c29:
+    lastname: oZombieTurdo
+    group: Rookie
+    subgroups: []
+    permissions:
+    - essentials.sethome.multiple.rookie
+  a20cd98f-a51b-4873-8150-9a1d217f7b8c:
+    lastname: null
+    group: Rookie
+    subgroups: []
+    permissions: []
+  a2bb1003-2011-405b-b10a-1814c4dcd4f0:
+    lastname: FireKnight92
+    group: Regular
+    subgroups: []
+    permissions: []
+  a6f17f4d-c745-4057-9976-232ca4c9de6f:
+    lastname: ImTotoro
+    group: Rookie
+    subgroups: []
+    permissions: []
+  a7ba17ac-0dff-4f7d-91d6-08fc8bcf3658:
+    lastname: null
+    group: Rookie
+    subgroups: []
+    permissions: []
+  aaa8c613-7fce-4156-a0a3-8ebdc551f8fb:
+    lastname: Soultrap102
+    group: Rookie
+    subgroups: []
+    permissions: []
+  aab983ff-8ff1-4f40-8406-2d16e4e25bdc:
+    lastname: null
+    group: Rookie
+    subgroups: []
+    permissions: []
+  AardvarkJesus:
+    group: Regular
+    subgroups: []
+    permissions:
+    - essentials.me
+    - essentials.near
+    - essentials.sethome.multiple.rookie
+    - essentials.warp
+    - essentials.warp.list
+    - scavenger.exp
+  Aaron596:
+    group: Rookie
+    subgroups: []
+    permissions: []
+  ab2034bd-5556-4d18-bf33-c79f4eebce23:
+    lastname: Interprise
+    group: Noble
+    subgroups: []
+    permissions:
+    - essentials.clearinventory
+    - essentials.compass
+    - essentials.depth
+    - essentials.getpos
+    - essentials.hat
+    - essentials.itemdb
+    - essentials.me
+    - essentials.near
+    - essentials.recipe
+    - essentials.sethome.multiple.citizen
+    - essentials.sethome.multiple.regular
+    - essentials.sethome.multiple.rookie
+    - essentials.sethome.multiple.seasoned
+    - essentials.suicide
+    - essentials.warp
+    - essentials.warp.list
+    - essentials.workbench
+    - nocheatplus.bypass.*
+    - quickshop.create.buy
+    - quickshop.create.changeprice
+    - quickshop.create.double
+    - quickshop.create.sell
+    - scavenger.exp
+    - scavenger.level
+    - scavenger.scavenge
+    - skript.collectible
+    - skript.extrahealth4
+    - skript.extrahealth6
+    - skript.nightvision
+    - vc.4
+    info:
+      suffix: §f [&5 MLP§f]
+  ab9f26de-759f-4a4f-b877-41845bc62675:
+    lastname: uberwookie
+    group: Champion
+    subgroups: []
+    permissions:
+    - essentials.sethome.multiple.citizen
+    - essentials.warp
+    - multiverse.portal.access.creative
+    info:
+      prefix: '&r&f[&4&oChampion&r] &r'
+      suffix: §f [&bJerkface§f]
+  ac3204a4-c421-4300-84ab-85ebf59116b6:
+    lastname: null
+    group: Regular
+    subgroups: []
+    permissions:
+    - essentials.getpos
+    - essentials.me
+    - essentials.sethome.multiple.rookie
+    - scavenger.xp
+  ACR_Mw2_KiLLa:
+    group: Noble
+    subgroups: []
+    permissions:
+    - essentials.book
+    - essentials.book.title
+    - essentials.chat.color
+    - essentials.chat.format
+    - essentials.chat.link
+    - essentials.clearinventory
+    - essentials.depth
+    - essentials.enderchest
+    - essentials.ext
+    - essentials.fly
+    - essentials.fly.safelogin
+    - essentials.getpos
+    - essentials.hat
+    - essentials.helpop.receive
+    - essentials.invsee
+    - essentials.itemdb
+    - essentials.jump
+    - essentials.me
+    - essentials.near
+    - essentials.powertool
+    - essentials.recipe
+    - essentials.sethome.multiple.citizen
+    - essentials.sethome.multiple.craftsman
+    - essentials.sethome.multiple.noble
+    - essentials.sethome.multiple.regular
+    - essentials.sethome.multiple.rookie
+    - essentials.sethome.multiple.seasoned
+    - essentials.signs.format
+    - essentials.signs.magic
+    - essentials.smite
+    - essentials.suicide
+    - essentials.top
+    - essentials.tptoggle
+    - essentials.warp
+    - essentials.warp.list
+    - essentials.workbench
+    - gprealestate.sell
+    - multiverse.portal.access.creative
+    - quickshop.create.*
+    - quickshop.create.buy
+    - quickshop.create.sell
+    - scavenger.exp
+    - scavenger.level
+    - scavenger.scavenge
+    - simplesuffix.colors
+    - simplesuffix.format.*
+    - simplesuffix.setsuffix.self
+  ADAM_BAK3R:
+    group: Rookie
+    subgroups: []
+    permissions: []
+  adbd58e0-7197-4847-a1bb-27eb1b9b611d:
+    lastname: retroville268773
+    group: Noble
+    subgroups:
+    - Obsidian
+    - Premium
+    permissions:
+    - chestshop.shop.create
+    - echopet.pet.type.enderdragon
+    - effect.dj
+    - effect.flame
+    - effect.magiccrit
+    - essentials.book
+    - essentials.book.title
+    - essentials.chat.link
+    - essentials.compass
+    - essentials.depth
+    - essentials.enderchest
+    - essentials.ext
+    - essentials.getpos
+    - essentials.hat
+    - essentials.helpop.receive
+    - essentials.invsee
+    - essentials.itemdb
+    - essentials.jump
+    - essentials.me
+    - essentials.near
+    - essentials.sethome.multiple.citizen
+    - essentials.sethome.multiple.craftsman
+    - essentials.sethome.multiple.regular
+    - essentials.sethome.multiple.rookie
+    - essentials.sethome.multiple.seasoned
+    - essentials.suicide
+    - essentials.tptoggle
+    - essentials.workbench
+    - mcmmo.perks.xp.quadruple
+    - multiverse.portal.access.creative
+    - simplesuffix.colors
+    - simplesuffix.format.*
+    - skript.collectible
+    - skript.extrahealth2
+    - skript.extrahealth4
+    - skript.extrahealth6
+    - skript.head
+    - skript.nightvision
+    info:
+      suffix: §f [&7OldMan§f]
+  adicogames:
+    group: Rookie
+    subgroups: []
+    permissions: []
+  ae8bf7f8-7dff-4207-a193-2991336ce868:
+    lastname: null
+    group: Regular
+    subgroups: []
+    permissions:
+    - essentials.me
+    - essentials.sethome.multiple.rookie
+    - essentials.warp
+    - essentials.warp.list
+    - scavenger.exp
+    - skript.extrahealth2
+  Aidenh2:
+    group: Visitor
+    subgroups: []
+    permissions: []
+    info:
+      prefix: ''
+  Airsmith_Kaine:
+    group: Rookie
+    subgroups: []
+    permissions: []
+  aj2024:
+    group: Rookie
+    subgroups: []
+    permissions: []
+  AlphaCatGamer:
+    group: Rookie
+    subgroups: []
+    permissions: []
+  AndeezPurr:
+    group: Craftsman
+    subgroups: []
+    permissions:
+    - is.diamond
+    - is.gold
+    - is.iron
+    - is.lapis
+    - is.obsidian
+    - is.stone
+  Andrew55448:
+    group: Rookie
+    subgroups: []
+    permissions: []
+  Anguta:
+    group: Rookie
+    subgroups: []
+    permissions: []
+  AnnoyingKid97:
+    group: Rookie
+    subgroups: []
+    permissions: []
+  anthonylowrey:
+    group: Rookie
+    subgroups: []
+    permissions: []
+  AnulBandito:
+    group: Elite
+    subgroups: []
+    permissions: []
+    info:
+      suffix: §f [&4M.R.§f]
+  apsdx6:
+    group: Citizen
+    subgroups: []
+    permissions:
+    - essentials.depth
+    - essentials.me
+    - essentials.near
+    - essentials.sethome.multiple.regular
+    - essentials.sethome.multiple.rookie
+    - essentials.warp
+    - essentials.warp.list
+    - essentials.workbench
+    - scavenger.exp
+    - skript.extrahealth2
+  Arcane_Blade:
+    group: Rookie
+    subgroups: []
+    permissions:
+    - essentials.sethome.multiple.rookie
+  Armiitron:
+    group: Champion
+    subgroups: []
+    permissions:
+    - essentials.sethome.multiple.rookie
+  Arrow1074:
+    group: Regular
+    subgroups: []
+    permissions: []
+  asguardian:
+    group: Regular
+    subgroups: []
+    permissions: []
+  AshaLina:
+    group: Regular
+    subgroups: []
+    permissions: []
+  Assassin_STEALTH:
+    group: Regular
+    subgroups: []
+    permissions: []
+  AssassinSwift:
+    group: Rookie
+    subgroups: []
+    permissions: []
+  AssaultXTerror:
+    group: Rookie
+    subgroups: []
+    permissions: []
+  Awesome_Me19:
+    group: Regular
+    subgroups: []
+    permissions: []
+  AWSUMEBOMB:
+    group: Rookie
+    subgroups: []
+    permissions: []
+  AxelleAlphonsine:
+    group: Rookie
+    subgroups: []
+    permissions: []
+  b0redt0d34th:
+    group: Craftsman
+    subgroups: []
+    permissions: []
+  B14D3M4ST3R:
+    group: Rookie
+    subgroups: []
+    permissions: []
+  b1d97497-f3dc-4360-9a28-7575993185b2:
+    lastname: Brightenstar
+    group: Regular
+    subgroups: []
+    permissions: []
+  b22fb3fe-be5a-4b09-b3ea-d84143b53a76:
+    lastname: ForsakenLedgic
+    group: Rookie
+    subgroups: []
+    permissions:
+    - essentials.sethome.multiple.rookie
+  b2aaab9f-4a05-4703-8ad0-a28ab247caf1:
+    lastname: MsCarapace
+    group: Regular
+    subgroups: []
+    permissions:
+    - essentials.near
+    - essentials.sethome.multiple.rookie
+    - scavenger.exp
+    - scavenger.level
+    - skript.extrahealth2
+  b2f7fd5f-f5a9-476f-bb94-a952c334974a:
+    lastname: CuddlyPanda
+    group: Seasoned
+    subgroups:
+    - Premium
+    permissions: []
+    info:
+      prefix: '§f[§5§o&bPotatoe§f] '
+      suffix: §f [&aMoney &6Maker§f]
+  b4210e40-160f-44df-b788-b7e8850648cf:
+    lastname: null
+    group: Regular
+    subgroups: []
+    permissions:
+    - essentials.sethome.multiple.rookie
+    - skript.extrahealth2
+  b477454d-6838-4449-ae80-9c0f3357511f:
+    lastname: Kyokokat
+    group: Seasoned
+    subgroups:
+    - Premium
+    permissions:
+    - -marry.marry
+    - essentials.chat.color
+    - essentials.chat.format
+    - essentials.chat.link
+    - essentials.ext
+    - essentials.fly
+    - essentials.fly.safelogin
+    - essentials.sethome.multiple.regular
+    - skript.collectible
+    info:
+      suffix: §f [&6G&3inger&bFox§f]
+  b4dbec66-1a1f-4840-a678-4c5a14797657:
+    lastname: TailsBFox
+    group: Rookie
+    subgroups: []
+    permissions: []
+  b546cdc4-ed8d-4d8f-bfed-8c0e02e60b81:
+    lastname: null
+    group: Rookie
+    subgroups: []
+    permissions: []
+  b7f46cc3-7531-45f7-9619-2481bc9c0603:
+    lastname: null
+    group: Rookie
+    subgroups: []
+    permissions: []
+  b86af675-4ef3-4b56-8b3a-61a76acc5523:
+    lastname: '88988976'
+    group: Regular
+    subgroups: []
+    permissions: []
+  b8b32a21-0563-4769-be9c-defd6068f7ab:
+    lastname: lordlankovic
+    group: Elite
+    subgroups:
+    - Gold
+    - Diamond
+    - Premium
+    permissions:
+    - essentials.jump
+    - essentials.me
+    - essentials.sethome.multiple.15
+    - essentials.sethome.multiple.noble
+    - essentials.top
+    - essentials.warp
+    - essentials.warp.list
+    - essentials.workbench
+    - quickshop
+    - scavenger.level
+    - scavenger.scavenge
+    - skript.collectible
+    - skript.nightvision
+    info:
+      suffix: §f [&6M'lady§f]
+  b8d44f8f-8967-47a5-9f0f-a8d6f04be302:
+    lastname: LexieFox
+    group: Rookie
+    subgroups: []
+    permissions: []
+  banana49a:
+    group: Rookie
+    subgroups: []
+    permissions: []
+  Bannanna1:
+    group: Rookie
+    subgroups: []
+    permissions: []
+  bannanna1928:
+    group: Regular
+    subgroups: []
+    permissions: []
+  bassplayer96:
+    group: Noble
+    subgroups: []
+    permissions: []
+  bbaf935c-7d70-4a47-9e45-9257eac69153:
+    lastname: null
+    group: Rookie
+    subgroups: []
+    permissions: []
+  bbcdr1234:
+    group: Rookie
+    subgroups: []
+    permissions: []
+  bchunt:
+    group: Citizen
+    subgroups: []
+    permissions: []
+  bebels14:
+    group: Elite
+    subgroups: []
+    permissions: []
+  bf683cfa-db8d-430c-a7fd-fbe0304021c8:
+    lastname: TwitchBox20
+    group: Citizen
+    subgroups: []
+    permissions: []
+    info:
+      §r§f[§d§oRookie§r]: §r
+  Bfurfur1337:
+    group: Rookie
+    subgroups: []
+    permissions: []
+  BIGRED2120:
+    group: Regular
+    subgroups: []
+    permissions: []
+  Bilpo:
+    group: Craftsman
+    subgroups: []
+    permissions: []
+    info:
+      suffix: §f [i like pie§f]
+  blake7871:
+    group: Rookie
+    subgroups: []
+    permissions: []
+  BlindHitman:
+    group: Rookie
+    subgroups: []
+    permissions: []
+  BlockyBeard:
+    group: Regular
+    subgroups: []
+    permissions: []
+  BlockZack:
+    group: Regular
+    subgroups: []
+    permissions: []
+  bluedemon0015:
+    group: Admin
+    subgroups:
+    - Legend
+    - Premium
+    permissions:
+    - worldedit.*
+    info:
+      prefix: '§f[&9Head Admin&f§f] '
+      suffix: §f [&1noot§f]
+  Bluemoon_12:
+    group: Regular
+    subgroups: []
+    permissions: []
+  blueredbird:
+    group: Rookie
+    subgroups: []
+    permissions: []
+  bmambl:
+    group: Regular
+    subgroups: []
+    permissions: []
+  bman821:
+    group: Rookie
+    subgroups: []
+    permissions: []
+  bolted:
+    group: Rookie
+    subgroups: []
+    permissions: []
+  boMbo_ale:
+    group: Rookie
+    subgroups: []
+    permissions: []
+  BradabearXIII:
+    group: Rookie
+    subgroups: []
+    permissions: []
+  brandonh1996:
+    group: Regular
+    subgroups: []
+    permissions:
+    - -irc.meselite.chat
+  Bredx007:
+    group: Rookie
+    subgroups: []
+    permissions: []
+  brenden9592:
+    group: Rookie
+    subgroups: []
+    permissions: []
+  brentxkiller111:
+    group: Rookie
+    subgroups: []
+    permissions: []
+  brianflowers690:
+    group: Regular
+    subgroups: []
+    permissions:
+    - essentials.sethome.multiple.rookie
+    - essentials.warp
+    - essentials.warp.list
+    - scavenger.exp
+    - skript.extrahealth2
+  brine7302:
+    group: Citizen
+    subgroups: []
+    permissions: []
+  bruppfam:
+    group: Regular
+    subgroups: []
+    permissions: []
+  Butterfing3rs:
+    group: Regular
+    subgroups: []
+    permissions:
+    - essentials.near
+    - essentials.sethome.multiple.rookie
+    - essentials.warp
+    - essentials.warp.LIST
+  c08ed49a-0ecc-4cc4-98b5-5378fe0d0345:
+    lastname: null
+    group: Champion
+    subgroups: []
+    permissions:
+    - essentials.chat.format
+    - essentials.clearinventory
+    - essentials.compass
+    - essentials.enderchest
+    - essentials.fly
+    - essentials.getpos
+    - essentials.hat
+    - essentials.near
+    - essentials.recipe
+    - essentials.sethome.multiple.citizen
+    - essentials.sethome.multiple.craftsman
+    - essentials.sethome.multiple.elite
+    - essentials.sethome.multiple.noble
+    - essentials.sethome.multiple.regular
+    - essentials.sethome.multiple.rookie
+    - essentials.sethome.multiple.seasoned
+    - essentials.signs.format
+    - essentials.suicide
+    - launchpad.6
+    - launchpad.8
+    - scavenger.level
+    - scavenger.scavenge
+    - scavenger.xp
+    - simplesuffix.set.suffix.self
+    - skript.collectible
+    - skript.extrahealth2
+    - skript.extrahealth4
+    - skript.extrahealth6
+    - skript.extrahealth8
+    - skript.nightvision
+    - vc.2
+    - vc.6
+    - vc.8
+  c0cf6cb8-86e3-4a6e-996c-e55722219314:
+    lastname: null
+    group: Craftsman
+    subgroups: []
+    permissions:
+    - skript.nightvision
+  c3369b59-1e12-4581-a143-cb3364cc03a8:
+    lastname: null
+    group: Regular
+    subgroups: []
+    permissions:
+    - essentials.compass
+    - essentials.getpos
+    - essentials.near
+    - essentials.sethome.multiple.rookie
+    - scavenger.xp
+    - vc.2
+  c502dfb1-08b3-4ee7-8a42-ede11f54db3b:
+    lastname: null
+    group: Rookie
+    subgroups: []
+    permissions: []
+  c7f02825-0f5d-4172-99f3-c59e4b0b2191:
+    lastname: CuddlyCanadian
+    group: Craftsman
+    subgroups: []
+    permissions: []
+    info:
+      '''&f[&e&oCitizen&r]': ''
+      '&f[&e&oCitizen&r]': '&r'
+      '&f[&e&oCitizen&r': '&r'
+  c81f0a1c-f6eb-40d9-b5b5-66715cc709a0:
+    lastname: null
+    group: Elite
+    subgroups: []
+    permissions:
+    - essentials.book
+    - essentials.book.title
+    - essentials.chat.color
+    - essentials.chat.format
+    - essentials.clearinventory
+    - essentials.compass
+    - essentials.ext
+    - essentials.fly
+    - essentials.hat
+    - essentials.itemdb
+    - essentials.safelogin
+    - essentials.sethome.multiple.citizen
+    - essentials.sethome.multiple.craftsman
+    - essentials.sethome.multiple.regular
+    - essentials.sethome.multiple.rookie
+    - essentials.sethome.multiple.seasoned
+    - essentials.signs.format
+    - essentials.signs.magic
+    - essentials.warp
+    - essentials.warp.list
+    - essentials.workbench
+    - multiverse.portal.access.creative
+    - scavenger.exp
+    - scavenger.level
+    - scavenger.scavenge
+    - simplesuffix.colors
+    - simplesuffix.format.*
+    - simplesuffix.set.suffix.self
+    - skript.extrahealth2
+    - skript.extrahealth4
+    - skript.extrahealth6
+    - skript.nightvision
+    info:
+      prefix: ''
+      suffix: §f [&bS&1k&ai&2t&ct&4l&de&5s§f]
+  c976d306-b634-40d3-b0eb-e7a0cfb832c1:
+    lastname: lacerfacerxd
+    group: Champion
+    subgroups:
+    - Diamond
+    permissions:
+    - chestcommands.open.pave.yml
+    - essentials.book
+    - essentials.book.title
+    - essentials.chat.color
+    - essentials.chat.format
+    - essentials.compass
+    - essentials.depth
+    - essentials.enderchest
+    - essentials.ext
+    - essentials.hat
+    - essentials.helpop.receive
+    - essentials.invsee
+    - essentials.itemdb
+    - essentials.jump
+    - essentials.me
+    - essentials.near
+    - essentials.recipe
+    - essentials.sethome.multiple.champion
+    - essentials.sethome.multiple.craftsman
+    - essentials.sethome.multiple.elite
+    - essentials.sethome.multiple.noble
+    - essentials.sethome.multiple.regular
+    - essentials.suicide
+    - essentials.top
+    - essentials.tptoggle
+    - essentials.warp
+    - essentials.warp.LIST
+    - essentials.workbench
+    - gprealestate.sell
+    - launchpad.10
+    - launchpad.2
+    - launchpad.4
+    - multiverse.portal.access.creative
+    - quickshop.create.*
+    - quickshop.create.buy
+    - quickshop.create.changeprice
+    - quickshop.create.double
+    - quickshop.create.sell
+    - scavenger.exp
+    - scavenger.level
+    - scavenger.scavenge
+    - scavenger.xp
+    - skript.extrahealth10
+    - skript.extrahealth2
+    - skript.extrahealth4
+    - skript.extrahealth6
+    - skript.extrahealth8
+    - skript.nightvision
+    - skript.trail
+    - vc.10
+    - vc.2
+    - vc.4
+    - vc.6
+    - vc.8
+    info:
+      suffix: §f [&cL&6A&eC&aI&2F&3E&9R§f]
+  ca9a67f0-475a-422a-935c-939a4d182244:
+    lastname: null
+    group: Rookie
+    subgroups: []
+    permissions: []
+  cad624c2-51fd-4ba3-9a84-79120fcb8fb0:
+    lastname: danikachoo
+    group: Seasoned
+    subgroups: []
+    permissions:
+    - essentials.book
+    - essentials.book.title
+    - essentials.clearinventory
+    - essentials.hat
+    - essentials.itemdb
+    - essentials.me
+    - essentials.near
+    - essentials.recipe
+    - essentials.sethome.multiple.citizen
+    - essentials.sethome.multiple.craftsman
+    - essentials.sethome.multiple.regular
+    - essentials.sethome.multiple.rookie
+    - essentials.signs.format
+    - essentials.signs.magic
+    - essentials.warp
+    - essentials.warp.list
+    - essentials.workbench
+    - quickshop.create.buy
+    - quickshop.create.changeprice
+    - quickshop.create.sell
+    - scavenger.exp
+    - skript.extrahealth6
+    - skript.nightvision
+  Calypto_Veritas:
+    group: Rookie
+    subgroups: []
+    permissions: []
+  CantThink96:
+    group: Champion
+    subgroups: []
+    permissions:
+    - -bukkit.command.gamemode
+    - -essentials.gamemode
+    - essentials.clearinventory
+    - essentials.ext
+    - essentials.hat
+    - essentials.invsee
+    - essentials.near
+    - essentials.suicide
+    - essentials.top
+    - essentials.warp
+    - essentials.warp.LIST
+    - essentials.workbench
+    - irc.*
+    - irc.<command>
+    - scavenger.exp
+    - scavenger.level
+    - scavenger.scavenge
+    info:
+      prefix: ''
+      suffix: §f [&2Mex§f]
+  Captain_Knuckl3s:
+    group: Visitor
+    subgroups: []
+    permissions:
+    - -irc.meselite.chat
+  Cartahero:
+    group: Citizen
+    subgroups: []
+    permissions:
+    - essentials.fly
+    - essentials.me
+    - essentials.near
+    - essentials.safelogin
+    - essentials.sethome.multiple.regular
+    - essentials.sethome.multiple.rookie
+    - essentials.warp
+    - essentials.warp.list
+    - essentials.workbench
+    - mcmmo.perks.xp.quadruple
+    - scavenger.exp
+    - scavenger.level
+    - skript.extrahealth2
+    - skript.nightvision
+    - vc.2
+  Cartatwin:
+    group: Champion
+    subgroups: []
+    permissions:
+    - essentials.book
+    - essentials.book.title
+    - essentials.chat.color
+    - essentials.chat.format
+    - essentials.chat.link
+    - essentials.clearinventory
+    - essentials.compass
+    - essentials.depth
+    - essentials.enderchest
+    - essentials.ext
+    - essentials.fly
+    - essentials.fly.safelogin
+    - essentials.hat
+    - essentials.helpop.receive
+    - essentials.jump
+    - essentials.recipe
+    - essentials.sethome.multiple.citizen
+    - essentials.sethome.multiple.craftsman
+    - essentials.sethome.multiple.noble
+    - essentials.sethome.multiple.regular
+    - essentials.sethome.multiple.rookie
+    - essentials.sethome.multiple.seasoned
+    - essentials.top
+    - essentials.tptoggle
+    - essentials.warp
+    - essentials.warp.list
+    - essentials.workbench
+    - multiverse.portal.access.creative
+    - scavenger.exp
+    - scavenger.scavenge
+    - simplesuffix.colors
+    - simplesuffix.format.*
+    - simplesuffix.set.suffix.self
+    - skript.extrahealth2
+    - skript.extrahealth4
+    - skript.extrahealth6
+    - skript.nightvision
+    - vc.10
+    - vc.2
+    - vc.6
+    - vc.8
+    info:
+      suffix: §f [Leah§f]
+  castiel33:
+    group: Regular
+    subgroups: []
+    permissions: []
+  CavernsandDemons:
+    group: Rookie
+    subgroups: []
+    permissions: []
+  cb14fcfa-239e-48bc-adf8-86847dd78ea1:
+    lastname: null
+    group: Regular
+    subgroups: []
+    permissions:
+    - essentials.sethome.multiple.rookie
+  cba8ff3f-abce-42fe-8cf5-31703d786379:
+    lastname: null
+    group: Rookie
+    subgroups: []
+    permissions: []
+  CFB2001:
+    group: Rookie
+    subgroups: []
+    permissions: []
+  cfc0686d-4a22-4bf5-95f5-c42abd662f9a:
+    lastname: Luna482
+    group: Champion
+    subgroups:
+    - Gold
+    - Diamond
+    permissions:
+    - backpack.6
+    - echopet.pet.ride.wolf
+    - essentials.book
+    - essentials.book.title
+    - essentials.chat.link
+    - essentials.clearinventory
+    - essentials.compass
+    - essentials.depth
+    - essentials.enderchest
+    - essentials.getpos
+    - essentials.hat
+    - essentials.helpop.receive
+    - essentials.invsee
+    - essentials.itemdb
+    - essentials.jump
+    - essentials.me
+    - essentials.near
+    - essentials.recipe
+    - essentials.sethome.multiple.citizen
+    - essentials.sethome.multiple.craftsman
+    - essentials.sethome.multiple.regular
+    - essentials.sethome.multiple.rookie
+    - essentials.sethome.multiple.seasoned
+    - essentials.signs.format
+    - essentials.signs.magic
+    - essentials.top
+    - essentials.tptoggle
+    - essentials.warp
+    - essentials.warp.list
+    - essentials.workbench
+    - gprealestate.sell
+    - multiverse.portal.access.creative
+    - quickshop.create.buy
+    - quickshop.create.changeprice
+    - quickshop.create.sell
+    - scavenger.level
+    - scavenger.scavenge
+    - simplesuffix.colors
+    - simplesuffix.format.*
+    - simplesuffix.set.suffix.self
+    - skript.extrahealth6
+    - skript.nightvision
+    info:
+      suffix: §f [&5MommaSquirrel§f]
+  chadandersen1:
+    group: Rookie
+    subgroups: []
+    permissions:
+    - -irc.message.chat
+    - essentials.sethome.multiple.rookie
+    - essentials.warp
+    - essentials.warp.list
+  Chambys38:
+    group: Rookie
+    subgroups: []
+    permissions: []
+  championo2400:
+    group: Rookie
+    subgroups: []
+    permissions: []
+  championp360:
+    group: Regular
+    subgroups: []
+    permissions: []
+  Charcharbanks55:
+    group: Rookie
+    subgroups: []
+    permissions: []
+  chartreusejoker:
+    group: Regular
+    subgroups: []
+    permissions: []
+  chazzy103:
+    group: Rookie
+    subgroups: []
+    permissions: []
+  Chip124532:
+    group: Rookie
+    subgroups: []
+    permissions: []
+  Chuggettman:
+    group: Rookie
+    subgroups: []
+    permissions: []
+  CJayster:
+    group: Rookie
+    subgroups: []
+    permissions: []
+  clayton77:
+    group: Elite
+    subgroups: []
+    permissions: []
+    info:
+      suffix: §f [&4 supercalafagalicious§f]
+  clevenger5:
+    group: Rookie
+    subgroups: []
+    permissions: []
+  cm300d:
+    group: Rookie
+    subgroups: []
+    permissions: []
+  cmur123:
+    group: Rookie
+    subgroups: []
+    permissions: []
+  CodeMouse92:
+    group: Visitor
+    subgroups: []
+    permissions:
+    - essentials.sethome.multiple.rookie
+    - essentials.warp
+    - essentials.warp.list
+    - quickshop.create.buy
+    - quickshop.create.changeprice
+    - quickshop.create.sell
+    - scavenger.exp
+    - skript.extrahealth2
+  CokkieMonsterXo:
+    group: Rookie
+    subgroups: []
+    permissions: []
+  Colahdetank:
+    group: Admin
+    subgroups: []
+    permissions:
+    - essentials.socialspy
+    - voxelsniper.sniper
+    info:
+      prefix: ' &2&oDEV &2Build&8min '
+      suffix: §f [&4Button§f]
+  colocmaram:
+    group: Rookie
+    subgroups: []
+    permissions: []
+  CoolGuy519:
+    group: Regular
+    subgroups: []
+    permissions: []
+  cornayes:
+    group: Regular
+    subgroups: []
+    permissions: []
+  corvallan152:
+    group: Rookie
+    subgroups: []
+    permissions: []
+  counto1:
+    group: Noble
+    subgroups: []
+    permissions: []
+    info:
+      suffix: §f [&a&kq&bHotel_Owner&a&kq§f]
+  CountVolgar:
+    group: Rookie
+    subgroups: []
+    permissions: []
+  cowboy76:
+    group: Elite
+    subgroups: []
+    permissions: []
+  cphillips5046:
+    group: Rookie
+    subgroups: []
+    permissions: []
+  CptFillmore:
+    group: Rookie
+    subgroups: []
+    permissions: []
+  cptminecraft2:
+    group: Rookie
+    subgroups: []
+    permissions: []
+  CraftingRhyno:
+    group: Rookie
+    subgroups: []
+    permissions: []
+  craftio:
+    group: Rookie
+    subgroups: []
+    permissions: []
+  creeps17:
+    group: Rookie
+    subgroups: []
+    permissions: []
+  creepy4_0:
+    group: Elite
+    subgroups: []
+    permissions: []
+    info:
+      suffix: §f [&1Team&bSexy§f]
+  crysis993:
+    group: Rookie
+    subgroups: []
+    permissions: []
+  CrystalAnnie0:
+    group: Rookie
+    subgroups: []
+    permissions: []
+  cswag:
+    group: Rookie
+    subgroups: []
+    permissions: []
+  cuddlesmomo:
+    group: Rookie
+    subgroups: []
+    permissions: []
+  CuddlyCanadian:
+    group: Regular
+    subgroups: []
+    permissions: []
+    info:
+      prefix: '§f[&e&oCitizen&r§f] '
+      §r§f[§c§oRegular§r]: §r
+  d0e5c429-50f2-4b2a-bd18-48f65338d300:
+    lastname: null
+    group: Rookie
+    subgroups: []
+    permissions: []
+  d28f134f-69d3-4c28-abab-a93f5a377582:
+    lastname: CaptainStupid
+    group: Owner
+    subgroups: []
+    permissions:
+    - -autoitem.replaceon.place
+    - essentials
+    - test.test
+    info:
+      prefix: '§f[&2Head Dev§f] '
+      suffix: §f [&4Hater§f]
+  D34DLYH4MST3R:
+    group: Rookie
+    subgroups: []
+    permissions: []
+  d3v1n302418:
+    group: Rookie
+    subgroups: []
+    permissions: []
+  d5888bee-0de7-498e-9f93-39b9038f7ef9:
+    lastname: EvilLittleThing
+    group: HeadMod
+    subgroups:
+    - Diamond
+    - Premium
+    - Admin
+    - HeadMod
+    permissions:
+    - -bukkit.command.tell
+    - -minecraft.command.tell
+    - backpack.1
+    - backpack.6
+    - essentials.book
+    - essentials.book.title
+    - essentials.chat.link
+    - essentials.clearinventory
+    - essentials.command.jump
+    - essentials.compass
+    - essentials.depth
+    - essentials.ext
+    - essentials.gamemode
+    - essentials.getpos
+    - essentials.hat
+    - essentials.helpop.receive
+    - essentials.itemdb
+    - essentials.jump
+    - essentials.me
+    - essentials.near
+    - essentials.recipe
+    - essentials.sethome.multiple.citizen
+    - essentials.sethome.multiple.craftsman
+    - essentials.sethome.multiple.noble
+    - essentials.sethome.multiple.regular
+    - essentials.sethome.multiple.rookie
+    - essentials.sethome.multiple.seasoned
+    - essentials.suicide
+    - essentials.workbench
+    - gprealestate.sell
+    - griefprevention.claims.transfer
+    - mcmmo.perks.xp.quadruple
+    - multiverse.portal.access.creative
+    - quickshop.create.buy
+    - quickshop.create.changeprice
+    - quickshop.create.sell
+    - scavenger.xp
+    - silkspawners.place.*
+    - silkspawners.silkdrop.*
+    - simplesuffix.colors
+    - simplesuffix.format.*
+    - skript.collectible
+    - skript.extrahealth2
+    - skript.extrahealth4
+    - skript.extrahealth6
+    - skript.nightvision
+    - skript.trail
+    info:
+      suffix: §f [&4EvilLady§f]
+  d6a13032-42ac-4fc5-b509-52f40d26b782:
+    lastname: White_Knight16
+    group: Seasoned
+    subgroups: []
+    permissions:
+    - essentials.clearinventory
+    - essentials.hat
+    - essentials.itemdb
+    - essentials.near
+    - essentials.sethome.multiple.citizen
+    - essentials.sethome.multiple.craftsman
+    - essentials.sethome.multiple.regular
+    - essentials.sethome.multiple.rookie
+    - essentials.suicide
+    - essentials.warp
+    - essentials.warp.list
+    - essentials.workbench
+    - quickshop.create.buy
+    - quickshop.create.changeprice
+    - quickshop.create.sell
+    - scavenger.exp
+    - skript.extrahealth4
+    - skript.nightvision
+  d6ef763e-4239-4f91-a428-12b225c749a4:
+    lastname: null
+    group: Rookie
+    subgroups:
+    - Rookie
+    permissions: []
+  d78121cf-e92d-489c-9cac-10224ebfc40f:
+    lastname: Icespot744
+    group: Elite
+    subgroups: []
+    permissions:
+    - essentials.sethome.multiple.citizen
+    - scavenger.scavenge
+    - skript.nightvision
+    info:
+      suffix: §f [&2Funky Bunch§f]
+  DaBomb1661:
+    group: Elite
+    subgroups: []
+    permissions:
+    - essentials.book
+    - essentials.book.title
+    - essentials.chat.color
+    - essentials.chat.format
+    - essentials.chat.link
+    - essentials.clearinventory
+    - essentials.depth
+    - essentials.ext
+    - essentials.getpos
+    - essentials.hat
+    - essentials.itemdb
+    - essentials.jump
+    - essentials.me
+    - essentials.near
+    - essentials.recipe
+    - essentials.sethome.multiple.citizen
+    - essentials.sethome.multiple.noble
+    - essentials.sethome.multiple.regular
+    - essentials.sethome.multiple.rookie
+    - essentials.sethome.multiple.seasoned
+    - essentials.signs.format
+    - essentials.signs.magic
+    - essentials.top
+    - essentials.warp
+    - essentials.warp.list
+    - essentials.workbench
+    - gprealestate.sell
+    - multiverse.portal.access.creative
+    - scavenger.exp
+    - scavenger.level
+    - scavenger.scavenge
+    - simplesuffix.colors
+    - simplesuffix.format.*
+    - simplesuffix.set.suffix.self
+    - skript.extrahealth2
+    - skript.extrahealth4
+    - skript.extrahealth6
+    - skript.nightvision
+    info:
+      suffix: §f [&4Boom&3Stick§f]
+  daboss35:
+    group: Rookie
+    subgroups: []
+    permissions: []
+  dad4996:
+    group: Rookie
+    subgroups: []
+    permissions: []
+  dan2172:
+    group: Regular
+    subgroups: []
+    permissions: []
+  daniel21greene:
+    group: Elite
+    subgroups: []
+    permissions: []
+    info:
+      suffix: §f [Sterlabia§f]
+  Dansku7D:
+    group: Regular
+    subgroups: []
+    permissions: []
+  Dantellius:
+    group: Regular
+    subgroups: []
+    permissions: []
+  Danyon_Greymoon:
+    group: Rookie
+    subgroups: []
+    permissions: []
+  daphill:
+    group: Regular
+    subgroups: []
+    permissions:
+    - essentials.me
+    - essentials.sethome.multiple.regular
+    - essentials.sethome.multiple.rookie
+    - essentials.warp
+    - essentials.warp.list
+    - mcmmo.perks.xp.quadruple
+    - scavenger.exp
+    - scavenger.level
+    - skript.extrahealth2
+  darion10000:
+    group: Rookie
+    subgroups: []
+    permissions: []
+  Darkdestiny757:
+    group: Citizen
+    subgroups: []
+    permissions: []
+  DarkfoxGrime:
+    group: Noble
+    subgroups: []
+    permissions:
+    - bukkit.command.gamemode
+    - essentials.gamemode
+    - essentials.speed
+    info:
+      prefix: '&d&oDucky&r&5 '
+      suffix: §f [&dXanderBee§f]
+  darksamus227:
+    group: Regular
+    subgroups: []
+    permissions:
+    - essentials.me
+    - essentials.sethome.multiple.regular
+    - essentials.sethome.multiple.rookie
+    - essentials.warp
+    - essentials.warp.list
+    - essentials.workbench
+    - scavenger.level
+    - vc.2
+  darkshadow333:
+    group: Rookie
+    subgroups: []
+    permissions: []
+  Darren10Lim:
+    group: Rookie
+    subgroups: []
+    permissions: []
+  DasheeCraft:
+    group: Elite
+    subgroups: []
+    permissions: []
+  Daynean:
+    group: Rookie
+    subgroups: []
+    permissions: []
+  db82d942-2c14-428f-8865-b41a04981298:
+    lastname: ShionSkaii
+    group: Rookie
+    subgroups: []
+    permissions: []
+  dbabd9ec-76a5-4c04-a79a-54e5ceede2c2:
+    lastname: null
+    group: Elite
+    subgroups: []
+    permissions: []
+    info:
+      suffix: §f [Civil Patrol§f]
+  dc8349ea-41ed-4490-9448-d96c86406eb3:
+    lastname: null
+    group: Noble
+    subgroups:
+    - Seasoned
+    permissions: []
+    info:
+      suffix: §f [Andrew§f]
+  dcd73156-d99d-4d43-9966-f10da9372b51:
+    lastname: null
+    group: Rookie
+    subgroups: []
+    permissions:
+    - essentials.near
+    - essentials.sethome.multiple.rookie
+    info:
+      suffix: §f [&4Kewl &cGamer§f]
+  DCNinjazn:
+    group: Citizen
+    subgroups: []
+    permissions: []
+  ddac9867-0d0c-4a6f-8075-05b3fa0f9d17:
+    lastname: PuggieGurl
+    group: Rookie
+    subgroups: []
+    permissions: []
+  DeadDragon80:
+    group: Regular
+    subgroups: []
+    permissions:
+    - essentials.near
+    - essentials.sethome.multiple.rookie
+    - scavenger.exp
+    - skript.extrahealth2
+  Deadlyrookie:
+    group: Rookie
+    subgroups: []
+    permissions: []
+  Death2345:
+    group: Regular
+    subgroups: []
+    permissions: []
+  Declan_Scammell:
+    group: Rookie
+    subgroups: []
+    permissions: []
+  dementor_246:
+    group: Craftsman
+    subgroups: []
+    permissions: []
+  Demongun4:
+    group: Regular
+    subgroups: []
+    permissions: []
+  destroyer1610:
+    group: Rookie
+    subgroups: []
+    permissions: []
+  dittochampion55555:
+    group: Regular
+    subgroups: []
+    permissions: []
+  DivinePotent:
+    group: Rookie
+    subgroups: []
+    permissions: []
+  dmak12:
+    group: Rookie
+    subgroups: []
+    permissions:
+    - essentials.sethome.multiple.rookie
+    - essentials.warp
+    - essentials.warp.list
+    - scavenger.exp
+  dnick98:
+    group: Rookie
+    subgroups: []
+    permissions: []
+  DogBonz:
+    group: Rookie
+    subgroups: []
+    permissions: []
+  Doku157:
+    group: Regular
+    subgroups: []
+    permissions: []
+  doodlesnl:
+    group: Rookie
+    subgroups: []
+    permissions: []
+  dr_plosion:
+    group: Rookie
+    subgroups: []
+    permissions: []
+  Dragon_Born21:
+    group: Citizen
+    subgroups: []
+    permissions: []
+  Draw_Lines:
+    group: Rookie
+    subgroups: []
+    permissions: []
+  DrDayman:
+    group: Elite
+    subgroups: []
+    permissions: []
+  Driretlan:
+    group: Rookie
+    subgroups: []
+    permissions: []
+  DrJesusChrist:
+    group: Noble
+    subgroups: []
+    permissions:
+    - essentials.sethome.multiple.rookie
+    info:
+      suffix: §f [&l&6PhD§f]
+  dynamicT:
+    group: Rookie
+    subgroups: []
+    permissions: []
+  e243745f-bd5c-4d2f-a9da-1bf82b0f29f3:
+    lastname: null
+    group: Rookie
+    subgroups: []
+    permissions: []
+  e324a32f-120a-4bb8-b810-d6169bf3a44a:
+    lastname: null
+    group: Regular
+    subgroups: []
+    permissions:
+    - essentials.me
+    - essentials.sethome.multiple.regular
+    - essentials.sethome.multiple.rookie
+    - essentials.warp
+    - essentials.warp.list
+    - essentials.workbench
+    - scavenger.exp
+    - skript.extrahealth2
+    - vc.2
+  e378f617-59e2-4dbd-a6ac-fd709173b693:
+    lastname: repersniper2
+    group: Rookie
+    subgroups: []
+    permissions: []
+  e565bb7d-dd52-41e5-9ead-419f7812caa6:
+    lastname: null
+    group: Rookie
+    subgroups: []
+    permissions: []
+  e8221931-848a-4887-9c7b-6b74bf4f3c18:
+    lastname: _Fengo
+    group: Rookie
+    subgroups: []
+    permissions: []
+  e88dccfc-7488-44a5-9a8b-26098dd47e6f:
+    lastname: anxietymachine
+    group: Regular
+    subgroups: []
+    permissions: []
+    info:
+      §r§f[§d§oRookie§r]: §r
+  e8985fa7-f9b5-483e-8d0e-323d994bfea1:
+    lastname: null
+    group: Rookie
+    subgroups: []
+    permissions:
+    - essentials.sethome.multiple.rookie
+    - essentials.warp
+    - essentials.warp.list
+    - skript.extrahealth2
+  e94c7811-4aac-4acc-9a71-e49e8c68908a:
+    lastname: null
+    group: Citizen
+    subgroups: []
+    permissions:
+    - essentials.me
+    - essentials.sethome.multiple.regular
+    - essentials.sethome.multiple.rookie
+    - essentials.suicide
+    - essentials.warp
+    - essentials.warp.list
+    - essentials.workbench
+    - scavenger.exp
+    - scavenger.level
+    - skript.extrahealth2
+    - vc.2
+  e9a1ed18-8936-45a1-ae1d-7710901ab835:
+    lastname: null
+    group: Rookie
+    subgroups: []
+    permissions: []
+    info:
+      suffix: §f [&3&lIc&b&ley§f]
+  e9ade66d-f8b1-47c8-8f04-5778549f6cc9:
+    lastname: null
+    group: Elite
+    subgroups:
+    - Premium
+    permissions:
+    - essentials.chat.color
+    - essentials.chat.format
+    - essentials.clearinventory
+    - essentials.ext
+    - essentials.hat
+    - essentials.helpop.receive
+    - essentials.me
+    - essentials.near
+    - essentials.recipe
+    - essentials.sethome.multiple.craftsman
+    - essentials.sethome.multiple.noble
+    - essentials.sethome.multiple.regular
+    - essentials.signs.color
+    - essentials.signs.format
+    - essentials.signs.magic
+    - essentials.suicide
+    - essentials.top
+    - essentials.workbench
+    - gprealestate.sell
+    - launchpad.8
+    - multiverse.portal.access.creative
+    - quickshop.create.*
+    - quickshop.create.buy
+    - quickshop.create.sell
+    - scavenger.level
+    - scavenger.scavenge
+    - scavenger.xp
+    - simplesuffix.colors
+    - simplesuffix.format.*
+    - simplesuffix.set.suffix.self
+    - simplesuffix.setsuffix.self
+    - skript.collectible
+    - skript.nightvision
+    - vc.8
+    info:
+      suffix: §f [&6&lThor &8&lOdinson§f]
+  e9f918b0-fa5c-4231-bd34-223f780c0fdc:
+    lastname: null
+    group: Noble
+    subgroups: []
+    permissions:
+    - effect.magic
+    - essentials.book
+    - essentials.book.title
+    - essentials.chat.color
+    - essentials.chat.format
+    - essentials.chat.link
+    - essentials.clearinventory
+    - essentials.compass
+    - essentials.depth
+    - essentials.enderchest
+    - essentials.ext
+    - essentials.fly
+    - essentials.fly.safelogin
+    - essentials.getpos
+    - essentials.hat
+    - essentials.helpop.receive
+    - essentials.invsee
+    - essentials.itemdb
+    - essentials.jump
+    - essentials.me
+    - essentials.near
+    - essentials.powertool
+    - essentials.recipe
+    - essentials.sethome.multiple
+    - essentials.sethome.multiple.25
+    - essentials.sethome.multiple.champion
+    - essentials.sethome.multiple.citizen
+    - essentials.sethome.multiple.craftsman
+    - essentials.sethome.multiple.elite
+    - essentials.sethome.multiple.noble
+    - essentials.sethome.multiple.regular
+    - essentials.sethome.multiple.rookie
+    - essentials.sethome.multiple.seasoned
+    - essentials.signs.format
+    - essentials.signs.magic
+    - essentials.suicide
+    - essentials.top
+    - essentials.tptoggle
+    - essentials.warp
+    - essentials.warp.list
+    - essentials.workbench
+    - launchpad.10
+    - launchpad.2
+    - launchpad.4
+    - launchpad.6
+    - launchpad.8
+    - multiverse.portal.access.creative
+    - quickshop.create.buy
+    - quickshop.create.changeprice
+    - quickshop.create.sell
+    - scavenger.exp
+    - scavenger.level
+    - scavenger.scavenge
+    - scavenger.xp
+    - simplesuffix.colors
+    - simplesuffix.format.*
+    - simplesuffix.set.suffix.self
+    - skript.collectible
+    - skript.extrahealth10
+    - skript.extrahealth2
+    - skript.extrahealth4
+    - skript.extrahealth6
+    - skript.extrahealth8
+    - skript.nightvision
+    - skript.trail
+    - vc.10
+    - vc.2
+    - vc.4
+    - vc.6
+    - vc.8
+    info:
+      suffix: §f [&aAllMyLostBoyzzz§f]
+  E_Bieber:
+    group: Regular
+    subgroups: []
+    permissions: []
+  ec520a5b-5273-4279-8fa1-1a2569cc00a0:
+    lastname: Shaunticlair
+    group: Champion
+    subgroups:
+    - Diamond
+    - Premium
+    permissions:
+    - chestcommands.open.pave.yml
+    - essentials.book
+    - essentials.book.title
+    - essentials.chat.link
+    - essentials.compass
+    - essentials.enderchest
+    - essentials.ext
+    - essentials.helpop.receive
+    - essentials.invsee
+    - essentials.itemdb
+    - essentials.jump
+    - essentials.me
+    - essentials.near
+    - essentials.powertool
+    - essentials.recipe
+    - essentials.sethome.multiple.craftsman
+    - essentials.sethome.multiple.noble
+    - essentials.suicide
+    - essentials.top
+    - essentials.tptoggle
+    - essentials.workbench
+    - fd.monitor
+    - launchpad.10
+    - multiverse.portal.access.creative
+    - quickshop.create.*
+    - quickshop.create.buy
+    - quickshop.create.sell
+    - scavenger.exp
+    - scavenger.scavenge
+    - simplesuffix.colors
+    - simplesuffix.format.*
+    - skript.extrahealth10
+    - skript.extrahealth6
+    - skript.nightvision
+    info:
+      suffix: §f [Mycelium Kitty§f]
+  ElementalPvP:
+    group: Rookie
+    subgroups: []
+    permissions: []
+  elenore:
+    group: Rookie
+    subgroups: []
+    permissions:
+    - essentials.sethome.multiple.rookie
+    - scavenger.exp
+  EliasA:
+    group: Legend
+    subgroups: []
+    permissions: []
+    info:
+      suffix: §f [&aEli§f]
+  Elis_Username:
+    group: Rookie
+    subgroups: []
+    permissions: []
+  ELiTEmcM1N3R:
+    group: Craftsman
+    subgroups: []
+    permissions:
+    - essentials.clearinventory
+    - essentials.depth
+    - essentials.getpos
+    - essentials.hat
+    - essentials.itemdb
+    - essentials.me
+    - essentials.sethome.multiple.citizen
+    - essentials.sethome.multiple.regular
+    - essentials.sethome.multiple.rookie
+    - essentials.warp
+    - essentials.warp.list
+    - essentials.workbench
+    - scavenger.level
+    - scavenger.scavenge
+    - skript.extrahealth2
+    - skript.extrahealth4
+    - skript.nightvision
+  Elizabetta:
+    group: Rookie
+    subgroups: []
+    permissions: []
+  Ellzbob:
+    group: Rookie
+    subgroups: []
+    permissions: []
+  enderslayer982:
+    group: Regular
+    subgroups: []
+    permissions: []
+  EnjoiYourLoss:
+    group: Rookie
+    subgroups: []
+    permissions: []
+  Ennirock:
+    group: Rookie
+    subgroups: []
+    permissions: []
+  ennirocx:
+    group: Rookie
+    subgroups: []
+    permissions: []
+  epic92004:
+    group: Rookie
+    subgroups: []
+    permissions: []
+  Epicnessinacan99:
+    group: Elite
+    subgroups: []
+    permissions: []
+  EPICSAUCE_X2:
+    group: Rookie
+    subgroups: []
+    permissions: []
+  esfavorie:
+    group: Visitor
+    subgroups: []
+    permissions:
+    - bukkit.commands.gamemode
+    - essentials.gamemode
+    - essentials.gamemode.self
+    - essentials.gm
+    - essentials.gm.self
+    - essentials.sethome.multiple.rookie
+    - limitedcreative.keepinventory
+    - multiverse.portal.access.creative
+    info:
+      suffix: §f [&4H&6e&aa&tt&3h&ee&1r§f]
+  ewoutjelle:
+    group: Rookie
+    subgroups: []
+    permissions: []
+  f01a2307-e90d-4503-9f19-640806fa8808:
+    lastname: MrProtagonist
+    group: Owner
+    subgroups: []
+    permissions:
+    - -autoitem.replaceon.place
+    - essentials.compass
+    - essentials.getpos
+    - essentials.me
+    - essentials.near
+    - essentials.sethome.multiple.rookie
+    - scavenger.scavenge
+    - scavenger.xp
+    info:
+      prefix: '§f[&aFounder§f] '
+  f0c1a13e-114f-4b46-a189-d3bc88f1d2c7:
+    lastname: null
+    group: Seasoned
+    subgroups:
+    - Rookie
+    permissions:
+    - chestshop.shop.create
+    - essentials.chat.color
+    - essentials.chat.format
+    - essentials.compass
+    - essentials.hat
+    - essentials.sethome.multiple.citizen
+    - essentials.sethome.multiple.rookie
+    - essentials.sethome.multiple.seasoned
+    - essentials.warp
+    - essentials.warp.list
+    - quickshop.create.*
+    - quickshop.create.buy
+    - quickshop.create.sell
+    - scavenger.scavenge
+    info:
+      suffix: '&f [&a&oFirst!&r]'
+  f0db2f51-b275-4810-9121-3d2a0c8e4581:
+    lastname: green11
+    group: Seasoned
+    subgroups: []
+    permissions:
+    - essentials.book
+    - essentials.book.title
+    - essentials.chat.color
+    - essentials.chat.format
+    - essentials.ext
+    - essentials.hat
+    - essentials.me
+    - essentials.recipe
+    - essentials.sethome.multiple.citizen
+    - essentials.sethome.multiple.craftsman
+    - essentials.sethome.multiple.regular
+    - essentials.sethome.multiple.rookie
+    - essentials.sethome.multiple.seasoned
+    - essentials.signs.format
+    - essentials.signs.magic
+    - essentials.warp
+    - essentials.warp.list
+    - launchpad.6
+    - quickshop.create.buy
+    - quickshop.create.changeprice
+    - quickshop.create.sell
+    - scavenger.exp
+    - scavenger.level
+    - scavenger.scavenge
+    - simplesuffix.set.suffix.self
+    - skript.extrahealth2
+    - skript.extrahealth6
+    - skript.nightvision
+    - vc.4
+    - vc.6
+    info:
+      suffix: §f [PinkDubstepGun§f]
+  f2c03a04-ad9d-40f7-94da-38f20af0f99c:
+    lastname: null
+    group: Seasoned
+    subgroups: []
+    permissions:
+    - essentials.compass
+    - essentials.getpos
+    - essentials.me
+    - essentials.near
+    - essentials.recipe
+    - essentials.sethome.multiple.citizen
+    - essentials.sethome.multiple.craftsman
+    - essentials.sethome.multiple.regular
+    - essentials.sethome.multiple.rookie
+    - essentials.suicide
+    - skript.extrahealth2
+    - skript.extrahealth4
+    - skript.extrahealth6
+    - vc.2
+    - vc.4
+    - vc.6
+  f934be5a-c77d-4f46-9107-232cb72c29ba:
+    lastname: creeperkiller830
+    group: Seasoned
+    subgroups: []
+    permissions:
+    - essentials.chat.format
+    - essentials.hat
+    - essentials.sethome.multiple.regular
+    - quickshop.create.*
+    - quickshop.create.buy
+    - quickshop.create.sell
+    - skript.nightvision
+    info:
+      suffix: §f [ColorfulThing§f]
+  f94e79c0-ae7f-4ec7-aa58-591fd10f7b6a:
+    lastname: null
+    group: Rookie
+    subgroups: []
+    permissions: []
+  f974e84c-dcd0-44d7-aa5a-ec8c59e34785:
+    lastname: null
+    group: Rookie
+    subgroups: []
+    permissions: []
+  f9cd4479-5dd2-490d-8f4c-84c965f1bbfc:
+    lastname: null
+    group: Seasoned
+    subgroups:
+    - Diamond
+    permissions:
+    - essentials.book
+    - essentials.book.title
+    - essentials.clearinventory
+    - essentials.depth
+    - essentials.ext
+    - essentials.getpos
+    - essentials.hat
+    - essentials.itemdb
+    - essentials.me
+    - essentials.near
+    - essentials.recipe
+    - essentials.sethome.multiple.citizen
+    - essentials.sethome.multiple.craftsman
+    - essentials.sethome.multiple.rookie
+    - essentials.suicide
+    - essentials.warp
+    - essentials.warp.LIST
+    - essentials.workbench
+    - gprealestate.sell
+    - quickshop.create.*
+    - quickshop.create.buy
+    - quickshop.create.sell
+    - scavenger.exp
+    - skript.extrahealth2
+    - skript.extrahealth4
+    - skript.nightvision
+    info:
+      suffix: §f [Gabe§f]
+  Fakelzaman:
+    group: Rookie
+    subgroups: []
+    permissions: []
+  FaneTheRomeo:
+    group: Rookie
+    subgroups: []
+    permissions:
+    - essentials.sethome.multiple.rookie
+    - essentials.warp
+    - essentials.warp.list
+  Fantam:
+    group: Rookie
+    subgroups: []
+    permissions: []
+  Fathertimelolz:
+    group: Rookie
+    subgroups: []
+    permissions: []
+  fb242626-0439-4dfd-83f0-11f2f5d03ee8:
+    lastname: null
+    group: Rookie
+    subgroups: []
+    permissions: []
+  fb9c98f1-884c-4698-a834-0830169f8562:
+    lastname: null
+    group: Noble
+    subgroups: []
+    permissions:
+    - essentials.sethome.multiple.regular
+    - essentials.sethome.multiple.rookie
+    - essentials.warp
+    - essentials.warp.LIST
+    - permission.node.test
+    - permsel.create
+    - permsell.admin
+    - permsell.admkin
+    - quickshop.create.*
+    - quickshop.create.buy
+    - quickshop.create.sell
+    info:
+      suffix: §f [&3Chicken§f]
+  fbaf2e82-c3fb-4fb0-8a74-bbd7ad8ef19b:
+    lastname: null
+    group: Rookie
+    subgroups: []
+    permissions:
+    - essentials.me
+    - essentials.sethome.multiple.rookie
+    info:
+      suffix: §f [&4Lord Israphel§f]
+  fd7247a0-d27f-487e-bb56-af544a9dcae2:
+    lastname: null
+    group: Rookie
+    subgroups: []
+    permissions: []
+  fda7aa16-e7bc-4730-9164-cca1d450f7e9:
+    lastname: scatzbro
+    group: Dev
+    subgroups: []
+    permissions:
+    - -irc.message.chat
+    - essentials.book
+    - essentials.book.title
+    - essentials.depth
+    - essentials.getpos
+    - essentials.hat
+    - essentials.helpop.receive
+    - essentials.itemdb
+    - essentials.me
+    - essentials.near
+    - essentials.sethome.multiple.craftsman
+    - essentials.sethome.multiple.noble
+    - essentials.suicide
+    - essentials.top
+    - essentials.warp
+    - essentials.warp.list
+    - essentials.workbench
+    - multiverse.portal.access.creative
+    - quickshop.create.*
+    - quickshop.create.buy
+    - quickshop.create.sell
+    - scavenger.exp
+    - scavenger.level
+    - scavenger.scavenge
+    - simplesuffix.colors
+    - simplesuffix.form

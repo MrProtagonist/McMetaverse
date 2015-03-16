@@ -11,7 +11,7 @@ users:
     subgroups: []
     permissions: []
     info:
-      prefix: '§f[&2ADMIN§f] '
+      prefix: ''
       suffix: §f [&2Mr.Slimestone§f]
   799c4fd6-0201-4d1e-b345-b70e5f24f567:
     lastname: Post_Rogue
@@ -19,7 +19,7 @@ users:
     subgroups: []
     permissions: []
     info:
-      prefix: ''
+      prefix: '§f[§5§o&2Head Admin§f] '
       suffix: §f [&2PBC§f]
   950d8d97-4195-429f-839b-d65b7782b90b:
     lastname: gussy05
@@ -40,6 +40,13 @@ users:
     permissions: []
     info:
       prefix: ''
+  Ashlerose:
+    group: Default
+    subgroups: []
+    permissions: []
+    info:
+      prefix: '§f[§5§oBright Star of Hate§f] '
+      suffix: §f [&4-Queen-§f]
   Awesome1887:
     group: Default
     subgroups: []
@@ -88,7 +95,8 @@ users:
     subgroups: []
     permissions: []
     info:
-      suffix: §f [&5LGBT§f]
+      prefix: '§f[§5§o&bPotato§f] '
+      suffix: §f [&aMoney &6Maker§f]
   DaBomb1661:
     group: Default
     subgroups: []
@@ -124,7 +132,7 @@ users:
     subgroups: []
     permissions: []
     info:
-      prefix: ''
+      prefix: '§f[§5§o&9Admin§f] '
       suffix: §f [&4EvilLady§f]
   f01a2307-e90d-4503-9f19-640806fa8808:
     lastname: MrProtagonist
@@ -158,6 +166,7 @@ users:
     subgroups: []
     permissions: []
     info:
+      prefix: ''
       suffix: §f [&cC&6A&eN&2A&aD&bI&3A&9N§f]
   Icespot744:
     group: Default
@@ -176,7 +185,7 @@ users:
     subgroups: []
     permissions: []
     info:
-      suffix: §f [What'sGoingOn§f]
+      suffix: §f [AcceptingJobs§f]
   ItsDanielBro:
     group: Default
     subgroups: []
@@ -193,13 +202,15 @@ users:
     subgroups: []
     permissions: []
     info:
+      prefix: '§f[§5§o&bDonut§f] '
       suffix: §f [&a&oPanda§f]
   Kyokokat:
     group: Default
     subgroups: []
     permissions: []
     info:
-      suffix: §f [&3Baby&bPikachu§f]
+      prefix: '§f[§5§o&b<3§f] '
+      suffix: §f [&6G&3inger&bFox§f]
   lacerfacerxd:
     group: Default
     subgroups: []
@@ -229,6 +240,7 @@ users:
     subgroups: []
     permissions: []
     info:
+      prefix: '§f[§5§o&9Admin§f] '
       suffix: §f [&dWyrd&5&oSister§f]
   rfcroc:
     group: Default
@@ -242,6 +254,12 @@ users:
     permissions: []
     info:
       suffix: §f [maltesereater &5§f]
+  ShionSkaii:
+    group: Default
+    subgroups: []
+    permissions: []
+    info:
+      suffix: §f [&dForget Me Not§f]
   xLegendaryFlamex:
     group: Default
     subgroups: []

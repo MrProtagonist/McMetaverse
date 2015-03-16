@@ -27,7 +27,7 @@ users:
     subgroups: []
     permissions: []
     info:
-      prefix: '§f[&2ADMIN§f] '
+      prefix: ''
       suffix: §f [&2Mr.Slimestone§f]
   761cfbf5-a5aa-4e6f-b894-6baafe5e5da5:
     lastname: Nitrogengaming1
@@ -42,6 +42,7 @@ users:
     subgroups: []
     permissions: []
     info:
+      prefix: '§f[§5§o&bDonut§f] '
       suffix: §f [&b&lMonkey§f]
   950d8d97-4195-429f-839b-d65b7782b90b:
     lastname: gussy05
@@ -57,6 +58,13 @@ users:
     permissions: []
     info:
       suffix: §f [&7Lil &3Mic§f]
+  Ashlerose:
+    group: Default
+    subgroups: []
+    permissions: []
+    info:
+      prefix: '§f[§5§oBright Star of Hate§f] '
+      suffix: §f [&4-Queen-§f]
   bluedemon0015:
     group: Admin
     subgroups: []
@@ -86,13 +94,15 @@ users:
     subgroups: []
     permissions: []
     info:
-      suffix: §f [&5LGBT§f]
+      prefix: '§f[§5§o&bPotato§f] '
+      suffix: §f [&aMoney &6Maker§f]
   d5888bee-0de7-498e-9f93-39b9038f7ef9:
     lastname: EvilLittleThing
     group: Default
     subgroups: []
     permissions: []
     info:
+      prefix: '§f[§5§o&9Admin§f] '
       suffix: §f [&4EvilLady§f]
   DrieIceyGirl:
     group: Default
@@ -138,6 +148,8 @@ users:
     group: Builder
     subgroups: []
     permissions: []
+    info:
+      prefix: ''
   Icespot744:
     group: Default
     subgroups: []
@@ -149,7 +161,7 @@ users:
     subgroups: []
     permissions: []
     info:
-      suffix: §f [What'sGoingOn§f]
+      suffix: §f [AcceptingJobs§f]
   KHobbits:
     group: Moderator
     subgroups: []
@@ -160,7 +172,8 @@ users:
     subgroups: []
     permissions: []
     info:
-      suffix: §f [&3Baby&bPikachu§f]
+      prefix: '§f[§5§o&b<3§f] '
+      suffix: §f [&6G&3inger&bFox§f]
   lordlankovic:
     group: Default
     subgroups: []
@@ -172,6 +185,7 @@ users:
     subgroups: []
     permissions: []
     info:
+      prefix: '§f[§5§o&2Head Admin§f] '
       suffix: §f [&2LoZ§f]
   pumpkinpepper:
     group: Default
@@ -185,6 +199,7 @@ users:
     subgroups: []
     permissions: []
     info:
+      prefix: '§f[§5§o&9Admin§f] '
       suffix: §f [&dWyrd&5&oSister§f]
   retroville268773:
     group: Default
@@ -210,6 +225,12 @@ users:
     permissions: []
     info:
       suffix: §f [&4Kewl &cGamer§f]
+  ShionSkaii:
+    group: Default
+    subgroups: []
+    permissions: []
+    info:
+      suffix: §f [&dForget Me Not§f]
   snowleo:
     group: Builder
     subgroups: []
