@@ -19,15 +19,15 @@ variables:
 on skript start:
 	add 1 to {day.count}
 
-every 10 real seconds:
-	loop all players:
-		wait 3 ticks
-		loop-player does not have permission "is.op"
-		if loop-player has the permission "is.premium":
-			set loop-player's display name to "&5%name of loop-player%"
+#every 10 real seconds:
+#	loop all players:
+#		wait 3 ticks
+#		loop-player does not have permission "is.op"
+#		if loop-player has the permission "is.premium":
+#			set loop-player's display name to "&5%name of loop-player%"
 #			broadcast "&f[&aDEBUG&f] &6%loop-player%&e passed."
-		else:
-			set loop-player's display name to "%name of loop-player%"
+#		else:
+#			set loop-player's display name to "%name of loop-player%"
 
 command "/donor":
 	aliases: premium,perks
