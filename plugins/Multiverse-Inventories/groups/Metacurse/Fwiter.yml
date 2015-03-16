@@ -1,5 +1,0 @@
-playerData:
-  armorContents: 0:t:309;d:17/1:t:308;d:17/2:t:307;d:17/3:t:306;d:17
-  potions: ''
-  inventoryContents: 0:t:3;#:55/3:t:76;#:17/4:t:356;#:10/5:t:277;d:446/6:t:1;d:3;#:61/7:t:278;d:386;e:DURABILITY:3,DIG_SPEED:4/8:t:155;d:2;#:10/10:t:276;d:30/13:t:280;#:22/14:t:331/26:t:278;d:48;e:DURABILITY:3,LOOT_BONUS_BLOCKS:3,DIG_SPEED:4/32:t:1;d:3;#:64/34:t:1;d:3;#:64
-  stats: txp:0;ex:1.2211447;fl:4;xp:0.0;hp:20;el:0;sa:0.0;ma:300;ft:-20;ra:300;fd:0.0

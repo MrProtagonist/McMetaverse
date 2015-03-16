@@ -1,6 +1,0 @@
-playerData:
-  potions: pt:8,pd:128849012,pa:-6
-  bedSpawnLocation: wo:Metaverse;x:1795.0;y:61.0;z:3645.0;pi:0.0;ya:0.0
-  armorContents: 0:t:313;d:128/1:t:312;d:128/2:t:311;d:128/3:t:310;d:128
-  inventoryContents: 0:t:279;d:541;e:DURABILITY:2,DAMAGE_ALL:4,SILK_TOUCH:1/1:t:278;d:743;e:DURABILITY:3,DIG_SPEED:4/2:t:277;d:1510/3:t:39/4:t:411/5:t:295;#:17/6:t:262/7:t:296/8:t:297;#:5/9:t:38;d:1;#:2/10:t:130/11:t:320;#:25/12:t:42;#:2/13:t:360;#:62/14:t:325/15:t:338;#:2/16:t:375/32:t:5;#:42
-  stats: el:17;fd:0.0;xp:0.19971508;sa:0.0;txp:458;hp:28;ma:300;ra:300;ex:0.6727851;ft:-20;fl:20

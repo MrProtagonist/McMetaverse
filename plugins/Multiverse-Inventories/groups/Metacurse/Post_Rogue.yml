@@ -1,6 +1,0 @@
-playerData:
-  armorContents: 0:t:309;d:41/1:t:308;d:41/2:t:307;d:41/3:t:306;d:41
-  bedSpawnLocation: wo:Metacurse;x:1805.0;y:145.0;z:-5933.0;pi:0.0;ya:0.0
-  potions: ''
-  inventoryContents: 0:t:394;#:2/1:t:393;#:52/2:t:276;d:16;e:DAMAGE_ARTHROPODS:4/3:t:392;#:27/4:t:392;#:64/5:t:392;#:64/6:t:392;#:64/7:t:392;#:64/8:t:392;#:64/34:t:326/35:t:50;#:55
-  stats: sa:4.8;ra:300;ex:0.6903963;xp:0.0;el:0;hp:40;ft:-20;txp:0;ma:300;fd:0.0;fl:20
