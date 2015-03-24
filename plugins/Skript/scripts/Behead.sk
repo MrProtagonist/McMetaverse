@@ -57,3 +57,4 @@ on death of player:
 	delete {behead.player}
 	set death message to "&e%player% was decapitated by %{behead.killer}%."
 	delete {behead.killer}
+#	make targeted entity home towards player normally

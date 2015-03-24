@@ -13,9 +13,6 @@
 #				execute console command "/nick %loop-player% &a&o%loop-player%"
 #			else:
 #				execute console command "/nick %loop-player% &5&o%loop-player%"
-variables:
-	{day.count} = 1
-
 on skript start:
 	add 1 to {day.count}
 
@@ -28,7 +25,9 @@ on skript start:
 #			broadcast "&f[&aDEBUG&f] &6%loop-player%&e passed."
 #		else:
 #			set loop-player's display name to "%name of loop-player%"
-
+command /myprefix:
+	trigger:
+		set the player's prefix to "&f[&aMOD&f] "
 command "/donor":
 	aliases: premium,perks
 	trigger:
@@ -90,6 +89,14 @@ command /name <text>:
 					message "&cSorry, you can only use this command once a day. =["
 		else:
 			message "&cYou must declare an name for the item you are holding!"
+			
+on join:
+	{day.count.%player%.name} is not set
+	set {day.count.%player%.name} to 0
+	set {day.count.%player%.rename} to 0
+	set {day.count.%player%.lore} to 0
+	set {day.count.%player%.head} to 0
+
 
 command /lore <text>:
 	permission: is.premium

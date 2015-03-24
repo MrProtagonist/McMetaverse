@@ -1,8 +1,4 @@
-﻿on command "ping":
-	wait 1 tick
-	set {_ping} to player's ping
-	send "%{_ping}% ms" to player
-on join:
+﻿on join:
 	player has permission "essentials.socialspy"
 	{staff.members::%player%} is not set
 	set {staff.members::%player%} to "now"
@@ -84,6 +80,17 @@ command /leash:
 				message "&cYou can't leash an entity where you can't built!"
 		else:
 			message "&cYou don't have a leash dumbass!"
+on click:
+	clicked entity is villager
+	set {mymob.%player%.lastclick} to clicked entity
+on damage:
+	victim is villager
+	broadcast "debug1"
+	attacker is player named "MrProtagonist"
+	while victim exists:
+		broadcast "debug2"
+		make victim pathfind to attacker with speed 1
+		wait 1 tick
 
 # ###################################
 # ##       RocketTeleport 1.1      ##

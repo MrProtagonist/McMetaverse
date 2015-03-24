@@ -1,0 +1,47 @@
+command /deposit <integer>:
+	trigger:
+		if arg is set:
+			if {bank.vault::%UUID of player%} is not set:
+				set {bank.vault::%UUID of player%} to 0
+			if player's balance is greater than or equal to arg:
+				execute console command "eco take %player% %arg%"
+				add arg to {bank.vault::%UUID of player%}
+				message "&6Successfuly deposited &a$%arg%&6!"
+				message "&6Bank Account Total: &a$%{bank.vault::%UUID of player%}%"
+			else:
+				message "&cYou don't have &a$%arg%&c to deposit!"
+				stop
+		else:
+			message "&cIncorrect usage. Try doing &a/deposit (amount)"
+			
+command /withdraw <integer>:
+	trigger:
+		if arg is set:
+			if {bank.vault::%UUID of player%} is not set:
+				set {bank.vault::%UUID of player%} to 0
+			if {bank.vault::%UUID of player%} is greater than or equal to arg:
+				subtract arg from {bank.vault::%UUID of player%}
+				execute console command "eco give %player% %arg%"
+				message "&6Successfuly withdrew &a$%arg%&6!"
+				message "&6Bank Account Total: &a$%{bank.vault::%UUID of player%}%"
+			else:
+				message "&cYou don't have &a$%arg%&c in the bank to withdraw!"
+				stop
+		else:
+			message "&cIncorrect usage. Try doing &a/deposit (amount)"
+
+command /bank:
+	trigger:
+		if {bank.vault::%UUID of player%} is not set:
+			set {bank.vault::%UUID of player%} to 0
+		message "&6Bank Account Total: &a$%{bank.vault::%UUID of player%}%"
+
+command /debugbank:
+	permission: is.op
+	trigger:
+		loop {bank.vault::*}:
+			message "%loop-index% %loop-value%"
+
+on command "bal" or "balance" or "money":
+	wait 2 ticks
+	message "&6Bank Account Total: &a$%{bank.vault::%UUID of player%}%"
