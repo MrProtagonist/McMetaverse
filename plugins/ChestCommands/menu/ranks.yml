@@ -111,6 +111,7 @@ craftsman:
     - 'Use &a&o/near&r&7 to see nearby players'
     - 'Use &a&o/compass&r&7 to get your bearings'
     - 'Use &a&o/suffix&r&7 to make your suffix'
+    - 'Use &a&o/vc&r&7 to set up to 2 Virtual chests.'
   ID: 173
   KEEP-OPEN: false
   POSITION-X: 4
@@ -127,6 +128,7 @@ seasoned:
     - 'Scavenger saves items on death'
     - 'Format signs with &4c&6o&el&ao&br&5s&7,&r &lbold&r&7, &oitalics&r'
     - 'Use &a&o/top&r&7 to jump to the highest safe surface'
+    - 'Use &a&o/vc&r&7 to set up to 4 Virtual chests.'
   ID: 42
   KEEP-OPEN: false
   POSITION-X: 5
@@ -142,6 +144,7 @@ noble:
     - '6 extra &4health hearts'
     - 'Format &a&o/suffix&r&7 with &4c&6o&el&ao&br&5s&7,&r &lbold&r&7, &oitalics&r'
     - 'Use &a&o/hat&r&7 to wear the item in your hand as a hat'
+    - 'Use &a&o/vc&r&7 to set up to 6 Virtual chests.'
   ID: 41
   KEEP-OPEN: false
   POSITION-X: 6
@@ -156,6 +159,7 @@ elite:
     - '8 extra &4health hearts'
     - 'Use &a&o/ec&r&7 to access enderchest from anywhere'
     - 'Use &a&o/nv&r&7 to enable night vision'
+    - 'Use &a&o/vc&r&7 to set up to 8 Virtual chests.'
   ID: 57
   KEEP-OPEN: false
   POSITION-X: 7
@@ -171,6 +175,7 @@ champion:
     - '10 extra &4health hearts'
     - 'Use &a&o/ext&r&7 to extinguish yourself if you are on fire'
     - 'Use &a&o/fly&r&7 to... fly.'
+    - 'Use &a&o/vc&r&7 to set up to 10 Virtual chests.'
   ID: 133
   KEEP-OPEN: false
   POSITION-X: 8

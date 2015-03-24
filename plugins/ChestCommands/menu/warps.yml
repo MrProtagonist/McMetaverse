@@ -1,0 +1,201 @@
+######################
+#+                  +#
+#   MENU SETTINGS    #
+#+                  +#
+######################
+
+menu-settings:
+
+  # name - appears as the title - REQUIRED
+  name: '&e&lWarp Menu'
+
+  # rows - the number of rows of the chest - REQUIRED
+  rows: 2
+
+  # command - OPTIONAL (you can remove this or set it to '')
+  # Bind multiple commands using ; (command: 'menu; m; me')
+  command: 'warpmenu'
+
+  # The sound played whenever the menu is opened.
+  # List of sounds:
+  # jd.bukkit.org/rb/apidocs/org/bukkit/Sound.html
+  open-sound: NOTE_PLING
+
+  # open-with-item - OPTIONAL
+  # The menu will open only right-clicking with orange wool [35:1]
+  open-with-item:
+    item-id: wool
+    left-click: false
+    right-click: false
+    data-value: 1
+
+
+######################
+#+                  +#
+#       ITEMS        #
+#+                  +#
+######################
+#
+# NEVER USE A ' IN ANY OF YOUR TEXT!
+#
+spawnwarp:
+  COMMAND: 'spawn'
+  NAME: 'Spawn'
+  LORE: 
+    - 'The central hub and starting point.'
+  ID: 399
+  KEEP-OPEN: false
+  POSITION-X: 1
+  POSITION-Y: 1
+#  DATA-VALUE: 0
+
+sswarp:
+  COMMAND: 'ss'
+  NAME: 'Server Shop'
+  LORE: 
+    - 'Buy and sell blocks and items - No limits'
+  ID: 5
+  KEEP-OPEN: false
+  POSITION-X: 2
+  POSITION-Y: 1
+#  DATA-VALUE: 0
+
+graveyardwarp:
+  COMMAND: 'warp graveyard'
+  NAME: 'Ban Graveyard'
+  LORE: 
+    - 'Where the banned folks go when they die.'
+  ID: 397
+  KEEP-OPEN: false
+  POSITION-X: 3
+  POSITION-Y: 1
+#  DATA-VALUE: 0
+
+gallowswarp:
+  COMMAND: 'warp gallows'
+  NAME: 'The Decapitator'
+  LORE: 
+    - 'Kill your friends!'
+    - 'Collect their Heads!'
+    - 'Gotta cut em all.'
+  ID: 397
+  KEEP-OPEN: false
+  POSITION-X: 4
+  POSITION-Y: 1
+  DATA-VALUE: 3
+
+informationwarp:
+  COMMAND: 'warp informationhub'
+  NAME: 'General Information'
+  LORE: 
+    - 'Info about pretty much everything.'
+  ID: 24
+  KEEP-OPEN: false
+  POSITION-X: 5
+  POSITION-Y: 1
+  DATA-VALUE: 2
+
+playertownwarp:
+  COMMAND: 'warp playertowns'
+  NAME: 'Player-made Towns'
+  LORE: 
+    - 'A bunch of warps to player-made towns.'  
+    - 'Inquire about how to join them.'
+  ID: 17
+  KEEP-OPEN: false
+  POSITION-X: 6
+  POSITION-Y: 1
+  #  DATA-VALUE: 0
+
+warphubwarp:
+  COMMAND: 'warp warphub'
+  NAME: 'Warp Hub'
+  LORE:
+    - 'Warps to the arenas and minigames.'
+  ID: 98
+  KEEP-OPEN: false
+  POSITION-X: 7
+  POSITION-Y: 1
+#  DATA-VALUE: 0
+
+chapelwarp:
+  COMMAND: 'warp chapel'
+  NAME: 'Chapel'
+  LORE:
+    - 'Metaverse Cathedral'
+    - 'An ideal place to hold your wedding'
+  ID: 340
+  KEEP-OPEN: false
+  POSITION-X: 8
+  POSITION-Y: 1
+#  DATA-VALUE: 0
+
+courthousewarp:
+  COMMAND: 'warp couthouse'
+  NAME: 'Courthouse'
+  LORE:
+    - 'Metaverse Courthouse'
+    - 'An ideal place to hold your secular wedding'
+    - 'Second floor: Information on player town requirements'
+  ID: 403
+  KEEP-OPEN: false
+  POSITION-X: 9
+  POSITION-Y: 1
+#  DATA-VALUE: 0
+
+enjinheadswarp:
+  COMMAND: 'warp enjinheads'
+  NAME: 'Enjin Heads'
+  LORE:
+    - 'Player heads based on our Enjin statistics'
+    - 'New members, recent donations, and most time played'
+    - 'Also includes scoreboard for the Trivia game'
+  ID: 323
+  KEEP-OPEN: false
+  POSITION-X: 1
+  POSITION-Y: 2
+#  DATA-VALUE: 0
+
+biomeswarp:
+  COMMAND: 'warp biomes'
+  NAME: 'Biome Warps'
+  LORE:
+    - 'A warp area to biomes where you can build'
+  ID: 2
+  KEEP-OPEN: false
+  POSITION-X: 2
+  POSITION-Y: 2
+#  DATA-VALUE: 0
+
+#Warps I'd like to Add
+#top of Nordic arena to watch
+#top of Cairo arena to watch
+#top of spleef arena to watch
+#spectator area of silverfish scramble
+#spectator area of pitfall
+
+#Biomes List
+
+
+
+######################
+#+                  +#
+#       ITEMS        #
+#+                  +#
+######################
+#
+# NEVER USE A ' IN ANY OF YOUR TEXT!
+#
+# Example start
+#proglass:
+#  COMMAND: 'shopwarp 1'
+#  NAME: '&d[p] &aPro&fGlass &d[p]'
+#  LORE:
+#    - '&f&oEvery type of glass, always in stock!'
+#  ID: 20
+#  KEEP-OPEN: false
+#  POSITION-X: 2
+#  POSITION-Y: 1
+#  DATA-VALUE: 2
+# Remove the # from the line above to use the data value setting
+# Example end
