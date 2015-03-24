@@ -136,6 +136,7 @@ command /testloop:
                         broadcast "[DEBUG] &c&o%player% failed the check!"
 on login:
         add 1 to {logincount}
+		wait 10 real seconds
         if {dailybonus.%player%} is not {bonus}:
                 message "<gold><italic>You were given <light green>$200<gold> for logging in today!"
                 execute console command "eco give %player% 200"
@@ -150,9 +151,10 @@ command /dev:
                 message "   - <yellow>MrProtagonist"
                 message "   - <yellow>McNicholas"
                 message "   - <yellow>CaptainStupid"
-                message "   - <yellow>Colahdetank"
-                message "   - <yellow>Bluedemon0015"
                 message "   - <yellow>DrBloodbathMC"
+                message "   - <yellow>Quisalas"
+                message "   - <yellow>Scatzbro"
+                message "   - <yellow>Darkeye"
                 message "<light green>Current project:<gold> %{dev.current}%"
 
 command /devstatus <text>:
@@ -264,6 +266,13 @@ on damage:
         {pvp.%victim%} is 0:
                 cancel event
                 send "<yellow>You can't attack players that have PVP turned off!" to attacker
+on death:
+	victim is a player
+	attacker is a player
+	wait 10 real seconds
+	send "&6&lTIP: &c&oYou can disable your PvP by using &a&o/pvp" to victim
+on join:
+	set {pvp.%player%} to 0
 on damage:
         attacker's gamemode is creative
         victim is a player
