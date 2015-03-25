@@ -64,11 +64,11 @@ evilsshop:
   NAME: '&d[p] &aEvils Shop &d[p]'
   LORE:
     - '&f&oI have a little bit of everything. :)'
-  ID: 98
+  ID: 169
   KEEP-OPEN: false
   POSITION-X: 2
   POSITION-Y: 1
-  DATA-VALUE: 3
+  DATA-VALUE: 0
 divider2:
   NAME: ''
   ID: 160
@@ -98,11 +98,11 @@ GusApeshop:
   NAME: '&d[p] &aGus and Apes General Store &d[p]'
   LORE:
     - '&f&oGeneral goods and excellent deals!'
-  ID: 56
+  ID: 264
   KEEP-OPEN: false
   POSITION-X: 3
   POSITION-Y: 2
-  DATA-VALUE: 3
+  DATA-VALUE: 0
 divider4:
   NAME: ''
   ID: 160
@@ -127,6 +127,16 @@ divider5:
   POSITION-X: 9
   POSITION-Y: 1
   DATA-VALUE: 0
+TitanKidshop:
+  COMMAND: 'shopwarp 12'
+  NAME: '&d[p] &bTitans Metal Shop &d[p]'
+  LORE:
+    - '&f&oOres and metals at super low prices!'
+  ID: 265
+  KEEP-OPEN: false
+  POSITION-X: 6
+  POSITION-Y: 1
+  DATA-VALUE: 0
 RoobsBlackMarket:
   COMMAND: 'shopwarp 11'
   NAME: '&d[p] &aRoobs Black Market&d[p]'
@@ -136,7 +146,7 @@ RoobsBlackMarket:
   KEEP-OPEN: false
   POSITION-X: 5
   POSITION-Y: 2
-  DATA-VALUE: 3
+  DATA-VALUE: 0
 divider6:
   NAME: ''
   ID: 160

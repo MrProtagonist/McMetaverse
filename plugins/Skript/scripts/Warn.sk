@@ -168,7 +168,7 @@ command /clearwarnings <text>:
 			message "&e&oDONE!"
 		else:
 			message "&c&oCould not find: &a%arg%"
-command /warn <text> <text>:
+command /warn <player> <text>:
 	description: Warns a player.
 	usage: /warn <player> <text>
 	permission: skript.warn
@@ -182,44 +182,44 @@ command /warn <text> <text>:
 		add player to {warnings.%argument 1%.by::*}
 		if {warnings.%arg 1%} = 1:
 			message "&cYou have warned %arg 1%!" to player
-			message " <gold>%player%<light red> just warned you for <white>%arg 2%" to arg 1
-			message "<lime>2 <light red>warnings left until jail, <lime>4<light red> until ban!" to arg 1
+			message "&6%player%&c just warned you for &f%arg 2%" to {arg 1}
+			message "&a2 &cwarnings left until jail, &a4&c until ban!" to {arg 1}
 			stop
 		if {warnings.%arg 1%} = 2:
-			message "<light red> You have warned %arg 1%!" to player
-			message " <gold>%player%<light red> just warned you for <white>%arg 2%" to arg 1
-			message "<lime>1 <light red>warning left until jail, <lime>3<light red> until ban!" to arg 1
+			message "&c You have warned %arg 1%!" to player
+			message "&6%player%&c just warned you for &f%arg 2%" to {arg 1}
+			message "&a1 &cwarning left until jail, &a3&c until ban!" to {arg 1}
 			stop
 		if {warnings.%arg 1%} = 3:
-			message "<light red> You have warned %arg 1%!" to player
-			message " <gold>%player%<light red> just warned you for <white>%arg 2%" to arg 1
-			message "<lime>2 <light red>warnings left until ban!" to arg 1
+			message "&c You have warned %arg 1%!" to player
+			message "&6%player%&c just warned you for &f%arg 2%" to {arg 1}
+			message "&a2 &cwarnings left until ban!" to {arg 1}
 			stop
 			wait 2 seconds
 			execute console command "/jail %player% cell2 20m" 
 			execute console command "/mute %player% 20m" 
-			message " " to arg 1
-			message "<blue>You have been jailed and muted for 20 minutes for collecting 3 warnings. Please take this time to think about how you choose to play on this server." to arg 1
+			message " " to {arg 1}
+			message "&1You have been jailed and muted for 20 minutes for collecting 3 warnings. Please take this time to think about how you choose to play on this server." to {arg 1}
 			stop
 		if {warnings.%arg 1%} = 4:
-			message "<light red> You have warned %arg 1%!" to player
-			message "<light red>You've been warned by <gold>%player%<light red> for <gold>%arg 2%<light red>! <lime>1 <light red>warning left until perma ban!" to arg 1
+			message "&c You have warned %arg 1%!" to player
+			message "&cYou've been warned by &6%player%&c for &6%arg 2%&c! &a1 &cwarning left until perma ban!" to {arg 1}
 			wait 2 seconds
 			execute console command "/jail %player% cell2 1d" 
 			execute console command "/mute %player% 1d" 
-			message " " to arg 1
-			message "<light red>You have been jailed and muted for one day for collecting 4 warnings. Please take this time to think about how you choose to play on this server." to arg 1
+			message " " to {arg 1}
+			message "&cYou have been jailed and muted for one day for collecting 4 warnings. Please take this time to think about how you choose to play on this server." to {arg 1}
 			wait 4 seconds
-			message "<gold>You only need 1 more warning to be banned for good. Change your behavior, or expect it soon." to arg 1
+			message "&6You only need 1 more warning to be banned for good. Change your behavior, or expect it soon." to {arg 1}
 			stop
 		if {warnings.%arg 1%} = 5:
-			message "<light red> You have warned %arg 1%!" to player
-			message " <gold>%player%<light red> just warned you for <white>%arg 2%" to arg 1
-			message " " to arg 1
-			message "&c&oYou have collected 5 warnings. You are now being banned!" to arg 1
+			message "&c You have warned %arg 1%!" to player
+			message " &6%player%&c just warned you for &f%arg 2%" to {arg 1}
+			message " " to {arg 1}
+			message "&c&oYou have collected 5 warnings. You are now being banned!" to {arg 1}
 			broadcast "&c&o%player% &e&owas banned for collecting 5 warnings. Please do not follow in their footsteps."
 			wait 3 seconds
-			kick arg 1 due to "Banned for too many warnings. Change your behavior, then apply for a ban appeal on our website."
+			kick {arg 1} due to "Banned for too many warnings. Change your behavior, then apply for a ban appeal on our website."
 			ban arg 1
 			stop
 
@@ -242,7 +242,7 @@ command /resetwarnings <player>:
 	permission: skript.reset.warnings	
 	trigger:
 		set {warnings.%player%} to 0
-		message "<gold>Warnings reset!"
+		message "&6Warnings reset!"
 		stop
 
 variables:
@@ -252,44 +252,44 @@ command /vote <text> <player> <text>:
 	description: Vote to mute or jail a player.
 	usage: /vote <jail or mute> <player> <reason>
 	trigger:
-		broadcast "<lime>%player% <gold>has set a vote to<lime> %arg 1% %arg 2%<gold> for <light red>%arg 3%<gold>!"
-		broadcast "<gold>Use <lime>/for <gold>to vote to punish them!"
-		broadcast "<gold>Use <lime>/against <gold>to vote to pardon them!"
+		broadcast "&a%player% &6has set a vote to&a %arg 1% %arg 2%&6 for &c%arg 3%&6!"
+		broadcast "&6Use &a/for &6to vote to punish them!"
+		broadcast "&6Use &a/against &6to vote to pardon them!"
 		wait 1 minute
 		if {vote.for} is greater than {vote.against}:
 			if arg 1 is "jail":
 				execute console command "/jail %arg 2% cell1 30m" 
-				broadcast "<lime>%arg 1% <light red>was jailed for 30 mins by a community vote!"
+				broadcast "&a%arg 1% &cwas jailed for 30 mins by a community vote!"
 			else:
 				execute console command "/mute %arg 2% 30m" 
-				broadcast "<lime>%arg 2% <light red>was muted for 30 mins by a community vote!"
+				broadcast "&a%arg 2% &cwas muted for 30 mins by a community vote!"
 			set {vote.for} to 0
 			set {vote.against} to 0
 			set {voted.%player%} to false
 		else:
-			broadcast "<light red>There were not enough votes to %arg 1% <lime>%arg 2%<light red>!"
+			broadcast "&cThere were not enough votes to %arg 1% &a%arg 2%&c!"
 			set {vote.for} to 0
 			set {vote.against} to 0
 			set {voted.%player%} to false
 command /for:
 	trigger:
 		if {voted.%player%} is true:
-			message "<light red>You have already voted!"
+			message "&cYou have already voted!"
 			stop
 		else:
 			add 1 to {vote.for}
-			message "<gold>You voted to punish the player!"
+			message "&6You voted to punish the player!"
 			set {voted.%player%} to true
 			stop
 
 command /against:
 	trigger:
 		if {voted.%player%} is true:
-			message "<light red>You have already voted!"
+			message "&cYou have already voted!"
 			stop
 		else:
 			add 1 to {vote.against}
-			message "<gold>You voted to pardon the player!"
+			message "&6You voted to pardon the player!"
 			set {voted.%player%} to true
 			stop
 on quit:

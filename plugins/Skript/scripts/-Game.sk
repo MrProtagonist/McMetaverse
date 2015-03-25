@@ -6,7 +6,6 @@ on script load:
 	set {cobblehunt.going} to false
 	loop all players:
 		set {cobblehunt.%loop-player%.ready} to false
-		set {cobblehunt.%loop-player%.playing} to false
 on join:
 	set {cobblehunt.%player%.ready} to false
 on break:
@@ -39,7 +38,7 @@ on break of cobble silverfish:
 	loop all players:
 		{cobblehunt.%loop-player%.spectating} is true:
 			teleport loop-player to {cobblehunt.spectate}
-			execute console command "region removemember -w Metacurse scramble %loop-player%"
+			execute console command "rg removemember scramble %loop-player%"
 	set {cobblehunt.going} to false
 	wait 3 real seconds
 	execute console command "/resetscramble"
@@ -142,7 +141,7 @@ on right click on diamond block:
 		wait 5 second
 		loop all players:
 			{cobblehunt.%loop-player%.playing} is true
-			execute console command "region addmember -w Metacurse scramble %loop-player%"
+			execute console command "rg addmember scramble %loop-player%"
 			send "&2&oSilverfish Scramble has begun!" to loop-player
 on damage of player:
 	if {cobblehunt.%victim%.playing} is true:

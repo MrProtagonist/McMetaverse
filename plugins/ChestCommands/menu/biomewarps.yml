@@ -1,0 +1,185 @@
+
+menu-settings:
+
+  # name - appears as the title - REQUIRED
+  name: '&a&lBiome Warps'
+
+  # rows - the number of rows of the chest - REQUIRED
+  rows: 2
+
+  # command - OPTIONAL (you can remove this or set it to '')
+  # Bind multiple commands using ; (command: 'menu; m; me')
+  command: ''
+
+  # The sound played whenever the menu is opened.
+  # List of sounds:
+  # jd.bukkit.org/rb/apidocs/org/bukkit/Sound.html
+  open-sound: NOTE_PLING
+
+  # open-with-item - OPTIONAL
+  # The menu will open only right-clicking with orange wool [35:1]
+  open-with-item:
+    item-id: wool
+    left-click: false
+    right-click: false
+    data-value: 1
+
+
+#
+# NEVER USE A ' IN ANY OF YOUR TEXT!
+#
+plainswarp:
+  COMMAND: 'warp plains'
+  NAME: 'Plains Biome'
+  LORE: 
+    - 'Warp to a Plains biome where you can build nearby'
+  ID: 2
+  KEEP-OPEN: false
+  POSITION-X: 1
+  POSITION-Y: 1
+forestwarp:
+  COMMAND: 'warp forest'
+  NAME: 'Forest Biome'
+  LORE: 
+    - 'Warp to a Forest biome where you can build nearby'
+  ID: 17
+  KEEP-OPEN: false
+  POSITION-X: 2
+  POSITION-Y: 1
+birchwarp:
+  COMMAND: 'warp birch'
+  NAME: 'Birch Forest Biome'
+  LORE: 
+    - 'Warp to a Birch Forest biome where you can build nearby'
+  ID: 17
+  KEEP-OPEN: false
+  POSITION-X: 3
+  POSITION-Y: 1
+  DATA-VALUE: 2
+taigawarp:
+  COMMAND: 'warp taiga'
+  NAME: 'Taiga Biome'
+  LORE: 
+    - 'Warp to a Taiga biome where you can build nearby'
+  ID: 17
+  KEEP-OPEN: false
+  POSITION-X: 4
+  POSITION-Y: 1
+  DATA-VALUE: 1
+junglewarp:
+  COMMAND: 'warp Jungle'
+  NAME: 'Jungle Biome'
+  LORE: 
+    - 'Warp to a Jungle biome where you can build nearby'
+  ID: 17
+  KEEP-OPEN: false
+  POSITION-X: 5
+  POSITION-Y: 1
+  DATA-VALUE: 3
+roofedwarp:
+  COMMAND: 'warp roofed'
+  NAME: 'Dark Oak/Roofed Biome'
+  LORE: 
+    - 'Warp to a Roofed biome where you can build nearby'
+  ID: 162
+  KEEP-OPEN: false
+  POSITION-X: 6
+  POSITION-Y: 1
+  DATA-VALUE: 1
+savannahwarp:
+  COMMAND: 'warp savannah'
+  NAME: 'Savannah Biome'
+  LORE: 
+    - 'Warp to a Savannah biome where you can build nearby'
+  ID: 162
+  KEEP-OPEN: false
+  POSITION-X: 7
+  POSITION-Y: 1
+snowtaigawarp:
+  COMMAND: 'warp snowplains'
+  NAME: 'Snowy Plains Biome'
+  LORE: 
+    - 'Warp to a Snowy Plains biome where you can build nearby'
+  ID: 80
+  KEEP-OPEN: false
+  POSITION-X: 8
+  POSITION-Y: 1
+swampwarp:
+  COMMAND: 'warp swamp'
+  NAME: 'Swamp Biome'
+  LORE: 
+    - 'Warp to a Swamp biome where you can build nearby'
+  ID: 106
+  KEEP-OPEN: false
+  POSITION-X: 9
+  POSITION-Y: 1
+desertwarp:
+  COMMAND: 'warp desert'
+  NAME: 'Desert Biome'
+  LORE: 
+    - 'Warp to a Desert biome where you can build nearby'
+  ID: 81
+  KEEP-OPEN: false
+  POSITION-X: 2
+  POSITION-Y: 2
+  DATA-VALUE: 0
+mesawarp:
+  COMMAND: 'warp mesa'
+  NAME: 'Mesa Biome'
+  LORE: 
+    - 'Warp to a Mesa biome where you can build nearby'
+  ID: 159
+  KEEP-OPEN: false
+  POSITION-X: 3
+  POSITION-Y: 2
+  DATA-VALUE: 1
+extremehillswarp:
+  COMMAND: 'warp extreme'
+  NAME: 'Extreme Hills Biome'
+  LORE: 
+    - 'Warp to an Extreme Hills biome where you can build nearby'
+  ID: 129
+  KEEP-OPEN: false
+  POSITION-X: 4
+  POSITION-Y: 2
+flowerswarp:
+  COMMAND: 'warp flowers'
+  NAME: 'Flower Forest Biome'
+  LORE: 
+    - 'Warp to a Flower Forest biome where you can build nearby'
+  ID: 175
+  KEEP-OPEN: false
+  POSITION-X: 5
+  POSITION-Y: 2
+  DATA-VALUE: 4
+icespikewarp:
+  COMMAND: 'warp icespike'
+  NAME: 'Ice Spike Biome'
+  LORE: 
+    - 'Warp to a Ice Spike biome where you &o&ecan not&r build nearby'
+    - 'This Biome is world-guarded to protect it!'
+    - 'You can look, but no touching!'
+    - '&l&eThis Warp Is Not Yet Available!'
+  ID: 174
+  KEEP-OPEN: false
+  POSITION-X: 6
+  POSITION-Y: 2
+mushroomwarp:
+  COMMAND: 'warp mushroom'
+  NAME: 'Mushroom Biome'
+  LORE: 
+    - 'Warp to a Mushroom biome where you can build nearby'
+    - '&l&eThis Warp Is Not Yet Available!'
+  ID: 100
+  KEEP-OPEN: false
+  POSITION-X: 7
+  POSITION-Y: 2
+back-to-nav:
+  COMMAND: 'open:nav.yml'
+  NAME: 'Go Back'
+  LORE: 
+    - 'Back to the Navigation Menu'
+  ID: 399
+  KEEP-OPEN: false
+  POSITION-X: 9
+  POSITION-Y: 2

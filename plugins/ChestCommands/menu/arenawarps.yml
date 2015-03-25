@@ -1,0 +1,88 @@
+
+menu-settings:
+
+  # name - appears as the title - REQUIRED
+  name: '&a&lArena Warps'
+
+  # rows - the number of rows of the chest - REQUIRED
+  rows: 2
+
+  # command - OPTIONAL (you can remove this or set it to '')
+  # Bind multiple commands using ; (command: 'menu; m; me')
+  command: ''
+
+  # The sound played whenever the menu is opened.
+  # List of sounds:
+  # jd.bukkit.org/rb/apidocs/org/bukkit/Sound.html
+  open-sound: NOTE_PLING
+
+  # open-with-item - OPTIONAL
+  # The menu will open only right-clicking with orange wool [35:1]
+  open-with-item:
+    item-id: wool
+    left-click: false
+    right-click: false
+    data-value: 1
+
+
+#
+# NEVER USE A ' IN ANY OF YOUR TEXT!
+#
+Nordicspec:
+  COMMAND: 'warp nordicspec'
+  NAME: 'MA Nordic Spectator'
+  LORE:
+    - 'Watch the players in /ma join Nordic'
+  ID: 98
+  KEEP-OPEN: true
+  POSITION-X: 3
+  POSITION-Y: 1
+  DATA-VALUE: 3
+Cairospec:
+  COMMAND: 'warp cairospec'
+  NAME: 'MA Cairo Spectator'
+  LORE:
+    - 'Watch the players in /ma join Cairo'
+  ID: 24
+  KEEP-OPEN: true
+  POSITION-X: 4
+  POSITION-Y: 2
+  DATA-VALUE: 1
+Lavaspec:
+  COMMAND: 'warp lavaspec'
+  NAME: 'Pitfall Spectator'
+  LORE:
+    - 'Watch the players in /pitfall'
+  ID: 7
+  KEEP-OPEN: true
+  POSITION-X: 5
+  POSITION-Y: 1
+
+Spleefspec:
+  COMMAND: 'warp spleefspec'
+  NAME: 'Spleef Spectator'
+  LORE:
+    - 'Watch the players in /spleef'
+  ID: 80
+  KEEP-OPEN: true
+  POSITION-X: 6
+  POSITION-Y: 2
+  
+Scramblespec:
+  COMMAND: 'warp scramblespec'
+  NAME: 'Silverfish Scramble Spectator'
+  LORE:
+    - 'Watch the players in /scramble'
+  ID: 4
+  KEEP-OPEN: true
+  POSITION-X: 7
+  POSITION-Y: 1
+nav:
+  COMMAND: 'open:nav.yml'
+  NAME: 'Go Back'
+  LORE:
+    - 'Back to the Navigation menu'
+  ID: 399
+  KEEP-OPEN: true
+  POSITION-X: 9
+  POSITION-Y: 2
