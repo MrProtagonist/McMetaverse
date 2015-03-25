@@ -13,6 +13,9 @@
 #				execute console command "/nick %loop-player% &a&o%loop-player%"
 #			else:
 #				execute console command "/nick %loop-player% &5&o%loop-player%"
+variables:
+	{day.count} = 1
+
 on skript start:
 	add 1 to {day.count}
 
@@ -25,9 +28,7 @@ on skript start:
 #			broadcast "&f[&aDEBUG&f] &6%loop-player%&e passed."
 #		else:
 #			set loop-player's display name to "%name of loop-player%"
-command /myprefix:
-	trigger:
-		set the player's prefix to "&f[&aMOD&f] "
+
 command "/donor":
 	aliases: premium,perks
 	trigger:
@@ -55,32 +56,79 @@ command "/donor":
 			message "&cYou must purchase Premium to receive these benefits."
 		message "&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-"
 
-command /prefix <text>:
+command /prefix [<text>] <text>:
 	permission: sk.prefix
 	trigger:
-		if arg is set:
-			set {_l} to length of the string argument
-			if {_l} is greater than 15:
-				message "&cPrefix is too long! Please shorten it!"
-				stop
-			message "&aSet your prefix to &f[%colored arg%&f]"
-			set the player's prefix to "&f[%colored arg%&f] "
+		if player has the permission "essentials.socialspy":
+			if arg 1 is set:
+				if arg 1 is not online:
+					message "&cCould not find an online player by the name %arg 1%!"
+					stop trigger
+				if arg 2 is set:
+					set {_l} to length of the string argument 2
+					if {_l} is greater than 20:
+						message "&cPrefix is too long! Please shorten it!"
+						stop
+					message "&aSet %arg 1%'s prefix to &f[%colored arg 2%&f]"
+					set arg 1's prefix to "&f[%colored arg 2%&f] "
+				else:
+					message "&cUsage: /prefix <username> <prefix>"
+					stop
+			else:
+				message "&cUsage: /prefix <username> <prefix>
 		else:
-			message "&cUsage: /prefix <Prefix Here>"
-			stop
-command /suffix <text>:
+			if arg is set:
+				set {_l1} to length of the string argument 1
+				set {_l2} to length of the string argument 2
+				set {_lT} to {_l1}
+				add {_l2} to {_lT}
+				if {_lT} is greater than 20:
+					message "&cPrefix is too long! Please shorten it!"
+					stop
+				if arg 2 is set:
+					message "&aSet your prefix to &f[%colored arg 1% %colored arg 2%&f]"
+					set the player's prefix to "&f[%colored arg 1% %colored arg 2%&f] "
+				else:
+					message "&aSet your prefix to &f[%colored arg 1%&f]"
+					set the player's prefix to "&f[%colored arg 1%&f] "
+			else:
+				message "&cUsage: /prefix <prefix Here>"
+				stop
+command /suffix <text> [<player>]:
 	permission: sk.suffix
 	trigger:
-		if arg is set:
-			set {_l} to length of the string argument
-			if {_l} is greater than 15:
-				message "&csuffix is too long! Please shorten it!"
-				stop
-			message "&aSet your suffix to &f[%colored arg%&f]"
-			set the player's suffix to "&f[%colored arg%&f] "
+		if player has the permission "essentials.socialspy":
+			if arg 1 is set:
+				if arg 2 is set:
+					set {_l} to length of the string argument 2
+					if {_l} is greater than 20:
+						message "&cSuffix is too long! Please shorten it!"
+						stop
+					message "&aSet %arg 1%'s suffix to &f[%colored arg 2%&f]"
+					set arg 1's suffix to " &f[%colored arg 2%&f]"
+				else:
+					message "&cUsage: /suffix <username> <suffix>"
+					stop
+			else:
+				message "&cUsage: /suffix <username> <suffix>
 		else:
-			message "&cUsage: /suffix <suffix Here>"
-			stop
+			if arg is set:
+				set {_l1} to length of the string argument 1
+				set {_l2} to length of the string argument 2
+				set {_lT} to {_l1}
+				add {_l2} to {_lT}
+				if {_lT} is greater than 20:
+					message "&cSuffix is too long! Please shorten it!"
+					stop
+				if arg 2 is set:
+					message "&aSet your suffix to &f[%colored arg 1% %colored arg 2%&f]"
+					set the player's suffix to " &f[%colored arg 1% %colored arg 2%&f]"
+				else:
+					message "&aSet your suffix to &f[%colored arg 1%&f]"
+					set the player's suffix to " &f[%colored arg 1%&f]"
+			else:
+				message "&cUsage: /suffix <suffix Here>"
+				stop
 			
 command /head <text>:
 	executable by: players
@@ -115,14 +163,6 @@ command /name <text>:
 					message "&cSorry, you can only use this command once a day. =["
 		else:
 			message "&cYou must declare an name for the item you are holding!"
-			
-on join:
-	{day.count.%player%.name} is not set
-	set {day.count.%player%.name} to 0
-	set {day.count.%player%.rename} to 0
-	set {day.count.%player%.lore} to 0
-	set {day.count.%player%.head} to 0
-
 
 command /lore <text>:
 	permission: is.premium
