@@ -35,8 +35,8 @@ Nordicspec:
     - 'Watch the players in /ma join Nordic'
   ID: 98
   KEEP-OPEN: true
-  POSITION-X: 3
-  POSITION-Y: 1
+  POSITION-X: 1
+  POSITION-Y: 2
   DATA-VALUE: 3
 Cairospec:
   COMMAND: 'warp cairospec'
@@ -45,9 +45,27 @@ Cairospec:
     - 'Watch the players in /ma join Cairo'
   ID: 24
   KEEP-OPEN: true
-  POSITION-X: 4
-  POSITION-Y: 2
+  POSITION-X: 2
+  POSITION-Y: 1
   DATA-VALUE: 1
+Spleefspec:
+  COMMAND: 'warp spleefspec'
+  NAME: 'Spleef Spectator'
+  LORE:
+    - 'Watch the players in /spleef'
+  ID: 80
+  KEEP-OPEN: true
+  POSITION-X: 3
+  POSITION-Y: 2
+Scramblespec:
+  COMMAND: 'warp scramblespec'
+  NAME: 'Silverfish Scramble Spectator'
+  LORE:
+    - 'Watch the players in /scramble'
+  ID: 4
+  KEEP-OPEN: true
+  POSITION-X: 4
+  POSITION-Y: 1
 Lavaspec:
   COMMAND: 'warp lavaspec'
   NAME: 'Pitfall Spectator'
@@ -56,26 +74,33 @@ Lavaspec:
   ID: 7
   KEEP-OPEN: true
   POSITION-X: 5
-  POSITION-Y: 1
-
-Spleefspec:
-  COMMAND: 'warp spleefspec'
-  NAME: 'Spleef Spectator'
+  POSITION-Y: 2
+SandStormspec:
+  COMMAND: 'warp sandspec'
+  NAME: 'SandStorm Spectator'
   LORE:
-    - 'Watch the players in /spleef'
-  ID: 80
+    - 'Watch the players in /sandstorm'
+  ID: 12
   KEEP-OPEN: true
   POSITION-X: 6
-  POSITION-Y: 2
-  
-Scramblespec:
-  COMMAND: 'warp scramblespec'
-  NAME: 'Silverfish Scramble Spectator'
+  POSITION-Y: 1
+SharpShooterspec:
+  COMMAND: 'warp sharpspec'
+  NAME: 'SharpShooter Spectator'
   LORE:
-    - 'Watch the players in /scramble'
-  ID: 4
+    - 'Watch the archers in /sharpshooter'
+  ID: 262
   KEEP-OPEN: true
   POSITION-X: 7
+  POSITION-Y: 2
+fishspec:
+  COMMAND: 'warp fishspec'
+  NAME: 'Fishing Tourney Spectator'
+  LORE:
+    - 'Watch the players in /fish'
+  ID: 349
+  KEEP-OPEN: true
+  POSITION-X: 8
   POSITION-Y: 1
 nav:
   COMMAND: 'open:nav.yml'

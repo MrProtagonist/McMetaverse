@@ -1,0 +1,479 @@
+﻿# #!      ___           ___           ___           ___           ___           ___           ___           ___           ___           ___     
+# #!     /\__\         /\  \         /\  \         /\  \         /\  \         /\__\         /\__\         /\  \         /\__\         |\__\    
+# #!    /::|  |       /::\  \       /::\  \        \:\  \       /::\  \       /:/  /        /::|  |       /::\  \       /:/  /         |:|  |   
+# #!   /:|:|  |      /:/\:\  \     /:/\ \  \        \:\  \     /:/\:\  \     /:/  /        /:|:|  |      /:/\:\  \     /:/  /          |:|  |   
+# #!  /:/|:|__|__   /:/  \:\  \   _\:\~\ \  \       /::\  \   /::\~\:\  \   /:/  /  ___   /:/|:|  |__   /:/  \:\  \   /:/  /  ___      |:|__|__ 
+# #! /:/ |::::\__\ /:/__/ \:\__\ /\ \:\ \ \__\     /:/\:\__\ /:/\:\ \:\__\ /:/__/  /\__\ /:/ |:| /\__\ /:/__/_\:\__\ /:/__/  /\__\     /::::\__\
+# #! \/__/~~/:/  / \:\  \ /:/  / \:\ \:\ \/__/    /:/  \/__/ \/__\:\ \/__/ \:\  \ /:/  / \/__|:|/:/  / \:\  /\ \/__/ \:\  \ /:/  /    /:/~~/~   
+# #!       /:/  /   \:\  /:/  /   \:\ \:\__\     /:/  /           \:\__\    \:\  /:/  /      |:/:/  /   \:\ \:\__\    \:\  /:/  /    /:/  /     
+# #!      /:/  /     \:\/:/  /     \:\/:/  /     \/__/             \/__/     \:\/:/  /       |::/  /     \:\/:/  /     \:\/:/  /     \/__/      
+# #!     /:/  /       \::/  /       \::/  /                                   \::/  /        /:/  /       \::/  /       \::/  /                 
+# #!     \/__/         \/__/         \/__/                                     \/__/         \/__/         \/__/         \/__/                  
+# #!
+# #!   
+
+options:
+  version:1.3
+  pre:<gold>[<yellow>Skript+<gold>] <yellow>
+  prebad:<red>[<pink>Skript+<red>] <yellow>
+
+
+# #! declare loopable expression "(skriptplus|skript plus) version" as "number"
+custom expression logic for "(skriptplus|skript plus) version":
+  set expression value to {@version}
+
+# #! declare expression "(flipped|reversed) %boolean%"
+# #!   -Turns true into false, and false into true
+custom expression logic for "(flipped|reversed) %boolean%":
+  if boolean expression 1 is true:
+    set expression value to false
+  else:
+    set expression value to true
+
+    
+    
+# #! declare expression "worded capitalization of %string%" as "string"
+# #!   -Capitalizes the first letter of every word
+custom expression logic for "worded capitalization of %string%":
+  set {_wordsoriginal::*} to string expression 1 split at " "
+  loop {_wordsoriginal::*}:
+    
+    if length of loop-value is greater than 1:
+      set {_rest} to subtext of loop-value from characters 2 to (length of loop-value)
+      if "%{_formatted}%" is "<none>":
+        if "%{FakeSK::capitalized::%subtext of loop-value from characters 1 to 1%}%" is not "<none>":
+          set {_formatted} to "%{FakeSK::capitalized::%subtext of loop-value from characters 1 to 1%}%%{_rest}%"
+        else:
+          set {_formatted} to "%loop-value%"
+      else:
+        if "%{FakeSK::capitalized::%subtext of loop-value from characters 1 to 1%}%" is not "<none>":
+          set {_formatted} to "%{_formatted}% %{FakeSK::capitalized::%subtext of loop-value from characters 1 to 1%}%%{_rest}%"
+        else:
+          set {_formatted} to "%{_formatted}% %loop-value%"
+    else:
+      if "%{_formatted}%" is "<none>":
+        if "%{FakeSK::capitalized::%subtext of loop-value from characters 1 to 1%}%" is not "<none>":
+          set {_formatted} to "%{FakeSK::capitalized::%subtext of loop-value from characters 1 to 1%}%"
+        else:
+          set {_formatted} to "%loop-value%"
+      else:
+        if "%{FakeSK::capitalized::%subtext of loop-value from characters 1 to 1%}%" is not "<none>":
+          set {_formatted} to "%{_formatted}% %{FakeSK::capitalized::%subtext of loop-value from characters 1 to 1%}%"
+        else:
+          set {_formatted} to "%{_formatted}% %loop-value%"
+  set expression value to "%{_formatted}%"
+  
+    
+# #! declare expression "first capitalization of %string%" as "string"
+# #!   -Capitalizes the first letter in the string only
+custom expression logic for "first capitalization of %string%":
+
+  set {_rest} to subtext of string expression 1 from characters 2 to (length of string expression 1)
+  
+  if "%{FakeSK::capitalized::%subtext of string expression 1 from characters 1 to 1%}%" is "<none>":
+    set expression value to string expression 1
+  else:
+    set expression value to "%{FakeSK::capitalized::%subtext of string expression 1 from characters 1 to 1%}%%{_rest}%"
+  
+  
+  
+# #! declare expression "complete capitalization of %string%" as "string"
+# #!   -Capitalizes every letter in the string
+custom expression logic for "complete capitalization of %string%":
+  set {_text} to string expression 1
+  loop {FakeSK::capitalized::*}:
+    replace "%loop-index%" with "%loop-value%" in {_text}
+  set expression value to {_text}
+  
+  
+# #! loopable expression "number of items in %item stack%"
+# #!   -Counts items in an item stack
+custom expression logic for "number of items in %itemstack%":
+  
+  set {_name} to "%item expression 1%"
+  set {_name::*} to {_name} split at " "
+  
+  set {_count} to {_name::1} parsed as integer
+  if "%{_count}%" is "<none>":
+    set expression value to 1
+  else:
+    set expression value to {_count}
+  
+  
+# #! declare loopable expression "[server ]TPS" as "integer"
+# #!   -Returns the ticks per second
+custom expression logic for "[server['s]] TPS":
+  set expression value to {tps::tracker}
+  
+  
+# #! declare effect "make %player% execute %string% as op"
+custom effect logic for "make %player% execute %string% as op":
+  if player expression 1 is not op:
+    op player expression 1
+    make player expression 1 execute "%string expression 2%"
+    deop player expression 1
+  else:
+    make player expression 1 execute "%string expression 2%"
+    
+  
+  
+# #! declare loopable expression "complete uncapitalization of %string%" as "string"
+# #!   -Capitalizes every letter in the string
+custom expression logic for "complete uncapitalization of %string%":
+  set {_text} to string expression 1
+  loop {FakeSK::uncapitalization::*}:
+    replace "%loop-index%" with "%loop-value%" in {_text}
+  set expression value to {_text}
+
+# #! declare loopable expression "day (from|of) %time%" as "string"
+custom expression logic for "day (from|of) %date%":
+  set {_time} to "%time expression 1%"
+  set {_date.time::*} to {_time} split at " "
+  set {_date::*} to {_date.time::1} split at "/"
+  set expression value to {_date::2}
+
+
+# #! declare loopable expression "month (from|of) %time%" as "string"
+custom expression logic for "month (from|of) %date%":
+  set {_time} to "%time expression 1%"
+  set {_date.time::*} to {_time} split at " "
+  set {_date::*} to {_date.time::1} split at "/"
+  set expression value to {_date::1}
+
+
+# #! declare loopable expression "year (from|of) %time%" as "string"
+custom expression logic for "year (from|of) %date%":
+  set {_time} to "%time expression 1%"
+  set {_date.time::*} to {_time} split at " "
+  set {_date::*} to {_date.time::1} split at "/"
+  set expression value to {_date::3}
+
+
+# #! declare loopable expression "hour (from|of) %time%" as "string"
+custom expression logic for "hour (from|of) %date%":
+  set {_time} to "%time expression 1%"
+  set {_date.time::*} to {_time} split at " "
+  set {_time::*} to {_date.time::2} split at ":"
+  set expression value to {_time::1}
+
+
+# #! declare loopable expression "minute (from|of) %time%" as "string"
+custom expression logic for "minute (from|of) %date%":
+  set {_time} to "%time expression 1%"
+  set {_date.time::*} to {_time} split at " "
+  set {_time::*} to {_date.time::2} split at ":"
+  set expression value to {_time::2}
+
+# #! declare loopable expression "period (from|of) %date%" as "string"
+custom expression logic for "period (from|of) %date%":
+  set {_time} to "%time expression 1%"
+  set {_date.time::*} to {_time} split at " "
+  set expression value to {_date.time::3}
+
+# #! declare effect "(sexilly|beautifully) break %block%"
+# #! custom effect logic for "(sexilly|beautifully) break %block%[ with delay %timespan%[ between (phases|loops)]]":
+custom effect logic for "(sexilly|beautifully) break %block% with delay [of ]%timespan%[ between (phases|loops)]":
+  loop 10 times:
+    show block break stage loop-number at block expression 1
+    wait timespan expression 2
+  show block break stage 0 at block expression 1
+  break block expression 1
+
+# #! declare effect "clear chat of %player%"
+custom effect logic for "clear chat of %players%":
+  loop 100 times:
+    message "          " to players expression 1
+
+
+# #! declare loopable expression "%strings% deduced by %string%" as "strings"
+# #! custom expression logic for "%strings% deduced by %string%":
+# custom expression logic for "all entries in %objects% including %string%":
+  # set {_strings::*} to loopable objects expression 1
+  # loop {_strings::*}:
+    # if "%loop-value%" contains "%string expression 2%":
+      # add loop-value to {_list::*}
+  # set expression value to {_list::*}
+  
+# #! declare loopable expression "%strings% deduced by %string%" as "integer"
+# custom expression logic for "size of %strings% deduced by %string%":
+  # set {_strings::*} to loopable strings expression 1
+  # loop {_strings::*}:
+    # if "%loop-value%" contains "%string expression 2%":
+      # add loop-value to {_list::*}
+  # set {_count} to size of {_list::*}
+  # set expression value to {_count}
+  
+
+# #! declare loopable expression "%timespan% shortened[ to 1 section]"
+custom expression logic for "%timespan% shortened[ to 1 section]":
+  set {_timespan} to "%loopable timespan expression 1%"
+  set {_timelist::*} to {_timespan} split at " "
+  set expression value to "%{_timelist::1}% %{_timelist::2}%"
+  
+  
+
+
+
+# #! declare loopable expression "%number% shortened to %integer% decimal places" as "string"
+custom expression logic for "%number% condensed (with|to) %integer% decimal place[s]":
+  set {_number} to number expression 1
+  set {_decimal} to integer expression 2
+  set {_count} to 0
+  while {_number} >= 1000:
+    add 1 to {_count}
+    set {_number} to {_number}/1000
+  set {_number} to {_number} rounded to {_decimal} decimal places
+  if {_count} is 0:
+    set {_text} to ""
+  else:
+    set {_text} to " %{FakeSK::NumberCondensor::%{_count}%}%"
+  set expression value to  "%{_number}%%{_text}%"
+  
+  
+# #! declare loopable expression "%integer% o(f|') %string%" as "string"
+custom expression logic for "%integer% o(f|') %string%":
+  loop (integer expression 1) times:
+    set {_text} to "%{_text} ? """"%%string expression 2%"
+  set expression value to {_text}
+    
+  
+# #! declare effect "%location% without (facing|direction|head position[ing])" as "location"
+custom expression logic for "%location% without (facing|direction|head position[ing])":
+  set {_loc} to location expression 1
+  set {_actuallocation} to location of block below {_loc}
+  set x coordinate of {_actuallocation} to x coordinate of {_loc}
+  set y coordinate of {_actuallocation} to y coordinate of {_loc}
+  set z coordinate of {_actuallocation} to z coordinate of {_loc}
+  set expression value to {_actuallocation}
+
+  
+# #! declare loopable expression "number of %string% in %string%" as "integer"
+custom expression logic for "number of %string% in %string%":
+  set {_texttocheckfor} to string expression 1
+  set {_texttocheckagainst} to string expression 2
+  set {_textsplit::*} to {_texttocheckagainst} split by {_texttocheckfor}
+  set expression value to (size of {_textsplit::*}) - 1
+  
+  
+# #! declare loopable expression "number of %block% in radius %integer% around %location%" as "integer"
+# #! I need to figure out how to use %block% in an expression, it errors out and doesn't let the skript load.
+# custom expression logic for "(number|size) of %block type% in radius %integer% around %location%":
+  # set {_blocktocheckfor} to block expression 1
+  # set {_blocks::*} to all blocks in radius integer expression 2 around location expression 3
+  # set {_blockstocheckagainst} to "****%join {_blocks::*} with ""****""%****"
+  # set {_blockssplit::*} to {_blockstocheckagainst} split by "****%{_blocktocheckfor}%****"
+  # set expression value to (size of {_blockssplit::*}) - 1
+  
+  
+# #! declare loopable expression "json [row ]formatted %objects% with %integer%[ entries] per row and [using ]colo[u]rs %color% and %color%" as "string"
+custom expression logic for "json [row ]formatted %objects% with %integer%[ entries] per row and [using ]colo[u]rs %color% and %color% (and|highlight) %color%":
+  set {_objects::*} to objects expression 1
+  #loop {_uniquelist::*}:
+  if size of {_objects::*} is less than or equal to integer expression 2:
+    set expression value to "%{_objects::*}%"
+  else:
+    set {_tooltip} to ""
+    set {_totaltracker} to 0
+    loop {_objects::*}:
+      set {_tracker} to {_tracker} + 1
+      set {_totaltracker} to {_totaltracker} + 1
+      if (rounded {_tracker} / 2) is ({_tracker} / 2):
+        set {_color} to "<%color expression 3%>"
+      else:
+        set {_color} to "<%color expression 4%>"
+      if "%{_totaltracker}%" is "%size of {_objects::*}%":
+        set {_tooltip} to "%{_tooltip}%<%color expression 5%>and %{_color}%%loop-value%"
+      else:
+        set {_tooltip} to "%{_tooltip}%%{_color}%%loop-value%<%color expression 5%>, "
+      if {_tracker} is integer expression 2:
+        if "%{_totaltracker}%" is not "%size of {_objects::*}%":
+          set {_tooltip} to "%{_tooltip}%%nl%"
+          set {_tracker} to 0
+  set expression value to {_tooltip}
+  
+# #! declare loopable expression "lore [row ]formatted %objects% with %integer%[ entries] per row and [using ]colo[u]rs %color% and %color%" as "string"
+custom expression logic for "lore [row ]formatted %objects% with %integer%[ entries] per row and [using ]colo[u]rs %color% and %color% (and|highlight) %color%":
+  set {_objects::*} to objects expression 1
+  #loop {_uniquelist::*}:
+  if size of {_objects::*} is less than or equal to integer expression 2:
+    set expression value to "%{_objects::*}%"
+  else:
+    set {_lore} to ""
+    set {_totaltracker} to 0
+    loop {_objects::*}:
+      set {_tracker} to {_tracker} + 1
+      set {_totaltracker} to {_totaltracker} + 1
+      if (rounded {_tracker} / 2) is ({_tracker} / 2):
+        set {_color} to "<%color expression 3%>"
+      else:
+        set {_color} to "<%color expression 4%>"
+      if "%{_totaltracker}%" is "%size of {_objects::*}%":
+        set {_lore} to "%{_lore}%<%color expression 5%>and %{_color}%%loop-value%"
+      else:
+        set {_lore} to "%{_lore}%%{_color}%%loop-value%<%color expression 5%>, "
+      if {_tracker} is integer expression 2:
+        if "%{_totaltracker}%" is not "%size of {_objects::*}%":
+          set {_lore} to "%{_lore}%||"
+          set {_tracker} to 0
+  set expression value to {_lore}
+  
+  
+  
+  
+# #! XOOOOOX
+# #! XXOOOXX
+# #! XXXOXXX
+# #! XXXXXXX
+# #! XXXOXXX
+# #! XXOOOXX
+# #! XOOOOOX
+
+command skriptplus [<text>]:
+  aliases:skp
+  permission:op
+  trigger:
+    
+    if "%arg 1%" is "reload":
+      make player execute "skript reload %script%"
+      stop
+    
+    #make player execute "bcast test" as op
+    
+    message "{@pre}SkriptPlus <gold>V{@version}"
+    
+    set {_boolean} to true
+    set {_test} to reversed {_boolean}
+    message "<yellow>set {_test} to reversed true <light aqua>- <gold>%{_test}%"
+    
+    set {_text} to "this is a test"
+    set {_text} to first capitalization of {_text}
+    message "<yellow>first capitalization of ""this is a test"" <light aqua>- <gold>%{_text}%"
+    
+    set {_text} to "this is a test"
+    set {_text} to complete capitalization of {_text}
+    message "<yellow>complete capitalization of ""this is a test"" <light aqua>- <gold>%{_text}%"
+    
+    set {_text} to "ThIs Is A tESt"
+    set {_text} to complete uncapitalization of {_text}
+    message "<yellow>complete UNcapitalization of ""ThIs Is A tESt"" <light aqua>- <gold>%{_text}%"
+    
+    set {_text} to "this is a test"
+    set {_text} to worded capitalization of {_text}
+    message "<yellow>worded capitalization of ""this is a test"" <light aqua>- <gold>%{_text}%"
+    
+    message "<yellow>number of items in player's tool <light aqua>- <gold>%number of items in player's tool%"
+    
+    message "<yellow>These should be equal: <gold>%now% <yellow>- <gold>%month of now%/%day of now%/%year of now% %hour of now%:%minute of now% %period of now%"
+    
+    
+every tick:
+  set {tps::currentcount} to {tps::currentcount} + 1
+every second:
+  set {tps::tracker} to {tps::currentcount}
+  clear {tps::currentcount}
+  
+command skripttps:
+  permission:op
+  trigger:
+    message "{@pre}%{tps::tracker}%"
+    
+on script load:
+  delete {FakeSK::*}
+  
+  set {FakeSK::Tries} to 10
+  set {FakeSK::NumberCondensor::1} to "Thousand"
+  set {FakeSK::NumberCondensor::2} to "Million"
+  set {FakeSK::NumberCondensor::3} to "Billion"
+  set {FakeSK::NumberCondensor::4} to "Trillion"
+  set {FakeSK::NumberCondensor::5} to "Quadrillion"
+  set {FakeSK::NumberCondensor::6} to "Sextillion"
+  set {FakeSK::NumberCondensor::7} to "Septillion"
+  set {FakeSK::NumberCondensor::8} to "Octillion"
+  set {FakeSK::NumberCondensor::9} to "Nonillion"
+  set {FakeSK::NumberCondensor::10} to "Decillion"
+  set {FakeSK::NumberCondensor::11} to "Undecillion"
+  set {FakeSK::NumberCondensor::12} to "Duodecillion"
+  set {FakeSK::NumberCondensor::13} to "Tredecillion"
+  set {FakeSK::NumberCondensor::14} to "Quattuordecillion"
+  set {FakeSK::NumberCondensor::15} to "Quindecillion"
+  set {FakeSK::NumberCondensor::16} to "Sexdecillion"
+  set {FakeSK::NumberCondensor::17} to "Septendecillion"
+  set {FakeSK::NumberCondensor::18} to "Octodecillion"
+  set {FakeSK::NumberCondensor::19} to "Novemdecillion"
+  set {FakeSK::NumberCondensor::20} to "Vigintillion"
+  set {FakeSK::NumberCondensor::21} to "Centillion"
+  
+  set {FakeSK::capitalized::a} to "A"
+  set {FakeSK::capitalized::b} to "B"
+  set {FakeSK::capitalized::c} to "C"
+  set {FakeSK::capitalized::d} to "D"
+  set {FakeSK::capitalized::e} to "E"
+  set {FakeSK::capitalized::f} to "F"
+  set {FakeSK::capitalized::g} to "G"
+  set {FakeSK::capitalized::h} to "H"
+  set {FakeSK::capitalized::i} to "I"
+  set {FakeSK::capitalized::j} to "J"
+  set {FakeSK::capitalized::k} to "K"
+  set {FakeSK::capitalized::l} to "L"
+  set {FakeSK::capitalized::m} to "M"
+  set {FakeSK::capitalized::n} to "N"
+  set {FakeSK::capitalized::o} to "O"
+  set {FakeSK::capitalized::p} to "P"
+  set {FakeSK::capitalized::q} to "Q"
+  set {FakeSK::capitalized::r} to "R"
+  set {FakeSK::capitalized::s} to "S"
+  set {FakeSK::capitalized::t} to "T"
+  set {FakeSK::capitalized::u} to "U"
+  set {FakeSK::capitalized::v} to "V"
+  set {FakeSK::capitalized::w} to "W"
+  set {FakeSK::capitalized::x} to "X"
+  set {FakeSK::capitalized::y} to "Y"
+  set {FakeSK::capitalized::z} to "Z"
+  
+  set {FakeSK::uncapitalization::A} to "a"
+  set {FakeSK::uncapitalization::B} to "b"
+  set {FakeSK::uncapitalization::C} to "c"
+  set {FakeSK::uncapitalization::D} to "d"
+  set {FakeSK::uncapitalization::E} to "e"
+  set {FakeSK::uncapitalization::F} to "f"
+  set {FakeSK::uncapitalization::G} to "g"
+  set {FakeSK::uncapitalization::H} to "h"
+  set {FakeSK::uncapitalization::I} to "i"
+  set {FakeSK::uncapitalization::J} to "j"
+  set {FakeSK::uncapitalization::K} to "k"
+  set {FakeSK::uncapitalization::L} to "l"
+  set {FakeSK::uncapitalization::M} to "m"
+  set {FakeSK::uncapitalization::N} to "n"
+  set {FakeSK::uncapitalization::O} to "o"
+  set {FakeSK::uncapitalization::P} to "p"
+  set {FakeSK::uncapitalization::Q} to "q"
+  set {FakeSK::uncapitalization::R} to "r"
+  set {FakeSK::uncapitalization::S} to "s"
+  set {FakeSK::uncapitalization::T} to "t"
+  set {FakeSK::uncapitalization::U} to "u"
+  set {FakeSK::uncapitalization::V} to "v"
+  set {FakeSK::uncapitalization::W} to "w"
+  set {FakeSK::uncapitalization::X} to "x"
+  set {FakeSK::uncapitalization::Y} to "y"
+  set {FakeSK::uncapitalization::Z} to "z"
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  

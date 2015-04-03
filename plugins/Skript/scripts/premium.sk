@@ -1,23 +1,49 @@
-﻿# on join:
-#	wait 1 tick
-#	if player has the permission "is.premium":
-#		if player has the permission "is.op":
-#			execute console command "/nick %player% &a&o%player%"
-#		else:
-#			execute console command "/nick %player% &5&o%player%"
+﻿on join:
+	wait 1 tick
+	if player has the permission "is.premium":
+		if player has the permission "is.op":
+			execute console command "/nick %player% &a&o%player%"
+		else:
+			execute console command "/nick %player% &5&o%player%"
 
-# on script load:
-#	loop all players:
-#		if loop-player has the permission "is.premium":
-#			if loop-player has the permission "is.op":
-#				execute console command "/nick %loop-player% &a&o%loop-player%"
-#			else:
-#				execute console command "/nick %loop-player% &5&o%loop-player%"
+on script load:
+	loop all players:
+		if loop-player has the permission "is.premium":
+			if loop-player has the permission "is.op":
+				execute console command "/nick %loop-player% &a&o%loop-player%"
+			else:
+				execute console command "/nick %loop-player% &5&o%loop-player%"
 variables:
 	{day.count} = 1
 
 on skript start:
 	add 1 to {day.count}
+on load:
+	register new shaped recipe for nether star named "&f&l&k.&e&l&k.&f&l&k.&r &6&lWedding Ring &f&l&k.&e&l&k.&f&l&k." using gold block, gold block, gold block, gold block, diamond, gold block, gold block, gold block, gold block
+on craft of nether star:
+	wait 2 ticks
+	message "&aYou have crafted a Wedding Ring! Give it to somebody very special, then have a server OP officiate the marriage."
+	loop all items in player's inventory:
+		name of loop-item contains "Wedding"
+		1st line of lore of loop-item does not contain "Crafted"
+		set the 1st line of lore of loop-item to "&eCrafted with love by"
+		set the 2nd line of lore of loop-item to "&b%player%"
+		set the 3nd line of lore of loop-item to "&7&o%now%"
+	wait 2 real seconds
+	loop all items in player's inventory:
+		name of loop-item contains "Wedding"
+		1st line of lore of loop-item does not contain "Crafted"
+		set the 1st line of lore of loop-item to "&eCrafted with love by"
+		set the 2nd line of lore of loop-item to "&b%player%"
+		set the 3nd line of lore of loop-item to "&7&o%now%"
+	wait 5 real seconds
+	loop all items in player's inventory:
+		name of loop-item contains "Wedding"
+		1st line of lore of loop-item does not contain "Crafted"
+		set the 1st line of lore of loop-item to "&eCrafted with love by"
+		set the 2nd line of lore of loop-item to "&b%player%"
+		set the 3nd line of lore of loop-item to "&7&o%now%"
+	
 
 #every 10 real seconds:
 #	loop all players:
@@ -55,80 +81,66 @@ command "/donor":
 		if player does not have permission "is.premium":
 			message "&cYou must purchase Premium to receive these benefits."
 		message "&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-"
-
-command /prefix [<text>] <text>:
+command /fixprefix:
+	trigger:
+		if primary group of player is "Owner":
+			set the player's prefix to "&f[&aOwner&f] "
+			stop
+		if primary group of player is "Champion":
+			set the player's prefix to "&f[&4&oChampion&f] "
+			stop
+		if primary group of player is "Elite":
+			set the player's prefix to "&f[&4a&oElite&f] "
+			stop
+		if primary group of player is "Noble":
+			set the player's prefix to "&f[&b&oNoble&f] "
+			stop
+		if primary group of player is "Seasoned":
+			set the player's prefix to "&f[&9&oSeasoned&f] "
+			stop
+		if primary group of player is "Craftsman":
+			set the player's prefix to "&f[&6&oCraftsman&f] "
+			stop
+		if primary group of player is "Citizen":
+			set the player's prefix to "&f[&e&oCitizen&f] "
+			stop
+		if primary group of player is "Regular":
+			set the player's prefix to "&f[&c&oRegular&f] "
+			stop
+			
+command /prefix <text>:
 	permission: sk.prefix
 	trigger:
-		if player has the permission "essentials.socialspy":
-			if arg 1 is set:
-				if arg 1 is not online:
-					message "&cCould not find an online player by the name %arg 1%!"
-					stop trigger
-				if arg 2 is set:
-					set {_l} to length of the string argument 2
-					if {_l} is greater than 20:
-						message "&cPrefix is too long! Please shorten it!"
-						stop
-					message "&aSet %arg 1%'s prefix to &f[%colored arg 2%&f]"
-					set arg 1's prefix to "&f[%colored arg 2%&f] "
-				else:
-					message "&cUsage: /prefix <username> <prefix>"
-					stop
-			else:
-				message "&cUsage: /prefix <username> <prefix>
-		else:
-			if arg is set:
-				set {_l1} to length of the string argument 1
-				set {_l2} to length of the string argument 2
-				set {_lT} to {_l1}
-				add {_l2} to {_lT}
-				if {_lT} is greater than 20:
-					message "&cPrefix is too long! Please shorten it!"
-					stop
-				if arg 2 is set:
-					message "&aSet your prefix to &f[%colored arg 1% %colored arg 2%&f]"
-					set the player's prefix to "&f[%colored arg 1% %colored arg 2%&f] "
-				else:
-					message "&aSet your prefix to &f[%colored arg 1%&f]"
-					set the player's prefix to "&f[%colored arg 1%&f] "
-			else:
-				message "&cUsage: /prefix <prefix Here>"
+		if arg is set:
+			if arg is "off":
+				execute console command "manudelv %player% prefix"
+				message "&aRemoved your prefix!"
+				make player execute "fixprefix"
 				stop
-command /suffix <text> [<player>]:
+			set {_l} to length of the string argument
+			if {_l} is greater than 20:
+				message "&cPrefix is too long! Please shorten it!"
+				stop
+			message "&aSet your prefix to &f[%colored arg%&f]"
+			play "LEVEL_UP" specifically to player with pitch 1
+			set the player's prefix to "&f[%colored arg%&f] "
+		else:
+			message "&cUsage: /prefix <Prefix Here>"
+			stop
+command /suffix <text>:
 	permission: sk.suffix
 	trigger:
-		if player has the permission "essentials.socialspy":
-			if arg 1 is set:
-				if arg 2 is set:
-					set {_l} to length of the string argument 2
-					if {_l} is greater than 20:
-						message "&cSuffix is too long! Please shorten it!"
-						stop
-					message "&aSet %arg 1%'s suffix to &f[%colored arg 2%&f]"
-					set arg 1's suffix to " &f[%colored arg 2%&f]"
-				else:
-					message "&cUsage: /suffix <username> <suffix>"
-					stop
-			else:
-				message "&cUsage: /suffix <username> <suffix>
-		else:
-			if arg is set:
-				set {_l1} to length of the string argument 1
-				set {_l2} to length of the string argument 2
-				set {_lT} to {_l1}
-				add {_l2} to {_lT}
-				if {_lT} is greater than 20:
-					message "&cSuffix is too long! Please shorten it!"
-					stop
-				if arg 2 is set:
-					message "&aSet your suffix to &f[%colored arg 1% %colored arg 2%&f]"
-					set the player's suffix to " &f[%colored arg 1% %colored arg 2%&f]"
-				else:
-					message "&aSet your suffix to &f[%colored arg 1%&f]"
-					set the player's suffix to " &f[%colored arg 1%&f]"
-			else:
-				message "&cUsage: /suffix <suffix Here>"
+		if arg is set:
+			set {_l} to length of the string argument
+			if {_l} is greater than 20:
+				message "&csuffix is too long! Please shorten it!"
 				stop
+			message "&aSet your suffix to &f[%colored arg%&f]"
+			play "LEVEL_UP" specifically to player with pitch 1
+			set the player's suffix to " &f[%colored arg%&f]"
+		else:
+			message "&cUsage: /suffix <suffix Here>"
+			stop
 			
 command /head <text>:
 	executable by: players
@@ -136,10 +148,12 @@ command /head <text>:
 	trigger:
 		if argument is set:
 			if player has permission "essentials.socialspy":
+				play "LEVEL_UP" specifically to player with pitch 1
 				execute console command "/give %player% 397:3 1 player:%arg 1%"
 			else:
 				if {day.count.%player%.head} is not {day.count}:
 					execute console command "/give %player% 397:3 1 player:%arg 1%"
+					play "LEVEL_UP" specifically to player with pitch 1
 					message "&aYou just received &6%arg%&a's head!"
 					set {day.count.%player%.head} to {day.count}
 				else:
@@ -153,10 +167,12 @@ command /name <text>:
 		if argument is set:
 			if player has permission "essentials.socialspy":
 				set the name of player's tool to "%colored arg%"
+				play "LEVEL_UP" specifically to player with pitch 1
 				message "&aItem successfully renamed!"
 			else:
 				if {day.count.%player%.name} is not {day.count}:
 					set the name of player's tool to "%colored arg%"
+					play "LEVEL_UP" specifically to player with pitch 1
 					message "&aItem successfully renamed!"
 					set {day.count.%player%.name} to {day.count}
 				else:
@@ -170,10 +186,12 @@ command /lore <text>:
 		if argument is set:
 			if player has permission "essentials.socialspy":
 				set the 1st line of lore of player's tool to "%colored arg%"
+				play "LEVEL_UP" specifically to player with pitch 1
 				message "&aItem lore set successfully!"
 			else:
 				if {day.count.%player%.name} is not {day.count}:
 					set the 1st line of lore of player's tool to "%colored arg%"
+					play "LEVEL_UP" specifically to player with pitch 1
 					message "&aItem lore set successfully!"
 					set {day.count.%player%.name} to {day.count}
 				else:
@@ -190,6 +208,7 @@ command /rename <text>:
 			if name of target entity is " ":
 				if player has permission "essentials.socialspy":
 					set name of target entity to "&6&l%colored arg%"
+					play "LEVEL_UP" specifically to player with pitch 1
 					message "&aRenamed targeted entity!"
 					stop
 				else:
@@ -197,6 +216,7 @@ command /rename <text>:
 						if player can build at location of target entity:
 							set {day.count.%player%.rename} to {day.count}
 							set name of target entity to "&6&l%colored arg%"
+							play "LEVEL_UP" specifically to player with pitch 1
 							message "&aRenamed targeted entity!"
 							stop
 						else:
@@ -219,10 +239,6 @@ on chat:
 		wait 5 ticks
 		make player execute "/spawn"
 
-command /bottle max:
-	trigger:
-		make player execute "bottles max"
-
 command /myvillager <player> <text> [<text>]:
 	permission: my.mob
 	usage: /myvillager (player) (profession) (name)
@@ -241,12 +257,14 @@ command /myvillager <player> <text> [<text>]:
 			spawn 1 butcher at location of arg 1
 		loop all entities in radius 2 of arg 1:
 			set name of loop-entity to "&6&l%arg 3%"
+		play "LEVEL_UP" specifically to player with pitch 1
 		send "&f[&aSERVER&f] &eSay hello to your new %arg 2% &6&l%arg 3%&e!" to arg 1
 
 on rightclick on villager or librarian or butcher or farmer or priest or blacksmith:
 	name of clicked entity contains "&6&l"
 	cancel event
 	send "&cSorry, you can't trade with this villager!" to player
+on shoot:
 
 on damage:
 	victim is villager

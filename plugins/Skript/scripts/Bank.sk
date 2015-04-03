@@ -1,3 +1,22 @@
+script options:
+    $ developer mode
+on script load:
+	if {bank.day} is not set:
+		set {bank.day} to 0
+	add 1 to {bank.day}
+on join:
+	if {bank.%player%.day} is not set:
+		set {bank.%player%.day} to 0
+	if {bank.interest::%UUID of player%} is not set:
+		set {bank.interest::%UUID of player%} to 0
+	wait 2 real minutes
+	player is online
+	if {bank.%player%.day} is not {bank.day}:
+		set {bank.%player%.day} to {bank.day}
+		set {_interest} to {bank.vault::%UUID of player%} * 0.002
+		message "&f[&6BANK&f] &aYou just got $%{_interest}% in daily interest!"
+		add {_interest} to {bank.vault::%UUID of player%}
+		add {_interest} to {bank.interest::%UUID of player%}
 command /deposit <integer>:
 	trigger:
 		if arg is set:
@@ -13,7 +32,23 @@ command /deposit <integer>:
 				stop
 		else:
 			message "&cIncorrect usage. Try doing &a/deposit (amount)"
-			
+on join:
+	if size of {accounts.%UUID of player%::*} is 0:
+		add player to {accounts.%UUID of player%::*}
+		stop
+	loop {accounts.%UUID of player%::*}:
+		if loop-value is "%player%":
+			stop
+	add player to {accounts.%UUID of player%::*}
+	wait 3 real seconds
+	loop all players:
+		loop-player has the permission "essentials.socialspy":
+			send "&f[&bINFO&f] &e%player%&6 has changed their username from something. Here is their list of registered usernames for their UUID:" to loop-player
+			send "&f%{accounts.%UUID of player%::*}%" to loop-player
+command /accounts <player>:
+	permission: essentials.socialspy
+	trigger:
+		message "&aAccounts of %arg%: &6%{accounts.%UUID of argument-player%::*}%"
 command /withdraw <integer>:
 	trigger:
 		if arg is set:
@@ -35,12 +70,13 @@ command /bank:
 		if {bank.vault::%UUID of player%} is not set:
 			set {bank.vault::%UUID of player%} to 0
 		message "&6Bank Account Total: &a$%{bank.vault::%UUID of player%}%"
+		message "&6Total Interest Earned: &a$%{bank.interest::%UUID of player%}%"
 
 command /debugbank:
 	permission: is.op
 	trigger:
 		loop {bank.vault::*}:
-			message "%loop-index% %loop-value%"
+			message "%{accounts.%loop-index%::1}% - %loop-value%"
 
 on command "bal" or "balance" or "money":
 	wait 2 ticks

@@ -1,0 +1,304 @@
+#+---------------------------------------------------------------------------------+#
+#|                                                                                 |#
+#|          _          _____ ______ ____  __  __ ______ _______ _______     __     |#
+#|         | |        / ____|  ____/ __ \|  \/  |  ____|__   __|  __ \ \   / /     |#
+#|      ___| | ____ _| |  __| |__ | |  | | \  / | |__     | |  | |__) \ \_/ /      |#
+#|     / __| |/ / _` | | |_ |  __|+ |  | | |\/| |  __|    | |  |  _  / \   /       |#
+#|     \__ \   < (_| | |__| | |___| |__| | |  | | |____   | |  | | \ \  | |        |#
+#|     |___/_|\_\__, |\_____|______\____/|_|  |_|______|  |_|  |_|  \_\ |_|        |#
+#|                 | |                                                             |#
+#|                 |_|                                  Version 1.2                |#
+#+---------------------------------------------------------------------------------+#
+
+#+---------------------------------------------------------------------------------+#
+# Developed and maintained by Dracomeister											#
+# Circle algorithms provided by Cool3303											#
+# Line and plane algorithms by Dracomeister											#
+#+---------------------------------------------------------------------------------+#
+
+custom effect logic for "render %particletype% (helix|coil) of propert(y|ies) %number%, %number%, %number%, %number%, %timespan% at %location%":
+	set {_particle} to string expression 1
+	set {_Radius} to number expression 2
+	set {_Angle} to number expression 3
+	set {_Ascend} to number expression 4
+	set {_size} to number expression 5
+	set {_wait} to timespan expression 6
+	set {_Height} to 0
+	set {_Number} to (360 / {_Angle})
+	set {_Current} to 0
+	while {_Height} is smaller than {_size}:
+		increase {_Height} by ({_Ascend} / {_Number})
+		add {_Angle} to {_Current}
+		Set {_calc} to ({_Current} / 180) * 3.14159265358979323846
+		Set {_x} to (cos {_calc}) * {_Radius}
+		Set {_z} to (sin {_calc}) * {_Radius}
+		set {_location} to location expression 7
+		increase x-coordinate of {_location} by {_x}	
+		increase y-coordinate of {_location} by {_Height}
+		increase Z-coordinate of {_location} by {_z}
+		spawn 1 of particle {_particle} at location of {_location}
+		wait {_wait}
+		
+custom effect logic for "render %particletype% (tornado|vortex|gyre) of propert(y|ies) %number%, %number%, %number%, %number%, %timespan% at %location%":
+	set {_particle} to string expression 1
+	set {_radius} to number expression 2
+	set {_angle} to number expression 3	
+	set {_ascend} to number expression 4
+	set {_size} to number expression 5
+	set {_wait} to timespan expression 6
+	set {_number} to (360 / {_angle})
+	set {_gain} to ({_ascend} / {_number})
+	set {_shrink} to ({_radius} / ( {_size} / {_gain}))
+	set {_height} to 0
+	set {_current} to 0
+	while {_height} is smaller than {_size}:
+		reduce {_radius} by {_shrink}
+		increase {_height} by {_gain}
+		add {_angle} to {_current}
+		Set {_calc} to ({_current} / 180) * 3.14159265358979323846
+		Set {_x} to (cos {_calc}) * {_Radius}
+		Set {_z} to (sin {_calc}) * {_Radius}
+		set {_location} to location expression 7
+		increase x-coordinate of {_location} by {_x}			
+		increase y-coordinate of {_location} by {_height}	
+		increase Z-coordinate of {_location} by {_z}
+		spawn 1 of particle {_particle} at location of {_location}
+		wait {_wait}
+	
+custom effect logic for "render %particletype% (sphere|globe|orb|ball) of propert(y|ies) x-axis, %number%, %number%, %timespan% at %location%":
+	set {_particle} to string expression 1
+	set {_Radius} to number expression 2
+	set {_Angle} to number expression 3
+	set {_Number} to floor( 360.001 / {_Angle} )
+	set {_Angle.2} to number expression 3
+	set {_Number.2} to floor( 360.001 / {_Angle.2} )
+	set {_wait} to timespan expression 4
+	set {_Current} to 0
+	set {_Current.2} to 0
+	loop {_Number.2} times:
+		add {_Angle.2} to {_Current.2}
+		loop {_Number} times:
+			Set {_calc} to ({_Current} / 180) * 3.14159265358979323846
+			Set {_x} to (cos {_calc}) * {_Radius}
+			Set {_z} to (sin {_calc}) * {_Radius}
+			Set {_y} to (sin ({_Current.2} / 180) * 3.14159265358979323846) * {_x}
+			Set {_mod} to (cos ({_Current.2} / 180) * 3.14159265358979323846) * {_x}
+			add {_Angle} to {_Current}
+			set {_location} to location expression 5
+			increase x-coordinate of {_location} by {_mod}
+			increase y-coordinate of {_location} by {_y}
+			increase Z-coordinate of {_location} by {_z}
+			spawn 1 of particle {_particle} at location of {_location}
+		wait {_wait}
+		
+custom effect logic for "render %particletype% (sphere|globe|orb|ball) of propert(y|ies) z-axis, %number%, %number%, %timespan% at %location%":
+	set {_particle} to string expression 1
+	set {_Radius} to number expression 2
+	set {_Angle} to number expression 3
+	set {_Number} to floor( 360.001 / {_Angle} )
+	set {_Angle.2} to number expression 3
+	set {_Number.2} to floor( 360.001 / {_Angle.2} )
+	set {_wait} to timespan expression 4
+	set {_Current} to 0
+	set {_Current.2} to 0
+	loop {_Number.2} times:
+		add {_Angle.2} to {_Current.2}
+		loop {_Number} times:
+			Set {_calc} to ({_Current} / 180) * 3.14159265358979323846
+			Set {_x} to (cos {_calc}) * {_Radius}
+			Set {_z} to (sin {_calc}) * {_Radius}
+			Set {_y} to (sin ({_Current.2} / 180) * 3.14159265358979323846) * {_z}
+			Set {_mod} to (cos ({_Current.2} / 180) * 3.14159265358979323846) * {_z} 
+			add {_Angle} to {_Current}
+			set {_location} to location expression 5
+			increase x-coordinate of {_location} by {_x}
+			increase y-coordinate of {_location} by {_y}
+			increase Z-coordinate of {_location} by {_mod}
+			spawn 1 of particle {_particle} at location of {_location}
+		wait {_wait}
+	
+custom effect logic for "render %particletype% (cirlce|ring|hoop|halo) of propert(y|ies) %number%, %number%, %number%, %timespan% at %location%":
+	set {_particle} to string expression 1
+	set {_Radius} to number expression 2
+	set {_Angle} to timespan expression 3
+	set {_rotation} to timespan expression 4
+	set {_wait} to timespan expression 5
+	set {_Number} to floor(360 / {_Angle})
+	set {_Number.2} to floor(360 / {_rotation})
+	set {_Current} to 0
+	loop {_Number} times:
+		Set {_calc} to ({_Current} / 180) * 3.14159265358979323846
+		Set {_x} to (cos {_calc}) * {_Radius}
+		Set {_z} to (sin {_calc}) * {_Radius}
+		Set {_y} to (sin ({_rotation} / 180) * 3.14159265358979323846) * {_x}
+		Set {_mod} to (cos ({_rotation} / 180) * 3.14159265358979323846) * {_x}
+		add {_Angle} to {_Current}
+		set {_location} to location expression 6
+		increase x-coordinate of {_location} by {_mod}
+		increase y-coordinate of {_location} by {_y}
+		increase Z-coordinate of {_location} by {_z}
+		spawn 1 of particle {_particle} at location of {_location}
+		wait {_wait}
+	
+custom effect logic for "render %particletype% (line|dash|bar) of propert(y|ies) %number%, %timespan% from %location% to %location%":
+	set {_particle} to string expression 1
+	set {_density} to number expression 2
+	set {_wait} to timespan expression 3
+		
+	set {_location.1} to location expression 4
+	set {_location.2} to location expression 5
+		
+	set {_x.1} to x-coordinate of {_location.1}
+	set {_x.2} to x-coordinate of {_location.2}
+	set {_y.1} to y-coordinate of {_location.1}
+	set {_y.2} to y-coordinate of {_location.2}
+	set {_z.1} to z-coordinate of {_location.1}
+	set {_z.2} to z-coordinate of {_location.2}
+		
+	set {_x.difference} to ({_x.2} - {_x.1}) / {_density}
+	set {_y.difference} to ({_y.2} - {_y.1}) / {_density}
+	set {_z.difference} to ({_z.2} - {_z.1}) / {_density}
+
+	loop {_density} times:	
+		
+		increase x-coordinate of {_location.1} by {_x.difference}
+		increase y-coordinate of {_location.1} by {_y.difference}
+		increase z-coordinate of {_location.1} by {_z.difference}
+			
+		spawn 1 of particle {_particle} at location of {_location.1}
+		wait {_wait}
+	
+custom effect logic for "render %particletype% (plane|surface) of propert(y|ies) xy, %number%, %timespan% from %location% to %location%":
+	set {_particle} to string expression 1
+	set {_density} to number expression 2
+	set {_wait} to timespan expression 3
+	
+	set {_location.1} to location expression 4
+	set {_location.2} to location expression 5
+	
+	set {_x.1} to x-coordinate of {_location.1}
+	set {_x.2} to x-coordinate of {_location.2}
+	set {_y.1} to y-coordinate of {_location.1}
+	set {_y.2} to y-coordinate of {_location.2}
+	set {_z.1} to z-coordinate of {_location.1}
+	set {_z.2} to z-coordinate of {_location.2}
+	
+	set {_x.difference} to ({_x.2} - {_x.1}) / {_density}
+	set {_y.difference} to ({_y.2} - {_y.1}) / {_density}
+	set {_z.difference} to ({_z.2} - {_z.1}) / {_density}
+		
+	set {_render} to {_location.1}
+	loop {_density} times:
+		loop {_density} times:
+			increase x-coordinate of {_render} by {_x.difference}
+			spawn 1 of particle {_particle} at location of {_render}
+		set x-coordinate of {_render} to {_x.1}
+		increase y-coordinate of {_render} by {_y.difference} 
+		increase z-coordinate of {_render} by {_z.difference} 
+		wait {_wait}
+	
+custom effect logic for "render %particletype% (plane|surface) of propert(y|ies) zy, %number%, %timespan% from %location% to %location%":
+	set {_particle} to string expression 1
+	set {_density} to number expression 2
+	set {_wait} to timespan expression 3
+	
+	set {_location.1} to location expression 4
+	set {_location.2} to location expression 5
+	
+	set {_x.1} to x-coordinate of {_location.1}
+	set {_x.2} to x-coordinate of {_location.2}
+	set {_y.1} to y-coordinate of {_location.1}
+	set {_y.2} to y-coordinate of {_location.2}
+	set {_z.1} to z-coordinate of {_location.1}
+	set {_z.2} to z-coordinate of {_location.2}
+	
+	set {_x.difference} to ({_x.2} - {_x.1}) / {_density}
+	set {_y.difference} to ({_y.2} - {_y.1}) / {_density}
+	set {_z.difference} to ({_z.2} - {_z.1}) / {_density}
+		
+	set {_render} to {_location.1}
+
+	loop {_density} times:
+		loop {_density} times:
+			increase z-coordinate of {_render} by {_z.difference}
+			spawn 1 of particle {_particle} at location of {_render}
+		set z-coordinate of {_render} to {_z.1}
+		increase y-coordinate of {_render} by {_y.difference}
+		increase x-coordinate of {_render} by {_x.difference}
+		
+custom effect logic for "render %particletype% (cube|cubiod|prism) of propert(y|ies) %number% from %location% to %location%":
+	set {_particle} to string expression 1
+	set {_density} to number expression 2
+	
+	set {_edge.1} to location expression 3
+	set {_edge.2} to location expression 4
+	
+	set {_cube::x.1} to x-coordinate of {_edge.1}
+	set {_cube::x.2} to x-coordinate of {_edge.2}
+	set {_cube::y.1} to y-coordinate of {_edge.1}
+	set {_cube::y.2} to y-coordinate of {_edge.2}
+	set {_cube::z.1} to z-coordinate of {_edge.1}
+	set {_cube::z.2} to z-coordinate of {_edge.2}
+		
+	add 1, 2, 2, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 1, 1, 2 to {_x-val::*}
+	add 1, 1, 2, 2, 1, 1, 2, 2, 2, 2, 1, 1, 1, 1, 2, 2 to {_y-val::*}
+	add 1, 1, 1, 1, 1, 2, 2, 1, 1, 2, 2, 1, 2, 2, 2, 2 to {_z-val::*}
+	loop 16 times:
+		set {_point::%loop-integer%} to location expression 4
+		set x-coordinate of {_point::%loop-integer%} to {_cube::x.%{_x-val::%loop-integer%}%}
+		set y-coordinate of {_point::%loop-integer%} to {_cube::y.%{_y-val::%loop-integer%}%}
+		set z-coordinate of {_point::%loop-integer%} to {_cube::z.%{_z-val::%loop-integer%}%}
+	
+	add 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16 to {_connect::*}
+	loop 16 times:
+		set {_line::location.1} to {_point::1}
+		set {_line::location.2} to {_point::%{_connect::%loop-integer%}%}
+		
+		set {_line::x.1} to x-coordinate of {_line::location.1}
+		set {_line::x.2} to x-coordinate of {_line::location.2}
+		set {_line::y.1} to y-coordinate of {_line::location.1}
+		set {_line::y.2} to y-coordinate of {_line::location.2}
+		set {_line::z.1} to z-coordinate of {_line::location.1}
+		set {_line::z.2} to z-coordinate of {_line::location.2}
+		
+		set {_line::x.difference} to ({_line::x.2} - {_line::x.1}) / {_density}
+		set {_line::y.difference} to ({_line::y.2} - {_line::y.1}) / {_density}
+		set {_line::z.difference} to ({_line::z.2} - {_line::z.1}) / {_density}
+
+		set {_line::render} to {_line::location.1}
+		
+		loop {_density} times:	
+			
+			increase x-coordinate of {_line::render} by {_line::x.difference}
+			increase y-coordinate of {_line::render} by {_line::y.difference}
+			increase z-coordinate of {_line::render} by {_line::z.difference}
+				
+			spawn 1 of particle {_particle} at location of {_line::render}
+	
+command /cube:
+	trigger:
+		set {_location.1} to location at the player
+		set {_location.2} to targeted block
+		
+		set {_x.1} to x-coordinate of {_location.1}
+		set {_x.2} to x-coordinate of {_location.2}
+		set {_y.1} to y-coordinate of {_location.1}
+		set {_y.2} to y-coordinate of {_location.2}
+		set {_z.1} to z-coordinate of {_location.1}
+		set {_z.2} to z-coordinate of {_location.2}
+			
+		set {_point.1} to the location at {_x.1}, {_y.1}, {_z.2}
+		set {_point.2} to the location at {_x.1}, {_y.2}, {_z.1}
+		set {_point.3} to the location at {_x.2}, {_y.1}, {_z.1}
+		set {_point.4} to the location at {_x.1}, {_y.2}, {_z.2}
+		set {_point.5} to the location at {_x.2}, {_y.2}, {_z.1}
+		set {_point.6} to the location at {_x.2}, {_y.1}, {_z.2}
+			
+		spawn 1 of particle flame at location of {_location.1} 
+		spawn 1 of particle flame at location of {_location.2}
+		spawn 1 of particle flame at location of {_point.1}
+		spawn 1 of particle flame at location of {_point.2}
+		spawn 1 of particle flame at location of {_point.3}
+		spawn 1 of particle flame at location of {_point.4}
+		spawn 1 of particle flame at location of {_point.5}
+		spawn 1 of particle flame at location of {_point.6}

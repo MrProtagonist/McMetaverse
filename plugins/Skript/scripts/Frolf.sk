@@ -1,0 +1,32 @@
+script options:
+    $ developer mode
+command /test:
+	trigger:
+		send "&a&lStand still and take your shot"
+		set {frolf.%player%.loc} to location of block at player's head
+		apply jump boost -5 to the player for 100000000 hours
+		set the player's walk speed to 0.01
+		
+on shoot:
+	if {frolf.%shooter%.loc} is set:
+		if {_loc} is not location of block at shooter's head:
+			send "You didn't stand still!"
+			delete {frolf.%shooter%.loc}
+			stop
+		else:
+			wait 3 ticks
+			execute console command "gm 1 %shooter%"
+			make shooter ride the projectile
+on projectile hit:
+	if {frolf.%shooter%.loc} is set:
+		set the shooter's walk speed to .2
+		remove jump boost from the shooter
+		set {_distance} to distance between {frolf.%shooter%.loc} and the shooter
+		send "&a&l%{_distance}% blocks!" to shooter
+		set action bar of shooter to "&a&l%{_distance}% blocks!"
+		delete {frolf.%shooter%.loc}
+		loop all blocks in radius 5 of projectile:
+			loop-block is air
+			block 1 meter above loop-block is air
+			teleport shooter to loop-block
+		execute console command "gm 0 %shooter%"

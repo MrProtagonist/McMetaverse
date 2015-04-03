@@ -1,0 +1,230 @@
+on script load:
+	set {fishing.countdown} to false
+	set {fishing.going} to false
+	set {fishing.players} to 0
+	set {fishing.top.score} to 0
+	loop all players:
+		set {fishing.%loop-player%.playing} to false
+on join:
+	set {fishing.%player%.playing} to false
+on pickup of raw fish:
+	{fishing.%player%.playing} is true
+	set {_rand} to a random integer between 2 and 30
+	set {_rand2} to a random integer between 1 and 5
+	if {_rand2} is 1:
+		set {_final} to 1.23 * {_rand}
+	if {_rand2} is 2:
+		set {_final} to 1.41 * {_rand}
+	if {_rand2} is 3:
+		set {_final} to 1.68 * {_rand}
+	if {_rand2} is 4:
+		set {_final} to 1.79 * {_rand}
+	if {_rand2} is 5:
+		set {_final} to 2.14 * {_rand}
+	chance of 15%:
+		set {_final} to {_final} * 2
+	chance of 20%:
+		set {_final} to {_final} / 2
+	execute console command "tm amsg %player% &aYou got a &6&l%{_final}% lb&a fish."
+	set {fishing.%player%.last} to {_final}
+	if {fishing.%player%.last} is greater than {fishing.%player%.best}:
+		set {fishing.%player%.best} to {fishing.%player%.last}
+	if {fishing.%player%.last} is greater than {fishing.session.top}:
+		set {fishing.session.top} to {fishing.%player%.last}
+		set {fishing.session.player} to player
+	loop all players:
+		{fishing.%loop-player%.playing} is true
+		execute console command "tm amsg %loop-player% &a%player%&f got a %{_final}% lb fish."
+	cancel event
+	delete item
+	stop
+on pickup of raw salmon:
+	{fishing.%player%.playing} is true
+	set {_rand} to a random integer between 10 and 45
+	set {_rand2} to a random integer between 1 and 5
+	if {_rand2} is 1:
+		set {_final} to 1.23 * {_rand}
+	if {_rand2} is 2:
+		set {_final} to 1.41 * {_rand}
+	if {_rand2} is 3:
+		set {_final} to 1.68 * {_rand}
+	if {_rand2} is 4:
+		set {_final} to 1.79 * {_rand}
+	if {_rand2} is 5:
+		set {_final} to 2.14 * {_rand}
+	chance of 15%:
+		set {_final} to {_final} * 2
+	chance of 20%:
+		set {_final} to {_final} / 2
+	execute console command "tm amsg %player% &aYou got a &6&l%{_final}% lb&a fish."
+	set {fishing.%player%.last} to {_final}
+	if {fishing.%player%.last} is greater than {fishing.%player%.best}:
+		set {fishing.%player%.best} to {fishing.%player%.last}
+	if {fishing.%player%.last} is greater than {fishing.session.top}:
+		set {fishing.session.top} to {fishing.%player%.last}
+		set {fishing.session.player} to player
+	loop all players:
+		{fishing.%loop-player%.playing} is true
+		execute console command "tm amsg %loop-player% &a%player%&f got a %{_final}% lb fish."
+	cancel event
+	delete item
+	stop
+on pickup of clownfish:
+	{fishing.%player%.playing} is true
+	set {_rand} to a random integer between 25 and 100
+	set {_rand2} to a random integer between 1 and 5
+	if {_rand2} is 1:
+		set {_final} to 1.23 * {_rand}
+	if {_rand2} is 2:
+		set {_final} to 1.41 * {_rand}
+	if {_rand2} is 3:
+		set {_final} to 1.68 * {_rand}
+	if {_rand2} is 4:
+		set {_final} to 1.79 * {_rand}
+	if {_rand2} is 5:
+		set {_final} to 2.14 * {_rand}
+	chance of 15%:
+		set {_final} to {_final} * 2
+	chance of 20%:
+		set {_final} to {_final} / 2
+	execute console command "tm amsg %player% &aYou got a &6&l%{_final}% lb&a fish."
+	set {fishing.%player%.last} to {_final}
+	if {fishing.%player%.last} is greater than {fishing.%player%.best}:
+		set {fishing.%player%.best} to {fishing.%player%.last}
+	if {fishing.%player%.last} is greater than {fishing.session.top}:
+		set {fishing.session.top} to {fishing.%player%.last}
+		set {fishing.session.player} to player
+	loop all players:
+		{fishing.%loop-player%.playing} is true
+		execute console command "tm amsg %loop-player% &a%player%&f got a %{_final}% lb fish."
+	cancel event
+	delete item
+	stop
+on pickup of pufferfish:
+	{fishing.%player%.playing} is true
+	set {_rand} to a random integer between 3 and 75
+	set {_rand2} to a random integer between 1 and 5
+	if {_rand2} is 1:
+		set {_final} to 1.23 * {_rand}
+	if {_rand2} is 2:
+		set {_final} to 1.41 * {_rand}
+	if {_rand2} is 3:
+		set {_final} to 1.68 * {_rand}
+	if {_rand2} is 4:
+		set {_final} to 1.79 * {_rand}
+	if {_rand2} is 5:
+		set {_final} to 2.14 * {_rand}
+	chance of 15%:
+		set {_final} to {_final} * 2
+	chance of 20%:
+		set {_final} to {_final} / 2
+	execute console command "tm amsg %player% &aYou got a &6&l%{_final}% lb&a fish."
+	set {fishing.%player%.last} to {_final}
+	if {fishing.%player%.last} is greater than {fishing.%player%.best}:
+		set {fishing.%player%.best} to {fishing.%player%.last}
+	if {fishing.%player%.last} is greater than {fishing.session.top}:
+		set {fishing.session.top} to {fishing.%player%.last}
+		set {fishing.session.player} to player
+	loop all players:
+		{fishing.%loop-player%.playing} is true
+		execute console command "tm amsg %loop-player% &a%player%&f got a %{_final}% lb fish."
+	delete item
+	stop
+on pickup:
+	{fishing.%player%.playing} is true
+	message "&cBummer! That isn't a fish!"
+	delete item
+	
+
+command /setfish <integer>:
+	permission: is.pro
+	trigger:
+		if argument is 1:
+			set {fishing.spec} to location of player
+			message "spec set"
+		if argument is 2:
+			set {fishing.spawn} to location of player
+			message "spawn set"
+command /fish:
+	trigger:
+		{fishing.%player%.playing} is not true
+		if {fishing.going} is not true:
+			if player can hold 36 wood swords:
+				teleport player to {fishing.spec}
+				set {fishing.%player%.last} to 0
+				set {fishing.%player%.playing} to true
+				message "&aJoined &6&oFishing Tourney"
+				execute console command "tm msg %player% &6High Score"
+				execute console command "tm amsg %player% &a%{fishing.top.player}%&f: %{fishing.top.score}% lbs"
+				if {fishing.%player%.best} is not set:
+					set {fishing.%player%.best} to 0
+				add 1 to {fishing.players}
+			else:
+				message "&cEmpty your inventory first!"
+				stop
+		else:
+			teleport player to {fishing.spec}
+			wait 2 ticks
+			message "&cA tourney is already going! Please wait."
+			stop
+command /startfish:
+	trigger:
+		{fishing.going} is not true
+		{fishing.countdown} is not true
+		set {fishing.countdown} to true
+		set {fishing.session.top} to 1
+		message "&aFishing Tournament starting in 10 seconds."
+		loop all players:
+			{fishing.%loop-player%.playing} is true
+			execute console command "tm msg %loop-player% &aGet Ready!"
+		wait 5 real seconds
+		loop all players:
+			{fishing.%loop-player%.playing} is true
+			execute console command "tm msg %loop-player% &aStart!"
+			display "&6&oFishing Tourney" on bossbar with 100 percent by 180 seconds for loop-player
+			teleport loop-player to {fishing.spawn}
+			give loop-player a fishing rod
+		set {fishing.countdown} to false
+		set {fishing.going} to true
+		wait 180 real seconds
+		loop all players:
+			{fishing.%loop-player%.playing} is true
+			execute console command "tm msg %loop-player% &6Time up!"
+			loop all items in loop-player's inventory:
+				set loop-item to air
+			teleport loop-player to {fishing.spec}
+			teleport loop-player to {fishing.spec}
+			play "LEVEL_UP" specifically to loop-player with pitch 1
+		wait 2 real seconds
+		loop all players:
+			{fishing.%loop-player%.playing} is true
+			execute console command "tm msg %loop-player% &6Winner"
+		wait 2 real seconds
+		loop all players:
+			{fishing.%loop-player%.playing} is true
+			set {fishing.%loop-player%.playing} to false
+			execute console command "tm msg %loop-player% &a%{fishing.session.player}%&f: &l%{fishing.session.top}% lbs"
+		set {_pay} to {fishing.session.top} * 2
+		execute console command "eco give %{fishing.session.player}% %{_pay}%"
+		if {fishing.top.score} is not set:
+			set {fishing.top.score} to 0
+			set {fishing.top.player} to "MrProtagonist"
+		if {fishing.session.top} is greater than {fishing.top.score}:
+			wait 2 real seconds
+			broadcast "&f[&aSERVER&f] &6%{fishing.session.player}% &ajust set the &aHIGH SCORE for &6&oFishing Tourney&a with a&6 %{fishing.session.top}% lb&a fish!"
+			play "LEVEL_UP" specifically to player with pitch 1
+			set {fishing.top.score} to {fishing.session.top}
+			set {fishing.top.player} to {fishing.session.player}
+		set {fishing.going} to false
+on break:
+	{fishing.%player%.playing} is true
+	cancel event
+on drop:
+	{fishing.%player%.playing} is true
+	cancel event
+on damage:
+	{fishing.%victim%.playing} is true
+	cancel event
+on inventory click:
+	{fishing.%player%.playing} is true
+	cancel event

@@ -1,132 +1,147 @@
 on join:
-    if {ranked.%player%} is not set:
-        set {ranked.%player%} to true
-    if player has permission "is.visitor":
-        set {rank.%player%} to 0
-    if player has permission "is.rookie":
-        set {rank.%player%} to 1
-    if player has permission "is.regular":
-        set {rank.%player%} to 2
-    if player has permission "is.citizen":
-        set {rank.%player%} to 3
-    if player has permission "is.craftsman":
-        set {rank.%player%} to 4
-    if player has permission "is.seasoned":
-        set {rank.%player%} to 5
-    if player has permission "is.noble":
-        set {rank.%player%} to 6
-    if player has permission "is.elite":
-        set {rank.%player%} to 7
-    if player has permission "is.champion":
-        set {rank.%player%} to 8
-    else:
-        set {rankset.%player%} to 8
-command /cuddly:
-	trigger:
-		set {rank.CuddlyCanadian} to 2
-		broadcast "&f[&aSERVER&f] &6Fixed CuddlyCanadian's variables!"
-		execute console command "manuaddv CuddlyCanadian &r&f[&c&oRegular&r] &r"
-		stop
+	if {ranked.%player%} is not set:
+		set {ranked.%player%} to true
+	if player has permission "is.visitor":
+		set {rank.%player%} to 0
+	if player has permission "is.rookie":
+		set {rank.%player%} to 1
+	if player has permission "is.regular":
+		set {rank.%player%} to 2
+	if player has permission "is.citizen":
+		set {rank.%player%} to 3
+	if player has permission "is.craftsman":
+		set {rank.%player%} to 4
+	if player has permission "is.seasoned":
+		set {rank.%player%} to 5
+	if player has permission "is.noble":
+		set {rank.%player%} to 6
+	if player has permission "is.elite":
+		set {rank.%player%} to 7
+	if player has permission "is.champion":
+		set {rank.%player%} to 8
+	else:
+		set {rankset.%player%} to 8
 command /testrank <text>:
-    usage: &aUsage:&e /testrank (rank name)
-    trigger:
-        if argument is "rookie":
-            make player execute "autorank check"
-            stop trigger
-        if argument is "regular":
-            if {rank.%player%} is 1:
-                if player's balance is greater than or equal to 5000:
-                    execute console command "eco take %player% 5000"
-                    message "&aCongratulations, you have been promoted!"
-                    execute console command "manpromote %player% regular"
-                    execute console command "manuaddv %player% &r&f[&d&oRookie&r] &r"
-                    add 1 to {rank.%player%}
-                    broadcast "&6%player% has just been promoted to &cRegular&6!"
-                else:
-                    message "&cSorry, you don't have enough money for this!"
-            else:
-                message "&cSorry, you don't qualify for this rank!"
-                stop trigger
-        if argument is "citizen":
-            if {rank.%player%} is 2:
-                if player's balance is greater than or equal to 15000:
-                    execute console command "eco take %player% 15000"
-                    message "&aCongratulations, you have been promoted!"
-                    execute console command "manpromote %player% citizen"
-                    add 1 to {rank.%player%}
-                    broadcast "&6%player% has just been promoted to &eCitizen&6!"
-                else:
-                    message "&cSorry, you don't have enough money for this!"
-            else:
-                message "&cSorry, you don't qualify for this rank!"
-                stop trigger
-        if argument is "craftsman":
-            if {rank.%player%} is 3:
-                if player's balance is greater than or equal to 35000:
-                    execute console command "eco take %player% 35000"
-                    message "&aCongratulations, you have been promoted!"
-                    execute console command "manpromote %player% craftsman"
-                    add 1 to {rank.%player%}
-                    broadcast "&6%player% has just been promoted to &6Craftsman&6!"
-                else:
-                    message "&cSorry, you don't have enough money for this!"
-            else:
-                message "&cSorry, you don't qualify for this rank!"
-                stop trigger
-        if argument is "seasoned":
-            if {rank.%player%} is 4:
-                if player's balance is greater than or equal to 75000:
-                    execute console command "eco take %player% 75000"
-                    message "&aCongratulations, you have been promoted!"
-                    execute console command "manpromote %player% seasoned"
-                    add 1 to {rank.%player%}
-                    broadcast "&6%player% has just been promoted to &9Seasoned&6!"
-                else:
-                    message "&cSorry, you don't have enough money for this!"
-            else:
-                message "&cSorry, you don't qualify for this rank!"
-                stop trigger
-        if argument is "noble":
-            if {rank.%player%} is 5:
-                if player's balance is greater than or equal to 125000:
-                    execute console command "eco take %player% 125000"
-                    message "&aCongratulations, you have been promoted!"
-                    execute console command "manpromote %player% noble"
-                    add 1 to {rank.%player%}
-                    broadcast "&6%player% has just been promoted to &bNoble&6!"
-                else:
-                    message "&cSorry, you don't have enough money for this!"
-            else:
-                message "&cSorry, you don't qualify for this rank!"
-                stop trigger
-        if argument is "elite":
-            if {rank.%player%} is 6:
-                if player's balance is greater than or equal to 250000:
-                    execute console command "eco take %player% 250000"
-                    message "&aCongratulations, you have been promoted!"
-                    execute console command "manpromote %player% elite"
-                    add 1 to {rank.%player%}
-                    broadcast "&6%player% has just been promoted to &aElite&6!"
-                else:
-                    message "&cSorry, you don't have enough money for this!"
-            else:
-                message "&cSorry, you don't qualify for this rank!"
-                stop trigger
-        if argument is "champion":
-            if {rank.%player%} is 7:
-                if player's balance is greater than or equal to 500000:
-                    execute console command "eco take %player% 500000"
-                    message "&aCongratulations, you have been promoted!"
-                    execute console command "manpromote %player% Champion"
-                    add 1 to {rank.%player%}
-                    broadcast "&6%player% has just been promoted to &4Champion&6!"
-                else:
-                    message "&cSorry, you don't have enough money for this!"
-            else:
-                message "&cSorry, you don't qualify for this rank!"
-                stop trigger
+	usage: &aUsage:&e /testrank (rank name)
+	trigger:
+		if argument is "rookie":
+			make player execute "autorank check"
+			stop trigger
+		if argument is "regular":
+			if {rank.%player%} is 1:
+				if player's balance is greater than or equal to 5000:
+					execute console command "eco take %player% 5000"
+					message "&aCongratulations, you have been promoted!"
+					execute console command "manpromote %player% regular"
+					execute console command "manuaddv %player% &r&f[&d&oRookie&r] &r"
+					add 1 to {rank.%player%}
+					play "LEVEL_UP" specifically to player with pitch 1
+					broadcast "&6%player% has just been promoted to &cRegular&6!"
+					wait 2 ticks
+					make player execute "fixprefix"
+				else:
+					message "&cSorry, you don't have enough money for this!"
+			else:
+				message "&cSorry, you don't qualify for this rank!"
+				stop trigger
+		if argument is "citizen":
+			if {rank.%player%} is 2:
+				if player's balance is greater than or equal to 15000:
+					execute console command "eco take %player% 15000"
+					message "&aCongratulations, you have been promoted!"
+					execute console command "manpromote %player% citizen"
+					add 1 to {rank.%player%}
+					play "LEVEL_UP" specifically to player with pitch 1
+					broadcast "&6%player% has just been promoted to &eCitizen&6!"
+					wait 2 ticks
+					make player execute "fixprefix"
+				else:
+					message "&cSorry, you don't have enough money for this!"
+			else:
+				message "&cSorry, you don't qualify for this rank!"
+				stop trigger
+		if argument is "craftsman":
+			if {rank.%player%} is 3:
+				if player's balance is greater than or equal to 35000:
+					execute console command "eco take %player% 35000"
+					message "&aCongratulations, you have been promoted!"
+					execute console command "manpromote %player% craftsman"
+					add 1 to {rank.%player%}
+					play "LEVEL_UP" specifically to player with pitch 1
+					broadcast "&6%player% has just been promoted to &6Craftsman&6!"
+					wait 2 ticks
+					make player execute "fixprefix"
+				else:
+					message "&cSorry, you don't have enough money for this!"
+			else:
+				message "&cSorry, you don't qualify for this rank!"
+				stop trigger
+		if argument is "seasoned":
+			if {rank.%player%} is 4:
+				if player's balance is greater than or equal to 75000:
+					execute console command "eco take %player% 75000"
+					message "&aCongratulations, you have been promoted!"
+					execute console command "manpromote %player% seasoned"
+					add 1 to {rank.%player%}
+					play "LEVEL_UP" specifically to player with pitch 1
+					broadcast "&6%player% has just been promoted to &9Seasoned&6!"
+					wait 2 ticks
+					make player execute "fixprefix"
+				else:
+					message "&cSorry, you don't have enough money for this!"
+			else:
+				message "&cSorry, you don't qualify for this rank!"
+				stop trigger
+		if argument is "noble":
+			if {rank.%player%} is 5:
+				if player's balance is greater than or equal to 125000:
+					execute console command "eco take %player% 125000"
+					message "&aCongratulations, you have been promoted!"
+					execute console command "manpromote %player% noble"
+					add 1 to {rank.%player%}
+					play "LEVEL_UP" specifically to player with pitch 1
+					broadcast "&6%player% has just been promoted to &bNoble&6!"
+					wait 2 ticks
+					make player execute "fixprefix"
+				else:
+					message "&cSorry, you don't have enough money for this!"
+			else:
+				message "&cSorry, you don't qualify for this rank!"
+				stop trigger
+		if argument is "elite":
+			if {rank.%player%} is 6:
+				if player's balance is greater than or equal to 250000:
+					execute console command "eco take %player% 250000"
+					message "&aCongratulations, you have been promoted!"
+					execute console command "manpromote %player% elite"
+					add 1 to {rank.%player%}
+					play "LEVEL_UP" specifically to player with pitch 1
+					broadcast "&6%player% has just been promoted to &aElite&6!"
+					wait 2 ticks
+					make player execute "fixprefix"
+				else:
+					message "&cSorry, you don't have enough money for this!"
+			else:
+				message "&cSorry, you don't qualify for this rank!"
+				stop trigger
+		if argument is "champion":
+			if {rank.%player%} is 7:
+				if player's balance is greater than or equal to 500000:
+					execute console command "eco take %player% 500000"
+					message "&aCongratulations, you have been promoted!"
+					execute console command "manpromote %player% Champion"
+					add 1 to {rank.%player%}
+					play "LEVEL_UP" specifically to player with pitch 1
+					broadcast "&6%player% has just been promoted to &4Champion&6!"
+					wait 2 ticks
+					make player execute "fixprefix"
+				else:
+					message "&cSorry, you don't have enough money for this!"
+			else:
+				message "&cSorry, you don't qualify for this rank!"
+				stop trigger
 command /resetmyrank:
-    permission: is.op
-    trigger:
-        set {rank.%player%} to 1
-        message "&aReady to go boss!"
+	permission: is.op
+	trigger:
+		set {rank.%player%} to 1
+		message "&aReady to go boss!"

@@ -156,7 +156,7 @@ icespikewarp:
   COMMAND: 'warp icespike'
   NAME: 'Ice Spike Biome'
   LORE: 
-    - 'Warp to a Ice Spike biome where you &o&ecan not&r build nearby'
+    - 'Warp to a Ice Spike biome where you &o&ecan not&r&7 build nearby'
     - 'This Biome is world-guarded to protect it!'
     - 'You can look, but no touching!'
     - '&l&eThis Warp Is Not Yet Available!'

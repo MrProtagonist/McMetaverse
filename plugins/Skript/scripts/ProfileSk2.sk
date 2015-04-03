@@ -1,0 +1,286 @@
+#                                                                         
+# ,------.                ,---.,--.,--.        ,---.  ,--.         ,---.  
+# |  .--. ',--.--. ,---. /  .-'`--'|  | ,---. '   .-' |  |,-.     '.-.  \ 
+# |  '--' ||  .--'| .-. ||  `-,,--.|  || .-. :`.  `-. |     /      .-' .' 
+# |  | --' |  |   ' '-' '|  .-'|  ||  |\   --..-'    ||  \  \     /   '-. 
+# `--'     `--'    `---' `--'  `--'`--' `----'`-----' `--'`--'    '-----'
+# 
+
+# Developer: LamboCreeper
+# Version: 1.0.1
+# Bukkit Page: http://dev.bukkit.org/bukkit-plugins/skript/forum/scripts/73337-skquery-profile-sk2-version-1-1-0/?page=2#p21
+
+# Config:
+
+options:
+	serverowner: MrProtagonist
+	
+every hour:
+	loop all players:
+		{profile.%loop-player%.rewarded} is not set
+		{profilesk2.%loop-player%.gender} is not set
+		{profilesk2.%loop-player%.nickname} is not set
+		send "&f[&aSERVER&f] &e&oYour &a&o/profile &e&ois incomplete. Consider setting it up for a reward!" to loop-player
+
+command /profile [<text>] [<text>] [<text>] [<text>]:
+	trigger:
+		if arg 1 is not set:
+			send "§7[§9ProfileSk2§7]§a Help"
+			send "§e/profile §aBase command"
+			send "§e/profile help§a Help page"
+			send json of "§e/profile view <player>§a View a player's profile" suggest "/profile view" to player
+			send json of "§e/profile set§a Choose something to set" suggest "/profile set" run "/profile set" to player
+		else if arg 1 is "help" or "h" or "?":
+			send "§7[§9ProfileSk2§7]§a Help"
+			send "§e/profile §aBase command"
+			send "§e/profile help§a Help page"
+			send json of "§e/profile view <player>§a View a player's profile" suggest "/profile view" to player
+			send json of "§e/profile set§a Choose something to set" suggest "/profile set" run "/profile set" to player
+		else if arg 1 is "view" or "v":
+			if arg 2 is set:
+				if arg 3 is set:
+					if arg 3 is "page=1":
+						send "§9§l%arg 2%'s Profile §7(Page 1)"
+						if {profilesk2.%arg 2%.nickname} is set:
+							send "§2Nickname:§a %{profilesk2.%arg 2%.nickname}%" # Done
+						else:
+							send "§2Nickname:§8 Not Set!"
+						if {profilesk2.%arg 2%.gender} is set:
+							send "§2Gender:§a %{profilesk2.%arg 2%.gender}%" # Done
+						else:
+							send "§2Gender: §8Not Set!"
+						if {profilesk2.%arg 2%.color} is set:
+							send "§2Favorite color:§a %{profilesk2.%arg 2%.color}%" # Done
+						else:
+							send "§2Favorite color:§a §8Not Set!"
+						if {profilesk2.%arg 2%.food} is set:
+							send "§2Favorite Food:§a %{profilesk2.%arg 2%.food}%" # Done
+						else:
+							send "§2Favorite Food: §8Not Set!"
+						if {profilesk2.%arg 2%.drink} is set:
+							send "§2Favorite Drink:§a %{profilesk2.%arg 2%.drink}%" # Done
+						else:
+							send "§2Favorite Drink: §8Not Set!"
+						if {profilesk2.%arg 2%.animal} is set:
+							send "§2Favorite Animal:§a %{profilesk2.%arg 2%.animal}%" # Done
+						else:
+							send "§2Favorite Animal: §8Not Set!"
+						if {profilesk2.%arg 2%.musicartist} is set:
+							send "§2Favorite Music Artist:§a %{profilesk2.%arg 2%.musicartist}%" # Done
+						else:
+							send "§2Favorite Music Artist: §8Not Set!"
+						if {profilesk2.%arg 2%.musicgenre} is set:
+							send "§2Favorite Music Genre:§a %{profilesk2.%arg 2%.musicgenre}%" # Done
+						else:
+							send "§2Favorite Music Genre: §8Not Set!"
+						send json of "§e[View Page 2]" tooltip "§aClick to view Page2 of %arg 2%'s profile" run "/profile v %arg 2% page=2" to player
+					else if arg 3 is "page=2":
+						send "§9§l%arg 2%'s Profile §7(Page 2)"
+						if {profilesk2.%arg 2%.sport} is set:
+							send "§2Favorite Sport:§a %{profilesk2.%arg 2%.sport}%" # Done
+						else:
+							send "§2Favorite Sport: §8Not Set!"
+						if {profilesk2.%arg 2%.brand} is set:
+							send "§2Favorite Brand:§a %{profilesk2.%arg 2%.brand}%" # Done
+						else:
+							send "§2Favorite Brand:§8 Not Set!"
+						if {profilesk2.%arg 2%.car} is set:
+							send "§2Favorite Car:§a %{profilesk2.%arg 2%.car}%" # Done
+						else:
+							send "§2Favorite Car:§8 Not Set!"
+						if {profilesk2.%arg 2%.game} is set:
+							send "§2Favorite Game:§a %{profilesk2.%arg 2%.game}%" # Done
+						else:
+							send "§2Favorite Game:§8 Not Set!"
+						if {profilesk2.%arg 2%.season} is set:
+							send "§2Favorite Season:§a %{profilesk2.%arg 2%.season}%" # Done
+						else:
+							send "§2Favorite Season:§8 Not Set!"
+						if {profilesk2.%arg 2%.country} is set:
+							send "§2Country:§a %{profilesk2.%arg 2%.country}%" # Done
+						else:
+							send "§2Country:§8 Not Set!"
+						if {profilesk2.%arg 2%.computer} is set:
+							send "§2Computer(s):§a %{profilesk2.%arg 2%.computer}%"
+						else:
+							send "§2Computer(s):§8 Not Set!"
+						if {profilesk2.%arg 2%.interests} is set:
+							send "§2Interests:§a %{profilesk2.%arg 2%.interests}%"
+						else:
+							send "§2Interests:§8 Not Set!"
+						send json of "§e[View Page 1]" tooltip "§aClick to view Page1 of %arg 2%'s profile" run "/profile v %arg 2% page=1" to player
+				else:
+					execute player command "/profile v %arg 2% page=1"
+			else:
+				make player execute "profile view %player% page=1"
+		else if arg 1 is "set" or "s":
+			if arg 2 is not set:
+				send json of "§e/profile set nickname <nickname>§a Set your §lNickname" suggest "/profile set nickname" to player
+				send json of "§e/profile set gender <gender>§a Set your §lGender" suggest "/profile set gender" to player
+				send json of "§e/profile set color <color>§a Set your §lFavorite Color" suggest "/profile set color" to player
+				send json of "§e/profile set food <food> §aSet your §lFavorite Food" suggest "/profile set food" to player
+				send json of "§e/profile set drink <drink>§a Set your §lFavorite Drink" suggest "/profile set drink" to player
+				send json of "§e/profile set animal <animal>§a Set your §lFavorite Animal" suggest "/profile set animal" to player
+				send json of "§e/profile set artist <artist>§a Set your §lFavorite Music Artist" suggest "/profile set artist" to player
+				send json of "§e/profile set genre <genre>§a Set your §lFavorite Music Genre" suggest "/profile set genre" to player
+				send json of "§e/profile set sport <sport>§a Set your §lFavourite Sport" suggest "/profile set sport" to player
+				send json of "§e/profile set brand <brand>§a Set your §lFavorite Brand" suggest "/profile set brand" to player
+				send json of "§e/profile set car <car>§a Set your §lFavorite Car" suggest "/profile set car" to player
+				send json of "§e/profile set game <game>§a Set your §lFavorite Game" suggest "/profile set game" to player
+				send json of "§e/profile set season <season>§a Set your §lFavorite Season" suggest "/profile set season" to player
+				send json of "§e/profile set country <country>§a Set the §lCountry You Live In" suggest "/profile set country" to player
+				send json of "§e/profile set computer <computer>§a Set your §lComputer" suggest "/profile set computer" to player
+				send json of "§e/profile set interests <interests>§a Set things that your §lInterested In" suggest "/profile set interests" to player
+			else if arg 2 is "nickname":
+				set {profilesk2.%player%.nickname} to arg 3
+				send "§aYour Nickname was set to ""%arg 3%"""
+			else if arg 2 is "gender":
+				if arg 3 is "male" or "female":
+					set {profilesk2.%player%.gender} to arg 3
+					send "§aYour Gender was set to ""%arg 3%"""
+				else:
+					send "§cUnkown Gender! Known Genders: Male and Female"
+			else if arg 2 is "color":
+				set {profilesk2.%player%.color} to arg 3
+				send "§aYour Favorite color was set to ""%arg 3%"""
+			else if arg 2 is "food":
+				set {profilesk2.%player%.food} to arg 3
+				send "§aYour Favorite Food was set to ""%arg 3%"""
+			else if arg 2 is "drink":
+				set {profilesk2.%player%.drink} to arg 3
+				send "§aYour Favorite Drink was set to ""%arg 3%"""
+			else if arg 2 is "animal":
+				set {profilesk2.%player%.animal} to arg 3
+				send "§aYour Favorite Animal was set to ""%arg 3%"""
+			else if arg 2 is "artist":
+				set {profilesk2.%player%.musicartist} to arg 3
+				send "§aYour Favorite Music Artist was set to ""%arg 3%"""
+			else if arg 2 is "genre":
+				set {profilesk2.%player%.musicgenre} to arg 3
+				send "§aYour Favorite Music Genre was set to ""%arg 3%"""
+			else if arg 2 is "sport":
+				set {profilesk2.%player%.sport} to arg 3
+				send "§aYour Favorite Sport was set to ""%arg 3%"""
+			else if arg 2 is "brand":
+				set {profilesk2.%player%.brand} to arg 3
+				send "§aYour Favorite Brand was set to ""%arg 3%"""
+			else if arg 2 is "car":
+				set {profilesk2.%player%.car} to arg 3
+				send "§aYour Favorite Car was set to ""%arg 3%"""			
+			else if arg 2 is "game":
+				set {profilesk2.%player%.game} to arg 3
+				send "§aYour Favorite Game was set to ""%arg 3%"""
+			else if arg 2 is "season":
+				set {profilesk2.%player%.season} to arg 3
+				send "§aYour Favoirite Season was set to ""%arg 3%"""
+			else if arg 2 is "country":
+				set {profilesk2.%player%.country} to arg 3
+				send "§aYour Country was set to ""%arg 3%"""
+			else if arg 2 is "computer":
+				set {profilesk2.%player%.computer} to arg 3
+				send "§aYour Computer was set to ""%arg 3%"""
+			else if arg 2 is "interests":
+				set {profilesk2.%player%.interests} to arg 3
+				send "§aYour Interests were set to ""%arg 3%"""
+			else:
+				send "§cUnknown set type!"
+			if {profile.%player%.rewarded} is not set:
+				{profilesk2.%player%.nickname} is set
+				{profilesk2.%player%.gender} is set
+				{profilesk2.%player%.color} is set
+				{profilesk2.%player%.country} is set
+				set {profile.%player%.rewarded} to true
+				send "&f[&aSERVER&f] Thanks for setting up your profile! Here is a reward!"
+				execute console command "eco give %player% 1000"
+				
+				
+on join:
+	if {profilesk.converted?.%player%} is "true":
+		send "ewftdvhbjnm" to {efgdsvbhzjnkm::*}
+	else:
+		send "§7[§9ProfileSk§7]§a Converting Your Profile To The New Format..."
+		set {profilesk2.%player%.nickname} to {nickname.%player%}
+		set {profilesk2.%player%.color} to {favoritecolor.%player%}
+		set {profilesk2.%player%.food} to {favoritefood.%player%}
+		set {profilesk2.%player%.animal} to {favoriteanimal.%player%}
+		set {profilesk2.%player%.interests} to {interests.%player%}
+		set {profilesk2.%player%.musicgenre} to {favoritemusic.%player%}
+		set {profilesk2.%player%.sport} to {favoritesport.%player%}
+		set {profilesk2.%player%.brand} to {favoritebrand.%player%}
+		set {profilesk2.%player%.car} to {favoritecar.%player%}
+		set {profilesk2.%player%.game} to {favoritegame.%player%}
+		set {profilesk.converted?.%player%} to "true"
+		send "%player%'s profile was converted to the ProfileSk2 format" to console
+		wait 1 second
+		send "§aSuccessfully converted your ProfileSk1 Profile to ProfileSk2 a Profile"
+
+command /pska [<text>] [<text>] [<text>] [<text>]:
+	permission: profilesk2.admin
+	permission message: §4ERROR:§c No Permission!
+	trigger:
+		if arg 1 is "set":
+			if arg 2 is set:
+				if arg 3 is set:
+					if arg 3 is "nickname":
+						set {profilesk2.%arg 2%.nickname} to arg 4
+						send "§a%arg 2%'s Nickname was set to ""%arg 3%"""
+					else if arg 3 is "gender":
+						if arg 4 is "male" or "female":
+							set {profilesk2.%arg 2%.gender} to arg 4
+							send "§a%arg 2%'s Gender was set to ""%arg 4%"""
+						else:
+							send "§cUnkown Gender! Known Genders: Male and Female"
+					else if arg 3 is "color":
+						set {profilesk2.%arg 2%.color} to arg 4
+						send "§a%arg 2%'s Favorite color was set to ""%arg 4%"""
+					else if arg 3 is "food":
+						set {profilesk2.%arg 2%.food} to arg 4
+						send "§a%arg 2%'s Favorite Food was set to ""%arg 4%"""
+					else if arg 3 is "drink":
+						set {profilesk2.%arg 2%.drink} to arg 4
+						send "§a%arg 2%'s Favorite Drink was set to ""%arg 4%"""
+					else if arg 3 is "animal":
+						set {profilesk2.%arg 2%.animal} to arg 4
+						send "§a%arg 2%'s Favorite Animal was set to ""%arg 4%"""
+					else if arg 3 is "artist":
+						set {profilesk2.%arg 2%.musicartist} to arg 4
+						send "§a%arg 2%'s Favorite Music Artist was set to ""%arg 4%"""
+					else if arg 3 is "genre":
+						set {profilesk2.%arg 2%.musicgenre} to arg 4
+						send "§a%arg 2%'s Favorite Music Genre was set to ""%arg 4%"""
+					else if arg 3 is "sport":
+						set {profilesk2.%arg 2%.sport} to arg 4
+						send "§a%arg 2%'s Favorite Sport was set to ""%arg 4%"""
+					else if arg 3 is "brand":
+						set {profilesk2.%arg 2%.brand} to arg 4
+						send "§a%arg 2%'s Favorite Brand was set to ""%arg 4%"""
+					else if arg 3 is "car":
+						set {profilesk2.%arg 2%.car} to arg 4
+						send "§a%arg 2%'s Favorite Car was set to ""%arg 4%"""			
+					else if arg 3 is "game":
+						set {profilesk2.%arg 2%.game} to arg 4
+						send "§a%arg 2%'s Favorite Game was set to ""%arg 4%"""
+					else if arg 3 is "season":
+						set {profilesk2.%arg 2%.season} to arg 4
+						send "§a%arg 2%'s Favoirite Season was set to ""%arg 4%"""
+					else if arg 2 is "country":
+						set {profilesk2.%arg 2%.country} to arg 4
+						send "§a%arg 2%'s Country was set to ""%arg 4%"""
+					else if arg 2 is "computer":
+						set {profilesk2.%arg 2%.computer} to arg 4
+						send "§a%arg 2%'s Computer was set to ""%arg 4%"""
+					else if arg 2 is "interests":
+						set {profilesk2.%arg 2%.interests} to arg 4
+						send "§a%arg 2%'s Interests were set to ""%arg 4%"""
+					else:
+						send "§cUnkown set type!"
+				else:
+					send "§cUnkown Argument"
+					send "§2Known Arguments:§a ""set <player> <settype> <settypeans>"""
+			else:
+				send "§cUnkown Argument"
+				send "§2Known Arguments:§a ""set <player> <settype> <settypeans>"""
+		else:
+			send "§cUnkown Argument"
+			send "§2Known Arguments:§a ""set <player> <settype> <settypeans>"""
+				 

@@ -1,0 +1,57 @@
+command /helix:
+	trigger:
+		#set {_loc} to location at player
+		render flame coil of properties 4, 10, 0.5, 5, 1 tick at player
+		
+command /cone:
+	trigger:
+		render mob spell gyre of property 4, 10, 0.5, 5, 1 tick at player
+		
+command /spherez:
+	trigger:
+		render footstep orb of property z-axis, 1, 5, 1 tick at player
+	
+command /spherex:
+	trigger:
+		render footstep orb of property x-axis, 1, 5, 1 tick at player
+			
+command /line:
+	trigger:
+		render flame bar of property 20, 1 tick from player to targeted block
+			
+command /planex:
+	trigger:
+		render drip lava surface of property xy, 20, 1 tick from player to targeted block
+		
+command /planez:
+	trigger:
+		render flame surface of property zy, 20, 1 tick from player to targeted block
+		
+command /circle:
+	trigger:
+		render flame halo of properties 1, 5, 0, 1 tick at location 0.1 meters above player
+		
+command /prism:
+	trigger:
+		render flame prism of property 50 from location at player to location at targeted block
+		
+command /halo:
+	trigger:
+		if {particle::%player%::active} is true:
+			set {particle::%player%::active} to false
+		else:
+			set {particle::%player%::active} to true
+		while {particle::%player%::active} is true:
+			render flame halo of properties 0.5, 20, 0, 1 tick at location 0.7 meters above player's head
+			render flame halo of properties 0.5, 20, 0, 1 tick at location 0.2 meters above player
+			wait 0.9 second
+			
+command /aura:
+	trigger:
+		if {particle::%player%::active} is true:
+			set {particle::%player%::active} to false
+		else:
+			set {particle::%player%::active} to true
+		while {particle::%player%::active} is true:
+			render red dust gyre of property 1, 10, 1, 3, 1 tick at player
+			wait 0.5 second

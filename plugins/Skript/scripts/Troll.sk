@@ -1,35 +1,22 @@
 on script load:
-	register new shapeless recipe for nether star using gold ingot, nether star, gold ingot, gold ingot, air, gold ingot, gold ingot, gold ingot, gold ingot
-	broadcast "&aSuccessfuly added &6&oWedding Ring&a crafting recipe to server!"
-on craft of nether star:
-	wait 1 tick
-	set name of item to "&6&oWedding Ring"
-	broadcast "&f[&aSERVER&f] &e%player% just crafted a &6&oWedding Ring&e!"
-
-
-
-on script load:
 	loop all players:
 		set {trolling.%loop-player%} to false
 command /troll <player>:
 	permission: essentials.socialspy
 	trigger:
 		message "&aTrolling %argument-player%!"
-		push the argument-player upwards at speed 2
-		wait 30 ticks
 		loop all blocks in radius 5 of argument-player:
 			distance between loop-block and argument-player is greater than 3
 			loop-block is air or plant
 			make argument-player see loop-block as bedrock
 		set {trolling.%argument-player%} to true
-		apply jump boost -5 to the argument-player for 100000000 hours
 		set the argument-player's walk speed to 0.01
 		set the argument-player's fly speed to 0.01
 		loop 20 times:
 			send " " to argument-player
 		send "&f[&aSERVER&f] &cYou have put on timeout for one minute." to argument-player
 		send "&f[&aSERVER&f] &cPlease take the time to rectify your behavior. If you continue to cause problems after you are released, more serious and possibly permanent actions may be taken." to argument-player
-		wait 60 real seconds
+		wait 10 real seconds
 		send "&f[&aSERVER&f] &cYou have been released. Don't make us regret it." to argument-player
 		set {trolling.%argument-player%} to false
 		loop all blocks in radius 8 of argument-player:
@@ -37,7 +24,9 @@ command /troll <player>:
 			make argument-player see loop-block as air
 		set the argument-player's walk speed to .2
 		set the argument-player's fly speed to .2
-		remove jump boost from the argument-player
+
+
+		
 on click:
 	{trolling.%player%} is true
 	cancel event

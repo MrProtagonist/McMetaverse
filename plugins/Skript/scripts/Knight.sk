@@ -1,17 +1,128 @@
-on teleport:
-	{guard.%player%} is set
-	wait 3 ticks
-#	teleport {guard.%player%} to player
-command /guard:
+script options:
+    $ developer mode
+on script load:
+	loop {guard.entities::*}:
+		kill loop-value
+		damage loop-value by 50 hearts
+		send "&cYour &6&lMeta&c&lKnight&c has just died due to the skript being reloaded. Here is some compensation for another." to {guard.owners::%loop-index%}
+		execute console command "eco give %{guard.owners::%loop-index%}% 250"
+	delete {guard.entities::*}
+	delete {guard.owners::*}
+	delete {guard.active::*}
+command /guard [<text>]:
+	permission: sk.guard
 	trigger:
-		spawn 1 iron golem at player
-		set name of spawned entity to "&6&lMeta&c&lKnight"
-		set {owner.%spawned entity%} to player
-		set {guard.%player%} to spawned entity
-		while spawned entity exists:
-			if distance between spawned entity and player is greater than 10:
-				make spawned entity pathfind to player with speed 4
+		if arg is "golem":
+			loop {guard.owners::*}:
+				if player is loop-value:
+					message "&cYou already have a &6&lMeta&c&lKnight"
+					stop
+			if player's balance is greater than 250:
+				spawn 1 iron golem at player
+				execute console command "eco take %player% 250"
+				set metadata "type" of spawned entity to player
+				set name of spawned entity to "&6&lMeta&c&lKnight"
+				add spawned entity to {guard.entities::*}
+				add player to {guard.owners::*}
+				add true to {guard.active::*}
+				stop
 			else:
-				make spawned entity pathfind to player with speed 1
-			wait 1 tick
+				message "&cYou don't have enough money!"
+				stop
+		if arg is "snow":
+			loop {guard.owners::*}:
+				if player is loop-value:
+					message "&cYou already have a &6&lMeta&c&lKnight"
+					stop
+			if player's balance is greater than 250:
+				spawn 1 snow golem at player
+				execute console command "eco take %player% 250"
+				set metadata "type" of spawned entity to player
+				set name of spawned entity to "&6&lMeta&c&lKnight"
+				add spawned entity to {guard.entities::*}
+				add player to {guard.owners::*}
+				add true to {guard.active::*}
+				stop
+			else:
+				message "&cYou don't have enough money!"
+				stop
+		if arg is "clear":
+			loop {guard.owners::*}:
+				player is loop-value
+				kill {guard.entities::%loop-index%}
+				damage {guard.entities::%loop-index%} by 50 hearts
+				delete {guard.entities::%loop-index%}
+				delete {guard.owners::%loop-index%}
+				delete {guard.active::%loop-index%}
+				message "&cYour &6&lMeta&c&lKnight&c has died."
+				stop
+		if arg is "stay":
+			loop {guard.owners::*}:
+				player is loop-value
+				set {guard.active::%loop-index%} to false
+				message "&aYour &6&lMeta&c&lKnight&a will no longer follow you."
+				stop
+			message "&cFound no &6&lMeta&c&lKnight&c."
+			stop
+		if arg is "come":
+			loop {guard.owners::*}:
+				player is loop-value
+				set {guard.active::%loop-index%} to true
+				message "&aYour &6&lMeta&c&lKnight&a will now follow you."
+				stop
+			message "&cFound no &6&lMeta&c&lKnight&c."
+			stop
+		else:
+			message "&e============================================="
+			message "&a/guard golem&e - For $250, spawns a Iron Golem to protect you."
+			message "&a/guard snow&e - For $250, spawns a Snow Golem to protect you."
+			message "&a/guard clear&e - Kills any guard you have."
+			message "&a/guard stay&e - Your guard won't follow you, but he may wander."
+			message "&a/guard come&e - Your guard will come to you."
+			message "&e============================================="
+			
+			
+every 2 ticks:
+	loop {guard.entities::*}:
+		{guard.active::%loop-index%} is true
+		if distance between loop-value and {guard.owners::%loop-index%} is greater than 25:
+			teleport loop-value to {guard.owners::%loop-index%}
+		if distance between loop-value and {guard.owners::%loop-index%} is greater than 20:
+			make loop-value pathfind to {guard.owners::%loop-index%} with speed 10
+		if distance between loop-value and {guard.owners::%loop-index%} is greater than 15:
+			make loop-value pathfind to {guard.owners::%loop-index%} with speed 7
+		if distance between loop-value and {guard.owners::%loop-index%} is greater than 10:
+			make loop-value pathfind to {guard.owners::%loop-index%} with speed 4
+		if distance between loop-value and {guard.owners::%loop-index%} is greater than 5:
+			make loop-value pathfind to {guard.owners::%loop-index%} with speed 3
+		else:
+			make loop-value pathfind to {guard.owners::%loop-index%} with speed 1
 
+on quit:
+	loop {guard.owners::*}:
+		player is loop-value
+		kill {guard.entities::%loop-index%}
+		damage {guard.entities::%loop-index%} by 50 hearts
+		delete {guard.entities::%loop-index%}
+		delete {guard.owners::%loop-index%}
+		delete {guard.active::%loop-index%}
+	
+on damage:
+	victim is iron golem or snow golem
+	attacker is a player
+	send "&cYou can't hurt a &6&lMeta&c&lKnight&c!" to attacker
+	cancel event
+
+on damage:
+	attacker is iron golem or snow golem
+	victim is a player
+	name of attacker contains "Knight"
+	cancel event
+on death of iron golem:
+	loop {guard.entities::*}:
+		loop-value is attacker
+		clear drops
+		send "&cYour &6&lMeta&c&lKnight&c has just died." to {guard.owners::%loop-index%}
+		delete {guard.entities::%loop-index%}
+		delete {guard.active::%loop-index%}
+		delete {guard.owners::%loop-index%}

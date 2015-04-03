@@ -4,6 +4,10 @@ on script load:
 	if {special.day} is not set:
 		set {special.day} to 0
 	add 1 to {special.day}
+command /proleave:
+	permission: essentials.socialspy
+	trigger:
+		broadcast "&e%player% left the game."
 on join:
 	{special.%player%.last} is not set:
 		set {special.%player%.last} to 0

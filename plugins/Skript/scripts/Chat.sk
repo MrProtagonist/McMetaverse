@@ -31,7 +31,7 @@ on chat:
 		set {welcomed.%player%} to {welcoming}
 		wait 1 real second
 		message "&f[&aSERVER&f] &e&oThank you for welcoming &6&o%{welcoming}%&e&o! You are a good neighbor!"
-		execute console command "/playsound note.pling %player%"
+		play "LEVEL_UP" specifically to player with pitch 1
 		execute console command "eco give %player% 25"
 	else if {welcomed.%player%.%{newest.player}%} is not set:
 		set {welcomed.%player%.%{newest.player}%} to true
@@ -100,6 +100,7 @@ on first join:
 	set {accepting.welcomes} to false
 	loop {welcome.party::*}:
 		message "&f[&aSERVER&f] &a&oYou just earned $250 for welcoming a newbie!" to {welcome.party::%loop-index%}
+		play "LEVEL_UP" specifically to player with pitch 1
 		execute console command "eco give %{welcome.party::%loop-index%}% 250"
 		remove {welcome.party::%loop-index%} from {welcome.party::*}
 		set {welcomed.%{welcome.party::%loop-index%}%} to false
@@ -130,8 +131,9 @@ command /agree:
 		{new.%player%} is true
 		set {new.%player%} to false		
 		set {signed.%player%} to now
-		teleport player to {acceptpoint}
+#		teleport player to {acceptpoint}
 		message " "		
+		play "LEVEL_UP" specifically to player with pitch 1
 		message "&f[&aSERVER&f] &6&oCongratulations! You are now free to chat and roam."
 		wait 3 seconds
 		message " "	
@@ -172,11 +174,11 @@ on chat:
 on chat:
 	message contains "how" or "what do" or "what is"
 	set {question.last} to player
-command /google <text>:
+command /google <player> <text>:
 	trigger:
-		set {_google} to arg
+		set {_google} to arg 2
 		replace all " " with "+" in {_google}
-		broadcast "%display name of player%&f: &eLink for %{question.last}%&f: &almgtfy.com/?q=%{_google}%"
+		broadcast "%display name of player%&f: &eLink for %arg 1%&f: &almgtfy.com/?q=%{_google}%"
 # on chat:
 #	replace all "kristen" with "Kristy" in the message
 #	player's name is "CantThink96"

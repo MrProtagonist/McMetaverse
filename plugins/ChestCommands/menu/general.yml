@@ -128,10 +128,10 @@ divider5:
   POSITION-Y: 1
   DATA-VALUE: 0
 TitanKidshop:
-  COMMAND: 'shopwarp 12'
-  NAME: '&d[p] &bTitans Metal Shop &d[p]'
+  COMMAND: 'shopwarp 13'
+  NAME: '&d[p] &bTitans New Metal & Other Shop &d[p]'
   LORE:
-    - '&f&oOres and metals at super low prices!'
+    - '&f&oAll the metal you can buy and more'
   ID: 265
   KEEP-OPEN: false
   POSITION-X: 6
@@ -152,6 +152,16 @@ divider6:
   ID: 160
   KEEP-OPEN: true
   POSITION-X: 2
+  POSITION-Y: 2
+  DATA-VALUE: 0
+DocsKnickKnacks:
+  COMMAND: 'shopwarp 14'
+  NAME: '&d[p] &bDocs Knick Knacks&d[p]'
+  LORE:
+    - '&f&oA Variety of Items! :D'
+  ID: 381
+  KEEP-OPEN: false
+  POSITION-X: 7
   POSITION-Y: 2
   DATA-VALUE: 0
 divider7:

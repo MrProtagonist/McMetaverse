@@ -1,17 +1,25 @@
 on teleport:
 	{guard.%player%} is set
 	wait 3 ticks
-	teleport {guard.%player%} to player
+#	teleport {guard.%player%} to player
 command /guard:
 	trigger:
 		spawn 1 iron golem at player
-		set name of spawned entity to "&6&lMeta&c&lKnight"
+		set metadata "type" of spawned entity to player
+		set name of spawned entity to "&f%player%'s%nl%&6&lMeta&c&lKnight"
 		set {owner.%spawned entity%} to player
 		set {guard.%player%} to spawned entity
 		while spawned entity exists:
+			if distance between spawned entity and player is greater than 25:
+				teleport spawned entity to player
+			if distance between spawned entity and player is greater than 20:
+				make spawned entity pathfind to player with speed 8
+			if distance between spawned entity and player is greater than 15:
+				make spawned entity pathfind to player with speed 6
 			if distance between spawned entity and player is greater than 10:
 				make spawned entity pathfind to player with speed 4
 			else:
 				make spawned entity pathfind to player with speed 1
-			wait 1 tick
+			wait 2 ticks
+			execute console command "tm amsg %player% &6Knight is %distance between spawned entity and player% blocks away."
 

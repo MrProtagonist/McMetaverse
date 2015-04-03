@@ -44,6 +44,7 @@ command /poll <text>:
 				{poll.%loop-player%.voted} is true
 				set {poll.%loop-player%.voted} to false
 				message "&aThank you for participating in the poll. Here is a reward." to loop-player
+				play "LEVEL_UP" specifically to loop-player with pitch 1
 				execute console command "/eco give %loop-player% 150"
 		else:
 			if {poll.%player%.voted} is true:

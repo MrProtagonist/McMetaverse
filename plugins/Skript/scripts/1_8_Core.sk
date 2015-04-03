@@ -2,6 +2,24 @@
 	wait 1 tick
 	set {_ping} to player's ping
 	send "%{_ping}% ms" to player
+on script load:
+	loop all players:
+		if {villager.%loop-player%.traded} is not set:
+			set {villager.%loop-player%.traded} to now
+on join:
+	if {villager.%player%.traded} is not set:
+		set {villager.%player%.traded} to now
+on rightclick on villager:
+	clicked entity has offers
+	set {_trade} to 1 trade of clicked entity
+#	if third item of {_trade} is emerald:
+	if difference between {villager.%player%.traded} and now is smaller than 3 minutes:
+		set {_difference} to difference between {villager.%player%.traded} and now
+		send "&cYou traded for an emerald %{_difference}% ago! This has a 3 minute cooldown!" to player
+		cancel event
+	else:
+		set {villager.%player%.traded} to now
+	
 on join:
 	player has permission "essentials.socialspy"
 	{staff.members::%player%} is not set
@@ -122,7 +140,9 @@ command /launchpad [<text>] [<text>]:
 				add location of player to {lp.landing::*}
 				message "&eDone!"
 			       
-		       
+on click:
+	if player's held item is clock:
+		execute console command "tm amsg %player% &6&l%time%"
 command /clearlaunchpads:
 	permission: essentials.socialspy
 	trigger:
