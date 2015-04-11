@@ -1,0 +1,36 @@
+CountdownLength: 5
+Distance: 5000000000.0
+Messages:
+  error-not-involved: '&bTrading> &7You are currently not involved in any trades'
+  error-trade-already-accepted: '&bTrading> &7The trade has already been accepted'
+  error-accepter-different-trade: '&bTrading> &7The player &b%accepter% &7is currently
+    involved in a different trade'
+  error-requester-different-trade: '&bTrading> &7You are currently involved in a different
+    trade'
+  error-distance: '&bTrading> &7You must be within 500 blocks of a player to trade'
+  error-world: '&bTrading> &7You must be in the same world as a player to trade'
+  error-self: '&bTrading> &7You cannot trade with yourself'
+  error-not-online: '&bTrading> &7The player &b%accepter% &7is not online'
+  error-incorrect-usage: '&bTrading> &7Incorrect Usage, Correct Usage: &b/Trade (PlayerName)&7,
+    &b/Trade Accept&7, or &b/Trade Decline'
+  trade-request-sent: '&bTrading> &7Trade request sent to the player &b%accepter%'
+  trade-request-received: '&bTrading> &7The player &b%requester% &7has just requested
+    a trade with you. You have 15 seconds to /trade accept'
+  trade-accepted: '&bTrading> &7Trade has been accepted'
+  trade-successful: '&bTrading> &7Trade was successful'
+  trade-cancelled: '&bTrading> &7Trade has been cancelled'
+Item-Names:
+  inventory: '|You|                  |Other|'
+  divider: ' '
+  decline-trade: '&cClick to Cancel Trade'
+  accept-trade: '&aClick to Ready Trade'
+  not-ready: '&7Not Ready'
+  ready: '&aReady'
+Item-Lores:
+  decline-trade:
+  - '&7Click this block at any'
+  - '&7time during the trade to cancel'
+  accept-trade:
+  - '&7Once both traders have clicked'
+  - '&7this block, the countdown will'
+  - '&7begin'

@@ -12,14 +12,24 @@ groups:
   Mod:
     default: false
     permissions:
+    - -essentials.afk.auto
+    - chestcommands.open.arenawarps.yml
+    - chestcommands.open.biomewarps.yml
+    - chestcommands.open.nav.yml
+    - chestcommands.open.spawnwarps.yml
     - essentials.chat.color
     - essentials.enderchest
     - essentials.enderchest.others
     - essentials.ext
     - essentials.gc
     - essentials.home.others
+    - essentials.invsee
+    - essentials.jail
+    - essentials.jail.*
     - essentials.joinfullserver
+    - essentials.kick
     - essentials.msg.color
+    - essentials.mute
     - essentials.seen
     - essentials.sethome.multiple.unlimited
     - essentials.socialspy
@@ -40,6 +50,7 @@ groups:
     - mcmmo.chat.adminchat
     inheritance:
     - noble
+    - premium
     info:
       prefix: '&r&f[&9MOD&r] '
       build: true
@@ -47,13 +58,14 @@ groups:
   Seasoned:
     default: false
     permissions:
+    - essentials.jump
     - essentials.sethome.multiple.seasoned
     - essentials.signs.color
     - essentials.signs.format
-    - essentials.top
     - is.seasoned
     - scavenger.scavenge
     - skript.extrahealth4
+    - vc.4
     inheritance:
     - craftsman
     info:
@@ -63,15 +75,29 @@ groups:
   Regular:
     default: false
     permissions:
+    - -is.rookie
     - bukkit.command.me
+    - chestcommands.command.open.arenawarps.yml
+    - chestcommands.command.open.biomewarps.yml
+    - chestcommands.command.open.nav.yml
+    - chestcommands.command.open.spawnwarps.yml
+    - chestcommands.open.arenawarps.yml
+    - chestcommands.open.biomewarps.yml
+    - chestcommands.open.nav.yml
+    - chestcommands.open.spawnwarps.yml
     - essentials.depth
     - essentials.me
     - essentials.sethome.multiple.regular
+    - essentials.warp
+    - essentials.warp.self
+    - essentials.warps
+    - essentials.warps.*
     - essentials.workbench
     - GPRealEstate.sell
     - is.regular
     - marry.marry
     - nametag.group.regular
+    - sk.ad
     inheritance:
     - rookie
     info:
@@ -326,10 +352,15 @@ groups:
     - preciousstones.*
     - quester.admin
     - quester.use.*
+    - scavenger.list
+    - scavenger.reload
     - sht.admin
     - simplesuffix
     - simplesuffix.color
     - simplesuffix.colours
+    - simplesuffix.set.prefix.other
+    - simplesuffix.set.prefix.self
+    - simplesuffix.set.suffix.other
     - simplesuffix.set.suffix.self
     - simplesufix.colors
     - sk.warn
@@ -357,6 +388,7 @@ groups:
     - essentials.sethome.multiple.unlimited
     - is.champion
     - skript.extrahealth10
+    - vc.10
     inheritance:
     - elite
     info:
@@ -368,13 +400,14 @@ groups:
     permissions:
     - essentials.chat.color
     - essentials.chat.format
-    - essentials.jump
     - essentials.msg.color
     - essentials.msg.format
     - essentials.sethome.multiple.citizen
     - is.citizen
+    - nametag.group.citizen
     - scavenger.exp
     - scavenger.level
+    - sk.guard
     inheritance:
     - regular
     info:
@@ -389,6 +422,7 @@ groups:
     - is.noble
     - simplesuffix.colors
     - skript.extrahealth6
+    - vc.6
     inheritance:
     - seasoned
     info:
@@ -411,9 +445,11 @@ groups:
     permissions:
     - essentials.enderchest
     - essentials.sethome.multiple.elite
+    - essentials.top
     - is.elite
     - skript.extrahealth8
     - skript.nightvision
+    - vc.8
     inheritance:
     - noble
     info:
@@ -425,6 +461,7 @@ groups:
     permissions:
     - -bukkit.command.tell
     - -minecraft.command.tell
+    - -bukkit.command.help
     - auction.bid
     - auction.help
     - auction.ignore
@@ -598,6 +635,7 @@ groups:
     - nametag.group.visitor
     - sht.ticket
     - TogglePVP.toggle
+    - trading.trade
     inheritance:
     - g:bukkit_default
     - g:essentials_default
@@ -620,7 +658,6 @@ groups:
     - -bukkit.command.unban.player
     - -essentials.ban
     - -essentials.unban
-    - -worldedit.anyblock
     - -worldedit.limit.unrestricted
     - -worldedit.butcher
     - -worldedit.remove
@@ -631,6 +668,8 @@ groups:
     - griefprevention.adminclaims
     - griefprevention.deleteclaims
     - griefprevention.ignoreclaims
+    - sk.head
+    - vc.10
     - worldedit.*
     inheritance:
     - admin
@@ -807,7 +846,9 @@ groups:
     - scavenger.self.off
     - scavenger.self.on
     - simplesuffix.set.suffix.self
+    - sk.suffix
     - skript.extrahealth2
+    - vc.2
     inheritance:
     - citizen
     info:
@@ -858,6 +899,10 @@ groups:
     - griefprevention.claimslistother
     - groupmanager.mandemote
     - groupmanager.manpromote
+    - simplesuffix.set.prefix.other
+    - simplesuffix.set.prefix.self
+    - simplesuffix.set.suffix.other
+    - simplesuffix.set.suffix.self
     inheritance:
     - dev
     info:
@@ -877,6 +922,8 @@ groups:
     - simplesuffix.format.underlined
     - simplesuffix.set.prefix.self
     - simplesuffix.set.suffix.self
+    - sk.prefix
+    - sk.suffix
     - sk.tracer
     - sk.warpeffect
     - skript.tracer
@@ -884,9 +931,8 @@ groups:
     - skript.warpeffect
     - trail.all
     - trail.allow
-    - trail.alow
+    - trailgui.commands.*
     - trailgui.commands.trails
-    - trailgui.commnds.*
     - trailgui.inventory.*
     - trails.allow
     inheritance: []

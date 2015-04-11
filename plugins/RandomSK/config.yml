@@ -1,0 +1,198 @@
+Features: 
+
+    - On Trade GUI click
+    - On Inventory Open
+    - On Break Of Item
+    - On Trade
+    - Item Despawn
+    - Statistic Increment
+    - On Fishing State
+    
+    - CondIsSpectating
+    - CondHasMetadata
+    - CondHasOffer
+    - CondHasHiddenString
+    - CondHasOffers
+    - CondHasSecondItem
+    - CondIsInSleepAnimation
+    - CondGuiIsOpen
+    - CondIsOnGround
+    
+    - EffSpectate
+    - EffOpenBook
+    - EffBreakNaturally
+    - EffRespawn
+    - EffMakePlayerJump
+    - EffRegisterFurnaceRecipe
+    - EffResetRecipes !SkExtras
+    - EffOpenTradeGui
+    - EffTradeClientData
+    - EffAnimation
+    - EffBlockBreakAnimation
+    - EffClientChest
+    - EffEnvironment
+    - EffSleep
+    - EffWakeUp
+    
+    - ExprSpectateTarget
+    - ExprFinalDamage
+    - ExprUnicode
+    - ExprBlockFeatures
+    - ExprEventTrade
+    - ExprItemOfTrades
+    - ExprMaxUses
+    - ExprTrade
+    - ExprTradeOffer
+    - ExprTrades   
+    - ExprEncodedString
+    - ExprExactPlayer
+    - ExprExtractedString
+    - ExprMatchString
+    - ExprDirectionOfLocation
+    - ExprLengthOfVector
+    - ExprLocationToVector
+    - ExprRandomVector
+    - ExprVector
+    - ExprVectorArithmetic
+    - ExprVectorBlockXYZ
+    - ExprVectorCross
+    - ExprVectorDistanceSquared
+    - ExprVectorDot
+    - ExprVectorNormalized
+    - ExprVectorToLocation
+    - ExprVectorXYZ
+    - ExprVelocity
+    - ExprExtendedMetadata
+    - ExprFixedMetadata
+    - ExprPitchYaw
+    - ExprSort
+    - ExprSortOutput
+    - ExprStatistic
+    - ExprUnixTime
+    - ExprValueOfStatistic
+    - ExprChatRecipients
+    - ExprPlayerStatistic
+    - ExprAge
+    - ExprMaxDamageTicks
+    - ExprNameVisibility
+    - ExprPlayerVersion
+    - ExprSlimeSize
+    - ExprTimeLived
+    - ExprCatch
+    - ExprHook
+    - ExprState
+    - ExprViewersOfInventory
+    - ExprEnchantmentLevel
+    - ExprItemEntities
+    - ExprPickUpDelay
+    - ExprCustomTradeGUI
+    - ExprGuiOfPlayer
+    - ExprGUIOptions
+    - ExprSlotOfGUI
+    - ExprTradeClickType
+    - ExprTradeGuiName
+    - ExprTradeObject
+    
+    
+    
+    
+    
+#List of Features:
+#On Trade GUI click
+#On Inventory Open
+#On Break Of Item
+#On Trade
+#Item Despawn
+#Statistic Increment
+#On Fishing State
+
+#CondIsSpectating
+#CondHasMetadata
+#CondHasOffer
+#CondHasHiddenString
+#CondHasOffers
+#CondHasSecondItem
+#CondIsInSleepAnimation
+#CondGuiIsOpen
+#CondIsOnGround
+
+#EffSpectate
+#EffOpenBook
+#EffBreakNaturally
+#EffRespawn
+#EffMakePlayerJump
+#EffRegisterFurnaceRecipe
+#EffResetRecipes
+#EffOpenTradeGui
+#EffTradeClientData
+#EffAnimation
+#EffBlockBreakAnimation
+#EffClientChest
+#EffEnvironment
+#EffSleep
+#EffWakeUp
+    
+#ExprSpectateTarget
+#ExprFinalDamage
+#ExprUnicode
+#ExprBlockFeatures
+#ExprEventTrade
+#ExprItemOfTrades
+#ExprMaxUses
+#ExprTrade
+#ExprTradeOffer
+#ExprTrades   
+#ExprEncodedString
+#ExprExactPlayer
+#ExprExtractedString
+#ExprMatchString
+#ExprDirectionOfLocation
+#ExprLengthOfVector
+#ExprLocationToVector
+#ExprRandomVector
+#ExprVector
+#ExprVectorArithmetic
+#ExprVectorBlockXYZ
+#ExprVectorCross
+#ExprVectorDistanceSquared
+#ExprVectorDot
+#ExprVectorNormalized
+#ExprVectorToLocation
+#ExprVectorXYZ
+#ExprVelocity
+#ExprExtendedMetadata
+#ExprFixedMetadata
+#ExprPitchYaw
+#ExprSort
+#ExprSortOutput
+#ExprStatistic
+#ExprUnixTime
+#ExprValueOfStatistic
+#ExprChatRecipients
+#ExprPlayerStatistic
+#ExprAge
+#ExprMaxDamageTicks
+#ExprNameVisibility
+#ExprPlayerVersion
+#ExprSlimeSize
+#ExprTimeLived
+#ExprCatch
+#ExprHook
+#ExprState
+#ExprViewersOfInventory
+#ExprEnchantmentLevel
+#ExprItemEntities
+#ExprPickUpDelay
+#ExprCustomTradeGUI
+#ExprGuiOfPlayer
+#ExprGUIOptions
+#ExprSlotOfGUI
+#ExprTradeClickType
+#ExprTradeGuiName
+#ExprTradeObject
+#ExprBiteChance, Probably doesn't work because bukkit.
+
+DebugRegister: false
+
+#Config Version: Don't change. If you do it will reset the config.
+ConfigVersion: 2.0 Final Beta

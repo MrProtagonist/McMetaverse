@@ -1,0 +1,73 @@
+Permissions: true
+VaultPermissions: true
+AllowBlockPvP: false
+Announcement: true
+InformOnPartnerJoin: true
+Language: en
+LanguageUpdateMode: Overwrite
+PriestCMD: priest
+Chat:
+  ToggleCommand: chattoggle
+  PrivateFormat: '<heart> %1$s&r => %2$s: %3$s'
+UseUUIDs: true
+AllowSelfMarry: false
+Surname: false
+AllowGiftsInCreative: false
+UseMinepacks: false
+UseBungeeCord: false
+Economy:
+  Enable: false
+  Divorce: 100.0
+  Marry: 100.0
+  Tp: 25.0
+  HomeTp: 25.0
+  SetHome: 100.0
+  Gift: 10.0
+HealthRegain:
+  Enable: true
+  Amount: 2
+BonusXp:
+  Enable: true
+  Multiplier: 2
+Prefix:
+  Enable: true
+  String: <heart>
+Database:
+  Type: Files
+  UpdatePlayer: true
+  MySQL:
+    Host: localhost:3306
+    Database: minecraft
+    User: minecraft
+    Password: minecraft
+  Tables:
+    User: marry_players
+    Home: marry_home
+    Priests: marry_priests
+    Partner: marry_partners
+Confirmation:
+  Enable: true
+  AutoDialog: true
+  BothPlayersOnDivorce: false
+Kiss:
+  Enable: true
+  WaitTime: 10
+  HearthCount: 50
+  CompatibilityMode: false
+Misc:
+  Metrics: true
+  AutoUpdate: true
+Range:
+  Marry: 25.0
+  Kiss: 2.0
+  KissInteract: 2.0
+  HearthVisible: 128.0
+  Heal: 2.0
+  BonusXP: 10.0
+  Gift: 0
+  Backpack: 5
+Teleport:
+  Delay: false
+  DelayTime: 3
+  BlacklistedWorlds: []
+Version: 16
