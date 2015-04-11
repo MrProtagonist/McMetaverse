@@ -1,0 +1,16 @@
+Data:
+  Easy:
+    WordsMinLenght: 3
+    WordsMaxLenght: 5
+    RandomizeCapitalization: false
+    CharactersToUse: ABCDEFGHIJKLMNOPQRSTUVWXYZ!?
+  Medium:
+    WordsMinLenght: 5
+    WordsMaxLenght: 7
+    RandomizeCapitalization: true
+    CharactersToUse: ABCDEFGHIJKLMNOPQRSTUVWXYZ!?
+  Hard:
+    WordsMinLenght: 7
+    WordsMaxLenght: 9
+    RandomizeCapitalization: true
+    CharactersToUse: ABCDEFGHIJKLMNOPQRSTUVWXYZ!?

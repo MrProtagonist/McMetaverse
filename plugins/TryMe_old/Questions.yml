@@ -1,0 +1,891 @@
+# Question file
+# Change the answer on number three, or the entire question.
+# Just enter question number, question itself and posible answers. You can have as many answers as you want.
+# Multiple answers are useful when there is more thant one correct answer. For example: Who created Minecraft? Answers: Notch, markus persson
+
+Questions:
+  1:
+    Question: '&6What is 7*19?'
+    Answers:
+    - 133
+  2:
+    Question: '&6Who created Minecraft?'
+    Answers:
+    - Notch
+    - Markus Persson
+  3:
+    Question: '&6What is the website of this server?'
+    Answers:
+    - mcmetaverse.com
+    - www.mcmetaverse.com
+  4:
+    Question: '&6In what year was Minecraft released?'
+    Answers:
+    - 2009
+  5:
+    Question: '&6What company created Minecraft?'
+    Answers:
+    - mojang
+  6:
+    Question: '&6What type of game is Minecraft?'
+    Answers:
+    - sandbox
+  7:
+    Question: '&6What is Notchs last name?'
+    Answers:
+    - persson
+  8:
+    Question: '&6What is the scale size of one minecraft block?'
+    Answers:
+    - one meter
+    - 1 meter
+    - 100 cm
+    - 100 centimeters
+  9:
+    Question: '&6What block has the ID of 1?'
+    Answers:
+    - stone
+  10:
+    Question: '&6How many colors of wool are there?'
+    Answers:
+    - 16
+    - sixteen
+  11:
+    Question: '&6What are the Mojang hosted servers called?'
+    Answers:
+    - realms
+  12:
+    Question: '&6What part of his body did Notch shave for charity?'
+    Answers:
+    - beard
+  13:
+    Question: '&6What is the original type of log called?'
+    Answers:
+    - oak
+    - Oak wood
+    - Oak log
+  14:
+    Question: '&6What block is unbreakable?'
+    Answers:
+    - bedrock
+  15:
+    Question: '&6What do minecraft players (in SinglePlayer) use to speed up nighttime?'
+    Answers:
+    - bed
+  16:
+    Question: '&6What is added to pistons to make them sticky pistons?'
+    Answers:
+    - slime
+    - slimeball
+  17:
+    Question: '&6What block is used to spawn mobs?'
+    Answers:
+    - mobspawner
+    - 52
+    - Spawner
+  18:
+    Question: '&6What are ores cooked in?'
+    Answers:
+    - furnace
+  19:
+    Question: '&6What tool is used to prepare soil for crops?'
+    Answers:
+    - hoe
+  20:
+    Question: '&6What is, in unmodified Minecraft, the strongest material for armor?'
+    Answers:
+    - diamond
+  21:
+    Question: '&6How many glass blocks does it take to make 16 glass panes?'
+    Answers:
+    - six
+    - 6
+  22:
+    Question: '&6What block is used to make potions?'
+    Answers:
+    - 'brewing stand'
+  23:
+    Question: '&6What replaces grass on mushroom islands?'
+    Answers:
+    - mycelium
+  24:
+    Question: '&6What is the block ID of grass?'
+    Answers:
+    - 2
+  25:
+    Question: '&6How many wood planks do you need to make a crafting table?'
+    Answers:
+    - four
+    - 4
+  26:
+    Question: '&6What block, made from materials from the nether, is white?'
+    Answers:
+    - quartz
+    - Quartz block
+  27:
+    Question: '&6How much is 2+2*2?'
+    Answers:
+    - 6
+    - six
+  28:
+    Question: '&6How much is 2+2/2?'
+    Answers:
+    - 3
+    - three
+  29:
+    Question: '&6How much is 2+2-2?'
+    Answers:
+    - 2
+    - two
+  30:
+    Question: '&6How much is 2+2*2-2/2?'
+    Answers:
+    - 5
+    - five
+  31:
+    Question: '&6How much is 2-2/2*2+2?'
+    Answers:
+    - -2
+    - minus two
+  32:
+    Question: '&6What is Notchs real full name?'
+    Answers:
+    - markus persson
+  33:
+    Question: '&6What was Minecrafts original name?'
+    Answers:
+    - cave game
+  34:
+    Question: '&6How many game modes are there in minecraft?'
+    Answers:
+    - four
+    - 4
+  35:
+    Question: '&6What is the mob that explodes?'
+    Answers:
+    - creeper
+  36:
+    Question: '&6Name a block that gravity affects.'
+    Answers:
+    - water
+    - gravel
+    - sand
+    - lava
+    - redsand
+  37:
+    Question: '&6Name a default skin.'
+    Answers:
+    - steve
+    - alex
+  38:
+    Question: '&6What is the name of minecrafts music artist?'
+    Answers:
+    - C418
+  39:
+    Question: '&6Who is the mythical character in Minecraft?'
+    Answers:
+    - Herobrine
+  40:
+    Question: '&6The creepers shape was based on a mistake, but what was Notch TRYING to make at the time?'
+    Answers:
+    - pig
+  41:
+    Question: '&6What does Notch drop if you kill him in multiplayer, besides his inventory?'
+    Answers:
+    - apple
+  42:
+    Question: '&6What happens when a pig is struck by lightning?'
+    Answers:
+    - it turns into a zombie pigman
+    - turns into zombie pigman
+    - zombie pigman
+  43:
+    Question: '&6What did c418 use for Ghast sounds?'
+    Answers:
+    - cat
+    - his cat
+  44:
+    Question: '&6What happens when a creeper is struck by lightning?'
+    Answers:
+    - it becomes charged
+    - gets charged
+    - charged creeper
+    - charged
+  45:
+    Question: '&6What item can cancel/remove potion effect?'
+    Answers:
+    - milk
+  46:
+    Question: '&6How long is a Minecraft Day/Night cycle in real time?'
+    Answers:
+    - 20 minutes
+    - 20 min
+    - twenty minutes
+    - twenty min
+  47:
+    Question: '&6What should you do first when you enter a survival game?'
+    Answers:
+    - collect wood
+    - get wood
+    - die from creeper
+  48:
+    Question: '&6When you make torches, how many do you get per coal and stick?'
+    Answers:
+    - 4
+    - four
+  49:
+    Question: '&6What is the rarest ore in the game?'
+    Answers:
+    - emerald
+    - emerald ore
+  50:
+    Question: '&6How many dimensions are there in the base game?'
+    Answers:
+    - three
+    - 3
+  51:
+    Question: '&6When you make iron bars, how many do you get?'
+    Answers:
+    - 16
+    - sixteen
+  52:
+    Question: '&6Can you ride Pigs?'
+    Answers:
+    - yes
+    - true
+  53:
+    Question: '&6What is the name of the new playable character added in version 1.8 on PC?'
+    Answers:
+    - alex
+  54:
+    Question: '&6Who is Mojang teaming up with to create the game Minecraft: Story Mode?'
+    Answers:
+    - Telltale Games
+    - Telltale
+  55:
+    Question: '&6Which block can be used as a weapon?'
+    Answers:
+    - tnt
+  56:
+    Question: '&6Which block slows the enemy down (Such as a zombie)?'
+    Answers:
+    - Soulsand
+    - soul sand
+  57:
+    Question: '&6To make charcoal, what you need to smelt?'
+    Answers:
+    - wood
+    - log
+  58:
+    Question: '&6What is an endermans weakness?'
+    Answers:
+    - water
+  59:
+    Question: '&6What is more common? Npc farmers or blacksmiths?'
+    Answers:
+    - Farmers
+    - npc farmers
+  60:
+    Question: '&6Do zombie pigmen spawn anywhere besides the nether?'
+    Answers:
+    - yes
+    - true
+    - correct
+  61:
+    Question: '&6Can you dye sheep?'
+    Answers:
+    - yes
+    - true
+    - correct
+  62:
+    Question: '&6Are spiders passive during the day?'
+    Answers:
+    - yes
+    - true
+    - correct
+  63:
+    Question: '&6What color are creepers?'
+    Answers:
+    - green
+    - creeper colored
+  64:
+    Question: '&6What color are endermen?'
+    Answers:
+    - black
+    - black with purple eyes
+  65:
+    Question: '&6What color are ghasts?'
+    Answers:
+    - white
+  66:
+    Question: '&6How many legs do creepers have?'
+    Answers:
+    - 4
+    - four
+  67:
+    Question: '&6Where do silverfish hide?'
+    Answers:
+    - In rocks/stone
+    - In rocks
+    - In stone
+    - In stones
+    - rocks
+    - rock
+    - stone
+    - extreme hills
+    - strongholds
+  68:
+    Question: '&6Name one mob that has been removed from Minecraft'
+    Answers:
+    - giant
+    - black steve
+    - beast boy
+    - human
+    - rana
+    - steve
+  69:
+    Question: '&6Name one of the two bosses'
+    Answers:
+    - enderdragon
+    - wither
+  70:
+    Question: '&6What does the enderdragon egg do when clicked?'
+    Answers:
+    - teleports
+    - teleport
+  71:
+    Question: '&6Whats does minecraft use for circuitry?'
+    Answers:
+    - redstone
+  72:
+    Question: '&6What can you trade with villagers for items?'
+    Answers:
+    - emeralds
+  73:
+    Question: '&6Were do temples spawn?'
+    Answers:
+    - Deserts and jungles
+    - Deserts
+    - jungles
+    - jungles and Deserts
+    - underwater
+    - ocean
+    - oceans
+  74:
+    Question: '&6Does netherwart only naturally grow in the nether?'
+    Answers:
+    - yes
+    - true
+    - correct
+  75:
+    Question: '&6Name one potion modifier'
+    Answers:
+    - redstone
+    - glowstone dust
+    - gunpowder
+    - ferm
+    - spider eye
+    - fermented spider eye
+  76:
+    Question: '&6How many slices can you take out of cake?'
+    Answers:
+    - seven
+    - 7
+  77:
+    Question: '&6What color are an  endermans eyes?'
+    Answers:
+    - purple
+  78:
+    Question: '&6What when put on a fishing rod lures pigs?'
+    Answers:
+    - carrot
+    - a carrot
+  79:
+    Question: '&6What tames ocelots?'
+    Answers:
+    - Raw fish
+  80:
+    Question: '&6What tames wolves?'
+    Answers:
+    - Bones
+  81:
+    Question: '&6How many music discs are there?'
+    Answers:
+    - 12
+  82:
+    Question: '&6What is the only block that can''t be destroyed without hacks?'
+    Answers:
+    - Bedrock
+  83:
+    Question: '&6How many HP does a giant have?'
+    Answers:
+    - 100
+  84:
+    Question: '&6How far in blocks did lava flows in nether to sides?'
+    Answers:
+    - 7
+    - seven
+  85:
+    Question: '&6In what year was Notch born?'
+    Answers:
+    - 1979
+    - 79
+  86:
+    Question: '&6What nationality is notch?'
+    Answers:
+    - Swedish
+  87:
+    Question: '&6What is the highest level you can find diamonds?'
+    Answers:
+    - 15
+  88:
+    Question: '&6How many seconds does it take for one minecraft hour to pass in real time?'
+    Answers:
+    - 50
+  89:
+    Question: '&6How many hours are in one Minecraft month?'
+    Answers:
+    - 10
+    - ten
+  90:
+    Question: '&6Which monster says TSSSSsssss....?'
+    Answers:
+    - creeper
+  91:
+    Question: '&6How many diamonds in average you can find in each chunk?'
+    Answers:
+    - 3
+    - three
+  92:
+    Question: '&6What does a zombie drop when killed?'
+    Answers:
+    - rotten flesh
+  93:
+    Question: '&6How many different sizes of slime are there?'
+    Answers:
+    - 3
+    - three
+  94:
+    Question: '&6What is the color of steves t-shirt?'
+    Answers:
+    - blue
+  95:
+    Question: '&6How many diferent colors of wool you can find?'
+    Answers:
+    - 16
+    - sixteen
+  96:
+    Question: '&6How many monsters burn in sun light?'
+    Answers:
+    - 2
+    - two
+  97:
+    Question: '&6what mob drops feathers?'
+    Answers:
+    - chicken
+  98:
+    Question: '&6What is the chance % of a naturally spawning pink sheep?'
+    Answers:
+    - 0.5
+    - .5
+    - 0.5%
+    - .5%
+  99:
+    Question: '&6What are creepers are afraid of?'
+    Answers:
+    - cats
+    - cat
+  100:
+    Question: '&6How many tnt blocks do you need to destroy bedrock?'
+    Answers:
+    - "3000000000"
+    - "3.000.000.000"
+    - "3,000,000,000"
+    - "3 000 000 000"
+  101:
+    Question: '&6Name a game that inspired Notch to create minecraft?'
+    Answers:
+    - Infiniminer
+    - Dwarf Fortress
+    - Dungeon Keeper
+  102:
+    Question: '&6How many million game copies of Minecraft had been sold by September 20, 2014'
+    Answers:
+    - 17
+  103:
+    Question: '&6What is the default texture size on the face of each block?'
+    Answers:
+    - 16x16
+    - 16
+    - 16 px
+    - 16x16 px
+  104:
+    Question: '&6How many distinct biomes are there?'
+    Answers:
+    - 61
+  105:
+    Question: '&6How many biome categeries are there?'
+    Answers:
+    - 5
+    - five
+  106:
+    Question: '&6At what altitude is sea level?'
+    Answers:
+    - 63
+  107:
+    Question: '&6Fire protection enchant for each level will reduce the Burn time by what percentage?'
+    Answers:
+    - 15
+  108:
+    Question: '&6Does the Feather Falling enchantment reduce the damage from ender pearl teleportations?'
+    Answers:
+    - yes
+    - true
+    - correct
+  109:
+    Question: '&6Blast protection enchantment also reduces what?'
+    Answers:
+    - knockback
+    - Explosion Knockback
+  110:
+    Question: '&6Does the Projectile protection enchantment protect from ghast fire charges?'
+    Answers:
+    - yes
+    - true
+    - correct
+  111:
+    Question: '&6How much extra damage you will get with a Power V enchantment (in percentage)?'
+    Answers:
+    - 150
+    - 150%
+  112:
+    Question: '&6Respiration enchantment increases underwater breathing time by how many seconds?'
+    Answers:
+    - 15
+  113:
+    Question: '&6Does the respiration enchantment improves underwater vision?'
+    Answers:
+    - yes
+    - true
+    - correct
+  114:
+    Question: '&6How much less does water slow you per level of the Depth strider enchant?'
+    Answers:
+    - 1/3
+    - 33 percent
+    - 33%
+  115:
+    Question: '&6Does depth strider increase vertical movement speed?'
+    Answers:
+    - no
+    - false
+    - incorrect
+  116:
+    Question: '&6How much extra damage does each level of Sharpness enchantment add?'
+    Answers:
+    - 1.25
+  117:
+    Question: '&6How much extra damage does each level of Smite enchantment add?'
+    Answers:
+    - 2.5
+  118:
+    Question: '&6Name one of the undead mobs'
+    Answers:
+    - skeleton
+    - zombie
+    - withers
+    - wither skeleton
+    - zombie pigmen
+  119:
+    Question: '&6name one of arthropod mobs'
+    Answers:
+    - spider
+    - cave spider
+    - silverfish
+    - endermites
+  120:
+    Question: '&6How much extra damage does each level of Bane of Arthropods enchantment add?'
+    Answers:
+    - 2.5
+  121:
+    Question: '&6What effect does Bane of Arthropods enchantment add to an affected mob?'
+    Answers:
+    - slowness
+    - slowness IV
+  122:
+    Question: '&6How many blocks you will get pushed back if hit with knockback I enchantment weapon?'
+    Answers:
+    - 3
+    - three
+  123:
+    Question: '&6How many fireticks add one level of Bane of Arthropods enchantment?'
+    Answers:
+    - 80
+  124:
+    Question: '&6How much mining speed (in percentage) you will gain from each level of efficiency enchantment?'
+    Answers:
+    - 30%
+    - 30
+  125:
+    Question: '&6Name one of the items on which silktouch wont work'
+    Answers:
+    - cake
+    - carrots
+    - cocoa pod
+    - double slabs
+    - fire
+    - farmland
+    - melon stems
+    - monster spawner
+    - nether warth
+    - potatoes
+    - umpkin stems
+    - snow
+    - sugar cane
+    - wheat
+    - inverted dylight sensor
+  126:
+    Question: '&6How much longer (percentage) will Armor last on average with an Unbreaking I enchantment?'
+    Answers:
+    - 25
+  127:
+    Question: '&6How much longer (percentage) will Armor last on average with an Unbreaking II enchantment?'
+    Answers:
+    - 36
+  128:
+    Question: '&6How much longer (percentage) will Armor last on average with Unbreaking III enchantment?'
+    Answers:
+    - 43
+  129:
+    Question: '&6How many points of health do Chickens have?'
+    Answers:
+    - 4
+    - four
+  130:
+    Question: '&6How many points of health do Cows have?'
+    Answers:
+    - 10
+    - ten
+  131:
+    Question: '&6How many points of health on average do Horse have?'
+    Answers:
+    - 22.5
+  132:
+    Question: '&6How many points of health do Ocelots have?'
+    Answers:
+    - 10
+    - ten
+  133:
+    Question: '&6How many points of health do Pigs have?'
+    Answers:
+    - 10
+    - ten
+  134:
+    Question: '&6How many points of health do Sheep have?'
+    Answers:
+    - 8
+    - eight
+  135:
+    Question: '&6How many points of health do Chickens have?'
+    Answers:
+    - 4
+    - four
+  136:
+    Question: '&6How many points of health do Mooshrooms have?'
+    Answers:
+    - 10
+    - ten
+  137:
+    Question: '&6How many points of health do Squid have?'
+    Answers:
+    - 10
+    - ten
+  138:
+    Question: '&6How many points of health do Villagers have?'
+    Answers:
+    - 20
+    - twenty
+  139:
+    Question: '&6How many points of health do Rabbits have?'
+    Answers:
+    - 10
+    - ten
+  140:
+    Question: '&6How many points of health do Cave spiders have?'
+    Answers:
+    - 12
+    - twelve
+  141:
+    Question: '&6How many points of health do Endermen have?'
+    Answers:
+    - 40
+    - forty
+  142:
+    Question: '&6How many points of health do Spiders have?'
+    Answers:
+    - 16
+    - sixteen
+  143:
+    Question: '&6How many points of health do untamed wolves have?'
+    Answers:
+    - 8
+    - eight
+  144:
+    Question: '&6How many points of health does a tamed wolf have?'
+    Answers:
+    - 20
+    - twenty
+  145:
+    Question: '&6How many points of health do Zombie pigmen have?'
+    Answers:
+    - 20
+    - twenty
+  146:
+    Question: '&6How mmany points of health do Blazes have?'
+    Answers:
+    - 20
+    - twenty
+  147:
+    Question: '&6How mmany points of health do Creepers have?'
+    Answers:
+    - 20
+    - twenty
+  148:
+    Question: '&6How many points of health do Endermites have?'
+    Answers:
+    - 8
+    - eight
+  149:
+    Question: '&6How many points of health do Ghasts have?'
+    Answers:
+    - 10
+    - ten
+  150:
+    Question: '&6How many points of health do big Magma Cubes have?'
+    Answers:
+    - 16
+    - sixteen
+  151:
+    Question: '&6How many points of health do Small Magma Cubes have?'
+    Answers:
+    - 4
+    - four
+  152:
+    Question: '&6How many points of health do Tiny Magma Cubes have?'
+    Answers:
+    - 1
+    - one
+  153:
+    Question: '&6How many points of health do Silverfish have?'
+    Answers:
+    - 8
+    - eight
+  154:
+    Question: '&6How many points of health do Skeletons have?'
+    Answers:
+    - 20
+    - twanty
+  155:
+    Question: '&6How many points of health do big Slimes have?'
+    Answers:
+    - 16
+    - sixteen
+  156:
+    Question: '&6How many points of health do Small Slimes have?'
+    Answers:
+    - 4
+    - four
+  157:
+    Question: '&6How many points of health do Tiny Slimes have?'
+    Answers:
+    - 1
+    - one
+  158:
+    Question: '&6How many points of health do Spider Jockeys have put together?'
+    Answers:
+    - 36
+    - thirty six
+  159:
+    Question: '&6How many points of health do Witches have?'
+    Answers:
+    - 26
+    - twenty six
+  160:
+    Question: '&6How many points of health do Wither skeletons have?'
+    Answers:
+    - 20
+    - twenty
+  161:
+    Question: '&6How many points of health do Zombies have?'
+    Answers:
+    - 20
+    - twenty
+  162:
+    Question: '&6How many points of health do Zombie villagers have?'
+    Answers:
+    - 20
+    - twenty
+  163:
+    Question: '&6How many points of health do Chicken Jockeys put together have?'
+    Answers:
+    - 24
+    - twenty four
+  164:
+    Question: '&6How many points of health do Guardians have?'
+    Answers:
+    - 30
+    - thirty
+  165:
+    Question: '&6How many points of health do Elder Guardians have?'
+    Answers:
+    - 80
+    - eighty
+  166:
+    Question: '&6How many points of health do Snowmen have?'
+    Answers:
+    - 4
+    - four
+  167:
+    Question: '&6How many points of health do Iron Golems have?'
+    Answers:
+    - 100
+    - one hundred
+  168:
+    Question: '&6How many points of health do Ender Dragons have?'
+    Answers:
+    - 200
+    - two hundred
+  169:
+    Question: '&6How many points of health do Withers have?'
+    Answers:
+    - 300
+    - three hundred
+  170:
+    Question: '&6What food do you need to bread Chickens?'
+    Answers:
+    - wheat seeds
+  171:
+    Question: '&6How many minutes does it take for a Chicken to age up from a baby?'
+    Answers:
+    - 20
+    - twenty
+  172:
+    Question: '&6What chance is there to spawn a baby chicken from an egg?'
+    Answers:
+    - 0.125
+    - 1/8
+    - 12.5%
+  173:
+    Question: '&6How many different professions can villagers have?'
+    Answers:
+    - 5
+    - five
+  174:
+    Question: '&6How many different careers can villagers have?'
+    Answers:
+    - 11
+    - eleven
+  175:
+    Question: '&6What is the block ID for a command block?'
+    Answers:
+    - 137

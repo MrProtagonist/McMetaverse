@@ -1,0 +1,42 @@
+command /setprize:
+	permission: essentials.socialspy
+	trigger:
+		set {prizeroom} to location of player
+		message "&a&oPrize Room location set!"
+		
+command /prize <player>:
+	permission: essentials.socialspy
+	trigger:
+		{inprizeroom} is not set
+		set {inprizeroom} to arg
+		set {lastspot} to location of arg
+		wait 1 tick
+		teleport arg to {prizeroom}
+		set arg's fly mode to true
+		broadcast "&f[&4Prize Room&f] &b%arg% is now in the Prize Room!"
+		wait 1 real second
+		send "&f[&4Prize Room&f] &aWelcome to the Prize Room! Fly has been enabled for you. Select one prize." to arg
+on command:
+	player is {inprizeroom}
+	cancel event
+	message "&cPick your prize first!"
+on rightclick on button:
+	player is {inprizeroom}
+	wait 2 ticks
+	teleport player to {lastspot}
+	teleport player to {lastspot}
+	wait 2 ticks
+	set player's fly mode to false
+	wait 1 real second
+	delete {inprizeroom}
+	broadcast "&f[&4Prize Room&f] &b%player% has chosen their prize from the Prize Room!"
+on quit:
+	player is {inprizeroom}
+	teleport player to {lastspot}
+	teleport player to {lastspot}
+	set player's fly mode to false
+	delete {inprizeroom}
+	set leave message to "&e%player% left before picking a prize in the Prize Room! Too bad."
+on damage:
+	victim is {inprizeroom}
+	cancel event

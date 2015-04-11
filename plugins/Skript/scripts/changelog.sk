@@ -1,0 +1,26 @@
+script options:
+    $ developer mode
+command /changelog:
+	trigger:
+		message " "
+		message "&d---------------------------------------------------"
+		message "&dServer Change Log&f - Hover over a day for details!"
+		loop {change.days::*}:
+			send json of "&f[&a%loop-index%&f]" tooltip "%colored {change.log.%loop-index%::*}%" to player
+		message "&d---------------------------------------------------"
+command /log <text>:
+	permission: essentials.socialspy
+	trigger:
+		if {change.days::%day%/%month%/%year%} is not set:
+			set {change.days::%day%/%month%/%year%} to true
+			add "&6&lChange Log for: &f%day% / %month% / %year%"
+			add "&b%player%&e - %arg%" to {change.log.%day%/%month%/%year%::*}
+			message "&aAdded to the change log!"
+			stop
+		add "%new line%&b%player%&e - %arg%&r" to {change.log.%day%/%month%/%year%::*}
+		message "&aAdded to the change log!"
+command /clearlog:
+	trigger:
+		loop {change.days::*}:
+			delete {change.log.%loop-index%::*}
+		delete {change.days::*}

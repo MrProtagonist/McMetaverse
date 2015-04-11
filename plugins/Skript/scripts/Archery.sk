@@ -68,15 +68,14 @@ command /sharpshooter:
 				set {_pay} to {archery.%player%} * 5
 				execute console command "tm msg %player% &6&l%{archery.%player%}% points"
 				execute console command "eco give %player% %{_pay}%"
-				if {archery.top.score} is not set:
-					set {archery.top.score} to 0
-					set {archery.top.player} to "MrProtagonist"
 				if {archery.%player%} is greater than {archery.top.score}:
 					wait 2 real seconds
 					broadcast "&f[&aSERVER&f] &6%player% &ajust set the &aHIGH SCORE for &b&oSharp Shooter&a with &6%{archery.%player%}% points&a!"
 					play "LEVEL_UP" specifically to player with pitch 1
 					set {archery.top.score} to {archery.%player%}
 					set {archery.top.player} to player
+				else:
+					broadcast "&f[&aSERVER&f] &6%player% &ajust got &6%{archery.%player%}% points&a in &b&oSharp Shooter&a!"
 				set {archery.going} to false
 				delete {archery.%player%}
 			else:
@@ -98,3 +97,12 @@ command /archeryscan:
 			set loop-block to air
 			add 1 to {_counter}
 		broadcast "&aAdded %{_counter}% possible archery target locations!"
+command /resetssscore:
+	permission: is.pro
+	trigger:
+		set {archery.top.score} to 13
+		set {archery.top.player} to "rfcroc"
+on command:
+	{archery.busy} is player
+	cancel event
+	message "&cNo commands are allowed while in this minigame!"

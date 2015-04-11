@@ -4,6 +4,16 @@ on script load:
 	if {special.day} is not set:
 		set {special.day} to 0
 	add 1 to {special.day}
+	delete {cmddoor.open}
+# on command:
+#	block 1.2 meters below player is air
+#	player does not have the permission "essentials.socialspy"
+#	player's gamemode is survival
+#	player is not flying
+#	command is "/spawn" or "/home" or "/top" or "/ss" or "/home home" or "/j" or "/jump"
+#	message "&aProfessor Oak:&c&o You can't use that here!"
+#	cancel the event
+#	cancel event
 command /proleave:
 	permission: essentials.socialspy
 	trigger:
@@ -21,6 +31,7 @@ command /setdoor:
 	trigger:
 		if {settingdoor.%player%} is not set:
 			set {cmd.doorspot} to location of player
+			delete {cmd.door::*}
 			set {settingdoor.%player%} to true
 			message "Now setting magic door..."
 		else:
@@ -41,11 +52,11 @@ every 2 ticks:
 			wait 1 real second
 			execute console command "/playsound dig.stone %loop-player%"
 			loop {cmd.door::*}:
-				set block at location of block at loop-value to cobblestone
+				set block at loop-value-2 to cobblestone
 			wait 2 real seconds
 			execute console command "/playsound dig.stone %loop-player%"
 			loop {cmd.door::*}:
-				set block at location of block at loop-value to air
+				set block at loop-value-2 to air
 	if {_loopcounta} is 0:
 		loop {cmd.door::*}:
 			set block at location of block at loop-value to stone

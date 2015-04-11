@@ -90,7 +90,7 @@ command /fixprefix:
 			set the player's prefix to "&f[&4&oChampion&f] "
 			stop
 		if primary group of player is "Elite":
-			set the player's prefix to "&f[&4a&oElite&f] "
+			set the player's prefix to "&f[&a&oElite&f] "
 			stop
 		if primary group of player is "Noble":
 			set the player's prefix to "&f[&b&oNoble&f] "
@@ -267,7 +267,8 @@ on rightclick on villager or librarian or butcher or farmer or priest or blacksm
 on shoot:
 
 on damage:
-	victim is villager
+	victim is a villager
+	victim is not a player
 	name of victim is not " "
 	cancel event
 	send "&cSorry, you can't damage this villager!" to attacker

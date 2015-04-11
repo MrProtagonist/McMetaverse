@@ -11,23 +11,34 @@ variables:
 	{randommessage::7} = "Visit &a&oMcMetaverse.com&e&o often to stay informed!"
 	{randommessage::8} = "You can join a private &a&o/chat&e&o channel with friends!"
 	{randommessage::9} = "Be sure you are familiar with the &a&o/rules&e&o."
-	{randommessage::10} = "New content is constantly added. Check back often for new things to do and see!"
+	{randommessage::10} = "New content is constantly added. Check the &a&o/changelog&e&o often for a list of what's new!"
 	{randommessage::11} = "You can catch mobs with some redstone and eggs!"
 	{randommessage::12} = "Never ask an &c&oAdmin&e&o or &a&oDev &e&oto fix something in chat! They only respond to &a&o/ticket&e&os"
 	{randommessage::13} = "Cursing is allowed, but unnecessarily profane remarks or harassment are not tolerated."
 	{randommessage::14} = "Start an item auction by typing &a&o/auc start &e&o<&a&oprice&e&o>, then place the item you want to auction in the popup inventory!"
 	{randommessage::15} = "Feeling generous? Buy all your fellow community members a drop party for only $1 in the &a&o/buy&e&o menu."
-	{randommessage::16} = "Did you know you can browse houses and properties for sale by using &a&o/realestate&e&o menu?"
-	{randommessage::17} = "Did you know we have a &a&o/bank&e&o? Use &a&o/deposit&e&o and &a&o/withdraw&e&o to manage your bank account!"
+	{randommessage::16} = "Did you know you can browse houses and properties for sale by using the &a&o/realestate&e&o menu?"
+	{randommessage::17} = "Did you know we have a &a&o/bank&e&o with daily interest? Use &a&o/deposit&e&o and &a&o/withdraw&e&o to manage your bank account!"
+	{randommessage::18} = "Have you fallen in love? Want to settle down? Craft a wedding ring and propose to your love! Recipe at the chapel in &a&o/spawn&e&o."
+	{randommessage::19} = "Want to safely trade with another player? Type &a&o/trade <username>&e&o and have them accept with &a&o/trade accept&e&o for a completely safe trading interface."
+	{randommessage::20} = "Rumor has it there is a hidden worship temple for Notch at spawn which gives you daily rewards."
+	{randommessage::21} = "Watch out for rare Infernal Mobs! They spawn randomly, but can kill you if you aren't careful!"
+	{randommessage::22} = "Be kind to others and you may be taken to the Prize Room!"
+	{randommessage::23} = "Are you knowledgable in running a Minecraft server? Have a love for coding? Apply for staff on our website!"
+	{randommessage::24} = "Check the store on our website for amazing and cheap offers such as custom villagers, heads, and more!"
+	{randommessage::25} = "Did you know we use over 100 customized scripts? That's over 100,000 lines of code!"
+	{randommessage::26} = "Frequently forget things? Use &a&o/note&e&o to keep track of random things you may need to remember!"
+	{randommessage::27} = "Tell the community a bit about yourself by completing your &a&o/profile&e&o."
+	{randommessage::28} = "Feel like you are lagging? Type &a&o/ping&e&o. If your ping is over 200 ms, it's your internet. If your client is skippy, lower your video settings and render distance."
 command /announcenow:
 	permission: is.op
 	trigger:
-		broadcast "[&aSERVER&f] &e&oDid you know we have a &a&o/bank&e&o? Use &a&o/deposit&e&o and &a&o/withdraw&e&o to manage your bank account!"
-every 7 real minutes:
-	set {_num} to a random integer between 1 and 17
+		broadcast "[&aSERVER&f] &e&oNew content is constantly added. Check the &a&o/changelog&e&o often for a list of what's new!"
+every 8 real minutes:
+	set {_num} to a random integer between 1 and 28
 	if {announce.last} is {_num}:
 		add 1 to {_num}
-	if {_num} is 18:
+	if {_num} is 29:
 		set {_num} to 1
 	set {announce.last} to {_num}
 	broadcast "&f[&aSERVER&f] &e&o%{randommessage::%{_num}%}%"

@@ -6,12 +6,21 @@ on script load:
 	set {boatrace.players} to 0
 	loop all players:
 		set {boatrace.%loop-player%.playing} to false
+	if {boatrace.best.time} is not set:
+		set {_now} to now
+		wait 2 ticks
+		set {_then} to now
+		set {boatrace.best.time} to difference between {_now} and {_then}
+		set {boatrace.best.player} to "MrProtagonist"
 on join:
 	{boatrace.%player%.playing} is not set
 	set {boatrace.%player%.playing} to false
 on quit:
 	{boatrace.%player%.playing} is true
 	subtract 1 from {boatrace.players}
+on command:
+	{boatrace.%player%.playing} is true
+	message "&cFinish the race!"
 command /setboat <integer>:
 	permission: is.pro
 	trigger:
@@ -36,24 +45,20 @@ command /setboat <integer>:
 command /boatrace:
 	trigger:
 		if {boatrace.going} is not true:
-			message "one"
 			message "%{boatrace.%player%.playing}%"
 			if {boatrace.%player%.playing} is not set:
 				set {boatrace.%player%.playing} to false
-				message "two"
 			{boatrace.%player%.playing} is false
-			message "three"
 			if {boatrace.players} is 5:
 				message "&cSorry, this game is full!"
 				stop
-			if player can hold 36 wood swords:
-				message "four"
-				add 1 to {boatrace.players}
-				set {boatrace.%player%.playing} to true
-				teleport player to {boat.spawn}
-				message "&aJoined &b&oBoat Race&a!"
-			else:
-				message "&cClear your inventory!"
+#			if player can hold 36 wood swords:
+			add 1 to {boatrace.players}
+			set {boatrace.%player%.playing} to true
+			teleport player to {boat.spec}
+			message "&aJoined &b&oBoat Race&a!"
+#			else:
+#				message "&cClear your inventory!"
 		else:
 			message "&cA race is already going!"
 			teleport player to {boatrace.spec}
@@ -78,13 +83,13 @@ command /startboat:
 		loop all players:
 			{boatrace.%loop-player%.playing} is true
 			execute console command "tm msg %loop-player% &61"
-			give loop-player 10 snowballs
+#			give loop-player 10 snowballs
 		wait 1 real second
 		loop all players:
 			{boatrace.%loop-player%.playing} is true
 			execute console command "tm msg %loop-player% &aGO"
 			teleport loop-player to {boat.%{_boatcount}%}
-			set {pvp.%loop-player%} to 1
+#			set {pvp.%loop-player%} to 1
 			add 1 to {_boatcount}
 		wait 1 tick
 		loop all players:
@@ -134,6 +139,10 @@ on walking on glowstone:
 	add 1 to {boatrace.winners}
 	{boatrace.players} is 0
 	broadcast "&f[&aSERVER&f] &6%{boatrace.first}%&a won &b&oBoat Race&a in only &f%{boatrace.%{boatrace.first}%.time}%"
+	if {boatrace.%{boatrace.first}%.time} is greater than {boatrace.best.time}:
+		set {boatrace.best.time} to {boatrace.%{boatrace.first}%.time}
+		set {boatrace.best.player} to {boatrace.first}
+		broadcast "&f[&aSERVER&f] &6%{boatrace.first}%&a just set the high score for &b&oBoat Race&a!"
 	execute console command "eco give %{boatrace.first}% 200"
 on vehicle destroy:
 	vehicle of the player is a boat

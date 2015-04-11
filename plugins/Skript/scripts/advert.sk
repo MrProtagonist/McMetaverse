@@ -1,0 +1,133 @@
+﻿script options:
+    $ developer mode
+command /adreview [<text>] [<text>]:
+	permission: essentials.socialspy
+	trigger:
+		if arg 1 is not set:
+			message "&a&lPending Ads"
+			loop {ad.pending::*}:
+				message "&6%loop-index%&f - &r%colored {ad.pending::%loop-index%}%"
+			message "&bType &a/adreview (approve/deny) (username)"
+			stop
+		if arg 1 is "approve":
+			if {ad.pending::%arg 2%} is set:
+				message "&aYou have approved the ad of %arg 2%."
+				execute console command "mail send %arg 2% Your ad was approved by %player% at %now%. It will run for 48 hours unless you extend the time."
+				set {ad.list::%arg 2%} to {ad.pending::%arg 2%}
+				delete {ad.pending::%arg 2%}
+		if arg 1 is "deny":
+			if {ad.pending::%arg 2%} is set:
+				message "&cYou have denied the ad of %arg 2%. Refunding them..."
+				execute console command "eco give %arg 2% 5000"
+				execute console command "mail send %arg 2% Your ad submission has been declined and you were refunded. Please revise your ad to follow our rules and try again."
+				set {ad.list::%arg 2%} to {ad.pending::%arg 2%}
+				delete {ad.pending::%arg 2%}
+				delete {ad.time::%arg 2%}
+				delete {ad.list::%arg 2%}
+			else:
+				message "&cCould not find a submission by that player. Check the spelling."
+				stop
+command /ad [<text>]:
+	permission: sk.ad
+	trigger:
+		if arg is set:
+			if player's balance is greater than 5000:
+				if arg is "confirm":
+					{ad.%player%.temp} is set
+					set {ad.pending::%player%} to {ad.%player%.temp}
+					set {ad.time::%player%} to 49
+					execute console command "eco take %player% 5000"
+					message "&eYour ad has been submitted for review. Type &a/ad&e to see it's status. This can take up to 48 hours."
+					delete {ad.%player%.temp}
+					stop
+				if arg is "extend":
+					if {ad.time::%player%} is set:
+						if {ad.pending::%arg%} is set:
+							message "&cYour ad hasn't been approved yet, so time isn't being deducted and can't be extended."
+							stop
+						else:
+							if player's balance is greater than 4000:
+								execute console command "eco take %player% 4000"
+								message "&aAdded 48 hours to your campaign!"
+								add 48 to {ad.time::%player%}
+								stop
+							else:
+								message "&cYou don't have enough money!"
+								stop
+					else:
+						message "&cYou don't have an ad!"
+						stop
+				if arg is "cancel":
+					if {ad.time::%player%} is set:
+						if {ad.pending::%player%} is set:
+							message "&cDeleted your ad submission!"
+							execute console command "eco give %player% 5000"
+							delete {ad.pending::%player%}
+							delete {ad.time::%player%}
+							delete {ad.list::%player%}
+							stop
+						else:
+							message "&cYour ad has been deleted."
+							delete {ad.pending::%player%}
+							delete {ad.time::%player%}
+							delete {ad.list::%player%}
+							stop
+					else:
+						message "&cYou don't have an ad!"
+				else:
+					send json of "&f[&b&lHover for ad rules before submitting!&f]" tooltip "&c&lAd Guidelines:%new line%&e1. You must advertise something purchasable.%new line%&e2. Your ad must adhere to all server &a/rules&e.%new line%&e3. No annoying ads or matrix characters. (&r&kj&r&e)" to player
+					message "&eThis is exactly how it will appear:"
+					message "&f[&6Ad&f] %colored arg%"
+					message "&eIf this is correct, type &a/ad confirm"
+					message "&eOtherwise, resubmit with &a/ad <text>"
+					send json of "&f[&b&lHover for ad rules before submitting!&f]" tooltip "&c&lAd Guidelines:%new line%&e1. You must advertise something purchasable.%new line%&e2. Your ad must adhere to all server &a/rules&e.%new line%&e3. No matrix characters. (&r&kj&r&e)" to player
+					set {ad.%player%.temp} to arg
+					stop
+			else:
+				message "&cYou need at least $5000 to place an ad."
+				stop
+		else:
+			if {ad.time::%player%} is set:
+				message " "
+				if {ad.pending::%player%} is set:
+					message "&b&lYour ad: &f[&6Ad&f] %colored {ad.pending::%player%}%"
+				else:
+					message "&b&lYour ad: &f[&6Ad&f] %colored {ad.list::%player%}%"
+				if {ad.pending::%player%} is set:
+					message "&b&lStatus: &r&e&oAwaiting Review"
+				else:
+					message "&b&lStatus: &r&a&oApproved"
+					if {ad.time::%player%} is 49:
+						message "&b&lTime remaining: &e48 hours"
+						message "&eType &a/ad extend&e to buy 48 more hours for $4000"
+					else:
+						message "&b&lTime remaining: &e%{ad.time::%player%}% hours"
+						message "&eType &a/ad extend&e to buy 48 more hours for $4000"
+			else:
+				message "&cYou have no ad. You may place one with &a/ad Your ad here."
+				
+every 25 real minutes:
+	set {_tempcounter} to 0
+	delete {temp.list::*}
+	loop {ad.list::*}:
+		add 1 to {_tempcounter}
+		add loop-index to {temp.list::*}
+	{_tempcounter} is greater than 0
+	set {_random} to a random integer between 1 and {_tempcounter}
+	set {_tempplayer} to {temp.list::%{_random}%}
+	set {_temptext} to {ad.list::%{temp.list::%{_random}%}%}
+	broadcast "&f[&6Ad&f] %colored {_temptext}%"
+command /clearads:
+	permission: is.pro
+	trigger:
+		delete {ad.list::*}
+		delete {ad.time::*}
+		message "&cDone!"
+
+every hour:
+	loop {ad.list::*}:
+		{ad.pending::%loop-index%} is not set
+		subtract 1 from {ad.time::%loop-index%}
+		if {ad.time::%loop-index%} is 0:
+			delete {ad.time::%loop-index%}
+			delete {ad.list::%loop-index%}

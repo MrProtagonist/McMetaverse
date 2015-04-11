@@ -1,0 +1,14 @@
+Data:
+  Easy:
+    NumbersToUse: '12'
+    MathSimbolsToUse: '+-'
+    EquationLenght: 3
+  Medium:
+    NumbersToUse: '123'
+    MathSimbolsToUse: '+-*'
+    EquationLenght: 4
+  Hard:
+    NumbersToUse: '1234'
+    MathSimbolsToUse: '+-*/'
+    EquationLenght: 6
+  

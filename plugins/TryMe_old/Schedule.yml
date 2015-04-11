@@ -1,0 +1,13 @@
+# You can setup start and stop times for game to begin and stop
+# Enable it in config file under UseScheduler setting
+# Its in 24 hour format, so dont use AM PM :)
+# You can set it to be accutate to the second, if you want.
+# setup SchedulerInterval in config file to 1 sec or more. By default its 60 (1 min)
+# Questions, Flash or Decode will describe game mode you want to use at that hour
+
+Timer:
+  1: Questions-09:10:00-10:15:10
+  2: Flash-11:20:15-12:00:00
+  3: Decode-14:00:25-16:00:00
+  4: Decode-17:01:11-17:30:35
+  5: Questions-18:00:00-20:00:00

@@ -110,7 +110,7 @@ command /forgotpin <text>:
 on command:
 	{setpin.%player%} is true
 	{locked.%player%} is true
-	command is not "login" or "mcstats" or "mcscoreboard"
+	command is not "login" or "mcstats" or "mcscoreboard" or "rules" or "agree"
 	message "&e&oYou must first &a&o/login&e&o."
 	cancel the event
 on chat:

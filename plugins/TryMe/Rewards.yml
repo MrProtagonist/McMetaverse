@@ -1,43 +1,94 @@
 # Reward file
-# You can have unlimited rewards in total and unlimited in one line, just keep in mind the message length
-# ###############################
-# First - example of "[amount]%"
-# Hardest to understand entirely, but I will try to explain :)
-# Represents what chance you have to get this reward line. Basically code just picks random line and then checks if this line is approved (by percentage). Else it will try to find another line, and another, and another until its finds match. So its don't mean that if you will set this line to 100% and you will get it every time. You will still have chance to get another lines.
-# Keep in mind that this number will be lower depending on how many lines you have in total. Try to keep total percentage from all lines around 100%, its gonna be easier for you to know what chance this line will have, but still its not essential to do this, you can have 1% or like 10 000% in total, plugin will still work fine :)
-# ###############################
-# Second - example of "money-[amount]"
-# How much money to give player for correct answer
-# ###############################
-# Third - example of "item-[id]:[metadata]:[quantity]>enchant:[ENCHANT_NAME]=3/[ENCHANT_NAME]=2;lore:[FirstLine]/[SecondLine];name:[name]"
-# Gives item by its id, metadata and quantity, you can give separate enchantments, lore or name (optional). All color codes are supported.
-# [metadata] is optional and you can skip it when defining items like Swords. You can use just like "item-272:1" it will give the winner ONE STONE SWORD 
-# If you want to to give colored wool or something with meta data, use like "item-35:14:1", it will give ONE RED WOOL to the winner
-# ###############################
-# Fourth - example of "command-give [player] apple 1"
-# Executes command of your choice, while you can use variable [player] to get the winning players name
-# ###############################
-# Fifth - example of "broadcast-[player] won!"
-# Broadcasts custom message to all server, if not defined, will broadcast default message. Full color code support
-# ###############################
-# Sixth - example of "message-&2Dude you won!"
-# Same as broadcast, but this message will be shown ONLY to the winner. Full color code support
-# Multiple rewards on the same line should be separated with "," (except quotes)
-# ###############################
-
+Example:
+# This is example, real rewards below
+  RewardName:
+    Chance: 20
+    # Chance to pick this question in percentage
+    Money: 20
+    # How much money to give player for correct answer
+    Items:
+    # Gives item by its id, metadata and quantity, you can give separate enchantments, lore or name (optional). All color codes are supported. 
+    # You can give more items just by adding next number
+      '1':
+        Id: 276
+        Meta: 0
+        Qty: 1
+        Name: '&2Stone Sword'
+        Lore: 
+        - '&bSpecial Prize'
+        - '&bfor [player]'
+        Enchants:
+        - DAMAGE_ALL=1
+        - FIRE_ASPECT=1      
+      '2':
+        Id: 35
+        Meta: 15
+        Qty: 2
+    Commands:
+    # Executes command of your choice, while you can use variable [player] to get the winning players name
+    - 'give [player] tnt 1'
+    - 'give [player] apple 1'
+    PrivateMessages:
+    # Message will be shown ONLY to the winner. Full color code support. Multiple lines support
+    - '&aYou just got some TnT'
+    - '&cSorry, you didn''t win anything this time'
+    Broadcasts:
+    # Message to all server, if not defined, will broadcast default message. Full color code support Multiple lines support
+    - '&3[player] &ajust got some TnT!'
+    - '&3[player] &aGot tasty apple!'
+   
 Rewards:
-  - 10%money-100,item-272:1>name:&aStone Sword;lore:&b&oSpecial Prize,broadcast-&a[player] won a stone sword!
-  - 10%money-1,item-283:1>enchant:DAMAGE_ALL=1/FIRE_ASPECT=1;lore:&b&oSpecial Prize;name:&2Golden Sword,broadcast-&a[player] won a special golden sword!
-  - 10%money-10,command-give [player] tnt 1,broadcast-&a[player] just got some TnT!
-  - 10%command-give [player] apple 1,broadcast-&a[player] got a tasty apple!
-  - 12%broadcast-&a[player] wins nothing this time.
-  - 100%command-eco give [player] 75,broadcast-&a[player] wins $75.
-  - 5%command-eco give [player] 1000,broadcast-&aYou won a rather large chunk of cash! Our rarest item!
-  - 100%command-eco give [player] 150,broadcast-&a[player] won $150.
-  - 100%command-adjustbonusclaimblocks [player] 100,broadcast-&a[player] just got 100 claim blocks!
-  - 100%command-give [player] 47 5,broadcast-&a[player] got five bookshelves!
-  - 100%broadcast-&a[player] gets nothing but bragging rights this round!
-  - 10%broadcast-&a[player] got an Enderchest!,command-give [player] enderchest 1
-  - 100%broadcast-&a[player] got some XP Bottles!,command-give [player] 384 15
-  - 100%broadcast-&a[player] got a diamond!,command-give [player] 264 1
-  - 10%broadcast-&a[player] got 5 diamonds!,command-give [player] 264 5
+  First:
+    Chance: 10
+    Money: 100
+    Items:
+      '1':
+        Id: 272
+        Meta: 0
+        Qty: 1
+        Name: '&2Stone Sword'
+  Second:
+    Chance: 20
+    Money: 20
+    Items:
+      '1':
+        Id: 276
+        Meta: 0
+        Qty: 1
+        Lore: 
+        - '&bSpecial Prize'
+        - '&bfor [player]'
+  Third:
+    Chance: 30
+    Money: 10
+    Items:
+      '1':
+        Id: 283
+        Meta: 0
+        Qty: 1
+        Name: '&2Stone Sword'
+        Lore: 
+        - '&bSpecial Prize'
+        - '&bfor [player]'
+        Enchants:
+        - DAMAGE_ALL=1
+        - FIRE_ASPECT=1
+  Fourth:
+    Chance: 10
+    Money: 10
+    Commands:
+    - 'give [player] tnt 1'
+    PrivateMessages:
+    - '&aYou just got some TnT'
+    Broadcasts:
+    - '&3[player] &ajust got some TnT!'
+  Fifth:
+    Chance: 10
+    Commands:
+    - 'give [player] apple 1'
+    PrivateMessages:
+    - '&aYou got a tasty apple'
+  Sixth:
+    Chance: 2
+    PrivateMessages:
+    - '&cSorry, you didn''t win anything this time'

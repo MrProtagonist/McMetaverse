@@ -1,0 +1,13 @@
+﻿script options:
+    $ developer mode
+on server ping:
+	set motd to "&a&k.&r &a&k.&r &a&k.&r &a&k.&r&f&lThe Metaverse&a&k.&r &a&k.&r &a&k.&r &a&k.&r &e McMetaverse.com%new line%%colored {motd}%"
+command /setmotd <text>:
+	permission: essentials.socialspy
+	trigger:
+		message "&aThis is how the server now looks when being pinged:"
+		message "&a&k.&r &a&k.&r &a&k.&r &a&k.&r&f&lThe Metaverse&a&k.&r &a&k.&r &a&k.&r &a&k.&r &e McMetaverse.com%new line%%colored arg%"
+		set {motd} to arg
+command /testholo:
+	trigger:
+		send title from "&a&lUpdates!" and "&6Added TITLES" to player for 20, 60, 20

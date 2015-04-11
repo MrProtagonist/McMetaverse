@@ -43,7 +43,7 @@ command /deny:
                         set {challenged.%player%} to false
                         set {arena.going} to false
                         broadcast "&a&o%player%&e&o has declined the challenge by %{challenge.challenger}%."
-command /accept:
+command /acceptpvp:
         description: Accept a challenge
         trigger: 
                 {challenged.%player%} is false:

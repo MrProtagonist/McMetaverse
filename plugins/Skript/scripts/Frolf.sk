@@ -1,32 +1,176 @@
 script options:
     $ developer mode
-command /test:
+on script load:
+	set {frolf.playercount} to 0
+	set {frolf.going} to false
+	set {frolf.countdown} to false
+	set {frolf.course} to 1
+	delete {frolf.shooting}
+	delete {frolf.players::*}
+	delete {frolf.teecount}
+	loop all players:
+		delete {frolf.%loop-player%.loc}
+		delete {frolf.%loop-player%.playing}
+command /frolf:
 	trigger:
-		send "&a&lStand still and take your shot"
+		{frolf.%player%.playing} is not set
+		set {frolf.%player%.playing} to true
+		send "&a&lWelcome to Frolf."
+		add player to {frolf.players::*}
+		add 1 to {frolf.playercount}
+		set action bar of player to "&a%{frolf.playercount}% ready to play!"
+		teleport player to {frolf.lobby}
+		
 		set {frolf.%player%.loc} to location of block at player's head
 		apply jump boost -5 to the player for 100000000 hours
 		set the player's walk speed to 0.01
-		
+command /startfrolf:
+	permission: is.op
+	trigger:
+		{frolf.playercount} is greater than 0
+		{frolf.countdown} is false
+		set {frolf.countdown} to true
+		broadcast "&f[&aFrolf&f] Starting in 10 seconds."
+		wait 10 real seconds
+		loop all players:
+			{frolf.%loop-player%.playing} is true
+#			teleport loop-player to {frolf.spawn}
+			set action bar of loop-player to "&a&lFrolf has started!"
+		wait 3 real seconds
+		teleport {frolf.players::1} to {frolf.spawn}
+		set {frolf.warpcounter} to 2
+		set {frolf.holecount} to 0
+		loop {frolf.tees::*}:
+			add 1 to {frolf.holecount}
+		set {frolf.course} to 1
+		set {_tempfrolfcount} to 1
+		set {frolf.shootcount} to 1
+		loop all players:
+			{frolf.%loop-player%.playing} is true
+			if loop-player is {frolf.players::1}:
+				set action bar of loop-player to "&a&lYou are first! Take your shot!"
+				teleport loop-player to {frolf.tees::1}
+				set {frolf.shooting} to loop-player
+			else:
+				teleport loop-player to {frolf.waiting.1::%{_tempfrolfcount}%}
+				add 1 to {_tempfrolfcount}
+				set action bar of loop-player to "&a&l%{frolf.players::1}% is first."
+		wait 3 real seconds
+		set {_frolfdistance} to distance between {frolf.players::1} and {frolf.goals::1}
+		set action bar of {frolf.players::1} to "&6{_frolfdistance} blocks away."
 on shoot:
-	if {frolf.%shooter%.loc} is set:
-		if {_loc} is not location of block at shooter's head:
-			send "You didn't stand still!"
-			delete {frolf.%shooter%.loc}
-			stop
-		else:
-			wait 3 ticks
-			execute console command "gm 1 %shooter%"
-			make shooter ride the projectile
+	if shooter is {frolf.shooting}:
+#		if {_loc} is not location of block at shooter's head:
+#			send "You didn't stand still!"
+#			delete {frolf.%shooter%.loc}
+#			stop
+#		else:
+		wait 3 ticks
+		execute console command "gm 1 %shooter%"
+		make shooter ride the projectile
+		set {frolf.%player%.shot} to true
+		loop all players:
+			{frolf.%loop-player%.playing} is true
+			loop-player is not shooter
+			set action bar of loop-player to "&a&l%shooter% just took their shot!"
 on projectile hit:
+	{frolf.%shooter%.shot} is true
+	set {frolf.%shooter%.shot} to false
 	if {frolf.%shooter%.loc} is set:
 		set the shooter's walk speed to .2
 		remove jump boost from the shooter
+		add 1 to {frolf.shootcount}
 		set {_distance} to distance between {frolf.%shooter%.loc} and the shooter
 		send "&a&l%{_distance}% blocks!" to shooter
 		set action bar of shooter to "&a&l%{_distance}% blocks!"
 		delete {frolf.%shooter%.loc}
-		loop all blocks in radius 5 of projectile:
+		loop all blocks above the shooter:
 			loop-block is air
 			block 1 meter above loop-block is air
-			teleport shooter to loop-block
+			teleport shooter to block 1 meter above loop-block
+			exit 1 section
 		execute console command "gm 0 %shooter%"
+		kill projectile
+		delete projectile
+		wait 1 real second
+		if {frolf.players::%{frolf.playercount}%} is shooter:
+			add 1 to {frolf.holecount}
+			set {frolf.shootcount} to 1
+		loop all players:
+			{frolf.%loop-player%.playing} is true
+			set action bar of loop-player to "&a&oIt is now %{frolf.players::%{frolf.shootcount}%}%'s turn."
+		teleport {frolf.players::%{frolf.shootcount}%} to {frolf.tees::%{frolf.holecount}%}
+command /frolf <text>:
+	trigger:
+		if arg is "lobby":
+			set {frolf.lobby} to location of player
+			message "&aDone!"
+		if arg is "spec":
+			set {frolf.spec} to location of player
+			message "&aDone!"
+		if arg is "spawn":
+			set {frolf.spawn} to location of player
+			message "&aDone!"
+		if arg is "course":
+			set {frolf.setting} to player
+			set {frolf.counter} to 1
+			message "&aNow in edit mode. Place glowstone in order."
+			delete {frolf.goals::*}
+		if arg is "tee":
+			if {frolf.teecount} is not set:
+				set {frolf.teecount} to 1
+			else:
+				add 1 to {frolf.teecount}
+			add location of player to {frolf.tees::*}
+			message "&aAdded number %{frolf.teecount}%"
+command /leavefrolf:
+	trigger:
+		{frolf.%player%.playing} is true
+		if {frolf.shooting} is player:
+			message "&cYou must take your shot before you leave!"
+			stop
+		set {frolf.%player%.playing} to false
+		teleport player to {frolf.lobby}
+		teleport player to {frolf.lobby}
+		subtract 1 from {frolf.playercount}
+		loop {frolf.players::*}:
+			loop-value is player
+			delete {frolf.players::%loop-index%}
+on quit:
+	{frolf.%player%.playing} is true
+	if {frolf.shooting} is player:
+		message "&cYou must take your shot before you leave!"
+		stop
+	set {frolf.%player%.playing} to false
+	teleport player to {frolf.lobby}
+	teleport player to {frolf.lobby}
+	subtract 1 from {frolf.playercount}
+	loop {frolf.players::*}:
+		loop-value is player
+		delete {frolf.players::%loop-index%}
+command /addtee:
+	trigger:
+		if {hole.counter} is not set:
+			set {hole.counter} to 1
+			set {frolf.spawn} to location of player
+		add location of player to {frolf.tees::%{hole.counter}%}
+		message "&aAdded Tee %{hole.counter}%"
+		add 1 to {hole.counter}
+on place of glowstone:
+	{frolf.setting} is player
+	add location of event-block to {frolf.goals::*}
+	message "&cAdded hole %{frolf.counter}%!"
+	add 1 to {frolf.counter}
+on quit:
+	{frolf.setting} is player
+	delete {frolf.setting}
+on command:
+	command is not "leavefrolf"
+	{frolf.%player%.playing} is true
+	cancel event
+	message "&cNo commands allowed in frolf! If you want, you may &a/leavefrolf&a."
+
+command /test:
+	trigger:
+		spawn a guardian at location of player
+		make player ride spawned entity
