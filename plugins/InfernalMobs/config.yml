@@ -1,0 +1,181 @@
+#Chance is the chance that a mob will not be infernal, the lower the number the higher the chance. (min 1)
+#Enabledworlds are the worlds that infernal mobs can spawn in.
+#Enabledmobs are the mobs that can become infernal.
+#Loot is the items that are dropped when an infernal mob dies. (You can have up to 64)
+#Item is the item, Amount is the amount, Durability is how damaged it will be (0 is undamaged).
+#nameTagsLevel is the visibility level of the name tags, 0 = no tag, 
+#1 = tag shown when your looking at the mob, 2 = tag always shown.
+#Note, if you have name tags set to 0, on server restart all infernal mobs will turn normal.
+#If you want to enable the boss bar you must have BarAPI on your server.
+#nameTagsName and bossBarsName have these special tags: <mobLevel> = the amount of powers the boss has.
+#<abilities> = A list of about 3-5 (whatever can fit) names of abilities the boss has.
+#<mobName> = Name of the mob, so if the mob is a creeper the mobName will be "Creeper".
+chance: 99
+levelChance:
+  3: 1
+  4: 2
+  5: 3
+  6: 4
+  7: 5
+namePrefix: "&fInfernal"
+levelPrefixs:
+  3: "&fMad"
+  4: "&fRabid"
+  5: "&fGiant"
+  6: "&fKing"
+  7: "&fInfernal"
+nameTagsLevel: 1
+nameTagsName: "&f<prefix> <mobName>"
+bossBarsName: "&fLevel <mobLevel> &f<prefix> <mobName>"
+#bossBarsName: "&f<prefix> <abilities><mobName>"
+enableBossBar: false
+enableScoreBoard: false
+showHealthOnScoreBoard: true
+#effectAllPlayerAttacks means that for example if the player damages a mob with the poison
+#power the player will be poisoned no mater how he did it, even if he was using a bow.
+effectAllPlayerAttacks: true
+enableParticles: true
+enableDeathMessages: true
+#A message from this list will be chosen randomly, player=Player's name, mob=Mob type, weapon=Weapon player is holding.
+deathMessages: 
+  - "&cplayer &chas killed an mob&c!"
+  - "&cAn mob &cwas slain by player&c!"
+  - "&cplayer &cowned an mob&c!"
+  - "&cAn mob &cwas beheaded by player&c's weapon!"
+  - "&cplayer&c's weapon &ckilled an mob&c!"
+  - "&cAn mob &cwas killed by player &cusing a weapon&c!"
+#spawnMessageRadius is the distance around the mob that players will get the message. -1 is everyone in that world, -2 is everyone on the server.
+enableSpawnMessages: false
+spawnMessageRadius: 25
+#A message from this list will be chosen randomly when a mob spawns, mob=Mob type.
+spawnMessages: 
+  - "&cAn Infernal mob has spawned near you!"
+enabledworlds:
+  - <all>
+enabledmobs:
+  - PigZombie
+  - Skeleton
+  - Zombie
+  - Spider
+  - LavaSlime
+  - Witch
+  - Wolf
+  - Creeper
+  - Ghast
+  - Giant
+  - EnderDragon
+  - WitherBoss
+  - Bat
+  - MushroomCow
+  - Cow
+  - Sheep
+  - Pig
+  - Chicken
+  - SnowMan
+  - Ozelot
+  - EntityHorse
+  - CaveSpider
+  - SilverFish
+  - Blaze
+  - Enderman
+  - Slime
+  - Squid
+  - VillagerGolem
+  - WitherSkeleton
+#Set a ability to false to disable it.
+poisonous: true
+armoured: true
+blinding: true
+withering: true
+tosser: true
+thief: true
+quicksand: true
+bullwark: true
+rust: true
+sapper: true
+1up: true
+cloaked: true
+ender: true
+ghastly: true
+lifesteal: true
+sprint: true
+storm: true
+webber: true
+vengeance: true
+weakness: true
+berserk: true
+explode: true
+potions: true
+mama: true
+molten: true
+archer: true
+necromancer: true
+firework: true
+gravity: true
+flying: true
+mounted: always
+morph: true
+ghost: true
+confusing: true
+#Power configuration:
+mamaSpawnAmount: 3
+vengeanceDamage: 6
+berserkDamage: 3
+moltenBurnLength: 5
+gravityLevitateLength: 6
+horseMountsHaveSaddles: true
+armouredMountsHaveArmour: true
+fireworkColour: 
+    red: 255
+    green: 10
+    blue: 10
+mobParticles: 
+  - "lavaSpark:1:10"
+#mountFate is what will happen to mounts when their infernal master/rider dies, you can put: nothing, death, removal.
+mountFate: nothing
+enabledMounts: 
+  - Spider
+  - MushroomCow
+  - Cow
+  - Sheep
+  - Pig
+  - EntityHorse
+  - Slime
+  - Ghast
+enabledRiders: 
+  - PigZombie
+  - Skeleton
+  - Zombie
+  - Witch
+  - Creeper
+  - SnowMan
+  - Enderman
+  - WitherSkeleton
+disabledBabyMobs: 
+  - Wolf
+  - MushroomCow
+  - Cow
+  - Sheep
+  - Pig
+  - Chicken
+  - Ozelot
+  - EntityHorse
+#The min/max amount of powers that a mob will get.
+#NOTE: the amount of enabled powers must not be less than the maxpowers.
+#healthMultiplier is what number the infernal mobs health will be multiplied by.
+#If you have healthByPower enabled then healthMultiplier and healthByDistance will do nothing.
+#dropChance is the chance a dead mob will drop loot, the lower the higher the chance (min 1)
+#xpMultiplier is what the normal xp a mob drops will be multiplied by.
+#healthByDistance makes mobs HP go up as you go further from the world spawn.
+#Every addDistance blocks the mobs will get healthToAdd times how far they are HP.
+minpowers: 3
+maxpowers: 7
+healthMultiplier: 4
+healthByPower: false
+healthByDistance: false
+healthToAdd: 5
+addDistance: 200
+enableDrops: true
+dropChance: 1
+xpMultiplier: 8
+enableFarmingDrops: false
