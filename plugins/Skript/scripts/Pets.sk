@@ -2,14 +2,14 @@ on script load:
 	loop {pets.pets::*}:
 		kill loop-value
 		damage loop-value by 50 hearts
-		send "&cYour pet has just died due to the skript being reloaded. Sorry =/." to {pets.owners::%loop-index%}
+		send "&f[&dPets&f] &cYour pet has just died due to the skript being reloaded. Sorry =/." to {pets.owners::%loop-index%}
 	delete {pets.pets::*}
 	delete {pets.owners::*}
 	delete {pets.active::*}
 	loop all players:
 		delete {pet.%loop-player%}
 command /pet [<text>] [<text>]:
-	permission: is.premium
+#	permission: is.premium
 	trigger:
 		if arg 1 is set:
 			if arg 2 is set:
@@ -177,6 +177,14 @@ command /pet [<text>] [<text>]:
 						add player to {pets.owners::*}
 						add true to {pets.active::*}
 						set {pet.%player%} to spawned entity
+					else:
+						message "&d-------------------------------------------------"
+						message "&6&lPet Menu"
+						message "&fUSAGE - &a/pet <type> <name>"
+						message "&ePet Types:"
+						message "&fCat, dog, pig, sheep, mooshroom, cow, rabbit, chicken"
+						message "&d-------------------------------------------------"
+						stop
 					set {pet.%player%.name} to arg 2
 					set {pet.%player%.baby} to true
 					set {owner.%spawned entity%} to player
@@ -273,6 +281,7 @@ command /pet [<text>] [<text>]:
 					message "&a/Pet stay &f- Pet will not follow you. May wander."
 					message "&a/Pet baby &f- Pet will be a baby."
 					message "&a/Pet adult &f- Pet will be an adult."
+					message "&a/Pet color <color> &f- Change your pet's color."
 					message "&a/Pet kill &f- Pet will die."
 					message "&d-------------------------------------------------"
 			else:
@@ -291,6 +300,7 @@ on damage:
 on death:
 	{owner.%entity%} is set
 	clear drops
+	remove drops
 on quit:
 	loop {pets.owners::*}:
 		loop-value is player

@@ -31,11 +31,7 @@ on command "/sethome":
 on quit:
 	player has permission "essentials.socialspy"
 	set {staff.members::%player%} to now
-every 10 real seconds:
-	loop all entities in world "Never_End":
-		loop-entity is ender dragon
-		kill loop-entity
-		broadcast "Found and killed an ender dragon!"
+
 on chat:
 	replace all "never end" or "neverend" or "never-end" with "&8&oNever End&f" in the message
 on script load:

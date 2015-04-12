@@ -3,7 +3,47 @@ command /setprize:
 	trigger:
 		set {prizeroom} to location of player
 		message "&a&oPrize Room location set!"
-		
+on join:
+	if {prizeroom.%player%.times} is not set:
+		set {prizeroom.%player%.times} to 0
+every hour:
+	chance of 50%:
+		set {_tempscore} to 999
+		delete {prize.scores::*}
+		delete {prize.players::*}
+		loop all players:
+			if {prizeroom.%loop-player%.times} is not set:
+				set {prizeroom.%loop-player%.times} to 0
+			add {prizeroom.%loop-player%.times} to {prize.scores::*}
+			add loop-player to {prize.players::*}
+		loop {prize.scores::*}:
+			if loop-value is less than {_tempscore}:
+				set {_tempscore} to loop-value
+			else:
+				delete {prize.scores::%loop-index%}
+				delete {prize.players::%loop-index%}
+		loop {prize.players::*}:
+			execute console command "prize %loop-value%"
+			add 1 to {prizeroom.%loop-value%.times}
+every 30 real minutes:
+	chance of 25%:
+		set {_tempscore} to 999
+		delete {prize.scores::*}
+		delete {prize.players::*}
+		loop all players:
+			if {prizeroom.%loop-player%.times} is not set:
+				set {prizeroom.%loop-player%.times} to 0
+			add {prizeroom.%loop-player%.times} to {prize.scores::*}
+			add loop-player to {prize.players::*}
+		loop {prize.scores::*}:
+			if loop-value is less than {_tempscore}:
+				set {_tempscore} to loop-value
+			else:
+				delete {prize.scores::%loop-index%}
+				delete {prize.players::%loop-index%}
+		loop {prize.players::*}:
+			execute console command "prize %loop-value%"
+			add 1 to {prizeroom.%loop-value%.times}
 command /prize <player>:
 	permission: essentials.socialspy
 	trigger:
@@ -13,9 +53,13 @@ command /prize <player>:
 		wait 1 tick
 		teleport arg to {prizeroom}
 		set arg's fly mode to true
-		broadcast "&f[&4Prize Room&f] &b%arg% is now in the Prize Room!"
+		broadcast "&f[&dPrize Room&f] &d%arg% is now in the prize room!"
 		wait 1 real second
-		send "&f[&4Prize Room&f] &aWelcome to the Prize Room! Fly has been enabled for you. Select one prize." to arg
+		send "&f[&dPrize Room&f] &aWelcome to the Prize Room! Fly has been enabled for you. Select one prize." to arg
+		wait 2 real second
+		send "&f[&dPrize Room&f] &aYour client will lag while the heads are loaded. It is advised you stand still and look around until everything is smooth." to arg
+		wait 5 real second
+		send "&f[&dPrize Room&f] &aPlease remember that these are all decorative mini-blocks. None of them function." to arg
 on command:
 	player is {inprizeroom}
 	cancel event
