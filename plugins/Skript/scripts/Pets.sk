@@ -1,1 +1,325 @@
- ? ?
+on script load:
+	loop {pets.pets::*}:
+		kill loop-value
+		damage loop-value by 50 hearts
+		send "&cYour pet has just died due to the skript being reloaded. Sorry =/." to {pets.owners::%loop-index%}
+	delete {pets.pets::*}
+	delete {pets.owners::*}
+	delete {pets.active::*}
+	loop all players:
+		delete {pet.%loop-player%}
+command /pet [<text>] [<text>]:
+	permission: is.premium
+	trigger:
+		if arg 1 is set:
+			if arg 2 is set:
+				if {pet.%player%} is set:
+					if arg 1 is "color":
+						if arg 2 is set:
+							if arg 2 is "red":
+								loop all entities in radius 6 of player:
+									loop-entity is {pet.%player%}
+									set the colour of loop-entity to red
+									message "&f[&dPets&f] &aAttempted to change your pet's color to %arg 2%."
+									stop
+							if arg 2 is "blue":
+								loop all entities in radius 6 of player:
+									loop-entity is {pet.%player%}
+									set the colour of loop-entity to blue
+									message "&f[&dPets&f] &aAttempted to change your pet's color to %arg 2%."
+									stop
+							if arg 2 is "yellow":
+								loop all entities in radius 6 of player:
+									loop-entity is {pet.%player%}
+									set the colour of loop-entity to yellow
+									message "&f[&dPets&f] &aAttempted to change your pet's color to %arg 2%."
+									stop
+							if arg 2 is "green":
+								loop all entities in radius 6 of player:
+									loop-entity is {pet.%player%}
+									set the colour of loop-entity to green
+									message "&f[&dPets&f] &aAttempted to change your pet's color to %arg 2%."
+									stop
+							if arg 2 is "purple":
+								loop all entities in radius 6 of player:
+									loop-entity is {pet.%player%}
+									set the colour of loop-entity to purple
+									message "&f[&dPets&f] &aAttempted to change your pet's color to %arg 2%."
+									stop
+							if arg 2 is "orange":
+								loop all entities in radius 6 of player:
+									loop-entity is {pet.%player%}
+									set the colour of loop-entity to orange
+									message "&f[&dPets&f] &aAttempted to change your pet's color to %arg 2%."
+									stop
+							if arg 2 is "magenta":
+								loop all entities in radius 6 of player:
+									loop-entity is {pet.%player%}
+									set the colour of loop-entity to magenta
+									message "&f[&dPets&f] &aAttempted to change your pet's color to %arg 2%."
+									stop
+							if arg 2 is "cyan":
+								loop all entities in radius 6 of player:
+									loop-entity is {pet.%player%}
+									set the colour of loop-entity to cyan
+									message "&f[&dPets&f] &aAttempted to change your pet's color to %arg 2%."
+									stop
+							if arg 2 is "pink":
+								loop all entities in radius 6 of player:
+									loop-entity is {pet.%player%}
+									set the colour of loop-entity to pink
+									message "&f[&dPets&f] &aAttempted to change your pet's color to %arg 2%."
+									stop
+							if arg 2 is "brown":
+								loop all entities in radius 6 of player:
+									loop-entity is {pet.%player%}
+									set the colour of loop-entity to brown
+									message "&f[&dPets&f] &aAttempted to change your pet's color to %arg 2%."
+									stop
+							if arg 2 is "black":
+								loop all entities in radius 6 of player:
+									loop-entity is {pet.%player%}
+									set the colour of loop-entity to black
+									message "&f[&dPets&f] &aAttempted to change your pet's color to %arg 2%."
+									stop
+							if arg 2 is "white":
+								loop all entities in radius 6 of player:
+									loop-entity is {pet.%player%}
+									set the colour of loop-entity to white
+									message "&f[&dPets&f] &aAttempted to change your pet's color to %arg 2%."
+									stop
+							if arg 2 is "gray":
+								loop all entities in radius 6 of player:
+									loop-entity is {pet.%player%}
+									set the colour of loop-entity to gray
+									message "&f[&dPets&f] &aAttempted to change your pet's color to %arg 2%."
+									stop
+							if arg 2 is "lime":
+								loop all entities in radius 6 of player:
+									loop-entity is {pet.%player%}
+									set the colour of loop-entity to lime
+									message "&f[&dPets&f] &aAttempted to change your pet's color to %arg 2%."
+									stop
+							message "&f[&dPets&f] &cInvalid color. &eAcceptable colors:&f red, blue, green, purple, yellow, orange, magenta, cyan, pink, brown, black, white, grey, lime."
+							stop
+						else:
+							message "&f[&dPets&f] &cInvalid color. &eAcceptable colors:&f red, blue, green, purple, yellow, orange, magenta, cyan, pink, brown, black, white, grey, lime."
+							stop
+						message "&f[&dPets&f] &cInvalid color. &eAcceptable colors:&f red, blue, green, purple, yellow, orange, magenta, cyan, pink, brown, black, white, grey, lime."
+						stop
+					message "&cYou have a pet already!"
+					stop
+				else:
+					if arg 1 is "cat":
+						spawn a ocelot at player
+						set age of spawned entity to baby
+						set name of spawned entity to "&d&l%arg 2%"
+						add spawned entity to {pets.pets::*}
+						tame spawned entity to player
+						add player to {pets.owners::*}
+						add true to {pets.active::*}
+						set {pet.%player%} to spawned entity
+					if arg 1 is "dog":
+						spawn a wolf at player
+						set age of spawned entity to baby
+						set the wolf collar of spawned entity to red
+						set name of spawned entity to "&f[&a%player%&f] &d&l%arg 2%"
+						tame spawned entity to player
+						add spawned entity to {pets.pets::*}
+						add player to {pets.owners::*}
+						add true to {pets.active::*}
+						set {pet.%player%} to spawned entity
+					if arg 1 is "rabbit":
+						spawn a rabbit at player
+						set age of spawned entity to baby
+						set name of spawned entity to "&d&l%arg 2%"
+						add spawned entity to {pets.pets::*}
+						add player to {pets.owners::*}
+						add true to {pets.active::*}
+						set {pet.%player%} to spawned entity
+					if arg 1 is "chicken":
+						spawn a chicken at player
+						set age of spawned entity to baby
+						set name of spawned entity to "&d&l%arg 2%"
+						add spawned entity to {pets.pets::*}
+						add player to {pets.owners::*}
+						add true to {pets.active::*}
+						set {pet.%player%} to spawned entity
+					if arg 1 is "cow":
+						spawn a cow at player
+						set age of spawned entity to baby
+						set name of spawned entity to "&d&l%arg 2%"
+						add spawned entity to {pets.pets::*}
+						add player to {pets.owners::*}
+						add true to {pets.active::*}
+						set {pet.%player%} to spawned entity
+					if arg 1 is "sheep":
+						spawn a sheep at player
+						set age of spawned entity to baby
+						set name of spawned entity to "&d&l%arg 2%"
+						add spawned entity to {pets.pets::*}
+						add player to {pets.owners::*}
+						add true to {pets.active::*}
+						set {pet.%player%} to spawned entity
+					if arg 1 is "pig":
+						spawn a pig at player
+						set age of spawned entity to baby
+						set name of spawned entity to "&d&l%arg 2%"
+						add spawned entity to {pets.pets::*}
+						add player to {pets.owners::*}
+						add true to {pets.active::*}
+						set {pet.%player%} to spawned entity
+					if arg 1 is "mooshroom":
+						spawn a mooshroom at player
+						set age of spawned entity to baby
+						set name of spawned entity to "&d&l%arg 2%"
+						add spawned entity to {pets.pets::*}
+						add player to {pets.owners::*}
+						add true to {pets.active::*}
+						set {pet.%player%} to spawned entity
+					set {pet.%player%.name} to arg 2
+					set {pet.%player%.baby} to true
+					set {owner.%spawned entity%} to player
+					set {pet.%player%.when} to now
+					if {pet.%player%.total} is not set:
+						set {pet.%player%.total} to 0
+					add 1 to {pet.%player%.total}
+					message "&f[&dPets&f] &aEnjoy pet number %{pet.%player%.total}%!"
+			else:
+				if arg 1 is "stay":
+					if {pet.%player%} is set:
+						loop {pets.owners::*}:
+							player is loop-value
+							set {pets.active::%loop-index%} to false
+							message "&f[&dPets&f] &cYour pet will no longer follow you."
+							stop
+						message "&f[&dPets&f] &cFound no pet!"
+						stop
+					else:
+						message "&f[&dPets&f] &cYou have no pet!"
+						stop
+				if arg 1 is "come":
+					if {pet.%player%} is set:
+						loop {pets.owners::*}:
+							player is loop-value
+							set {pets.active::%loop-index%} to true
+							message "&f[&dPets&f] &aYour pet will now follow you."
+							stop
+						message "&f[&dPets&f] &cFound no pet!"
+						stop
+					else:
+						message "&f[&dPets&f] &cYou have no pet!"
+						stop
+				if arg 1 is "baby":
+					if {pet.%player%} is set:
+						if {pet.%player%.baby} is true:
+							message "&f[&dPets&f] &cYour pet is already a baby!"
+							stop
+						else:
+							set age of {pet.%player%} to baby
+							set {pet.%player%.baby} to true
+							message "&f[&dPets&f] &aYour pet is now a baby!"
+							stop
+					else:
+						message "&f[&dPets&f] &cYou have no pet!"
+						stop
+				if arg 1 is "adult":
+					if {pet.%player%} is set:
+						if {pet.%player%.baby} is false:
+							message "&f[&dPets&f] &cYour pet is already an adult!"
+							stop
+						else:
+							set age of {pet.%player%} to adult
+							set {pet.%player%.baby} to false
+							message "&f[&dPets&f] &aYour pet is now an adult!"
+							stop
+					else:
+						message "&f[&dPets&f] &cYou have no pet!"
+						stop
+				if arg 1 is "kill":
+					if {pet.%player%} is set:
+						loop {pets.owners::*}:
+							loop-value is player
+							delete {pets.owners::%loop-index%}
+							delete {pets.active::%loop-index%}
+							kill {pets.pets::%loop-index%}
+							damage {pets.pets::%loop-index%} by 50 hearts
+							delete {pets.pets::%loop-index%}
+						delete {pet.%player%}
+						message "&f[&dPets&f] &cYou killed your pet! That's number %{pet.%player%.total}%."
+						stop
+					else:
+						message "&f[&dPets&f] &cYou have no pet!"
+						stop	
+		else:
+			if {pet.%player%} is set:
+				loop {pets.owners::*}:
+					loop-value is player
+					message "&d-------------------------------------------------"
+					message "&6Pet Name:&d&l %{pet.%player%.name}%"
+					message "&6Pet Health: &e%health of {pet.%player%}%"
+					if {pet.%player%.baby} is true:
+						message "&6Pet Age: &eBaby"
+					else:
+						message "&6Pet Age: &eAdult"
+					message "&6Pet Life: &e%difference between {pet.%player%.when} and now%"
+					if {pets.active::%loop-index%} is true:
+						message "&6Pet Status: &eFollowing"
+					else:
+						message "&6Pet Status: &eNot Following"
+					message "&6Total Pets Ever: &e%{pet.%player%.total}%"
+					message "&d-------------------------------------------------"
+					message "&a/Pet come &f- Pet will follow you."
+					message "&a/Pet stay &f- Pet will not follow you. May wander."
+					message "&a/Pet baby &f- Pet will be a baby."
+					message "&a/Pet adult &f- Pet will be an adult."
+					message "&a/Pet kill &f- Pet will die."
+					message "&d-------------------------------------------------"
+			else:
+				message "&d-------------------------------------------------"
+				message "&6&lPet Menu"
+				message "&fUSAGE - &a/pet <type> <name>"
+				message "&ePet Types:"
+				message "&fCat, dog, pig, sheep, mooshroom, cow, rabbit, chicken"
+				message "&d-------------------------------------------------"
+on damage:
+	{owner.%victim%} is set:
+		if damage cause is fall:
+			cancel event
+		else:
+			send "&f[&dPets&f] &cYour pet is taking %damage cause% damage!" to {owner.%victim%}
+on death:
+	{owner.%entity%} is set
+	clear drops
+on quit:
+	loop {pets.owners::*}:
+		loop-value is player
+		delete {pets.owners::%loop-index%}
+		delete {pets.active::%loop-index%}
+		kill {pets.pets::%loop-index%}
+		damage {pets.pets::%loop-index%} by 50 hearts
+		delete {pets.pets::%loop-index%}
+	delete {pet.%player%}
+		
+every 2 ticks:
+	loop {pets.pets::*}:
+		if loop-value is dead:
+			send "&f[&dPets&f] &cYour pet has died! That's number %{pet.%{pets.owners::%loop-index%}%.total}%." to {pets.owners::%loop-index%}
+			delete {pet.%{pets.owners::%loop-index%}%}
+			delete {pets.owners::%loop-index%}
+			delete {pets.active::%loop-index%}
+			delete {pets.pets::%loop-index%}
+		{pets.active::%loop-index%} is true
+		if distance between loop-value and {pets.owners::%loop-index%} is greater than 25:
+			teleport loop-value to {pets.owners::%loop-index%}
+			make loop-value pathfind to {pets.owners::%loop-index%} with speed 1
+		if distance between loop-value and {pets.owners::%loop-index%} is greater than 20:
+			make loop-value pathfind to {pets.owners::%loop-index%} with speed 8
+		if distance between loop-value and {pets.owners::%loop-index%} is greater than 15:
+			make loop-value pathfind to {pets.owners::%loop-index%} with speed 5
+		if distance between loop-value and {pets.owners::%loop-index%} is greater than 10:
+			make loop-value pathfind to {pets.owners::%loop-index%} with speed 3
+		if distance between loop-value and {pets.owners::%loop-index%} is greater than 5:
+			make loop-value pathfind to {pets.owners::%loop-index%} with speed 1
+#		else:
+#			make loop-value pathfind to {pets.owners::%loop-index%} with speed 1
