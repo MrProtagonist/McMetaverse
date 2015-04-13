@@ -6,6 +6,9 @@ on script load:
 	loop all players:
 		if {villager.%loop-player%.traded} is not set:
 			set {villager.%loop-player%.traded} to now
+on command "/butcher":
+	cancel event
+	message "&cYou can't use this! Use /killall mob 50, /remove drops 50, or something more specific."
 on join:
 	if {villager.%player%.traded} is not set:
 		set {villager.%player%.traded} to now
