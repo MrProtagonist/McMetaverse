@@ -75,6 +75,15 @@ divider2:
   POSITION-X: 3
   POSITION-Y: 1
   DATA-VALUE: 0
+Titansfoodshop:
+  COMMAND: 'shopwarp 16'
+  NAME: '&d[p] &aTitans Barn Food & Farming Supply &d[p]'
+  LORE:
+    - '&f&oWe have things from seeds and bonemeal to carrots and bread.'
+  ID: 391
+  KEEP-OPEN: false
+  POSITION-X: 4
+  POSITION-Y: 1
 divider3:
   NAME: ''
   ID: 160

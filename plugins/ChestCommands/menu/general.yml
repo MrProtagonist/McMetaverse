@@ -112,7 +112,7 @@ divider4:
   DATA-VALUE: 0
 SlendyShop:
   COMMAND: 'shopwarp 10'
-  NAME: '&d[p] &aSlendyShop&d[p]'
+  NAME: '&d[p] &aSlendyShop &d[p]'
   LORE:
     - '&f&oThe Slendiest of shops'
   ID: 15
@@ -139,7 +139,7 @@ TitanKidshop:
   DATA-VALUE: 0
 RoobsBlackMarket:
   COMMAND: 'shopwarp 11'
-  NAME: '&d[p] &aRoobs Black Market&d[p]'
+  NAME: '&d[p] &aRoobs Black Market &d[p]'
   LORE:
     - '&f&oWe got what you need here at Roobs'
   ID: 279
@@ -156,13 +156,23 @@ divider6:
   DATA-VALUE: 0
 DocsKnickKnacks:
   COMMAND: 'shopwarp 14'
-  NAME: '&d[p] &bDocs Knick Knacks&d[p]'
+  NAME: '&d[p] &bDocs Knick Knacks &d[p]'
   LORE:
     - '&f&oA Variety of Items! :D'
   ID: 381
   KEEP-OPEN: false
   POSITION-X: 7
   POSITION-Y: 2
+  DATA-VALUE: 0
+TreysTreasures:
+  COMMAND: 'shopwarp 15'
+  NAME: '&d[p] &bTreys Treasures &d[p]'
+  LORE:
+    - '&f&oFull of Everything and Nothing'
+  ID: 61
+  KEEP-OPEN: false
+  POSITION-X: 8
+  POSITION-Y: 1
   DATA-VALUE: 0
 divider7:
   NAME: ''
