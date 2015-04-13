@@ -9,9 +9,11 @@ on join:
 every hour:
 	chance of 50%:
 		set {_tempscore} to 999
+		set {_playercount} to 0
 		delete {prize.scores::*}
 		delete {prize.players::*}
 		loop all players:
+			add 1 to {_playercount}
 			if {prizeroom.%loop-player%.times} is not set:
 				set {prizeroom.%loop-player%.times} to 0
 			add {prizeroom.%loop-player%.times} to {prize.scores::*}
@@ -22,6 +24,7 @@ every hour:
 			else:
 				delete {prize.scores::%loop-index%}
 				delete {prize.players::%loop-index%}
+		{_playercount} is greater than 4
 		loop {prize.players::*}:
 			execute console command "prize %loop-value%"
 			add 1 to {prizeroom.%loop-value%.times}
