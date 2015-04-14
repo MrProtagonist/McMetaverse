@@ -1,3 +1,40 @@
+Command /dropstuff [<player>]:
+	permission: essentials.socialspy
+	trigger:
+		force drop inventory of arg 1 at arg 1
+command /ridetrain:
+	permission: is.pro
+	trigger:
+		loop all players:
+			send "&bYou have been invited to ride on somebody's head. Should you choose to accept this odd invitation, type /letsride" to loop-player
+		set {rider} to player
+command /makehouse:
+	permission: is.pro
+	trigger:
+		paste schematic "Home" at location of player
+command /letsride:
+	trigger:
+		make player ride {rider}
+		set {rider} to player
+		message "&aYou have joined the train! Do not dismount until it is as tall as we can get it."
+command /blind <player>:
+	trigger:
+		send "&cYou have picked up a plague and are infecting this land! Run!" to arg
+		loop 30 times:
+			loop all blocks in radius 20 of arg:
+				loop-block is not air
+				make arg see loop-block as bedrock permanently
+			wait 1 real second
+		wait 10 real seconds
+		send "&cYour plague has become dormant... For now." to arg
+		restore all updates
+command /push <player>:
+	permission: essentials.socialspy
+	trigger:
+		send "&c%player% has shooed you away!" to arg
+		loop 20 times:
+			push the argument from player
+			wait 5 ticks
 on script load:
 	loop all players:
 		set {trolling.%loop-player%} to false
