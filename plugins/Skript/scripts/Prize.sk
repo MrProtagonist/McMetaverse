@@ -67,6 +67,14 @@ on command:
 	player is {inprizeroom}
 	cancel event
 	message "&cPick your prize first!"
+on command "marry tp":
+	set {_back} to location of player
+	wait 2 ticks
+	loop all players in radius 5 of player:
+		loop-player is {inprizeroom}
+		teleport player to {_back}
+		teleport player to {_back}
+		message "&cYou are not allowed to have sex in the prize room! Wait until your spouse gets done selecting a prize."
 on rightclick on button:
 	player is {inprizeroom}
 	wait 2 ticks
