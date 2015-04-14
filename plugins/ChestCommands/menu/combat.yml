@@ -39,15 +39,15 @@ menu-settings:
 # NEVER USE A ' IN ANY OF YOUR TEXT!
 #
 # Example start
-proglass:
-  COMMAND: 'shoptp proshop'
-  NAME: '&d[p] &aPro&fGlass &d[p]'
-  LORE:
-    - '&f&oEvery type of glass, always in stock!'
-  ID: glass
-  KEEP-OPEN: false
-  POSITION-X: 2
-  POSITION-Y: 1
+#proglass:
+#  COMMAND: 'shoptp proshop'
+#  NAME: '&d[p] &aPro&fGlass &d[p]'
+#  LORE:
+#    - '&f&oEvery type of glass, always in stock!'
+#  ID: glass
+#  KEEP-OPEN: false
+#  POSITION-X: 2
+#  POSITION-Y: 1
 #  DATA-VALUE: 2
 # Remove the # from the line above to use the data value setting
 # Example end
@@ -57,6 +57,16 @@ divider1:
   ID: 160
   KEEP-OPEN: true
   POSITION-X: 1
+  POSITION-Y: 1
+  DATA-VALUE: 0
+ScatzbrosShop:
+  COMMAND: 'shopwarp 17'
+  NAME: '&d[p] &aScatzbros Shop &d[p]'
+  LORE:
+    - '&f&oLegendary Library & Stuff! Not Crap!'
+  ID: 403
+  KEEP-OPEN: false
+  POSITION-X: 2
   POSITION-Y: 1
   DATA-VALUE: 0
 divider2:
