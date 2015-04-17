@@ -27,6 +27,18 @@ command /adreview [<text>] [<text>]:
 			else:
 				message "&cCould not find a submission by that player. Check the spelling."
 				stop
+		if arg 1 is "all":
+			loop {ad.list::*}:
+				message "&f[&a%loop-index%&f] %loop-value% - %{ad.time::%loop-index%}%"
+		if arg 1 is "remove":
+			if {ad.time::%arg 2%} is set:
+				delete {ad.time::%arg 2%}
+				delete {ad.list::%arg 2%}
+				message "&cRemoved %arg 2%'s ad!"
+				stop
+			else:
+				message "&cDidn't find an entry with that id!"
+				stop
 command /ad [<text>]:
 	permission: sk.ad
 	trigger:
