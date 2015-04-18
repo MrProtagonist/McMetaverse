@@ -102,8 +102,9 @@ on death:
 			wait 2 ticks
 			broadcast "&f[&aSERVER&f] &6%player% &ais the winner of &6&oSand&c&oStorm&6!"
 			play "LEVEL_UP" specifically to player with pitch 1
-			set {_temppay} to {sandstorm.timer} * 2
-			execute console command "eco give %player% %{_temppay}%"
+			set {temppay} to {sandstorm.timer} * 2
+			set {temppay2} to {temppay} / 10
+			execute console command "eco give %player% %{temppay2}%"
 			if {sandstorm.timer} is greater than {sandstorm.top.time.fake}:
 				wait 2 real seconds
 				broadcast "&f[&aSERVER&f] &6%player% &ajust set the &aHIGH SCORE for &6&oSand&c&oStorm&a!"
