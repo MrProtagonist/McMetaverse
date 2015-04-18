@@ -30,27 +30,27 @@ menu-settings:
 #
 plainswarp:
   COMMAND: 'warp plains'
-  NAME: 'Plains Biome'
+  NAME: '&aPlains Biome'
   LORE: 
-    - 'Warp to a Plains biome where you can build nearby'
+    - 'Warp to a &aPlains biome&7 where you can build nearby'
   ID: 2
   KEEP-OPEN: false
   POSITION-X: 1
   POSITION-Y: 1
 forestwarp:
   COMMAND: 'warp forest'
-  NAME: 'Forest Biome'
+  NAME: '&2Forest Biome'
   LORE: 
-    - 'Warp to a Forest biome where you can build nearby'
+    - 'Warp to a &2Forest biome&7 where you can build nearby'
   ID: 17
   KEEP-OPEN: false
   POSITION-X: 2
   POSITION-Y: 1
 birchwarp:
   COMMAND: 'warp birch'
-  NAME: 'Birch Forest Biome'
+  NAME: '&fBirch Forest&7 Biome'
   LORE: 
-    - 'Warp to a Birch Forest biome where you can build nearby'
+    - 'Warp to a &fBirch Forest&7 biome where you can build nearby'
   ID: 17
   KEEP-OPEN: false
   POSITION-X: 3
@@ -58,9 +58,9 @@ birchwarp:
   DATA-VALUE: 2
 taigawarp:
   COMMAND: 'warp taiga'
-  NAME: 'Taiga Biome'
+  NAME: '&fTaiga Biome'
   LORE: 
-    - 'Warp to a Taiga biome where you can build nearby'
+    - 'Warp to a &fTaiga biome &7where you can build nearby'
   ID: 17
   KEEP-OPEN: false
   POSITION-X: 4
@@ -68,9 +68,9 @@ taigawarp:
   DATA-VALUE: 1
 junglewarp:
   COMMAND: 'warp Jungle'
-  NAME: 'Jungle Biome'
+  NAME: '&aJungle Biome'
   LORE: 
-    - 'Warp to a Jungle biome where you can build nearby'
+    - 'Warp to a &aJungle biome &7where you can build nearby'
   ID: 17
   KEEP-OPEN: false
   POSITION-X: 5
@@ -78,9 +78,9 @@ junglewarp:
   DATA-VALUE: 3
 roofedwarp:
   COMMAND: 'warp roofed'
-  NAME: 'Dark Oak/Roofed Biome'
+  NAME: '&2Dark Oak/Roofed Biome'
   LORE: 
-    - 'Warp to a Roofed biome where you can build nearby'
+    - 'Warp to a &2Roofed biome&7 where you can build nearby'
   ID: 162
   KEEP-OPEN: false
   POSITION-X: 6
@@ -88,36 +88,48 @@ roofedwarp:
   DATA-VALUE: 1
 savannahwarp:
   COMMAND: 'warp savannah'
-  NAME: 'Savannah Biome'
+  NAME: '&6Savannah Biome'
   LORE: 
-    - 'Warp to a Savannah biome where you can build nearby'
+    - 'Warp to a &6Savannah biome &7where you can build nearby'
   ID: 162
   KEEP-OPEN: false
   POSITION-X: 7
   POSITION-Y: 1
 snowtaigawarp:
   COMMAND: 'warp snowplains'
-  NAME: 'Snowy Plains Biome'
+  NAME: '&fSnowy Plains Biome'
   LORE: 
-    - 'Warp to a Snowy Plains biome where you can build nearby'
+    - 'Warp to a &fSnowy Plains&7 biome where you can build nearby'
   ID: 80
   KEEP-OPEN: false
   POSITION-X: 8
   POSITION-Y: 1
 swampwarp:
   COMMAND: 'warp swamp'
-  NAME: 'Swamp Biome'
+  NAME: '&3Swamp Biome'
   LORE: 
-    - 'Warp to a Swamp biome where you can build nearby'
+    - 'Warp to a &3Swamp biome&7 where you can build nearby'
   ID: 106
   KEEP-OPEN: false
   POSITION-X: 9
   POSITION-Y: 1
+kamigroves:
+  COMMAND: 'warp groves'
+  NAME: '&9Kamillya Groves'
+  LORE: 
+    - 'Warp to the server &agroves'
+    - '&2Trees &7set aside to be harvested'
+    - 'Make sure you &areplant the trees&7!'
+  ID: 6
+  KEEP-OPEN: false
+  POSITION-X: 1
+  POSITION-Y: 2
+  DATA-VALUE: 0
 desertwarp:
   COMMAND: 'warp desert'
-  NAME: 'Desert Biome'
+  NAME: '&eDesert Biome'
   LORE: 
-    - 'Warp to a Desert biome where you can build nearby'
+    - 'Warp to a &eDesert biome &7where you can build nearby'
   ID: 81
   KEEP-OPEN: false
   POSITION-X: 2
@@ -125,9 +137,9 @@ desertwarp:
   DATA-VALUE: 0
 mesawarp:
   COMMAND: 'warp mesa'
-  NAME: 'Mesa Biome'
+  NAME: '&4M&ce&6s&ea &7Biome'
   LORE: 
-    - 'Warp to a Mesa biome where you can build nearby'
+    - 'Warp to a &4M&ce&6s&ea &7biome where you can build nearby'
   ID: 159
   KEEP-OPEN: false
   POSITION-X: 3
@@ -135,18 +147,18 @@ mesawarp:
   DATA-VALUE: 1
 extremehillswarp:
   COMMAND: 'warp extreme'
-  NAME: 'Extreme Hills Biome'
+  NAME: '&2Extreme &8Hills &7Biome'
   LORE: 
-    - 'Warp to an Extreme Hills biome where you can build nearby'
+    - 'Warp to an &2Extreme &8Hills &7biome where you can build nearby'
   ID: 129
   KEEP-OPEN: false
   POSITION-X: 4
   POSITION-Y: 2
 flowerswarp:
   COMMAND: 'warp flowers'
-  NAME: 'Flower Forest Biome'
+  NAME: '&dFlower &aForest &5Biome'
   LORE: 
-    - 'Warp to a Flower Forest biome where you can build nearby'
+    - 'Warp to a &dFlower &aForest &5biome &7where you can build nearby'
   ID: 175
   KEEP-OPEN: false
   POSITION-X: 5
@@ -154,11 +166,11 @@ flowerswarp:
   DATA-VALUE: 4
 icespikewarp:
   COMMAND: 'warp icespike'
-  NAME: 'Ice Spike Biome'
+  NAME: '&fIce &9Spike &7Biome'
   LORE: 
-    - 'Warp to a Ice Spike biome where you &o&ecan not&r&7 build nearby'
+    - 'Warp to a &fIce &9Spike &7biome where you &o&ecan not&r&7 build nearby'
     - 'This Biome is world-guarded to protect it!'
-    - 'You can look, but no touching!'
+    - 'You can look, but &4no touching&7!'
     - '&l&eThis Warp Is Not Yet Available!'
   ID: 174
   KEEP-OPEN: false
@@ -166,9 +178,9 @@ icespikewarp:
   POSITION-Y: 2
 mushroomwarp:
   COMMAND: 'warp mushroom'
-  NAME: 'Mushroom Biome'
+  NAME: '&4Mushroom Biome'
   LORE: 
-    - 'Warp to a Mushroom biome where you can build nearby'
+    - 'Warp to a &4Mushroom biome &7where you can build nearby'
     - '&l&eThis Warp Is Not Yet Available!'
   ID: 100
   KEEP-OPEN: false
