@@ -17,7 +17,7 @@ on join:
 		message "&f[&6BANK&f] &aYou just got $%{_interest}% in daily interest!"
 		add {_interest} to {bank.vault::%UUID of player%}
 		add {_interest} to {bank.interest::%UUID of player%}
-command /deposit <integer>:
+command /deposit <number>:
 	trigger:
 		if arg is set:
 			if {bank.vault::%UUID of player%} is not set:
@@ -49,7 +49,7 @@ command /accounts <player>:
 	permission: essentials.socialspy
 	trigger:
 		message "&aAccounts of %arg%: &6%{accounts.%UUID of argument-player%::*}%"
-command /withdraw <integer>:
+command /withdraw <number>:
 	trigger:
 		if arg is set:
 			if {bank.vault::%UUID of player%} is not set:
