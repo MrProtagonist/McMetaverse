@@ -14,10 +14,14 @@ command /makehouse:
 		paste schematic "Home" at location of player
 command /letsride:
 	trigger:
-		make player ride {rider}
-		set {rider} to player
-		message "&aYou have joined the train! Do not dismount until it is as tall as we can get it."
+		if {rider} isn't player:
+			make player ride {rider}
+			set {rider} to player
+			message "&aYou have joined the train! Do not dismount until it is as tall as we can get it."
+		else:
+			message "&aYou Can't Ride Yourself Silly"
 command /blind <player>:
+	permission: essentials.socialspy
 	trigger:
 		send "&cYou have picked up a plague and are infecting this land! Run!" to arg
 		loop 30 times:
