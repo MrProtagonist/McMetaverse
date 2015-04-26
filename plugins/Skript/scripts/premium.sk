@@ -262,6 +262,7 @@ command /myvillager <player> <text> [<text>]:
 
 on rightclick on villager or librarian or butcher or farmer or priest or blacksmith:
 	name of clicked entity contains "&6&l"
+	name of clicked entity does not contain "Teller"
 	cancel event
 	send "&cSorry, you can't trade with this villager!" to player
 on shoot:

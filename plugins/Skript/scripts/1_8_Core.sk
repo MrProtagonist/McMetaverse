@@ -24,6 +24,7 @@ on join:
 		set {villager.%player%.traded} to now
 on rightclick on villager:
 	clicked entity has offers
+	name of clicked entity does not contain "Teller"
 	set {_trade} to 1 trade of clicked entity
 #	if third item of {_trade} is emerald:
 	if difference between {villager.%player%.traded} and now is smaller than 3 minutes:
