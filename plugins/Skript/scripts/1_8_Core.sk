@@ -90,17 +90,6 @@ on script load:
 on spawn:
 	entity's world is "Schematics"
 	cancel event
-		
-command /leash:
-	permission: sk.leash
-	trigger:
-		if player's inventory contains lead:
-			if player can build at location of targeted entity:
-				make player leash  targeted entity
-			else:
-				message "&cYou can't leash an entity where you can't built!"
-		else:
-			message "&cYou don't have a leash dumbass!"
 
 # ###################################
 # ##       RocketTeleport 1.1      ##
