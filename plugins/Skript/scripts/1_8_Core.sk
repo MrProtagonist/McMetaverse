@@ -6,6 +6,16 @@ on script load:
 	loop all players:
 		if {villager.%loop-player%.traded} is not set:
 			set {villager.%loop-player%.traded} to now
+command /leash:
+	permission: sk.leash
+	trigger:
+		if player's inventory contains lead:
+			if player can build at location of targeted entity:
+				make player leash  targeted entity
+			else:
+				message "&cYou can't leash an entity where you can't built!"
+		else:
+			message "&cYou don't have a leash dumbass!"
 on command "/butcher":
 	cancel event
 	message "&cYou can't use this! Use /killall mob 50, /remove drops 50, or something more specific."
