@@ -29,7 +29,7 @@ on rightclick on librarian:
 	send json of "&f[ &cDeposit &a$100 &f]" run "/deposit 100" to player
 	send json of "&f[ &cDeposit &a$1,000 &f]" run "/deposit 1000" to player
 	send json of "&f[ &cDeposit &a$10,000 &f]" run "/deposit 10000" to player
-	send json of "&f[ &cDeposit All &f(&a%player's balance%&f) ]" run "/deposit %{_tempnumber}%" to player
+	send json of "&f[ &cDeposit All &f(&a%player's balance%&f) ]" run "/deposit %{_temp.number}%" to player
 	send "&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-" to player
 	send "&6Current Balance: &a%player's balance%" to player
 	send "&6Bank Account Total: &a$%{bank.vault::%UUID of player%}%" to player
