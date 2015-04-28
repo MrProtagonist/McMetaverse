@@ -36,7 +36,6 @@ on rightclick on librarian:
 	send "&6Total Interest Earned: &a$%{bank.interest::%UUID of player%}%" to player
 	send "&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-" to player
 	send "&f[&6&lBank Teller&f] &eClick what you want to do!" to player
-	send "%{_tempnumber}%" to player
 	set {banking.%player%} to true
 	wait 1 real minute
 	{banking.%player%} is true
