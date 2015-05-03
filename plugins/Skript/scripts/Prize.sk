@@ -6,6 +6,8 @@ command /setprize:
 on join:
 	if {prizeroom.%player%.times} is not set:
 		set {prizeroom.%player%.times} to 0
+	if {prizeroom.%player%.last} is not set:
+		set {prizeroom.%player%.last} to now
 every hour:
 	chance of 50%:
 		set {_tempscore} to 999
@@ -26,27 +28,10 @@ every hour:
 				delete {prize.players::%loop-index%}
 		{_playercount} is greater than 4
 		loop {prize.players::*}:
+			difference {prizeroom.%loop-value%.last} and now is greater than 1 day
 			execute console command "prize %loop-value%"
 			add 1 to {prizeroom.%loop-value%.times}
-every 30 real minutes:
-	chance of 25%:
-		set {_tempscore} to 999
-		delete {prize.scores::*}
-		delete {prize.players::*}
-		loop all players:
-			if {prizeroom.%loop-player%.times} is not set:
-				set {prizeroom.%loop-player%.times} to 0
-			add {prizeroom.%loop-player%.times} to {prize.scores::*}
-			add loop-player to {prize.players::*}
-		loop {prize.scores::*}:
-			if loop-value is less than {_tempscore}:
-				set {_tempscore} to loop-value
-			else:
-				delete {prize.scores::%loop-index%}
-				delete {prize.players::%loop-index%}
-		loop {prize.players::*}:
-			execute console command "prize %loop-value%"
-			add 1 to {prizeroom.%loop-value%.times}
+			set {prizeroom.%loop-value%.last} to now
 command /prize <player>:
 	permission: essentials.socialspy
 	trigger:
@@ -81,7 +66,8 @@ on rightclick on button:
 	teleport player to {lastspot}
 	teleport player to {lastspot}
 	wait 2 ticks
-	set player's fly mode to false
+	if player does not have the permission "essentials.fly":
+		set player's fly mode to false
 	wait 1 real second
 	delete {inprizeroom}
 	broadcast "&f[&4Prize Room&f] &b%player% has chosen their prize from the Prize Room!"
