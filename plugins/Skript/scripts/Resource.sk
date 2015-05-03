@@ -1,0 +1,20 @@
+﻿script options:
+    $ developer mode
+on script load:
+	execute console command "mv delete resource"
+	wait 2 real seconds
+	execute console command "mv confirm"
+	wait 5 real seconds
+	execute console command "mv create resource NORMAL"
+	wait 15 real seconds
+	set {resource.spawn} the spawn point of "resource"
+	set {_py} to y-coordinate of {resource.spawn} - 1
+	loop blocks in radius 15 around {sk.dropparty}:
+		set {_location} to location of loop-block
+		set {_testy} to y-coordinate of {_location}
+		set {_diff} to {_testy}
+		subtract {_py} from {_diff}
+		if {_diff} is 0:
+			set block at {_location} to stone
+		else:
+			set block at {_location} to air
