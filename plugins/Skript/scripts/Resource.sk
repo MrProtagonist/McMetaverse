@@ -3,20 +3,80 @@
 command /resetresource:
 	permission: essentials.socialspy
 	trigger:
+		message "&aNow resetting the resource world. Please wait..."
+		loop all players in world "resource":
+			teleport loop-player to {_spawn}
+			teleport loop-player to {_spawn}
 		execute console command "mv delete resource"
 		wait 2 real seconds
 		execute console command "mv confirm"
 		wait 5 real seconds
 		execute console command "mv create resource NORMAL"
+		message "&cYou will be teleported to the new world in 15 seconds. Please wait."
 		wait 15 real seconds
 		set {resource.spawn} to the spawn point of "resource"
-		set {_py} to y-coordinate of {resource.spawn} - 1
-		loop blocks in radius 15 around {sk.dropparty}:
-			set {_location} to location of loop-block
-			set {_testy} to y-coordinate of {_location}
-			set {_diff} to {_testy}
-			subtract {_py} from {_diff}
-			if {_diff} is 0:
-				set block at {_location} to stone
-			else:
-				set block at {_location} to air
+		teleport player to {resource.spawn}
+		set player's gamemode to creative
+		message " "
+		message "&ePlease stand on flat ground and do &a/setplatform."
+command /setplatform:
+	permission: essentials.socialspy
+	trigger:
+		if player is in world "resource":
+			message "&aGenerating..."
+			set {resource.spawn} to player's location
+			set {_playerspot} to location of player
+			set the spawn point of "resource" to the player's location
+			set {_py} to y-coordinate of {_playerspot}
+			loop all blocks in radius 15 around player:
+				set {_location} to location of loop-block
+				set {_testy} to y-coordinate of {_location}
+				if {_testy} is less than {_py}:
+					set loop-block to sea lantern
+				else:
+					set loop-block to air
+			message "&aPlatform was generated. Now setting world border..."
+			make player execute "worldborder set 7000"
+			wait 5 ticks
+			make player execute "worldborder resource fill"
+			message "&aBorder set! Now starting render of the world..."
+			wait 10 ticks
+			message "&aRoutine is complete! Rendering will run in the background."
+		else:
+			message "&cIncorrect world my friend!"
+command /resource:
+	trigger:
+		teleport player to {resource.spawn}
+		message "&aTeleporting you to the resource world..."
+		wait 2 real seconds
+		message " "
+		message "&eType &a/biome&e to warp to a biome of your choosing."
+command /biome:
+	trigger:
+		if player is in world "resource":
+			message " "
+			message "&6&lBiome List &f(Click one)"
+			send json of "&f[ &aFlower Forest &f]" run "/biometp FLOWER_FOREST" to player
+			send json of "&f[ &aBeach &f]" run "/biometp BEACH" to player
+			send json of "&f[ &aPlains &f]" run "/biometp PLAINS" to player
+			send json of "&f[ &aSavanna &f]" run "/biometp SAVANNA" to player
+			send json of "&f[ &aSwampland &f]" run "/biometp SWAMPLAND" to player
+			send json of "&f[ &aJungle &f]" run "/biometp JUNGLE" to player
+			send json of "&f[ &aMesa &f]" run "/biometp MESA_PLATEAU" to player
+			send json of "&f[ &aExtreme Hills &f]" run "/biometp EXTREME_HILLS" to player
+			send json of "&f[ &aTaiga &f]" run "/biometp MEGA_TAIGA" to player
+			send json of "&f[ &aDesert &f]" run "/biometp DESERT" to player
+			send json of "&f[ &aIce Spikes &f]" run "/biometp ICE_SPIKES" to player
+			stop
+		else:
+			message "&cThis is only available in the resource world."
+on break:
+	player is in world "resource"
+	distance between player and {resource.spawn} is less than 100:
+		message "&cYou must go further away from spawn to break or place!"
+		cancel event
+on place:
+	player is in world "resource"
+	distance between player and {resource.spawn} is less than 100:
+		message "&cYou must go further away from spawn to break or place!"
+		cancel event

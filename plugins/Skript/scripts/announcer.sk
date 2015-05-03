@@ -30,15 +30,16 @@ variables:
 	{randommessage::26} = "Frequently forget things? Use &a&o/note&e&o to keep track of random things you may need to remember!"
 	{randommessage::27} = "Tell the community a bit about yourself by completing your &a&o/profile&e&o."
 	{randommessage::28} = "Feel like you are lagging? Type &a&o/ping&e&o. If your ping is over 200 ms, it's your internet. If your client is skippy, lower your video settings and render distance."
+	{randommessage::29} = "Don't tear up the world! If you want to grind or gather materials, visit the &a&o/resource&e&o world."
 command /announcenow:
 	permission: is.op
 	trigger:
-		broadcast "[&aSERVER&f] &e&oNew content is constantly added. Check the &a&o/changelog&e&o often for a list of what's new!"
+		broadcast "[&aSERVER&f] &e&oDon't tear up the world! If you want to grind or gather materials, visit the &a&o/resource&e&o world."
 every 8 real minutes:
-	set {_num} to a random integer between 1 and 28
+	set {_num} to a random integer between 1 and 29
 	if {announce.last} is {_num}:
 		add 1 to {_num}
-	if {_num} is 29:
+	if {_num} is 30:
 		set {_num} to 1
 	set {announce.last} to {_num}
 	broadcast "&f[&aSERVER&f] &e&o%{randommessage::%{_num}%}%"
