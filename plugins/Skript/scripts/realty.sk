@@ -1,17 +1,29 @@
-command /realestate [<text>]:
+command /realestate [<text="page">] [<integer=1>]:
 	trigger:
-		if arg is not set:
-			message "&6&oThe following properties are for sale:"
-			message " "
-			message "&9&lID | Price | Seller | Short Description"
+		if arg-1 is "page":
+			set {_count} to 0
 			loop {realty.prices::*}:
-				if {realty.desc::%loop-index%} is "No description provided.":
-					message "&l%loop-index%&e | &a&l%{realty.prices::%loop-index%}%&e | &6%{realty.seller::%loop-index%}% &e| &8&o%{realty.desc::%loop-index%}%"
-				else:
-					message "&l%loop-index%&e | &a&l%{realty.prices::%loop-index%}%&e | &6%{realty.seller::%loop-index%}% &e| &f&o%{realty.desc::%loop-index%}%"
-			message " "
-			message "&a&oTo view one of the properties, simply type &b/realestate ##&a&o."
-			stop
+				add 1 to {_count}
+			set {_pages} to ceil({_count}/10)
+			if arg-2 <= {_pages}:
+				message "&6&oThe following properties are for sale:"
+				message " "
+				message "&9&lID | Price | Seller | Short Description"
+				set {_tempcounter} to 0
+				loop {realty.prices::*}:
+					add 1 to {_tempcounter}
+					if {_tempcounter} > ((arg-2)-1)*10:
+						if {_tempcounter} <= arg-2*10:
+							if {realty.desc::%loop-index%} is "No description provided.":
+								message "&l%loop-index%&e | &a&l%{realty.prices::%loop-index%}%&e | &6%{realty.seller::%loop-index%}% &e| &8&o%{realty.desc::%loop-index%}%"
+							else:
+								message "&l%loop-index%&e | &a&l%{realty.prices::%loop-index%}%&e | &6%{realty.seller::%loop-index%}% &e| &f&o%{realty.desc::%loop-index%}%"
+				message " "
+				message "&a&oTo view one of the properties, simply type &b/realestate visit ##&a&o."
+				message "&aCurrently On Page %arg-2%/%{_pages}% - Use /realestate page <page number> To View A Different Page"
+				stop
+			else:
+				message "&cPage, %arg-2%, Not Found. The Highest Page Is %{_pages}%"
 		else:
 #			if arg is "clear":
 #				player has the permission "is.op.as.fuck"
@@ -22,24 +34,27 @@ command /realestate [<text>]:
 #				delete {realty.warps::*}
 #				message "Done!"
 #				stop
-			if {realty.warps::%arg%} is set:
-				message "&a&oNow traveling to view %{realty.seller::%arg%}%'s property."
-				set {warping.%player%} to true
-				push the player upwards at speed 10
-				execute console command "/playsound random.explode %player% ~0 ~0 ~0 20 50"
-				loop 33 times:
-					spawn 50 of mob spell data 1 offset with 1, 0, 1 at location of block 1 meter above player
-					wait 1 tick
-				spawn 12 of huge explosion data 1 offset with 2, 2, 2 at location of player
-				wait 5 ticks
-				teleport player to {realty.warps::%arg%}
-				wait 5 ticks
-				delete {warping.%player%}
-				wait 10 real seconds
-				message "&6If you have questions, please contact the owner using &a/mail send %{realty.seller::%arg%}% message here&6."
-				stop
+			if arg-1 is "visit":
+				if {realty.warps::%arg 2%} is set:
+					message "&a&oNow traveling to view %{realty.seller::%arg 2%}%'s property."
+					set {warping.%player%} to true
+					push the player upwards at speed 10
+					execute console command "/playsound random.explode %player% ~0 ~0 ~0 20 50"
+					loop 33 times:
+						spawn 50 of mob spell data 1 offset with 1, 0, 1 at location of block 1 meter above player
+						wait 1 tick
+					spawn 12 of huge explosion data 1 offset with 2, 2, 2 at location of player
+					wait 5 ticks
+					teleport player to {realty.warps::%arg 2%}
+					wait 5 ticks
+					delete {warping.%player%}
+					wait 10 real seconds
+					message "&6If you have questions, please contact the owner using &a/mail send %{realty.seller::%arg 2%}% message here&6."
+					stop
+				else:
+					message "&c&oFound no property for sale with that ID. Try again."
 			else:
-				message "&c&oFound no property for sale with that ID. Try again."
+				message "&cMake Sure Argument 1 Is Either 'page' Or 'visit'"
 
 			
 on sign change:
@@ -137,4 +152,3 @@ on break of sign:
 			wait 1 real second
 			message "&a&oYour property was removed from the listing."
 			stop
-		
