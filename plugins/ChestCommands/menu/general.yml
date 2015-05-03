@@ -181,16 +181,6 @@ divider7:
   POSITION-X: 4
   POSITION-Y: 2
   DATA-VALUE: 0
-proglass:
-  COMMAND: 'shopwarp 19'
-  NAME: '&d[p] The Catus Shop &d[p]'
-  LORE:
-  - '&f&oGot Green?'
-  ID: 81
-  KEEP-OPEN: false
-  POSITION-X: 9
-  POSITION-Y: 2
-  DATA-VALUE: 0 
 divider8:
   NAME: ''
   ID: 160
