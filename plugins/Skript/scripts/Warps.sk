@@ -116,7 +116,7 @@ command /ss:
 	trigger:
 		set {lastwarp.%player%} to now
 		wait 1 tick
-		push the player upwards at speed 10
+#		push the player upwards at speed 10
 		execute console command "/playsound random.explode %player% ~0 ~0 ~0 20 50"
 		message "&a&oYou are whisked away to a far away land."
 		execute console command "consolewarp %player%"
@@ -130,7 +130,7 @@ command /sandbox:
 	trigger:
 		message "&a&oYou are whisked away to The Sandbox."
 		set {lastwarp.%player%} to now
-		push the player upwards at speed 10
+#		push the player upwards at speed 10
 		execute console command "/playsound random.explode %player% ~0 ~0 ~0 20 50"
 		execute console command "consolewarp %player%"
 		wait 38 ticks
@@ -140,7 +140,7 @@ command /spawn:
 	trigger:
 		message "&a&oYou are whisked away to the server spawn."
 		set {lastwarp.%player%} to now
-		push the player upwards at speed 10
+#		push the player upwards at speed 10
 		execute console command "/playsound random.explode %player% ~0 ~0 ~0 20 50"
 		execute console command "consolewarp %player%"
 		wait 38 ticks
