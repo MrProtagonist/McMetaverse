@@ -27,8 +27,8 @@ command /changelog [<integer=1>]:
 		message "&dServer Change Log&f - Hover over a day for details!"
 		set {_temp} to 1
 		loop {change.days::*}:
-			if {_temp} < (arg-1-1)*17:
-				if {_temp} > arg-1*17:
+			if {_temp} < ((arg-1)-1)*17:
+				if {_temp} >= arg-1*17:
 					send json of "&f[&a%loop-index%&f]" tooltip "%colored {change.log.%loop-index%::*}%" to player
 			add 1 to {_temp}
 		message "&d---------------------Page %arg 1%/%{_pages}%----------------------"
