@@ -54,6 +54,7 @@ command /resource:
 command /biome:
 	trigger:
 		if player is in world "resource":
+			execute console command "manuaddp %player% biometp.use"
 			message " "
 			message "&6&lBiome List &f(Click one)"
 			send json of "&f[ &aFlower Forest &f]" run "/biometp FLOWER_FOREST" to player
@@ -67,9 +68,12 @@ command /biome:
 			send json of "&f[ &aTaiga &f]" run "/biometp MEGA_TAIGA" to player
 			send json of "&f[ &aDesert &f]" run "/biometp DESERT" to player
 			send json of "&f[ &aIce Spikes &f]" run "/biometp ICE_SPIKES" to player
+			wait 30 real seconds
+			execute console command "manudelp %player% biometp.use"
 			stop
 		else:
 			message "&cThis is only available in the resource world."
+		
 on break:
 	player is in world "resource"
 	distance between player and {resource.spawn} is less than 100:

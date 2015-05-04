@@ -4,19 +4,22 @@ on spawn:
 	cancel event
 every 2 real seconds:
 	loop all players:
-		{autofill.%loop-player%} is not set:
-			set {autofill.%loop-player%} to false
-		loop-player's gamemode is creative:
-			{autofill.%loop-player%} is true
-			set {autofill.%loop-player%} to false
+		if loop-player is in world "Hyperverse":
 			execute console command "manuaddp %loop-player% -autoitem.replaceon.place"
-			send "&e&oDisabling AutoFill for you. &f=]" to loop-player
-		loop-player's gamemode is survival:
-			loop-player has the permission "-autoitem.replaceon.place"
-			{autofill.%loop-player%} is not true
-			set {autofill.%loop-player%} to true
-			execute console command "manudelp %loop-player% -autoitem.replaceon.place"
-			send "&e&oEnabling AutoFill for you. &f=]" to loop-player
+		else:
+			{autofill.%loop-player%} is not set:
+				set {autofill.%loop-player%} to false
+			loop-player's gamemode is creative:
+				{autofill.%loop-player%} is true
+				set {autofill.%loop-player%} to false
+				execute console command "manuaddp %loop-player% -autoitem.replaceon.place"
+				send "&e&oDisabling AutoFill for you. &f=]" to loop-player
+			loop-player's gamemode is survival:
+				loop-player has the permission "-autoitem.replaceon.place"
+				{autofill.%loop-player%} is not true
+				set {autofill.%loop-player%} to true
+				execute console command "manudelp %loop-player% -autoitem.replaceon.place"
+				send "&e&oEnabling AutoFill for you. &f=]" to loop-player
 			
 command /stalk:
 	permission: essentials.socialspy

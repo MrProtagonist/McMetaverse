@@ -1,0 +1,79 @@
+script options:
+    $ developer mode
+on command:
+	player is in world "Hyperverse"
+	command is not "spawn" or "bed" or "meta"
+command /meta:
+	trigger:
+		teleport player to {spawn}
+		message "&aYou are now in Metaverse Spawn. PVP is now off."
+		set {pvp.%player%} to 0
+command /hyper:
+	trigger:
+		teleport player to {hyper}
+		message "&aYou are now in the Hyperverse Spawn. PVP is now on!"
+		set {pvp.%player%} to 1
+command /sethyper:
+	trigger:
+		set {hyper} to player's location
+		message "&aSet hyperverse spawn!"
+on break:
+	player does not have the permission "essentials.socialspy"
+	player is in world "Hyperverse"
+	distance between player and {hyper} is less than 100:
+		message "&cYou must go further away from spawn to break or place!"
+		cancel event
+on place:
+	player does not have the permission "essentials.socialspy"
+	player is in world "Hyperverse"
+	distance between player and {hyper} is less than 100:
+		message "&cYou must go further away from spawn to break or place!"
+		cancel event
+on damage:
+	victim is in world "Hyperverse"
+	victim is a player
+	attacker is a player
+	distance between attacker and {hyper} is less than 100:
+		cancel event
+		send "Cannot PVP in the spawn area!" to attacker
+on death:
+	player is in world "Hyperverse"
+	if {bed.%player%} is set:
+		set {bedspawn.%player%} to true
+	else:
+		set {bedspawn.%player%} to false
+on respawn:
+	if {bedspawn.%player%} is true:
+		teleport player to {bed.%player%}
+		wait 1 tick
+		teleport player to {bed.%player%}
+	if {bedspawn.%player%} is false:
+		teleport player to {hyper}
+		wait 1 tick
+		teleport player to {hyper}
+	delete {bedspawn.%player%}
+on command:
+	player is in world "Hyperverse"
+	player does not have the permission "essentials.socialspy"
+	command is not "bed" or "spawn" or "meta" or "hyper" or "list" or "login"
+	cancel event
+	message "&cThis command is not allowed in this world!"
+command /bed:
+	trigger:
+		if player is in world "Hyperverse":
+			if {bed.%player%} is set:
+				teleport player to {bed.%player%}
+				wait 3 ticks
+				message "&aWelcome home."
+			else:
+				message "&cYou have no bed set!"
+				stop
+		else:
+			message "&cYou must be in the Hyperverse before using this command!"
+			stop
+on rightclick:
+	player is in world "Hyperverse"
+	event-block is bed
+	player can build at location of event-block
+	set {bed.%player%} to location of player
+	message "&aYour /bed has been set here!"

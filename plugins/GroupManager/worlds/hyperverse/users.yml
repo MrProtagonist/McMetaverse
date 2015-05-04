@@ -1,0 +1,28 @@
+users:
+  0c89e771-4db1-4be1-bced-3c40c04ee7d5:
+    lastname: dinoppar
+    group: Visitor
+    subgroups: []
+    permissions:
+    - -autoitem.replaceon.place
+  ElgarL:
+    group: Visitor
+    subgroups: []
+    permissions:
+    - groupmanager.noofflineperms
+  f01a2307-e90d-4503-9f19-640806fa8808:
+    lastname: MrProtagonist
+    group: Visitor
+    subgroups: []
+    permissions:
+    - -autoitem.replaceon.place
+  KHobbits:
+    group: Visitor
+    subgroups: []
+    permissions:
+    - groupmanager.noofflineperms
+  snowleo:
+    group: Builder
+    subgroups: []
+    permissions:
+    - groupmanager.noofflineperms

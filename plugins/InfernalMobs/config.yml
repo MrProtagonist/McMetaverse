@@ -10,7 +10,7 @@
 #nameTagsName and bossBarsName have these special tags: <mobLevel> = the amount of powers the boss has.
 #<abilities> = A list of about 3-5 (whatever can fit) names of abilities the boss has.
 #<mobName> = Name of the mob, so if the mob is a creeper the mobName will be "Creeper".
-chance: 99
+chance: 80
 levelChance:
   3: 1
   4: 2
@@ -30,12 +30,12 @@ bossBarsName: "&fLevel <mobLevel> &f<prefix> <mobName>"
 #bossBarsName: "&f<prefix> <abilities><mobName>"
 enableBossBar: false
 enableScoreBoard: false
-showHealthOnScoreBoard: true
+showHealthOnScoreBoard: false
 #effectAllPlayerAttacks means that for example if the player damages a mob with the poison
 #power the player will be poisoned no mater how he did it, even if he was using a bow.
 effectAllPlayerAttacks: true
 enableParticles: true
-enableDeathMessages: true
+enableDeathMessages: false
 #A message from this list will be chosen randomly, player=Player's name, mob=Mob type, weapon=Weapon player is holding.
 deathMessages: 
   - "&cplayer &chas killed an mob&c!"
@@ -51,7 +51,7 @@ spawnMessageRadius: 25
 spawnMessages: 
   - "&cAn Infernal mob has spawned near you!"
 enabledworlds:
-  - <all>
+  - Hyperverse
 enabledmobs:
   - PigZombie
   - Skeleton

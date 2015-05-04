@@ -281,7 +281,7 @@ worlds:
     autoload: true
     bedrespawn: true
   resource:
-    seed: -3430149032113515816
+    seed: -6818453849652682570
     environment: NORMAL
     type: NORMAL
     hidden: false
@@ -308,10 +308,45 @@ worlds:
     keepspawninmemory: true
     spawn:
       x: 0.0
-      y: 67.0
+      y: 65.0
       z: 0.0
       pitch: 0.0
       yaw: 0.0
       world: resource
+    autoload: true
+    bedrespawn: true
+  Hyperverse:
+    seed: 4546701710854278590
+    environment: NORMAL
+    type: AMPLIFIED
+    hidden: false
+    alias:
+      name: ''
+      color: WHITE
+    pvp: true
+    scale: 1.0
+    respawnworld: ''
+    allowweather: true
+    difficulty: EASY
+    animals:
+      spawn: true
+    monsters:
+      spawn: true
+    entryfee:
+      currency: -1
+      price: 0.0
+    hunger: true
+    autoheal: true
+    adjustspawn: true
+    portalform: ALL
+    gamemode: SURVIVAL
+    keepspawninmemory: true
+    spawn:
+      x: 0.0
+      y: 127.0
+      z: 0.0
+      pitch: 0.0
+      yaw: 0.0
+      world: Hyperverse
     autoload: true
     bedrespawn: true

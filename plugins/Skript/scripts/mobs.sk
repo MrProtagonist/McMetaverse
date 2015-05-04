@@ -1,0 +1,202 @@
+#More Mobs by Mirreducki!
+#V.0.6 FIX
+#Info about the Mobs is in the forum post.
+options:
+#Ghosts take 1 heart less damage. Default=true
+	stronger-ghost: true
+#Ghosts are faster. Set the bonus speed here. Default=2
+	ghost-speed: 2
+#Chance for a spider to turn into a ghost on spawning. Default=15
+	chance-ghost: 20
+#Chance for a zombie to turn into a giant on spawning. Default=0.1
+	chance-giant: 0.5
+#Chance for a zombie to turn into a livingfire on spawning. Default=5-10
+	chance-livingfire: 10
+#Chance for a creeper to turn into a firecreeper on spawning. Default=5
+	chance-firecreeper: 5
+#Prevents forest fires since it will probably be good if you have firecreeper's. Default=True
+	prevent-fires: true
+#Chance for a zombie to turn into a silvercreeper on spawning. Default=5
+	chance-silvercreeper: 5
+#Number of silverfishes which will spawn when the creeper explodes. Default=5
+	silver-fish: 5
+
+on spawn of enderman:
+	event-entity is in world "Hyperverse"
+	chance of 20%:
+		apply invisibility to entity for 99999999999999 days
+	
+command /sspider:
+	permission: essentials.socialspy
+	trigger:
+		spawn a spider
+		set {ghost.%spawned entity%.haunt} to true
+		apply invisibility to spawned entity for 9999999999999999999 days
+		apply speed {@ghost-speed} to spawned entity for 99999999999999999999 days
+command /szombie:
+	permission: essentials.socialspy
+	trigger:
+		spawn a zombie
+		set {livingfire.%spawned entity%.spawn} to true
+		apply speed to spawned entity for 9999999999999999 days
+		apply invisibility to spawned entity for 999999999999999 days
+		ignite spawned entity for 9999999999999999 days
+		
+command /screeper1:
+	permission: essentials.socialspy
+	trigger:
+		spawn a creeper
+		set {fire.%spawned entity%.creeper} to true
+		apply speed to spawned entity for 9999999999999999 days
+command /screeper:
+	trigger:
+		spawn a creeper
+		set {silver.%spawned entity%.creeper} to true
+		apply regeneration to spawned entity for 9999999999999999 days
+on spawn of spider:
+	event-entity is in world "Hyperverse"
+	chance of {@chance-ghost}%:
+		set {ghost.%entity%.haunt} to true
+		apply invisibility to entity for 9999999999999999999 days
+		apply speed {@ghost-speed} to entity for 99999999999999999999 days
+on damage:
+	attacker is a spider:
+		if {ghost.%attacker%.haunt} is true:
+			set {_waited} to difference between {ghostphase.%attacker%.lastused} and now
+			if {_waited} is less than 10 seconds:
+				stop
+			apply blindness to victim for 3 seconds
+			apply slowness 1 to victim for 5 seconds
+			apply nausea to victim for 5 seconds
+			damage victim by 1 heart
+			wait 2 seconds
+			set {ghostphase.%attacker%.lastused} to now
+			set {ghost.%attacker%.healing} to true
+			loop 50 times:
+				teleport attacker 60 blocks behind victim
+				wait 0.1 seconds
+			teleport attacker 1 blocks above victim
+			wait 0.5 seconds
+			set {ghost.%attacker%.healing} to false
+	victim is a spider:
+		if {ghost.%attacker%.haunt} is true:
+			if {@stronger-ghost} is true:
+				heal the victim by 1 heart
+			if {ghost.%victim%.healing} is true:
+				cancel event
+on spawn of zombie:
+	event-entity is in world "Hyperverse"
+	chance of {@chance-giant}%:
+		spawn 1 giant at location of entity
+		cancel event
+	else:
+		chance of {@chance-livingfire}%:
+			set {livingfire.%entity%.spawn} to true
+			apply speed to entity for 9999999999999999 days
+			apply invisibility to entity for 999999999999999 days
+			ignite entity for 9999999999999999 days
+on death of giant:
+	spawn 3 zombies at location of giant
+on damage:
+	attacker is a zombie:
+		if {livingfire.%attacker%.spawn} is true:
+			ignite victim for 4 seconds
+	victim is a zombie:
+		if {livingfire.%victim%.spawn} is true:
+			set damage to damage*0.5
+every 15 seconds:
+	loop entities:
+		if {livingfire.%loop-entity%.spawn} is true:
+			ignite entities in radius 3 of loop-entity for 4 seconds
+every 1 seconds:
+	loop entities:
+		if {livingfire.%loop-entity%.spawn} is true:
+			if loop-entity is not burning:
+				ignite loop-entity for 99 days
+			if block at loop-entity is water:
+				kill the loop-entity
+on damage:
+	victim is a zombie:
+		if {livingfire.%victim%.spawn} is true:
+			set {_waited} to difference between {livingfire.%victim%.lastused} and now
+			if {_waited} is less than 1 seconds:
+				stop
+			set {livingfire.%victim%.lastused} to now
+			heal victim by 1 heart
+on death of zombie:
+	if {livingfire.%victim%.spawn} is true:
+		drop 3 charcoal at location of zombie
+on spawn of creeper:
+	event-entity is in world "Hyperverse"
+	chance of {@chance-firecreeper}%:
+		set {fire.%entity%.creeper} to true
+		apply speed to entity for 9999999999999999 days
+		stop
+	chance of {@chance-silvercreeper}%:
+		set {silver.%entity%.creeper} to true
+		apply regeneration to entity for 9999999999999999 days
+on explode:
+	entity is a creeper
+	if {fire.%entity%.creeper} is true:
+		cancel event
+		damage entities in radius 3 of location of entity by 2.5 hearts
+		if block at location of entity is air or a plant:
+			set block at location of entity to fire
+		if block 1 blocks northwest of location of entity is air or a plant:
+			set block 1 blocks northwest of location of entity to fire
+		if block 1 blocks northeast of location of entity is air or a plant:
+			set block 1 blocks northeast of location of entity to fire
+		if block 1 blocks southwest of location of entity is air or a plant:
+			set block 1 blocks southwest of location of entity to fire
+		if block 1 blocks southeast of location of entity is air or a plant:
+			set block 1 blocks southeast of location of entity to fire
+		if block 1 blocks north of location of entity is air or a plant:
+			set block 1 blocks north of location of entity to fire
+		if block 2 blocks north of location of entity is air or a plant:
+			set block 2 blocks north of location of entity to fire
+		if block 3 blocks north of location of entity is air or a plant:
+			set block 3 blocks north of location of entity to fire
+		if block 4 blocks north of location of entity is air or a plant:
+			set block 4 blocks north of location of entity to fire
+		if block 1 blocks west of location of entity is air or a plant:
+			set block 1 blocks west of location of entity to fire
+		if block 2 blocks west of location of entity is air or a plant:
+			set block 2 blocks west of location of entity to fire
+		if block 3 blocks west of location of entity is air or a plant:
+			set block 3 blocks west of location of entity to fire
+		if block 4 blocks west of location of entity is air or a plant:
+			set block 4 blocks west of location of entity to fire
+		if block 1 blocks east of location of entity is air or a plant:
+			set block 1 blocks east of location of entity to fire
+		if block 2 blocks east of location of entity is air or a plant:
+			set block 2 blocks east of location of entity to fire
+		if block 3 blocks east of location of entity is air or a plant:
+			set block 3 blocks east of location of entity to fire
+		if block 4 blocks east of location of entity is air or a plant:
+			set block 4 blocks east of location of entity to fire
+		if block 1 blocks south of location of entity is air or a plant:
+			set block 1 blocks south of location of entity to fire
+		if block 2 blocks south of location of entity is air or a plant:
+			set block 2 blocks south of location of entity to fire
+		if block 3 blocks south of location of entity is air or a plant:
+			set block 3 blocks south of location of entity to fire
+		if block 4 blocks south of location of entity is air or a plant:
+			set block 4 blocks south of location of entity to fire
+	if {silver.%entity%.creeper} is true:
+		cancel event
+		loop blocks in radius 2 of location of entity:
+			loop-block is air
+			create an explosion of force 0 at loop-block
+		spawn {@silver-fish} silverfish at location of entity
+on damage:
+	if attacker is a creeper:
+		if {fire.%attacker%.creeper} is true:
+			cancel event
+		if {silver.%attacker%.creeper} is true:
+			cancel event
+	if victim is a creeper:
+		if {silver.%victim%.creeper} is true:
+			set damage to damage*0.5
+on spread:
+	if {@prevent-fires} is true:
+		cancel event
