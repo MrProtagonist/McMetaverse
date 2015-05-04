@@ -88,7 +88,7 @@ world-settings:
     max-bulk-chunks: 5
     max-entity-collisions: 8
     dragon-death-sound-radius: 0
-    mob-spawn-range: 4
+    mob-spawn-range: 6
     anti-xray:
       enabled: true
       engine-mode: 1
