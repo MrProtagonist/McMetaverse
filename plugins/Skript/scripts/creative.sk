@@ -5,6 +5,7 @@ on spawn:
 every 2 real seconds:
 	loop all players:
 		if loop-player is in world "Hyperverse":
+			player does not have the permission "-autoitem.replaceon.place"
 			execute console command "manuaddp %loop-player% -autoitem.replaceon.place"
 		else:
 			{autofill.%loop-player%} is not set:
