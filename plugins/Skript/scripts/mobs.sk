@@ -9,17 +9,17 @@ options:
 #Chance for a spider to turn into a ghost on spawning. Default=15
 	chance-ghost: 20
 #Chance for a zombie to turn into a giant on spawning. Default=0.1
-	chance-giant: 0.5
+	chance-giant: 2
 #Chance for a zombie to turn into a livingfire on spawning. Default=5-10
-	chance-livingfire: 10
+	chance-livingfire: 15
 #Chance for a creeper to turn into a firecreeper on spawning. Default=5
-	chance-firecreeper: 5
+	chance-firecreeper: 15
 #Prevents forest fires since it will probably be good if you have firecreeper's. Default=True
 	prevent-fires: true
 #Chance for a zombie to turn into a silvercreeper on spawning. Default=5
-	chance-silvercreeper: 5
+	chance-silvercreeper: 15
 #Number of silverfishes which will spawn when the creeper explodes. Default=5
-	silver-fish: 5
+	silver-fish: 10
 
 on spawn of enderman:
 	event-entity is in world "Hyperverse"
