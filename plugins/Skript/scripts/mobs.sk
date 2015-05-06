@@ -199,4 +199,5 @@ on damage:
 			set damage to damage*0.5
 on spread:
 	if {@prevent-fires} is true:
-		cancel event
+		if "%event-block%" is "fire":
+			cancel event
