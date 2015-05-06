@@ -526,7 +526,7 @@ protect:
     lava-flow: false
     water-flow: false
     water-bucket-flow: false
-    fire-spread: true
+    fire-spread: false
     lava-fire-spread: true
     flint-fire: false
     lightning-fire-spread: true
