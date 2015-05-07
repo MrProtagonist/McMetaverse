@@ -9,10 +9,12 @@ GriefPrevention:
     Never_End: -1
     Vanilla: -1
     resource: -1
+    Hyperverse: -1
   Claims:
     Mode:
       Minigame: Survival
       Metacurse_nether: Disabled
+      Hyperverse: Survival
       Never_End: Disabled
       Metacurse: Survival
       Sandbox: Survival
@@ -50,7 +52,7 @@ GriefPrevention:
     PortalGenerationRequiresPermission: false
     CommandsRequiringAccessTrust: /sethome
   Spam:
-    Enabled: true
+    Enabled: false
     LoginCooldownSeconds: 60
     MonitorSlashCommands: /me;/tell;/global;/local;/w;/msg;/r;/t
     WarningMessage: Please reduce your noise level.  Spammers will be banned.
@@ -69,8 +71,9 @@ GriefPrevention:
       Never_End: true
       Vanilla: true
       resource: true
+      Hyperverse: true
     ProtectFreshSpawns: true
-    PunishLogout: true
+    PunishLogout: false
     CombatTimeoutSeconds: 15
     AllowCombatItemDrop: false
     BlockedSlashCommands: /home;/vanish;/spawn;/tpa
