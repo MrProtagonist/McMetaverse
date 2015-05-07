@@ -55,7 +55,7 @@ on respawn:
 on command:
 	player is in world "Hyperverse"
 	player does not have the permission "essentials.socialspy"
-	command is not "bed" or "spawn" or "meta" or "hyper" or "list" or "login"
+	command is not "bed" or "spawn" or "meta" or "hyper" or "list" or "login" or "claimslist" or "transferclaim" or "trust" or "untrust" or "buyclaimblocks" or "sellclaimblocks" or "permissiontrust" or "trustlist" or "accesstrust" or "containertrust" or "abandonclaim"
 	cancel event
 	message "&cThis command is not allowed in this world!"
 command /bed:
