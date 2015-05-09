@@ -1,0 +1,12 @@
+command /addcontrib <offlineplayer> <text>:
+	usage: /addcontrib <name> <reason>
+	permission: essentials.socialspy
+	trigger:
+		set {contribs::%arg-1%} to arg-2
+		message "&6Added Player, &d%arg-1%&6 As A Contributor For Reason, &d%arg-2%"
+command /contributors:
+	trigger:
+		message "&7&d---------------------------------------------------"
+		loop {contribs::*}:
+			send json of "&a%loop-index%" tooltip "&d%loop-value%" to player
+		message "&7&d---------------------------------------------------"
