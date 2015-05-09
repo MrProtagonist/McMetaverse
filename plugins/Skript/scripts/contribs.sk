@@ -1,12 +1,19 @@
+script options:
+    $ developer mode
 command /addcontrib <offlineplayer> <text>:
 	usage: /addcontrib <name> <reason>
-	permission: essentials.socialspy
+	permission: is.pro
 	trigger:
 		set {contribs::%arg-1%} to arg-2
-		message "&6Added Player, &d%arg-1%&6 As A Contributor For Reason, &d%arg-2%"
+		message "&6Added  &d%arg-1%&6 as a contributor with reason: &d%arg-2%"
+command /clearcontribs:
+	permission: is.pro
+	trigger:
+		delete {contribs::*}
+		message "&aDone!"
 command /contributors:
 	trigger:
-		message "&7&d---------------------------------------------------"
+		message "&7&d============== &aSERVER CONTRIBUTORS &7&d================="
 		loop {contribs::*}:
-			send json of "&a%loop-index%" tooltip "&d%loop-value%" to player
-		message "&7&d---------------------------------------------------"
+			send json of "&f[ &a%loop-index% &f]" tooltip "&d%loop-value%" to player
+		message "&7&d=============== &fHover for more info! &7&d================="
