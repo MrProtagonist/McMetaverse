@@ -1,9 +1,9 @@
 command /sunny:
-	permission: sk.day
 	trigger:
 		if player's balance is greater than 100:
 			set {_world} to player's world
 			execute console command "eco take %player% 100"
+			set weather of {_world} to clear
 			set time in {_world} to 6am
 			loop all players in {_world}:
 				send "&f[&aSERVER&f] &6Time set to day by %player%!" to loop-player
