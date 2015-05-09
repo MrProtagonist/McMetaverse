@@ -1,0 +1,29 @@
+on login:
+        add 1 to {logincount}
+		wait 10 real seconds
+        if {dailybonus.%player%} is not {bonus}:
+                message "<gold><italic>You were given <light green>$200<gold> for logging in today!"
+                execute console command "eco give %player% 200"
+                set {dailybonus.%player%} to {bonus}
+        else:
+                message "<gold><italic>You have already received your daily login bonus!"
+
+command /dev:
+        description: Talks about the Dev team.
+        trigger:
+                message "<light green>Our current Development team is:"
+                message "   - <yellow>MrProtagonist"
+                message "   - <yellow>McNicholas"
+                message "   - <yellow>CaptainStupid"
+                message "   - <yellow>DrBloodbathMC"
+                message "   - <yellow>Quisalas"
+                message "   - <yellow>Scatzbro"
+                message "   - <yellow>Darkeye"
+                message "<light green>Current project:<gold> %{dev.current}%"
+
+command /devstatus <text>:
+        description: Update current dev project.
+        trigger: 
+                set {dev.current} to argument
+                message "<light green>Dev project updated!"
+                broadcast "&a&oUpdated &a&l&oDEV&r&a&o project to: &e&o%{dev.current}%"
