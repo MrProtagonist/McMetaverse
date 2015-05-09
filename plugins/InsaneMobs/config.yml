@@ -51,8 +51,8 @@ Configurations:
     ZombieMage:
       Spawn_Minions: true
       Zombie_Slowness: 1
-      Zombie_Weakness: 5
-      Zombie_Resistance: 2
+      Zombie_Weakness: 3
+      Zombie_Resistance: 0
       Minion_Resistance: 0
       Minion_Speed: 2
       Minion_Strength: 1
