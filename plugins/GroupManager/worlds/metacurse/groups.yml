@@ -17,15 +17,23 @@ groups:
     - chestcommands.open.biomewarps.yml
     - chestcommands.open.nav.yml
     - chestcommands.open.spawnwarps.yml
+    - coreprotect.command.inspect
+    - coreprotect.command.lookup
+    - coreprotect.inspect
+    - coreprotect.lookup
+    - cpantixray.use
     - essentials.chat.color
     - essentials.enderchest
     - essentials.enderchest.others
     - essentials.ext
+    - essentials.fly
+    - essentials.fly.safelogin
     - essentials.gc
     - essentials.home.others
     - essentials.invsee
     - essentials.jail
     - essentials.jail.*
+    - essentials.jails
     - essentials.joinfullserver
     - essentials.kick
     - essentials.msg.color
@@ -34,13 +42,18 @@ groups:
     - essentials.sethome.multiple.unlimited
     - essentials.socialspy
     - essentials.tempban
+    - essentials.thru
     - essentials.togglejail
     - essentials.togglejail.offline
     - essentials.top
     - essentials.tp
+    - essentials.tp.others
     - essentials.tphere
+    - essentials.tpo
+    - essentials.vanish
     - essentials.whois
     - griefprevention.claimslistother
+    - griefprevention.ignoreclaims
     - groupmanager.listgroups
     - groupmanager.mangcheckp
     - groupmanager.manglistp
@@ -48,6 +61,8 @@ groups:
     - groupmanager.manulistp
     - groupmanager.manwhois
     - mcmmo.chat.adminchat
+    - sht.admin
+    - skript.warn
     inheritance:
     - noble
     - premium
@@ -241,6 +256,7 @@ groups:
     - groupmanager.manucheckp
     - groupmanager.manulistp
     - groupmanager.manwhois
+    - sk.submissions
     inheritance:
     - admin
     info:
@@ -884,6 +900,7 @@ groups:
     - essentials.seen
     - essentials.sethome.multiple.unlimited
     - essentials.socialspy
+    - essentials.speed
     - essentials.tempban
     - essentials.togglejail
     - essentials.togglejail.offline
@@ -952,6 +969,7 @@ groups:
     - essentials.mute
     - essentials.tp
     - essentials.tphere
+    - essentials.tppos
     inheritance:
     - trialdev
     info:
