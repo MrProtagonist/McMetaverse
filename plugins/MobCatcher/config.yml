@@ -12,6 +12,7 @@ PluginEnabled:
   Sandbox: true
   Never_End: true
   Vanilla: true
+  resource: true
 CaptureItem:
   Enabled: true
   ItemName: '[all names]'
@@ -35,6 +36,9 @@ SignProtection:
   PlayerSet:
     Enabled: false
     MaxRadius: 10
+  Protects:
+    Damage: true
+    Hostiles: false
 SaveDataAndRemoveStackability: true
 EffectsEnabled: true
 ThrownSpawnEggsEnabled: true
@@ -374,3 +378,4 @@ ComplexConfig:
     VaultCost: 10.0
     Chance: 100
     MustBeKilled: false
+ChangedMobSpawnersUseEggData: true
