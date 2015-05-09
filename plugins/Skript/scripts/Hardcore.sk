@@ -42,6 +42,18 @@ on death:
 		set {bedspawn.%player%} to true
 	else:
 		set {bedspawn.%player%} to false
+on place of ender chest:
+	player is in world "Hyperverse"
+	cancel event
+	message "&cThis item is disabled in this world!"
+on rightclick on ender chest:
+	player is in world "Hyperverse"
+	cancel event
+	message "&cThis item is disabled in this world!"
+on craft of ender chest:
+	player is in world "Hyperverse"
+	cancel event
+	message "&cThis item is disabled in this world!"
 on respawn:
 	if {bedspawn.%player%} is true:
 		teleport player to {bed.%player%}
