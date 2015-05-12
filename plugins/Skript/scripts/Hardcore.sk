@@ -3,6 +3,11 @@ script options:
 on command:
 	player is in world "Hyperverse"
 	command is not "spawn" or "bed" or "meta"
+on join:
+	set {warping.%player%} to false
+on script load:
+	loop all players:
+		set {warping.%loop-player%} to false
 command /meta:
 	trigger:
 		set {warping.%player%} to true
@@ -20,8 +25,9 @@ command /hyper:
 		wait 2 real seconds
 		set {warping.%player%} to false
 on damage:
-	if {warping.%victim%} is true
-	cancel event
+	if {warping.%victim%} is true:
+		cancel event
+		set {warping.%victim%} to false
 command /sethyper:
 	permission: is.pro
 	trigger:
