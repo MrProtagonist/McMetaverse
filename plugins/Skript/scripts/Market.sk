@@ -143,12 +143,12 @@ on chat:
 			message "&cTo declare your shop warp and icon, type &adone&c. Otherwise, type &6quit&c."
 command /shopwarp <integer>:
 	trigger:
-		message "&a&oNow traveling to %{market.name.%arg%}%&a."
+		message "&a&oNow warping to %{market.name.%arg%}%&a."
 		set {lastwarp.%player%} to now
-		push the player upwards at speed 10
+#		push the player upwards at speed 10
 		execute console command "/playsound random.explode %player% ~0 ~0 ~0 20 50"
 		execute console command "consolewarp %player%"
-		wait 38 ticks
+#		wait 38 ticks
 		teleport the player to {market.warps.%arg%}
 command /moveshop <integer>:
 	permission: sk.submissions

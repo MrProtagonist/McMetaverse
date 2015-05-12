@@ -118,9 +118,9 @@ command /ss:
 		wait 1 tick
 #		push the player upwards at speed 10
 		execute console command "/playsound random.explode %player% ~0 ~0 ~0 20 50"
-		message "&a&oYou are whisked away to a far away land."
+		message "&a&oYou are now at the Server Shop."
 		execute console command "consolewarp %player%"
-		wait 38 ticks
+#		wait 38 ticks
 		teleport player to {sk.ss}
 on damage:
 	if difference between {lastwarp.%player%} and now is less than 3 seconds:
@@ -128,22 +128,22 @@ on damage:
 
 command /sandbox:
 	trigger:
-		message "&a&oYou are whisked away to The Sandbox."
+		message "&a&oYou are now in The Sandbox."
 		set {lastwarp.%player%} to now
 #		push the player upwards at speed 10
 		execute console command "/playsound random.explode %player% ~0 ~0 ~0 20 50"
 		execute console command "consolewarp %player%"
-		wait 38 ticks
+#		wait 38 ticks
 		execute console command "mvtp %player% sandbox"
 		
 command /spawn:
 	trigger:
-		message "&a&oYou are whisked away to the server spawn."
+		message "&a&oYou are now at Spawn"
 		set {lastwarp.%player%} to now
 #		push the player upwards at speed 10
 		execute console command "/playsound random.explode %player% ~0 ~0 ~0 20 50"
 		execute console command "consolewarp %player%"
-		wait 38 ticks
+#		wait 38 ticks
 		teleport the player to {spawn}
 
 # every 2 ticks:
