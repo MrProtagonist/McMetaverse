@@ -3,3 +3,6 @@ worlds:
   Metacurse:
     portalgoesto:
       NETHER: Metacurse_nether
+  Hyperverse:
+    portalgoesto:
+      NETHER: Hyperverse_nether

@@ -350,3 +350,38 @@ worlds:
       world: Hyperverse
     autoload: true
     bedrespawn: true
+  Hyperverse_nether:
+    seed: 8354213722778043370
+    environment: NETHER
+    type: NORMAL
+    hidden: false
+    alias:
+      name: ''
+      color: WHITE
+    pvp: true
+    scale: 8.0
+    respawnworld: ''
+    allowweather: true
+    difficulty: EASY
+    animals:
+      spawn: true
+    monsters:
+      spawn: true
+    entryfee:
+      currency: -1
+      price: 0.0
+    hunger: true
+    autoheal: true
+    adjustspawn: true
+    portalform: ALL
+    gamemode: SURVIVAL
+    keepspawninmemory: true
+    spawn:
+      x: 0.0
+      y: 112.0
+      z: 0.0
+      pitch: 0.0
+      yaw: 0.0
+      world: Hyperverse_nether
+    autoload: true
+    bedrespawn: true
