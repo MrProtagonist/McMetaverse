@@ -5,15 +5,25 @@ on command:
 	command is not "spawn" or "bed" or "meta"
 command /meta:
 	trigger:
+		set {warping.%player%} to true
 		teleport player to {spawn}
 		message "&aYou are now in Metaverse Spawn. PVP is now off."
 		set {pvp.%player%} to 0
+		wait 2 real seconds
+		set {warping.%player%} to false
 command /hyper:
 	trigger:
+		set {warping.%player%} to true
 		teleport player to {hyper}
 		message "&aYou are now in the Hyperverse Spawn. PVP is now on!"
 		set {pvp.%player%} to 1
+		wait 2 real seconds
+		set {warping.%player%} to false
+on damage:
+	if {warping.%victim%} is true
+	cancel event
 command /sethyper:
+	permission: is.pro
 	trigger:
 		set {hyper} to player's location
 		message "&aSet hyperverse spawn!"
