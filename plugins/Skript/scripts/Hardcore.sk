@@ -1,8 +1,5 @@
 script options:
     $ developer mode
-on command:
-	player is in world "Hyperverse"
-	command is not "spawn" or "bed" or "meta"
 on join:
 	set {warping.%player%} to false
 on script load:
@@ -20,6 +17,7 @@ command /hyper:
 	trigger:
 		set {warping.%player%} to true
 		teleport player to {hyper}
+		set player's fly mode to false
 		message "&aYou are now in the Hyperverse Spawn. PVP is now on!"
 		set {pvp.%player%} to 1
 		wait 2 real seconds
