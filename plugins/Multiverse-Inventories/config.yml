@@ -40,3 +40,9 @@ groups:
     - resource
     shares:
     - all
+  Hyperverse:
+    worlds:
+    - Hyperverse
+    - Hyperverse_nether
+    shares:
+    - all
