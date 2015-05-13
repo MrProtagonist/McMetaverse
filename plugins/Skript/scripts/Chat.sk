@@ -192,7 +192,7 @@ command /rules:
 		send json of "             &f[&a7&f] &oNo endless redstone" tooltip "&fThis includes redstone clocks, loops,%new line%&fand any other contraption that can endlessly loop." to player
 		send json of "             &f[&a8&f] &oNo arguing with staff" tooltip "&eWhy?&f It is inappropriate to argue with staff in chat.%new line%&fIf you question a decision, you may &a/msg&f that staff.%new line%&fIf you got punished, create an appeal on the website for all staff to review." to player
 		send json of "             &f[&a9&f] &oNo public eyesores" tooltip "&ePublic Eyesore:&f Anything that any normal player can find%new line%&fwhile exploring the world that is unpleasant.%new line%&fThis includes things like penises, 1x1 dirt towers, death pits,%new line%&ffloating lava, dirt houses, hidden public traps, etc." to player
-		send json of "             &f[&a9&f] &oNothing that could cause lag" tooltip "&eLag:&f Anything that slows down the entire server.%new line%&bThis includes things like forcing entities onto the same block,%new line%tightly confined mass farms, redstone clocks, etc." to player
+		send json of "             &f[&a10&f] &oNothing that could cause lag" tooltip "&eLag:&f Anything that slows down the entire server.%new line%&bThis includes things like forcing entities onto the same block,%new line%tightly confined mass farms, redstone clocks, etc." to player
 		message " "
 		message "&f[&6NOTE&f] &e&oThis server is intended for adults. We allow cursing. By agreeing to these rules, you agree to not be bothered by profanity."
 		message "&f&l============================================="
