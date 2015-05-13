@@ -92,6 +92,7 @@ citizen:
     - '&6PRICE: &a$15,000'
     - 'Permissions Granted to Citizens:'
     - 'Set 4 &bhomes'
+    - 'Access to &a&o/guard'
     - 'Can format chat with &4c&6o&el&ao&br&5s&7,&r &lbold&r&7, &oitalics&r'
     - 'Scavenger saves levels on death'
     - 'Access to &a&o/jump&r'
@@ -152,7 +153,7 @@ noble:
 #  DATA-VALUE: 3
 elite:
   COMMAND: 'testrank elite'
-  NAME: '&d[p] &aElite &a[p]'
+  NAME: '&d[p] &aElite &d[p]'
   LORE:
     - '&6PRICE: &a$250,000'
     - 'Permissions Granted to Elites:'
