@@ -14,7 +14,7 @@ every hour:
 		set {_playercount} to 0
 		delete {prize.scores::*}
 		delete {prize.players::*}
-		loop all players:
+		loop all players in world "Metacurse":
 			add 1 to {_playercount}
 			if {prizeroom.%loop-player%.times} is not set:
 				set {prizeroom.%loop-player%.times} to 0
@@ -28,10 +28,10 @@ every hour:
 				delete {prize.players::%loop-index%}
 		{_playercount} is greater than 4
 		loop {prize.players::*}:
-			difference {prizeroom.%loop-value%.last} and now is greater than 1 day
-			execute console command "prize %loop-value%"
-			add 1 to {prizeroom.%loop-value%.times}
-			set {prizeroom.%loop-value%.last} to now
+			difference between {prizeroom.%loop-value%.last} and now is greater than a day:
+				execute console command "prize %loop-value%"
+				add 1 to {prizeroom.%loop-value%.times}
+				set {prizeroom.%loop-value%.last} to now
 command /prize <player>:
 	permission: essentials.socialspy
 	trigger:
