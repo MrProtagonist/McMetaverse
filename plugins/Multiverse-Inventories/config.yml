@@ -31,6 +31,15 @@ shares:
 # Options for shares: inventory, exp, health, hunger, beds
 # Worlds not listed in a group will have a separate personal inventory/stats/bed UNLESS default_ungrouped_worlds is true
 groups:
+  Metacurse:
+    worlds:
+    - Metacurse
+    - Metacurse_the_end
+    - Metacurse_nether
+    - Never_End
+    - resource
+    shares:
+    - all
   Hyperverse:
     worlds:
     - Hyperverse
