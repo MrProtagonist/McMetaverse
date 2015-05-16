@@ -87,6 +87,7 @@ command /testrank <text>:
 					broadcast "&6%player% has just been promoted to &9Seasoned&6!"
 					wait 2 ticks
 					make player execute "fixprefix"
+					make player execute "scavenger:scavengeron"
 				else:
 					message "&cSorry, you don't have enough money for this!"
 			else:
