@@ -1,5 +1,5 @@
 usemySQL: true
-mySQLconn: jdbc:mysql://localhost:3306/minecraft
+mySQLconn: jdbc:mysql://localhost:3306/430
 mySQLuname: 430
 mySQLpass: bf56ae2042
 globalUseEconomy: false
