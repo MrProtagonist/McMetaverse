@@ -44,13 +44,14 @@ command /setplatform:
 command /resource:
 	trigger:
 		teleport player to {resource.spawn}
-		message "&aTeleporting you to the resource world..."
+		message "&aWelcome to the Resource world!"
+		message "&cDo not build here! This world resets often!"
 		wait 2 real seconds
 		message " "
 		message "&eType &a/biome&e to warp to a biome of your choosing."
 command /biome:
 	trigger:
-		if player is in world "resource":
+		if player is in "resource":
 			execute console command "manuaddp %player% biometp.use"
 			message " "
 			message "&6&lBiome List &f(Click one)"
@@ -72,11 +73,13 @@ command /biome:
 			message "&cThis is only available in the resource world."
 		
 on break:
+	player does not have the permission "is.op"
 	player is in world "resource"
 	distance between player and {resource.spawn} is less than 100:
 		message "&cYou must go further away from spawn to break or place!"
 		cancel event
 on place:
+	player does not have the permission "is.op"
 	player is in world "resource"
 	distance between player and {resource.spawn} is less than 100:
 		message "&cYou must go further away from spawn to break or place!"
