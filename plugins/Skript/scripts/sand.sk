@@ -192,3 +192,6 @@ every tick:
 	loop all players:
 		{sandstorm.%loop-player%.playing} is true
 		execute console command "tm amsg %loop-player% &6Survived for %{supertemptime}%"
+on place:
+	if {sandstorm.%player%.playing} is true:
+		cancel event
