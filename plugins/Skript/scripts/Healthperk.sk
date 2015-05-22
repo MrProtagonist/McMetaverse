@@ -1,15 +1,18 @@
+script options:
+    $ developer mode
 every 20 real seconds:
     loop all players:
         if loop-player has permission "skript.extrahealth10":
-            set max health of loop-player to 20
+            set rf max hp of loop-player to 40
         else if loop-player has permission "skript.extrahealth8":
-            set max health of loop-player to 18
+            set rf max hp of loop-player to 36
         else if loop-player has permission "skript.extrahealth6":
-            set max health of loop-player to 16
+            set rf max hp of loop-player to 32
         else if loop-player has permission "skript.extrahealth4":
-            set max health of loop-player to 14
+            set rf max hp of loop-player to 28
         else if loop-player has permission "skript.extrahealth2":
-            set max health of loop-player to 12
+            set rf max hp of loop-player to 24
+
 command /healthreset:
     trigger:
         loop all players:
@@ -23,5 +26,18 @@ command /healthreset:
                 set {sethealth.%loop-player%.4} to false
             if loop-player has permission "skript.extrahealth2":
                 set {sethealth.%loop-player%.2} to false
-        
+				
+command /forcehealth:
+	trigger:
+		loop all players:
+        if loop-player has permission "skript.extrahealth10":
+            set rf max hp of loop-player to 40
+        else if loop-player has permission "skript.extrahealth8":
+            set rf max hp of loop-player to 36
+        else if loop-player has permission "skript.extrahealth6":
+            set rf max hp of loop-player to 32
+        else if loop-player has permission "skript.extrahealth4":
+            set rf max hp of loop-player to 28
+        else if loop-player has permission "skript.extrahealth2":
+            set rf max hp of loop-player to 24
         
