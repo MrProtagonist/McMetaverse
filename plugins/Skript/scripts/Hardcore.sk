@@ -8,6 +8,8 @@ on script load:
 command /meta:
 	trigger:
 		set {warping.%player%} to true
+		set rf max hp of player to 20
+		wait 1 tick
 		teleport player to {spawn}
 		message "&aYou are now in Metaverse Spawn. PVP is now off."
 		set {pvp.%player%} to 0
@@ -16,6 +18,8 @@ command /meta:
 command /hyper:
 	trigger:
 		set {warping.%player%} to true
+		set rf max hp of player to 20
+		wait 1 tick
 		teleport player to {hyper}
 		set player's fly mode to false
 		message "&aYou are now in the Hyperverse Spawn. PVP is now on!"
