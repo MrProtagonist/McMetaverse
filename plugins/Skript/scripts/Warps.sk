@@ -128,13 +128,14 @@ on damage:
 
 command /sandbox:
 	trigger:
-		message "&a&oYou are now in The Sandbox."
-		set {lastwarp.%player%} to now
+#		message "&a&oYou are now in The Sandbox."
+		message "&a&oThis world is closed due to construction. Sorry!"
+#		set {lastwarp.%player%} to now
 #		push the player upwards at speed 10
-		execute console command "/playsound random.explode %player% ~0 ~0 ~0 20 50"
-		execute console command "consolewarp %player%"
+#		execute console command "/playsound random.explode %player% ~0 ~0 ~0 20 50"
+#		execute console command "consolewarp %player%"
 #		wait 38 ticks
-		execute console command "mvtp %player% sandbox"
+#		execute console command "mvtp %player% sandbox"
 		
 command /spawn:
 	trigger:
