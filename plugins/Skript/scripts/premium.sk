@@ -15,7 +15,15 @@ on script load:
 				execute console command "/nick %loop-player% &5&o%loop-player%"
 variables:
 	{day.count} = 1
-
+on join:
+	if {day.count.%player%.head} is not set:
+		set {day.count.%player%.head} to 0
+	if {day.count.%player%.lore} is not set:
+		set {day.count.%player%.lore} to 0
+	if {day.count.%player%.rename} is not set:
+		set {day.count.%player%.rename} to 0
+	if {day.count.%player%.name} is not set:
+		set {day.count.%player%.name} to 0
 on skript start:
 	add 1 to {day.count}
 on load:
@@ -76,7 +84,6 @@ command "/donor":
 		message " &a- /rename&6  Name any unnamed entity! One a day."
 		message " &a- /name&6  Change the name of any item! One a day."
 		message " &a- /lore&6  Change the lore of any item! One a day."
-		message " &a- /warpeffect&6  Change your warping effect! &cBEING FIXED"
 		message " &a- &aReserved Login!&6  Never be denied entry, even when full."
 		if player does not have permission "is.premium":
 			message "&cYou must purchase Premium to receive these benefits."
@@ -189,11 +196,11 @@ command /lore <text>:
 				play "LEVEL_UP" specifically to player with pitch 1
 				message "&aItem lore set successfully!"
 			else:
-				if {day.count.%player%.name} is not {day.count}:
+				if {day.count.%player%.lore} is not {day.count}:
 					set the 1st line of lore of player's tool to "%colored arg%"
 					play "LEVEL_UP" specifically to player with pitch 1
 					message "&aItem lore set successfully!"
-					set {day.count.%player%.name} to {day.count}
+					set {day.count.%player%.lore} to {day.count}
 				else:
 					message "&cSorry, you can only use this command once a day. =["
 					stop
