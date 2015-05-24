@@ -44,12 +44,12 @@ buy-gold:
 
 
 buy-iron:
-  PRICE: 10
+  PRICE: 20
   COMMAND: 'give: iron_ingot'
   NAME: '&aBuy'
   LORE:
     - 'Iron Ingot x1'
-    - 'at $10'
+    - 'at $20'
   ID: iron_ingot
   KEEP-OPEN: true
   POSITION-X: 3
