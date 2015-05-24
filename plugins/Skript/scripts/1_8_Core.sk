@@ -16,6 +16,10 @@ command /leash:
 				message "&cYou can't leash an entity where you can't built!"
 		else:
 			message "&cYou don't have a leash dumbass!"
+on break of obsidian:
+	player is in world "Metacurse_the_end"
+	cancel event
+	message "&cSorry, you can't mine obsidian in this world!"
 on command "/butcher":
 	cancel event
 	message "&cYou can't use this! Use /killall mob 50, /remove drops 50, or something more specific."
