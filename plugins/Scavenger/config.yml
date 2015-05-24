@@ -20,7 +20,7 @@ Global:
   ResidenceFlag: noscv
   LanguageFile: english.yml
   DropOnPVPDeath: false
-  RestoreDelayTicks: 10
+  RestoreDelayTicks: 30
   BlackListWarn: false
   SingleItemDropsOnly: false
 Messages:
