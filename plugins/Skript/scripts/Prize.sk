@@ -29,6 +29,8 @@ every hour:
 		{_playercount} is greater than 4
 		loop {prize.players::*}:
 			difference between {prizeroom.%loop-value%.last} and now is greater than a day:
+				%loop-value% can't hold 36 wood swords:
+					stop
 				execute console command "prize %loop-value%"
 				add 1 to {prizeroom.%loop-value%.times}
 				set {prizeroom.%loop-value%.last} to now
