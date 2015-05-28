@@ -40,13 +40,13 @@ menu-settings:
 #
 # Example start
 #proglass:
- # COMMAND: 'shoptp proshop'
- # NAME: '&d[p] &aPro&fGlass &d[p]'
- # LORE:
- #   - '&f&oEvery type of glass, always in stock!'
- #   - ' '
- #   - '&eLocated in: &6Valhalla'
- # ID: 95
+# COMMAND: 'shoptp proshop'
+# NAME: '&d[p] &aPro&fGlass &d[p]'
+# LORE:
+#   - '&f&oEvery type of glass, always in stock!'
+#   - ' '
+#   - '&eLocated in: &6Valhalla'
+# ID: 95
 #  KEEP-OPEN: false
 #  POSITION-X: 2
 #  POSITION-Y: 1
@@ -54,9 +54,17 @@ menu-settings:
 # Remove the # from the line above to use the data value setting
 # Example end
 
+
+divider1:
+  NAME: ''
+  ID: 160
+  KEEP-OPEN: true
+  POSITION-X: 1
+  POSITION-Y: 1
+  DATA-VALUE: 0
 Craftio:
  COMMAND: 'shopwarp 20'
-  NAME: '&d[p] &aSaar & Craft's Woolrich &d[p]'
+  NAME: '&d[p] &aSaar & Crafts Woolrich &d[p]'
   LORE:
     - '&f&oThis is Woolrich, the best wool there is to find.'
   ID: 35
