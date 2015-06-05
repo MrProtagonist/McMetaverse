@@ -438,6 +438,8 @@ groups:
     - essentials.hat
     - essentials.sethome.multiple.noble
     - is.noble
+    - bottle.use
+    - bottle.max
     - simplesuffix.colors
     - skript.extrahealth6
     - vc.6

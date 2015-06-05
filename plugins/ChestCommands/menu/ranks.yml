@@ -143,7 +143,8 @@ noble:
     - 'Set 10 &bhomes'
     - '6 extra &4health hearts'
     - 'Format &a&o/suffix&r&7 with &4c&6o&el&ao&br&5s&7,&r &lbold&r&7, &oitalics&r'
-    - 'Use &a&o/hat&r&7 to wear the item in your hand as a hat'
+    - 'Use &a&o/hat&r&7 to wear the item in your hand as a hat.'
+    - 'Use &a&o/bottle max&r&7 to store all your xp in an empty bottle.'
     - 'Use &a&o/vc&r&7 to set up to 6 Virtual chests.'
   ID: 41
   KEEP-OPEN: false
