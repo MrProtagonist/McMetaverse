@@ -57,3 +57,9 @@ auto-updater:
 worlds:
   Sandbox:
     generator: PlotMe
+  Creative:
+    generator: PlotMe-DefaultGenerator
+  contest:
+    generator: PlotMe-DefaultGenerator
+  plotmetest:
+    generator: PlotMe-DefaultGenerator

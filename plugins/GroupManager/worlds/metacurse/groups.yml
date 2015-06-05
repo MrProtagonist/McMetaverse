@@ -41,6 +41,7 @@ groups:
     - essentials.seen
     - essentials.sethome.multiple.unlimited
     - essentials.socialspy
+    - essentials.sudo
     - essentials.tempban
     - essentials.thru
     - essentials.togglejail
@@ -66,6 +67,7 @@ groups:
     inheritance:
     - noble
     - premium
+    - champion
     info:
       prefix: '&r&f[&9MOD&r] '
       build: true
@@ -948,6 +950,8 @@ groups:
     - skript.warpeffect
     - trail.all
     - trail.allow
+    - trail.blocks
+    - trail.rains
     - trailgui.commands.*
     - trailgui.commands.trails
     - trailgui.inventory.*

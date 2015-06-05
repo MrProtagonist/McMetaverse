@@ -1,10 +1,85 @@
+script options:
+    $ developer mode
 on spawn:
 	event-entity is not a player
-	world is "Sandbox"
+	world is "contest"
+	cancel event
+on script load:
+	if {contest.going} is not set:
+		set {contest.going} to false
+command /setcontest:
+	permission: is.pro
+	trigger:
+		set {contest} to player's location
+		message "Set!"
+command /contest:
+	trigger:
+		if {contest.going} is true:
+			teleport player to {contest}
+			message "&eWelcome to the contest world! Use &a/gmc&e to go into creative mode!"
+			stop
+		else:
+			message "&cSorry, you can't go here unless a contest is going!"
+			stop
+on command "/plotme":
+	player is in world "contest"
+	player does not have the permission "essentials.socialspy"
+	message "&cSorry, you can't do that!"
+	cancel event
+	stop
+command /startcontest <integer> <text>:
+	permission: essentials.socialspy
+	usage: /startcontest [days] [contest name]
+	trigger:
+		if {contest.going} is not true:
+			message "Trying."
+			if arg 1 is set:
+				message "Trying harder."
+				if arg 2 is set:
+					broadcast "&f[&dContest&f] &6The &e&l%arg 2% &6contest has just begun! It will last for %arg 1% days."
+					set {contest.length} to arg 1
+					set {contest.name} to arg 2
+					set {contest.start} to now
+					wait 5 real seconds
+					broadcast "&f[&dContest&f] &6The &a/contest &6world is now open!"
+					set {contest.going} to true
+				else:
+					message "Gave up trying."
+			else:
+				message "NO!"
+		else:
+			message "Contest is going!"
+every hour:
+	{contest.going} is true
+	if difference between {contest.start} and now is greater than {contest.length} days:
+		broadcast "&f[&dContest&f] &cThe &e&l%{contest.name}% &ccontest has just finished! Thanks to those who participated!"
+		wait 2 real seconds
+		message "&aSending the kids home for you..."
+		loop all players in world "contest":
+			loop-player does not have the permission "essentials.socialspy"
+			message "&f[&dContest&f] &6Thanks for playing. We will release the results on the forums as soon as all judges review the entries. Keep an eye out for them!"
+			teleport loop-player to {spawn}
+			teleport loop-player to {spawn}
+		set {contest.going} to false
+		setop
+	broadcast "&f[&dContest&f] &6The &e&l%{contest.name}% &6contest is still going! Type &a/contest&6 for more details!"
+on place:
+	player does not have the permission "essentials.socialspy"
+	player is in world "contest"
+	{contest.going} is false
+	cancel event
+on break:
+	player does not have the permission "essentials.socialspy"
+	player is in world "contest"
+	{contest.going} is false
 	cancel event
 every 2 real seconds:
 	loop all players:
 		if loop-player is in world "Hyperverse":
+			loop-player's gamemode is creative
+			loop-player does not have the permission "-autoitem.replaceon.place"
+			execute console command "manuaddp %loop-player% -autoitem.replaceon.place"
+		if loop-player is in world "contest":
 			loop-player's gamemode is creative
 			loop-player does not have the permission "-autoitem.replaceon.place"
 			execute console command "manuaddp %loop-player% -autoitem.replaceon.place"

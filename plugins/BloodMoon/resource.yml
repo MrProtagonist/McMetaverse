@@ -4,7 +4,6 @@ chance: 14
 features:
   chat-message:
     enabled: true
-    message: '&cThe bloodmoon is rising !'
     start-message: '&cThe bloodmoon is rising !'
     end-message: '&cThe bloodmoon is over !'
   server-commands:
@@ -18,6 +17,11 @@ features:
       - toggledownfall
       - time set 12000
       - deop Notch
+  disabled-commands:
+    enabled: true
+    commands:
+    - spawn
+    - home
   play-sound:
     enabled: true
     sound: WITHER_SPAWN
@@ -50,7 +54,7 @@ features:
     - IRON
   target-distance:
     enabled: true
-    multiplier: 3
+    multiplier: 2.0
     mobs:
     - ZOMBIE
     - SKELETON
@@ -58,9 +62,9 @@ features:
     - CREEPER
   movement-speed:
     enabled: true
-    multiplier: 1.3
+    multiplier: 1.2
     fast-chance: 15
-    fast-multiplier: 1.5
+    fast-multiplier: 1.3
     mobs:
     - ZOMBIE
     - SKELETON
@@ -158,7 +162,6 @@ features:
   extended-night:
     enabled: true
     min-kills: 16
-    max-resets: 6
   weather:
     enabled: true
     thunder: true
@@ -170,6 +173,7 @@ features:
     enabled: false
   dungeons:
     enabled: true
+    protected: true
     biomes:
     - PLAINS
     - ICE_PLAINS
@@ -178,30 +182,25 @@ features:
     chance: 10
     min-layers: 3
     max-layers: 5
-    chest-items:
-    - BREAD
-    - APPLE
-    - PORK
-    - SADDLE
-    - BUCKET - STRING
-    - REDSTONE
-    - SULPHUR
-    - COCOA
-    min-stack-size: 1
-    max-stack-size: 8
-    items-per-chest: 12
     spawner-types:
     - ZOMBIE
     - SKELETON
     spawner-delay: 100
     spawner-count: 6
     spawner-max-mobs: 8
-    protected: true
-  disabled-commands:
-    enabled: true
-    commands:
-    - spawn
-    - home
+    chest-items:
+    - BREAD
+    - APPLE
+    - PORK
+    - SADDLE
+    - BUCKET
+    - STRING
+    - REDSTONE
+    - SULPHUR
+    - COCOA
+    min-stack-size: 1
+    max-stack-size: 8
+    items-per-chest: 12
   giants:
     enabled: true
     break-blocks:

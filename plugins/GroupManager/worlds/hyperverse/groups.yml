@@ -17,6 +17,10 @@ groups:
     - chestcommands.open.biomewarps.yml
     - chestcommands.open.nav.yml
     - chestcommands.open.spawnwarps.yml
+    - coreprotect.*
+    - coreprotect.inspect
+    - coreprotect.lookup,
+    - craftio
     - essentials.chat.color
     - essentials.enderchest
     - essentials.enderchest.others
@@ -41,6 +45,7 @@ groups:
     - essentials.tphere
     - essentials.whois
     - griefprevention.claimslistother
+    - griefprevention.visualizenearbyclaims
     - groupmanager.listgroups
     - groupmanager.mangcheckp
     - groupmanager.manglistp
@@ -48,6 +53,7 @@ groups:
     - groupmanager.manulistp
     - groupmanager.manwhois
     - mcmmo.chat.adminchat
+    - Pixeltastic
     inheritance:
     - noble
     - premium
@@ -344,6 +350,7 @@ groups:
     - -bukkit.command.tell
     - -minecraft.command.tell
     - -bukkit.command.help
+    - -auctions.command.bid
     - autorank.track
     - bukkit.command.help
     - bukkit.command.list
@@ -370,6 +377,7 @@ groups:
     - essentials.list
     - essentials.mail
     - essentials.mail.send
+    - essentials.message
     - essentials.motd
     - essentials.msg
     - essentials.mute.notify
@@ -386,7 +394,7 @@ groups:
     - griefprevention.claims
     - griefprevention.createclaims
     - griefprevention.lava
-    - griefprevention.transferclaim
+    - griefprevention.transferclaims
     - imageonmap.userender
     - is.visitor
     - killermoney.earnmoney
