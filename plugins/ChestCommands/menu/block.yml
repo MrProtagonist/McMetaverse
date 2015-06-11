@@ -62,9 +62,9 @@ divider1:
   POSITION-X: 1
   POSITION-Y: 1
   DATA-VALUE: 0
-Craftio:
- COMMAND: 'shopwarp 20'
-  NAME: '&d[p] &aSaar & Crafts Woolrich &d[p]'
+CrafioShop:
+  COMMAND: 'shopwarp 20'
+  NAME: '&d[p] &aSaar and Crafts Woolrich &d[p]'
   LORE:
     - '&f&oThis is Woolrich, the best wool there is to find.'
   ID: 35
@@ -79,6 +79,16 @@ divider2:
   POSITION-X: 3
   POSITION-Y: 1
   DATA-VALUE: 0
+MistiShop:
+  COMMAND: 'shopwarp 22'
+  NAME: '&d[p] &aMistis Shop &d[p]'
+  LORE:
+    - '&f&oAt Mistis Shop we mainly sell wool and a few other items at affordable prices!'
+  ID: 35
+  KEEP-OPEN: false
+  POSITION-X: 1
+  POSITION-Y: 2
+  DATA-VALUE: 11
 divider3:
   NAME: ''
   ID: 160

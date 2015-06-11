@@ -181,6 +181,16 @@ divider7:
   POSITION-X: 4
   POSITION-Y: 2
   DATA-VALUE: 0
+UnderworldLordShop:
+  COMMAND: 'shopwarp 21'
+  NAME: '&d[p] &aUnders Pharmacy &d[p]'
+  LORE:
+    - '&f&oFor all your drug and item needs!'
+  ID: 353
+  KEEP-OPEN: false
+  POSITION-X: 9
+  POSITION-Y: 2
+  DATA-VALUE: 0
 divider8:
   NAME: ''
   ID: 160

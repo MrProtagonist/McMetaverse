@@ -60,7 +60,7 @@ Block:
   NAME: '&d[p] &6&lBlock &d[p]'
   LORE:
     - '&f&oBuilding and decorative blocks'
-  ID: 5
+  ID: wood
   KEEP-OPEN: true
   POSITION-X: 5
   POSITION-Y: 2
