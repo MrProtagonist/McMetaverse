@@ -140,7 +140,11 @@ command /suffix <text>:
 		if arg is set:
 			set {_l} to length of the string argument
 			if {_l} is greater than 20:
-				message "&csuffix is too long! Please shorten it!"
+				message "&cSuffix is too long! Please shorten it!"
+				stop
+			if arg contains "&":
+				player does not have the permission "is.noble"
+				message "&cYou can't do formatted suffixes yet!"
 				stop
 			message "&aSet your suffix to &f[%colored arg%&f]"
 			play "LEVEL_UP" specifically to player with pitch 1
