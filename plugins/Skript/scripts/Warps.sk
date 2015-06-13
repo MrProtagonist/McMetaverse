@@ -1,3 +1,5 @@
+script options:
+    $ developer mode
 # command /warpeffect [<text>]:
 #	permission: skript.warpeffect
 #	trigger:
@@ -130,7 +132,10 @@ command /sandbox:
 	trigger:
 		message "&a&oYou are now in The Sandbox."
 		execute console command "mvtp %player% sandbox"
-		
+on command "plotme claim" or "plotme auto":
+	if {rank.%player%} is less than 5:
+		message "&cYou must be the Seasoned rank to claim a plot here!"
+		cancel event
 command /spawn:
 	trigger:
 		message "&a&oYou are now at Spawn"

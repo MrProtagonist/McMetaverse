@@ -2,7 +2,7 @@ script options:
     $ developer mode
 on spawn:
 	event-entity is not a player
-	world is "contest"
+	world is "contest" or "sandbox"
 	cancel event
 on skript start:
 	if {contest.length} is not 0:
