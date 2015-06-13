@@ -91,6 +91,10 @@ every 2 real seconds:
 			loop-player's gamemode is creative
 			loop-player does not have the permission "-autoitem.replaceon.place"
 			execute console command "manuaddp %loop-player% -autoitem.replaceon.place"
+		if loop-player is in world "sandbox":
+			loop-player's gamemode is creative
+			loop-player does not have the permission "-autoitem.replaceon.place"
+			execute console command "manuaddp %loop-player% -autoitem.replaceon.place"
 		else:
 			{autofill.%loop-player%} is not set:
 				set {autofill.%loop-player%} to false
