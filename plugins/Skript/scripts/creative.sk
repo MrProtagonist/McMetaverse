@@ -4,9 +4,13 @@ on spawn:
 	event-entity is not a player
 	world is "contest" or "sandbox"
 	cancel event
+on weather change to rain or thunder in "sandbox":
+	set weather to sunny in "sandbox"
 on skript start:
 	if {contest.length} is not 0:
 		subtract 1 from {contest.length}
+at 10:00 in "sandbox":
+	set time to 7:00 in "sandbox"
 on script load:
 	if {contest.going} is not set:
 		set {contest.going} to false
