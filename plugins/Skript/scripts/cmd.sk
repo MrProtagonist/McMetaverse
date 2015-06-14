@@ -66,7 +66,7 @@ every 2 ticks:
 		
 every 2 ticks:
 	set {_loopcountb} to 0
-	loop all players in radius 3 around block at {cmd.doorspot}:
+	loop all players in radius 3 around block at {cmd2.doorspot}:
 		add 1 to {_loopcountb}
 		if {cmddoor2.open} is not set:
 			set {cmddoor2.open} to true
@@ -80,7 +80,7 @@ every 2 ticks:
 				set block at loop-value-2 to air
 	if {_loopcountb} is 0:
 		loop {cmd2.door::*}:
-			set block at location of block at loop-value to stone
+			set block at location of block at loop-value to stone brick
 		delete {cmddoor2.open}
 			
 every 2 ticks:
