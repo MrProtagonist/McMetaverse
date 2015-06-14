@@ -1,3 +1,5 @@
+script options:
+    $ developer mode
 on script load:
 	loop all players:
 		set {special.%loop-player%.last} to 0
@@ -29,18 +31,18 @@ command /setspecial:
 command /setdoor:
 	permission: is.op
 	trigger:
-		if {settingdoor.%player%} is not set:
-			set {cmd.doorspot} to location of player
-			delete {cmd.door::*}
-			set {settingdoor.%player%} to true
+		if {settingdoor2.%player%} is not set:
+			set {cmd2.doorspot} to location of player
+			delete {cmd2.door::*}
+			set {settingdoor2.%player%} to true
 			message "Now setting magic door..."
 		else:
-			delete {settingdoor.%player%}
+			delete {settingdoor2.%player%}
 			message "&aDone!"
 on break:
-	{settingdoor.%player%} is true
+	{settingdoor2.%player%} is true
 	cancel event
-	add location of event-block to {cmd.door::*}
+	add location of event-block to {cmd2.door::*}
 	message "Added to the list!"
 
 every 2 ticks:
@@ -61,6 +63,25 @@ every 2 ticks:
 		loop {cmd.door::*}:
 			set block at location of block at loop-value to stone
 		delete {cmddoor.open}
+		
+every 2 ticks:
+	set {_loopcountb} to 0
+	loop all players in radius 3 around block at {cmd.doorspot}:
+		add 1 to {_loopcountb}
+		if {cmddoor2.open} is not set:
+			set {cmddoor2.open} to true
+			wait 1 real second
+			execute console command "/playsound dig.stone %loop-player%"
+			loop {cmd2.door::*}:
+				set block at loop-value-2 to cobblestone
+			wait 2 real seconds
+			execute console command "/playsound dig.stone %loop-player%"
+			loop {cmd2.door::*}:
+				set block at loop-value-2 to air
+	if {_loopcountb} is 0:
+		loop {cmd2.door::*}:
+			set block at location of block at loop-value to stone
+		delete {cmddoor2.open}
 			
 every 2 ticks:
 	spawn 40 of portal data 1 offset with 2, 2, 2 at {specialblock}
