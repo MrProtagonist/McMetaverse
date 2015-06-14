@@ -1,4 +1,6 @@
-﻿on join:
+﻿script options:
+    $ developer mode
+on join:
 	wait 1 tick
 	if player has the permission "is.premium":
 		if player has the permission "is.op":
@@ -276,11 +278,10 @@ on rightclick on villager or librarian or butcher or farmer or priest or blacksm
 	name of clicked entity does not contain "Teller"
 	cancel event
 	send "&cSorry, you can't trade with this villager!" to player
-on shoot:
-
 on damage:
 	victim is a villager
 	victim is not a player
 	name of victim is not " "
+	attacker cannot build at victim
 	cancel event
 	send "&cSorry, you can't damage this villager!" to attacker
