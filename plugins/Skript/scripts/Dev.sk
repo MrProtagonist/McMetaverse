@@ -1,3 +1,5 @@
+script options:
+    $ developer mode
 on script load:
 	if {bonus} is not set:
 		set {bonus} to 0
