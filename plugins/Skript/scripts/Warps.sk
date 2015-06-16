@@ -139,7 +139,7 @@ command /sandbox:
 		message "&a&oYou are now in The Sandbox."
 		teleport player to {sandbox}
 on command "/plotme claim" or "/plotme auto" or "/plotme":
-	player is in world "sandbox"
+	player is in the world "sandbox"
 	if {rank.%player%} is less than 5:
 		message "&cYou must be the Seasoned rank to claim a plot here!"
 		cancel event
