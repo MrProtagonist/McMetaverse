@@ -85,12 +85,6 @@ command /quit:
 command /townwarp <integer>:
 	trigger:
 		message "&a&oNow traveling to &6%{towns.name::%arg%}%&a."
-		push the player upwards at speed 10
-		execute console command "/playsound random.explode %player% ~0 ~0 ~0 20 50"
-		loop 33 times:
-			spawn 20 of mob spell data 1 offset with 1, 0, 1 at location of player
-			wait 1 tick
-		spawn 10 of huge explosion data 1 offset with 2, 2, 2 at location of player
 		wait 5 ticks
 		teleport the player to {towns.warp::%arg%}
 command /towns [<text>] [<text>]:
@@ -122,8 +116,6 @@ command /testtowns:
 			message "%loop-index% &a%loop-value% &e%{towns.owner::%loop-index%}%"
 command /town [<text>] [<text>]:
 	trigger:
-		message "&cThis feature is under renovations. Please bear with us for a little while while we make it better for you!"
-		stop
 		if arg 1 is not set:
 			message "&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-[ &aTOWN MENU &f&l]-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-"
 			message "&eTOWNS YOU OWN:"
