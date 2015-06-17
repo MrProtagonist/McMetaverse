@@ -70,7 +70,6 @@ variables:
 	{wchat::/lobby} = "§a§o/lobby§r"
 	{wchat::/hyper} = "§a§o/hyper§r"
 	{wchat::/hyperverse} = "§a§o/hyperverse§r"
-	{wchat::/hy} = "§a§o/hyp§r"
 	{wchat::/meta} = "§a§o/meta§r"
 	{wchat::/ticket} = "§a§o/ticket§r"
 	{wchat::/sethome} = "§a§o/sethome§r"
@@ -105,7 +104,7 @@ on first join:
 		remove {welcome.party::%loop-index%} from {welcome.party::*}
 		set {welcomed.%{welcome.party::%loop-index%}%} to false
 		
-	
+
 # Clear Chat
 command /cc:
 	permission: essentials.socialspy
@@ -120,6 +119,28 @@ command /provanish:
 	trigger:
 		broadcast "&e%player% left the game."
 		make the player execute "/vanish"
+		
+on join:
+	if {rules.%player%.version} is not set:
+		set {rules.%player%.version} to 0
+	if {rules.%player%.version} is not {rules.version}:
+		wait 30 real seconds
+		loop 20 times:
+			message " "
+		message "&f[&aSERVER&f] The &a/rules&f have just been updated! You must read and agree to them to continue playing."
+		
+		
+command /newrules:
+	permission: is.pro
+	trigger:
+		if {rules.version} is not set:
+			set {rules.version} to 0
+		add 1 to {rules.version}
+		loop 20 times:
+			broadcast " "
+		broadcast "&f[&aSERVER&f] The &a/rules&f have just been updated! You must read and agree to them to continue playing."
+		delete {rules.%player%.agreed}
+	
 command /setaccept:
 	permission: is.fuckin.pro
 	trigger:
@@ -193,6 +214,8 @@ command /rules:
 		send json of "             &f[&a8&f] &oNo arguing with staff" tooltip "&eWhy?&f It is inappropriate to argue with staff in chat.%new line%&fIf you question a decision, you may &a/msg&f that staff.%new line%&fIf you got punished, create an appeal on the website for all staff to review." to player
 		send json of "             &f[&a9&f] &oNo public eyesores" tooltip "&ePublic Eyesore:&f Anything that any normal player can find%new line%&fwhile exploring the world that is unpleasant.%new line%&fThis includes things like penises, 1x1 dirt towers, death pits,%new line%&ffloating lava, dirt houses, hidden public traps, etc." to player
 		send json of "             &f[&a10&f] &oNothing that could cause lag" tooltip "&eLag:&f Anything that slows down the entire server.%new line%&bThis includes things like forcing entities onto the same block,%new line%tightly confined mass farms, redstone clocks, etc." to player
+		send json of "             &f[&a11&f] &oNo undercutting the Server Shop" tooltip "&fYou cannot sell items for less than the%new line%Server Shop buys for.%new line%&eNO ECONOMY BREAKERS AT ALL!" to player
+		send json of "             &f[&a12&f] &oKeep public chat in English" tooltip "&fIf you need to chat in another language,%new line%join a /chat room or use /msg.%new line%&eThis is so Staff can regulate chat." to player
 		message " "
 		message "&f[&6NOTE&f] &e&oThis server is intended for adults. We allow cursing. By agreeing to these rules, you agree to not be bothered by profanity."
 		message "&f&l============================================="
