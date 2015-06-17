@@ -87,7 +87,7 @@ on chat:
 			message " "
 			message "&eDo not chat while you are performing this task. When done as instructed, say &adone&e. To quit submission, say &aquit&e."
 			message " "
-			message "&c&oWARNING:&f Saying &adone&f will submit your shop to be added to the menu, and you will be charged &a$10,000&f."
+			message "&c&oWARNING:&f Saying &adone&f will submit your shop to be added to the menu, and you will be charged &a$8,000&f."
 			stop
 		else:
 			message "&cTOO LONG! Try again, but shorter."

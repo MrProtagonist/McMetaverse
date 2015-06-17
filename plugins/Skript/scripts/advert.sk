@@ -12,7 +12,7 @@ command /adreview [<text>] [<text>]:
 		if arg 1 is "approve":
 			if {ad.pending::%arg 2%} is set:
 				message "&aYou have approved the ad of %arg 2%."
-				execute console command "mail send %arg 2% Your ad was approved by %player% at %now%. It will run for 48 hours unless you extend the time."
+				execute console command "mail send %arg 2% Your ad was approved by %player% at %now%. It will run for 72 hours unless you extend the time."
 				set {ad.list::%arg 2%} to {ad.pending::%arg 2%}
 				delete {ad.pending::%arg 2%}
 		if arg 1 is "deny":
@@ -47,9 +47,9 @@ command /ad [<text>]:
 				if arg is "confirm":
 					{ad.%player%.temp} is set
 					set {ad.pending::%player%} to {ad.%player%.temp}
-					set {ad.time::%player%} to 49
+					set {ad.time::%player%} to 73
 					execute console command "eco take %player% 5000"
-					message "&eYour ad has been submitted for review. Type &a/ad&e to see it's status. This can take up to 48 hours."
+					message "&eYour ad has been submitted for review. Type &a/ad&e to see it's status. This can take up to 72 hours."
 					delete {ad.%player%.temp}
 					stop
 				if arg is "extend":
