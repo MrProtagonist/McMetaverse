@@ -124,11 +124,11 @@ on join:
 	if {rules.%player%.version} is not set:
 		set {rules.%player%.version} to 0
 	if {rules.%player%.version} is not {rules.version}:
-		wait 30 real seconds
+		wait 20 real seconds
 		loop 20 times:
 			message " "
 		message "&f[&aSERVER&f] The &a/rules&f have just been updated! You must read and agree to them to continue playing."
-		
+		set {rules.%player%.agreed} to false
 		
 command /newrules:
 	permission: is.pro
