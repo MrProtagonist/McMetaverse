@@ -181,15 +181,9 @@ divider7:
   POSITION-X: 4
   POSITION-Y: 2
   DATA-VALUE: 0
-<<<<<<< HEAD
-underspharmacy:
-  COMMAND: 'shopwarp 21'
-  NAME: '&d[p] &bUnders Pharmacy&d[p]'
-=======
 UnderworldLordShop:
   COMMAND: 'shopwarp 21'
   NAME: '&d[p] &aUnders Pharmacy &d[p]'
->>>>>>> origin/master
   LORE:
     - '&f&oFor all your drug and item needs!'
   ID: 353
@@ -236,6 +230,16 @@ divider10:
   ID: 160
   KEEP-OPEN: true
   POSITION-X: 1
+  POSITION-Y: 3
+  DATA-VALUE: 0
+ProGeneralStore:
+  COMMAND: 'shopwarp 25'
+  NAME: '&d[p] &aJoes General Store &d[p]'
+  LORE:
+    - '&f&oI sell drugs. Yup.'
+  ID: 169
+  KEEP-OPEN: false
+  POSITION-X: 6
   POSITION-Y: 3
   DATA-VALUE: 0
 divider11:
