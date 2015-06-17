@@ -1,3 +1,16 @@
+script options:
+    $ developer mode
+command /vote:
+	trigger:
+		message "&6&lVoting Sites:"
+		 send json of "(1) Planet Minecraft" tooltip "Click here to vote!" open "http://www.planetminecraft.com/server/mcmetaversecom-survival-server-247/vote/" to player
+		 send json of "(2) Minecraft-MP" tooltip "Click here to vote!" open "http://minecraft-mp.com/server/9482/vote/" to player
+		 send json of "(3) Minecraft-Index" tooltip "Click here to vote!" open "http://www.minecraft-index.com/2969-mcmetaverse-network/vote" to player
+		 send json of "(4) TopG" tooltip "Click here to vote!" open "http://topg.org/Minecraft/in-391050" to player
+		 send json of "(5) Minecraft Server List" tooltip "Click here to vote!" open "http://minecraft-server-list.com/server/107426/vote/" to player
+		 message "&6Click a link to vote and get a prize! Vote daily!"
+
+
 every real minute:
 	set {voter.1} to line 3 of block at {voter.1.location}
 	set {voter.2} to line 3 of block at {voter.2.location}

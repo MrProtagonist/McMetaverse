@@ -1,4 +1,6 @@
-﻿variables:
+﻿script options:
+    $ developer mode
+variables:
 	{warnings.%player%} = 0
 on join:
 	{warnings.%player%} is not set
@@ -244,53 +246,3 @@ command /resetwarnings <player>:
 		set {warnings.%player%} to 0
 		message "&6Warnings reset!"
 		stop
-
-variables:
-	{vote.for} = 0
-	{vote.against} = 0
-command /vote <text> <player> <text>:
-	description: Vote to mute or jail a player.
-	usage: /vote <jail or mute> <player> <reason>
-	trigger:
-		broadcast "&a%player% &6has set a vote to&a %arg 1% %arg 2%&6 for &c%arg 3%&6!"
-		broadcast "&6Use &a/for &6to vote to punish them!"
-		broadcast "&6Use &a/against &6to vote to pardon them!"
-		wait 1 minute
-		if {vote.for} is greater than {vote.against}:
-			if arg 1 is "jail":
-				execute console command "/jail %arg 2% cell1 30m" 
-				broadcast "&a%arg 1% &cwas jailed for 30 mins by a community vote!"
-			else:
-				execute console command "/mute %arg 2% 30m" 
-				broadcast "&a%arg 2% &cwas muted for 30 mins by a community vote!"
-			set {vote.for} to 0
-			set {vote.against} to 0
-			set {voted.%player%} to false
-		else:
-			broadcast "&cThere were not enough votes to %arg 1% &a%arg 2%&c!"
-			set {vote.for} to 0
-			set {vote.against} to 0
-			set {voted.%player%} to false
-command /for:
-	trigger:
-		if {voted.%player%} is true:
-			message "&cYou have already voted!"
-			stop
-		else:
-			add 1 to {vote.for}
-			message "&6You voted to punish the player!"
-			set {voted.%player%} to true
-			stop
-
-command /against:
-	trigger:
-		if {voted.%player%} is true:
-			message "&cYou have already voted!"
-			stop
-		else:
-			add 1 to {vote.against}
-			message "&6You voted to pardon the player!"
-			set {voted.%player%} to true
-			stop
-on quit:
-	set {voted.%player%} to false
