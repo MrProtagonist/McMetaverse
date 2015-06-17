@@ -55,8 +55,8 @@ auto-updater:
   host: dl.bukkit.org
   suggest-channels: true
 worlds:
-  Sandbox:
-    generator: PlotMe
+  sandbox:
+    generator: PlotMe-DefaultGenerator
   Creative:
     generator: PlotMe-DefaultGenerator
   contest:

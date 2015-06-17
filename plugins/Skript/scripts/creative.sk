@@ -2,8 +2,15 @@ script options:
     $ developer mode
 on spawn:
 	event-entity is not a player
-	world is "contest"
+	world is "contest" or "sandbox"
 	cancel event
+on weather change to rain or thunder in "sandbox":
+	set weather of "sandbox" to sunny
+on skript start:
+	if {contest.length} is not 0:
+		subtract 1 from {contest.length}
+at 10:00 in "sandbox":
+	set time in "sandbox" to 7am
 on script load:
 	if {contest.going} is not set:
 		set {contest.going} to false
@@ -19,50 +26,55 @@ command /contest:
 			message "&eWelcome to the contest world! Use &a/gmc&e to go into creative mode!"
 			stop
 		else:
+			if player has the permission "essentials.socialspy":
+				teleport player to {contest}
+				stop
 			message "&cSorry, you can't go here unless a contest is going!"
 			stop
-on command "/plotme":
-	player is in world "contest"
-	player does not have the permission "essentials.socialspy"
-	message "&cSorry, you can't do that!"
-	cancel event
-	stop
+on command "/plotme" or "/plotme claim" or "/plotme auto":
+	if player is in world "contest":
+		player does not have the permission "essentials.socialspy"
+		message "&cSorry, you can't do that!"
+		cancel event
+		stop
 command /startcontest <integer> <text>:
 	permission: essentials.socialspy
 	usage: /startcontest [days] [contest name]
 	trigger:
 		if {contest.going} is not true:
-			message "Trying."
 			if arg 1 is set:
-				message "Trying harder."
 				if arg 2 is set:
 					broadcast "&f[&dContest&f] &6The &e&l%arg 2% &6contest has just begun! It will last for %arg 1% days."
-					set {contest.length} to arg 1
+					set {contest.length} to arg 1 * 24
 					set {contest.name} to arg 2
 					set {contest.start} to now
 					wait 5 real seconds
 					broadcast "&f[&dContest&f] &6The &a/contest &6world is now open!"
 					set {contest.going} to true
 				else:
-					message "Gave up trying."
+					message "&cLearn to use this command before you try."
 			else:
-				message "NO!"
+				message "&cLearn to use this command before you try."
 		else:
-			message "Contest is going!"
+			message "&cContest is already going!"
+command /timeleft:
+	trigger:
+		set {contest.length} to 1
 every hour:
 	{contest.going} is true
-	if difference between {contest.start} and now is greater than {contest.length} days:
-		broadcast "&f[&dContest&f] &cThe &e&l%{contest.name}% &ccontest has just finished! Thanks to those who participated!"
-		wait 2 real seconds
-		message "&aSending the kids home for you..."
+	if {contest.length} is 0:
+		broadcast "&f[&dContest&f] &cThe &e&l%{contest.name}% &ccontest has just finished! The judging will now begin."
+		wait 3 real seconds
+		broadcast "&f[&dContest&f] &cSending the kids home..."
 		loop all players in world "contest":
 			loop-player does not have the permission "essentials.socialspy"
-			message "&f[&dContest&f] &6Thanks for playing. We will release the results on the forums as soon as all judges review the entries. Keep an eye out for them!"
+			send "&f[&dContest&f] &6Thanks for participating. We will release the results on the forums as soon as all judges review the entries. Keep an eye out for them!" to loop-player
 			teleport loop-player to {spawn}
 			teleport loop-player to {spawn}
 		set {contest.going} to false
-		setop
-	broadcast "&f[&dContest&f] &6The &e&l%{contest.name}% &6contest is still going! Type &a/contest&6 for more details!"
+		stop
+	subtract 1 from {contest.length}
+	broadcast "&f[&dContest&f] &6The &e&l%{contest.name}% &6contest has %{contest.length}% hours left! Type &a/contest&6 for more details!"
 on place:
 	player does not have the permission "essentials.socialspy"
 	player is in world "contest"
@@ -80,6 +92,10 @@ every 2 real seconds:
 			loop-player does not have the permission "-autoitem.replaceon.place"
 			execute console command "manuaddp %loop-player% -autoitem.replaceon.place"
 		if loop-player is in world "contest":
+			loop-player's gamemode is creative
+			loop-player does not have the permission "-autoitem.replaceon.place"
+			execute console command "manuaddp %loop-player% -autoitem.replaceon.place"
+		if loop-player is in world "sandbox":
 			loop-player's gamemode is creative
 			loop-player does not have the permission "-autoitem.replaceon.place"
 			execute console command "manuaddp %loop-player% -autoitem.replaceon.place"

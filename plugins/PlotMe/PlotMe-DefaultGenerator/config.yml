@@ -1,34 +1,19 @@
 worlds:
-  Sandbox:
-    PlotFloorBlock: '2'
-    RoadAltBlock: '5:2'
-    FillBlock: '3'
-    PathWidth: 7
-    ProtectedWallBlock: '44:4'
-    PlotSize: 32
-    UnclaimedBorder: '44:7'
-    XTranslation: 0
-    GroundHeight: 64
-    RoadMainBlock: '5'
-    ZTranslation: 0
-    WallBlock: '44'
-    ForSaleWallBlock: '44:1'
-    AuctionWallBlock: '44:1'
   sandbox:
-    PlotFloorBlock: '2'
-    RoadAltBlock: '5:2'
-    FillBlock: '3'
+    PlotFloorBlock: '12'
+    RoadAltBlock: '5:5'
+    FillBlock: '12'
     PathWidth: 7
-    ProtectedWallBlock: '44:4'
-    PlotSize: 32
-    UnclaimedBorder: '44:7'
+    ProtectedWallBlock: '44'
+    PlotSize: 75
+    UnclaimedBorder: '44:3'
     XTranslation: 0
     GroundHeight: 64
-    RoadMainBlock: '5'
+    RoadMainBlock: '98'
     ZTranslation: 0
     WallBlock: '44'
-    ForSaleWallBlock: '44:1'
-    AuctionWallBlock: '44:1'
+    ForSaleWallBlock: '44:3'
+    AuctionWallBlock: '44:3'
   contest:
     PlotFloorBlock: '2'
     RoadAltBlock: '5:5'
@@ -45,16 +30,16 @@ worlds:
     ForSaleWallBlock: '44:1'
     AuctionWallBlock: '44:1'
   plotmetest:
-    PlotFloorBlock: '2'
+    PlotFloorBlock: '12'
     RoadAltBlock: '5:2'
-    FillBlock: '3'
+    FillBlock: '12'
     PathWidth: 7
-    ProtectedWallBlock: '44:4'
-    PlotSize: 32
-    UnclaimedBorder: '44:7'
+    ProtectedWallBlock: '44'
+    PlotSize: 75
+    UnclaimedBorder: '44:1'
     XTranslation: 0
     GroundHeight: 64
-    RoadMainBlock: '5'
+    RoadMainBlock: '98'
     ZTranslation: 0
     WallBlock: '44'
     ForSaleWallBlock: '44:1'

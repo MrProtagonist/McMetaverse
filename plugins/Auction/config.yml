@@ -21,10 +21,13 @@ allow-using-bid-auto-command: true
 allow-damaged-items: true
 
 # Blocking commands
-block-commands-when-auctioning: false
-block-commands-if-auction-queued: false
+block-commands-when-auctioning: true
+block-commands-if-auction-queued: true
 blocked-commands:
-- "/test"
+- "/meta"
+- "/hyper"
+- "/spawn"
+- "/resource"
 
 # Broadcast times
 broadcast-times:

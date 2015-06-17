@@ -124,6 +124,7 @@ on death:
 on respawn:
 	{sandstorm.%player%.spectating} is true
 	teleport player to {sandstorm.lobby}
+	teleport player to {sandstorm.lobby}
 	if {sandstorm.going} is false:
 		set {sandstorm.%player%.spectating} to false
 on quit:

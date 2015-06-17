@@ -90,6 +90,54 @@ worlds:
     generator: 'null'
     playerLimit: '-1'
     allowFlight: 'true'
+  sandbox:
+    ==: MVWorld
+    hidden: 'false'
+    alias: ''
+    color: WHITE
+    style: NORMAL
+    pvp: 'true'
+    scale: '1.0'
+    respawnWorld: ''
+    allowWeather: 'true'
+    difficulty: EASY
+    spawning:
+      ==: MVSpawnSettings
+      animals:
+        ==: MVSpawnSubSettings
+        spawn: 'true'
+        spawnrate: '-1'
+        exceptions: []
+      monsters:
+        ==: MVSpawnSubSettings
+        spawn: 'true'
+        spawnrate: '-1'
+        exceptions: []
+    entryfee:
+      ==: MVEntryFee
+      amount: '0.0'
+      currency: '-1'
+    hunger: 'true'
+    autoHeal: 'true'
+    adjustSpawn: 'true'
+    portalForm: ALL
+    gameMode: SURVIVAL
+    keepSpawnInMemory: 'true'
+    spawnLocation:
+      ==: MVSpawnLocation
+      yaw: 0.0
+      pitch: 0.0
+      z: 0.0
+      y: 65.0
+      x: 0.0
+    autoLoad: 'true'
+    bedRespawn: 'true'
+    worldBlacklist: []
+    environment: NORMAL
+    seed: '-1797195342824139618'
+    generator: PlotMe-DefaultGenerator
+    playerLimit: '-1'
+    allowFlight: 'true'
   resource:
     ==: MVWorld
     hidden: 'false'
@@ -128,20 +176,20 @@ worlds:
       yaw: 0.0
       pitch: 0.0
       z: 0.0
-      y: 70.0
+      y: 97.0
       x: 0.0
     autoLoad: 'true'
     bedRespawn: 'true'
     worldBlacklist: []
     environment: NORMAL
-    seed: '5438521126918611430'
+    seed: '4768127610036410735'
     generator: 'null'
     playerLimit: '-1'
     allowFlight: 'true'
   contest:
     ==: MVWorld
     hidden: 'false'
-    alias: ''
+    alias: contest
     color: WHITE
     style: NORMAL
     pvp: 'true'
@@ -282,54 +330,6 @@ worlds:
     generator: 'null'
     playerLimit: '-1'
     allowFlight: 'true'
-  Hyperverse_nether:
-    ==: MVWorld
-    hidden: 'false'
-    alias: Hyperverse_nether
-    color: WHITE
-    style: NORMAL
-    pvp: 'false'
-    scale: '8.0'
-    respawnWorld: ''
-    allowWeather: 'true'
-    difficulty: EASY
-    spawning:
-      ==: MVSpawnSettings
-      animals:
-        ==: MVSpawnSubSettings
-        spawn: 'true'
-        spawnrate: '-1'
-        exceptions: []
-      monsters:
-        ==: MVSpawnSubSettings
-        spawn: 'true'
-        spawnrate: '-1'
-        exceptions: []
-    entryfee:
-      ==: MVEntryFee
-      amount: '0.0'
-      currency: '-1'
-    hunger: 'true'
-    autoHeal: 'true'
-    adjustSpawn: 'true'
-    portalForm: ALL
-    gameMode: SURVIVAL
-    keepSpawnInMemory: 'false'
-    spawnLocation:
-      ==: MVSpawnLocation
-      yaw: 0.0
-      pitch: 0.0
-      z: 0.0
-      y: 112.0
-      x: 0.0
-    autoLoad: 'true'
-    bedRespawn: 'true'
-    worldBlacklist: []
-    environment: NETHER
-    seed: '8354213722778043370'
-    generator: 'null'
-    playerLimit: '-1'
-    allowFlight: 'true'
   Minigame:
     ==: MVWorld
     hidden: 'false'
@@ -375,6 +375,54 @@ worlds:
     worldBlacklist: []
     environment: NORMAL
     seed: '202961'
+    generator: 'null'
+    playerLimit: '-1'
+    allowFlight: 'true'
+  Hyperverse_nether:
+    ==: MVWorld
+    hidden: 'false'
+    alias: Hyperverse_nether
+    color: WHITE
+    style: NORMAL
+    pvp: 'false'
+    scale: '8.0'
+    respawnWorld: ''
+    allowWeather: 'true'
+    difficulty: EASY
+    spawning:
+      ==: MVSpawnSettings
+      animals:
+        ==: MVSpawnSubSettings
+        spawn: 'true'
+        spawnrate: '-1'
+        exceptions: []
+      monsters:
+        ==: MVSpawnSubSettings
+        spawn: 'true'
+        spawnrate: '-1'
+        exceptions: []
+    entryfee:
+      ==: MVEntryFee
+      amount: '0.0'
+      currency: '-1'
+    hunger: 'true'
+    autoHeal: 'true'
+    adjustSpawn: 'true'
+    portalForm: ALL
+    gameMode: SURVIVAL
+    keepSpawnInMemory: 'false'
+    spawnLocation:
+      ==: MVSpawnLocation
+      yaw: 0.0
+      pitch: 0.0
+      z: 0.0
+      y: 112.0
+      x: 0.0
+    autoLoad: 'true'
+    bedRespawn: 'true'
+    worldBlacklist: []
+    environment: NETHER
+    seed: '8354213722778043370'
     generator: 'null'
     playerLimit: '-1'
     allowFlight: 'true'
@@ -429,7 +477,7 @@ worlds:
   Sandbox:
     ==: MVWorld
     hidden: 'false'
-    alias: Sandbox
+    alias: ''
     color: WHITE
     style: NORMAL
     pvp: 'false'
@@ -463,15 +511,15 @@ worlds:
       ==: MVSpawnLocation
       yaw: 0.0
       pitch: 0.0
-      z: 3.0
-      y: 66.0
-      x: 3.0
+      z: 0.0
+      y: 65.0
+      x: 0.0
     autoLoad: 'true'
     bedRespawn: 'true'
     worldBlacklist: []
     environment: NORMAL
-    seed: '-2918288241109040941'
-    generator: PlotMe
+    seed: '-604754494422562081'
+    generator: PlotMe-DefaultGenerator
     playerLimit: '-1'
     allowFlight: 'true'
   Vanilla:

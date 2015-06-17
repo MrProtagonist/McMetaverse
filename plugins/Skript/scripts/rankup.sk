@@ -1,26 +1,85 @@
 on join:
 	if {ranked.%player%} is not set:
 		set {ranked.%player%} to true
-	if player has permission "is.visitor":
-		set {rank.%player%} to 0
-	if player has permission "is.rookie":
-		set {rank.%player%} to 1
-	if player has permission "is.regular":
-		set {rank.%player%} to 2
-	if player has permission "is.citizen":
-		set {rank.%player%} to 3
-	if player has permission "is.craftsman":
-		set {rank.%player%} to 4
-	if player has permission "is.seasoned":
-		set {rank.%player%} to 5
-	if player has permission "is.noble":
-		set {rank.%player%} to 6
-	if player has permission "is.elite":
-		set {rank.%player%} to 7
-	if player has permission "is.champion":
-		set {rank.%player%} to 8
-	else:
-		set {rankset.%player%} to 8
+		if player has permission "is.visitor":
+			set {rank.%player%} to 0
+		if player has permission "is.rookie":
+			set {rank.%player%} to 1
+		if player has permission "is.regular":
+			set {rank.%player%} to 2
+		if player has permission "is.citizen":
+			set {rank.%player%} to 3
+		if player has permission "is.craftsman":
+			set {rank.%player%} to 4
+		if player has permission "is.seasoned":
+			set {rank.%player%} to 5
+		if player has permission "is.noble":
+			set {rank.%player%} to 6
+		if player has permission "is.elite":
+			set {rank.%player%} to 7
+		if player has permission "is.champion":
+			set {rank.%player%} to 8
+command /debugrank:
+	permission: is.pro
+	trigger:
+		loop all players:
+			broadcast "&f[&aDEBUG&f] %{ranked.%loop-player%}% &e%loop-player%&f: %{rank.%loop-player%}%"
+command /setrank [<player>] [<integer>]:
+	permission: is.pro
+	trigger:
+		if arg-2 is 0:
+			set {rank.%arg-1%} to 0
+			execute console command "manpromote %arg 1% visitor"
+		if arg-2 is 1:
+			set {rank.%arg-1%} to 1
+			execute console command "manpromote %arg 1% rookie"
+		if arg-2 is 2:
+			set {rank.%arg-1%} to 2
+			execute console command "manpromote %arg 1% regular"
+		if arg-2 is 3:
+			set {rank.%arg-1%} to 3
+			execute console command "manpromote %arg 1% citizen"
+		if arg-2 is 4:
+			set {rank.%arg-1%} to 4
+			execute console command "manpromote %arg 1% craftsman"
+		if arg-2 is 5:
+			set {rank.%arg-1%} to 5
+			execute console command "manpromote %arg 1% seasoned"
+		if arg-2 is 6:
+			set {rank.%arg-1%} to 6
+			execute console command "manpromote %arg 1% noble"
+		if arg-2 is 7:
+			set {rank.%arg-1%} to 7
+			execute console command "manpromote %arg 1% elite"
+		if arg-2 is 8:
+			set {rank.%arg-1%} to 8
+			execute console command "manpromote %arg 1% champion"
+		else:
+			message "&cInvalid input. %arg 1% %arg 2%"
+			stop
+		
+command /fixrank:
+	trigger:
+		if {rank.%player%} is 0:
+			execute console command "manpromote %player% visitor"
+		if {rank.%player%} is 1:
+			execute console command "manpromote %player% rookie"
+		if {rank.%player%} is 2:
+			execute console command "manpromote %player% regular"
+		if {rank.%player%} is 3:
+			execute console command "manpromote %player% citizen"
+		if {rank.%player%} is 4:
+			execute console command "manpromote %player% craftsman"
+		if {rank.%player%} is 5:
+			execute console command "manpromote %player% seasoned"
+		if {rank.%player%} is 6:
+			execute console command "manpromote %player% noble"
+		if {rank.%player%} is 7:
+			execute console command "manpromote %player% elite"
+		if {rank.%player%} is 8:
+			execute console command "manpromote %player% champion"
+		message "&aYou have been placed in your proper rank."
+
 command /testrank <text>:
 	usage: &aUsage:&e /testrank (rank name)
 	trigger:

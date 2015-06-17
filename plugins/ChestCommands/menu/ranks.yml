@@ -126,8 +126,9 @@ seasoned:
     - 'Set 7 &bhomes'
     - '4 extra &4health hearts'
     - 'Scavenger saves items on death'
-    - 'Format signs with &4c&6o&el&ao&br&5s&7,&r &lbold&r&7, &oitalics&r'
+    - 'Claim up to 3 plots in the &a&o/sandbox&a&o world with &a&o/plotme auto'
     - 'Use &a&o/top&r&7 to jump to the highest safe surface'
+    - 'Format signs with &4c&6o&el&ao&br&5s&7,&r &lbold&r&7, &oitalics&r'
     - 'Use &a&o/vc&r&7 to set up to 4 Virtual chests.'
   ID: 42
   KEEP-OPEN: false
@@ -160,6 +161,7 @@ elite:
     - '8 extra &4health hearts'
     - 'Use &a&o/ec&r&7 to access enderchest from anywhere'
     - 'Use &a&o/nv&r&7 to enable night vision'
+    - 'Use &a&o/jump&r&7 to warp to the block your cursor is facing'
     - 'Use &a&o/vc&r&7 to set up to 8 Virtual chests.'
   ID: 57
   KEEP-OPEN: false

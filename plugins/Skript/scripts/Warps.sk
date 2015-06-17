@@ -1,3 +1,5 @@
+script options:
+    $ developer mode
 # command /warpeffect [<text>]:
 #	permission: skript.warpeffect
 #	trigger:
@@ -23,7 +25,14 @@ command /setss:
 	trigger:
 		set {sk.ss} to location of player
 		message "<lime>Warp point set!"
-		stop   
+		stop
+command /setsandbox:
+	description: Set location for sandbox
+	permission: is.pro
+	trigger:
+		set {sandbox} to location of player
+		message "<lime>Sandbox warp set!"
+		stop  
 #command /consolewarp <player>:
 #	description: The warp effects handler
 #	permission: is.console
@@ -125,18 +134,15 @@ command /ss:
 on damage:
 	if difference between {lastwarp.%player%} and now is less than 3 seconds:
 		cancel event
-
 command /sandbox:
 	trigger:
-#		message "&a&oYou are now in The Sandbox."
-		message "&a&oThis world is closed due to construction. Sorry!"
-#		set {lastwarp.%player%} to now
-#		push the player upwards at speed 10
-#		execute console command "/playsound random.explode %player% ~0 ~0 ~0 20 50"
-#		execute console command "consolewarp %player%"
-#		wait 38 ticks
-#		execute console command "mvtp %player% sandbox"
-		
+		message "&a&oYou are now in The Sandbox."
+		teleport player to {sandbox}
+on command "/plotme claim" or "/plotme auto" or "/plotme":
+	player is in the world "sandbox"
+	if {rank.%player%} is less than 5:
+		message "&cYou must be the Seasoned rank to claim a plot here!"
+		cancel event
 command /spawn:
 	trigger:
 		message "&a&oYou are now at Spawn"

@@ -39,9 +39,15 @@ command /log <text>:
 			set {change.days::%day%/%month%/%year%} to true
 			add "&b%player%&e - %arg%" to {change.log.%day%/%month%/%year%::*}
 			message "&aAdded to the change log!"
+			broadcast "&f[&aServer Update&f] &b&o%arg%"
 			stop
 		add "%new line%&b%player%&e - %arg%&r" to {change.log.%day%/%month%/%year%::*}
 		message "&aAdded to the change log!"
+		broadcast "&f[&aServer Update&f] &b&o%arg%"
+command /spooflog <text>:
+	permission: sk.log
+	trigger:
+		broadcast "&f[&aServer Update&f] &b&o%arg%"
 # command /clearlog:
 #	permission: sk.log
 #	trigger:

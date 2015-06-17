@@ -181,9 +181,15 @@ divider7:
   POSITION-X: 4
   POSITION-Y: 2
   DATA-VALUE: 0
+<<<<<<< HEAD
 underspharmacy:
   COMMAND: 'shopwarp 21'
   NAME: '&d[p] &bUnders Pharmacy&d[p]'
+=======
+UnderworldLordShop:
+  COMMAND: 'shopwarp 21'
+  NAME: '&d[p] &aUnders Pharmacy &d[p]'
+>>>>>>> origin/master
   LORE:
     - '&f&oFor all your drug and item needs!'
   ID: 353
@@ -198,6 +204,16 @@ divider8:
   POSITION-X: 6
   POSITION-Y: 2
   DATA-VALUE: 0
+HIRULEShop:
+  COMMAND: 'shopwarp 23'
+  NAME: '&d[p] &aHIRULEs General Store &d[p]'
+  LORE:
+    - '&f&oNice doing business with you!'
+  ID: 296
+  KEEP-OPEN: false
+  POSITION-X: 2
+  POSITION-Y: 3
+  DATA-VALUE: 0
 divider9:
   NAME: ''
   ID: 160
@@ -205,6 +221,16 @@ divider9:
   POSITION-X: 8
   POSITION-Y: 2
   DATA-VALUE: 0
+PixeltastticShop:
+  COMMAND: 'shopwarp 24'
+  NAME: '&d[p] &aGalactia Market Street &d[p]'
+  LORE:
+    - '&f&oVisit Galactia Market Street, we have everything you need!'
+  ID: 24
+  KEEP-OPEN: false
+  POSITION-X: 4
+  POSITION-Y: 3
+  DATA-VALUE: 2
 divider10:
   NAME: ''
   ID: 160
