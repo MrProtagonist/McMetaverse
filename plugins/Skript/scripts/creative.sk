@@ -2,8 +2,18 @@ script options:
     $ developer mode
 on spawn:
 	event-entity is not a player
+	entity is not "armour stand"
 	world is "contest" or "sandbox"
 	cancel event
+command /killmobsforme:
+	permission: is.pro
+	trigger:
+		loop all entities in world "contest":
+			loop-entity is not a player
+			loop-entity is not "armor stand"
+			loop-entity is not "painting"
+			loop-entity is not "item frame"
+			kill loop-entity
 on weather change to rain or thunder in "sandbox":
 	set weather of "sandbox" to sunny
 on skript start:

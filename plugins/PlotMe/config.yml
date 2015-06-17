@@ -33,7 +33,6 @@ worlds:
     - 158
     PreventedItems:
     - '351:15'
-    - '259'
     - '328'
     - '343'
     - '342'
@@ -56,7 +55,7 @@ worlds:
       DisposePrice: 0.0
     AutoLinkPlots: true
     DisableExplosion: true
-    DisableIgnition: true
+    DisableIgnition: false
     UseProgressiveClear: false
     Projectiles: true
   contest:
@@ -83,7 +82,6 @@ worlds:
     - 158
     PreventedItems:
     - '351:15'
-    - '259'
     - '328'
     - '343'
     - '342'
@@ -106,7 +104,7 @@ worlds:
       DisposePrice: 0.0
     AutoLinkPlots: true
     DisableExplosion: true
-    DisableIgnition: true
+    DisableIgnition: false
     UseProgressiveClear: false
     Projectiles: true
   plotmetest:
