@@ -226,11 +226,6 @@ command /rules:
 		message "&f&l============================================="
 
 on chat:
-	{new.%player%} is true
-	cancel event
-	message "&c&oYou may not chat until you read our &a&o/rules&c&o, then &a&o/accept&c&o them."
-	stop
-on chat:
 	message contains "how" or "what do" or "what is"
 	set {question.last} to player
 command /google <player> <text>:
