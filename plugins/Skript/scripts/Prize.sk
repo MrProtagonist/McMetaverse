@@ -29,11 +29,27 @@ every hour:
 		{_playercount} is greater than 4
 		loop {prize.players::*}:
 			difference between {prizeroom.%loop-value%.last} and now is greater than a day:
-				%loop-value% can't hold 36 wood swords:
+				loop-value can't hold 36 wood swords:
 					stop
 				execute console command "prize %loop-value%"
 				add 1 to {prizeroom.%loop-value%.times}
 				set {prizeroom.%loop-value%.last} to now
+				execute console command "region addmember prize_protection %loop-value%"
+				wait 4 real minutes
+				loop-value is {inprizeroom}
+				send "&f[&dPrize Room&f] &4You have 2 minutes left to decide or you will be removed from the Prize Room!" to loop-value
+				wait 2 real minutes
+				loop-value is {inprizeroom}
+				send "&f[&dPrize Room&f] &4You have been kicked from the prize room!" to loop-value
+				teleport loop-value to {lastspot}
+				teleport loop-value to {lastspot}
+				wait 2 ticks
+				if loop-value does not have the permission "essentials.fly":
+					set loop-value's fly mode to false
+				wait 1 real second
+				delete {inprizeroom}
+				broadcast "&f[&4Prize Room&f] &4%loop-value% has been kicked from the prize room for inactivity."
+				execute console command "region removemember prize_protection %loop-value%"
 command /prize <player>:
 	permission: essentials.socialspy
 	trigger:
@@ -43,6 +59,7 @@ command /prize <player>:
 		wait 1 tick
 		teleport arg to {prizeroom}
 		set arg's fly mode to true
+		execute console command "region addmember prize_protection %loop-value%"
 		broadcast "&f[&dPrize Room&f] &d%arg% is now in the prize room!"
 		wait 1 real second
 		send "&f[&dPrize Room&f] &aWelcome to the Prize Room! Fly has been enabled for you. Select one prize." to arg
@@ -73,11 +90,13 @@ on rightclick on button:
 	wait 1 real second
 	delete {inprizeroom}
 	broadcast "&f[&4Prize Room&f] &b%player% has chosen their prize from the Prize Room!"
+	execute console command "region removemember prize_protection %player%"
 on quit:
 	player is {inprizeroom}
 	teleport player to {lastspot}
 	teleport player to {lastspot}
 	set player's fly mode to false
+	execute console command "region removemember prize_protection %player%"
 	delete {inprizeroom}
 	set leave message to "&e%player% left before picking a prize in the Prize Room! Too bad."
 on damage:
