@@ -1,4 +1,6 @@
-﻿on chat:
+﻿script options:
+    $ developer mode
+on chat:
 	loop all players:
 		if "%message%" contains "%loop-player%":
 			replace all "%loop-player%" with "&6&o%loop-player%&f" in message
@@ -149,7 +151,7 @@ command /setaccept:
 command /agree:
 	executable by: players
 	trigger:
-		{rules.%player%.agreed} is not set
+		{rules.%player%.version} is not {rules.version}
 		set {rules.%player%.agreed} to true	
 		set {rules.%player%.time} to now
 #		teleport player to {acceptpoint}
