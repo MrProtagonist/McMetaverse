@@ -159,6 +159,7 @@ command /agree:
 		message " "		
 		play "LEVEL_UP" specifically to player with pitch 1
 		message "&f[&aSERVER&f] &6&oCongratulations! You are now free to chat and roam."
+		set {rules.%player%.version} to {rules.version}
 		wait 3 seconds
 		{new.%player%} is true
 		set {new.%player%} to false
