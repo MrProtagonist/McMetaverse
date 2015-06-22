@@ -117,7 +117,7 @@ on death:
 			set {sandstorm.going} to false
 			set {sandstorm.countdown} to false
 			set {sandstorm.player} to 0
-			wait 2 real seconds
+			wait 3 real seconds
 			execute console command "clearsand"
 				
 					
