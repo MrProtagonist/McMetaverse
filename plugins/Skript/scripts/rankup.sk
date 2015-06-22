@@ -79,7 +79,12 @@ command /fixrank:
 		if {rank.%player%} is 8:
 			execute console command "manpromote %player% champion"
 		message "&aYou have been placed in your proper rank."
-
+every minute:
+	loop all players:
+		loop-player has the permission "is.rookie"
+		{rank.%loop-player%} is 0
+		set {rank.%loop-player%} to 1
+		broadcast "&f[&aDEBUG&f] Automagically fixed %loop-player%'s rank variable!"
 command /testrank <text>:
 	usage: &aUsage:&e /testrank (rank name)
 	trigger:
