@@ -1,4 +1,4 @@
-﻿script options:
+script options:
     $ developer mode
 command /resetresource:
 	permission: essentials.socialspy
@@ -65,7 +65,7 @@ command /biome:
 			send json of "&f[ &aExtreme Hills &f]" run "/biometp EXTREME_HILLS" to player
 			send json of "&f[ &aTaiga &f]" run "/biometp MEGA_TAIGA" to player
 			send json of "&f[ &aDesert &f]" run "/biometp DESERT" to player
-			send json of "&f[ &aIce Spikes &f]" run "/biometp ICE_SPIKES" to player
+			send json of "&f[ &aIce Spikes &f]" run "/biometp ICE_PLAINS_SPIKES" to player
 			wait 30 real seconds
 			execute console command "manudelp %player% biometp.use"
 			stop
