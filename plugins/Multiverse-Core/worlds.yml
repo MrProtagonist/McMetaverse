@@ -5,7 +5,7 @@ worlds:
     alias: ''
     color: WHITE
     style: NORMAL
-    pvp: 'true'
+    pvp: 'false'
     scale: '1.0'
     respawnWorld: ''
     allowWeather: 'true'
@@ -134,14 +134,14 @@ worlds:
     bedRespawn: 'true'
     worldBlacklist: []
     environment: NORMAL
-    seed: '-1797195342824139618'
+    seed: '-78517947212430546'
     generator: PlotMe-DefaultGenerator
     playerLimit: '-1'
     allowFlight: 'true'
   resource:
     ==: MVWorld
     hidden: 'false'
-    alias: resource
+    alias: ''
     color: WHITE
     style: NORMAL
     pvp: 'true'
@@ -176,13 +176,13 @@ worlds:
       yaw: 0.0
       pitch: 0.0
       z: 0.0
-      y: 97.0
+      y: 84.0
       x: 0.0
     autoLoad: 'true'
     bedRespawn: 'true'
     worldBlacklist: []
     environment: NORMAL
-    seed: '4768127610036410735'
+    seed: '-4137337138580148144'
     generator: 'null'
     playerLimit: '-1'
     allowFlight: 'true'
@@ -288,7 +288,7 @@ worlds:
     alias: Hyperverse
     color: WHITE
     style: NORMAL
-    pvp: 'false'
+    pvp: 'true'
     scale: '1.0'
     respawnWorld: ''
     allowWeather: 'true'
@@ -384,7 +384,7 @@ worlds:
     alias: Hyperverse_nether
     color: WHITE
     style: NORMAL
-    pvp: 'false'
+    pvp: 'true'
     scale: '8.0'
     respawnWorld: ''
     allowWeather: 'true'
@@ -432,7 +432,7 @@ worlds:
     alias: Metacurse_nether
     color: WHITE
     style: NORMAL
-    pvp: 'false'
+    pvp: 'true'
     scale: '8.0'
     respawnWorld: ''
     allowWeather: 'true'
@@ -576,7 +576,7 @@ worlds:
     alias: Metacurse_the_end
     color: WHITE
     style: NORMAL
-    pvp: 'false'
+    pvp: 'true'
     scale: '1.0'
     respawnWorld: ''
     allowWeather: 'true'
