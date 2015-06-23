@@ -18,12 +18,12 @@ menu-settings:
 
 
 buy-diamond:
-  PRICE: 100
+  PRICE: 180
   COMMAND: 'give: diamond'
   NAME: '&aBuy'
   LORE:
     - 'Diamond x1'
-    - 'at $100'
+    - 'at $180'
   ID: diamond
   KEEP-OPEN: true
   POSITION-X: 1
@@ -31,12 +31,12 @@ buy-diamond:
 
 
 buy-gold:
-  PRICE: 50
+  PRICE: 90
   COMMAND: 'give: gold_ingot'
   NAME: '&aBuy'
   LORE:
     - 'Gold Ingot x1'
-    - 'at $50'
+    - 'at $90'
   ID: gold_ingot
   KEEP-OPEN: true
   POSITION-X: 2
@@ -44,12 +44,12 @@ buy-gold:
 
 
 buy-iron:
-  PRICE: 20
+  PRICE: 80
   COMMAND: 'give: iron_ingot'
   NAME: '&aBuy'
   LORE:
     - 'Iron Ingot x1'
-    - 'at $20'
+    - 'at $80'
   ID: iron_ingot
   KEEP-OPEN: true
   POSITION-X: 3
@@ -70,12 +70,12 @@ buy-cake:
 
 
 buy-apple:
-  PRICE: 5
+  PRICE: 15
   COMMAND: 'give: apple'
   NAME: '&aBuy'
   LORE:
-    - 'Apple x1'
-    - 'at $5'
+    - 'Apple x15'
+    - 'at $15'
   ID: apple
   KEEP-OPEN: true
   POSITION-X: 2
@@ -172,71 +172,72 @@ buy-arrows:
   KEEP-OPEN: true
   POSITION-X: 9
   POSITION-Y: 2
-
-
-sell-cobble:
-  REQUIRED-ITEM: 'cobblestone, 64'
-  COMMAND: 'givemoney: 10'
+  
+  
+sell-stone:
+  REQUIRED-ITEM: 'stone, 64'
+  COMMAND: 'givemoney: 64'
   NAME: '&dSell'
   LORE:
-    - 'Cobblestone x64'
-    - 'at $10'
-  ID: cobblestone
+    - 'Stone x64'
+    - 'at $64'
+  ID: wool
+  DATA-VALUE: 1
   AMOUNT: 64
   KEEP-OPEN: true
   POSITION-X: 1
   POSITION-Y: 4
 
 
-sell-dirt:
-  REQUIRED-ITEM: 'dirt, 64'
-  COMMAND: 'givemoney: 5'
+sell-cobble:
+  REQUIRED-ITEM: 'cobblestone, 64'
+  COMMAND: 'givemoney: 48'
   NAME: '&dSell'
   LORE:
-    - 'Dirt x64'
-    - 'at $5'
-  ID: dirt
+    - 'Cobblestone x64'
+    - 'at $48'
+  ID: cobblestone
   AMOUNT: 64
   KEEP-OPEN: true
   POSITION-X: 2
   POSITION-Y: 4
 
 
-sell-orange-wool:
-  REQUIRED-ITEM: 'wool:1, 10'
-  COMMAND: 'givemoney: 20'
+sell-dirt:
+  REQUIRED-ITEM: 'dirt, 64'
+  COMMAND: 'givemoney: 48'
   NAME: '&dSell'
   LORE:
-    - 'Orange wool x10'
-    - 'at $20'
-  ID: wool
-  DATA-VALUE: 1
-  AMOUNT: 10
+    - 'Dirt x64'
+    - 'at $48'
+  ID: dirt
+  AMOUNT: 64
   KEEP-OPEN: true
   POSITION-X: 3
   POSITION-Y: 4
 
 
+
 sell-obsidian:
   REQUIRED-ITEM: 'obsidian'
-  COMMAND: 'givemoney: 5'
+  COMMAND: 'givemoney: 15'
   NAME: '&dSell'
   LORE:
     - 'Obsidian x1'
-    - 'at $5'
+    - 'at $15'
   ID: obsidian
   KEEP-OPEN: true
-  POSITION-X: 4
-  POSITION-Y: 4
+  POSITION-X: 1
+  POSITION-Y: 6
 
 
 sell-bone:
   REQUIRED-ITEM: 'bone'
-  COMMAND: 'givemoney: 3'
+  COMMAND: 'givemoney: 4'
   NAME: '&dSell'
   LORE:
-    - 'Bone x1'
-    - 'at $3'
+    - 'Bone x64'
+    - 'at $4'
   ID: bone
   KEEP-OPEN: true
   POSITION-X: 7
@@ -245,11 +246,11 @@ sell-bone:
 
 sell-rotten-flesh:
   REQUIRED-ITEM: 'rotten_flesh, 64'
-  COMMAND: 'givemoney: 10'
+  COMMAND: 'givemoney: 4'
   NAME: '&dSell'
   LORE:
     - 'Rotten Flesh x64'
-    - 'at $10'
+    - 'at $4'
   ID: rotten_flesh
   AMOUNT: 64
   KEEP-OPEN: true
