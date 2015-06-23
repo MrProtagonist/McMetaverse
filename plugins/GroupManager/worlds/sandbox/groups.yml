@@ -13,6 +13,7 @@ groups:
     default: true
     permissions:
     - -bukkit.command.kill
+    - -autoitem.replaceon.place
     - essentials.gamemode
     - essentials.gamemode.self
     - essentials.gm
@@ -59,16 +60,67 @@ groups:
       suffix: ''
   Moderator:
     default: false
-    permissions: []
+    permissions:
+    - -essentials.afk.auto
+    - chestcommands.open.arenawarps.yml
+    - chestcommands.open.biomewarps.yml
+    - chestcommands.open.nav.yml
+    - chestcommands.open.spawnwarps.yml
+    - coreprotect.command.inspect
+    - coreprotect.command.lookup
+    - coreprotect.inspect
+    - coreprotect.lookup
+    - cpantixray.use
+    - essentials.chat.color
+    - essentials.enderchest
+    - essentials.enderchest.others
+    - essentials.ext
+    - essentials.fly
+    - essentials.fly.safelogin
+    - essentials.gc
+    - essentials.home.others
+    - essentials.invsee
+    - essentials.jail
+    - essentials.jail.*
+    - essentials.jails
+    - essentials.joinfullserver
+    - essentials.kick
+    - essentials.msg.color
+    - essentials.mute
+    - essentials.seen
+    - essentials.sethome.multiple.unlimited
+    - essentials.socialspy
+    - essentials.sudo
+    - essentials.tempban
+    - essentials.thru
+    - essentials.togglejail
+    - essentials.togglejail.offline
+    - essentials.top
+    - essentials.tp
+    - essentials.tp.others
+    - essentials.tphere
+    - essentials.tpo
+    - essentials.vanish
+    - essentials.whois
+    - griefprevention.claimslistother
+    - griefprevention.ignoreclaims
+    - griefprevention.visualizenearbyclaims
+    - group.mod
+    - groupmanager.listgroups
+    - groupmanager.mangcheckp
+    - groupmanager.manglistp
+    - groupmanager.manucheckp
+    - groupmanager.manulistp
+    - groupmanager.manwhois
+    - mcmmo.chat.adminchat
+    - nocheatplus.command.notify
+    - nocheatplus.notify
+    - sht.admin
+    - skript.warn
     inheritance:
-    - builder
-    - g:groupmanager_moderator
-    - g:bukkit_moderator
-    - g:essentials_moderator
-    - g:towny_moderator
-    - g:vanish_moderator
+    - default
     info:
-      prefix: '&5'
+      prefix: '&r&f[&9MOD&r] '
       build: true
       suffix: ''
   Admin:
