@@ -2,7 +2,7 @@ script options:
     $ developer mode
 on spawn:
 	event-entity is not a player
-	entity is not "armour stand"
+	entity is not "armour stand" or "item frame" or "painting"
 	world is "contest" or "sandbox"
 	cancel event
 command /killmobsforme:
@@ -34,6 +34,8 @@ command /contest:
 		if {contest.going} is true:
 			teleport player to {contest}
 			message "&eWelcome to the contest world! Use &a/gmc&e to go into creative mode!"
+			message "&eCurrent Contest: &f%{contest.name}%"
+			message "&eHours Remaining: &f%{contest.length}%"
 			stop
 		else:
 			if player has the permission "essentials.socialspy":
@@ -47,6 +49,12 @@ on command "/plotme" or "/plotme claim" or "/plotme auto":
 		message "&cSorry, you can't do that!"
 		cancel event
 		stop
+command /seecontest:
+	trigger:
+		message "Length: %{contest.length}%"
+		message "Name: %{contest.name}%"
+		message "Start: %{contest.start}%"
+		message "Going: %{contest.going}%"
 command /startcontest <integer> <text>:
 	permission: essentials.socialspy
 	usage: /startcontest [days] [contest name]
@@ -67,9 +75,6 @@ command /startcontest <integer> <text>:
 				message "&cLearn to use this command before you try."
 		else:
 			message "&cContest is already going!"
-command /timeleft:
-	trigger:
-		set {contest.length} to 1
 every hour:
 	{contest.going} is true
 	if {contest.length} is 0:
