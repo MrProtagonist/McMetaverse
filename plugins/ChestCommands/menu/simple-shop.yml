@@ -233,13 +233,13 @@ sell-log:
 
 
 sell-log2:
-  REQUIRED-ITEM: 'redwood_log, 64'
+  REQUIRED-ITEM: '17:1, 64'
   COMMAND: 'givemoney: 32'
   NAME: '&dSell'
   LORE:
     - 'Spruce Log x64'
     - 'at $32'
-  ID: redwood_log
+  ID: 17:1
   AMOUNT: 64
   KEEP-OPEN: true
   POSITION-X: 2
@@ -247,13 +247,13 @@ sell-log2:
 
 
 sell-log3:
-  REQUIRED-ITEM: 'birch_log, 64'
+  REQUIRED-ITEM: '17:2, 64'
   COMMAND: 'givemoney: 64'
   NAME: '&dSell'
   LORE:
     - 'Birch Log x64'
     - 'at $64'
-  ID: birch_log
+  ID: 17:2
   AMOUNT: 64
   KEEP-OPEN: true
   POSITION-X: 3
@@ -261,13 +261,13 @@ sell-log3:
 
 
 sell-log4:
-  REQUIRED-ITEM: 'jungle_log, 64'
+  REQUIRED-ITEM: 'log:3, 64'
   COMMAND: 'givemoney: 25.6'
   NAME: '&dSell'
   LORE:
     - 'Jungle Log x64'
     - 'at $25.60'
-  ID: jungle_log
+  ID: log:3
   AMOUNT: 64
   KEEP-OPEN: true
   POSITION-X: 4
