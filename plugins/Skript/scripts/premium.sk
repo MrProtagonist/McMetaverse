@@ -26,6 +26,11 @@ on join:
 		set {day.count.%player%.rename} to 0
 	if {day.count.%player%.name} is not set:
 		set {day.count.%player%.name} to 0
+on craft of beacon:
+	broadcast "&f[&aDEBUG&f] &eBingo! Beacon crafted!"
+	player has netherstar named "&f&l&k.&e&l&k.&f&l&k.&r &6&lWedding Ring &f&l&k.&e&l&k.&f&l&k."
+	message "&cUnable to craft beacons with a wedding ring!"
+	cancel event
 on skript start:
 	add 1 to {day.count}
 on load:
@@ -75,6 +80,7 @@ command "/donor":
 			message "&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-"
 			message "&a&lPREMIUM BENEFITS:"
 		message " &a- /tracer&6  Set an arrow trail! &cBEING FIXED"
+		message " &a- /warpeffect&6  Set a warp effect!"
 		message " &a- /suffix&6  Set a custom suffix! Keep it short and appropriate."
 		message " &a- /prefix&6  Set a custom prefix! Keep it short and appropriate."
 		message " &a- /trails&6  Set a personal particle effect!"
