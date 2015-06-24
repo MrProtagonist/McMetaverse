@@ -181,7 +181,7 @@ sell-stone:
   LORE:
     - 'Stone x64'
     - 'at $64'
-  ID: wool
+  ID: stone
   DATA-VALUE: 1
   AMOUNT: 64
   KEEP-OPEN: true
@@ -213,11 +213,68 @@ sell-dirt:
   ID: dirt
   AMOUNT: 64
   KEEP-OPEN: true
-  POSITION-X: 3
+  POSITION-X: 6
   POSITION-Y: 4
 
 
+sell-log:
+  REQUIRED-ITEM: 'log, 64'
+  COMMAND: 'givemoney: 64'
+  NAME: '&dSell'
+  LORE:
+    - 'Log x64'
+    - 'at $64'
+  ID: log
+  AMOUNT: 64
+  KEEP-OPEN: true
+  POSITION-X: 1
+  POSITION-Y: 5
 
+
+
+sell-log2:
+  REQUIRED-ITEM: 'redwood_log, 64'
+  COMMAND: 'givemoney: 32'
+  NAME: '&dSell'
+  LORE:
+    - 'Spruce Log x64'
+    - 'at $32'
+  ID: redwood_log
+  AMOUNT: 64
+  KEEP-OPEN: true
+  POSITION-X: 2
+  POSITION-Y: 5
+
+
+sell-log3:
+  REQUIRED-ITEM: 'birch_log, 64'
+  COMMAND: 'givemoney: 64'
+  NAME: '&dSell'
+  LORE:
+    - 'Birch Log x64'
+    - 'at $64'
+  ID: birch_log
+  AMOUNT: 64
+  KEEP-OPEN: true
+  POSITION-X: 3
+  POSITION-Y: 5
+
+
+sell-log4:
+  REQUIRED-ITEM: 'jungle_log, 64'
+  COMMAND: 'givemoney: 25.6'
+  NAME: '&dSell'
+  LORE:
+    - 'Jungle Log x64'
+    - 'at $25.60'
+  ID: jungle_log
+  AMOUNT: 64
+  KEEP-OPEN: true
+  POSITION-X: 4
+  POSITION-Y: 5
+
+
+  
 sell-obsidian:
   REQUIRED-ITEM: 'obsidian'
   COMMAND: 'givemoney: 15'
