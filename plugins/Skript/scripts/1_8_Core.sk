@@ -49,7 +49,18 @@ on command "/sethome":
 on quit:
 	player has permission "essentials.socialspy"
 	set {staff.members::%player%} to now
-
+command /setneverend:
+	permission: is.op
+	trigger:
+		set {neverend} to location of player
+		message "&aSet &8&oNever End&a spawn point!"
+command /neverend:
+	trigger:
+		execute console command "/playsound random.explode %player% ~0 ~0 ~0 20 50"
+		execute console command "consolewarp %player%"
+		wait 38 ticks
+		teleport player to {neverend}
+		message "&a&oYou are now in the &8&oNever End&a&o. DO NOT BUILD HERE!"
 on chat:
 	replace all "never end" or "neverend" or "never-end" with "&8&oNever End&f" in the message
 on script load:

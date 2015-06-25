@@ -75,13 +75,12 @@ command /ss:
 	description: Warp to the perm shop.
 	trigger:
 		set {lastwarp.%player%} to now
-		wait 1 tick
-		message "&a&oYou are now at the Server Shop."
 #		push the player upwards at speed 10
 		execute console command "/playsound random.explode %player% ~0 ~0 ~0 20 50"
 		execute console command "consolewarp %player%"
 		wait 38 ticks
 		teleport player to {sk.ss}
+		message "&a&oYou are now at the Server Shop."
 on damage:
 	if difference between {lastwarp.%player%} and now is less than 3 seconds:
 		cancel event
