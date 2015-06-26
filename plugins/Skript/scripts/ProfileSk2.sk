@@ -135,7 +135,7 @@ command /profile [<text>] [<text>] [<text>] [<text>]:
 				set {profilesk2.%player%.nickname} to arg 3
 				send "§aYour Nickname was set to ""%arg 3%"""
 			else if arg 2 is "gender":
-				if arg 3 is "male" or "female":
+				if arg 3 is set:
 					set {profilesk2.%player%.gender} to arg 3
 					send "§aYour Gender was set to ""%arg 3%"""
 				else:
