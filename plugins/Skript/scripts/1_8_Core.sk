@@ -42,6 +42,8 @@ on join:
 	player has permission "essentials.socialspy"
 	{staff.members::%player%} is not set
 	set {staff.members::%player%} to "now"
+	else:
+		remove player from {staff.members::*}
 on command "/sethome":
 	if player can't build at location of player:
 		cancel event
