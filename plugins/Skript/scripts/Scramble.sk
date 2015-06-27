@@ -1,3 +1,5 @@
+script options:
+    $ developer mode
 variables:
 	{cobblehunt.blockset} = false
 on script load:
@@ -12,11 +14,17 @@ on join:
 on break:
 	if {cobblehunt.%player%.playing} is true:
 		if event-block is cobblestone or cobble silverfish:
+			if {cobblehunt.going} is false:
+				cancel event
 			add location of event-block to {cobblehunt.broken::*}
 		else:
 			cancel event
 	if {cobblehunt.%player%.spectating} is true:
 		cancel event
+on place:
+	if {cobblehunt.%player%.playing} is true:
+		cancel event
+		message "&cNo building while the game is going! Gotta play smart!"
 command /tpscramble:
 	trigger:
 		teleport player to {cobblehunt.spawn}
@@ -24,22 +32,20 @@ on break of cobble silverfish:
 	{cobblehunt.going} is true
 	{cobblehunt.%player%.playing} is true
 	add location of event-block to {cobblehunt.broken::*}
-	play effect "mob spawner flames" at event-block
-	play effect "smoke" at event-block
+
 	loop all players:
 		{cobblehunt.%loop-player%.playing} is true:
+			teleport loop-player to {cobblehunt.spectate}
+			teleport loop-player to {cobblehunt.spectate}
+			execute console command "region removemember -w Metacurse scramble %loop-player%"
 			send "&c&lSTOP!" to loop-player
 			execute console command "playsound mob.ghast.scream %loop-player%"
 			set {cobblehunt.%loop-player%.ready} to false
 			set {cobblehunt.%loop-player%.playing} to false
 			set {cobblehunt.%loop-player%.spectating} to true
 	wait 2 real second
-	broadcast "&a&o%player%&6&o is the winner &2&oSilverfish Scramble&6&o! They get &a$100&6&o!"
-	execute console command "eco give %player% 500"
-	loop all players:
-		{cobblehunt.%loop-player%.spectating} is true:
-			teleport loop-player to {cobblehunt.spectate}
-			execute console command "region removemember -w Metacurse scramble %loop-player%"
+	broadcast "&a&o%player%&6&o is the winner &2&oSilverfish Scramble&6&o! They get &a$200&6&o!"
+	execute console command "eco give %player% 200"
 	set {cobblehunt.going} to false
 	wait 3 real seconds
 	execute console command "/resetscramble"
@@ -71,8 +77,6 @@ command /setlobby:
 		set {cobblehunt.lobby} to location of player
 		message "SET!"
 command /scramble:
-	description: Used to join Silverfish Scramble
-	executable by: players
 	trigger:
 		player can't hold 36 wood swords:
 			message "&e&oClear your inventory &6&oand armor &e&obefore joining &2&oSilverfish Scramble&e&o."
@@ -89,6 +93,7 @@ command /scramble:
 			make player execute "pet hide"
 			player has the permission "essentials.fly.self":
 				execute console command "fly off %player%"
+				execute console command "fly %player% off"
 			player has the permission "essentials.socialspy":
 				execute console command "god %player% off"
 				execute console command "gms %player%"
@@ -130,7 +135,6 @@ on right click on diamond block:
 			{cobblehunt.%loop-player%.playing} is true
 			send "&2&oSilverfish Scramble&r&o starting in &e&l15&r&o seconds." to loop-player
 		wait 10 seconds
-		set {cobblehunt.going} to true
 		loop all players:
 			{cobblehunt.%loop-player%.playing} is true
 			set {cobblehunt.%loop-player%.session} to 0
@@ -144,6 +148,7 @@ on right click on diamond block:
 			{cobblehunt.%loop-player%.playing} is true
 			execute console command "region addmember -w Metacurse scramble %loop-player%"
 			send "&2&oSilverfish Scramble has begun!" to loop-player
+		set {cobblehunt.going} to true
 on damage of player:
 	if {cobblehunt.%victim%.playing} is true:
 		cancel event

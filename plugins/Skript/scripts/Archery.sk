@@ -1,6 +1,9 @@
+script options:
+    $ developer mode
 on script load:
 	set {archery.countdown} to false
 	set {archery.going} to false
+	delete {archery.busy}
 on shoot:
 	shooter is {archery.busy}
 	ignite the projectile
@@ -42,6 +45,7 @@ command /sharpshooter:
 		if {archery.busy} is not set:
 			if player's inventory contains bow and arrow:
 				set {archery.busy} to player
+				message "&f[&aARCHERY&f] &eHigh score is %{archery.top.score}% set by %{archery.top.player}%"
 				teleport player to {archery.spawn}
 				set {archery.%player%} to 0
 				set {archery.countdown} to true
@@ -66,7 +70,7 @@ command /sharpshooter:
 					set loop-block to air
 				wait 3 real seconds
 				set {_pay} to {archery.%player%} * 5
-				execute console command "tm msg %player% &6&l%{archery.%player%}% points"
+				execute console command "tm msg %player% &6%{archery.%player%}% points"
 				execute console command "eco give %player% %{_pay}%"
 				if {archery.%player%} is greater than {archery.top.score}:
 					wait 2 real seconds
@@ -97,11 +101,6 @@ command /archeryscan:
 			set loop-block to air
 			add 1 to {_counter}
 		broadcast "&aAdded %{_counter}% possible archery target locations!"
-command /resetssscore:
-	permission: is.pro
-	trigger:
-		set {archery.top.score} to 13
-		set {archery.top.player} to "rfcroc"
 on command:
 	{archery.busy} is player
 	cancel event
