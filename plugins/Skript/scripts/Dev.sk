@@ -33,3 +33,43 @@ command /devstatus <text>:
                 set {dev.current} to argument
                 message "<light green>Dev project updated!"
                 broadcast "&a&oUpdated &a&l&oDEV&r&a&o project to: &e&o%{dev.current}%"
+on join:
+	{pp.%player%} is not set
+	set {pp.%player%} to 0
+on script load:
+	loop all players:
+		{pp.%loop-player%} is not set
+		set {pp.%loop-player%} to 0
+command /pp [<player>] [<number>] [<text>]:
+	permission: essentials.socialspy
+	trigger:
+		if arg 1 is set:
+			if arg 2 is set:
+				if player is arg 1:
+					message "&cYou can't give yourself Pro Points you fucker!"
+					stop
+				add arg 2 to {pp.%arg 1%}
+				message "&f[&dPro Points&f] %arg 2% points applied to %arg 1%'s &dPro Points&f."
+#				send "&f[&dPro Points&f] &a%player% &ejust granted you &a%arg 2% &dPro Points&e for &a%arg 3%&e. You are now at &a%{pp.%arg 1%}% points&e." to arg 1
+				add "&a%arg 2%&f: %arg 3%" to {pp.%arg 1%.reasons::*}
+				stop
+			else:
+				message " "
+				message "&6%arg 1%'s Pro Points"
+				loop {pp.%arg 1%.reasons::*}:
+					message "%colored loop-value%"
+				message "&6Total Points: &f%{pp.%arg 1%}%"
+		else:
+			message " "
+			message "&6Your Pro Points:"
+			loop {pp.%player%.reasons::*}:
+				message "%colored loop-value%"
+			message "&6Total Points: &f%{pp.%player%}%"
+			message "&6These points do nothing. They are awarded for doing awesome things, and deducted for doing not-so-awesome things."
+command /clearpp:
+	permission: is.pro
+	trigger:
+		loop all players:
+			set {pp.%loop-player%} to 0
+			delete {pp.%loop-player%.reasons::*}
+			send "&f[&dPro Points&f] &cCleared your point history!" to loop-player
