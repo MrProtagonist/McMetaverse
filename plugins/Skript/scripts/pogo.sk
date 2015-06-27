@@ -1,0 +1,137 @@
+script options:
+    $ developer mode
+on script load:
+	set {pogo.going} to false
+	set {pogo.players} to 0
+	loop all players:
+		delete {pogo.%loop-player%.playing}
+	set {pogo.session} to 10
+on join:
+	delete {pogo.%player%.playing}
+	delete {pogo.%player%}
+on tool change:
+	player's tool is stick
+	name of player's tool is "&6&lPogo Stick"
+	set {pogo.%player%} to .8
+command /pogo:
+	trigger:
+		{pogo.%player%.playing} is not set
+		player can't hold 36 wood swords:
+			message "&e&oClear your inventory &6&oand armor &e&obefore joining &b&oPogo&e&o."
+			stop
+		teleport player to {pogo}
+		set {pogo.%player%.playing} to true
+		add 1 to {pogo.players}
+		message "&f[&aPogo&f] &eWelcome to Pogo!"
+		make player execute "pet hide"
+		player has the permission "essentials.fly.self":
+			execute console command "fly off %player%"
+			execute console command "fly %player% off"
+		player has the permission "essentials.socialspy":
+			execute console command "god %player% off"
+			execute console command "gms %player%"
+		loop all players:
+			{pogo.%loop-player%.playing} is set
+			send "&f[&aPogo&f] &ePlayers ready: &f%{pogo.players}%" to loop-player
+command /startpogo:
+	trigger:
+		if {pogo.going} is true:
+			message "&c&oA game is already in session!"
+		else:
+			if {pogo.players} is not 0 or 1:
+				set {pogo.session} to 10
+				loop all players:
+					{pogo.%loop-player%.playing} is true
+					send "&f[&aPogo&f] &eThe game will begin in 10 seconds!" to loop-player
+				wait 6 real seconds
+				loop all players:
+					{pogo.%loop-player%.playing} is true
+					execute console command "tm msg %loop-player% &63"
+				wait 1 real second
+				loop all players:
+					{pogo.%loop-player%.playing} is true
+					execute console command "tm msg %loop-player% &62"
+				wait 1 real second
+				loop all players:
+					{pogo.%loop-player%.playing} is true
+					execute console command "tm msg %loop-player% &61"
+				wait 1 real second
+				loop all players:
+					{pogo.%loop-player%.playing} is true
+					execute console command "tm msg %loop-player% &aPOGO"
+					execute console command "give %loop-player% stick 1 name:&6&lPogo_Stick"
+				set {pogo.going} to true
+				wait 60 real seconds
+				loop all players:
+					{pogo.%loop-player%.playing} is true
+					delete {pogo.%loop-player%.playing}
+					execute console command "tm msg %loop-player% &6STOP!"
+					clear inventory of loop-player
+					set tool of loop-player to air
+					set {pogo.%player%.delay} to 20
+					set {pogo.%player%} to .8
+				set {pogo.going} to false
+				wait 2 real seconds
+				broadcast "&f[&aPogo&f] %{pogo.session.player}% is the winner with a height of %{pogo.session}% blocks!"
+			else:
+				message "&cRequires at least 2 players!"
+command /setpogo:
+	permission: is.pro
+	trigger:
+		set {pogo} to location of player
+		message "&aSet pogo spot!"
+
+on sneak toggle:
+	{pogo.%player%.playing} is true
+	player is sneaking
+	name of player's tool is "&6&lPogo Stick"
+	block below player is not air
+	push the player upwards at speed {pogo.%player%}
+	push the player forwards at speed 1.5
+	set {pogo.%player%.launched} to true
+	{pogo.%player%} is not .8 or 5:
+		message " "
+		message "&f[&bPogo&f] &aGaining altitude!"
+		message "&f[&bPogo&f] &eMultiplier: %{pogo.%player%}%"
+	{pogo.%player%} is not 5:
+		add .1 to {pogo.%player%}
+	{pogo.%player%} is 5:
+		message "&f[&bPogo&f] &cAcheived maximum pogo altitude!"
+	set {pogo.%player%.launched} to true
+	if {pogo.%player%} is less than 2:
+		set {pogo.%player%.delay} to 22
+	if {pogo.%player%} is 2:
+		set {pogo.%player%.delay} to 21
+	if {pogo.%player%} is 2.5:
+		set {pogo.%player%.delay} to 20
+	if {pogo.%player%} is 3:
+		set {pogo.%player%.delay} to 19
+	if {pogo.%player%} is 3.5:
+		set {pogo.%player%.delay} to 18
+	if {pogo.%player%} is 4:
+		set {pogo.%player%.delay} to 17
+	if {pogo.%player%} is 4.5:
+		set {pogo.%player%.delay} to 16
+on damage of a player:
+	damage cause is fall
+	{pogo.%victim%.launched} is true
+	cancel event
+	set {pogo.%victim%.launched} to false
+	loop {pogo.%victim%.delay} times:
+		wait 1 tick
+	block below victim is not air
+	set {pogo.%victim%} to .8
+	set {pogo.%victim%.delay} to 20
+	send "&cYou lost your momentum!" to victim
+
+every 2 ticks:
+	loop all players:
+		loop-player's tool is stick
+		name of loop-player's tool is "&6&lPogo Stick"
+		execute console command "tm amsg %loop-player% &a&lHeight: &f&l%altitude of loop-player% blocks"
+		if altitude of loop-player is greater than {pogo.session}:
+			set {pogo.session} to altitude of loop-player
+			set {pogo.session.player} to loop-player
+#			loop all players:
+#				{pogo.%loop-player-2%} is set
+#				send "&f[&bPogo&f] &eHighest height so far is %altitude of loop-player-1% by %loop-player-1%" to loop-player-2
