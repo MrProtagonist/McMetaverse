@@ -22,7 +22,7 @@ command /pogo:
 		teleport player to {pogo}
 		set {pogo.%player%.playing} to true
 		add 1 to {pogo.players}
-		message "&f[&aPogo&f] &eWelcome to Pogo!"
+		message "&f[&bPogo&f] &eWelcome to Pogo!"
 		make player execute "pet hide"
 		player has the permission "essentials.fly.self":
 			execute console command "fly off %player%"
@@ -32,7 +32,7 @@ command /pogo:
 			execute console command "gms %player%"
 		loop all players:
 			{pogo.%loop-player%.playing} is set
-			send "&f[&aPogo&f] &ePlayers ready: &f%{pogo.players}%" to loop-player
+			send "&f[&bPogo&f] &ePlayers ready: &f%{pogo.players}%" to loop-player
 command /startpogo:
 	trigger:
 		if {pogo.going} is true:
@@ -42,7 +42,7 @@ command /startpogo:
 				set {pogo.session} to 10
 				loop all players:
 					{pogo.%loop-player%.playing} is true
-					send "&f[&aPogo&f] &eThe game will begin in 10 seconds!" to loop-player
+					send "&f[&bPogo&f] &eThe game will begin in 10 seconds!" to loop-player
 				wait 6 real seconds
 				loop all players:
 					{pogo.%loop-player%.playing} is true
@@ -64,6 +64,14 @@ command /startpogo:
 				wait 60 real seconds
 				loop all players:
 					{pogo.%loop-player%.playing} is true
+					send "&f[&bPogo&f] &c1 minute remaining!" to loop-player
+				wait 50 real seconds
+				loop all players:
+					{pogo.%loop-player%.playing} is true
+					send "&f[&bPogo&f] &c10 seconds remaining!" to loop-player
+				wait 10 real seconds
+				loop all players:
+					{pogo.%loop-player%.playing} is true
 					delete {pogo.%loop-player%.playing}
 					execute console command "tm msg %loop-player% &6STOP!"
 					clear inventory of loop-player
@@ -72,7 +80,7 @@ command /startpogo:
 					set {pogo.%player%} to .8
 				set {pogo.going} to false
 				wait 2 real seconds
-				broadcast "&f[&aPogo&f] %{pogo.session.player}% is the winner with a height of %{pogo.session}% blocks!"
+				broadcast "&f[&bPogo&f] %{pogo.session.player}% is the winner with a height of %{pogo.session}% blocks!"
 			else:
 				message "&cRequires at least 2 players!"
 command /setpogo:
@@ -93,9 +101,9 @@ on sneak toggle:
 		message " "
 		message "&f[&bPogo&f] &aGaining altitude!"
 		message "&f[&bPogo&f] &eMultiplier: %{pogo.%player%}%"
-	{pogo.%player%} is not 5:
-		add .1 to {pogo.%player%}
-	{pogo.%player%} is 5:
+	{pogo.%player%} is not 8:
+		add .2 to {pogo.%player%}
+	{pogo.%player%} is 8:
 		message "&f[&bPogo&f] &cAcheived maximum pogo altitude!"
 	set {pogo.%player%.launched} to true
 	if {pogo.%player%} is less than 2:
