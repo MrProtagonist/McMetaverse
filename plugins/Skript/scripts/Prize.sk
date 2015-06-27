@@ -53,6 +53,7 @@ every hour:
 command /prize <player>:
 	permission: essentials.socialspy
 	trigger:
+		player is not arg
 		{inprizeroom} is not set
 		set {inprizeroom} to arg
 		set {lastspot} to location of arg
