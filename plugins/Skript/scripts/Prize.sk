@@ -9,7 +9,7 @@ on join:
 	if {prizeroom.%player%.last} is not set:
 		set {prizeroom.%player%.last} to now
 every hour:
-	chance of 50%:
+	chance of 70%:
 		set {_tempscore} to 999
 		set {_playercount} to 0
 		delete {prize.scores::*}
@@ -29,8 +29,7 @@ every hour:
 		{_playercount} is greater than 4
 		loop {prize.players::*}:
 			difference between {prizeroom.%loop-value%.last} and now is greater than a day:
-				loop-value can't hold 36 wood swords:
-					stop
+				loop-value can hold 1 wood sword
 				execute console command "prize %loop-value%"
 				add 1 to {prizeroom.%loop-value%.times}
 				set {prizeroom.%loop-value%.last} to now
@@ -60,7 +59,7 @@ command /prize <player>:
 		wait 1 tick
 		teleport arg to {prizeroom}
 		set arg's fly mode to true
-		execute console command "region addmember prize_protection %loop-value%"
+		execute console command "region addmember prize_protection %arg%"
 		broadcast "&f[&dPrize Room&f] &d%arg% is now in the prize room!"
 		wait 1 real second
 		send "&f[&dPrize Room&f] &aWelcome to the Prize Room! Fly has been enabled for you. Select one prize." to arg
