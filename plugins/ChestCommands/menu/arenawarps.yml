@@ -5,7 +5,7 @@ menu-settings:
   name: '&a&lArena Warps'
 
   # rows - the number of rows of the chest - REQUIRED
-  rows: 2
+  rows: 4
 
   # command - OPTIONAL (you can remove this or set it to '')
   # Bind multiple commands using ; (command: 'menu; m; me')
@@ -28,80 +28,106 @@ menu-settings:
 #
 # NEVER USE A ' IN ANY OF YOUR TEXT!
 #
-Nordicspec:
-  COMMAND: 'warp nordicspec'
-  NAME: 'MA Nordic Spectator'
+Nordicarena:
+  COMMAND: 'ma join Nordic'
+  NAME: 'Mob Arena Nordic'
   LORE:
-    - 'Watch the players in /ma join Nordic'
+    - 'Play in Mob Arena Nordic'
   ID: 98
   KEEP-OPEN: true
   POSITION-X: 1
   POSITION-Y: 2
   DATA-VALUE: 3
-Cairospec:
-  COMMAND: 'warp cairospec'
-  NAME: 'MA Cairo Spectator'
+Cairoarena:
+  COMMAND: 'ma join Cairo'
+  NAME: 'Mob Arena Cairo'
   LORE:
-    - 'Watch the players in /ma join Cairo'
+    - 'Play in Mob Arena Cairo'
   ID: 24
   KEEP-OPEN: true
   POSITION-X: 2
   POSITION-Y: 1
   DATA-VALUE: 1
-Spleefspec:
-  COMMAND: 'warp spleefspec'
-  NAME: 'Spleef Spectator'
+Spleefgame:
+  COMMAND: 'spleef'
+  NAME: 'Play spleef'
   LORE:
-    - 'Watch the players in /spleef'
+    - 'Spleef is a game where you dig blocks away'
+	- 'under your enemies. To make them fall down.'
+	- 'Last man standing wins!'
   ID: 80
   KEEP-OPEN: true
   POSITION-X: 3
   POSITION-Y: 2
-Scramblespec:
-  COMMAND: 'warp scramblespec'
-  NAME: 'Silverfish Scramble Spectator'
+Scramblegame:
+  COMMAND: 'scramble'
+  NAME: 'Silverfish Scramble'
   LORE:
-    - 'Watch the players in /scramble'
+    - 'In this game you dig cobble, the first to dig'
+	- 'the cobble with a silverfish in it. Wins!'
   ID: 4
   KEEP-OPEN: true
   POSITION-X: 4
   POSITION-Y: 1
-Lavaspec:
-  COMMAND: 'warp lavaspec'
-  NAME: 'Pitfall Spectator'
+Lavapit:
+  COMMAND: 'pitfall'
+  NAME: 'PitFall'
   LORE:
     - 'Watch the players in /pitfall'
-  ID: 7
+  ID: 11
   KEEP-OPEN: true
   POSITION-X: 5
   POSITION-Y: 2
-SandStormspec:
-  COMMAND: 'warp sandspec'
-  NAME: 'SandStorm Spectator'
+Sandstormgame:
+  COMMAND: 'sandstorm'
+  NAME: 'SandStorm'
   LORE:
-    - 'Watch the players in /sandstorm'
+    - 'In this game you have to survive as long'
+	- 'as possible, the last survivor wins!'
   ID: 12
   KEEP-OPEN: true
   POSITION-X: 6
   POSITION-Y: 1
-SharpShooterspec:
-  COMMAND: 'warp sharpspec'
-  NAME: 'SharpShooter Spectator'
+Sharpshootergame:
+  COMMAND: 'sharpshooter'
+  NAME: 'SharpShooter'
   LORE:
-    - 'Watch the archers in /sharpshooter'
-  ID: 262
+    - 'In this game you have to shoot glowstone blocks'
+	- 'every block gives you 1 point, try to get the highscore!'
+  ID: 261
   KEEP-OPEN: true
   POSITION-X: 7
   POSITION-Y: 2
-fishspec:
-  COMMAND: 'warp fishspec'
-  NAME: 'Fishing Tourney Spectator'
+Fishgame:
+  COMMAND: 'fish'
+  NAME: 'Fishing Tourney'
   LORE:
-    - 'Watch the players in /fish'
-  ID: 349
+    - 'In this game you gotta fish for cash.'
+	- 'The heavier the fish, the higher your reward.'
+  ID: 346
   KEEP-OPEN: true
   POSITION-X: 8
   POSITION-Y: 1
+Boatracegame:
+  COMMAND: 'boatrace'
+  NAME: 'BoatRace'
+  LORE:
+	- 'In this game you have to race by boat.'
+	- 'The first to get to the finish, wins!'
+  ID: 333
+  KEEP-OPEN: true
+  POSITION-X: 9
+  POSITION-Y: 2
+Pogogame
+  COMMAND: 'pogo'
+  NAME: 'Pogo'
+  LORE:
+	- 'In this game you have to bounce.'
+	- 'See who can bounce the highest and wins!'
+  ID: 280
+  KEEP-OPEN: true
+  POSITION-X: 2
+  POSITION-Y: 3
 nav:
   COMMAND: 'open:nav.yml'
   NAME: 'Go Back'
@@ -109,5 +135,5 @@ nav:
     - 'Back to the Navigation menu'
   ID: 399
   KEEP-OPEN: true
-  POSITION-X: 9
-  POSITION-Y: 2
+  POSITION-X: 5
+  POSITION-Y: 4
