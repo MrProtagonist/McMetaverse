@@ -17,6 +17,19 @@ menu-settings:
 ######################
 
 
+buy-coal:
+  PRICE: 10
+  COMMAND: 'give: coal'
+  NAME: '&aBuy'
+  LORE:
+    - 'Coal x1'
+    - 'at $10'
+  ID: coal
+  KEEP-OPEN: true
+  POSITION-X: 1
+  POSITION-Y: 1
+
+
 buy-diamond:
   PRICE: 180
   COMMAND: 'give: diamond'
@@ -26,7 +39,7 @@ buy-diamond:
     - 'at $180'
   ID: diamond
   KEEP-OPEN: true
-  POSITION-X: 1
+  POSITION-X: 4
   POSITION-Y: 1
 
 
@@ -39,7 +52,7 @@ buy-gold:
     - 'at $90'
   ID: gold_ingot
   KEEP-OPEN: true
-  POSITION-X: 2
+  POSITION-X: 3
   POSITION-Y: 1
 
 
@@ -52,7 +65,7 @@ buy-iron:
     - 'at $80'
   ID: iron_ingot
   KEEP-OPEN: true
-  POSITION-X: 3
+  POSITION-X: 2
   POSITION-Y: 1
 
 
@@ -182,7 +195,6 @@ sell-stone:
     - 'Stone x64'
     - 'at $64'
   ID: stone
-  DATA-VALUE: 1
   AMOUNT: 64
   KEEP-OPEN: true
   POSITION-X: 1
@@ -202,6 +214,45 @@ sell-cobble:
   POSITION-X: 2
   POSITION-Y: 4
 
+sell-pgranite:
+  REQUIRED-ITEM: 'stone:2, 64'
+  COMMAND: 'givemoney: 80'
+  NAME: '&dSell'
+  LORE:
+    - 'Polished Granite x64'
+    - 'at $80'
+  ID: stone:2
+  AMOUNT: 64
+  KEEP-OPEN: true
+  POSITION-X: 3
+  POSITION-Y: 4
+
+sell-pdiorite:
+  REQUIRED-ITEM: 'stone:4, 64'
+  COMMAND: 'givemoney: 80'
+  NAME: '&dSell'
+  LORE:
+    - 'Polished Diorite x64'
+    - 'at $80'
+  ID: stone:4
+  AMOUNT: 64
+  KEEP-OPEN: true
+  POSITION-X: 4
+  POSITION-Y: 4
+
+sell-pandesite:
+  REQUIRED-ITEM: 'stone:6, 64'
+  COMMAND: 'givemoney: 80'
+  NAME: '&dSell'
+  LORE:
+    - 'Polished Andesite x64'
+    - 'at $80'
+  ID: stone:6
+  AMOUNT: 64
+  KEEP-OPEN: true
+  POSITION-X: 5
+  POSITION-Y: 4
+
 
 sell-dirt:
   REQUIRED-ITEM: 'dirt, 64'
@@ -213,8 +264,8 @@ sell-dirt:
   ID: dirt
   AMOUNT: 64
   KEEP-OPEN: true
-  POSITION-X: 6
-  POSITION-Y: 4
+  POSITION-X: 5
+  POSITION-Y: 6
 
 
 sell-log:
@@ -233,13 +284,13 @@ sell-log:
 
 
 sell-log2:
-  REQUIRED-ITEM: '17:1, 64'
+  REQUIRED-ITEM: 'log:1, 64'
   COMMAND: 'givemoney: 32'
   NAME: '&dSell'
   LORE:
     - 'Spruce Log x64'
     - 'at $32'
-  ID: 17:1
+  ID: log:1
   AMOUNT: 64
   KEEP-OPEN: true
   POSITION-X: 2
@@ -247,13 +298,13 @@ sell-log2:
 
 
 sell-log3:
-  REQUIRED-ITEM: '17:2, 64'
+  REQUIRED-ITEM: 'log:2, 64'
   COMMAND: 'givemoney: 64'
   NAME: '&dSell'
   LORE:
     - 'Birch Log x64'
     - 'at $64'
-  ID: 17:2
+  ID: log:2
   AMOUNT: 64
   KEEP-OPEN: true
   POSITION-X: 3
@@ -297,8 +348,8 @@ sell-bone:
     - 'at $4'
   ID: bone
   KEEP-OPEN: true
-  POSITION-X: 7
-  POSITION-Y: 4
+  POSITION-X: 2
+  POSITION-Y: 6
 
 
 sell-rotten-flesh:
@@ -311,8 +362,8 @@ sell-rotten-flesh:
   ID: rotten_flesh
   AMOUNT: 64
   KEEP-OPEN: true
-  POSITION-X: 8
-  POSITION-Y: 4
+  POSITION-X: 3
+  POSITION-Y: 6
 
 
 sell-ghast-tear:
@@ -324,8 +375,8 @@ sell-ghast-tear:
     - 'at $50'
   ID: ghast_tear
   KEEP-OPEN: true
-  POSITION-X: 9
-  POSITION-Y: 4
+  POSITION-X: 4
+  POSITION-Y: 6
 
 
 separator1:
