@@ -53,8 +53,8 @@ Spleefgame:
   NAME: 'Play spleef'
   LORE:
     - 'Spleef is a game where you dig blocks away'
-	- 'under your enemies. To make them fall down.'
-	- 'Last man standing wins!'
+    - 'under your enemies. To make them fall down.'
+    - 'Last man standing wins!'
   ID: 80
   KEEP-OPEN: true
   POSITION-X: 3
@@ -64,7 +64,7 @@ Scramblegame:
   NAME: 'Silverfish Scramble'
   LORE:
     - 'In this game you dig cobble, the first to dig'
-	- 'the cobble with a silverfish in it. Wins!'
+    - 'the cobble with a silverfish in it. Wins!'
   ID: 4
   KEEP-OPEN: true
   POSITION-X: 4
@@ -83,7 +83,7 @@ Sandstormgame:
   NAME: 'SandStorm'
   LORE:
     - 'In this game you have to survive as long'
-	- 'as possible, the last survivor wins!'
+    - 'as possible, the last survivor wins!'
   ID: 12
   KEEP-OPEN: true
   POSITION-X: 6
@@ -93,7 +93,7 @@ Sharpshootergame:
   NAME: 'SharpShooter'
   LORE:
     - 'In this game you have to shoot glowstone blocks'
-	- 'every block gives you 1 point, try to get the highscore!'
+    - 'every block gives you 1 point, try to get the highscore!'
   ID: 261
   KEEP-OPEN: true
   POSITION-X: 7
@@ -103,7 +103,7 @@ Fishgame:
   NAME: 'Fishing Tourney'
   LORE:
     - 'In this game you gotta fish for cash.'
-	- 'The heavier the fish, the higher your reward.'
+    - 'The heavier the fish, the higher your reward.'
   ID: 346
   KEEP-OPEN: true
   POSITION-X: 8
@@ -112,18 +112,18 @@ Boatracegame:
   COMMAND: 'boatrace'
   NAME: 'BoatRace'
   LORE:
-	- 'In this game you have to race by boat.'
-	- 'The first to get to the finish, wins!'
+    - 'In this game you have to race by boat.'
+    - 'The first to get to the finish, wins!'
   ID: 333
   KEEP-OPEN: true
   POSITION-X: 9
   POSITION-Y: 2
-Pogogame
+Pogogame:
   COMMAND: 'pogo'
   NAME: 'Pogo'
   LORE:
-	- 'In this game you have to bounce.'
-	- 'See who can bounce the highest and wins!'
+    - 'In this game you have to bounce.'
+    - 'See who can bounce the highest and wins!'
   ID: 280
   KEEP-OPEN: true
   POSITION-X: 2
@@ -135,5 +135,5 @@ nav:
     - 'Back to the Navigation menu'
   ID: 399
   KEEP-OPEN: true
-  POSITION-X: 5
-  POSITION-Y: 4
+  POSITION-X: 9
+  POSITION-Y: 3
