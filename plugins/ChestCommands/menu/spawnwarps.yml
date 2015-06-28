@@ -10,7 +10,7 @@ menu-settings:
   name: '&a&lWarps Inside Spawn'
 
   # rows - the number of rows of the chest - REQUIRED
-  rows: 3
+  rows: 5
 
   # command - OPTIONAL (you can remove this or set it to '')
   # Bind multiple commands using ; (command: 'menu; m; me')
@@ -186,6 +186,19 @@ officeswarp:
   POSITION-Y: 3
 #  DATA-VALUE: 0
 
+bankwarp:
+  COMMAND: 'warp bank'
+  NAME: 'Bank'
+  LORE:
+	- 'This is where you deposit'
+	- 'or withdraw money from an account'
+	- 'which gives 0.002% interest every day'
+  ID: 266
+  KEEP-OPEN: false
+  POSITION-X: 9
+  POSITION-Y: 3
+#  DATA-VALUE: 0
+
 nav:
   COMMAND: 'open:nav.yml'
   NAME: 'Go Back'
@@ -193,5 +206,5 @@ nav:
     - 'Back to the Navigation menu'
   ID: 399
   KEEP-OPEN: true
-  POSITION-X: 9
-  POSITION-Y: 3
+  POSITION-X: 5
+  POSITION-Y: 5
