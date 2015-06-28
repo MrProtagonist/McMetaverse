@@ -1,3 +1,5 @@
+script options:
+    $ developer mode
 on script load:
 	set {fishing.countdown} to false
 	set {fishing.going} to false
@@ -34,8 +36,10 @@ on pickup of raw fish:
 		set {fishing.session.player} to player
 	loop all players:
 		{fishing.%loop-player%.playing} is true
-		execute console command "tm amsg %loop-player% &a%player%&f got a %{_final}% lb fish."
-	cancel event
+#		send "&a%player%&f got a %{_final}% lb fish." to loop-player
+#	broadcast "&f[&aFISHING DEBUG&f] %player% got a %{_final}% lb fish after calculations."
+#	broadcast "&f[&aFISHING DEBUG&f] Current best for %player% is a %{fishing.%player%.best}% lb fish."
+#	broadcast "&f[&aFISHING DEBUG&f] Current session high score is by %{fishing.session.player}% for a %{fishing.session.top}% lb fish."
 	delete item
 	stop
 on pickup of raw salmon:
@@ -65,8 +69,10 @@ on pickup of raw salmon:
 		set {fishing.session.player} to player
 	loop all players:
 		{fishing.%loop-player%.playing} is true
-		execute console command "tm amsg %loop-player% &a%player%&f got a %{_final}% lb fish."
-	cancel event
+#		send "&a%player%&f got a %{_final}% lb fish." to loop-player
+#	broadcast "&f[&aFISHING DEBUG&f] %player% got a %{_final}% lb fish after calculations."
+#	broadcast "&f[&aFISHING DEBUG&f] Current best for %player% is a %{fishing.%player%.best}% lb fish."
+#	broadcast "&f[&aFISHING DEBUG&f] Current session high score is by %{fishing.session.player}% for a %{fishing.session.top}% lb fish."
 	delete item
 	stop
 on pickup of clownfish:
@@ -87,7 +93,6 @@ on pickup of clownfish:
 		set {_final} to {_final} * 2
 	chance of 20%:
 		set {_final} to {_final} / 2
-	execute console command "tm amsg %player% &aYou got a &6&l%{_final}% lb&a fish."
 	set {fishing.%player%.last} to {_final}
 	if {fishing.%player%.last} is greater than {fishing.%player%.best}:
 		set {fishing.%player%.best} to {fishing.%player%.last}
@@ -96,8 +101,10 @@ on pickup of clownfish:
 		set {fishing.session.player} to player
 	loop all players:
 		{fishing.%loop-player%.playing} is true
-		execute console command "tm amsg %loop-player% &a%player%&f got a %{_final}% lb fish."
-	cancel event
+#		send "&a%player%&f got a %{_final}% lb fish." to loop-player
+#	broadcast "&f[&aFISHING DEBUG&f] %player% got a %{_final}% lb fish after calculations."
+#	broadcast "&f[&aFISHING DEBUG&f] Current best for %player% is a %{fishing.%player%.best}% lb fish."
+#	broadcast "&f[&aFISHING DEBUG&f] Current session high score is by %{fishing.session.player}% for a %{fishing.session.top}% lb fish."
 	delete item
 	stop
 on pickup of pufferfish:
@@ -127,7 +134,10 @@ on pickup of pufferfish:
 		set {fishing.session.player} to player
 	loop all players:
 		{fishing.%loop-player%.playing} is true
-		execute console command "tm amsg %loop-player% &a%player%&f got a %{_final}% lb fish."
+#		send "&a%player%&f got a %{_final}% lb fish." to loop-player
+#	broadcast "&f[&aFISHING DEBUG&f] %player% got a %{_final}% lb fish after calculations."
+#	broadcast "&f[&aFISHING DEBUG&f] Current best for %player% is a %{fishing.%player%.best}% lb fish."
+#	broadcast "&f[&aFISHING DEBUG&f] Current session high score is by %{fishing.session.player}% for a %{fishing.session.top}% lb fish."
 	delete item
 	stop
 on pickup:
@@ -155,7 +165,10 @@ command /fish:
 				set {fishing.%player%.playing} to true
 				message "&aJoined &6&oFishing Tourney"
 				execute console command "tm msg %player% &6High Score"
-				execute console command "tm amsg %player% &a%{fishing.top.player}%&f: %{fishing.top.score}% lbs"
+				wait 2 real seconds
+				execute console command "tm msg %player% &a%{fishing.top.player}%"
+				wait 2 real seconds
+				execute console command "tm msg %player% %{fishing.top.score}% lbs"
 				if {fishing.%player%.best} is not set:
 					set {fishing.%player%.best} to 0
 				add 1 to {fishing.players}
@@ -173,15 +186,22 @@ command /startfish:
 		{fishing.countdown} is not true
 		set {fishing.countdown} to true
 		set {fishing.session.top} to 1
-		message "&aFishing Tournament starting in 10 seconds."
+		broadcast "&aFishing Tournament starting in 10 seconds."
 		loop all players:
 			{fishing.%loop-player%.playing} is true
 			execute console command "tm msg %loop-player% &aGet Ready!"
+			set {fishing.%loop-player%.last} to 0
+			set {fishing.%loop-player%.best} to 0
+			loop-player has the permission "essentials.fly.self":
+				execute console command "fly off %loop-player%"
+			loop-player is op:
+				execute console command "god off %loop-player%"
+				execute console command "god %loop-player% off"
+				execute console command "gms %loop-player%"
 		wait 5 real seconds
 		loop all players:
 			{fishing.%loop-player%.playing} is true
 			execute console command "tm msg %loop-player% &aStart!"
-			display "&6&oFishing Tourney" on bossbar with 100 percent by 180 seconds for loop-player
 			teleport loop-player to {fishing.spawn}
 			give loop-player a fishing rod
 		set {fishing.countdown} to false
@@ -203,7 +223,12 @@ command /startfish:
 		loop all players:
 			{fishing.%loop-player%.playing} is true
 			set {fishing.%loop-player%.playing} to false
-			execute console command "tm msg %loop-player% &a%{fishing.session.player}%&f: &l%{fishing.session.top}% lbs"
+			execute console command "tm msg %loop-player% &a%{fishing.session.player}%"
+		wait 2 real seconds
+		loop all players:
+			{fishing.%loop-player%.playing} is true
+			set {fishing.%loop-player%.playing} to false
+			execute console command "tm msg %loop-player% &a%{fishing.session.top}% lbs"
 		set {_pay} to {fishing.session.top} * 2
 		execute console command "eco give %{fishing.session.player}% %{_pay}%"
 		if {fishing.top.score} is not set:
@@ -216,6 +241,10 @@ command /startfish:
 			set {fishing.top.score} to {fishing.session.top}
 			set {fishing.top.player} to {fishing.session.player}
 		set {fishing.going} to false
+command /fishstats:
+	trigger:
+		broadcast "&f[&aDEBUG&f] Top Score: %{fishing.top.score}%"
+		broadcast "&f[&aDEBUG&f] Top Player: %{fishing.top.player}%"
 on break:
 	{fishing.%player%.playing} is true
 	cancel event

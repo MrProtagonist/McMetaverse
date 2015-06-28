@@ -167,12 +167,13 @@ on damage:
 	damage victim by 1
 	push the victim backwards at speed .25
 	push the victim upwards at speed .2
-
+on script load:
+	set {spleef.blocked} to false
 command /startspleef:
 	trigger:
 		if {spleef.blocked} is not set:
 			set {spleef.blocked} to false
-		{spleef.blocked} is not true
+		{spleef.blocked} is false
 		set {spleef.blocked} to true
 		set {spleef.breakable} to false
 		loop all players:

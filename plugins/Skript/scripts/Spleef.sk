@@ -1,0 +1,357 @@
+variables:
+	{spleef.first.wins} = 5
+	{spleef.second.wins} = 4
+	{spleef.third.wins} = 3
+	{spleef.fourth.wins} = 2
+	{spleef.fifth.wins} = 1
+
+command /spleef:
+	description: Used to join into Spleef
+	executable by: players
+	aliases: js
+	trigger:
+		player can't hold 36 wood swords:
+			message "&e&oClear your inventory &6&oand armor &e&obefore joining spleef!"
+			stop
+		if {spleef.running} is true:
+			message "&c&oA game is already in session!"
+		else:
+			{spleef.players} is not set:
+				set {spleef.players} to 0
+			{spleef.%player%.playing} is not set:
+				set {spleef.%player%.playing} to false
+			{spleef.%player%.playing} is not true
+			teleport player to {spleef.lobby}
+			player has the permission "echopet.*":
+				make player execute "pet hide"
+			player has the permission "essentials.fly.self":
+				execute console command "fly off %player%"
+			player is op:
+				execute console command "god off %player%"
+				execute console command "god %player% off"
+				execute console command "gms %player%"
+			clear inventory of player
+			{spleef.players} is 0:
+				set {spleef.ready} to 0
+				set {spleef.countdown} to false
+			add 1 to {spleef.players}
+			set {spleef.%player%.playing} to true
+			broadcast "&a&o%{spleef.players}%&6&o users ready to play spleef. Type &b/spleef&6&o to join."
+			loop {spleef.wins.players::*}:
+				if {spleef.wins.players::%loop-index%} is player:
+					stop trigger
+			add player to {spleef.wins.players::*}
+			add 0 to {spleef.wins.total::*}
+
+command /setspleef <integer>:
+	permission: spleef.spawn
+	description: Used to set the spawn of the spleef game.
+	executable by: players
+	trigger:
+		set {_cur} to argument 1
+		{_cur} is 1:
+			set {spleef.respawn} to location of player
+			message "Spleef Spawn set to <grey>%location of player%"
+		{_cur} is 2:
+			set {spleef.lobby} to location of player
+			message "Spleef lobby set to <grey>%location of player%"
+		{_cur} is 3:
+			set {spleef.spectate} to location of player
+			message "Spleef spectate set to <grey>%location of player%"
+		{_cur} is 4:
+			teleport player to {spleef.lobby}
+on respawn:
+	{spleef.%player%.spectating} is true:
+		wait 1 tick
+		message "&c&oYou are now out of the game."
+		teleport player to {spleef.spectate}
+		teleport player to {spleef.spectate}
+		set {spleef.%player%.playing} to false
+		set {spleef.countdown} to false
+		wait 1 real second
+		execute console command "ci %player%"
+on place of snow:
+	{spleef.%player%.playing} is true
+	cancel event
+	message "&c&oDisabled!"
+on command "/leave":
+	{spleef.%player%.playing} is true
+	set {spleef.%player%.playing} to false
+	set {spleef.%player%.spectating} to false
+	make player execute "spawn"
+	make player execute "spawn"
+	subtract 1 from {spleef.players}
+on death of a player:
+	{spleef.%player%.playing} is true
+	set {spleef.%player%.playing} to false
+	subtract 1 from {spleef.players}
+	teleport player to {spleef.spectate}
+	set {spleef.%player%.spectating} to true
+	clear the inventory of the player
+	set death message to "&a&o%player% &6&ois disqualified."
+	if {spleef.running} is true:
+		if {spleef.players} is equal to 1:
+			loop all players:
+				if {spleef.%loop-player%.spectating} is true:
+					set {spleef.%loop-player%.spectating} to false
+					teleport loop-player to {spleef.lobby}
+					teleport loop-player to {spleef.lobby}
+					execute console command "rg removemember Spleef %loop-player%"
+				{spleef.%loop-player%.playing} is true
+				set {spleef.%loop-player%.playing} to false
+				set {spleef.%loop-player%.spectating} to false
+				execute console command "rg removemember Spleef %loop-player%"
+				wait 2 ticks
+				broadcast "&a&l&o%loop-player%&6&o is the winner of spleef!"
+				set {spleef.blocked} to false
+				clear the inventory of loop-player
+				set {spleef.countdown} to false
+				teleport loop-player to {spleef.lobby}
+				teleport loop-player to {spleef.lobby}
+				loop {spleef.wins.players::*}:
+					if {spleef.wins.players::%loop-index%} is loop-player:
+						add 1 to {spleef.wins.total::%loop-index%}
+						message "&a&oYou have %{spleef.wins.total::%loop-index%}% wins!"
+						if {spleef.wins.total::%loop-index%} is greater than {spleef.first.wins}:
+							message "You just climbed to first place!"
+							set {spleef.second.wins} to {spleef.first.wins}
+							set {spleef.second.name} to {spleef.first.name}
+							set {spleef.first.wins} to {spleef.wins.total::%loop-index%}
+							set {spleef.first.name} to loop-player
+						else if {spleef.wins.total::%loop-index%} is greater than {spleef.second.wins}:
+							message "You just climbed to second place!"
+							set {spleef.third.wins} to {spleef.second.wins}
+							set {spleef.third.name} to {spleef.second.name}
+							set {spleef.second.wins} to {spleef.wins.total::%loop-index%}
+							set {spleef.second.name} to loop-player
+						else if {spleef.wins.total::%loop-index%} is greater than {spleef.third.wins}:
+							message "You just climbed to third place!"
+							set {spleef.fourth.wins} to {spleef.third.wins}
+							set {spleef.fourth.name} to {spleef.third.name}
+							set {spleef.third.wins} to {spleef.wins.total::%loop-index%}
+							set {spleef.third.name} to loop-player
+						else if {spleef.wins.total::%loop-index%} is greater than {spleef.fourth.wins}:
+							message "You just climbed to fourth place!"
+							set {spleef.fifth.wins} to {spleef.fourth.wins}
+							set {spleef.fifth.name} to {spleef.fourth.name}
+							set {spleef.fourth.wins} to {spleef.wins.total::%loop-index%}
+							set {spleef.fourth.name} to loop-player
+						else if {spleef.wins.total::%loop-index%} is greater than {spleef.fifth.wins}:
+							message "You just climbed to fifth place!"
+							set {spleef.fifth.wins} to {spleef.wins.total::%loop-index%}
+							set {spleef.fifth.name} to loop-player
+				set {spleef.running} to false
+				loop all players:
+					{spleef.%loop-player-2%.spectating} is true
+					make loop-player-2 execute "spawn"
+					message " " to loop-player-2
+					message "&6- - - -[&e&lLeaderboard&r&6]- - - -" to loop-player-2
+					message "1. &a%{spleef.first.name}%&r: &b%{spleef.first.wins}%" to loop-player-2
+					message "2. &a%{spleef.second.name}%&r: &b%{spleef.second.wins}%" to loop-player-2
+					message "3. &a%{spleef.third.name}%&r: &b%{spleef.third.wins}%" to loop-player-2
+					message "4. &a%{spleef.fourth.name}%&r: &b%{spleef.fourth.wins}%" to loop-player-2
+					message "5. &a%{spleef.fifth.name}%&r: &b%{spleef.fifth.wins}%" to loop-player-2
+					message " " to loop-player-2
+					set {spleef.%loop-player-2%.spectating} to false
+					make loop-player-2 execute "spawn"
+			set {spleef.countdown} to false
+			execute console command "/rs"
+		else:
+			loop all players:
+				{spleef.%loop-player%.playing} or {spleef.%loop-player%.spectating} is true
+				send "&a&o%{spleef.players}%&6&o players remaining." to loop-player
+	set {spleef.countdown} to false
+on damage:
+	{spleef.running} is true
+	projectile is snowball
+	victim is player
+	{spleef.%shooter%.playing} is true
+	damage victim by 1
+	push the victim backwards at speed .25
+	push the victim upwards at speed .2
+on script load:
+	set {spleef.blocked} to false
+command /startspleef:
+	trigger:
+		if {spleef.blocked} is not set:
+			set {spleef.blocked} to false
+		{spleef.blocked} is false
+		set {spleef.blocked} to true
+		set {spleef.breakable} to false
+		loop all players:
+			{spleef.%loop-player%.playing} is true
+			send "&oSpleef starting in &a&l30&r&o seconds." to loop-player
+		wait 15 seconds
+		loop all players:
+			{spleef.%loop-player%.playing} is true
+			send "&oSpleef starting in &e&l15&r&o seconds." to loop-player
+		wait 10 seconds
+		loop all players:
+			{spleef.%loop-player%.playing} is true
+			send "&oSpleef starting in &c&l5&r&o seconds." to loop-player
+			teleport loop-player to {spleef.respawn}
+			heal loop-player
+			set {pvp.%loop-player%} to 1
+			execute console command "feed %loop-player%"
+			set tool of loop-player to diamond shovel
+			set the name of loop-player's tool to "&b&oSpleef Shovel"
+			execute console command "give %loop-player% snowball 15"
+		set {spleef.running} to true
+		wait 5 second
+		loop all players:
+			{spleef.%loop-player%.playing} is true
+			execute console command "rg addmember Spleef %loop-player%"
+			send "&b&o&lSpleef has begun!." to loop-player
+		set {spleef.breakable} to true
+		set {spleef.countdown} to false
+command /rs:
+	permission: spleef.reset
+	trigger:
+		loop {spleef.broken.blocks::*}:
+			set block at loop-value to snow
+		delete {spleef.players}
+		loop all players:
+			set {spleef.%loop-player%.playing} to false
+			set {spleef.%loop-player%.spectating} to false
+		delete {spleef.running}
+		set {spleef.countdown} to false
+		delete {spleef.broken.blocks::*}
+		delete {spleef.ignore.locations::*}
+		message "Reset!"
+command /debugspleef:
+	trigger:
+		message " "
+		message "&6- - - -[&e&lLeaderboard&r&6]- - - -"
+		message "&l1 &a%{spleef.first.name}%&r: &b%{spleef.first.wins}%"
+		message "&l2 &a%{spleef.second.name}%&r: &b%{spleef.second.wins}%"
+		message "&l3 &a%{spleef.third.name}%&r: &b%{spleef.third.wins}%"
+		message "&l4 &a%{spleef.fourth.name}%&r: &b%{spleef.fourth.wins}%"
+		message "&l5 &a%{spleef.fifth.name}%&r: &b%{spleef.fifth.wins}%"
+		message " "
+		loop {spleef.wins.players::*}:
+			message "%{spleef.wins.players::%loop-index%}% - %{spleef.wins.total::%loop-index%}%"
+# #
+# Leave command is in LavaPit.sk
+# #
+	
+	
+			
+on break:
+	{spleef.%player%.playing} or {spleef.%player%.spectating} is true
+	block is not snow:
+		player is not op
+		cancel event
+	block is snow:
+		{spleef.running} is not set:
+			player is not op
+			cancel event
+		{spleef.running} is false:
+			player is not op
+			cancel event
+		{spleef.running} is true:
+			{spleef.breakable} is false:
+				cancel event
+			else:
+				add location of block to {spleef.broken.blocks::*}
+
+on disconnect:
+	{spleef.%player%.playing} is true
+	set {spleef.%player%.playing} to false
+	make player execute "spawn"
+	subtract 1 from {spleef.players}
+	set {spleef.%player%.ready} to false
+	subtract 1 from {spleef.ready}
+	set {spleef.%player%.spectating} to false
+	clear the inventory of the player
+	execute console command "rg removemember Spleef %player%"
+	set quit message to "&a&o%player% &6&oquit and is disqualified."
+	if {spleef.running} is true:
+		if {spleef.players} is equal to 1:
+			loop all players:
+				{spleef.%loop-player%.playing} is true
+				set {spleef.%loop-player%.playing} to false
+				set {spleef.%loop-player%.spectating} to true
+				wait 1 real second
+				broadcast "&a&l&o%loop-player%&6&o is the winner of spleef!"
+				clear the inventory of loop-player
+				teleport loop-player to {spleef.spectate}
+				set {spleef.countdown} to false
+				loop {spleef.win.players::*}:
+					if {spleef.wins.players::%loop-value%} is loop-player:
+						add 1 to {spleef.wins.total::%loop-index%}
+						message "&a&oYou have %{spleef.wins.total::%loop-index%}% wins!"
+						if {spleef.wins.total::%loop-index%} is greater than {spleef.first.wins}:
+							message "You just climbed to first place!"
+							set {spleef.second.wins} to {spleef.first.wins}
+							set {spleef.second.name} to {spleef.first.name}
+							set {spleef.first.wins} to {spleef.wins.total::%loop-index%}
+							set {spleef.first.name} to loop-player
+						else if {spleef.wins.total::%loop-index%} is greater than {spleef.second.wins}:
+							message "You just climbed to second place!"
+							set {spleef.third.wins} to {spleef.second.wins}
+							set {spleef.third.name} to {spleef.second.name}
+							set {spleef.second.wins} to {spleef.wins.total::%loop-index%}
+							set {spleef.second.name} to loop-player
+						else if {spleef.wins.total::%loop-index%} is greater than {spleef.third.wins}:
+							message "You just climbed to third place!"
+							set {spleef.fourth.wins} to {spleef.third.wins}
+							set {spleef.fourth.name} to {spleef.third.name}
+							set {spleef.third.wins} to {spleef.wins.total::%loop-index%}
+							set {spleef.third.name} to loop-player
+						else if {spleef.wins.total::%loop-index%} is greater than {spleef.fourth.wins}:
+							message "You just climbed to fourth place!"
+							set {spleef.fifth.wins} to {spleef.fourth.wins}
+							set {spleef.fifth.name} to {spleef.fourth.name}
+							set {spleef.fourth.wins} to {spleef.wins.total::%loop-index%}
+							set {spleef.fourth.name} to loop-player
+						else if {spleef.wins.total::%loop-index%} is greater than {spleef.fifth.wins}:
+							message "You just climbed to fifth place!"
+							set {spleef.fifth.wins} to {spleef.wins.total::%loop-index%}
+							set {spleef.fifth.name} to loop-player
+				wait 3 real second
+				execute console command "/rs"
+				set {spleef.ready} to 0
+				set {spleef.players} to 0
+				wait 2 real seconds
+				set {spleef.running} to false
+				loop all players:
+					{spleef.%loop-player-2%.spectating} is true
+					execute console command "rg removemember Spleef %loop-player-2%"
+					execute console command "rg removemember Spleef %loop-player-1%"
+					make loop-player-2 execute "spawn"
+					message " "
+					message "&6- - - -[&e&lLeaderboard&r&6]- - - -"
+					message "&l1 &a%{spleef.first.name}%&r: &b%{spleef.first.wins}%" to loop-player-2
+					message "&l2 &a%{spleef.second.name}%&r: &b%{spleef.second.wins}%" to loop-player-2
+					message "&l3 &a%{spleef.third.name}%&r: &b%{spleef.third.wins}%" to loop-player-2
+					message "&l4 &a%{spleef.fourth.name}%&r: &b%{spleef.fourth.wins}%" to loop-player-2
+					message "&l5 &a%{spleef.fifth.name}%&r: &b%{spleef.fifth.wins}%" to loop-player-2
+					message " " to loop-player-2
+					set {spleef.%loop-player-2%.spectating} to false
+					make loop-player-2 execute "spawn"
+		else:
+			loop all players:
+				{spleef.%loop-player%.playing} or {spleef.%loop-player%.spectating} is true
+				send "&a&o%{spleef.players}%&6&o players remaining." to loop-player
+on command:
+	{spleef.%player%.playing} is true:
+		command is not "leave" or "a" or "login"
+		message "&e&oNo commands permitted while playing spleef."
+		message "&a&o/leave &e&oto quit."
+		cancel the event
+	{spleef.%player%.spectating} is true:
+		command is not "leave" or "a" or "login"
+		message "&e&oNo commands permitted while playing spleef."
+		message "&a&o/leave &e&oto quit."
+		cancel the event
+on damage:
+	{spleef.%victim%.playing} is true
+	if damage cause is void:
+		clear the inventory of victim
+		set {spleef.countdown} to false
+		set {spleef.%victim%.spectating} to true
+		execute console command "rg removemember Spleef %victim%"
+		kill the victim
+	else if damage cause is not snowball:
+		damage cause is not fall:
+			cancel event

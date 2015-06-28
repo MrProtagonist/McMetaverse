@@ -1,37 +1,5 @@
 script options:
     $ developer mode
-command /setflag:
-	trigger:
-		set {flag} to location of player
-		message "&aDone! Hope you were next to the flag..."
-command /raiseflag:
-	trigger:
-		delete {flag.spot::*}
-		delete {flag.data::*}
-		broadcast "&aDebug routine started!"
-		loop all blocks in radius 20 of {flag}:
-			loop-block is wool
-			add loop-block to {flag.data::*}
-			broadcast "&f[&aDEBUG&f] %loop-block% found!"
-			add location of loop-block to {flag.spot::*}
-			set loop-block to air
-		wait 1 tick
-		loop {flag.spot::*}:
-			set block 1 meter above block at location of block at loop-value to {flag.data::%loop-index%}
-		wait 2 real seconds
-		loop 10 times:
-			loop {flag.spot::*}:
-				set block at location of loop-value-2 to air
-			wait 1 tick
-			loop {flag.spot::*}:
-				set block 1 meter above block at location of block at loop-value-2 to {flag.data::%loop-index%}
-				set {flag.spot::%loop-index%} to location of block 1 meter above block at loop-value-2
-			wait 1 real second
-		broadcast "&aDebug routine completed!"
-		
-		
-		
-		
 
 on script load:
 	set {boatrace.going} to false
@@ -51,9 +19,24 @@ on join:
 on quit:
 	{boatrace.%player%.playing} is true
 	subtract 1 from {boatrace.players}
+	set {boatrace.%player%.playing} to false
+	teleport player to {spawn}
+	teleport player to {spawn}
 on command:
 	{boatrace.%player%.playing} is true
 	message "&cFinish the race!"
+on vehicle exit:
+	{boatrace.%player%.playing} is true
+	kill the vehicle of the player
+	message "&cGet on land within 7 seconds or you are disqualified!"
+	wait 7 real seconds
+	block 2 meters below player is water
+	{boatrace.%player%.time} is not set
+	message "&cSorry, you have been disqualified!"
+	set {boatrace.%player%.playing} to false
+	subtract 1 from {boatrace.players}
+	teleport player to {spawn}
+	teleport player to {spawn}
 command /setboat <integer>:
 	permission: is.pro
 	trigger:
@@ -87,6 +70,7 @@ command /boatrace:
 				stop
 #			if player can hold 36 wood swords:
 			add 1 to {boatrace.players}
+			delete {boatrace.%player%.time}
 			set {boatrace.%player%.playing} to true
 			teleport player to {boat.spec}
 			message "&aJoined &b&oBoat Race&a!"
@@ -144,49 +128,54 @@ on walking on glowstone:
 			{boatrace.%loop-player%.playing} is true
 			execute console command "tm amsg %loop-player% &6%player%&f: %{boatrace.%player%.time}%"
 		set {boatrace.first} to player
-		teleport player to {boat.spec}
-		teleport player to {boat.spec}
-		set {boatrace.%player%.playing} to false
+#		teleport player to {boat.spec}
+#		teleport player to {boat.spec}
+#		set {boatrace.%player%.playing} to false
 		subtract 1 from {boatrace.players}
 	if {boatrace.winners} is 1:
 		loop all players:
 			{boatrace.%loop-player%.playing} is true
 			execute console command "tm amsg %loop-player% &6%player%&f: %{boatrace.%player%.time}%"
 		set {boatrace.second} to player
-		teleport player to {boat.spec}
-		teleport player to {boat.spec}
-		set {boatrace.%player%.playing} to false
+#		teleport player to {boat.spec}
+#		teleport player to {boat.spec}
+#		set {boatrace.%player%.playing} to false
 		subtract 1 from {boatrace.players}
 	if {boatrace.winners} is 2:
 		loop all players:
 			{boatrace.%loop-player%.playing} is true
 			execute console command "tm amsg %loop-player% &6%player%&f: %{boatrace.%player%.time}%"
 		set {boatrace.third} to player
-		teleport player to {boat.spec}
-		teleport player to {boat.spec}
-		set {boatrace.%player%.playing} to false
+#		teleport player to {boat.spec}
+#		teleport player to {boat.spec}
+#		set {boatrace.%player%.playing} to false
 		subtract 1 from {boatrace.players}
 	if {boatrace.winners} is 3:
 		loop all players:
 			{boatrace.%loop-player%.playing} is true
 			execute console command "tm amsg %loop-player% &6%player%&f: %{boatrace.%player%.time}%"
 		set {boatrace.fourth} to player
-		set {boatrace.%player%.playing} to false
-		teleport player to {boat.spec}
-		teleport player to {boat.spec}
+#		set {boatrace.%player%.playing} to false
+#		teleport player to {boat.spec}
+#		teleport player to {boat.spec}
 		subtract 1 from {boatrace.players}
 	if {boatrace.winners} is 4:
 		loop all players:
 			{boatrace.%loop-player%.playing} is true
 			execute console command "tm amsg %loop-player% &6%player%&f: %{boatrace.%player%.time}%"
 		set {boatrace.fifth} to player
-		teleport player to {boat.spec}
-		teleport player to {boat.spec}
-		set {boatrace.%player%.playing} to false
+#		teleport player to {boat.spec}
+#		teleport player to {boat.spec}
+#		set {boatrace.%player%.playing} to false
 		subtract 1 from {boatrace.players}
 	add 1 to {boatrace.winners}
 	{boatrace.players} is 0
 	broadcast "&f[&aSERVER&f] &6%{boatrace.first}%&a won &b&oBoat Race&a in only &f%{boatrace.%{boatrace.first}%.time}%"
+	loop all players:
+		{boatrace.%loop-player%.playing} is true
+		set {boatrace.%loop-player%.playing} to false
+		teleport loop-player to {spawn}
+		teleport loop-player to {spawn}
 	if {boatrace.%{boatrace.first}%.time} is greater than {boatrace.best.time}:
 		set {boatrace.best.time} to {boatrace.%{boatrace.first}%.time}
 		set {boatrace.best.player} to {boatrace.first}

@@ -83,13 +83,14 @@ command /startlava:
 			execute console command "feed %loop-player%"
 		wait 5 second
 		set {lavapit.going} to true
+		set {pitfall.timer} to 0
 		loop all players:
 			{lavapit.%loop-player%.playing} is true
-			send "&4&o&lLava Pit has begun!." to loop-player
+			send "&4&o&lPit Fall has begun!." to loop-player
 every 2 real seconds:
 	if {lavapit.going} is true:
 		execute console command "/lavapit"
-		add 1 to {pitfall.timer}
+		add 2 to {pitfall.timer}
 command /setspotlava:
 	permission: is.op
 	trigger:
