@@ -190,9 +190,9 @@ bankwarp:
   COMMAND: 'warp bank'
   NAME: 'Bank'
   LORE:
-	- 'This is where you deposit'
-	- 'or withdraw money from an account'
-	- 'which gives 0.002% interest every day'
+    - 'This is where you deposit'
+    - 'or withdraw money from an account'
+    - 'which gives 0.002% interest every day'
   ID: 266
   KEEP-OPEN: false
   POSITION-X: 9
