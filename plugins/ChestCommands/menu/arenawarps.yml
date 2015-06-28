@@ -50,7 +50,7 @@ Cairoarena:
   DATA-VALUE: 1
 Spleefgame:
   COMMAND: 'spleef'
-  NAME: 'Play spleef'
+  NAME: 'Spleef'
   LORE:
     - 'Spleef is a game where you dig blocks away'
     - 'under your enemies. To make them fall down.'
@@ -74,7 +74,7 @@ Lavapit:
   NAME: 'PitFall'
   LORE:
     - 'Watch the players in /pitfall'
-  ID: 11
+  ID: 7
   KEEP-OPEN: true
   POSITION-X: 5
   POSITION-Y: 2
@@ -92,8 +92,9 @@ Sharpshootergame:
   COMMAND: 'sharpshooter'
   NAME: 'SharpShooter'
   LORE:
-    - 'In this game you have to shoot glowstone blocks'
-    - 'every block gives you 1 point, try to get the highscore!'
+    - 'In this game you shoot at glowstone blocks'
+    - 'every block gives you 1 point,'
+    - 'try to get the highscore!'
   ID: 261
   KEEP-OPEN: true
   POSITION-X: 7
@@ -136,4 +137,4 @@ nav:
   ID: 399
   KEEP-OPEN: true
   POSITION-X: 9
-  POSITION-Y: 3
+  POSITION-Y: 4
