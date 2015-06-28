@@ -3,25 +3,27 @@ GriefPrevention:
     Metacurse: -1
     Metacurse_nether: -1
     Metacurse_the_end: -1
-    Creative: -1
-    Minigame: -1
-    Sandbox: -1
-    Never_End: -1
-    Vanilla: -1
+    sandbox: -1
     resource: -1
+    contest: -1
+    Never_End: -1
     Hyperverse: -1
+    Minigame: -1
+    Hyperverse_nether: -1
+    Vanilla: -1
   Claims:
     Mode:
+      Hyperverse_nether: Disabled
       Minigame: Survival
-      Metacurse_nether: Disabled
+      Metacurse_nether: Survival
       Hyperverse: Survival
       Never_End: Disabled
-      Metacurse: Survival
-      Sandbox: Survival
-      Metacurse_the_end: Disabled
       resource: Disabled
-      Creative: Creative
+      contest: Disabled
+      Metacurse: Survival
+      Metacurse_the_end: Disabled
       Vanilla: Survival
+      sandbox: Survival
     PreventTheft: true
     ProtectCreatures: true
     PreventButtonsSwitches: true
@@ -65,13 +67,14 @@ GriefPrevention:
       Metacurse: true
       Metacurse_nether: true
       Metacurse_the_end: true
-      Creative: true
-      Minigame: true
-      Sandbox: true
-      Never_End: true
-      Vanilla: true
+      sandbox: true
       resource: true
+      contest: true
+      Never_End: true
       Hyperverse: true
+      Minigame: true
+      Hyperverse_nether: true
+      Vanilla: true
     ProtectFreshSpawns: true
     PunishLogout: false
     CombatTimeoutSeconds: 15
