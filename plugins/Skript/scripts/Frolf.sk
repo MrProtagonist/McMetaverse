@@ -169,8 +169,8 @@ on command:
 	{frolf.%player%.playing} is true
 	cancel event
 	message "&cNo commands allowed in frolf! If you want, you may &a/leavefrolf&a."
-
-command /test:
-	trigger:
-		spawn a guardian at location of player
-		make player ride spawned entity
+	
+# command /test:
+#	trigger:
+#		spawn a guardian at location of player
+#		make player ride spawned entity
