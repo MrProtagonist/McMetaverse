@@ -122,6 +122,10 @@ command /startboat:
 		set {boatrace.started} to now
 		set {boatrace.going} to true
 		set {boatrace.winners} to 0
+command /stopboat:
+	permission: is.op
+	trigger:
+		set {boatrace.going} to false
 on walking on glowstone:
 	{boatrace.%player%.playing} is true
 	set {boatrace.%player%.time} to difference between now and {boatrace.started}
