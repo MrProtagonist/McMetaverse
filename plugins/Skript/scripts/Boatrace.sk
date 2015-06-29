@@ -27,7 +27,9 @@ on command:
 	message "&cFinish the race!"
 on vehicle exit:
 	{boatrace.%player%.playing} is true
-	kill the vehicle of the player
+	vehicle of the player is a boat:
+		delete event-boat
+		stop
 	message "&cGet on land within 7 seconds or you are disqualified!"
 	wait 7 real seconds
 	block 2 meters below player is water
