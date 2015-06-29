@@ -368,11 +368,11 @@ sell-rotten-flesh:
 
 sell-ghast-tear:
   REQUIRED-ITEM: 'ghast_tear'
-  COMMAND: 'givemoney: 50'
+  COMMAND: 'givemoney: 20'
   NAME: '&dSell'
   LORE:
     - 'Ghast Tear x1'
-    - 'at $50'
+    - 'at $20'
   ID: ghast_tear
   KEEP-OPEN: true
   POSITION-X: 4
