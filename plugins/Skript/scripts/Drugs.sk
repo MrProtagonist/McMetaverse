@@ -38,21 +38,21 @@ on rightclick:
 		remove 1 sugar from player
 		wait 45 seconds
 		message "&f&oYou've come down."
-		set player's walk speed to 0.25
+		set player's walk speed to 0.2
 		apply nausea 2 to player for 5 seconds
 		set player's flying speed to 0.25
 		stop
 	player's tool is brown mushroom:
 		player is sneaking
 		message "&f&oYou eat the shroom and start to trip out."
-		set player's walk speed to 0.10
-		set player's flying speed to 0.10
+		set player's walk speed to 0.1
+		set player's flying speed to 0.1
 		remove 1 brown mushroom from player
 		poison player for 5 seconds
 		apply nausea 2 to the player for 1.5 minutes
 		apply night vision to the player for 1.5 minutes
 		wait 1.5 minutes
-		set player's walk speed to 0.25
+		set player's walk speed to 0.2
 		set player's flying speed to 0.25
 		message "&a&oYou've come down from your trip."
 		stop
@@ -79,11 +79,11 @@ on rightclick:
 		message "&f&oYou are getting dangerously close to overdosing.."
 		remove 1 potion from player
 		add 1 to {alcohol.%player%}
-		set player's walk speed to 0.10
-		set player's flying speed to 0.10
+		set player's walk speed to 0.1
+		set player's flying speed to 0.1
 		apply nausea 1 to the player for 1.5 minutes
 		wait 1.5 minutes
-		set player's walk speed to 0.25
+		set player's walk speed to 0.2
 		set player's flying speed to 0.25
 		poison player for 5 seconds
 		apply nausea 2 to the player for 20 seconds
@@ -102,11 +102,11 @@ on rightclick:
 		message "&f&oYou drink the beverage to help with the pain..."
 		remove 1 potion from player
 		add 1 to {alcohol.%player%}
-		set player's walk speed to 0.10
-		set player's flying speed to 0.10
+		set player's walk speed to 0.1
+		set player's flying speed to 0.1
 		apply nausea 1 to the player for 1.5 minutes
 		wait 1.5 minutes
-		set player's walk speed to 0.25
+		set player's walk speed to 0.2
 		set player's flying speed to 0.25
 		poison player for 5 seconds
 		apply nausea 2 to the player for 20 seconds
