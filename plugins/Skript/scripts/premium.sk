@@ -151,7 +151,7 @@ command /suffix <text>:
 				message "&cSuffix is too long! Please shorten it!"
 				stop
 			if arg contains "&":
-				player does not have the permission "is.noble"
+				player does not have the permission "is.noble" or "is.premium"
 				message "&cYou can't do formatted suffixes yet!"
 				stop
 			message "&aSet your suffix to &f[%colored arg%&f]"
