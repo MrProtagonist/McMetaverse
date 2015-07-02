@@ -3,6 +3,7 @@ script options:
 every 20 real seconds:
     loop all players:
 		loop-player is not in world "Hyperverse"
+        {spleef.%player%.playing} is not true
         if loop-player has permission "skript.extrahealth10":
             set rf max hp of loop-player to 40
         else if loop-player has permission "skript.extrahealth8":

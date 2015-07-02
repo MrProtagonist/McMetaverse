@@ -26,18 +26,18 @@ on place:
 		cancel event
 		message "&cNo building while the game is going! Gotta play smart!"
 command /tpscramble:
+	permission: is.pro
 	trigger:
-		teleport player to {cobblehunt.spawn}
+		teleport player to {cobblehunt.lobby}
 on break of cobble silverfish:
 	{cobblehunt.going} is true
 	{cobblehunt.%player%.playing} is true
 	add location of event-block to {cobblehunt.broken::*}
-
 	loop all players:
 		{cobblehunt.%loop-player%.playing} is true:
 			teleport loop-player to {cobblehunt.spectate}
 			teleport loop-player to {cobblehunt.spectate}
-			execute console command "region removemember -w Metacurse scramble %loop-player%"
+			execute console command "region removemember scramble %loop-player% -w Metacurse"
 			send "&c&lSTOP!" to loop-player
 			execute console command "playsound mob.ghast.scream %loop-player%"
 			set {cobblehunt.%loop-player%.ready} to false
@@ -55,6 +55,7 @@ command /leavescramble:
 		{cobblehunt.%player%.playing} is true:
 			set {cobblehunt.%player%.playing} to false
 			subtract 1 from {cobblehunt.players}
+			execute console command "region removemember scramble %player% -w Metacurse"
 		make player execute "spawn"
 		make player execute "spawn"
 command /scan:
@@ -146,7 +147,7 @@ on right click on diamond block:
 		wait 5 second
 		loop all players:
 			{cobblehunt.%loop-player%.playing} is true
-			execute console command "region addmember -w Metacurse scramble %loop-player%"
+			execute console command "region addmember scramble %loop-player% -w Metacurse"
 			send "&2&oSilverfish Scramble has begun!" to loop-player
 		set {cobblehunt.going} to true
 on damage of player:
@@ -157,6 +158,9 @@ on damage of player:
 on disconnect:
 	if {cobblehunt.%player%.playing} is true:
 		subtract 1 from {cobblehunt.players}
+		execute console command "region removemember scramble %player% -w Metacurse"
+		teleport player to {spawn}
+		teleport player to {spawn}
 	if {cobblehunt.%player%.ready} is true:
 		set {cobblehunt.%player%.ready} to false
 on login:
@@ -192,6 +196,7 @@ command /resetscramble:
 			{cobblehunt.%loop-player%.spectating} is true:
 				set {cobblehunt.%loop-player%.spectating} to false
 				delete inventory of loop-player
+				execute console command "region removemember scramble %loop-player% -w Metacurse"
 				make loop-player execute "/spawn"
 				make loop-player execute "/spawn"
 		delete {cobblehunt.broken::*}

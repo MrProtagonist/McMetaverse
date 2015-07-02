@@ -36,7 +36,7 @@ on pickup of raw fish:
 		set {fishing.session.player} to player
 	loop all players:
 		{fishing.%loop-player%.playing} is true
-#		send "&a%player%&f got a %{_final}% lb fish." to loop-player
+		send "&a%player%&f got a %{_final}% lb fish." to loop-player
 #	broadcast "&f[&aFISHING DEBUG&f] %player% got a %{_final}% lb fish after calculations."
 #	broadcast "&f[&aFISHING DEBUG&f] Current best for %player% is a %{fishing.%player%.best}% lb fish."
 #	broadcast "&f[&aFISHING DEBUG&f] Current session high score is by %{fishing.session.player}% for a %{fishing.session.top}% lb fish."
@@ -69,7 +69,7 @@ on pickup of raw salmon:
 		set {fishing.session.player} to player
 	loop all players:
 		{fishing.%loop-player%.playing} is true
-#		send "&a%player%&f got a %{_final}% lb fish." to loop-player
+		send "&a%player%&f got a %{_final}% lb fish." to loop-player
 #	broadcast "&f[&aFISHING DEBUG&f] %player% got a %{_final}% lb fish after calculations."
 #	broadcast "&f[&aFISHING DEBUG&f] Current best for %player% is a %{fishing.%player%.best}% lb fish."
 #	broadcast "&f[&aFISHING DEBUG&f] Current session high score is by %{fishing.session.player}% for a %{fishing.session.top}% lb fish."
@@ -101,7 +101,7 @@ on pickup of clownfish:
 		set {fishing.session.player} to player
 	loop all players:
 		{fishing.%loop-player%.playing} is true
-#		send "&a%player%&f got a %{_final}% lb fish." to loop-player
+		send "&a%player%&f got a %{_final}% lb fish." to loop-player
 #	broadcast "&f[&aFISHING DEBUG&f] %player% got a %{_final}% lb fish after calculations."
 #	broadcast "&f[&aFISHING DEBUG&f] Current best for %player% is a %{fishing.%player%.best}% lb fish."
 #	broadcast "&f[&aFISHING DEBUG&f] Current session high score is by %{fishing.session.player}% for a %{fishing.session.top}% lb fish."
@@ -134,7 +134,7 @@ on pickup of pufferfish:
 		set {fishing.session.player} to player
 	loop all players:
 		{fishing.%loop-player%.playing} is true
-#		send "&a%player%&f got a %{_final}% lb fish." to loop-player
+		send "&a%player%&f got a %{_final}% lb fish." to loop-player
 #	broadcast "&f[&aFISHING DEBUG&f] %player% got a %{_final}% lb fish after calculations."
 #	broadcast "&f[&aFISHING DEBUG&f] Current best for %player% is a %{fishing.%player%.best}% lb fish."
 #	broadcast "&f[&aFISHING DEBUG&f] Current session high score is by %{fishing.session.player}% for a %{fishing.session.top}% lb fish."
@@ -241,7 +241,9 @@ command /startfish:
 			set {fishing.top.score} to {fishing.session.top}
 			set {fishing.top.player} to {fishing.session.player}
 		set {fishing.going} to false
+		set {fishing.countdown} to false
 command /fishstats:
+	permission: is.pro
 	trigger:
 		broadcast "&f[&aDEBUG&f] Top Score: %{fishing.top.score}%"
 		broadcast "&f[&aDEBUG&f] Top Player: %{fishing.top.player}%"

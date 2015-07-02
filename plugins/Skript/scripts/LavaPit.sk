@@ -1,3 +1,5 @@
+script options:
+    $ developer mode
 on script load:
 	set {lavapit.countdown} to false
 	set {lavapit.players} to 0
@@ -17,33 +19,20 @@ command /lavapit:
 				chance of {_chance}%:
 					add location of loop-block to {lavapit.broken::*}
 					set loop-block to glowstone
-on quit:
-	{lavapit.%player%.playing} is true:
-		set {lavapit.%player%.playing} to false
-		subtract 1 from {lavapit.players}
-	make player execute "spawn"
-	make player execute "spawn"
-command /leavepitfall:
-	trigger:
-		{lavapit.%player%.playing} is true:
-			set {lavapit.%player%.playing} to false
-			subtract 1 from {lavapit.players}
-		message "You have left PitFall."
-		make player execute "spawn"
-		make player execute "spawn"
-command /pitfall:
+command /playpitfall:
 	trigger:
 		player can't hold 36 wood swords:
 			message "&e&oClear your inventory &6&oand armor &e&obefore joining &4&lPit Fall&r&o&e&o!"
 			stop
 		if {lavapit.going} is true:
 			message "&c&oA game is already in session!"
+			stop
 		else:
+			{lavapit.%player%.playing} is not true
 			{lavapit.players} is not set:
 				set {lavapit.players} to 0
 			{lavapit.%player%.playing} is not set:
 				set {lavapit.%player%.playing} to false
-			{lavapit.%player%.playing} is not true
 			teleport player to {lavapit.spectate}
 			make player execute "pet hide"
 			player has the permission "essentials.fly.self":
@@ -55,6 +44,31 @@ command /pitfall:
 			add 1 to {lavapit.players}
 			set {lavapit.%player%.playing} to true
 			broadcast "&a&o%{lavapit.players}%&6&o users ready to play &4&lPit Fall&r&o&6&o. Type &b/pitfall&6&o to join."
+on quit:
+	{lavapit.%player%.playing} is true:
+		set {lavapit.%player%.playing} to false
+		subtract 1 from {lavapit.players}
+	make player execute "spawn"
+	make player execute "spawn"
+command /leavepitfall:
+	trigger:
+		if {lavapit.%player%.playing} is true:
+			set {lavapit.%player%.playing} to false
+			set {lavapit.%player%.spectating} to false
+			subtract 1 from {lavapit.players}
+			message "&cYou have left PitFall."
+			make player execute "spawn"
+			make player execute "spawn"
+		if {lavapit.%player%.spectating} is true:
+			set {lavapit.%player%.playing} to false
+			set {lavapit.%player%.spectating} to false
+			subtract 1 from {lavapit.players}
+			message "&cYou have left PitFall."
+			make player execute "spawn"
+			make player execute "spawn"
+command /pitfall:
+	trigger:
+		teleport player to {lavapit.spectate}
 command /startlava:
 	permission: sk.lavapit
 	trigger:
@@ -135,27 +149,26 @@ on death of a player:
 	subtract 1 from {lavapit.players}
 	teleport player to {lavapit.spectate}
 	set {lavapit.%player%.spectating} to true
-	set death message to "&a&o%player% &6&ois disqualified."
+	set death message to "&a&o%player% &6&ois disqualified after surviving for %{pitfall.timer}% seconds."
 	if {lavapit.going} is true:
-		if {lavapit.players} is equal to 1:
+		if {lavapit.players} is less than or equal to 1:
 			set {lavapit.going} to false
 			loop all players:
 				{lavapit.%loop-player%.playing} is true:
 					set {lavapit.%loop-player%.playing} to false
 					set {lavapit.%loop-player%.spectating} to true
-					wait 2 ticks
 					broadcast "&a&o%loop-player%&6&o won &4Pit Fall&6&o by surviving for &e&o%{pitfall.timer}% &6&oseconds!"
 					teleport loop-player to {lavapit.spectate}
-			wait 2 real seconds
+					teleport loop-player to {lavapit.spectate}
 			execute console command "/resetlava"
 			set {lavapit.countdown} to false
 on command:
 	{lavapit.%player%.playing} is true:
-		command is not "a" or "login"
+		command is not "a" or "login" or "leavepitfall"
 		message "&e&oNo commands permitted while playing Pit Fall."
 		cancel the event
 	{lavapit.%player%.spectating} is true:
-		command is not "a" or "login"
+		command is not "a" or "login" or "leavepitfall"
 		message "&e&oNo commands permitted while playing Pit Fall."
 		cancel the event
 on respawn:

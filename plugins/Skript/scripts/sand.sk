@@ -65,7 +65,6 @@ command /startstorm:
 			spawn damaging falling block of sand at {sandstorm.list::%{randomasfucka}%}
 			spawn damaging falling block of sand at {sandstorm.list::%{randomasfuckb}%}
 command /clearsand:
-	executable by: console
 	trigger:
 		loop all blocks in radius 80 of {sandstorm.spawn}:
 			loop-block is sand

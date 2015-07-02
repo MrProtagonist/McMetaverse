@@ -25,9 +25,13 @@ on quit:
 on command:
 	{boatrace.%player%.playing} is true
 	message "&cFinish the race!"
+	cancel event
 on vehicle exit:
 	{boatrace.%player%.playing} is true
-	kill the vehicle of the player
+	vehicle of the player is a boat:
+		delete vehicle
+		kill vehicle
+		stop
 	message "&cGet on land within 7 seconds or you are disqualified!"
 	wait 7 real seconds
 	block 2 meters below player is water
@@ -73,6 +77,12 @@ command /boatrace:
 			delete {boatrace.%player%.time}
 			set {boatrace.%player%.playing} to true
 			teleport player to {boat.spec}
+			make player execute "pet hide"
+			player has the permission "essentials.fly.self":
+				execute console command "fly off %player%"
+			player is op:
+				execute console command "god off %player%"
+				execute console command "gms %player%"
 			message "&aJoined &b&oBoat Race&a!"
 #			else:
 #				message "&cClear your inventory!"
@@ -108,18 +118,19 @@ command /startboat:
 		wait 1 real second
 		loop all players:
 			{boatrace.%loop-player%.playing} is true
-			execute console command "tm msg %loop-player% &aGO"
 			teleport loop-player to {boat.%{_boatcount}%}
 #			set {pvp.%loop-player%} to 1
 			add 1 to {_boatcount}
-		wait 1 tick
-		loop all players:
-			{boatrace.%loop-player%.playing} is true
 			spawn a boat 2 meters in front of loop-player
 			make loop-player ride spawned entity
+			execute console command "tm msg %loop-player% &aGO"
 		set {boatrace.started} to now
 		set {boatrace.going} to true
 		set {boatrace.winners} to 0
+command /stopboat:
+	permission: is.op
+	trigger:
+		set {boatrace.going} to false
 on walking on glowstone:
 	{boatrace.%player%.playing} is true
 	set {boatrace.%player%.time} to difference between now and {boatrace.started}

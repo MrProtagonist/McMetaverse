@@ -42,6 +42,12 @@ command /setshooter <integer>:
 			message "spawn set"
 command /sharpshooter:
 	trigger:
+		teleport player to {archery.spec}
+		message "&a&oWelcome to &b&oSharp Shooter&a&o!"
+		message "&6Press the button by the arena to play!"
+		
+command /playsharpshooter:
+	trigger:
 		if {archery.busy} is not set:
 			if player's inventory contains bow and arrow:
 				set {archery.busy} to player
@@ -49,7 +55,14 @@ command /sharpshooter:
 				teleport player to {archery.spawn}
 				set {archery.%player%} to 0
 				set {archery.countdown} to true
+				set {archery.%player%.sneak} to now
 				message "&aStarting in 5 seconds."
+				set {archery.level} to 1
+				player has the permission "essentials.fly.self":
+					execute console command "fly off %player%"
+				player is op:
+					execute console command "god off %player%"
+					execute console command "gms %player%"
 				execute console command "tm msg %player% &aGet Ready!"
 				wait 5 real seconds
 				execute console command "tm msg %player% &aStart!"
@@ -74,7 +87,7 @@ command /sharpshooter:
 				execute console command "eco give %player% %{_pay}%"
 				if {archery.%player%} is greater than {archery.top.score}:
 					wait 2 real seconds
-					broadcast "&f[&aSERVER&f] &6%player% &ajust set the &aHIGH SCORE for &b&oSharp Shooter&a with &6%{archery.%player%}% points&a!"
+					broadcast "&f[&aSERVER&f] &6%player% &ajust set the &aHIGH SCORE for &a with &6%{archery.%player%}% points&a!"
 					play "LEVEL_UP" specifically to player with pitch 1
 					set {archery.top.score} to {archery.%player%}
 					set {archery.top.player} to player
@@ -89,19 +102,44 @@ command /sharpshooter:
 			message "&cSomebody is already in the range! Teleporting you to spectator area."
 			teleport player to {archery.spec}
 			stop
+
+on jump:
+	player is {archery.busy}
+	if {archery.level} is 3:
+		message "&cYou are already as high as you can go!"
+		stop
+	teleport player to location of block 6 meters above player
+	add 1 to {archery.level}
+	message "&aYou just went up to floor %{archery.level}%!"
+on sneak toggle:
+	player is {archery.busy}
+	player is sneaking
+	if difference between now and {archery.%player%.sneak} is less than 5 ticks:
+		message "&cToo soon!"
+		stop
+	if {archery.level} is 1:
+		message "&cYou are already as low as you can go!"
+		stop
+	cancel event
+	teleport player to location of block 3 meters below player
+	subtract 1 from {archery.level}
+	message "&aYou just went down to floor %{archery.level}%!"
+on damage:
+	victim is {archery.busy}
+	cancel event
 command /archeryscan:
 	permission: is.pro
 	trigger:
 		delete {archery.list::*}
 		set {archery.blockspot} to location of player
 		set {_counter} to 0
-		loop all blocks in radius 50 of player:
+		loop all blocks in radius 100 of player:
 			loop-block is glowstone
 			add location of loop-block to {archery.list::*}
 			set loop-block to air
 			add 1 to {_counter}
 		broadcast "&aAdded %{_counter}% possible archery target locations!"
 on command:
-	{archery.busy} is player
+	player is {archery.busy}
 	cancel event
 	message "&cNo commands are allowed while in this minigame!"

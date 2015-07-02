@@ -47,6 +47,7 @@ command /startpogo:
 				loop all players:
 					{pogo.%loop-player%.playing} is true
 					execute console command "tm msg %loop-player% &63"
+					set {pogo.%loop-player%.last} to now
 				wait 1 real second
 				loop all players:
 					{pogo.%loop-player%.playing} is true
@@ -79,6 +80,7 @@ command /startpogo:
 					set {pogo.%player%.delay} to 20
 					set {pogo.%player%} to .8
 				set {pogo.going} to false
+				set {pogo.players} to 0
 				wait 2 real seconds
 				broadcast "&f[&bPogo&f] %{pogo.session.player}% is the winner with a height of %{pogo.session}% blocks!"
 			else:
@@ -93,6 +95,9 @@ on sneak toggle:
 	{pogo.%player%.playing} is true
 	player is sneaking
 	name of player's tool is "&6&lPogo Stick"
+	if difference between now and {pogo.%player%.last} is less than 1 second:
+		stop
+	set {pogo.%player%.last} to now
 	block below player is not air
 	push the player upwards at speed {pogo.%player%}
 	push the player forwards at speed 1.5
