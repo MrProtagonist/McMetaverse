@@ -49,6 +49,7 @@ command /screeper1:
 		set {fire.%spawned entity%.creeper} to true
 		apply speed to spawned entity for 9999999999999999 days
 command /screeper:
+	permission: essentials.socialspy
 	trigger:
 		spawn a creeper
 		set {silver.%spawned entity%.creeper} to true

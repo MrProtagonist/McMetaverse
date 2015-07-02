@@ -249,6 +249,16 @@ divider11:
   POSITION-X: 3
   POSITION-Y: 3
   DATA-VALUE: 0
+swordsandriches:
+  COMMAND: 'shopwarp 27'
+  NAME: '&d[p] &aSwords and Riches &d[p]'
+  LORE:
+    - '&f&oBuilding blocks, farm needs, and general goods at cheap prices!'
+  ID: 168
+  KEEP-OPEN: false
+  POSITION-X: 8
+  POSITION-Y: 3
+  DATA-VALUE: 0
 divider12:
   NAME: ''
   ID: 160
