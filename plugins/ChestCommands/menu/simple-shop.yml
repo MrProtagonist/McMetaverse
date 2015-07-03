@@ -347,6 +347,7 @@ sell-bone:
     - 'Bone x64'
     - 'at $4'
   ID: bone
+  AMOUNT: 64
   KEEP-OPEN: true
   POSITION-X: 2
   POSITION-Y: 6
