@@ -27,11 +27,12 @@ command /changelog [<integer=1>]:
         message "&dServer Change Log&f - Hover over a day for details!"
         set {_temp} to 1
         loop {change.index::*}:
-            if {_temp} > ((arg)-1)*17:
-                if {_temp} <= arg*17:
+            if {_temp} > ((arg)-1)*15:
+                if {_temp} <= arg*15:
                     send json of "&f[&a%loop-value%&f]" tooltip "%colored {change.log.%loop-value%::*}%" to player
             add 1 to {_temp}
         message "&d---------------------Page %arg 1%/%{_pages}%----------------------"
+        message "&eType &a/changelog <page>&e to view a specific page."
 command /log <text>:
     permission: sk.log
     trigger:
@@ -58,6 +59,7 @@ command /spooflog <text>:
 	trigger:
 		broadcast "&f[&aServer Update&f] &b&o%arg%"
 command /shouldonlybeusedoncechangelogcmd:
+	permission: is.pro
 	trigger:
 		set {change.index::1} to "3/5/2015"
 		set {change.index::2} to "5/5/2015"
