@@ -56,8 +56,8 @@ command /leavescramble:
 			set {cobblehunt.%player%.playing} to false
 			subtract 1 from {cobblehunt.players}
 			execute console command "region removemember scramble %player% -w Metacurse"
-		make player execute "spawn"
-		make player execute "spawn"
+		teleport player to {spawn}
+		teleport player to {spawn}
 command /scan:
 	permission: is.pro
 	trigger:

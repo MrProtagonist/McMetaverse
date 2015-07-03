@@ -19,6 +19,10 @@ on join:
 on quit:
 	{boatrace.%player%.playing} is true
 	subtract 1 from {boatrace.players}
+	if {boatrace.players} is 0:
+		{boatrace.going} is true
+		set {boatrace.going} to false
+		set {boatrace.countdown} to false
 	set {boatrace.%player%.playing} to false
 	teleport player to {spawn}
 	teleport player to {spawn}
@@ -28,11 +32,12 @@ on command:
 	cancel event
 on vehicle exit:
 	{boatrace.%player%.playing} is true
-	vehicle of the player is a boat:
-		delete vehicle
-		kill vehicle
-		stop
 	message "&cGet on land within 7 seconds or you are disqualified!"
+	wait 1 tick
+	loop all entities in radius 2 of player:
+		loop-entity is boat
+		kill loop-entity
+		delete loop-entity
 	wait 7 real seconds
 	block 2 meters below player is water
 	{boatrace.%player%.time} is not set
@@ -41,6 +46,10 @@ on vehicle exit:
 	subtract 1 from {boatrace.players}
 	teleport player to {spawn}
 	teleport player to {spawn}
+	if {boatrace.players} is 0:
+		{boatrace.going} is true
+		set {boatrace.going} to false
+		set {boatrace.countdown} to false
 command /setboat <integer>:
 	permission: is.pro
 	trigger:
@@ -88,7 +97,7 @@ command /boatrace:
 #				message "&cClear your inventory!"
 		else:
 			message "&cA race is already going!"
-			teleport player to {boatrace.spec}
+			teleport player to {boat.spec}
 command /startboat:
 	trigger:
 		{boatrace.going} is not true
@@ -192,14 +201,23 @@ on walking on glowstone:
 		set {boatrace.best.player} to {boatrace.first}
 		broadcast "&f[&aSERVER&f] &6%{boatrace.first}%&a just set the high score for &b&oBoat Race&a!"
 	execute console command "eco give %{boatrace.first}% 200"
+	set {boatrace.going} to false
+	set {boatrace.countdown} to false
+	
 command /leaveboat:
 	trigger:
 		if {boatrace.%player%.playing} is true:
 			set {boatrace.%player%.playing} to false
+			subtract 1 from {boatrace.players}
+			if {boatrace.players} is 0:
+				{boatrace.going} is true
+				set {boatrace.going} to false
+				set {boatrace.countdown} to false
 		teleport player to {spawn}
 		teleport player to {spawn}
 		message "&cYou have left the Boat Race."
 on vehicle destroy:
+	{boatrace.going} is true
 	vehicle of the player is a boat
 	cancel event
 #on projectile hit:

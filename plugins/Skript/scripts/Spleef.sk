@@ -29,6 +29,7 @@ command /spleef:
 				make player execute "pet hide"
 			player has the permission "essentials.fly.self":
 				execute console command "fly off %player%"
+				execute console command "fly %player% off"
 			player is op:
 				execute console command "god off %player%"
 				execute console command "god %player% off"

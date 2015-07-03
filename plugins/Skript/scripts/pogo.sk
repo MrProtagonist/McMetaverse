@@ -1,4 +1,4 @@
-script options:
+﻿script options:
     $ developer mode
 on script load:
 	set {pogo.going} to false
@@ -15,14 +15,16 @@ on tool change:
 	set {pogo.%player%} to .8
 command /pogo:
 	trigger:
+		message "&f[&bPogo&f] &eWelcome to Pogo!"
+		teleport player to {pogo.lobby}
+command /joinpogo:
+	trigger:
 		{pogo.%player%.playing} is not set
 		player can't hold 36 wood swords:
 			message "&e&oClear your inventory &6&oand armor &e&obefore joining &b&oPogo&e&o."
 			stop
-		teleport player to {pogo}
 		set {pogo.%player%.playing} to true
 		add 1 to {pogo.players}
-		message "&f[&bPogo&f] &eWelcome to Pogo!"
 		make player execute "pet hide"
 		player has the permission "essentials.fly.self":
 			execute console command "fly off %player%"
@@ -33,6 +35,15 @@ command /pogo:
 		loop all players:
 			{pogo.%loop-player%.playing} is set
 			send "&f[&bPogo&f] &ePlayers ready: &f%{pogo.players}%" to loop-player
+command /leavepogo:
+	trigger:
+		{pogo.%player%.playing} is true
+		set {pogo.%player%.playing} to false
+		teleport player to {spawn}
+		teleport player to {spawn}
+		subtract 1 from {pogo.players}
+		message "&cYou have left &bPogo&c."
+		execute console command "ci %player%"
 command /startpogo:
 	trigger:
 		if {pogo.going} is true:
@@ -47,6 +58,7 @@ command /startpogo:
 				loop all players:
 					{pogo.%loop-player%.playing} is true
 					execute console command "tm msg %loop-player% &63"
+					teleport loop-player to {pogo}
 					set {pogo.%loop-player%.last} to now
 				wait 1 real second
 				loop all players:
@@ -78,6 +90,9 @@ command /startpogo:
 					clear inventory of loop-player
 					set tool of loop-player to air
 					set {pogo.%player%.delay} to 20
+					teleport loop-player to {pogo.lobby}
+					teleport loop-player to {pogo.lobby}
+					execute console command "ci %loop-player%"
 					set {pogo.%player%} to .8
 				set {pogo.going} to false
 				set {pogo.players} to 0
@@ -88,9 +103,8 @@ command /startpogo:
 command /setpogo:
 	permission: is.pro
 	trigger:
-		set {pogo} to location of player
-		message "&aSet pogo spot!"
-
+		set {pogo.lobby} to location of player
+		message "&aSet pogo lobby spot!"
 on sneak toggle:
 	{pogo.%player%.playing} is true
 	player is sneaking
@@ -100,30 +114,30 @@ on sneak toggle:
 	set {pogo.%player%.last} to now
 	block below player is not air
 	push the player upwards at speed {pogo.%player%}
-	push the player forwards at speed 1.5
+	push the player forwards at speed 1
 	set {pogo.%player%.launched} to true
 	{pogo.%player%} is not .8 or 5:
-		message " "
-		message "&f[&bPogo&f] &aGaining altitude!"
-		message "&f[&bPogo&f] &eMultiplier: %{pogo.%player%}%"
-	{pogo.%player%} is not 8:
-		add .2 to {pogo.%player%}
-	{pogo.%player%} is 8:
+		execute console command "tm msg %player% &a&l✓"
+		wait 1 real second
+		execute console command "tm msg %player% &a "
+	{pogo.%player%} is not 10:
+		add .4 to {pogo.%player%}
+	{pogo.%player%} is 10:
 		message "&f[&bPogo&f] &cAcheived maximum pogo altitude!"
 	set {pogo.%player%.launched} to true
 	if {pogo.%player%} is less than 2:
 		set {pogo.%player%.delay} to 22
-	if {pogo.%player%} is 2:
+	if {pogo.%player%} is 1.6:
 		set {pogo.%player%.delay} to 21
-	if {pogo.%player%} is 2.5:
+	if {pogo.%player%} is 2.4:
 		set {pogo.%player%.delay} to 20
-	if {pogo.%player%} is 3:
-		set {pogo.%player%.delay} to 19
 	if {pogo.%player%} is 3.5:
+		set {pogo.%player%.delay} to 19
+	if {pogo.%player%} is 4.4:
 		set {pogo.%player%.delay} to 18
-	if {pogo.%player%} is 4:
+	if {pogo.%player%} is 5.6:
 		set {pogo.%player%.delay} to 17
-	if {pogo.%player%} is 4.5:
+	if {pogo.%player%} is 6.8:
 		set {pogo.%player%.delay} to 16
 on damage of a player:
 	damage cause is fall
@@ -135,7 +149,10 @@ on damage of a player:
 	block below victim is not air
 	set {pogo.%victim%} to .8
 	set {pogo.%victim%.delay} to 20
-	send "&cYou lost your momentum!" to victim
+	execute console command "tm msg %player% &c&l✗"
+	wait 1 real second
+	execute console command "tm msg %player% &a "
+
 
 every 2 ticks:
 	loop all players:
