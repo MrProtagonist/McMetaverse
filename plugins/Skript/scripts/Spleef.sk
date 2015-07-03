@@ -24,6 +24,7 @@ command /spleef:
 			{spleef.%player%.playing} is not set:
 				set {spleef.%player%.playing} to false
 			{spleef.%player%.playing} is not true
+			make player execute "pvpon"
 			teleport player to {spleef.lobby}
 			player has the permission "echopet.*":
 				make player execute "pet hide"
@@ -78,13 +79,14 @@ on place of snow:
 	{spleef.%player%.playing} is true
 	cancel event
 	message "&c&oDisabled!"
-on command "/leave":
-	{spleef.%player%.playing} is true
-	set {spleef.%player%.playing} to false
-	set {spleef.%player%.spectating} to false
-	make player execute "spawn"
-	make player execute "spawn"
-	subtract 1 from {spleef.players}
+command /leave:
+	trigger:
+		{spleef.%player%.playing} is true
+		set {spleef.%player%.playing} to false
+		set {spleef.%player%.spectating} to false
+		make player execute "spawn"
+		make player execute "spawn"
+		subtract 1 from {spleef.players}
 on death of a player:
 	{spleef.%player%.playing} is true
 	set {spleef.%player%.playing} to false

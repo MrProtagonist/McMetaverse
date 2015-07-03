@@ -8,7 +8,7 @@ on spawn:
 command /killmobsforme:
 	permission: is.pro
 	trigger:
-		loop all entities in world "contest":
+		loop all entities in world "sandbox":
 			loop-entity is not a player
 			loop-entity is not "armor stand"
 			loop-entity is not "painting"
@@ -90,16 +90,16 @@ every hour:
 		stop
 	subtract 1 from {contest.length}
 	broadcast "&f[&dContest&f] &6The &e&l%{contest.name}% &6contest has %{contest.length}% hours left! Type &a/contest&6 for more details!"
-on place:
-	player does not have the permission "essentials.socialspy"
-	player is in world "contest"
-	{contest.going} is false
-	cancel event
-on break:
-	player does not have the permission "essentials.socialspy"
-	player is in world "contest"
-	{contest.going} is false
-	cancel event
+#on place:
+#	player does not have the permission "essentials.socialspy"
+#	player is in world "contest"
+#	{contest.going} is false
+#	cancel event
+#on break:
+#	player does not have the permission "essentials.socialspy"
+#	player is in world "contest"
+#	{contest.going} is false
+#	cancel event
 every 2 real seconds:
 	loop all players:
 		if loop-player is in world "Hyperverse":
