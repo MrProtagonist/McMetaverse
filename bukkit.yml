@@ -23,10 +23,10 @@ settings:
   connection-throttle: -1
   query-plugins: true
   deprecated-verbose: default
-  shutdown-message: The Metaverse is closing for maintenence. Visit McMetaverse.com until we are back to see why.
+  shutdown-message: The Metaverse is restarting for maintenance. Be back soon!
 spawn-limits:
-  monsters: 120
-  animals: 50
+  monsters: 80
+  animals: 35
   water-animals: 2
   ambient: 5
 chunk-gc:
