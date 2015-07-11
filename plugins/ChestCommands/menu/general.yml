@@ -280,6 +280,16 @@ divider14:
   POSITION-X: 9
   POSITION-Y: 3
   DATA-VALUE: 0
+ironworkpotionshop:
+  COMMAND: 'shopwarp 29'
+  NAME: '&d[p] &aIron Work Potion Shop &d[p]'
+  LORE:
+    - '&f&oiron_ninja potions, gear, and guardian mob farm.'
+  ID: 373
+  KEEP-OPEN: false
+  POSITION-X: 1
+  POSITION-Y: 4
+  DATA-VALUE: 0
 divider15:
   NAME: ''
   ID: 160
