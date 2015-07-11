@@ -1,3 +1,5 @@
+script options:
+    $ developer mode
 variables:
 	{spleef.first.wins} = 5
 	{spleef.second.wins} = 4
@@ -28,7 +30,7 @@ command /spleef:
 			teleport player to {spleef.lobby}
 			player has the permission "echopet.*":
 				make player execute "pet hide"
-			player has the permission "essentials.fly.self":
+			player has the permission "essentials.fly":
 				execute console command "fly off %player%"
 				execute console command "fly %player% off"
 			player is op:

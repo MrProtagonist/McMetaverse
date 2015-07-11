@@ -1,0 +1,142 @@
+script options:
+	$ developer mode
+# Integers #1: Lane 1 - 5
+# Integers #2: 0 = Start, 1 = End
+on script load:
+	set {race.going} to false
+	set {race.players} to 0
+	loop all players:
+		set {race.%loop-player%.playing} to false
+command /setlane <integer> <integer>:
+	permission: sk.race
+	trigger:
+		set {race.%arg 1%.%arg 2%} to location of player
+		message "&aSet %arg 1% %arg 2%!"
+command /racelobby:
+	permission: is.pro
+	trigger:
+		set {race.lobby} to player's location
+		message "&aSet Race Lobby!"
+command /leaverace:
+	trigger:
+		{race.%player%.playing} is true
+		set {race.%player%.playing} to false
+		subtract 1 from {race.players}
+		message "&cYou have left the race!"
+		teleport player to {spawn}
+		teleport player to {spawn}
+on quit:
+	{race.%player%.playing} is true
+	set {race.%player%.playing} to false
+	subtract 1 from {race.players}
+	message "&cYou have left the race!"
+	teleport player to {spawn}
+	teleport player to {spawn}
+command /petrace:
+	trigger:
+		{race.going} is false
+		if {race.%player%.playing} is not set:
+			set {race.%player%.playing} to false
+		{race.%player%.playing} is not true
+		teleport player to {race.lobby}
+		set {race.%player%.playing} to true
+		delete {race.%player%.pet}
+		add 1 to {race.players}
+		set {race.position.%player%} to 0
+		message "&f[&6Pet Race&f] &aWelcome! Please select your pet."
+		message "&a/pickpet <pet>"
+		message "&eAvailable Pets:"
+		message "&6Pig&f, &6Cow&f, &6Sheep&f, &6Horse"
+command /pickpet <text>:
+	trigger:
+		{race.%player%.playing} is true
+		{race.%player%.pet} is not set
+		if arg is "pig":
+			set {race.%player%.pet} to arg
+			message "&f[&6Pet Race&f] &aThe %arg% is a great choice!"
+			spawn 1 pig at player
+			wait 1 real second
+#			make player ride spawned entity
+			message "&f[&6Pet Race&f] &ePlease wait for all players to choose their pet!"
+		if arg is "cow":
+			set {race.%player%.pet} to arg
+			message "&f[&6Pet Race&f] &aThe %arg% is a great choice!"
+			spawn 1 cow at player
+			wait 1 real second
+#			make player ride spawned entity
+			message "&f[&6Pet Race&f] &ePlease wait for all players to choose their pet!"
+		if arg is "sheep":
+			set {race.%player%.pet} to arg
+			message "&f[&6Pet Race&f] &aThe %arg% is a great choice!"
+			spawn 1 sheep at player
+			wait 1 real second
+#			make player ride spawned entity
+			message "&f[&6Pet Race&f] &ePlease wait for all players to choose their pet!"
+		if arg is "horse":
+			set {race.%player%.pet} to arg
+			message "&f[&6Pet Race&f] &aThe %arg% is a great choice!"
+			spawn 1 horse at player
+			wait 1 real second
+#			make player ride spawned entity
+			message "&f[&6Pet Race&f] &ePlease wait for all players to choose their pet!"
+		set {race.pet.%player%} to spawned entity
+		stop
+command /startrace:
+	permission: is.op.or.console
+	trigger:
+		{race.going} is false
+		if {race.players} is greater than 1:
+			loop all players:
+				{race.%player%.playing} is true
+				{race.%player%.pet} is not set
+				message "&cNot all players are ready! Each player who has joined must select their pet with /pickpet!"
+				stop
+			set {race.going} to true
+			set {_lanecounter} to 1
+			loop all players:
+				{race.%loop-player%.playing} is true
+				spawn 1 {race.%loop-player%.pet} at loop-player
+				set {race.pet.%player%} to spawned entity
+				execute console command "tm msg %loop-player% &aGet Ready!"
+			wait 3 real seconds
+			loop all players:
+				{race.%loop-player%.playing} is true
+				execute console command "tm msg %loop-player% &aGo!"
+				teleport loop-player to {race.%{_lanecounter}%.0}
+				teleport {race.pet.%player%} to {race.%{_lanecounter}%.0}
+				wait 1 tick
+				make loop-player ride {race.pet.%player%}
+				set {race.%loop-player%.finish} to {race.%{_lanecounter}%.1}
+				add 1 to {_lanecounter}
+				set {_random} to a random integer between 1 and 9
+				set slot {_random} of loop-player to carrot named "&a&lForward"
+				set {race.speed.%loop-player%} to 1
+		else:
+			message "&cNot enough players! Requires at least 2!"
+on click:
+	name of player's held item is "&a&lForward"
+	if {race.%player%.playing} is true:
+		add .1 to {race.speed.%player%}
+		set {_pos} to location of {race.pet.%player%}
+		add 1 to the x-coord of {_pos} 
+		clear inventory of player
+		execute console command "ci %player%"
+		set {_random} to a random integer between 1 and 9
+		set slot {_random} of player to carrot named "&a&lForward"
+		if {race.position.%player%} is 1:
+			loop all players:
+				{race.%loop-player%.playing} is true
+				execute console command "tm msg %loop-player% &a%player% Has Won The Race!"
+every 2 ticks:
+	loop all players:
+		{race.%loop-player%.playing} is true
+		{race.pet.%loop-player%} is set
+		make {race.pet.%loop-player%} pathfind to {race.%loop-player%.finish} with speed {race.speed.%loop-player%}
+		if distance between loop-player and {race.%loop-player%.finish} is less than 5:
+			broadcast "%loop-player% won the pet race!"
+			loop all players:
+				{race.%loop-player-2%.playing} is true
+				set {race.%loop-player-2%.playing} to false
+			set {race.going} to false
+			set {race.players} to 0
+	

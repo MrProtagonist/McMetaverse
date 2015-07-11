@@ -141,8 +141,9 @@ on sneak toggle:
 		set {pogo.%player%.delay} to 16
 on damage of a player:
 	damage cause is fall
+	if {pogo.%victim%.playing} is true:
+		cancel event
 	{pogo.%victim%.launched} is true
-	cancel event
 	set {pogo.%victim%.launched} to false
 	loop {pogo.%victim%.delay} times:
 		wait 1 tick
