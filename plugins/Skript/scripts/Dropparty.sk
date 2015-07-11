@@ -58,11 +58,11 @@ command /dropparty:
 command /givetoken <player>:
 	permission: is.op
 	trigger:
-		execute console command "/give %arg% 175 1 name:§a§l§oD§b§l§oR§c§l§oO§d§l§oP_§e§l§oP§1§l§oA§2§l§oR§3§l§oT§4§l§oY§6§o§l_Token lore:&f&oHold_and_right_click_to_start_an_instant_drop_party!"
+		execute console command "/give %arg% 97 1 name:§a§l§oD§b§l§oR§c§l§oO§d§l§oP_§e§l§oP§1§l§oA§2§l§oR§3§l§oT§4§l§oY§6§o§l_Token lore:&f&oHold_and_right_click_to_start_an_instant_drop_party!"
 		send "&6&oYou just received a &a&l&oD&b&l&oR&c&l&oO&d&l&oP &e&l&oP&1&l&oA&2&l&oR&3&l&oT&4&l&oY&6&o token!" to arg
-on right click with double plant:
+on right click with monster egg:
 	name of player's tool contains "token"
-	remove 1 double plant from player
+	remove 1 monster egg from player
 	broadcast "&a&o&l%player%&r&6&o just used a &a&l&oD&b&l&oR&c&l&oO&d&l&oP &e&l&oP&1&l&oA&2&l&oR&3&l&oT&4&l&oY&6&o token!"
 	wait 3 real seconds
 	execute console command "/startdrop"
