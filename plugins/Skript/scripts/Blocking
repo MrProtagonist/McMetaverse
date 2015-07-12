@@ -1,0 +1,5 @@
+script options:
+    $ developer mode
+on command:
+  command contains "sandbox" or "contest"
+  cancel event
