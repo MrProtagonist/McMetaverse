@@ -90,12 +90,12 @@ divider3:
   KEEP-OPEN: true
   POSITION-X: 5
   POSITION-Y: 1
-  DATA-VALUE: 0 
+  DATA-VALUE: 0
 bismarksbakery:
   COMMAND: 'shopwarp 28'
   NAME: '&d[p] &aBismarks Bakery &d[p]'
   LORE:
-    - '&f&oCome here for your baking needs.'	
+    - '&f&oCome here for your baking needs.'
   ID: 357
   KEEP-OPEN: false
   POSITION-X: 6

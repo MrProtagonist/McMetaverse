@@ -340,7 +340,7 @@ sell-obsidian:
 
 
 sell-bone:
-  REQUIRED-ITEM: 'bone'
+  REQUIRED-ITEM: 'bone, 64'
   COMMAND: 'givemoney: 4'
   NAME: '&dSell'
   LORE:
