@@ -22,6 +22,17 @@ on join:
 	player has permission "essentials.socialspy"
 	{chatspy.%player%} is not set
 	set {chatspy.%player%} to true
+command /closechat <text> <text>:
+	permission: is.pro
+	trigger:
+		loop all players:
+			if {channel.%loop-player%} is arg 1:
+				send "&f[&b&o%arg 1%&f] &a%SERVER%&f: &a%arg 2%" to the loop-player
+				set {channel.%loop-player%.enabled} to false
+				send "&c&oNow chatting in: &aPublic Chat" to loop-player
+			else if loop-player has the permission "essentials.socialspy":
+				{chatspy.%loop-player%} is true
+				send "&f[&b&o%arg 1%&f] &a%SERVER%&f: &a%arg 2%" to the loop-player
 command /chat [<text>] [<text>]:
 	description: Set teamchat settings.
 	executable by: players
