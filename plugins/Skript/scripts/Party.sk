@@ -1,25 +1,34 @@
 ﻿script options:
-    $ developer mode
+	$ developer mode
 command /fireworktoken <player>:
 	permission: is.op
 	trigger:
-		execute console command "/give %arg% 175 1 name:§a§l§oF§b§l§oI§c§l§oR§d§l§oE§e§l§oW§1§l§oO§2§l§oR§3§l§oK§4§oS§6§o§l_Medallion lore:&f&oHold_and_right_click_to_start_an_instant_fireworks_display!"
+		give player shiny double plant named "&a&l&oF&b&l&oI&c&l&oR&d&l&oE&e&l&oW&1&l&oO&2&l&oR&3&l&oK&4&l&oS&6&o Medallion" with lore "✓ Hold and right click to start a show!"
 		send "&6&oYou just received a &a&l&oF&b&l&oI&c&l&oR&d&l&oE&e&l&oW&1&l&oO&2&l&oR&3&l&oK&4&l&oS&6&o Medallion!" to arg
 on right click with double plant:
+	lore of player's tool contains "✓"
 	name of player's tool contains "medallion"
 	remove 1 double plant from player
 	broadcast "&a&o&l%player%&r&6&o just used a &a&l&oF&b&l&oI&c&l&oR&d&l&oE&e&l&oW&1&l&oO&2&l&oR&3&l&oK&4&l&oS&6&o Medallion!"
 	wait 3 real seconds
-	execute console command "/startfireworks"
+	execute console command "/testfireworks"
+	broadcast "&eType &a/fireworks&e to watch!"
+command /fireworks:
+	trigger:
+		teleport player to {fireworks}
+command /setfireworks:
+	trigger:
+		set {fireworks} to location of player
+	
 command /testfireworks:
 	trigger:
-		loop 3 times:
-			make player execute "/summon FireworksRocketEntity 1275 63 5540 {LifeTime:30,FireworksItem:{id:401,Count:1,tag:{Fireworks:{Explosions:[{Type:0,Flicker:1,Trail:1,Colors:[2883328,0],FadeColors:[0]},{Type:1,Flicker:1,Trail:1,Colors:[16777215,12566463],FadeColors:[0]}]}}}}"
-			wait 1 real second
-			make player execute "/summon FireworksRocketEntity 1275 63 5540 {LifeTime:40,FireworksItem:{id:401,Count:1,tag:{Fireworks:{Explosions:[{Type:2,Flicker:0,Trail:1,Colors:[16770563,16757507],FadeColors:[16744448]}]}}}}"
-			wait 1 real second
-			make player execute "/summon FireworksRocketEntity 1275 63 5540 {LifeTime:25,FireworksItem:{id:401,Count:1,tag:{Fireworks:{Explosions:[{Type:3,Flicker:0,Trail:1,Colors:[21510,4194063],FadeColors:[16777215]}]}}}}"
-			wait 1 real second
+		loop 5 times:
+			make player execute "/summon FireworksRocketEntity 1275 63 5544 {LifeTime:30,FireworksItem:{id:401,Count:1,tag:{Fireworks:{Explosions:[{Type:0,Flicker:1,Trail:1,Colors:[2883328,0],FadeColors:[0]},{Type:1,Flicker:1,Trail:1,Colors:[16777215,12566463],FadeColors:[0]}]}}}}"
+			wait 10 ticks
+			make player execute "/summon FireworksRocketEntity 1275 63 5532 {LifeTime:40,FireworksItem:{id:401,Count:1,tag:{Fireworks:{Explosions:[{Type:2,Flicker:0,Trail:1,Colors:[16770563,16757507],FadeColors:[16744448]}]}}}}"
+			wait 10 ticks
+			make player execute "/summon FireworksRocketEntity 1275 63 5536 {LifeTime:25,FireworksItem:{id:401,Count:1,tag:{Fireworks:{Explosions:[{Type:3,Flicker:0,Trail:1,Colors:[21510,4194063],FadeColors:[16777215]}]}}}}"
+			wait 10 ticks
 	# Fountain Row
 			make player execute "/summon FireworksRocketEntity 1275 63 5546 {LifeTime:10,FireworksItem:{id:401,Count:1,tag:{Fireworks:{Explosions:[{Type:4,Flicker:1,Trail:1,Colors:[21510,4194063],FadeColors:[16777215]}]}}}}"
 			make player execute "/summon FireworksRocketEntity 1275 63 5544 {LifeTime:10,FireworksItem:{id:401,Count:1,tag:{Fireworks:{Explosions:[{Type:4,Flicker:1,Trail:1,Colors:[21510,4194063],FadeColors:[16777215]}]}}}}"
@@ -28,12 +37,12 @@ command /testfireworks:
 			make player execute "/summon FireworksRocketEntity 1275 63 5538 {LifeTime:10,FireworksItem:{id:401,Count:1,tag:{Fireworks:{Explosions:[{Type:4,Flicker:1,Trail:1,Colors:[21510,4194063],FadeColors:[16777215]}]}}}}"
 			make player execute "/summon FireworksRocketEntity 1275 63 5536 {LifeTime:10,FireworksItem:{id:401,Count:1,tag:{Fireworks:{Explosions:[{Type:4,Flicker:1,Trail:1,Colors:[21510,4194063],FadeColors:[16777215]}]}}}}"
 	# Fountain Row End
-			wait 1 real second
-			make player execute "/summon FireworksRocketEntity 1275 63 5540 {LifeTime:25,FireworksItem:{id:401,Count:1,tag:{Fireworks:{Explosions:[{Type:2,Flicker:0,Trail:1,Colors:[58879,4194063],FadeColors:[0]},{Type:1,Flicker:1,Trail:0,Colors:[16777215],FadeColors:[0]}]}}}}"
-			wait 1 real second
-			make player execute "/summon FireworksRocketEntity 1275 63 5540 {LifeTime:25,FireworksItem:{id:401,Count:1,tag:{Fireworks:{Explosions:[{Type:1,Flicker:1,Trail:1,Colors:[58879,4194063],FadeColors:[0]},{Type:3,Flicker:0,Trail:0,Colors:[16777215],FadeColors:[0]}]}}}}"
-			wait 1 real second
-			make player execute "/summon FireworksRocketEntity 1275 63 5540 {LifeTime:25,FireworksItem:{id:401,Count:1,tag:{Fireworks:{Explosions:[{Type:4,Flicker:1,Trail:1,Colors:[58879,4194063],FadeColors:[0]},{Type:1,Flicker:0,Trail:0,Colors:[16777215],FadeColors:[0]}]}}}}"
+			wait 10 ticks
+			make player execute "/summon FireworksRocketEntity 1275 63 5544 {LifeTime:25,FireworksItem:{id:401,Count:1,tag:{Fireworks:{Explosions:[{Type:2,Flicker:0,Trail:1,Colors:[58879,4194063],FadeColors:[0]},{Type:1,Flicker:1,Trail:0,Colors:[16777215],FadeColors:[0]}]}}}}"
+			wait 10 ticks
+			make player execute "/summon FireworksRocketEntity 1275 63 5538 {LifeTime:25,FireworksItem:{id:401,Count:1,tag:{Fireworks:{Explosions:[{Type:1,Flicker:1,Trail:1,Colors:[58879,4194063],FadeColors:[0]},{Type:3,Flicker:0,Trail:0,Colors:[16777215],FadeColors:[0]}]}}}}"
+			wait 10 ticks
+			make player execute "/summon FireworksRocketEntity 1275 63 5546 {LifeTime:25,FireworksItem:{id:401,Count:1,tag:{Fireworks:{Explosions:[{Type:4,Flicker:1,Trail:1,Colors:[58879,4194063],FadeColors:[0]},{Type:1,Flicker:0,Trail:0,Colors:[16777215],FadeColors:[0]}]}}}}"
 			execute console command "/summon FireworksRocketEntity 1275 63 5534 {LifeTime:15,FireworksItem:{id:401,Count:1,tag:{Fireworks:{Explosions:[{Type:4,Flicker:0,Trail:0,Colors:[65535],FadeColors:[16777215]}]}}}}"
 			execute console command "/summon FireworksRocketEntity 1275 63 5536 {LifeTime:15,FireworksItem:{id:401,Count:1,tag:{Fireworks:{Explosions:[{Type:4,Flicker:1,Trail:0,Colors:[65535],FadeColors:[16777215]}]}}}}"
 			execute console command "/summon FireworksRocketEntity 1275 63 5538 {LifeTime:15,FireworksItem:{id:401,Count:1,tag:{Fireworks:{Explosions:[{Type:4,Flicker:1,Trail:0,Colors:[65535],FadeColors:[16777215]}]}}}}"
@@ -42,7 +51,7 @@ command /testfireworks:
 			execute console command "/summon FireworksRocketEntity 1275 63 5544 {LifeTime:15,FireworksItem:{id:401,Count:1,tag:{Fireworks:{Explosions:[{Type:4,Flicker:1,Trail:0,Colors:[65535],FadeColors:[16777215]}]}}}}"
 			execute console command "/summon FireworksRocketEntity 1275 63 5546 {LifeTime:15,FireworksItem:{id:401,Count:1,tag:{Fireworks:{Explosions:[{Type:4,Flicker:1,Trail:0,Colors:[65535],FadeColors:[16777215]}]}}}}"
 			execute console command "/summon FireworksRocketEntity 1275 63 5548 {LifeTime:15,FireworksItem:{id:401,Count:1,tag:{Fireworks:{Explosions:[{Type:4,Flicker:1,Trail:0,Colors:[65535],FadeColors:[16777215]}]}}}}"
-			wait 1 real second
+			wait 10 ticks
 			execute console command "/summon FireworksRocketEntity 1275 63 5534 {LifeTime:15,FireworksItem:{id:401,Count:1,tag:{Fireworks:{Explosions:[{Type:4,Flicker:1,Trail:1,Colors:[16777215],FadeColors:[16777215]}]}}}}"
 			execute console command "/summon FireworksRocketEntity 1275 63 5536 {LifeTime:15,FireworksItem:{id:401,Count:1,tag:{Fireworks:{Explosions:[{Type:4,Flicker:1,Trail:1,Colors:[16777215],FadeColors:[16777215]}]}}}}"
 			execute console command "/summon FireworksRocketEntity 1275 63 5538 {LifeTime:15,FireworksItem:{id:401,Count:1,tag:{Fireworks:{Explosions:[{Type:4,Flicker:1,Trail:1,Colors:[16777215],FadeColors:[16777215]}]}}}}"
@@ -51,6 +60,52 @@ command /testfireworks:
 			execute console command "/summon FireworksRocketEntity 1275 63 5544 {LifeTime:15,FireworksItem:{id:401,Count:1,tag:{Fireworks:{Explosions:[{Type:4,Flicker:1,Trail:1,Colors:[16777215],FadeColors:[16777215]}]}}}}"
 			execute console command "/summon FireworksRocketEntity 1275 63 5546 {LifeTime:15,FireworksItem:{id:401,Count:1,tag:{Fireworks:{Explosions:[{Type:4,Flicker:1,Trail:1,Colors:[16777215],FadeColors:[16777215]}]}}}}"
 			execute console command "/summon FireworksRocketEntity 1275 63 5548 {LifeTime:15,FireworksItem:{id:401,Count:1,tag:{Fireworks:{Explosions:[{Type:4,Flicker:1,Trail:1,Colors:[16777215],FadeColors:[16777215]}]}}}}"
+			wait 10 ticks
+			execute console command "/summon FireworksRocketEntity 1275 63 5534 {LifeTime:20,FireworksItem:{id:401,Count:1,tag:{Fireworks:{Explosions:[{Type:2,Flicker:1,Trail:1,Colors:[16721634],FadeColors:[1229055]},{Type:1,Flicker:1,Trail:1,Colors:[2555737,2849279,16721027],FadeColors:[12860415]},{Type:0,Flicker:0,Trail:0,Colors:[13762363,16740669,14383359],FadeColors:[16747718]},{Type:3,Flicker:1,Trail:1,Colors:[2071583],FadeColors:[14548790]}]}}}}"
+			wait 10 ticks
+			execute console command "/summon FireworksRocketEntity 1275 63 5544 {LifeTime:50,FireworksItem:{id:401,Count:1,tag:{Fireworks:{Explosions:[{Type:1,Flicker:1,Trail:1,Colors:[3766307,7034111,16775047],FadeColors:[4680959,16734145,16771450]}]}}}}"
+			wait 10 ticks  
+			execute console command "/summon FireworksRocketEntity 1275 63 5536 {LifeTime:10,Motion:[0.00,2.50,-0.50],FireworksItem:{id:401,Count:1,tag:{Fireworks:{Explosions:[{Type:1,Flicker:0,Trail:0,Colors:[16777215],FadeColors:[0]},{Type:0,Flicker:0,Trail:0,Colors:[0],FadeColors:[16777215]}]}}}}
+			execute console command "/summon FireworksRocketEntity 1275 63 5540 {LifeTime:10,Motion:[0.00,2.50,0.50],FireworksItem:{id:401,Count:1,tag:{Fireworks:{Explosions:[{Type:1,Flicker:0,Trail:0,Colors:[16777215],FadeColors:[0]},{Type:0,Flicker:0,Trail:0,Colors:[0],FadeColors:[16777215]}]}}}}"			 
+			execute console command "/summon FireworksRocketEntity 1275 63 5534 {LifeTime:10,Motion:[0.00,2.50,0.00],FireworksItem:{id:401,Count:1,tag:{Fireworks:{Explosions:[{Type:1,Flicker:0,Trail:0,Colors:[16777215],FadeColors:[0]},{Type:0,Flicker:0,Trail:0,Colors:[0],FadeColors:[16777215]}]}}}}"
+			wait 10 ticks
+			execute console command "/summon FireworksRocketEntity 1275 63 5540 {LifeTime:10,FireworksItem:{id:401,Count:1,tag:{Fireworks:{Explosions:[{Type:4,Flicker:1,Trail:1,Colors:[16777215],FadeColors:[1179392]},{Type:3,Flicker:0,Trail:0,Colors:[5111552,2276631],FadeColors:[16713023]}]}}}}"
+			execute console command "/summon FireworksRocketEntity 1275 63 5544 {LifeTime:10,Motion:[0.00,0.00,-1.00],FireworksItem:{id:401,Count:1,tag:{Fireworks:{Explosions:[{Type:4,Flicker:1,Trail:1,Colors:[16777215],FadeColors:[1179392]},{Type:3,Flicker:0,Trail:0,Colors:[5111552,2276631],FadeColors:[16713023]}]}}}}"
+			execute console command /summon FireworksRocketEntity 1275 63 5538 {LifeTime:10,Motion:[0.00,0.00,1.00],FireworksItem:{id:401,Count:1,tag:{Fireworks:{Explosions:[{Type:4,Flicker:1,Trail:1,Colors:[16777215],FadeColors:[1179392]},{Type:3,Flicker:0,Trail:0,Colors:[5111552,2276631],FadeColors:[16713023]}]}}}}
+
+			execute console command "/summon FireworksRocketEntity 1275 63 5542 {LifeTime:40,FireworksItem:{id:401,Count:1,tag:{Fireworks:{Explosions:[{Type:0,Flicker:1,Trail:1,Colors:[4321893,1799460,1703736],FadeColors:[1647103,4560639,5242879]},{Type:2,Flicker:1,Trail:1,Colors:[13238070,16753433,15739909],FadeColors:[16724937,13537279,7421439]}]}}}}"
+			wait 10 ticks
+			execute console command "/summon FireworksRocketEntity 1275 63 5538 {LifeTime:20,FireworksItem:{id:401,Count:1,tag:{Fireworks:{Explosions:[{Type:2,Flicker:0,Trail:0,Colors:[2752497],FadeColors:[16777215]}]}}}}"
+			wait 10 ticks
+			execute console command "/summon FireworksRocketEntity 1275 63 5546 {LifeTime:30,FireworksItem:{id:401,Count:1,tag:{Fireworks:{Explosions:[{Type:2,Flicker:0,Trail:0,Colors:[2752497],FadeColors:[16777215]}]}}}}"
+			wait 10 ticks
+			execute console command "/summon FireworksRocketEntity 1275 63 5534 {LifeTime:40,FireworksItem:{id:401,Count:1,tag:{Fireworks:{Explosions:[{Type:2,Flicker:0,Trail:0,Colors:[2752497],FadeColors:[16777215]}]}}}}"
+			wait 10 ticks
+			execute console command "/summon FireworksRocketEntity 1275 63 5540 {LifeTime:50,FireworksItem:{id:401,Count:1,tag:{Fireworks:{Explosions:[{Type:2,Flicker:1,Trail:1,Colors:[2752497],FadeColors:[16777215]}]}}}}"
+			execute console command "/summon FireworksRocketEntity 1275 63 5534 {LifeTime:15,FireworksItem:{id:401,Count:1,tag:{Fireworks:{Explosions:[{Type:4,Flicker:1,Trail:1,Colors:[16777215],FadeColors:[16777215]}]}}}}"
+			execute console command "/summon FireworksRocketEntity 1275 63 5536 {LifeTime:15,FireworksItem:{id:401,Count:1,tag:{Fireworks:{Explosions:[{Type:4,Flicker:1,Trail:1,Colors:[16777215],FadeColors:[16777215]}]}}}}"
+			execute console command "/summon FireworksRocketEntity 1275 63 5538 {LifeTime:15,FireworksItem:{id:401,Count:1,tag:{Fireworks:{Explosions:[{Type:4,Flicker:1,Trail:1,Colors:[16777215],FadeColors:[16777215]}]}}}}"
+			execute console command "/summon FireworksRocketEntity 1275 63 5540 {LifeTime:15,FireworksItem:{id:401,Count:1,tag:{Fireworks:{Explosions:[{Type:4,Flicker:1,Trail:1,Colors:[16777215],FadeColors:[16777215]}]}}}}"
+			execute console command "/summon FireworksRocketEntity 1275 63 5542 {LifeTime:15,FireworksItem:{id:401,Count:1,tag:{Fireworks:{Explosions:[{Type:4,Flicker:1,Trail:1,Colors:[16777215],FadeColors:[16777215]}]}}}}"
+			execute console command "/summon FireworksRocketEntity 1275 63 5544 {LifeTime:15,FireworksItem:{id:401,Count:1,tag:{Fireworks:{Explosions:[{Type:4,Flicker:1,Trail:1,Colors:[16777215],FadeColors:[16777215]}]}}}}"
+			execute console command "/summon FireworksRocketEntity 1275 63 5546 {LifeTime:15,FireworksItem:{id:401,Count:1,tag:{Fireworks:{Explosions:[{Type:4,Flicker:1,Trail:1,Colors:[16777215],FadeColors:[16777215]}]}}}}"
+			execute console command "/summon FireworksRocketEntity 1275 63 5548 {LifeTime:15,FireworksItem:{id:401,Count:1,tag:{Fireworks:{Explosions:[{Type:4,Flicker:1,Trail:1,Colors:[16777215],FadeColors:[16777215]}]}}}}"
+			wait 10 ticks
+			execute console command "/summon FireworksRocketEntity 1275 63 5540 {LifeTime:40,FireworksItem:{id:401,Count:1,tag:{Fireworks:{Explosions:[{Type:2,Flicker:0,Trail:1,Colors:[10754984,4652864,11536799],FadeColors:[11864990,6881098,12124351]}]}}}}"	
+			wait 10 ticks 
+			execute console command "/summon FireworksRocketEntity 1275 63 5540 {LifeTime:35,FireworksItem:{id:401,Count:1,tag:{Fireworks:{Explosions:[{Type:1,Flicker:1,Trail:1,Colors:[9045107],FadeColors:[16713942]}]}}}}" 
+			execute console command "/summon FireworksRocketEntity 1275 63 5548 {LifeTime:10,FireworksItem:{id:401,Count:1,tag:{Fireworks:{Explosions:[{Type:4,Flicker:1,Trail:1,Colors:[9045107],FadeColors:[16713942]}]}}}}
+			execute console command "/summon FireworksRocketEntity 1275 63 5546 {LifeTime:10,FireworksItem:{id:401,Count:1,tag:{Fireworks:{Explosions:[{Type:4,Flicker:1,Trail:1,Colors:[9045107],FadeColors:[16713942]}]}}}}
+			execute console command "/summon FireworksRocketEntity 1275 63 5544 {LifeTime:10,FireworksItem:{id:401,Count:1,tag:{Fireworks:{Explosions:[{Type:4,Flicker:1,Trail:1,Colors:[9045107],FadeColors:[16713942]}]}}}}
+			execute console command "/summon FireworksRocketEntity 1275 63 5542 {LifeTime:10,FireworksItem:{id:401,Count:1,tag:{Fireworks:{Explosions:[{Type:4,Flicker:1,Trail:1,Colors:[9045107],FadeColors:[16713942]}]}}}}
+			execute console command "/summon FireworksRocketEntity 1275 63 5540 {LifeTime:10,FireworksItem:{id:401,Count:1,tag:{Fireworks:{Explosions:[{Type:4,Flicker:1,Trail:1,Colors:[9045107],FadeColors:[16713942]}]}}}}
+			execute console command "/summon FireworksRocketEntity 1275 63 5538 {LifeTime:10,FireworksItem:{id:401,Count:1,tag:{Fireworks:{Explosions:[{Type:4,Flicker:1,Trail:1,Colors:[9045107],FadeColors:[16713942]}]}}}}
+			execute console command "/summon FireworksRocketEntity 1275 63 5536 {LifeTime:10,FireworksItem:{id:401,Count:1,tag:{Fireworks:{Explosions:[{Type:4,Flicker:1,Trail:1,Colors:[9045107],FadeColors:[16713942]}]}}}}
+			wait 10 ticks
+			execute console command "/summon FireworksRocketEntity 1275 63 5540 {LifeTime:20,FireworksItem:{id:401,Count:1,tag:{Fireworks:{Explosions:[{Type:4,Flicker:1,Trail:1,Colors:[16730843,16758246,12069375],FadeColors:[9574832,16726231,16777215]},{Type:2,Flicker:1,Trail:1,Colors:[7018403,10499071,13336063],FadeColors:[11411967,10228869,10027263]}]}}}}"
+			wait 10 ticks		  
+			execute console command "/summon FireworksRocketEntity 1275 63 5534 {LifeTime:30,FireworksItem:{id:401,Count:1,tag:{Fireworks:{Explosions:[{Type:3,Flicker:1,Trail:1,Colors:[16775224,8257318,3331616],FadeColors:[1800740,15925053]},{Type:2,Flicker:1,Trail:1,Colors:[1376059],FadeColors:[16771100]}]}}}}"
+			wait 10 ticks
 
 		
 command /startfireworks:
