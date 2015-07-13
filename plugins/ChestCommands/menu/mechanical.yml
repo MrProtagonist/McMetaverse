@@ -59,17 +59,6 @@ divider1:
   POSITION-X: 1
   POSITION-Y: 1
   DATA-VALUE: 0
-Reggies Classy Shop for Classly Mechanics:
-  COMMAND: 'shopwarp 2'
-  NAME: 'Reggies Classy Mechanics Shop'
-  LORE:
-    - 'Where the classy Mechanics buy their classy supplies!'
-  ID: redstone
-  KEEP-OPEN: false
-  POSITION-X: 1
-  POSITION-Y: 2
-#  DATA-VALUE: 2
-
 divider2:
   NAME: ''
   ID: 160

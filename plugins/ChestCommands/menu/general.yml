@@ -110,16 +110,6 @@ divider4:
   POSITION-X: 7
   POSITION-Y: 1
   DATA-VALUE: 0
-SlendyShop:
-  COMMAND: 'shopwarp 10'
-  NAME: '&d[p] &aSlendyShop &d[p]'
-  LORE:
-    - '&f&oThe Slendiest of shops'
-  ID: 15
-  KEEP-OPEN: false
-  POSITION-X: 4
-  POSITION-Y: 1
-  DATA-VALUE: 3
 divider5:
   NAME: ''
   ID: 160
@@ -164,16 +154,7 @@ DocsKnickKnacks:
   POSITION-X: 7
   POSITION-Y: 2
   DATA-VALUE: 0
-TreysTreasures:
-  COMMAND: 'shopwarp 15'
-  NAME: '&d[p] &bTreys Treasures &d[p]'
-  LORE:
-    - '&f&oFull of Everything and Nothing'
-  ID: 61
-  KEEP-OPEN: false
-  POSITION-X: 8
-  POSITION-Y: 1
-  DATA-VALUE: 0
+
 divider7:
   NAME: ''
   ID: 160
