@@ -4,6 +4,7 @@ command /setpaintball:
 	permission: is.pro
 	trigger:
 		set {paintball.lobby} to location of player
+		message "SET!"
 command /paintball:
 	trigger:
 		player can't hold 36 wood swords:
