@@ -129,6 +129,17 @@ Pogogame:
   KEEP-OPEN: true
   POSITION-X: 2
   POSITION-Y: 3
+Parkourgame:
+  COMMAND: 'parkour'
+  NAME: 'Parkour'
+  LORE:
+    - 'In this game your goal is to reach'
+    - 'the end of the course as quick'
+    - 'as possible!'
+  ID: 288
+  KEEP-OPEN: true
+  POSITION-X: 4
+  POSITION-Y: 3
 nav:
   COMMAND: 'open:nav.yml'
   NAME: 'Go Back'
