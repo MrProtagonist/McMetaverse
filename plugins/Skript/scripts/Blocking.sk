@@ -1,0 +1,6 @@
+script options:
+    $ developer mode
+on command:
+    player does not have permission "essentials.socialspy"
+        command contains "sandbox" or "contest" or "frolf"
+        cancel event
