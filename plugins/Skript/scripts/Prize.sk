@@ -1,9 +1,28 @@
+﻿script options:
+    $ developer mode
+on script load:
+	loop all players:
+		{inprizeroom.%loop-player%} is not set
+		set {inprizeroom.%loop-player%} to false
 command /setprize:
 	permission: essentials.socialspy
 	trigger:
 		set {prizeroom} to location of player
 		message "&a&oPrize Room location set!"
+command /prizetoken <player>:
+	permission: is.op
+	trigger:
+		give arg shiny double plant named "&b&lPrize Room Pass" with lore "✓ Hold and right click to go to the prize room!"
+		send "&6&oYou just received a &b&lPrize Room Pass" to arg
+on right click with double plant:
+	lore of player's tool contains "✓"
+	name of player's tool contains "pass"
+	remove 1 double plant from player
+	broadcast "&a&o&l%player%&r&6&o just used a &b&l&oPrize Room Pass&6&o!"
+	wait 3 real seconds
+	execute console command "/prize %player%"
 on join:
+	set {inprizeroom.%player%} to false
 	if {prizeroom.%player%.times} is not set:
 		set {prizeroom.%player%.times} to 0
 	if {prizeroom.%player%.last} is not set:
@@ -11,18 +30,18 @@ on join:
 	if {prizeroom.%player%.fixed} is not set:
 		set {prizeroom.%player%.fixed} to true
 		set {prizeroom.%player%.times} to 0
-command /clearprize:
-	permission: you.dont.have.permission.to.ever.use.this.you.fucktard
-	trigger:
-		loop all players:
-			{prizeroom.%loop-player%.fixed} is not set
-			set {prizeroom.%loop-player%.times} to 0
-			set {prizeroom.%loop-player%.fixed} to true
-			message "Fixed %loop-player%!"
-command /testprize:
-	trigger:
-		loop all players:
-			message "%loop-player% - %{prizeroom.%loop-player%.times}% times - %{prizeroom.%loop-player%.last}%"
+#command /clearprize:
+#	permission: you.dont.have.permission.to.ever.use.this.you.fucktard
+#	trigger:
+#		loop all players:
+#			{prizeroom.%loop-player%.fixed} is not set
+#			set {prizeroom.%loop-player%.times} to 0
+#			set {prizeroom.%loop-player%.fixed} to true
+#			message "Fixed %loop-player%!"
+#command /testprize:
+#	trigger:
+#		loop all players:
+#			message "%loop-player% - %{prizeroom.%loop-player%.times}% times - %{prizeroom.%loop-player%.last}%"
 command /prize [<player>]:
 	permission: is.pro
 	trigger:
@@ -31,9 +50,9 @@ command /prize [<player>]:
 			arg can hold 1 wood sword
 #				wait 1 real second
 #				broadcast "&f[&aPRIZEROOM DEBUG&f] &e%arg% has room in their inventory! Sending them!"
-			{inprizeroom} is not set
-			set {inprizeroom} to arg
-			set {lastspot} to location of arg
+			{inprizeroom.%arg%} is false
+			set {inprizeroom.%arg%} to true
+			set {lastspot.%arg%} to location of arg
 			wait 1 tick
 			teleport arg to {prizeroom}
 			set arg's fly mode to true
@@ -50,10 +69,10 @@ command /prize [<player>]:
 			wait 10 real second
 			send "&f[&dPrize Room&f] &aWe have a new section to the prize room! Check out the Potion and Enchantment wing!" to arg
 			wait 8 real minutes
-			arg is {inprizeroom}
+			{inprizeroom.%arg%} is true
 			send "&f[&dPrize Room&f] &4You have 2 minutes left to decide or you will be removed from the Prize Room!" to arg
 			wait 2 real minutes
-			arg is {inprizeroom}
+			{inprizeroom.%arg%} is true
 			send "&f[&dPrize Room&f] &4You have been kicked from the prize room!" to arg
 			teleport arg to {lastspot}
 			teleport arg to {lastspot}
@@ -61,7 +80,7 @@ command /prize [<player>]:
 			if arg does not have the permission "essentials.fly":
 				set arg's fly mode to false
 			wait 1 real second
-			delete {inprizeroom}
+			set {inprizeroom.%arg%} to false
 			broadcast "&f[&4Prize Room&f] &4%arg% has been kicked from the prize room for taking longer than 10 minutes."
 			execute console command "region removemember prize_protection %arg% -w Metacurse"
 		else:
@@ -99,8 +118,8 @@ command /prize [<player>]:
 						loop-value can hold 1 wood sword
 		#				wait 1 real second
 		#				broadcast "&f[&aPRIZEROOM DEBUG&f] &e%loop-value% has room in their inventory! Sending them!"
-						{inprizeroom} is not set
-						set {inprizeroom} to loop-value
+						{inprizeroom.%loop-value%} is not true
+						set {inprizeroom.%loop-value%} to true
 						set {lastspot} to location of loop-value
 						wait 1 tick
 						teleport loop-value to {prizeroom}
@@ -118,10 +137,10 @@ command /prize [<player>]:
 						wait 10 real second
 						send "&f[&dPrize Room&f] &aWe have a new section to the prize room! Check out the Potion and Enchantment wing!" to loop-value
 						wait 8 real minutes
-						loop-value is {inprizeroom}
+						{inprizeroom.%loop-value%} is true
 						send "&f[&dPrize Room&f] &4You have 2 minutes left to decide or you will be removed from the Prize Room!" to loop-value
 						wait 2 real minutes
-						loop-value is {inprizeroom}
+						{inprizeroom.%loop-value%} is true
 						send "&f[&dPrize Room&f] &4You have been kicked from the prize room!" to loop-value
 						teleport loop-value to {lastspot}
 						teleport loop-value to {lastspot}
@@ -129,7 +148,7 @@ command /prize [<player>]:
 						if loop-value does not have the permission "essentials.fly":
 							set loop-value's fly mode to false
 						wait 1 real second
-						delete {inprizeroom}
+						set {inprizeroom.%loop-value%} to false
 						broadcast "&f[&4Prize Room&f] &4%loop-value% has been kicked from the prize room for taking longer than 10 minutes."
 						execute console command "region removemember prize_protection %loop-value% -w Metacurse"
 				
@@ -139,37 +158,37 @@ command /prize [<player>]:
 every real hour:
 	execute console command "/prize"
 on command:
-	player is {inprizeroom}
+	{inprizeroom.%player%} is true
 	cancel event
 	message "&cPick your prize first!"
 on command "marry tp":
 	set {_back} to location of player
 	wait 2 ticks
 	loop all players in radius 5 of player:
-		loop-player is {inprizeroom}
+		{inprizeroom.%loop-player%} is true
 		teleport player to {_back}
 		teleport player to {_back}
 		message "&cYou are not allowed to have sex in the prize room! Wait until your spouse gets done selecting a prize."
 on rightclick on button:
-	player is {inprizeroom}
+	{inprizeroom.%player%} is true
 	wait 2 ticks
-	teleport player to {lastspot}
-	teleport player to {lastspot}
+	teleport player to {lastspot.%player%}
+	teleport player to {lastspot.%player%}
 	wait 2 ticks
 	if player does not have the permission "essentials.fly":
 		set player's fly mode to false
 	wait 1 real second
-	delete {inprizeroom}
+	set {inprizeroom.%player%} to false
 	broadcast "&f[&4Prize Room&f] &b%player% has chosen their prize from the Prize Room!"
 	execute console command "region removemember prize_protection %player% -w Metacurse"
 on quit:
-	player is {inprizeroom}
-	teleport player to {lastspot}
-	teleport player to {lastspot}
+	{inprizeroom.%player%} is true
+	teleport player to {lastspot.%player%}
+	teleport player to {lastspot.%player%}
 	set player's fly mode to false
 	execute console command "region removemember prize_protection %player% -w Metacurse"
-	delete {inprizeroom}
+	set {inprizeroom.%player%} to false
 	set leave message to "&e%player% left before picking a prize in the Prize Room! Too bad."
 on damage:
-	victim is {inprizeroom}
+	{inprizeroom.%victim%} is true
 	cancel event
