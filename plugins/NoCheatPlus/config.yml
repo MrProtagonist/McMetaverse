@@ -61,7 +61,7 @@ checks:
     fastbreak:
       active: true
       strict: true
-      delay: 90
+      delay: 120
       intervalsurvival: 100
       grace: 2000
       actions: cancel vl>0 log:fastbreak:3:5:cif cancel
