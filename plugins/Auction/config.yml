@@ -18,7 +18,7 @@ allow-auction-help-command: true
 allow-auction-end-command: false
 allow-auction-cancel-command: true
 allow-using-bid-auto-command: true
-allow-damaged-items: true
+allow-damaged-items: false
 
 # Blocking commands
 block-commands-when-auctioning: true
