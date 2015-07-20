@@ -181,38 +181,39 @@ on script load:
 	set {spleef.blocked} to false
 command /startspleef:
 	trigger:
-		if {spleef.blocked} is not set:
-			set {spleef.blocked} to false
-		{spleef.blocked} is false
-		set {spleef.blocked} to true
-		set {spleef.breakable} to false
-		loop all players:
-			{spleef.%loop-player%.playing} is true
-			send "&oSpleef starting in &a&l30&r&o seconds." to loop-player
-		wait 15 seconds
-		loop all players:
-			{spleef.%loop-player%.playing} is true
-			send "&oSpleef starting in &e&l15&r&o seconds." to loop-player
-		wait 10 seconds
-		loop all players:
-			{spleef.%loop-player%.playing} is true
-			send "&oSpleef starting in &c&l5&r&o seconds." to loop-player
-			teleport loop-player to {spleef.respawn}
-			heal loop-player
-			set {pvp.%loop-player%} to 1
-			execute console command "feed %loop-player%"
-			set tool of loop-player to diamond shovel
-			set rf max hp of loop-player to 20
-			set the name of loop-player's tool to "&b&oSpleef Shovel"
-			execute console command "give %loop-player% snowball 15"
-		set {spleef.running} to true
-		wait 5 second
-		loop all players:
-			{spleef.%loop-player%.playing} is true
-			execute console command "rg addmember Spleef %loop-player% -w Metacurse"
-			send "&b&o&lSpleef has begun!." to loop-player
-		set {spleef.breakable} to true
-		set {spleef.countdown} to false
+		if (spleef.players} is greater than or equal to 2:
+			if {spleef.blocked} is not set:
+				set {spleef.blocked} to false
+			{spleef.blocked} is false
+			set {spleef.blocked} to true
+			set {spleef.breakable} to false
+			loop all players:
+				{spleef.%loop-player%.playing} is true
+				send "&oSpleef starting in &a&l30&r&o seconds." to loop-player
+			wait 15 seconds
+			loop all players:
+				{spleef.%loop-player%.playing} is true
+				send "&oSpleef starting in &e&l15&r&o seconds." to loop-player
+			wait 10 seconds
+			loop all players:
+				{spleef.%loop-player%.playing} is true
+				send "&oSpleef starting in &c&l5&r&o seconds." to loop-player
+				teleport loop-player to {spleef.respawn}
+				heal loop-player
+				set {pvp.%loop-player%} to 1
+				execute console command "feed %loop-player%"
+				set tool of loop-player to diamond shovel
+				set rf max hp of loop-player to 20
+				set the name of loop-player's tool to "&b&oSpleef Shovel"
+				execute console command "give %loop-player% snowball 15"
+			set {spleef.running} to true
+			wait 5 second
+			loop all players:
+				{spleef.%loop-player%.playing} is true
+				execute console command "rg addmember Spleef %loop-player% -w Metacurse"
+				send "&b&o&lSpleef has begun!." to loop-player
+			set {spleef.breakable} to true
+			set {spleef.countdown} to false
 command /rs:
 	permission: spleef.reset
 	trigger:
