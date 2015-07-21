@@ -10,6 +10,8 @@ command /submit:
 		message "&c&lREQUIRES: &fA stocked shop that is fully claimed"
 		message "                &fA name and short description of your shop"
 		message "                &fDecided on an item you want for the shop icon"
+		message "                &fVERY IMPORTANT: you cannot use an apostrophe"
+		message "                &fexample: Post_Rogue's would become Post_Rogues"
 		message " "
 		message "&eIf you have completed all the requirements, type &a/continue"
 		set {submit.%player%} to 0
