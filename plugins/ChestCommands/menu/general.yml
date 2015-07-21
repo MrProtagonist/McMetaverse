@@ -297,6 +297,17 @@ divider15:
   POSITION-X: 2
   POSITION-Y: 4
   DATA-VALUE: 0
+vpunisherfinegoods:
+  COMMAND: 'shopwarp 30'
+  NAME: '&d[p] &avPunishers Fine Goods &d[p]'
+  LORE:
+    - '&f&oWelcome to my shop! Items sold here will be restocked regularly'
+    - '&f&oso buy what you need!'
+  ID: 278
+  KEEP-OPEN: false
+  POSITION-X: 3
+  POSITION-Y: 4
+  DATA-VALUE: 0
 divider16:
   NAME: ''
   ID: 160
