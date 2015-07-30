@@ -109,6 +109,7 @@ on jump:
 		message "&cYou are already as high as you can go!"
 		stop
 	teleport player to location of block 6 meters above player
+	teleport player to location of block 1 meter behind player
 	add 1 to {archery.level}
 	message "&aYou just went up to floor %{archery.level}%!"
 on sneak toggle:
