@@ -108,8 +108,7 @@ on jump:
 	if {archery.level} is 3:
 		message "&cYou are already as high as you can go!"
 		stop
-	teleport player to location of block 6 meters above player
-	teleport player to location of block 1 meter behind player
+	teleport player to location of block 5 meters above player
 	add 1 to {archery.level}
 	message "&aYou just went up to floor %{archery.level}%!"
 on sneak toggle:
@@ -122,7 +121,7 @@ on sneak toggle:
 		message "&cYou are already as low as you can go!"
 		stop
 	cancel event
-	teleport player to location of block 3 meters below player
+	teleport player to location of block 5 meters below player
 	subtract 1 from {archery.level}
 	message "&aYou just went down to floor %{archery.level}%!"
 on damage:
