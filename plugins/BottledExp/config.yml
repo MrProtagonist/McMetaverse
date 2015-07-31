@@ -21,7 +21,7 @@
 bottle:
   xpCost: 10
   xpEarn: 10
-  useItems: false
+  useItems: true
   consumedItem: 374
   amountConsumed: 1
   useMoney: false
