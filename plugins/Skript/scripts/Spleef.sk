@@ -216,6 +216,17 @@ command /startspleef:
 			set {spleef.countdown} to false
 		else:
 			message "&a&oYou need 2 or more players to start Spleef!"
+on command:
+	{spleef.%player%.playing} is true:
+		command is not "leave" or "a" or "login"
+		message "&e&oNo commands permitted while playing spleef."
+		message "&a&o/leave &e&oto quit."
+		cancel the event
+	{spleef.%player%.spectating} is true:
+		command is not "leave" or "a" or "login"
+		message "&e&oNo commands permitted while playing spleef."
+		message "&a&o/leave &e&oto quit."
+		cancel the event
 command /rs:
 	permission: spleef.reset
 	trigger:
