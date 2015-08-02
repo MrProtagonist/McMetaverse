@@ -1,0 +1,203 @@
+version: 3.0.6
+clear:
+  auto:
+    threshold: 1
+    calibration:
+      changes_sd: 64
+      variety_sd: 1
+      faces_sd: 32
+      air: 0
+      faces: 2
+      changes: 1
+      data_sd: 1
+      variety: 1
+      air_sd: 0
+      data: 32
+    clear-interval-seconds: 120
+    days: 365
+    enabled: false
+  fastmode: false
+  'on':
+    ban: false
+uuid:
+  read-from-disk: false
+  use_sqluuidhandler: false
+claim:
+  max-auto-area: 4
+chunk-processor:
+  max-entities: 512
+  enabled: false
+  max-blockstates: 4096
+  disable-physics: false
+max_plots: 127
+console:
+  color: true
+clusters:
+  enabled: false
+kill_road_mobs: false
+confirmation:
+  unlink: true
+  delete: true
+  clear: true
+metrics: true
+protection:
+  redstone:
+    disable-offline: false
+  tnt-listener:
+    enabled: false
+  piston:
+    falling-blocks: true
+plotme-alias: false
+update-notifications: true
+worldedit:
+  max-volume: 500000
+  max-iterations: 1000
+  enable-for-helpers: false
+  blacklist:
+  - cs
+  - .s
+  - restore
+  - snapshot
+  - delchunks
+  - listchunks
+  require-selection-in-mask: true
+chat:
+  fancy: true
+comments:
+  notifications:
+    enabled: false
+mob_pathfinding: true
+cache:
+  ratings: true
+  permissions: false
+UUID:
+  force-lowercase: false
+  offline: false
+titles: true
+global_limit: false
+schematics:
+  save_path: /var/www/schematics
+teleport:
+  on_login: false
+  delay: 0
+debug: true
+web:
+  server-ip: your.ip.here
+  url: http://empcraft.com/plots/
+plotme-convert:
+  enabled: true
+  cache-uuids: false
+worlds:
+  sandbox:
+    road:
+      width: 7
+      height: 64
+      block: '98'
+    plot:
+      size: 75
+      floor:
+      - '12'
+      filling:
+      - '12'
+      height: 64
+      biome: FOREST
+      bedrock: true
+      create_signs: true
+      auto_merge: false
+    wall:
+      block: '44'
+      height: 64
+      filling: '1:0'
+      block_claimed: '44:1'
+    event:
+      spawn:
+        breeding: false
+        egg: false
+        custom: true
+      pvp: false
+      pve: false
+    economy:
+      use: false
+      prices:
+        claim: 100.0
+        sell: 75.0
+        merge: 100.0
+    home:
+      allow-nonmembers: false
+      default: side
+    world:
+      border: false
+      gamemode: creative
+      max_height: 256
+    schematic:
+      file: 'null'
+      on_claim: false
+      specify_on_claim: false
+    limits:
+      max-members: 128
+    chat:
+      enabled: false
+    flags: {}
+    natural_mob_spawning: false
+  contest:
+    road:
+      width: 7
+      height: 64
+      block: '98'
+    plot:
+      size: 35
+      floor:
+      - '2'
+      filling:
+      - '3'
+      height: 64
+      biome: FOREST
+      bedrock: true
+      create_signs: true
+      auto_merge: false
+    wall:
+      block: '44'
+      height: 64
+      filling: '1:0'
+      block_claimed: '44:1'
+    event:
+      spawn:
+        breeding: false
+        egg: false
+        custom: true
+      pvp: false
+      pve: false
+    economy:
+      use: false
+      prices:
+        claim: 100.0
+        sell: 75.0
+        merge: 100.0
+    home:
+      allow-nonmembers: false
+      default: side
+    world:
+      border: false
+      gamemode: creative
+      max_height: 256
+    schematic:
+      file: 'null'
+      on_claim: false
+      specify_on_claim: false
+    limits:
+      max-members: 128
+    chat:
+      enabled: false
+    flags: {}
+    natural_mob_spawning: false
+  plotmetest:
+    road:
+      width: 0
+      height: 0
+    plot:
+      size: 0
+      floor:
+      - null
+      filling:
+      - null
+    wall: {}

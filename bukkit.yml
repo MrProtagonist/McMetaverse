@@ -56,10 +56,10 @@ auto-updater:
   suggest-channels: true
 worlds:
   sandbox:
-    generator: PlotMe-DefaultGenerator
+    generator: PlotSquared
   Creative:
-    generator: PlotMe-DefaultGenerator
+    generator: PlotSquared
   contest:
-    generator: PlotMe-DefaultGenerator
+    generator: PlotSquared
   plotmetest:
-    generator: PlotMe-DefaultGenerator
+    generator: PlotSquared

@@ -5,7 +5,7 @@ worlds:
     alias: ''
     color: WHITE
     style: NORMAL
-    pvp: 'false'
+    pvp: 'true'
     scale: '1.0'
     respawnWorld: ''
     allowWeather: 'true'
@@ -93,7 +93,7 @@ worlds:
   sandbox:
     ==: MVWorld
     hidden: 'false'
-    alias: ''
+    alias: sandbox
     color: WHITE
     style: NORMAL
     pvp: 'true'
@@ -135,7 +135,7 @@ worlds:
     worldBlacklist: []
     environment: NORMAL
     seed: '-78517947212430546'
-    generator: PlotMe-DefaultGenerator
+    generator: PlotSquared
     playerLimit: '-1'
     allowFlight: 'true'
   resource:
@@ -176,13 +176,13 @@ worlds:
       yaw: 0.0
       pitch: 0.0
       z: 0.0
-      y: 84.0
+      y: 69.0
       x: 0.0
     autoLoad: 'true'
     bedRespawn: 'true'
     worldBlacklist: []
     environment: NORMAL
-    seed: '-4137337138580148144'
+    seed: '-7500518075700538600'
     generator: 'null'
     playerLimit: '-1'
     allowFlight: 'true'
@@ -231,7 +231,7 @@ worlds:
     worldBlacklist: []
     environment: NORMAL
     seed: '-2022587122827011182'
-    generator: PlotMe-DefaultGenerator
+    generator: PlotSquared
     playerLimit: '-1'
     allowFlight: 'true'
   Never_End:
