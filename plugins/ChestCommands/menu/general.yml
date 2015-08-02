@@ -315,6 +315,16 @@ divider16:
   POSITION-X: 4
   POSITION-Y: 4
   DATA-VALUE: 0
+ittwitsshop:
+  COMMAND: 'shopwarp 31'
+  NAME: '&d[p] &ait_twits Atlantic Brewery &d[p]'
+  LORE:
+    - '&f&oPotions at a cheap price.'
+  ID: 379
+  KEEP-OPEN: false
+  POSITION-X: 5
+  POSITION-Y: 4
+  DATA-VALUE: 0
 divider17:
   NAME: ''
   ID: 160
