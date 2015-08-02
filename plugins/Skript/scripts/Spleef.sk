@@ -181,7 +181,7 @@ on script load:
 	set {spleef.blocked} to false
 command /startspleef:
 	trigger:
-		if (spleef.players} is greater than or equal to 2:
+		if (spleef.players} is greater than 1:
 			if {spleef.blocked} is not set:
 				set {spleef.blocked} to false
 			{spleef.blocked} is false
