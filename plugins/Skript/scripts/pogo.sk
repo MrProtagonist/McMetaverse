@@ -35,6 +35,11 @@ command /joinpogo:
 		loop all players:
 			{pogo.%loop-player%.playing} is set
 			send "&f[&bPogo&f] &ePlayers ready: &f%{pogo.players}%" to loop-player
+on command:
+	command is not "leavepogo"
+	if {pogo.%player%.playing} is true:
+		message "&e&oYou can't use that command while playing &b&oPogo&e&o, to leave &b&oPogo&e&o type /leavepogo"
+		cancel event
 command /leavepogo:
 	trigger:
 		{pogo.%player%.playing} is true
