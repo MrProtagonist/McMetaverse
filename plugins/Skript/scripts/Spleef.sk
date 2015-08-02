@@ -245,10 +245,6 @@ command /debugspleef:
 # #
 	
 	
-on pickup of snowball:
-	trigger:
-		if {spleef.%player%.playing} is true:
-			cancel event
 on break:
 	{spleef.%player%.playing} or {spleef.%player%.spectating} is true
 	block is not snow:
