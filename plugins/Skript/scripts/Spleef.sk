@@ -214,6 +214,8 @@ command /startspleef:
 				send "&b&o&lSpleef has begun!." to loop-player
 			set {spleef.breakable} to true
 			set {spleef.countdown} to false
+		else:
+			message "&a&oYou need 2 or more players to start Spleef!"
 command /rs:
 	permission: spleef.reset
 	trigger:
