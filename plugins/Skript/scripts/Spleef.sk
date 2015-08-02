@@ -98,7 +98,7 @@ on death of a player:
 	clear the inventory of the player
 	set death message to "&a&o%player% &6&ois disqualified."
 	if {spleef.running} is true:
-		if {spleef.players} is equal to or smaller than 1:
+		if {spleef.players} is equal to 1:
 			loop all players:
 				if {spleef.%loop-player%.spectating} is true:
 					set {spleef.%loop-player%.spectating} to false
@@ -181,7 +181,7 @@ on script load:
 	set {spleef.blocked} to false
 command /startspleef:
 	trigger:
-		if {spleef.players} is greater than 0:
+		if {spleef.players} is greater than 1:
 			if {spleef.blocked} is not set:
 				set {spleef.blocked} to false
 			{spleef.blocked} is false
@@ -275,7 +275,7 @@ on disconnect:
 	execute console command "rg removemember Spleef %player% -w Metacurse"
 	set quit message to "&a&o%player% &6&oquit and is disqualified."
 	if {spleef.running} is true:
-		if {spleef.players} is equal to or smaller than 1:
+		if {spleef.players} is equal to 1:
 			loop all players:
 				{spleef.%loop-player%.playing} is true
 				set {spleef.%loop-player%.playing} to false
