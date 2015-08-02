@@ -126,7 +126,7 @@ seasoned:
     - 'Set 7 &bhomes'
     - '4 extra &4health hearts'
     - 'Scavenger saves items on death'
-    - 'Claim up to 3 plots in the &a&o/sandbox&a&o world with &a&o/plotme auto'
+    - 'Claim up to 3 plots in the &a&o/sandbox&a&o world with &a&o/plotauto'
     - 'Use &a&o/top&r&7 to jump to the highest safe surface'
     - 'Format signs with &4c&6o&el&ao&br&5s&7,&r &lbold&r&7, &oitalics&r'
     - 'Use &a&o/vc&r&7 to set up to 4 Virtual chests.'
@@ -145,7 +145,7 @@ noble:
     - '6 extra &4health hearts'
     - 'Format &a&o/suffix&r&7 with &4c&6o&el&ao&br&5s&7,&r &lbold&r&7, &oitalics&r'
     - 'Use &a&o/hat&r&7 to wear the item in your hand as a hat.'
-    - 'Use &a&o/bottle max&r&7 to store all your xp in an empty bottle.'
+    - 'Use &a&o/bottle max&r&7 to store all your xp in a bottle.'
     - 'Use &a&o/vc&r&7 to set up to 6 Virtual chests.'
   ID: 41
   KEEP-OPEN: false
