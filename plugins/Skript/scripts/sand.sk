@@ -86,6 +86,9 @@ on damage:
 		cancel event
 on death:
 	if {sandstorm.%player%.playing} is true:
+		execute console command "manuaddp %player% essentials.tptoggle"
+		execute console command "sudo %player% tptoggle"
+		execute console command "manudelp %player% essentials.tptoggle"
 		set {death} to difference between {sandstorm.started} and now
 		set death message to "&e%player% was crushed by the &6&oSand&c&oStorm&e after %{death}%."
 		subtract 1 from {sandstorm.players}
@@ -127,9 +130,6 @@ on respawn:
 	{sandstorm.%player%.spectating} is true
 	teleport player to {sandstorm.lobby}
 	teleport player to {sandstorm.lobby}
-	execute console command "manuaddp %player% essentials.tptoggle"
-	execute console command "sudo %player% tptoggle"
-	execute console command "manudelp %player% essentials.tptoggle"
 	if {sandstorm.going} is false:
 		set {sandstorm.%player%.spectating} to false
 on quit:
