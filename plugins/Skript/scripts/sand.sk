@@ -49,6 +49,9 @@ command /startstorm:
 			set {sandstorm.%loop-player%.playing} to true
 			add 1 to {sandstorm.players}
 			teleport loop-player to {sandstorm.spawn}
+			execute console command "manuaddp %loop-player% essentials.tptoggle"
+			execute console command "sudo %loop-player% tptoggle"
+			execute console command "manudelp %loop-player% essentials.tptoggle"
 		set {sandstorm.started} to now
 		set {sandstorm.going} to true
 		set {sandstorm.countdown} to false
@@ -124,6 +127,9 @@ on respawn:
 	{sandstorm.%player%.spectating} is true
 	teleport player to {sandstorm.lobby}
 	teleport player to {sandstorm.lobby}
+	execute console command "manuaddp %player% essentials.tptoggle"
+	execute console command "sudo %player% tptoggle"
+	execute console command "manudelp %player% essentials.tptoggle"
 	if {sandstorm.going} is false:
 		set {sandstorm.%player%.spectating} to false
 on quit:
@@ -162,13 +168,14 @@ on join:
 		teleport player to {spawn}
 		teleport player to {spawn}
 on command:
-	if {sandstorm.%player%.playing} is true:
-		cancel event
-		message "&cNo commands allowed while you are playing &6&oSand&c&oStorm&c!"
-	if {sandstorm.%player%.spectating} is true:
-		command is not "/leavesandstorm"
-		cancel event
-		message "&cNo commands allowed while you are playing &6&oSand&c&oStorm&c!"
+	if {sandstorm.going} is true:
+		if {sandstorm.%player%.playing} is true:
+			cancel event
+			message "&cNo commands allowed while you are playing &6&oSand&c&oStorm&c!"
+		if {sandstorm.%player%.spectating} is true:
+			command is not "/leavesandstorm"
+			cancel event
+			message "&cNo commands allowed while you are playing &6&oSand&c&oStorm&c!"
 command /scansand:
 	permission: sk.sandstorm
 	trigger:
