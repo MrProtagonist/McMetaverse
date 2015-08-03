@@ -215,9 +215,9 @@ command /startspleef:
 					send "&b&o&lSpleef has begun!." to loop-player
 				else:
 					message "&oSpleef has been canceled because not enough players were ingame"
-					teleport loop-player to {spawn}
-					teleport loop-player to {spawn}
-					execute console command "rs"
+					if {spleef.%loop-player%.playing} is true:
+						teleport loop-player to {spawn}
+						execute console command "rs"
 			set {spleef.breakable} to true
 			set {spleef.countdown} to false
 		else:
