@@ -75,7 +75,7 @@ GriefPrevention:
       Minigame: true
       Hyperverse_nether: true
       Vanilla: true
-    ProtectFreshSpawns: true
+    ProtectFreshSpawns: false
     PunishLogout: false
     CombatTimeoutSeconds: 15
     AllowCombatItemDrop: false
