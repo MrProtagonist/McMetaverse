@@ -209,9 +209,15 @@ command /startspleef:
 			set {spleef.running} to true
 			wait 5 second
 			loop all players:
-				{spleef.%loop-player%.playing} is true
-				execute console command "rg addmember Spleef %loop-player% -w Metacurse"
-				send "&b&o&lSpleef has begun!." to loop-player
+				if {spleef.players} is greater than 1:
+					{spleef.%loop-player%.playing} is true
+					execute console command "rg addmember Spleef %loop-player% -w Metacurse"
+					send "&b&o&lSpleef has begun!." to loop-player
+				else:
+					message "&oSpleef has been canceled because not enough players were ingame"
+					teleport loop-player to {spawn}
+					teleport loop-player to {spawn}
+					execute console command "rs"
 			set {spleef.breakable} to true
 			set {spleef.countdown} to false
 		else:
