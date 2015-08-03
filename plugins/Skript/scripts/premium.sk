@@ -202,33 +202,19 @@ command /name <text>:
 command /lore <integer> <text>:
 	permission: is.premium
 	trigger:
-		if player has permission "essentials.socialspy":
-			if arg 1 is 1:
-				set the 1st line of lore of player's tool to "%colored arg 2%"
-				play "LEVEL_UP" specifically to player with pitch 1
-				message "&aItem lore set successfully!"
-			if arg 1 is 2:
-				set the 2nd line of lore of player's tool to "%colored arg 2%"
-				play "LEVEL_UP" specifically to player with pitch 1
-				message "&aItem lore set successfully!"
-			if arg 1 is 3:
-				set line 3 of lore of player's tool to "%colored arg 2%"
-				play "LEVEL_UP" specifically to player with pitch 1
-				message "&aItem lore set successfully!"
-			if arg 1 is 4:
-				set line 4 of lore of player's tool to "%colored arg 2%"
-				play "LEVEL_UP" specifically to player with pitch 1
-				message "&aItem lore set successfully!"
-			else:
-				message "&cUsage: &a/lore &f<1-4> &aMy lore on my chosen line here!"
+		if lore of player's tool contains "mcMMO Ability Tool":
+			message "&cOi Dont Try That Game"
+			stop
+		if arg-2 is "mcMMO Ability Tool":
+			message "&cSorry but you can't set the lore to that"
 		else:
-			if {day.count.%player%.lore} is not {day.count}:
+			if player has permission "essentials.socialspy":
 				if arg 1 is 1:
 					set the 1st line of lore of player's tool to "%colored arg 2%"
 					play "LEVEL_UP" specifically to player with pitch 1
 					message "&aItem lore set successfully!"
 				if arg 1 is 2:
-					set the 2nd line of lore of player's tool to "%colored arg 2%"
+						set the 2nd line of lore of player's tool to "%colored arg 2%"
 					play "LEVEL_UP" specifically to player with pitch 1
 					message "&aItem lore set successfully!"
 				if arg 1 is 3:
@@ -241,11 +227,31 @@ command /lore <integer> <text>:
 					message "&aItem lore set successfully!"
 				else:
 					message "&cUsage: &a/lore &f<1-4> &aMy lore on my chosen line here!"
-					stop
-				set {day.count.%player%.lore} to {day.count}
 			else:
-				message "&cSorry, you can only use this command once a day. =["
-				stop
+				if {day.count.%player%.lore} is not {day.count}:
+					if arg 1 is 1:
+						set the 1st line of lore of player's tool to "%colored arg 2%"
+						play "LEVEL_UP" specifically to player with pitch 1
+						message "&aItem lore set successfully!"
+					if arg 1 is 2:
+						set the 2nd line of lore of player's tool to "%colored arg 2%"
+						play "LEVEL_UP" specifically to player with pitch 1
+						message "&aItem lore set successfully!"
+					if arg 1 is 3:
+						set line 3 of lore of player's tool to "%colored arg 2%"
+						play "LEVEL_UP" specifically to player with pitch 1
+						message "&aItem lore set successfully!"
+					if arg 1 is 4:
+						set line 4 of lore of player's tool to "%colored arg 2%"
+						play "LEVEL_UP" specifically to player with pitch 1
+						message "&aItem lore set successfully!"
+					else:
+						message "&cUsage: &a/lore &f<1-4> &aMy lore on my chosen line here!"
+						stop
+					set {day.count.%player%.lore} to {day.count}
+				else:
+					message "&cSorry, you can only use this command once a day. =["
+					stop
 			
 command /rename <text>:
 	permission: is.premium
