@@ -217,6 +217,7 @@ command /startspleef:
 					message "&oSpleef has been canceled because not enough players were ingame"
 					if {spleef.%loop-player%.playing} is true:
 						teleport loop-player to {spawn}
+						teleport loop-player to {spawn}
 						execute console command "rs"
 						clear the inventory of loop-player
 			set {spleef.breakable} to true
