@@ -218,6 +218,7 @@ command /startspleef:
 					if {spleef.%loop-player%.playing} is true:
 						teleport loop-player to {spawn}
 						execute console command "rs"
+						clear the inventory of loop-player
 			set {spleef.breakable} to true
 			set {spleef.countdown} to false
 		else:
