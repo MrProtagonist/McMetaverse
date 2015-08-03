@@ -317,7 +317,7 @@ divider16:
   DATA-VALUE: 0
 ittwitsshop:
   COMMAND: 'shopwarp 31'
-  NAME: '&d[p] &ait_twits Atlantic Brewery &d[p]'
+  NAME: '&d[p] &aIt_twits Atlantic Brewery &d[p]'
   LORE:
     - '&f&oPotions at a cheap price.'
   ID: 379
