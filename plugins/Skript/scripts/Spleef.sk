@@ -214,8 +214,8 @@ command /startspleef:
 					execute console command "rg addmember Spleef %loop-player% -w Metacurse"
 					send "&b&o&lSpleef has begun!." to loop-player
 				else:
-					message "&oSpleef has been canceled because not enough players were ingame"
 					if {spleef.%loop-player%.playing} is true:
+						send "&b&oSpleef has been canceled because not enough players were ingame." to loop-player
 						teleport loop-player to {spawn}
 						teleport loop-player to {spawn}
 						execute console command "rs"
