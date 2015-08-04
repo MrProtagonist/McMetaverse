@@ -35,7 +35,8 @@ groups:
       suffix: ''
   Moderator:
     default: false
-    permissions: []
+    permissions:
+    - mcmmo.chat.adminchat
     inheritance:
     - builder
     - g:groupmanager_moderator
