@@ -1,7 +1,7 @@
 script options:
     $ developer mode
 on command:
-    player does not have permission "essentials.socialspy"
+    player does not have permission "essentials.socialspy":
         command contains "sandbox" or "contest" or "frolf"
         cancel event
 command /separate [<player>] [<player>]:
@@ -15,5 +15,7 @@ command /separate [<player>] [<player>]:
                 else:
                     make %arg 1% say "/ignore %arg 2%"
                     make %arg 2% say "/ignore %arg 1%"
+            else:
+                message "&cType in the names of the players you want to have ignoring each other."
         else:
             message "&cType in the names of the players you want to have ignoring each other."
