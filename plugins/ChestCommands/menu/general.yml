@@ -332,6 +332,16 @@ divider17:
   POSITION-X: 6
   POSITION-Y: 4
   DATA-VALUE: 0
+sirkittysshop:
+  COMMAND: 'shopwarp 32'
+  NAME: '&d[p] &aSirKittys Mystical General Store'
+  LORE:
+    - '&f&oWhimsical Store of Generalness'
+  ID: 327
+  KEEP-OPEN: false
+  POSITION-X: 7
+  POSITION-Y: 4
+  DATA-VALUE: 0
 divider18:
   NAME: ''
   ID: 160
