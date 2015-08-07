@@ -72,6 +72,10 @@ command /biome:
 		else:
 			message "&cThis is only available in the resource world."
 		
+on command:
+	if command is "warp" or "nav":
+		message "&f&oYou can't use those commands in resource!"
+		cancel event
 on break:
 	player does not have the permission "is.op"
 	player is in world "resource"
