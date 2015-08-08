@@ -378,4 +378,4 @@ ComplexConfig:
     VaultCost: 10.0
     Chance: 100
     MustBeKilled: false
-ChangedMobSpawnersUseEggData: true
+ChangedMobSpawnersUseEggData: false
