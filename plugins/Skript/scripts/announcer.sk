@@ -20,7 +20,7 @@ variables:
 	{randommessage::16} = "Did you know you can browse houses and properties for sale by using the &a&o/realestate&e&o menu?"
 	{randommessage::17} = "Did you know we have a &a&o/bank&e&o with daily interest? Use &a&o/deposit&e&o and &a&o/withdraw&e&o to manage your bank account!"
 	{randommessage::18} = "Have you fallen in love? Want to settle down? Craft a wedding ring and propose to your love! Recipe at the chapel in &a&o/spawn&e&o."
-	{randommessage::19} = "Want to safely trade with another player? Type &a&o/trade <username> &rand have them accept with &a&o/trade accept &rfor a completely safe trading interface."
+	{randommessage::19} = "Want to safely trade with another player? Type &a&o/trade <username> &r&e&oand have them accept with&r &a&o/trade accept &r&e&ofor a completely safe trading interface."
 	{randommessage::20} = "Rumor has it there is a hidden worship temple for Notch at spawn which gives you daily rewards."
 	{randommessage::21} = "Watch out for rare Infernal Mobs! They spawn randomly, but can kill you if you aren't careful!"
 	{randommessage::22} = "Be kind to others and you may be taken to the Prize Room!"
