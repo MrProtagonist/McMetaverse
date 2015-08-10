@@ -1,4 +1,4 @@
-﻿script options:
+script options:
     $ developer mode
 on chat:
 	loop all players:
@@ -16,29 +16,47 @@ on join:
 		execute console command "tm msg %player% &6Welcome back<nl>%player%"
 		wait 5 real seconds
 		execute console command "tm msg %player% &bWe missed you...<nl>&c♥"
-		
+on script load:
+	if {today} is not set:
+		set {today} to 0
+	else:
+		add 1 to {today}
 on join:
 	set {newest.player} to player
+	{joined.%player%.day} is not set:
+		set {joined.%player%.day} to 0
 	{welcomed.%player%} is not set:
 		set {welcomed.%player%} to "Notch"
 	set {welcoming} to player
 	wait 60 real seconds
+	set {joined.%player%.day} to {today}
+	{welcoming} is player
 	delete {welcoming}
 on chat:
 	{welcoming} is set
 	{welcoming} is not player
-	message contains "welcome" or "greetings" or "hello" or "wb" or "whale cum" or "hey" or "sup" or "hi " or "G'day" or "whalecum" or "yo" or "hoi"
-	if {welcoming} is set:
+	if message contains "welcome" or "greetings" or "hello" or "whale cum" or "hey" or "sup" or "hi " or "G'day" or "whalecum" or "yo" or "hola":
+		if {welcoming} is set:
+			{welcoming} is not {welcomed.%player%}
+			set {welcomed.%player%} to {welcoming}
+			wait 1 real second
+			message "&f[&aSERVER&f] &e&oThank you for welcoming &6&o%{welcoming}%&e&o! You are a good neighbor!"
+			play "LEVEL_UP" specifically to player with pitch 1
+			execute console command "eco give %player% 25"
+		else if {welcomed.%player%.%{newest.player}%} is not set:
+			set {welcomed.%player%.%{newest.player}%} to true
+			add player to {welcome.party::*}
+	if message is "wb":
 		{welcoming} is not {welcomed.%player%}
 		set {welcomed.%player%} to {welcoming}
 		wait 1 real second
-		message "&f[&aSERVER&f] &e&oThank you for welcoming &6&o%{welcoming}%&e&o! You are a good neighbor!"
-		play "LEVEL_UP" specifically to player with pitch 1
-		execute console command "eco give %player% 25"
-	else if {welcomed.%player%.%{newest.player}%} is not set:
-		set {welcomed.%player%.%{newest.player}%} to true
-		add player to {welcome.party::*}
-		
+		if {joined.%{welcoming}%.day} is not {today}:
+			message "&f[&aSERVER&f] &c&oIt is rude to say that to players who have not been here yet today! No money for you!"
+			stop
+		else:
+			message "&f[&aSERVER&f] &e&oThank you for welcoming &6&o%{welcoming}%&e&o! You are a good neighbor!"
+			play "LEVEL_UP" specifically to player with pitch 1
+			execute console command "eco give %player% 25"
 
 variables:
 	{wchat::-.-} = "ಠ_ಠ"
@@ -106,6 +124,13 @@ on first join:
 		remove {welcome.party::%loop-index%} from {welcome.party::*}
 		set {welcomed.%{welcome.party::%loop-index%}%} to false
 		
+# Permanent Blockers 
+
+on command "clear":
+	message "&e&oPlease use &a&o/ci &r&e&oto clear your inventory, or use &a&o/mail clear &r&e&oto clear your mail."
+	cancel event
+	
+# Useful Commands
 
 # Clear Chat
 command /cc:
