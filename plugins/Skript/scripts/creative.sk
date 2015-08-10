@@ -43,7 +43,13 @@ command /contest:
 				stop
 			message "&cSorry, you can't go here unless a contest is going!"
 			stop
-on command "/plots" or "/plot claim" or "/plot auto":
+on command "vc":
+	if player is in world "contest" or "sandbox":
+		player does not have the permissions "essentials.socialspy"
+		message "&cSorry, you can't do that!"
+		cancel event
+		stop
+on command "plots" or "plot claim" or "plot auto":
 	if player is in world "contest":
 		player does not have the permission "essentials.socialspy"
 		message "&cSorry, you can't do that!"
