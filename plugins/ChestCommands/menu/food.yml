@@ -107,6 +107,15 @@ divider4:
   POSITION-X: 7
   POSITION-Y: 1
   DATA-VALUE: 0
+nitrogengaming1sshop:
+  COMMAND: 'shopwarp 34'
+  NAME: '&d[p] &aGriffith Farmers Market &d[p]'
+  LORE:
+    - '&f&oa bigger farmers market with unbeatable prices.'
+  ID: 393
+  KEEP-OPEN: false
+  POSITION-X: 8
+  POSITION-Y: 1
 divider5:
   NAME: ''
   ID: 160
