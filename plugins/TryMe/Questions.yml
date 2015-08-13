@@ -15,18 +15,18 @@ Data:
       - Notch
       - Markus Persson
     '3':
-      Question: '&6Who is most known for Minecraft?'
+      Question: '&6Who is most known for creating Minecraft?'
       Answers:
       - Notch
     '4':
-      Question: '&6What year was Minecraft released in?'
+      Question: '&6In what year was Minecraft released?'
       Answers:
       - '2009'
       - 2009 may
       - 2009 may 17
       - 2009/05/17
     '5':
-      Question: '&6What company created Notch?'
+      Question: '&6What company did Notch created?'
       Answers:
       - mojang
     '6':
