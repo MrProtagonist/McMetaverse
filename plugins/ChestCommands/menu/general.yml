@@ -334,7 +334,7 @@ divider17:
   DATA-VALUE: 0
 sirkittysshop:
   COMMAND: 'shopwarp 32'
-  NAME: '&d[p] &aSirKittys Mystical General Store'
+  NAME: '&d[p] &aSirKittys Mystical General Store &d[p]'
   LORE:
     - '&f&oWhimsical Store of Generalness'
   ID: 327
@@ -347,6 +347,17 @@ divider18:
   ID: 160
   KEEP-OPEN: true
   POSITION-X: 8
+  POSITION-Y: 4
+  DATA-VALUE: 0
+desdes1971sshop:
+  COMMAND: 'shopwarp 35'
+  NAME: '&d[p] &aGloW_ShoP &d[p]'
+  LORE:
+	- '&f&oHeyHey can't find what you're looking for?'
+	- '&f&oCome to glow shop!'
+  ID: 89
+  KEEP-OPEN: false
+  POSITION-X: 9
   POSITION-Y: 4
   DATA-VALUE: 0
 divider0:
