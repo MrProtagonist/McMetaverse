@@ -353,8 +353,8 @@ desdes1971sshop:
   COMMAND: 'shopwarp 35'
   NAME: '&d[p] &aGloW_ShoP &d[p]'
   LORE:
-	- '&f&oHeyHey can't find what you're looking for?'
-	- '&f&oCome to glow shop!'
+    - '&f&oHeyHey cannot find what you are looking for?'
+    - '&f&oCome to glow shop!'
   ID: 89
   KEEP-OPEN: false
   POSITION-X: 9
