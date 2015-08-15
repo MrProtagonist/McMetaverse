@@ -104,24 +104,25 @@ command /collectible:
 	permission: skript.collectible
 	trigger:
 		player is holding air:
-			give player 64 collectible
+			give player 64 sandstone named "&6&oCollectible Block" with lore "&ksecret lore that no one will ever guess"
 			message "&a&oCollectible block given."
-			set name of tool to "&6&oCollectible Block"
 		else:
 			message "Must be holding nothing to get this block."
-on place:
-	event-block is collectible
+on place of sandstone:
+	name of player's tool is "&6&oCollectible Block"
+	lore of player's tool is "&ksecret lore that no one will ever guess"
+	set block at location of event-block to collectible
 	wait 1 tick
 	player is holding air
-	give player 64 collectible
+	give player 64 sandstone named "&6&oCollectible Block" with lore "&ksecret lore that no one will ever guess"
 	message "&a&o&lRefueled."
 on left click on chest:
-	player is holding collectible
-	cancel event
+	player is holding sandstone named "&6&oCollectible Block"
+	lore of player's tool is "&ksecret lore that no one will ever guess"
 	message "&c&oYou can not sell this block!"
-on tool change:
-	if tool will be collectible:
-		set name of tool to "&6&oCollectible Block"
-on drop of collectible:
 	cancel event
+on drop of sandstone:
+	name of event-item is "&6&oCollectible Block"
+	lore of event-item is "&ksecret lore that no one will ever guess"
 	message "&c&oNo giving or selling this block!"
+	cancel event
