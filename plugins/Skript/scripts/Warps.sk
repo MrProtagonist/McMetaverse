@@ -91,7 +91,7 @@ command /sandbox:
 		wait 38 ticks
 		message "&a&oYou are now in The Sandbox."
 		teleport player to {sandbox}
-on command "/plot claim" or "/plot auto" or "/plots":
+on command "plot claim" or "plot auto" or "plots":
 	player is in the world "sandbox"
 	if {rank.%player%} is less than 5:
 		message "&cYou must be the Seasoned rank to claim a plot here!"
