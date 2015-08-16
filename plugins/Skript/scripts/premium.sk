@@ -210,11 +210,11 @@ command /lore <integer> <text>:
 		else:
 			if player has permission "essentials.socialspy":
 				if arg 1 is 1:
-					set the 1st line of lore of player's tool to "%colored arg 2%"
+					set line 1 of lore of player's tool to "%colored arg 2%"
 					play "LEVEL_UP" specifically to player with pitch 1
 					message "&aItem lore set successfully!"
 				if arg 1 is 2:
-						set the 2nd line of lore of player's tool to "%colored arg 2%"
+					set line 2 of lore of player's tool to "%colored arg 2%"
 					play "LEVEL_UP" specifically to player with pitch 1
 					message "&aItem lore set successfully!"
 				if arg 1 is 3:
