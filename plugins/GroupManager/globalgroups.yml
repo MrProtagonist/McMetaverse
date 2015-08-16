@@ -105,7 +105,6 @@ groups:
     - essentials.helpop
     - essentials.list
     - essentials.motd
-    - essentials.msg
     - essentials.rules
     - essentials.spawn
     - essentials.jail.allow.help
