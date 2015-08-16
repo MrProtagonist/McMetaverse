@@ -20,6 +20,7 @@ groups:
     - essentials.gm.self
     - essentials.home
     - essentials.itemdb
+    - essentials.msg
     - plotme.limit.3
     - plotme.use
     - plotme.use.add
