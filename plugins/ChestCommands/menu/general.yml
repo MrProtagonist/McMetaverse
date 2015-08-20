@@ -367,6 +367,17 @@ divider0:
   POSITION-X: 1
   POSITION-Y: 5
   DATA-VALUE: 0
+  
+captkrunkshop:
+  COMMAND: 'shopwarp 36'
+  NAME: '&d[p] &aCaptnKrunks Walmart Shop &d[p]'
+  LORE:
+    - '&f&oNeed Walmart priced goods? We got what you need!'
+  ID: 388
+  KEEP-OPEN: false
+  POSITION-X: 2
+  POSITION-Y: 5
+  DATA-VALUE: 0 
 divider19:
   NAME: ''
   ID: 160
