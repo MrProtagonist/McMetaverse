@@ -133,3 +133,14 @@ on damage:
 		cancel event
 	if {locked.%attacker%} is true:
 		cancel event
+command /logout:
+	trigger:
+		if {setpin.%player%} is false or {setpin.%player%} is not set:
+			message "&e&oYou have not set a server pin. You can make one with &a&o/setpin&e&o."
+			stop
+		set {locked.%player%} to true
+		set {locked.%player%.pos} to location of player
+		apply jump boost -5 to the player for 100000000 hours
+		wait 1 tick
+		set the player's walk speed to 0.01
+		message "&c&oSuccessfully Logged Out!"
