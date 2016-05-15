@@ -1,5 +1,5 @@
-script options:
-    $ developer mode
+#script options:
+#    $ developer mode
 on script load:
 	if {bank.day} is not set:
 		set {bank.day} to 0
@@ -22,7 +22,7 @@ on rightclick on librarian:
 	replace all "$" with "" in {_bal}
 	set {_temp.number} to {_bal} parsed as number
 	send "&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-" to player
-	send json of "&f[ &bWithdraw All &f(&a$%{bank.vault::%UUID of player%}%&f) &f]" run "/withdraw %{bank.vault::%UUID of player%}%" to player
+	send json of "&f[ &bWithdraw All &f(&a$%{bank.vault::%UUID of player%}%&f) &f]" run "/withdraw %{bank.vault::%UUID of player%}-0.01%" to player
 	send json of "&f[ &bWithdraw &a$10,000 &f]" run "/withdraw 10000" to player
 	send json of "&f[ &bWithdraw &a$1,000 &f]" run "/withdraw 1000" to player
 	send json of "&f[ &bWithdraw &a$100 &f]" run "/withdraw 100" to player
@@ -58,7 +58,7 @@ command /setbank:
 	trigger:
 		set {bank} to player's location
 		message "&aDone!"
-			
+
 command /deposit <number>:
 	trigger:
 		if {banking.%player%} is true:
@@ -113,19 +113,28 @@ command /withdraw <number>:
 				message "&cIncorrect usage. Try doing &a/deposit (amount)"
 		else:
 			message "&cYou must use a banker in the bank &a/spawn&c."
-command /bank:
+command /bank <offlineplayer=%player%>:
 	trigger:
 		if {bank.vault::%UUID of player%} is not set:
 			set {bank.vault::%UUID of player%} to 0
-		message "&6Bank Account Total: &a$%{bank.vault::%UUID of player%}%"
-		message "&6Total Interest Earned: &a$%{bank.interest::%UUID of player%}%"
-
+		if {bank.vault::%UUID of arg%} is set:
+			if argument is not player:
+				if player has permission "essentials.socialspy":
+					message "&6Bank Account Total: &a$%{bank.vault::%UUID of arg%}%"
+					message "&6Total Interest Earned: &a$%{bank.interest::%UUID of arg%}%"
+				else:
+					message "&cCan't view another player's bank account!"
+			else:
+				message "&6Bank Account Total: &a$%{bank.vault::%UUID of arg%}%"
+				message "&6Total Interest Earned: &a$%{bank.interest::%UUID of arg%}%"
+		else:
+			message "&cError: &4Player does not have a Bank Account yet!"
 command /debugbank:
 	permission: is.op
 	trigger:
 		loop {bank.vault::*}:
 			message "%{accounts.%loop-index%::1}% - %loop-value%"
 
-on command "bal" or "balance" or "money":
+on command "bal" or "/balance" or "money":
 	wait 2 ticks
-	message "&6Bank Account Total: &a$%{bank.vault::%UUID of player%}%"
+	message "&6To check your bank total, execute &a&o/bank&r&6."

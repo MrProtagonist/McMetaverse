@@ -1,0 +1,117 @@
+on script load:
+	set {cannon1.countdown} to false
+	set {cannon2.countdown} to false
+	set {cannon3.countdown} to false
+	set {cannon4.countdown} to false
+command /testcannon:
+	trigger:
+		player is op
+		spawn 1 primed tnt 8 meter in front of player
+command /startbilge:
+	trigger:
+		player is op
+		set {bilge.%player%} to true
+		message "Started"
+command /stopbilge:
+	trigger:
+		player is op
+		loop {bilge.broken.blocks::*}:
+			set block at loop-value to stone
+		delete {bilge.broken.blocks::*}
+		set {bilge.%player%} to false
+		message "Stopped"
+command /testmsg:
+	trigger:
+		execute console command "tm msg %player% &bWe missed you...<nl>&c♥"
+on break:
+	if {bilge.%player%} is true:
+		add location of block to {bilge.broken.blocks::*}
+command /cannon <integer>:
+	trigger:
+		if arg is 1:
+			if {cannon1.countdown} is not true:
+				if player has permission "cannon.test":
+					set {cannon1.countdown} to true
+					spawn 15 primed tnt at {cannon1}
+					wait 3.5 real seconds
+					spawn 1 primed tnt 1 meter above and 1 meter in front of {cannon1}
+					wait 5 real seconds
+					set {cannon1.countdown} to false
+				else:
+					message "&cYarrr! The battle hasn't started yet matey!"
+			else:
+				message "&cYarrr! Yer cannon be reloadin' matey!"
+		else if arg is 2:
+			if {cannon2.countdown} is not true:
+				if player has permission "cannon.test":
+					set {cannon2.countdown} to true
+					spawn 15 primed tnt at {cannon2}
+					wait 3.5 real seconds
+					spawn 1 primed tnt 1 meter above and 1 meter in front of {cannon2}
+					wait 5 real seconds
+					set {cannon2.countdown} to false
+				else:
+					message "&cYarrr! The battle hasn't started yet matey!"
+			else:
+				message "&cYarrr! Yer cannon be reloadin' matey!"
+		else if arg is 3:
+			if {cannon3.countdown} is not true:
+				if player has permission "cannon.test":
+					set {cannon3.countdown} to true
+					spawn 15 primed tnt at {cannon3}
+					wait 3.5 real seconds
+					spawn 1 primed tnt 1 meter above and 1 meter in front of {cannon3}
+					wait 5 real seconds
+					set {cannon3.countdown} to false
+				else:
+					message "&cYarrr! The battle hasn't started yet matey!"
+			else:
+				message "&cYarrr! Yer cannon be reloadin' matey!"
+		else if arg is 4:
+			if {cannon4.countdown} is not true:
+				if player has permission "cannon.test":
+					set {cannon4.countdown} to true
+					spawn 15 primed tnt at {cannon4}
+					wait 3.5 real seconds
+					spawn 1 primed tnt 1 meter above and 1 meter in front of {cannon4}
+					wait 5 real seconds
+					set {cannon4.countdown} to false
+				else:
+					message "&cYarrr! The battle hasn't started yet matey!"
+			else:
+				message "&cYarrr! Yer cannon be reloadin' matey!"
+		else:
+			message "There aren't enough cannons for that."
+command /setcannon <integer>:
+	trigger:
+		if player has permission "cannon.test":
+			if arg is 1:
+				set {cannon1} to location of player
+				message "&cCannon 1 SET!"
+			else if arg is 2:
+				set {cannon2} to location of player
+				message "&cCannon 2 SET!"
+			else if arg is 3:
+				set {cannon3} to location of player
+				message "&cCannon 3 SET!"
+			else if arg is 4:
+				set {cannon4} to location of player
+				message "&cCannon 4 SET!"
+#
+#
+#
+on shoot:
+	if shooter has permission "is.op":
+		if "%projectile%" contains "potion":
+			set {potion.explode} to true
+on projectile hit:
+	{potion.explode} is true
+	if "%projectile%" contains "potion":
+		create explosion of force 1 at event-location
+		wait 2 ticks
+		set {potion.explode} to false
+command /explode:
+	trigger:
+		player is an op
+		create explosion of force 1 above player
+		set {potion.explosion} to false

@@ -1,9 +1,14 @@
 MarriedStatus: Married
-MarriedTo: Lucky_shots69
-Name: DoctorKamillya
-MarriedToUUID: 5980d96b0aa341c29428c484ffbc4b74
-MarriedBy: MrProtagonist
-MarriedDay: 2015-04-06T00:41:20.269Z
-MarriedHome: ''
+MarriedTo: kiekieko
+Name: RosyAmber
+MarriedToUUID: d5c574b687f7412c822f24be8e9a9b5c
+MarriedBy: xNillax
+MarriedDay: 2015-12-25T23:00:52.973Z
+MarriedHome:
+  location:
+    World: Metacurse
+    X: -5074.689436591196
+    Y: 63.0
+    Z: 5076.035331158529
 PvP: false
 ShareBackpack: false

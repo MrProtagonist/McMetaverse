@@ -40,6 +40,7 @@ Database:
     Database: minecraft
     User: minecraft
     Password: minecraft
+    MaxConnections: 4
   Tables:
     User: marry_players
     Home: marry_home
@@ -57,6 +58,7 @@ Kiss:
 Misc:
   Metrics: true
   AutoUpdate: true
+  DisableV2Info: false
 Range:
   Marry: 25.0
   Kiss: 2.0
@@ -70,4 +72,13 @@ Teleport:
   Delay: false
   DelayTime: 3
   BlacklistedWorlds: []
-Version: 16
+  CheckSafety: true
+Version: 23
+AllowSelfDivorce: auto
+Suffix:
+  Enable: false
+  String: ' (<heart><partnername><heart>)'
+AllowSurnameColors: false
+AllowedSurnameCharacters: A-Za-z
+DelayMessageForJoiningPlayer: 0
+UUID_Type: auto

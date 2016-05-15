@@ -9,56 +9,6 @@
 # Local group inheritances define your promotion tree when using 'manpromote/mandemote'
 
 groups:
-  Default:
-    default: true
-    permissions:
-    - -bukkit.command.kill
-    - -autoitem.replaceon.place
-    - essentials.gamemode
-    - essentials.gamemode.self
-    - essentials.gm
-    - essentials.gm.self
-    - essentials.home
-    - essentials.itemdb
-    - essentials.msg
-    - plotme.limit.3
-    - plotme.use
-    - plotme.use.add
-    - voxelsniper.*
-    - voxelsniper.sniper
-    - vsr.plotme
-    - worldedit.*
-    inheritance:
-    - g:groupmanager_default
-    - g:bukkit_default
-    - g:essentials_default
-    - g:towny_default
-    info:
-      prefix: '&f[&6Sandbox&f] &f'
-      build: false
-      suffix: ''
-  Owner:
-    default: false
-    permissions:
-    - -vanish.*
-    - '*'
-    inheritance:
-    - admin
-    info:
-      prefix: '&4'
-      build: true
-      suffix: ''
-  Builder:
-    default: false
-    permissions: []
-    inheritance:
-    - default
-    - g:essentials_builder
-    - g:towny_builder
-    info:
-      prefix: '&2'
-      build: true
-      suffix: ''
   Moderator:
     default: false
     permissions:
@@ -121,8 +71,78 @@ groups:
     inheritance:
     - default
     info:
-      prefix: '&r&f[&9MOD&r] '
       build: true
+      prefix: '&r&f[&9MOD&r] '
+      suffix: ''
+  Owner:
+    default: false
+    permissions:
+    - -vanish.*
+    - '*'
+    inheritance:
+    - admin
+    info:
+      build: true
+      prefix: '&4'
+      suffix: ''
+  Builder:
+    default: false
+    permissions: []
+    inheritance:
+    - default
+    - g:essentials_builder
+    - g:towny_builder
+    info:
+      build: true
+      prefix: '&2'
+      suffix: ''
+  Certified:
+    default: false
+    permissions:
+    - plotme.limit.3
+    - plotme.limit.use
+    - plotme.limit.use.add
+    - plots.add
+    - plots.admin.interact.road
+    - plots.auto
+    - plots.chat
+    - plots.claim
+    - plots.clear
+    - plots.comment
+    - plots.delete
+    - plots.deny
+    - plots.home
+    - plots.inbox
+    - plots.info
+    - plots.kick
+    - plots.list
+    - plots.list.*
+    - plots.merge
+    - plots.plot.3
+    - plots.rate
+    - plots.remove
+    - plots.schematic
+    - plots.schematic.*
+    - plots.set
+    - plots.set.alias
+    - plots.set.biome
+    - plots.set.floor
+    - plots.set.home
+    - plots.set.wall
+    - plots.set.wall_filling
+    - plots.tp
+    - plots.trust
+    - plots.unclaim
+    - plots.undeny
+    - plots.unlink
+    - plots.untrust
+    - plots.use
+    - sunny.free
+    inheritance:
+    - default
+    info:
+      build: true
+      prefix: '&f[&6Sandbox&f] &f'
       suffix: ''
   Admin:
     default: false
@@ -135,6 +155,36 @@ groups:
     - g:towny_admin
     - g:vanish_admin
     info:
-      prefix: '&c'
       build: true
+      prefix: '&c'
+      suffix: ''
+  Default:
+    default: true
+    permissions:
+    - -bukkit.command.kill
+    - -autoitem.replaceon.place
+    - -mcmmo.defaults
+    - essentials.gamemode
+    - essentials.gamemode.self
+    - essentials.gm
+    - essentials.gm.self
+    - essentials.home
+    - essentials.itemdb
+    - essentials.msg
+    - plotme.use
+    - plotme.use.add
+    - plots.admin.interact.road
+    - plots.tp
+    - voxelsniper.*
+    - voxelsniper.sniper
+    - vsr.plotme
+    - worldedit.*
+    inheritance:
+    - g:groupmanager_default
+    - g:bukkit_default
+    - g:essentials_default
+    - g:towny_default
+    info:
+      build: false
+      prefix: '&f[&6Sandbox&f] &f'
       suffix: ''

@@ -1,0 +1,32 @@
+#Folder that contains NBS files for effects play/stop music of NoteBlockAPI 
+MusicFolder: "NBSFiles"
+
+#Do you want to load force login effect of AuthMe to allow you use it in your scripts? ("force login %player%")
+ForceLogin: true
+
+#Do you want to load "on jump" event? It can affect performance (0.01%-0.1% server load).
+OnJump: true
+
+#Email paramteres for effect "send email with message %string% subject %string% to %string%"
+Email:
+
+  #Email server address
+  EmailServer: "smtp.gmail.com"
+  
+  #Email server port
+  EmailPort: 465
+  
+  #Please, do not turn on TLS - it is bugged with actual java & gmail. I have to migrate it to apache HTML mail. Use SSL only or TSL on your own risk.
+  #false - SSL
+  #true - TSL
+  EmailTLSRequired: "false"
+  
+  #Do your server need user authorization?
+  EmailAuthRequired: "true"
+  
+  #Username of your email account - It must be with @
+  EmailUsername: "username@gmail.com"
+  
+  #Password of your email account
+  EmailPassword: "password"
+  

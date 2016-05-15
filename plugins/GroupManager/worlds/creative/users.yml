@@ -6,7 +6,7 @@ users:
     info:
       suffix: §f [&6&lThor &8&lOdinson§f]
   3feb7b1d-c91c-445a-b79d-6c233d6c341f:
-    lastname: DrBloodbathMC
+    lastname: null
     group: Owner
     subgroups: []
     permissions: []
@@ -14,7 +14,7 @@ users:
       prefix: ''
       suffix: §f [&2Mr.Slimestone§f]
   799c4fd6-0201-4d1e-b345-b70e5f24f567:
-    lastname: Post_Rogue
+    lastname: null
     group: Owner
     subgroups: []
     permissions: []
@@ -22,14 +22,14 @@ users:
       prefix: '§f[§5§o&2Head Admin§f] '
       suffix: §f [&2LoZ§f]
   886968bb-6447-469a-895c-657e0f3465f0:
-    lastname: ghost482
+    lastname: null
     group: Pro
     subgroups: []
     permissions: []
     info:
       suffix: §f [&3*&bYETI&3*§f]
   950d8d97-4195-429f-839b-d65b7782b90b:
-    lastname: gussy05
+    lastname: null
     group: Owner
     subgroups: []
     permissions: []
@@ -37,7 +37,7 @@ users:
       prefix: ''
       suffix: §f [&bMrsProtagonist§f]
   97cb8bf8-c6ee-4511-b6bd-d00dc1bc4fbb:
-    lastname: pumpkinpepper
+    lastname: null
     group: Owner
     subgroups: []
     permissions: []
@@ -50,6 +50,12 @@ users:
     permissions: []
     info:
       suffix: §f [Gabe§f]
+  adomiwonder:
+    group: Default
+    subgroups: []
+    permissions: []
+    info:
+      suffix: §f [MLG§f]
   Armyman767:
     group: Owner
     subgroups: []
@@ -62,14 +68,20 @@ users:
     subgroups: []
     permissions: []
     info:
-      prefix: '§f[§5§oBright Star of Hate§f] '
-      suffix: §f [&4-Queen-§f]
+      prefix: '§f[§5§o&4-Queen-§f] '
+      suffix: §f [&cUnicorn§f]
   Awesome1887:
     group: Default
     subgroups: []
     permissions: []
     info:
       suffix: §f [&b&l*&5&lB&4&l3&5&lAST&b&l*§f]
+  BigDaddyPhill:
+    group: Default
+    subgroups: []
+    permissions: []
+    info:
+      prefix: '§f[§5§o&c&oRegular§f] '
   Bilpo:
     group: Default
     subgroups: []
@@ -83,7 +95,7 @@ users:
     info:
       suffix: §f [&1noot§f]
   c976d306-b634-40d3-b0eb-e7a0cfb832c1:
-    lastname: lacerfacerxd
+    lastname: null
     group: Default
     subgroups: []
     permissions: []
@@ -137,12 +149,18 @@ users:
     permissions: []
     info:
       suffix: §f [&bImperial§f]
+  craftio:
+    group: Default
+    subgroups: []
+    permissions: []
+    info:
+      suffix: §f [&BP＆C§f]
   creeperkiller830:
     group: Default
     subgroups: []
     permissions: []
     info:
-      suffix: §f [ColorfulThing§f]
+      suffix: §f [FlintGod§f]
   CuddlyCanadian:
     group: Default
     subgroups: []
@@ -154,10 +172,10 @@ users:
     subgroups: []
     permissions: []
     info:
-      prefix: '§f[§5§o&bPotato§f] '
-      suffix: §f [&aMoney &6Maker§f]
+      prefix: '§f[§5§o&d&oFriendly§f] '
+      suffix: §f [&bLover§f]
   d5888bee-0de7-498e-9f93-39b9038f7ef9:
-    lastname: EvilLittleThing
+    lastname: null
     group: Default
     subgroups: []
     permissions: []
@@ -262,13 +280,19 @@ users:
     subgroups: []
     permissions: []
     info:
-      suffix: §f [AcceptingJobs§f]
+      suffix: §f [ShopOwner§f]
   ItsDanielBro:
     group: Default
     subgroups: []
     permissions: []
     info:
       suffix: §f [&4A&6r&ei&2a&an&ba&3t&1o&5r§f]
+  johnl101:
+    group: Default
+    subgroups: []
+    permissions: []
+    info:
+      suffix: §f [amazing§f]
   joshcamas:
     group: Default
     subgroups: []
@@ -293,7 +317,7 @@ users:
     subgroups: []
     permissions: []
     info:
-      prefix: '§f[§5§o&b<3§f] '
+      prefix: '§f[§5§o&bCuter Fox <3§f] '
       suffix: §f [&6G&3inger&bFox§f]
   lordlankovic:
     group: Default
@@ -302,7 +326,8 @@ users:
     - sk.collectible
     - skript.collectible
     info:
-      suffix: §f [&6M'lady§f]
+      prefix: '§f[§5§oElite§f] '
+      suffix: §f [&6Cynamonbun§f]
   Luna482:
     group: Default
     subgroups: []
@@ -332,13 +357,19 @@ users:
     subgroups: []
     permissions: []
     info:
-      suffix: §f [&aSuffix§f]
+      suffix: §f [&9N&4i&9T&4r&9o§f]
   PalMac14:
     group: Default
     subgroups: []
     permissions: []
     info:
       suffix: §f [PayPal§f]
+  Pixeltastic:
+    group: Default
+    subgroups: []
+    permissions: []
+    info:
+      suffix: §f [&BP＆C§f]
   platipus50:
     group: Owner
     subgroups: []
@@ -366,7 +397,7 @@ users:
     permissions: []
     info:
       prefix: '§f[§5§o&9Admin§f] '
-      suffix: §f [&dWyrd&5&oSister§f]
+      suffix: §f [&o&dSkript&r&5ress§f]
   qwazwak:
     group: Default
     subgroups: []
@@ -413,7 +444,8 @@ users:
     subgroups: []
     permissions: []
     info:
-      suffix: §f [maltesereater &5§f]
+      prefix: '§f[§5§o&5&oHead Mod§f] '
+      suffix: §f [&cOptimus&9Prime§f]
   shaunticlair:
     group: Default
     subgroups: []
@@ -431,7 +463,8 @@ users:
     subgroups: []
     permissions: []
     info:
-      suffix: §f [&dForget Me Not§f]
+      prefix: '§f[§5§o&cR&6a&ei&an&bb&5r&do§f] '
+      suffix: §f [&cS&eh&ai&bo&dn§f]
   skullincrazy:
     group: Pro
     subgroups: []
@@ -452,6 +485,18 @@ users:
     permissions: []
     info:
       suffix: §f [IDK§f]
+  Trey_P:
+    group: Default
+    subgroups: []
+    permissions: []
+    info:
+      suffix: §f [Ron Swanson§f]
+  TwitchBox20:
+    group: Default
+    subgroups: []
+    permissions: []
+    info:
+      suffix: §f [&cUn&fpossibly &c&oFast§f]
   uberwookie:
     group: Owner
     subgroups: []
@@ -459,6 +504,12 @@ users:
     info:
       prefix: '§f[&bNOT Staff§f] '
       suffix: §f [&bJerkface§f]
+  Varanta:
+    group: Default
+    subgroups: []
+    permissions: []
+    info:
+      prefix: '§f[§5§o&bTrial Mod§f] '
   x_Odysseus_x:
     group: Default
     subgroups: []

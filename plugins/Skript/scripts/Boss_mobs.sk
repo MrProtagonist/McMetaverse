@@ -1,0 +1,6 @@
+on left click on bedrock:
+	player is holding golden carrot:
+		player's altitude is greater than 40
+		name of event-item is "Tim's Carrot"
+		execute console command "im spawn rabbit sprint lifesteal confusing"
+		remove 1 golden carrot from player's inventory

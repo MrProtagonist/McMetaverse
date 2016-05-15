@@ -42,11 +42,12 @@ on command:
 		cancel event
 command /leavepogo:
 	trigger:
-		{pogo.%player%.playing} is true
-		set {pogo.%player%.playing} to false
+		{pogo.%player%.playing} is set
+		delete {pogo.%player%.playing}
 		teleport player to {spawn}
 		teleport player to {spawn}
 		subtract 1 from {pogo.players}
+		execute console command "god %player% off"
 		message "&cYou have left &bPogo&c."
 		execute console command "ci %player%"
 command /startpogo:
@@ -95,8 +96,13 @@ command /startpogo:
 					clear inventory of loop-player
 					set tool of loop-player to air
 					set {pogo.%player%.delay} to 20
+					execute console command "god %loop-player% on"
+					wait 2 ticks
 					teleport loop-player to {pogo.lobby}
+					wait 1 tick
 					teleport loop-player to {pogo.lobby}
+					wait 2 ticks
+					execute console command "god %loop-player% off"
 					execute console command "ci %loop-player%"
 					set {pogo.%player%} to .8
 				set {pogo.going} to false
@@ -155,9 +161,9 @@ on damage of a player:
 	block below victim is not air
 	set {pogo.%victim%} to .8
 	set {pogo.%victim%.delay} to 20
-	execute console command "tm msg %player% &c&l✗"
+	execute console command "tm msg %victim% &c&l✗"
 	wait 1 real second
-	execute console command "tm msg %player% &a "
+	execute console command "tm msg %victim% &a "
 
 
 every 2 ticks:

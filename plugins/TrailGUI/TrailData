@@ -5,12 +5,10 @@ DripLava: []
 DripWater: []
 Enchantment: []
 Spark: []
-Flame:
-- 29262a24-70aa-4824-83ec-5ec43f9a7d29
+Flame: []
 HappyVillager: []
 InstantSpell: []
-LargeSmoke:
-- 29262a24-70aa-4824-83ec-5ec43f9a7d29
+LargeSmoke: []
 Lava: []
 MagicCrit: []
 MobSpell: []

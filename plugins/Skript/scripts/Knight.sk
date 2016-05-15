@@ -9,6 +9,7 @@ on script load:
 	delete {guard.entities::*}
 	delete {guard.owners::*}
 	delete {guard.active::*}
+
 command /guard [<text>]:
 	permission: sk.guard
 	trigger:
@@ -111,6 +112,7 @@ on damage:
 	victim is iron golem or snow golem
 	attacker is a player
 	send "&cYou can't hurt a &6&lMeta&c&lKnight&c!" to attacker
+	send "&cUse lava if this is not your Knight." to attacker
 	cancel event
 
 on damage:

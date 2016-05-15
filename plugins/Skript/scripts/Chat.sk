@@ -1,5 +1,5 @@
-script options:
-    $ developer mode
+#script options:
+#    $ developer mode
 on chat:
 	loop all players:
 		if "%message%" contains "%loop-player%":
@@ -10,7 +10,7 @@ on join:
 		wait 2 real seconds
 		execute console command "tm msg %player% &6Welcome <nl>%player%"
 		wait 5 real seconds
-		execute console command "tm amsg %player% &bEnjoy your stay. &câ™¥"
+		execute console command "tm amsg %player% &bEnjoy your stay. &c?"
 	else:
 		wait 2 real seconds
 		execute console command "tm msg %player% &6Welcome back<nl>%player%"
@@ -41,7 +41,6 @@ on chat:
 			set {welcomed.%player%} to {welcoming}
 			wait 1 real second
 			message "&f[&aSERVER&f] &e&oThank you for welcoming &6&o%{welcoming}%&e&o! You are a good neighbor!"
-			play "LEVEL_UP" specifically to player with pitch 1
 			execute console command "eco give %player% 25"
 		else if {welcomed.%player%.%{newest.player}%} is not set:
 			set {welcomed.%player%.%{newest.player}%} to true
@@ -55,54 +54,57 @@ on chat:
 			stop
 		else:
 			message "&f[&aSERVER&f] &e&oThank you for welcoming &6&o%{welcoming}%&e&o! You are a good neighbor!"
-			play "LEVEL_UP" specifically to player with pitch 1
 			execute console command "eco give %player% 25"
 
 variables:
-	{wchat::-.-} = "à² _à² "
+	{wchat::-.-} = "?_?"
 	{wchat::<3} = "â™¥"
-	{wchat::[upvote]} = "Â§6â–²Â§r"
-	{wchat::[downvote]} = "Â§9â–¼Â§r"
-	{wchat::/ss} = "Â§aÂ§o/ssÂ§r"
-	{wchat::/shop} = "Â§aÂ§o/shopÂ§r"
-	{wchat::/menu} = "Â§aÂ§o/menuÂ§r"
-	{wchat::/permshop} = "Â§aÂ§o/permshopÂ§r"
-	{wchat::/spawn} = "Â§aÂ§o/spawnÂ§r"
-	{wchat::/submit} = "Â§aÂ§o/submitÂ§r"
-	{wchat::/sandbox} = "Â§aÂ§o/sandboxÂ§r"
-	{wchat::/pay} = "Â§aÂ§o/payÂ§r"
-	{wchat::/tpahere} = "Â§aÂ§o/tpahereÂ§r"
-	{wchat::/tpaccept} = "Â§aÂ§o/tpacceptÂ§r"
-	{wchat::/rules} = "Â§aÂ§o/rulesÂ§r"
-	{wchat::/agree} = "Â§aÂ§o/agreeÂ§r"
-	{wchat::/accept} = "Â§aÂ§o/acceptÂ§r"
-	{wchat::/tpa} = "Â§aÂ§o/tpaÂ§r"
-	{wchat::/premium} = "Â§aÂ§o/premiumÂ§r"
-	{wchat::/drop} = "Â§aÂ§o/dropÂ§r"
-	{wchat::/tracer} = "Â§aÂ§o/tracerÂ§r"
-	{wchat::/trails} = "Â§aÂ§o/trailsÂ§r"
-	{wchat::/warpeffect} = "Â§aÂ§o/warpeffectÂ§r"
-	{wchat::/death} = "Â§aÂ§o/deathÂ§r"
-	{wchat::/pvpon} = "Â§aÂ§o/pvponÂ§r"
-	{wchat::/pvpoff} = "Â§aÂ§o/pvpoffÂ§r"
-	{wchat::/pvp} = "Â§aÂ§o/pvpÂ§r"
-	{wchat::/hub} = "Â§aÂ§o/hubÂ§r"
-	{wchat::/lobby} = "Â§aÂ§o/lobbyÂ§r"
-	{wchat::/hyper} = "Â§aÂ§o/hyperÂ§r"
-	{wchat::/hyperverse} = "Â§aÂ§o/hyperverseÂ§r"
-	{wchat::/meta} = "Â§aÂ§o/metaÂ§r"
-	{wchat::/ticket} = "Â§aÂ§o/ticketÂ§r"
-	{wchat::/sethome} = "Â§aÂ§o/sethomeÂ§r"
-	{wchat::/delhome} = "Â§aÂ§o/delhomeÂ§r"
-	{wchat::/home} = "Â§aÂ§o/homeÂ§r"
-	{wchat::/msg} = "Â§aÂ§o/msgÂ§r"
-	{wchat::/tell} = "Â§aÂ§o/tellÂ§r"
-	{wchat::/back} = "Â§aÂ§o/backÂ§r"
-	{wchat::/buy} = "Â§aÂ§o/buyÂ§r"
-	{wchat::/dash} = "Â§aÂ§o/dashÂ§r"
-	{wchat::/donate} = "Â§aÂ§o/donateÂ§r"
-	{wchat::/staff} = "Â§aÂ§o/staffÂ§r"
-	{wchat::mcmetaverse.com} = "Â§aÂ§oMcMetaverse.comÂ§r"
+	{wchat::[upvote]} = "§6?§r"
+	{wchat::[downvote]} = "§9?§r"
+	{wchat::/ss} = "§a§o/ss§r"
+	{wchat::/shop} = "§a§o/shop§r"
+	{wchat::/menu} = "§a§o/menu§r"
+	{wchat::/permshop} = "§a§o/permshop§r"
+	{wchat::/spawn} = "§a§o/spawn§r"
+	{wchat::/submit} = "§a§o/submit§r"
+	{wchat::/sandbox} = "§a§o/sandbox§r"
+	{wchat::/pay} = "§a§o/pay§r"
+	{wchat::/tpahere} = "§a§o/tpahere§r"
+	{wchat::/tpaccept} = "§a§o/tpaccept§r"
+	{wchat::/rules} = "§a§o/rules§r"
+	{wchat::/agree} = "§a§o/agree§r"
+	{wchat::/accept} = "§a§o/accept§r"
+	{wchat::/tpa} = "§a§o/tpa§r"
+	{wchat::/premium} = "§a§o/premium§r"
+	{wchat::/drop} = "§a§o/drop§r"
+	{wchat::/tracer} = "§a§o/tracer§r"
+	{wchat::/trails} = "§a§o/trails§r"
+	{wchat::/warpeffect} = "§a§o/warpeffect§r"
+	{wchat::/death} = "§a§o/death§r"
+	{wchat::/pvpon} = "§a§o/pvpon§r"
+	{wchat::/pvpoff} = "§a§o/pvpoff§r"
+	{wchat::/pvp} = "§a§o/pvp§r"
+	{wchat::/hub} = "§a§o/hub§r"
+	{wchat::/lobby} = "§a§o/lobby§r"
+	{wchat::/meta} = "§a§o/meta§r"
+	{wchat::/ticket} = "§a§o/ticket§r"
+	{wchat::/sethome} = "§a§o/sethome§r"
+	{wchat::/delhome} = "§a§o/delhome§r"
+	{wchat::/home} = "§a§o/home§r"
+	{wchat::/msg} = "§a§o/msg§r"
+	{wchat::/tell} = "§a§o/tell§r"
+	{wchat::/back} = "§a§o/back§r"
+	{wchat::/buy} = "§a§o/buy§r"
+	{wchat::/dash} = "§a§o/dash§r"
+	{wchat::/donate} = "§a§o/donate§r"
+	{wchat::/staff} = "§a§o/staff§r"
+	{wchat::mcmetaverse.com} = "§a§oMcMetaverse.com§r"
+# censored because I, craft is sick and tired of the dumbass complaints about them. #
+#	{wchat::cunt} = "meanie"
+#	{wchat::fag} = "friend"
+#	{wchat::fagg} = "friend"
+#	{wchat::faggot} = "friend"
+#	{wchat::gay} = "joyous"
 on chat:
 	loop {wchat::*}:
 		replace all loop-index with loop-value in message
@@ -139,14 +141,6 @@ command /cc:
 		loop 200 times:
 			broadcast " "
 		
-# ProVanish
-command /provanish:
-	executable by: players
-	permission: essentials.socialspy
-	trigger:
-		broadcast "&e%player% left the game."
-		make the player execute "/vanish"
-		
 on join:
 	if {rules.%player%.version} is not set:
 		set {rules.%player%.version} to 0
@@ -182,9 +176,8 @@ command /agree:
 #		teleport player to {acceptpoint}
 		set {locked.%player%} to false
 		set the player's walk speed to .2
-		remove jump boost from the player
 		message " "		
-		play "LEVEL_UP" specifically to player with pitch 1
+#		play "LEVEL_UP" specifically to player with pitch 1
 		message "&f[&aSERVER&f] &6&oCongratulations! You are now free to chat and roam."
 		set {rules.%player%.version} to {rules.version}
 		wait 3 seconds
@@ -199,16 +192,22 @@ command /agree:
 on chat:
 	{rules.%player%.agreed} is not set
 	cancel event
-	apply jump boost -5 to the player for 100000000 hours
 	wait 1 tick
 	set the player's walk speed to 0.01
 	send " " to player
 	send "&f[&aSERVER&f] &6Please read our &a&o/rules&6 and &a&o/agree&6 to them before continuing." to player
 	send "&f[&aSERVER&f] &6Be sure you hover over each rule so you fully understand it." to player
+#on jump:
+#	{rules.%player%.agreed} is not set
+#	cancel event
+#	wait 1 tick
+#	set the player's walk speed to 0.01
+#	send " " to player
+#	send "&f[&aSERVER&f] &6Please read our &a&o/rules&6 and &a&o/agree&6 to them before continuing." to player
+#	send "&f[&aSERVER&f] &6Be sure you hover over each rule so you fully understand it." to player
 on break:
 	{rules.%player%.agreed} is not set
 	cancel event
-	apply jump boost -5 to the player for 100000000 hours
 	wait 1 tick
 	set the player's walk speed to 0.01
 	send " " to player
@@ -217,7 +216,6 @@ on break:
 on place:
 	{rules.%player%.agreed} is not set
 	cancel event
-	apply jump boost -5 to the player for 100000000 hours
 	wait 1 tick
 	set the player's walk speed to 0.01
 	send " " to player
@@ -233,7 +231,7 @@ command /rules:
 		message "&c&lServer Rules and Guidelines&b - Hover for more info!"
 		message " "
 		send json of "             &f[&a1&f] &oNo griefing, stealing or scamming" tooltip "&eGriefing:&f Destroying something that is not yours.%new line%&eStealing:&f Taking something that is not yours.%new line%&eScamming:&f Misleading another player for your gain." to player
-		send json of "             &f[&a2&f] &oBe respectful and use common sense" tooltip "&fExcessive swearing, rudeness, rage quitting or %new line%harassment of any kind is not tolerated." to player
+		send json of "             &f[&a2&f] &oBe respectful and use common sense" tooltip "&fExcessive swearing, rudeness, rage quitting or %new line%harassment of any kind is not tolerated. %new line%(purposely renaming your account to that of a staffmember applies to that aswell)." to player
 		send json of "             &f[&a3&f] &oNever ask for handouts" tooltip "&eHandouts:&f Anything you did not earn or attempt to trade for.%new line%&bThis includes items, ranks, homes, money, etc." to player
 		send json of "             &f[&a4&f] &oNo spam or excessive CAPS" tooltip "&eSpam:&f Saying more than a message a second.%new line%&eExcessive CAPS:&f Consecutive sentences in all CAPS." to player
 		send json of "             &f[&a5&f] &oNo advertising" tooltip "&eAdvertising:&f Posting the website or IP of a server we don't run.%new line%&bThis includes in game, our website, and our TeamSpeak." to player
@@ -261,6 +259,9 @@ command /google <player> <text>:
 		set {_google} to arg 2
 		replace all " " with "+" in {_google}
 		broadcast "%display name of player%&f: &eLink for %arg 1%&f: &almgtfy.com/?q=%{_google}%"
+command /ts:
+	trigger:
+		message "&aOur Teamspeak Server Address: &eMcMetaverse.enjinvoice.com"
 # on chat:
 #	replace all "kristen" with "Kristy" in the message
 #	player's name is "CantThink96"

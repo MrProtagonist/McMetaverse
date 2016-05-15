@@ -2,24 +2,55 @@ Command /dropstuff [<player>]:
 	permission: essentials.socialspy
 	trigger:
 		force drop inventory of arg 1 at arg 1
-command /ridetrain:
-	permission: is.pro
-	trigger:
-		loop all players:
-			send "&bYou have been invited to ride on somebody's head. Should you choose to accept this odd invitation, type /letsride" to loop-player
-		set {rider} to player
+#command /ridetrain:
+#	permission: is.pro
+#	trigger:
+#		loop all players:
+#			send "&bYou have been invited to ride on somebody's head. Should you choose to accept this odd invitation, type /letsride" to loop-player
+#		set {rider} to player
 command /makehouse:
 	permission: is.pro
 	trigger:
 		paste schematic "Home" at location of player
-command /letsride:
+#command /letsride:
+#	trigger:
+#		if {rider} isn't player:
+#			make player ride {rider}
+#			set {rider} to player
+#			message "&aYou have joined the train! Do not dismount until it is as tall as we can get it."
+#		else:
+#			message "&aYou Can't Ride Yourself Silly"
+#
+# MAKE PLAYER RIDE IS BUGGED, DO NOT UNCOMMENT THIS! #
+# http://prntscr.com/amh7o1 #
+#
+command /slap <player>:
+	permission: essentials.socialspy
 	trigger:
-		if {rider} isn't player:
-			make player ride {rider}
-			set {rider} to player
-			message "&aYou have joined the train! Do not dismount until it is as tall as we can get it."
+		if {slap.%player%} is true:
+			{slap.%arg%} is not set:
+				push argument upwards with force 1
+				push argument backwards with force 1
+				message "&e&lSlap! Oh my god, %player% hit you." to the argument
+				message "&e&lIT'S A HIT!"
+			else:
+				if {slap.%arg%} is true:
+					push argument upwards with force 1
+					push argument backwards with force 1
+					message "&e&lSlap! Oh my god, %player% hit you." to the argument
+					message "&e&lIT'S A HIT!"
+				else:
+					message "&cYou can't slap that person"
 		else:
-			message "&aYou Can't Ride Yourself Silly"
+			message "&cCan't slap people if you are not willing to take a hit. try &a/toggleslap"
+command /toggleslap:
+	trigger:
+		if {slap.%player%} is false:
+			set {slap.%player%} to true
+			message "&cMay the slapping commence!"
+		else:
+			set {slap.%player%} to false
+			message "&cThou shalt not be slapped and thou shalt not slap!"
 command /blind <player>:
 	permission: essentials.socialspy
 	trigger:
@@ -66,7 +97,17 @@ command /troll <player>:
 		set the argument-player's walk speed to .2
 		set the argument-player's fly speed to .2
 
-
+#command /mimic <player> <text>:
+#	permission: essentials.socialspy
+#	trigger:
+#		make arg 1 say arg 2
+		
+		
+command /hop:
+	permission: is.pro
+	trigger:
+		loop all entities in radius 20 of player:
+			force loop-entity to jump
 		
 on click:
 	{trolling.%player%} is true

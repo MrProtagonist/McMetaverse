@@ -1,17 +1,26 @@
 # Config file for all Basic functions
 
+# Shows if there is available new version on login with tryme.versioncheck permission node
+ShowNewVersion: true
 # Do you want Quiz to start with server
-EnableOnStartup: true
+EnableOnStartup: false
+# Defines what command will be performed when server/plugin starts
+# This works only when EnableOnStartup is enabled
+CommandToPerform: tryme qmode
 # Players needed to start scheduled quiz game
 MinPlayersToRun: 4
 # Interval betwen questions in seconds
 Interval: 300
 # Time limit for answer
-TimeForAnswer: 60
+TimeForAnswer: 300
+# Broadcasts answer after answer time ends
+ShowAnswer: true
 # Do you want to use sheduler for your server
 UseScheduler: false
 # How often to check for schedule in seconds. Keep it at 60 sec if you dont care about seconds :)
 SchedulerInterval: 12
+# You need to enable this one to use so caled Daily rewards for best quiz game players
+DailyScheduler: false
 # Do you want to use option to answer just by typing into chat
 UseChatAnswer: true
 # Do you want to use commands to answer into questions (no spam into chat)
@@ -21,23 +30,25 @@ UseFireworks: true
 DataBase:
   # Do you want to use Mysql database system or SQLite
   # Use: mysql or sqlite
-  DataBaseType: mysql
+  DataBaseType: sqlite
   # Not usable if sqlite file system chosen
   # Usually localhost or 127.0.0.1
-  mysqlHost: 127.0.0.1
+  mysqlHost: localhost
   # Default port is 3306
   mysqlPort: 3306
   # Database table name
-  mysqlDatabase: 430
+  mysqlDatabase: tryme
   # Database username, usually its root
-  mysqlUsername: 430
+  mysqlUsername: root
   # Your mysql database password, keep it as strong as posible
-  mysqlPassword: bf56ae2042
+  mysqlPassword: realystrongone
 Chat:
   # Do you want to show players original message into chat
   ShowChatAnswer: true
   # Do you want o to broadcast custom message with correct answer
   BroadcastCorrectAnswer: true
+  # If you have issue when creating questions it to be shown in chat, change this and try again
+  UseLowPriority: true
 Titles:
   # Do you want to show Title
   ShowTitle: true

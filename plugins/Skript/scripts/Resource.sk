@@ -1,5 +1,5 @@
-script options:
-    $ developer mode
+#script options:
+#    $ developer mode
 command /resetresource:
 	permission: essentials.socialspy
 	trigger:
@@ -7,11 +7,26 @@ command /resetresource:
 		loop all players in world "resource":
 			teleport loop-player to {_spawn}
 			teleport loop-player to {_spawn}
+		loop all players in world "resource_nether":
+			teleport loop-player to {_spawn}
+			teleport loop-player to {_spawn}
+		execute console command "mv delete resource_nether"
+		wait 2 real seconds
+		execute console command "mv confirm"
+		wait 5 real seconds
 		execute console command "mv delete resource"
 		wait 2 real seconds
 		execute console command "mv confirm"
 		wait 5 real seconds
 		execute console command "mv create resource NORMAL"
+		wait 2 real seconds
+		execute console command "mv load resource"
+		wait 5 real seconds
+		execute console command "mv create resource_nether NETHER"
+		wait 2 real seconds
+		execute console command "mv load resource_nether"
+		wait 2 real seconds
+		execute console command "mvnp link resource resource_nether"
 		message "&cYou will be teleported to the new world in 15 seconds. Please wait."
 		wait 15 real seconds
 		set {resource.spawn} to the spawn point of "resource"
@@ -19,6 +34,17 @@ command /resetresource:
 		set player's gamemode to creative
 		message " "
 		message "&ePlease stand on flat ground and do &a/setplatform."
+on world change:
+	if event-world is not "resource":
+		execute console command "manselect metaomega"
+		wait 1 tick
+		if player has permission "nonspecificodyssey.biome.*":
+			execute console command "manudelp %event-player% nonspecificodyssey.biome.*"
+	else:
+		execute console command "manselect metaomega"
+		wait 1 tick
+		if player doesn't have the permission "nonspecificodyssey.biome.*":
+			execute console command "manuaddp %event-player% nonspecificodyssey.biome.*"
 command /setplatform:
 	permission: is.evil
 	trigger:
@@ -34,13 +60,13 @@ command /setplatform:
 				set loop-block to sea lantern
 			else:
 				set loop-block to air
-		message "&aPlatform was generated. Now setting world border..."
-		make player execute "worldborder set 7000"
+		message "&aPlatform was generated."
 		wait 5 ticks
-		make player execute "worldborder resource fill"
 		message "&aBorder set! Now starting render of the world..."
 		wait 10 ticks
 		message "&aRoutine is complete! Rendering will run in the background."
+		wait 5 ticks
+		execute console command "skript reload Resource.sk"
 command /resource:
 	trigger:
 		teleport player to {resource.spawn}
@@ -49,34 +75,40 @@ command /resource:
 		wait 2 real seconds
 		message " "
 		message "&eType &a/biome&e to warp to a biome of your choosing."
-command /biome:
+		message "&eOr &a/biometp&e to get a click-able list of biomes with easier names."
+command /biometp:
 	trigger:
-		if player is in "resource":
-			execute console command "manuaddp %player% biometp.use"
+		if player's world is "resource":
 			message " "
+			message "&6&lShowing basic biome list"
 			message "&6&lBiome List &f(Click one)"
-			send json of "&f[ &aFlower Forest &f]" run "/biometp FLOWER_FOREST" to player
-			send json of "&f[ &aBeach &f]" run "/biometp BEACH" to player
-			send json of "&f[ &aPlains &f]" run "/biometp PLAINS" to player
-			send json of "&f[ &aSavanna &f]" run "/biometp SAVANNA" to player
-			send json of "&f[ &aSwampland &f]" run "/biometp SWAMPLAND" to player
-			send json of "&f[ &aJungle &f]" run "/biometp JUNGLE" to player
-			send json of "&f[ &aMesa &f]" run "/biometp MESA_PLATEAU" to player
-			send json of "&f[ &aExtreme Hills &f]" run "/biometp EXTREME_HILLS" to player
-			send json of "&f[ &aTaiga &f]" run "/biometp MEGA_TAIGA" to player
-			send json of "&f[ &aDesert &f]" run "/biometp DESERT" to player
-			send json of "&f[ &aIce Spikes &f]" run "/biometp ICE_PLAINS_SPIKES" to player
-			wait 30 real seconds
-			execute console command "manudelp %player% biometp.use"
-			stop
+			send json of "&f[ &aForest &f]" run "/biome FOREST" to player
+			send json of "&f[ &aDesert &f]" run "/biome DESERT" to player
+			send json of "&f[ &aPlains &f]" run "/biome PLAINS" to player
+			send json of "&f[ &aOcean &f]" run "/biome OCEAN" to player
+			send json of "&f[ &aSavanna &f]" run "/biome SAVANNA" to player
+			send json of "&f[ &aSwampland &f]" run "/biome SWAMPLAND" to player
+			send json of "&f[ &aJungle &f]" run "/biome JUNGLE" to player
+			send json of "&f[ &aTaiga &f]" run "/biome TAIGA" to player
+			send json of "&f[ &aExtreme Hills &f]" run "/biome EXTREME_HILLS" to player
+			send json of "&f[ &aFULL LIST &f]" run "/biome list" to player
 		else:
-			message "&cThis is only available in the resource world."
-		
+			if player is not op:
+				message "&cThis is only available in the resource world."
+on command "craftio":
+	message "Command and all arguments: %complete command%"
+	message "Command: %command%"
+	message "All the arguments: %arguments%"
 on command:
 	if player is in world "resource":
 		if command is "warp" or "nav":
 			message "&f&oYou can't use those commands in resource!"
 			cancel event
+on command "/biome":
+	if player's world is not "resource":
+		if player is not op:
+			cancel event
+			message "&cThis is only available in the resource world."
 on break:
 	player does not have the permission "is.op"
 	player is in world "resource"

@@ -11,4 +11,11 @@ Data:
     NumbersToUse: '1234'
     MathSimbolsToUse: '+-*/'
     EquationLenght: 6
+  CustomEquations:
+    Equations:
+    - '2+2-2+2'
+    - '1+1+2+3-5'
+    - '5-2-3-4+5'
+    - '99-55-66'
+    - '45-65-85-25'
   

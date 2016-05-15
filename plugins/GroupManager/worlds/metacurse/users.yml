@@ -1,0 +1,109 @@
+users:
+  0856cd5d-6a48-43fa-8afb-850c2dce2172:
+    lastname: null
+    group: Default
+    subgroups: []
+    permissions:
+    - -autoitem.replaceon.place
+  1bf47c3d-074e-47e8-bc37-e21c1ea0aeac:
+    lastname: rfcroc
+    group: Default
+    subgroups: []
+    permissions:
+    - essentials.fly
+    - essentials.msg
+  29262a24-70aa-4824-83ec-5ec43f9a7d29:
+    lastname: RoobLetterman
+    group: Default
+    subgroups: []
+    permissions:
+    - -autoitem.replaceon.place
+  5f62e716-e961-4bc7-91f4-bc21797edb75:
+    lastname: dinoppar
+    group: Default
+    subgroups: []
+    permissions:
+    - -autoitem.replaceon.place
+  70b3e014-4b7b-4da6-b3ce-7e87541bd336:
+    lastname: null
+    group: Default
+    subgroups: []
+    permissions:
+    - -autoitem.replaceon.place
+  7404e056-e6f3-4bbe-a209-f59901b5dabe:
+    lastname: null
+    group: Default
+    subgroups: []
+    permissions: []
+    info:
+      §r§f[§d§oRookie§r]: §r
+  904f167d-2f03-426b-b133-1a321d5eb55e:
+    lastname: craftio
+    group: Default
+    subgroups: []
+    permissions:
+    - nonspecificodyssey.biome.*
+  9ed48de9-4f1a-4dad-b709-bcf9d6d2b80e:
+    lastname: null
+    group: Default
+    subgroups: []
+    permissions:
+    - -autoitem.replaceon.place
+  ab9f26de-759f-4a4f-b877-41845bc62675:
+    lastname: null
+    group: Default
+    subgroups: []
+    permissions:
+    - -autoitem.replaceon.place
+  bf683cfa-db8d-430c-a7fd-fbe0304021c8:
+    lastname: TwitchBox20
+    group: Default
+    subgroups: []
+    permissions:
+    - essentials.delhome
+    - essentials.fly
+    - essentials.home
+    - essentials.home.others
+    - essentials.sethome
+    - essentials.sethome.multiple.unlimited
+    - essentials.socialspy
+  d251b84f-707b-46ef-b9c4-960263abad60:
+    lastname: null
+    group: Default
+    subgroups: []
+    permissions:
+    - -autoitem.replaceon.place
+  d5888bee-0de7-498e-9f93-39b9038f7ef9:
+    lastname: EvilLittleThing
+    group: Default
+    subgroups: []
+    permissions:
+    - -autoitem.replaceon.place
+  d5c574b6-87f7-412c-822f-24be8e9a9b5c:
+    lastname: null
+    group: Default
+    subgroups: []
+    permissions:
+    - -autoitem.replaceon.place
+    - nonspecificodyssey.biome.*
+  d78121cf-e92d-489c-9cac-10224ebfc40f:
+    lastname: null
+    group: Default
+    subgroups: []
+    permissions:
+    - -autoitem.replaceon.place
+  ElgarL:
+    group: Moderator
+    subgroups: []
+    permissions:
+    - groupmanager.noofflineperms
+  KHobbits:
+    group: Moderator
+    subgroups: []
+    permissions:
+    - groupmanager.noofflineperms
+  snowleo:
+    group: Builder
+    subgroups: []
+    permissions:
+    - groupmanager.noofflineperms

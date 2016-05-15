@@ -1,11 +1,48 @@
+#script options:
+#	$ developer mode
 command /sunny:
 	trigger:
-		if player's balance is greater than 100:
+		if player is in world "MetaOmega":
+			if player's balance is greater than 100:
+				if {sunny.blocked} is false:
+					set {_world} to player's world
+					execute console command "eco take %player% 100"
+					set weather of {_world} to clear
+					set time in {_world} to 6am
+					loop all players in {_world}:
+						send "&f[&aSERVER&f] &6Time set to day by %player%!" to loop-player
+				else:
+					message "&4&lCANNOT EXECUTE THIS"
+			else:
+				message "&cNot enough money!"
+		else if player has permission "sunny.free":
 			set {_world} to player's world
-			execute console command "eco take %player% 100"
 			set weather of {_world} to clear
 			set time in {_world} to 6am
 			loop all players in {_world}:
 				send "&f[&aSERVER&f] &6Time set to day by %player%!" to loop-player
 		else:
-			message "&cNot enough money!"
+			message "&cCan't execute that command here!"
+#on join:
+#	player is "Quisalas"
+#	set {sunny.blocked} to true
+#on quit:
+#	player is "Quisalas"
+#	set {sunny.blocked} to false
+command /blocksunny:
+	trigger:
+		player is op
+		if {sunny.blocked} is true:
+			set {sunny.blocked} to false
+			message "&eYou can make it sunny now"
+		else:
+			set {sunny.blocked} to true
+			message "&eYou'd have to praise the sun to allow this command again!"
+command /time [<time>]:
+	trigger:
+		if arg is not set:
+			message "&cIt is now %time%!"
+		else:
+			set {_world} to player's world
+			set time in {_world} to time argument
+			message "&aYou've set the time in %{_world}% to %time argument%"

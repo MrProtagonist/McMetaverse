@@ -1,0 +1,18 @@
+#command /end:
+#	trigger:
+#		teleport player to {endcave}
+command /setend:
+	trigger:
+		if player is op:
+			set {endcave} to the player's location
+			message "Set!"
+command /endremoveall:
+	trigger:
+		loop all players in world "MetaOmega_the_end":
+			make loop-player execute "spawn"
+			make loop-player execute "spawn"
+on any move:
+	if the player's world is "MetaOmega_the_end" or "Metacurse":
+		if the player does not have the permission "essentials.socialspy":
+			make player execute "meta"
+			make player execute "meta"

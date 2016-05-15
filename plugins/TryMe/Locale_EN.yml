@@ -1,53 +1,87 @@
 # Keep in mind that variables wont work for some lines, when it will for anothers :)
 # Just keep them where there are now and everything will be ok :)
 
-Prefix: '&e[&aTryMe&e] '
-RewardBroadcast: '&e[&aTryMe&e] &6[name] wins!'
-PluginStarted: '&e[&aTryMe&e] &2Plugin has been started'
-PluginStoped: '&e[&aTryMe&e] &4Plugin has been stopped!'
-AlreadyRunning: '&e[&aTryMe&e] &4Already running!'
-RewardError: '&e[&aTryMe&e] &cPlugin has been stopped because of an error!'
-UseInteger: '&e[&aTryMe&e] &cPlease use numbers.'
-NoPermission: '&e[&aTryMe&e] &cYou dont have permission!'
-NoPexOrVault: '&e[&aTryMe&e] &4Neither PEX nor Vault found, TryMe will not work properly!'
-TopPlayers: '&e[&aTryMe&e] &2Top &3[number] &2players in &3[gamemode] &2mode, ordered
-  by &3[orderby] &2in &3[sortingmode]&2!'
-TopPlayerList: '&3[place]. &2[name]&3: &a[answers]'
-ShedulerStart: '&e[&aTryMe&e] &2Scheduler has been started.'
-ShedulerStoped: '&e[&aTryMe&e] &4Scheduler has been stopped.'
-PlayTimeStart: '&3Play time has started!'
-PlayTimeStop: '&3Play time has ended!'
-AnswerCommandUsage: '&3Usage: &a&o/answ [your full answer]'
-IncorectAnswer: '&4Sorry, incorrect answer!'
-CommandAnswerDisabled: '&4Sorry, answering with commands is disabled!'
-ChatMode: '&4Sorry, cannot answer while in chat mode!'
-AnsweringTimeEnded: '&cYour answer ware correct but answering time ended!'
-CategoryDontExist: '&e[&aTryMe&e] &cThis category don''t exist.'
-CantFindCategory: '&e[&aTryMe&e] &cCant find any category you defined. Possible: &3[categories]&c.'
-Editing:
-  AlreadyEditing: '&e[&aTryMe&e] You are already editing a question.'
-  WriteQuestion: '&e[&aTryMe&e] &2Please write question into chat and press enter
-    (Dont forget to use color codes)!'
-  WriteAnswers: '&e[&aTryMe&e] &2Please write answers into chat and press enter after
-    each one (Dont forget to use color codes)!'
-  Stop: '&e[&aTryMe&e] &2You can stop at any time by writing this text into chat:
-    &3tryme stop'
-  InGame: '&e[&aTryMe&e] &4Sorry, it is only possible to edit questions in game.'
-  QuestionAdded: '&e[&aTryMe&e] &2Question added: '
-  Added: '&e[&aTryMe&e] &2You have added: &3'
-  SuccesfullyAdded: '&e[&aTryMe&e] &2Question and answers were added successfully
-    with id of: &3'
-  Deleted: '&e[&aTryMe&e] &2Deleted.'
-  QuestionDontExist: '&e[&aTryMe&e] &4This question does not exist.'
-  AnswerDontExist: '&e[&aTryMe&e] &4This answer does not exist.'
+info:
+  prefix: '&e[&aTryMe&e] '
+  RewardBroadcast: '&6[player] wins!'
+  CantFindCategory: '&2Cant find any category you defined. Posible: &3[categories]&c.'
+  CantFindRewardCategory: '&2Cant find any reward category you defined. Posible: &3[categories]&c.'
+  CantFindGameMode: '&2Cant find game mode. Posible: &3qmode, fmode, dmode, mmode&c.'
+  PluginStoped: '&4Plugin has been stopped!'
+  PlayTimeStart: '&3Quiz game have been started!'
+  PlayTimeStop: '&3Quiz game have been stoped! Thx for playing!'
+  AnsweringTimeEnded: '&cYour answer ware correct but answering time ended!'
+  TopPlayers: '&2Top &3[number] &2players in &3[gamemode] &2mode, ordered by &3[orderby]
+    &2in &3[sortingmode]&2!'
+  TopPlayerList: '&3[place]. &2[name]&3: &a[answers] &2Average time &a[time] &2Best
+    personal &a[besttime]'
+  IncorectAnswer: '&4Sorry, incorrect answer!'
+  CorrectAnswer: '&eTime for answer ended. Correct answer was: &6[answer]'
+  AnswerCommandUsage: '&3Usage: &a&o/answ [your full answer]'
+  CommandAnswerDisabled: '&4Sorry, answering with commands is disabled!'
+  error:
+    ChatMode: '&4Sorry, cannot answer while in chat mode!'
+    UseInteger: '&cPlease use numbers.'
+    Duplication: '&cName already exists.'
+    NoPermission: '&cYou dont have permission!'
+    NoPexOrVault: '&4Neither PEX nor Vault found, TryMe will not work properly!'
+  Stats:
+    SeparatorLinesTop: '&2*************************************************************'
+    SeparatorLinesNotRunning: '&2************************ &cNot running &2************************'
+    SeparatorLinesBot: '&2*************************************************************'
+    TotalQuestions: '&2Total Questions: &6[TotalQuestions]'
+    Answered: '&2Answered: &c[TrueOrFalse]'
+    QuestionCategory: '&2Category: &6[CurrentCategory]'
+    TimeLeftString: '&2Time left for answer: &c[Seconds]'
+    UntilNextQuestion: '&2Until next question: &c[Seconds]'
+    QuestionName: '&2QuestionId: &6[QuestionName]'
+    Question: '&2Question: &c[Question]'
+    Answers: '&2Answers: '
+modes:
+  QuestionColor: '&2'
+  Broadcasttime: '&6[player] &ewins after &6[time] &esec! '
+  Broadcastanswer: '&eAnswer was: &6[answer]'
+  Qmode:
+    Stoped: '&cQuestion mode stopped!'
+    Started: '&2Question mode started!'
+  Fmode:
+    Question: '&eType "&6[string]&e" first to win!'
+    Stoped: '&cFlash mode stopped!'
+    Started: '&2Flash mode started!'
+  Dmode:
+    Question: '&eDecode &6[string] &efirst to get a reward!'
+    Stoped: '&cDecode mode stopped!'
+    Started: '&2Decode mode started!'
+  Mmode:
+    Question: '&eSolve &6[string] &efirst to get a reward!'
+    Stoped: '&2Math mode stopped!'
+    Started: '&2Math mode started!'
+edit:
+  AlreadyEditing: '&2You are already editing a question.'
+  WriteQuestion: '&2Please write question into chat and press enter!'
+  WriteAnswers: '&2Please write answers into chat and press enter after each one!'
+  OldQuestion: '&2OldQuestion: &e[question]'
+  QuestionChanged: '&2Question was successfully changed: &3'
+  Stop: '&2You can stop at any time by writing &3-q&2 into chat'
+  InGame: '&4Sorry, it is only possible to edit questions in game.'
+  QuestionAdded: '&2Question added: &e'
+  Added: '&2You have added: &3'
+  NewCategoryAdded: '&2You have added new category: &3[category]'
+  SuccesfullyAdded: '&2Question and answers were added successfully with name of:
+    &3'
+  FailedToAdd: '&2Failed to add new question, some variables where missing'
+  Deleted: '&2Deleted.'
+  QuestionDontExist: '&4This question does not exist.'
+  AnswerDontExist: '&4This answer does not exist.'
 Signs:
   List: '&0[number].&8[player]&7:&f[answers]'
-  AlreadyExist: '&4Something went wrong, maybe a sign already exists here?'
   SucessfulyCreated: '&2Sign was successfully created!'
   Update: '&2Signs were updated!'
   UpdateError: '&4Something went wrong, check console!'
   Delete: '&2Sign deleted!'
-  NothingHere: '&4There is no TryMe sign here!'
+  NoPerm: '&4You dont have permission to create signs like this!'
+  incorrect: '&cIncorrect variables. &eSecond line: &3qmode/fmode/dmode/mmode&e. Third
+    line: &3answers/average/besttime&e. Fourth line: &3desc/asc.'
 Titles:
   # You can change color, but you can use only one in front.
   TitleText: '&2Congratulations!'
@@ -57,83 +91,95 @@ Titles:
   SubTitleText: '&3You have answered correctly!'
   # In action bar you can use as many colors as you want and you can insert player name [player]
   ActionBarText: '&2You have answered correctly &3[player]!'
-Modes:
-  QuestionMode:
-    BroadcastQuestionAnswer: '&e[&aTryMe&e] &cCorrect answer was: &6[answer]'
-    QuestionColor: '&2'
-    QuestionModeStoped: '&cQuestion mode stopped!'
-    QuestionModeStarted: '&2Question mode started!'
-  FlashMode:
-    BroadcastFlashAnswer: '&6[player] &ewins after only &6[time] &eseconds! &cCorrect
-      answer was: &6[answer]'
-    FlashQuestion: '&eType "&6[string]&e" first to win!'
-    FlashModeStoped: '&cFlash mode stopped!'
-    FlashModeStarted: '&2Flash mode started!'
-  DecodeMode:
-    # Possible variables: [player] [answer] [time]
-    BroadcastDecodeAnswer: '&6[player] &ewins after only &6[time] &eseconds! &cCorrect
-      answer was: &6[answer]'
-    DecodeQuestion: '&eDecode &6[string] &efirst to get a reward!'
-    DecodeModeStoped: '&cDecode mode stopped!'
-    DecodeModeStarted: '&2Decode mode started!'
-  MathMode:
-    BroadcastMathAnswer: '&6[player] &ewins after only &6[time] &eseconds! &cCorrect
-      answer was: &6[answer]'
-    MathQuestion: '&eSolve &6[string] &efirst to get a reward!'
-    MathModeStoped: '&2Math mode stopped!'
-    MathModeStarted: '&2Math mode started!'
-InfoLines:
-  SeparatorLines: '&2*************************************************************'
-  SeparatorLinesNotRunning: '&2************************ &cNot running &2************************'
-  TotalQuestions: '&2Total Questions: &6[TotalQuestions]'
-  QuestionCategory: '&2Category: &6[CurrentCategory]'
-  QuestionId: '&2QuestionId: &6[QuestionId]'
-  Question: '&2Question: &c[Question]'
-  Answers: '&2Answers: '
-  AnswerList: '&3- &6[answer]'
-  NoAnswers: '&4No answers'
-  QuestionDontExist: '&cQuestion with this id does not exist!'
-  Answered: '&2Answered: &c[TrueOrFalse]'
-  UntilNextQuestion: '&2Until next question: &c[Seconds]'
-  UntilNextString: '&2Until next string: &c[Seconds]'
-  UntilNextCode: '&2Until next code: &c[Seconds]'
-  UntilNextEquation: '&2Until next equation: &c[Seconds]'
-  CurrentQuestion: '&2Current question: &c[CurrentQuestion]'
-  CurrentString: '&2Current string: &c[CurrentString]'
-  CurrentCode: '&2Current string to decode:&c [CurrentCode]'
-  CurrentEquation: '&2Current equation:&c [CurrentCode]'
-  TimeLeftString: '&2Time left for answer: &c[Seconds]'
-HelpPage:
-  Player:
-    BasicCommands:
-    - '&6/tryme help&2 - Shows this page'
-    - '&6/tryme &2- Shows current question information'
-    Extra:
-    - '&6/answ &2- Answers into question with command'
-    - '&6/answer &2- Answers into question with command'
-  Admin:
-  - '&6********************** Admin commands ***********************'
-  - '&6/tryme qmode [Category/all]&2 - Starts question mode by given category'
-  - '&6/tryme fmode&2 - Starts flash mode'
-  - '&6/tryme dmode&2 - Starts decode mode'
-  - '&6/tryme stop&2 - Stops any running game mode'
-  - '&6/tryme next&2 - Gives next question/string/code'
-  - '&6/tryme info&2 - Shows detailed info about current question'
-  - '&6/tryme info [Category] [QuestionId]&2 - Shows detailed info about chosen question
-    by its id'
-  - '&6/tryme top [number] [qmode/fmode/dmode/mmode] [answers/average/besttime] [asc/desc]&2
-    - Shows top list by given number, game mode, data area and sorting order (all
-    optional)'
-  - '&6/tryme add&2- Starts the add new question wizard'
-  - '&6/tryme delete [Category] [QuestionId]&2 - Deletes question by id'
-  - '&6/tryme delete [Category] [QuestionId] [AnswersNumber]&2 - Deletes questions
-    answer by given number'
-  - '&6/tryme edit [Category] [QuestionId]&2 - Starts wizard for question editing'
-  - '&6/tryme sign create [qmode/fmode/dmode/mmode] [answers/average/besttime] [asc/desc]&2
-    - Creates given number top list signs by game mode and given order'
-  - '&6/tryme sign delete&2 - Removes top list sign'
-  - '&6/tryme sign update&2 - Manualy updates top list signs'
-  - '&6/tryme sheduler start&2 - Starts sheduler'
-  - '&6/tryme sheduler stop&2 - Stops sheduler'
-  - '&6/tryme convert&2 - Converts flat file to Mysql'
-  - '&6/tryme reload&2 - Reloads all config files'
+scheduler:
+  started: '&2Scheduler has been started.'
+  stoped: '&4Scheduler has been stoped.'
+stats:
+  nouser: '&2Can''t find user with this name'
+  header: '&2--------&e ======== &6[name] stats &e======== &2--------'
+  qmode: '&eQuest mode: &2[qanswers] &eanswers, &2[qbesttime] &esec best time, &2[qaverage]
+    &esec average'
+  fmode: '&eFlash mode: &2[fanswers] &eanswers, &2[fbesttime] &esec best time, &2[faverage]
+    &esec average'
+  dmode: '&eDecode mode: &2[danswers] &eanswers, &2[dbesttime] &esec best time, &2[daverage]
+    &esec average'
+  mmode: '&eMath mode: &2[manswers] &eanswers, &2[mbesttime] &esec best time, &2[maverage]
+    &esec average'
+command:
+  help:
+    output:
+      usage: '&eUsage: &6%usage%'
+      title: '&2----&e ==== &6TryMe &e==== &2----'
+      title2: '&e[] - Required &3() - Optional'
+  nocmd:
+    help:
+      info: '&2Shows all commands'
+      args: ''
+  next:
+    help:
+      info: '&2Gives next question/string/code'
+      args: ''
+  qmode:
+    help:
+      info: '&2Question game mode'
+      args: '&3(-c QCat) (-r RCat)'
+  dmode:
+    help:
+      info: '&2Decode game mode'
+      args: '&3(-c QCat) (-r RCat)'
+  fmode:
+    help:
+      info: '&2Flash game mode'
+      args: '&3(-c QCat) (-r RCat)'
+  mmode:
+    help:
+      info: '&2Math game mode'
+      args: '&3(-c QCat) (-r RCat)'
+  amode:
+    help:
+      info: '&2All game mode'
+      args: '&3(-c QCat) (-r RCat)'
+  info:
+    help:
+      info: '&2Shows currently running game information (for admins)'
+      args: ''
+  add:
+    help:
+      info: '&2Add new question'
+      args: '[category] [questionname]'
+  edit:
+    help:
+      info: '&2Edit existing question'
+      args: '[category] [questionName]'
+  delete:
+    help:
+      info: '&2Delete existing question'
+      args: '[category] [questionName]'
+  top:
+    help:
+      info: '&2Get top list of players'
+      args: '[gamemode] &3(-f answers/besttime/average) (-o asc/desc)'
+  signupdate:
+    help:
+      info: '&2Update signs manually by game mode'
+      args: '[gamemode]'
+  reload:
+    help:
+      info: '&2Reloads all config files'
+      args: ''
+  stop:
+    help:
+      info: '&2Stops all game modes'
+      args: ''
+  stopsc:
+    help:
+      info: '&2Stops scheduler'
+      args: ''
+  stats:
+    help:
+      info: '&2Show players stats'
+      args: '&3(playername)'
+  startsc:
+    help:
+      info: '&2Starts scheduler'
+      args: ''

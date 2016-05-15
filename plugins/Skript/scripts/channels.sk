@@ -13,15 +13,72 @@
 #
 # Currently, all staff members with social spy are forced to see all channel chats. This makes it easy to save used channels and see who is talking with who.
 #
-on script load:
-	loop all players:
-		loop-player has permission "essentials.socialspy"
-		{chatspy.%loop-player%} is not set
-		set {chatspy.%loop-player%} to true
+#on script load:
+#	loop all players:
+#		loop-player has permission "essentials.socialspy"
+#		{chatspy.%loop-player%} is not set
+#		set {chatspy.%loop-player%} to true
 on join:
 	player has permission "essentials.socialspy"
 	{chatspy.%player%} is not set
 	set {chatspy.%player%} to true
+on quit:
+	if player has permission "essentials.socialspy":
+		set {adminchat.%player%} to false
+command /a [<text>]:
+	permission: essentials.socialspy
+	trigger:
+		if arg is not set:
+			if {adminchat.%player%} is not set:
+				set {adminchat.%player%} to true
+				message "Adminchat: &2ON!"
+			else:
+				if {adminchat.%player%} is true:
+					set {adminchat.%player%} to false
+					message "Adminchat: &4OFF!"
+				else:
+					set {adminchat.%player%} to true
+					message "Adminchat: &2ON!"
+		else:
+			loop all players:
+				if loop-player has the permission "essentials.socialspy":
+					send "&f[&a%event-player%&f]&b: %arg%" to the loop-player
+command /ac [<text>]:
+	permission: essentials.socialspy
+	trigger:
+		if arg is not set:
+			if {adminchat.%player%} is not set:
+				set {adminchat.%player%} to true
+				message "Adminchat: &2ON!"
+			else:
+				if {adminchat.%player%} is true:
+					set {adminchat.%player%} to false
+					message "Adminchat: &4OFF!"
+				else:
+					set {adminchat.%player%} to true
+					message "Adminchat: &2ON!"
+		else:
+			loop all players:
+				if loop-player has the permission "essentials.socialspy":
+					send "&f[&a%event-player%&f]&b: %arg%" to the loop-player
+command /adminchat [<text>]:
+	permission: essentials.socialspy
+	trigger:
+		if arg is not set:
+			if {adminchat.%player%} is not set:
+				set {adminchat.%player%} to true
+				message "Adminchat: &2ON!"
+			else:
+				if {adminchat.%player%} is true:
+					set {adminchat.%player%} to false
+					message "Adminchat: &4OFF!"
+				else:
+					set {adminchat.%player%} to true
+					message "Adminchat: &2ON!"
+		else:
+			loop all players:
+				if loop-player has the permission "essentials.socialspy":
+					send "&f[&a%event-player%&f]&b: %arg%" to the loop-player
 command /closechat <text> <text>:
 	permission: is.pro
 	trigger:
@@ -112,7 +169,6 @@ command /chat [<text>] [<text>]:
 			message "&a/chat leave &e&o- Leave your current channel"
 			player has permission "essentials.socialspy":
 				message "&a/chat spy &e&o- Toggle social spy for chat channels"
-
 on chat:
 	{channel.%player%.enabled} is true
 	cancel event
@@ -122,6 +178,12 @@ on chat:
 		else if loop-player has the permission "essentials.socialspy":
 			{chatspy.%loop-player%} is true
 			send "&f[&b&o%{channel.%player%}%&f] &6%event-player%&f: &a%message%" to the loop-player
+on chat:
+	{adminchat.%player%} is true
+	cancel event
+	loop all players:
+		if loop-player has the permission "essentials.socialspy":
+			send "&f[&a%event-player%&f]&b: %message%" to the loop-player
 on chat:
 	{mc.%player%} is true
 	cancel event

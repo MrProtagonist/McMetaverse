@@ -1,0 +1,27 @@
+# Sends private message to the voting player.
+private-message: '&eThanks for voting!'
+
+# Sends public broadcast to server.
+public-message: '&e%name% voted for us at %service% and got a reward!'
+
+# Commands to be performed only if the player is offline, without the slash.
+offline-commands:
+  - 'broadcast &eGo to %service% to vote for our server, just like %name% &edid!'
+# Commands to be performed if the player voted offline and joins the server.
+login-commands:
+  - '%name% &7logged in after voting!'
+  - 'msg %name% Here is your prize for voting!'
+  - 'eco give %name% 200'
+  
+# Commands to be performed only if the player is online.
+online-commands:
+  - 'give %name% diamond 1'
+  - 'eco give %name% 200'
+
+# Commands to be performed after a given amount of time.
+# Separate command from time using ';' and define the time
+# using 'h' (hour), 'm' (minute), 's' (second). Exclude the slash
+# in front of the command unless the command requires another slash.
+timed-commands:
+  - 'spawn %user%'
+# Note: Stopping or reloading the server will execute the timed commands.

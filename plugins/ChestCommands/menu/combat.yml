@@ -59,16 +59,7 @@ divider1:
   POSITION-X: 1
   POSITION-Y: 1
   DATA-VALUE: 0
-ScatzbrosShop:
-  COMMAND: 'shopwarp 17'
-  NAME: '&d[p] &aScatzbros Shop &d[p]'
-  LORE:
-    - '&f&oLegendary Library & Stuff! Not Crap!'
-  ID: 403
-  KEEP-OPEN: false
-  POSITION-X: 2
-  POSITION-Y: 1
-  DATA-VALUE: 0
+
 divider2:
   NAME: ''
   ID: 160
@@ -76,6 +67,7 @@ divider2:
   POSITION-X: 3
   POSITION-Y: 1
   DATA-VALUE: 0
+
 divider3:
   NAME: ''
   ID: 160

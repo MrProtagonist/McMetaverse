@@ -1,0 +1,85 @@
+command /provanish:
+	executable by: players
+	permission: essentials.socialspy
+	trigger:
+		broadcast "&e%player% left the game."
+		make the player execute "/vanish"
+		
+on command "/version" or "/about":
+	if player does not have permission "is.op":
+		cancel event
+		message "&cYou can't do that! You need to be an operator."
+on command:
+	if command contains ":":
+		if player does not have permission "is.op":
+			cancel event
+			message "&cYou can't do that! You need to be an operator."
+command /craftvanish:
+	aliases: /cv
+	trigger:
+		if player has permission "essentials.socialspy":
+			if {vanished.%player%} is false:
+				set {vanished.%player%} to true
+				wait 2 ticks
+				make the player execute "/vanish"
+				message "&4Leaving or joining the game will now be &e&lhidden&r&4 from the public."
+			else:
+				set {vanished.%player%} to false
+				wait 2 ticks
+				make the player execute "/vanish"
+				message "&4Leaving or joining the game will now be &a&lshown&r&4 to the public."
+on join:
+	if {vanished.%player%} is true:
+		set join message to ""
+		wait 1 real second
+		make the player execute "/vanish"
+		wait 2 real seconds
+		message "&4You are in craftvanish. To return to showing login and leave messages and toggling vanish: Execute &a/craftvanish&4."
+	else:
+		if {greeting.%player%} is set:
+			set join message to "&e%player% %{greeting.%player%}%"
+		else:
+			set join message to "&e%player% joined the game."
+on quit:
+	if {vanished.%player%} is true:
+		make player execute "vanish"
+		set leave message to ""
+	else:
+		if {farewell.%player%} is set:
+			set leave message to "&e%player% %{farewell.%player%}%"
+		else:
+			set leave message to "&e%player% left the game."
+command /showcount <text>:
+	trigger:
+		if argument is "sandstorm":
+			message "%{sandstorm.players}%"
+		else if argument is "fish":
+			message "%{fishing.players}%"
+#command /globaltoggle:
+#	trigger:
+#		if {global.%player%} is false:
+#			set {global.%player%} to true
+#			message "&cYou will now ignore all chat except for private and party messages."
+#		else:
+#			set {global.%player%} to false
+#			message "&cYou will now see global chat again."
+#on chat:
+#	cancel event
+#	loop all players:
+#		if {global.%player%} is not true:
+#			send %
+#		
+command /sudo [<player>] [<text>]:
+	trigger:
+		if player has permission "essentials.socialspy":
+			if player-argument is set:
+				if arg-2 is set:
+					if player-argument has permission "essentials.socialspy":
+						message "&cCan't sudo another staffmember!"
+					else:
+						make player-argument execute "%arg-2%"
+		else:
+			if command sender is the console:
+				if player-argument is set:
+					if arg-2 is set:
+						make player-argument execute "%arg-2%"

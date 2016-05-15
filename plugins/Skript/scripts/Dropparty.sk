@@ -35,9 +35,14 @@ command /setdrop:
 	description: Set location for drop party.
 	permission: drop.set
 	trigger:
-		set {sk.dropparty} to location of player
-		message "<lime>Drop party point set!"
+		message "<lime>Click any block to set a teleport location"
+		set {sk.dpcontrol} to player
 		stop	
+on click:
+	if player is {sk.dpcontrol}:
+		set {sk.dropparty} to location of the clicked block
+		message "<lime>Drop party location set, you can now click any block without consequences."
+		delete {sk.dpcontrol}
 command /dropparty:
 	description: Shows if a drop party has been done today.
 	usage: /dropparty
@@ -58,26 +63,28 @@ command /dropparty:
 command /givetoken <player>:
 	permission: is.op
 	trigger:
-		execute console command "/give %arg% 175 1 unbreaking:3 name:§a§l§oD§b§l§oR§c§l§oO§d§l§oP_§e§l§oP§1§l§oA§2§l§oR§3§l§oT§4§l§oY§6§o§l_Token lore:&f&oHold_and_right_click_to_start_an_instant_drop_party!"
+		give arg shiny double plant named "&a&l&oD&b&l&oR&c&l&oO&d&l&oP &e&l&oP&1&l&oA&2&l&oR&3&l&oT&4&l&oY&6&o Token" with lore "✓ &f&oHold and right click to start an instant drop party!"
+#		execute console command "/give %arg% 175 1 name:§a§l§oD§b§l§oR§c§l§oO§d§l§oP_§e§l§oP§1§l§oA§2§l§oR§3§l§oT§4§l§oY§6§o§l_Token lore:&f&oHold_and_right_click_to_start_an_instant_drop_party!"
 		send "&6&oYou just received a &a&l&oD&b&l&oR&c&l&oO&d&l&oP &e&l&oP&1&l&oA&2&l&oR&3&l&oT&4&l&oY&6&o token!" to arg
 on right click with double plant:
-	tool of the player is enchanted with unbreaking 3
 	name of player's tool contains "token"
-	remove 1 double plant from player
+	lore of player's tool contains "✓"
+	set player's tool to air
 	broadcast "&a&o&l%player%&r&6&o just used a &a&l&oD&b&l&oR&c&l&oO&d&l&oP &e&l&oP&1&l&oA&2&l&oR&3&l&oT&4&l&oY&6&o token!"
 	wait 3 real seconds
 	execute console command "/startdrop"
 command /drop:
 	description: Warp to the drop party area.
 	trigger:
+		player is op
 		message "&a&oYou are whisked away to the Drop Party area."
 		set {warping.%player%} to true
 		push the player upwards at speed 10
-		execute console command "/playsound random.explode %player% ~0 ~0 ~0 20 50"
+#		execute console command "/playsound random.explode %player% ~0 ~0 ~0 20 50"
 		loop 33 times:
-			spawn 50 of mob spell data 1 offset with 1, 0, 1 at location of block 1 meter above player
+#			spawn 50 of mob spell data 1 offset with 1, 0, 1 at location of block 1 meter above player
 			wait 1 tick
-		spawn 12 of huge explosion data 1 offset with 2, 2, 2 at location of player
+#		spawn 12 of huge explosion data 1 offset with 2, 2, 2 at location of player
 		wait 5 ticks
 		teleport player to {sk.dropparty}
 		wait 5 ticks
@@ -223,7 +230,7 @@ command /partyloop:
 			execute console command "/blockparty"
 			set block 21 meters above {drop.togglepos} to redstone block
 			wait 5 second
-			execute console command "/blockparty" 
+			execute console command "/blockparty"
 			set block 20 meters above {drop.togglepos} to redstone block			
 			wait 5 second
 			execute console command "/blockparty"
@@ -288,9 +295,12 @@ command /blockparty:
 	description: Starts it
 	permission: sk.blockparty
 	trigger:
-		set {_radius} to 11
+		set {_radius} to 10
 		set {_chance} to 1
 		set {_py} to y-coordinate of {sk.dropparty}
+		loop all players in radius {_radius} around block at {sk.dropparty}:
+			remove speed from the loop-player
+#			send "debug" to the loop-player
 		loop blocks in radius {_radius} around {sk.dropparty}:
 			loop-block is air:
 				chance of {_chance}%:
@@ -300,7 +310,7 @@ command /blockparty:
 					subtract {_py} from {_diff}
 					{_diff} is less than 5:
 						{_diff} is more than 0:
-							spawn 10 of mob spell data 1 offset with 0, 0, 0 at location of loop-block
+#							spawn 10 of mob spell data 1 offset with 0, 0, 0 at location of loop-block
 							chance of 1%:
 								drop 1 diamond block at {_location}
 							chance of 2%:

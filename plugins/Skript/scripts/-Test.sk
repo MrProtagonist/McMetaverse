@@ -1,0 +1,58 @@
+variables:
+	{goal.description} = "Mine one lonely block of dirt"
+
+# First lets make sure we are updating the day counter, so we can ensure players don't complete the same challenge more than once.
+on skript start:
+	if {metagoal.day} is not set:
+		set {metagoal.day} to 0
+	add 1 to {metagoal.day}
+	
+# ==============================================
+# User Interfaces
+on join:
+	wait 15 seconds
+	if {tokens.%uuid of player%} is not set:
+		set {tokens.%uuid of player%} to 0
+		set {metagoal.%uuid of player%.completed} to 0
+	if {metagoal.day} is not {metagoal.%uuid of player%.day}:
+		set {metagoal.%uuid of player%.day} to {metagoal.day}
+		set {goal.%uuid of player%.progress} to 0
+	if {metagoal.day} is not {metagoal.%uuid of player%.completed}:
+		send "&f[&6&lDAILY CHALLENGE&f] &b%{goal.description}%" to player
+		strike lightning effect at the player
+		wait 5 ticks
+		play "ENTITY_PLAYER_LEVELUP" to player at volume 0.8		
+		
+command /challenge:
+	trigger:
+		send "&f[&6&lDAILY CHALLENGE&f] &b%{goal.description}%" to player
+# Eventually we should dynamically insert Progress to that goal here
+
+command /tokens:
+	trigger:
+		send "&6&lMeta-Tokens: &f%{tokens.%uuid of player%}%" to player
+		# Need to add message saying how to spend them here.	
+
+# Need to add command for spending tokens. Unless it is going to be physical... Like the bankers? Either way, that goes here.
+
+# ==============================================
+# Challenge template
+
+on break:
+	event-block is dirt
+	#Possible condition statement(s) here
+	add 1 to {goal.%uuid of player%.progress}
+
+# How many do they need?
+	if {goal.%uuid of player%.progress} is 1:
+		strike lightning effect at the player
+		play "BLOCK_NOTE_PLING" to player at volume 0.9	
+		wait 5 ticks
+		play "BLOCK_NOTE_PLING" to player at volume 0.9	
+		wait 5 ticks
+		play "BLOCK_NOTE_PLING" to player at volume 0.9	
+		play "ENTITY_PLAYER_LEVELUP" to player at volume 0.8
+		send "&f[&a&lDAILY CHALLENGE COMPLETE&f] &6You earned 1 Meta-Token!"
+		add 1 to {tokens.%uuid of player%}
+		set {metagoal.%uuid of player%.completed} to {metagoal.day}
+	

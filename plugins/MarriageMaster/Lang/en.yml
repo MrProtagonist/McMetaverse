@@ -1,4 +1,4 @@
-Version: 15
+Version: 18
 Language:
     Console:
         Enabled: Marriage Master has been enabled!
@@ -19,8 +19,8 @@ Language:
         TP: Teleport to Married Player.
         PvPOn: Enables PvP with Partner.
         PvPOff: Disables PvP with Partner.
-        SetHome: Sets your Home.
-        TPHome: Teleports to your Home.
+        SetHome: Sets your homepoint.
+        TPHome: Teleports to your homepoint.
         Chat: Private chat with your partner.
         ChatToggle: Toggles your chat to be private with your partner.
         Reload: Reloads the config of the plugin.
@@ -31,9 +31,12 @@ Language:
         SelfMarry: Sends a marry request to a other player.
         SelfDivorce: To leave your partner.
         Surname: Changes the surname of a couple.
-        Backpack: 'Opens the backpack of your partner.'
-        BackpackOn: 'Allows your partner to use your backpack.'
-        BackpackOff: 'Disallows your partner to use your backpack.'
+        Backpack: Opens the backpack of your partner.
+        BackpackOn: Allows your partner to use your backpack.
+        BackpackOff: Disallows your partner to use your backpack.
+        DelHome: Deletes your homepoint.
+        TPHomeOther: Teleports you to a married players home.
+        DelHomeOther: Deletes the home of a married player.
     Ingame:
         NotMarried: You are not Married.
         NoMarriedPlayers: There are no Married Players.
@@ -45,13 +48,16 @@ Language:
         PartnerNowOffline: Your Partner is now offline.
         PvPOn: You have now enabled PvP with your Partner.
         PvPOff: You have now disabled PvP with your Partner.
-        NoHome: You have no Home yet.
+        PlayerNoHome: "The player doesn't have a home yet."
+        NoHome: You have no home yet.
         HomeTP: You have been teleported to your home.
         HomeSet: Your home has been saved.
         PlayerNotOn: '%s is not Online.'
         NoTPInVanish: You cant use teleport if your Partner is Vanished.
-        TP: Teleporting to Partner...
-        TPto: Your Partner is teleporting to you...
+        TP: Teleporting to partner...
+        TPto: Your partner is teleporting to you...
+        TPUnsafe: "Teleport cancled! You would not survive it!"
+        TPtoUnsafe: "Your partner was about to teleport to you, but would not survive it!"
         ListHL: Married Player List
         ListHLMP: 'Showing page %1$d/%2$d - /marry list <page>'
         PvPIsOff: You can't hurt your Partner if you have PvP disabled.
@@ -96,6 +102,7 @@ Language:
         BackpackShareOff: You now don't share your backpack with your partner.
         BackpackOpend: Your partner has opend your backpack.
         BackpackShareDenied: Your partner doesn't give you access to his backpack.
+        HomeDeleted: Homepoint deleted.
     Economy:
         NotEnough: "You don't have enough money! You need %1$s."
         PartnerNotEnough: Your partner doesn't have enough money!
@@ -136,8 +143,8 @@ Language:
         SurnameSet: Surname changed.
         DivorceRequestSent: 'Divorce request sent.'
     Dialog:
-        DoYouWant: 'Do you %1$s, want to marry %2$s on this server, until death do you part?'
-        AndDoYouWant: 'And do you %1$s, want to marry %2$s on this server, until death do you part?'
-        Married: 'By the power that Notch has invested in me, I now pronounce you married. You may now kiss.'
+        DoYouWant: 'Do you %1$s, want to marry %2$s on this server?'
+        AndDoYouWant: 'And do you %1$s, want to marry %2$s on this server?'
+        Married: 'I now pronounce you husband and wife. You may now kiss .'
         YesIWant: 'Yes, I will!'
-        NoIDontWant: 'No, I will not! Fuck this scrub, they just got played!'
+        NoIDontWant: 'No, I will not!'

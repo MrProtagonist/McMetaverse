@@ -1,0 +1,62 @@
+on script load:
+	set {lottery} to true
+	if {lotterynum} is not set:
+		set {lotterynum} to 0
+every 30 minutes:
+#	broadcast "&f[&aSERVER&f] &bJoin the lottery! Tickets cost $75 each and grant you a chance at winning great prices! Do /lottery to buy one!"
+	add 1 to {lotterytime}
+	if {lotterytime} is equal to 12:
+		if {lotterycount} is greater than 4:
+			set {_num} to a random integer between 1 and {lotterynum}
+			loop {lotterylist::*}:
+				if loop-value is equal to {_num}:
+					broadcast "&e%loop-value% is the winning number! Winner, do &6/lotterywin&b to claim your prize!"
+					set {lotterywin} to {_num}
+					delete {lotterylist::*}
+					set {lotteryprize} to {lotterynum} * 100
+					set {lotterynum} to 0
+					delete {lotteryparticipants::*}
+					set {lotterytime} to 0
+					set {lotterycount} to 0
+		else:
+			broadcast "&f[&aSERVER&f] &bNo winners for now!"
+command /lottery:
+	trigger:
+		if {lottery.%player%} is not set:
+			if player's balance is greater than or equal to 75:
+				message "&cYou have bought a lotteryticket!"
+				execute console command "eco take %player% 75"
+				set {lottery.%player%} to true
+				add {lottery.%player%} to {lotteryparticipants::*}
+				add 1 to {lotterycount}
+				set {lottery.number.%player%} to {lotterynum} + 1
+				add 1 to {lotterynum}
+				add {lottery.number.%player%} to {lotterylist::*}
+			else:
+				message "&cYou need more money to buy a lottery ticket!"
+command /lotterywin:
+	trigger:
+		if {lottery.number.%player%} is equal to {lotterywin}:
+			execute console command "eco give %player% %{lotteryprize}%"
+			delete {lottery.number.%player%}
+			delete {lottery.%player%}
+command /checkme:
+	trigger:
+		message "%{lottery.%player%}%"
+command /listlot:
+	trigger:
+		loop {lotterylist::*}:
+			message "%loop-value%"
+		loop {lotteryparticipants::*}:
+			message "%loop-value%"
+command /resetlottery:
+	trigger:
+		if player is op:
+			loop {lotteryparticipants::*}:
+				execute console command "eco give %loop-value% 75"
+				delete loop-value
+			delete {lotteryparticipants::*}
+			set {lotterytime} to 0
+			set {lotterycount} to 0
+			delete {lotterynum}
+			delete {lotterylist::*}

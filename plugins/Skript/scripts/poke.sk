@@ -8,7 +8,7 @@ command /poke <player>:
 				message "&6&oNow poking %arg%..."
 				message "&fDO NOT ABUSE THIS FEATURE, AS IT CAN BE CONSIDERED HARASSMENT"
 				send "&a&oYou were just poked by %player%! Did they get your attention?" to arg
-				execute console command "playsound mob.ghast.affectionate_scream %arg%"
+				execute console command "execute %arg% ~ ~ ~ playsound mob.ghast.affectionate_scream %arg% ~ ~ ~ 0.5"
 				while {lastpoke.%player%} is not 0:
 					wait 1 real second
 					subtract 1 from {lastpoke.%player%}

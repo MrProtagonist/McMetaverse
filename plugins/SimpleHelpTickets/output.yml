@@ -60,5 +60,5 @@ HelpMe_Line1: '&wTo request help or report grief, stand at the relevant location
   open a ticket with an informative description of the issue.'
 HelpMe_Line2: '&2For more information, type: &G/HelpTickets'
 AdminJoin: '&wThere are currently&Y &arg &wopen Help Tickets'
-UserJoin: '&wYou currently have &Y &arg &wopen Help Tickets'
+UserJoin: '&wYou currently have&Y &arg &wOpen Help Tickets'
 UserJoin-TicketReplied: '&wOne of your tickets has recieved a reply from an admin'

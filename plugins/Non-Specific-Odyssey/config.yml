@@ -1,0 +1,10 @@
+cooldown: true
+cooldown_time: 120
+no_damage: true
+no_damage_time: 10
+max: 1024
+nether: false
+end: false
+initial_step: 0
+step: 10
+firstline: Random TP

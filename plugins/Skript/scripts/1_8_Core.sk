@@ -1,4 +1,34 @@
-﻿on command "ping":
+﻿on command "/home" or "/warp" or "/back" or "/shopwarp":
+	set {_templocation} to location of player
+	wait 10 ticks
+	if player's world is "Metacurse":
+#		if player does not have permission "essentials.socialspy":
+		if player is not op:
+			teleport player to {_templocation}
+			wait 2 ticks
+			teleport player to {_templocation}
+			send "&4&lGET THE FUCK OUT" to the player
+on damage:
+	"%region at victim%" contains "spawn"
+	damage was caused by fire or burning
+	cancel event
+on join:
+	if player's world is "Metacurse":
+		if player does not have permission "essentials.socialspy":
+			execute console command "mvtp %player% MetaOmega"
+			wait 2 ticks
+			execute console command "mvtp %player% MetaOmega"
+command /joinreset <text>:
+	trigger:
+		if player has permission "is.op":
+			delete {joinMeta.%arg%}
+			message "&cReset for testing"
+on join:
+	if {joinMeta.%player%} is not set:
+		execute console command "eco give %player% 500"
+		execute console command "sudo %player% spawn"
+		set {joinMeta.%player%} to true
+on command "ping":
 	wait 1 tick
 	set {_ping} to player's ping
 	send "%{_ping}% ms" to player
@@ -16,10 +46,6 @@ command /leash:
 				message "&cYou can't leash an entity where you can't built!"
 		else:
 			message "&cYou don't have a leash dumbass!"
-on break of obsidian:
-	player is in world "Metacurse_the_end"
-	cancel event
-	message "&cSorry, you can't mine obsidian in this world!"
 on command "/butcher":
 	cancel event
 	message "&cYou can't use this! Use /killall mob 50, /remove drops 50, or something more specific."
@@ -27,9 +53,9 @@ on join:
 	if {villager.%player%.traded} is not set:
 		set {villager.%player%.traded} to now
 on rightclick on villager:
-	clicked entity has offers
+#	clicked entity has offers
 	name of clicked entity does not contain "Teller"
-	set {_trade} to 1 trade of clicked entity
+#	set {_trade} to 1 trade of clicked entity
 #	if third item of {_trade} is emerald:
 	if difference between {villager.%player%.traded} and now is smaller than 3 minutes:
 		set {_difference} to difference between {villager.%player%.traded} and now
@@ -38,19 +64,18 @@ on rightclick on villager:
 	else:
 		set {villager.%player%.traded} to now
 	
-on join:
-	player has permission "essentials.socialspy"
-	{staff.members::%player%} is not set
-	set {staff.members::%player%} to "now"
-	else:
-		remove player from {staff.members::*}
+#on join:
+#	if player has permission "essentials.socialspy":
+#		loop all players:
+#			if loop-player has permission "essentials.socialspy":
+#				if {staff.members::%loop-player%} is not set:
+#					add loop-player to {staff.members::*}
+#	else:
+#		remove player from {staff.members::*}
 on command "/sethome":
 	if player can't build at location of player:
 		cancel event
 		message "&cCan't set a home in a place you can't build!"
-on quit:
-	player has permission "essentials.socialspy"
-	set {staff.members::%player%} to now
 command /setneverend:
 	permission: is.op
 	trigger:
@@ -63,8 +88,8 @@ command /neverend:
 		wait 38 ticks
 		teleport player to {neverend}
 		message "&a&oYou are now in the &8&oNever End&a&o. DO NOT BUILD HERE!"
-on chat:
-	replace all "never end" or "neverend" or "never-end" with "&8&oNever End&f" in the message
+#on chat:
+#	replace all "never end " or "never-end " with "&8&oNeverEnd&f" in the message
 on script load:
 	set {_broken} to 0
 	set {_placed} to 0
@@ -72,13 +97,13 @@ on script load:
 		set block at loop-value to end stone
 		add 1 to {_broken}
 		wait 1 tick
-	broadcast "&f[&aSERVER&f] &eReplaced &6%{_broken}%&e broken blocks in&8&o The Never End&e."
+#	broadcast "&f[&aSERVER&f] &eReplaced &6%{_broken}%&e broken blocks in&8&o The Never End&e."
 	delete {the.never.end.broken::*}
 	loop {the.never.end.placed::*}:
 		set block at loop-value to air
 		add 1 to {_placed}
 		wait 1 tick
-	broadcast "&f[&aSERVER&f] &eRemoved &6%{_placed}%&e placed blocks in&8&o The Never End&e."
+#	broadcast "&f[&aSERVER&f] &eRemoved &6%{_placed}%&e placed blocks in&8&o The Never End&e."
 	delete {the.never.end.placed::*}
 on break of end stone:
 	event-player's world is "Never_End"
@@ -86,14 +111,35 @@ on break of end stone:
 on place:
 	event-player's world is "Never_End"
 	add location of event-block to {the.never.end.placed::*}
-every 5 real seconds:
-	loop all players:
-		loop-player has permission "essentials.socialspy"
-		set {staff.members::%loop-player%} to "now"
+command /colors:
+	trigger:
+		message "These are all the color codes you can use in the metaverse!"
+		message "& 0 gives you &0Black"
+		message "& 1 gives you &1Dark Blue"
+		message "& 2 gives you &2Dark Green"
+		message "& 3 gives you &3Cyan"
+		message "& 4 gives you &4Dark Red"
+		message "& 5 gives you &5Dark Pink"
+		message "& 6 gives you &6Gold Yellow"
+		message "& 7 gives you &7Light Gray"
+		message "& 8 gives you &8Dark Gray"
+		message "& 9 gives you &9Light Blue"
+		message "& a gives you &aLight Green"
+		message "& b gives you &bAqua Blue"
+		message "& c gives you &cLight Red"
+		message "& d gives you &dLight Pink"
+		message "& e gives you &eYellow"
+		message "& f gives you &fWhite"
+		message "& l gives you &lBold (Fat) Text"
+		message "& n gives you &nUnderlined Text"
+		message "& o gives you &oItallic (Cursive) Text"
+		message "& r resets the color coded text before"
+		
 command /staff [<text>] [<text>]:
 	trigger:
 		if arg 1 is set:
 			if arg 1 is "delete":
+				player has the permission "is.op"
 				if {staff.members::%arg 2%} is set:
 					message "&aRemoved from staff list!"
 					remove {staff.members::%arg 2%} from {staff.members::*}
@@ -102,30 +148,68 @@ command /staff [<text>] [<text>]:
 					message "&cEntry not found!"
 					stop
 		else:
-			loop {staff.members::*}:
-				if loop-value is "now":
-					message "&a%loop-index%&f &eis online."
-				else:
-					set {_time} to difference between {staff.members::%loop-index%} and now
-					message "&a%loop-index%&f was online &e%{_time}%&f ago."
-on script load:
-	loop all players:
-		loop-player has permission "essentials.socialspy"
-		{staff.members::%loop-player%} is not set
-		set {staff.members::%loop-player%} to "now"
-
+			delete {owners.online::*}
+			delete {admins.online::*}
+			delete {mods.online::*}
+			delete {builders.online::*}
+			delete {headmod.online::*}
+			delete {devs.online::*}
+			loop all players:
+				if primary group of loop-player is "Owner":
+					add loop-player to {owners.online::*}
+				if primary group of loop-player is "Mod":
+					add loop-player to {mods.online::*}
+				if primary group of loop-player is "Admin":
+					add loop-player to {admins.online::*}
+				if primary group of loop-player is "Dev":
+					add loop-player to {devs.online::*}
+				if primary group of loop-player is "Builder":
+					add loop-player to {builders.online::*}
+				if primary group of loop-player is "HeadMod":
+					add loop-player to {headmod.online::*}
+			if {owners.online::1} is set:
+				message "&a&lOwners&e online:"
+				loop {owners.online::*}:
+					message " &6 %loop-value%"
+			if {devs.online::1} is set:
+				message "&a&lDevs&e online:"
+				loop {devs.online::*}:
+					message " &6 %loop-value%"
+			if {admins.online::1} is set:
+				message "&a&lAdmins&e online:"
+				loop {admins.online::*}:
+					message " &6 %loop-value%"
+			if {builders.online::1} is set:
+				message "&a&lWorld Builders&e online:"
+				loop {builders.online::*}:
+					message " &6 %loop-value%"
+			if {headmod.online::1} is set:
+				message "&a&lHead Mods&e online:"
+				loop {headmod.online::*}:
+					message " &6 %loop-value%"
+			if {mods.online::1} is set:
+				message "&a&lMods&e online:"
+				loop {mods.online::*}:
+					message " &6 %loop-value%"
+					
+					
+#				if loop-value is "now":
+#					message "&a%loop-index%&f &eis online."
+#				else:
+#					set {_time} to difference between {staff.members::%loop-index%} and now
+#					message "&a%loop-index%&f was online &e%{_time}%&f ago."
 
 on spawn:
 	entity's world is "Schematics"
 	cancel event
 
 # ###################################
-# ##       RocketTeleport 1.1      ##
+# ##	   RocketTeleport 1.1	  ##
 # ###################################
-# ## Author: MrProtagonist	       ##
-# ## Created for: McMetaverse      ##
-# ## Web: McMetaverse.com	       ##
-# ## IP: Play.McMetaverse.com      ##
+# ## Author: MrProtagonist		   ##
+# ## Created for: McMetaverse	  ##
+# ## Web: McMetaverse.com		   ##
+# ## IP: Play.McMetaverse.com	  ##
 # ###################################
 # Very easy to use. Just place your pressure plate, then type /launchpad <pad name>, and follow the easy instructions.
 command /launchpad [<text>] [<text>]:
@@ -145,7 +229,7 @@ command /launchpad [<text>] [<text>]:
 					remove {lp.pads::%loop-value%} from {lp.pads::*}
 					stop
 				message "&cCould not find. =/"
-				       
+					   
 			else:
 				set {lp.%player%} to true
 				add arg 1 to {lp.name::*}
@@ -155,7 +239,7 @@ command /launchpad [<text>] [<text>]:
 				delete {lp.%player%}
 				add location of player to {lp.landing::*}
 				message "&eDone!"
-			       
+				   
 on click:
 	if player's held item is clock:
 		execute console command "tm amsg %player% &6&l%time%"

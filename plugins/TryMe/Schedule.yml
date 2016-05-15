@@ -1,49 +1,175 @@
+# #################### Timer ###################
+# Name of scheduler can be any you want
+# Mode can be one of Questions, Flash, Decode, Math or use 'All' to questions from all modes
 # You can setup start and stop times for game to begin and stop
 # Enable it in config file under UseScheduler setting
 # Its in 24 hour format, so dont use AM PM :)
 # You can set it to be accutate to the second, if you want.
 # setup SchedulerInterval in config file to 1 sec or more. By default its 60 (1 min)
-# Questions, Flash, Decode or Math will describe game mode you want to use at that hour
+# Categories: Give any categories you want to include for questions or use 'All' to use them all
 # Days variables: Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday, All
+# Rewards: Give any categories you want to include for posible rewards or use 'All' to use them all
+# 
+# #################### DailyTimer ###################
+# Name of scheduler can be any you want
+# Mode can be one of Questions, Flash, Decode, Math or use 'All' to get top players from all modes
+# RewardTimeRange is in minutes from time when this will be announced, so 1440 will be from last 24 hours 
+# AnnounceOn will determine when to announce winners and from whitch point to start counting RewardTimeRange
+# WeekDays variables: Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday, All. You can use multiple variations
+# MonthDays can be from 1 to 31, recomended to use 1 for montly announcment as not all months have 29,30,31 days. You can use multiple days
+# for MonthDays to work correctly WeekDays should be set to all, as for example every month first day is not monday
+# Rewards will determine how many places you want to reward. Numbers should go in asscending order
+# For RewardCategory and RewardName you can use any from rewards.yml file under DailyRewards section. 
+# Optionaly you can use 'All' variable to get all categories or all rewardnames in that category. In this case reward will be picked randomly.
 
 Timer:
   '1':
-    Mode: Questions
-    Categories:
-    - All
+    Mode: all
     From: '09:10:00'
     Until: '10:15:10'
+    Categories:
+    - All
     Days:
+    - All
+    Rewards:
     - All
   '2':
     Mode: Flash
-    Categories:
-    - All
     From: '11:20:15'
     Until: '12:00:00'
+    Categories:
+    - All
     Days:
+    - All
+    Rewards:
     - All
   '3':
     Mode: Decode
-    Categories:
-    - All
     From: '14:00:25'
     Until: '16:00:00'
+    Categories:
+    - All
     Days:
+    - All
+    Rewards:
     - All
   '4':
     Mode: Decode
-    Categories:
-    - All
     From: '17:01:11'
     Until: '17:30:35'
+    Categories:
+    - All
     Days:
+    - All
+    Rewards:
     - All
   '5':
     Mode: Questions
-    Categories:
-    - All
     From: '18:00:00'
     Until: '20:00:00'
+    Categories:
+    - All
     Days:
     - All
+    Rewards:
+    - All    
+
+    
+DailyTimer:
+  'ThisIsDaily':
+    Mode: Questions
+    RewardTimeRange: 1440
+    AnnounceOn: '12:23:00'
+    WeekDays:
+    - All
+    MonthDays:
+    - All
+    Rewards:
+      1:
+        RewardCategory: 'Daily'
+        RewardName: 'First'
+      2:
+        RewardCategory: 'Daily'
+        RewardName: 'Second'
+      3:
+        RewardCategory: 'Daily'
+        RewardName: 'Third'
+    BroadcastMessage:
+    - '&2----------&e ========== &6TryMe &e========== &2----------'
+    - '&eCongratz for best quiz game players from last 24 hours!'
+    - '&eFirst place gets &3[1name] with [1points]!'
+    - '&eSecond place gets &3[2name] with [2points]!'
+    - '&eThird place gets &3[3name] with [3points]!'
+    - '&2----------------------------------------------'
+  'ThisIsWeekly':
+    Mode: Questions
+    RewardTimeRange: 10080
+    AnnounceOn: '12:00:00'
+    WeekDays:
+    - 'Sunday'
+    MonthDays:
+    - All
+    Rewards:
+      1:        
+        RewardCategory: 'Weekly'
+        RewardName: 'All'
+      2:        
+        RewardCategory: 'Weekly'
+        RewardName: 'All'
+      3:        
+        RewardCategory: 'Weekly'
+        RewardName: 'All'
+    BroadcastMessage:
+    - '&2----------&e ========== &6TryMe &e========== &2----------'
+    - '&eCongratz for best quiz game players from last 7 days!'
+    - '&eFirst place gets &3[1name]!'
+    - '&eSecond place gets &3[2name]!'
+    - '&eThird place gets &3[3name]!'
+    - '&2----------------------------------------------'
+  'ThisIsMonthly':
+    Mode: All
+    RewardTimeRange: 40320
+    AnnounceOn: '12:00:00'
+    WeekDays:
+    - All
+    MonthDays:
+    - 1
+    Rewards:
+      1:        
+        RewardCategory: 'Monthly'
+        RewardName: 'Second'
+      2:        
+        RewardCategory: 'Monthly'
+        RewardName: 'Second'
+      3:        
+        RewardCategory: 'Monthly'
+        RewardName: 'Second'
+      4:        
+        RewardCategory: 'Monthly'
+        RewardName: 'Second'
+      5:        
+        RewardCategory: 'Monthly'
+        RewardName: 'Second'
+      6:        
+        RewardCategory: 'Monthly'
+        RewardName: 'Second'
+      7:        
+        RewardCategory: 'Monthly'
+        RewardName: 'Second'
+      8:        
+        RewardCategory: 'Monthly'
+        RewardName: 'Second'
+      9:        
+        RewardCategory: 'Monthly'
+        RewardName: 'Second'
+      10:        
+        RewardCategory: 'Monthly'
+        RewardName: 'Second'
+    BroadcastMessage:
+    - '&2----------&e ========== &6TryMe &e========== &2----------'
+    - '&eCongratz for best quiz game players from last month!'
+    - '&eFirst place gets &3[1name]!'
+    - '&eSecond place gets &3[2name]!'
+    - '&eThird place gets &3[3name]!'
+    - '&eAnd rest of them in order: &3[4name]&e, &3[5name]&e, &3[6name]&e, &3[7name]&e, &3[8name]&e, &3[9name]&e, &3[10name]&e,!'
+    - '&2----------------------------------------------'

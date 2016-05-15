@@ -1,0 +1,24 @@
+command /pirate:
+	trigger:
+		if player is op:
+			if player is not {pirate}:
+				set {pirate} to player
+			else:
+				delete {pirate}
+		else:
+			message "&cYou can't use that command!"
+on click:
+	player is {pirate}
+	clicked block is crafting table
+	set {sk.pirates} to location of clicked block
+on click:
+	player is {pirate}
+	if clicked block is not crafting table:
+		add clicked block to {sk.pirates::*}
+command /repirate:
+	trigger:
+		if player is op:
+			loop all blocks in radius 4 around the block at {sk.pirates}:
+				set loop-block to {sk.pirates::*}
+		else:
+			message "&cYou can't use that command!"

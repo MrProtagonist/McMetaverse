@@ -10,79 +10,106 @@
 #nameTagsName and bossBarsName have these special tags: <mobLevel> = the amount of powers the boss has.
 #<abilities> = A list of about 3-5 (whatever can fit) names of abilities the boss has.
 #<mobName> = Name of the mob, so if the mob is a creeper the mobName will be "Creeper".
-chance: 80
-levelChance:
-  3: 1
-  4: 2
-  5: 3
-  6: 4
-  7: 5
-namePrefix: "&fInfernal"
-levelPrefixs:
-  3: "&fMad"
-  4: "&fRabid"
-  5: "&fGiant"
-  6: "&fKing"
-  7: "&fInfernal"
+chance: 100
+#mobChances:
+#  Ghast: 150
+#levelChance:
+#  '3': 1
+#  '4': 1
+#  '5': 1
+#  '6': 1
+#  '7': 1
+namePrefix: '&fInfernal'
+#levelPrefixs:
+#  '3': '&fMad'
+#  '4': '&fRabid'
+#  '5': '&fGiant'
+#  '6': '&fKing'
+#  '7': '&fInfernal'
 nameTagsLevel: 1
-nameTagsName: "&f<prefix> <mobName>"
-bossBarsName: "&fLevel <mobLevel> &f<prefix> <mobName>"
-#bossBarsName: "&f<prefix> <abilities><mobName>"
+nameTagsName: '&f<prefix> <mobName>'
+bossBarsName: '&fLevel <mobLevel> &f<prefix> <mobName>'
 enableBossBar: false
+bossBarSettings:
+  defaultColor: "PINK"
+  defaultStyle: "SOLID"
+#  perMob:
+#    PigZombie:
+#      color: "RED"
+#      style: "SEGMENTED_6"
+#    Ghast:
+#      color: "RED"
+#      style: "SEGMENTED_12"
+#    WitherSkeleton:
+#      color: "RED"
+#      style: "SEGMENTED_20"
+#    Blaze:
+#      color: "RED"
+#      style: "SEGMENTED_10"
+#    Creeper:
+#      color: "GREEN"
+#      style: "SEGMENTED_6"
+#  perLevel:
+#    5:
+#      color: "GREEN"
+#      style: "SEGMENTED_6"
 enableScoreBoard: false
-showHealthOnScoreBoard: false
-#effectAllPlayerAttacks means that for example if the player damages a mob with the poison
-#power the player will be poisoned no mater how he did it, even if he was using a bow.
+showHealthOnScoreBoard: true
 effectAllPlayerAttacks: true
 enableParticles: true
 enableDeathMessages: false
-#A message from this list will be chosen randomly, player=Player's name, mob=Mob type, weapon=Weapon player is holding.
-deathMessages: 
-  - "&cplayer &chas killed an mob&c!"
-  - "&cAn mob &cwas slain by player&c!"
-  - "&cplayer &cowned an mob&c!"
-  - "&cAn mob &cwas beheaded by player&c's weapon!"
-  - "&cplayer&c's weapon &ckilled an mob&c!"
-  - "&cAn mob &cwas killed by player &cusing a weapon&c!"
-#spawnMessageRadius is the distance around the mob that players will get the message. -1 is everyone in that world, -2 is everyone on the server.
+deathMessages:
+- '&cplayer &chas killed an mob&c!'
+- '&cAn mob &cwas slain by player&c!'
+- '&cplayer &cowned an mob&c!'
+- '&cAn mob &cwas beheaded by player&c''s weapon!'
+- '&cplayer&c''s weapon &ckilled an mob&c!'
+- '&cAn mob &cwas killed by player &cusing a weapon&c!'
 enableSpawnMessages: false
-spawnMessageRadius: 25
-#A message from this list will be chosen randomly when a mob spawns, mob=Mob type.
-spawnMessages: 
-  - "&cAn Infernal mob has spawned near you!"
+spawnMessageRadius: 64
+spawnMessages:
+- '&cAn Infernal mob has spawned near you!'
+- '&cWatch out!'
+- '&cYou hear a faint scream...'
+- '&cSomething is coming...'
+- '&cYou hear a mob nearby...'
 enabledworlds:
-  - Hyperverse
+- hyperverse
 enabledmobs:
-  - PigZombie
-  - Skeleton
-  - Zombie
-  - Spider
-  - LavaSlime
-  - Witch
-  - Wolf
-  - Creeper
-  - Ghast
-  - Giant
-  - EnderDragon
-  - WitherBoss
-  - Bat
-  - MushroomCow
-  - Cow
-  - Sheep
-  - Pig
-  - Chicken
-  - SnowMan
-  - Ozelot
-  - EntityHorse
-  - CaveSpider
-  - SilverFish
-  - Blaze
-  - Enderman
-  - Slime
-  - Squid
-  - VillagerGolem
-  - WitherSkeleton
-#Set a ability to false to disable it.
+#- Chicken
+- PigZombie
+- Zombie
+- Skeleton
+- Spider
+- CaveSpider
+- Creeper
+- Witch
+- Enderman
+#- Pig
+- Slime
+- LavaSlime
+#- Wolf
+- Ghast
+- Giant
+- SilverFish
+- Blaze
+#- Squid
+- WitherSkeleton
+- Rabbit
+- Shulker
+- Guardian
+- Endermite
+enabledCharmSlots:
+- 0
+- 1
+- 2
+- 3
+- 4
+- 5
+- 6
+- 7
+- 8
+- 36
 poisonous: true
 armoured: true
 blinding: true
@@ -94,7 +121,7 @@ bullwark: true
 rust: true
 sapper: true
 1up: true
-cloaked: true
+cloaked: false
 ender: true
 ghastly: true
 lifesteal: true
@@ -113,11 +140,11 @@ necromancer: true
 firework: true
 gravity: true
 flying: true
-mounted: always
+mounted: true
 morph: true
-ghost: true
+ghost: false
 confusing: true
-#Power configuration:
+ghost: false
 mamaSpawnAmount: 3
 vengeanceDamage: 6
 berserkDamage: 3
@@ -125,41 +152,69 @@ moltenBurnLength: 5
 gravityLevitateLength: 6
 horseMountsHaveSaddles: true
 armouredMountsHaveArmour: true
-fireworkColour: 
-    red: 255
-    green: 10
-    blue: 10
-mobParticles: 
-  - "lavaSpark:1:10"
-#mountFate is what will happen to mounts when their infernal master/rider dies, you can put: nothing, death, removal.
+fireworkColour:
+  red: 255
+  green: 10
+  blue: 10
+enabledSpawnReasons:
+- BREEDING
+#- BUILD_IRONGOLEM
+#- BUILD_SNOWMAN
+- BUILD_WITHER
+- CHUNK_GEN
+#- CURED
+- CUSTOM
+- DEFAULT
+#- DISPENSE_EGG
+#- EGG
+- INFECTION
+#- JOCKEY
+- LIGHTNING
+#- MOUNT
+- NATURAL
+- NETHER_PORTAL
+- OCELOT_BABY
+- REINFORCEMENTS
+- SILVERFISH_BLOCK
+- SLIME_SPLIT
+#- SPAWNER
+#- SPAWNER_EGG
+#- TRAP
+#- VILLAGE_DEFENSE
+- VILLAGE_INVASION
+mobParticles:
+- lavaSpark:1:10
 mountFate: nothing
-enabledMounts: 
-  - Spider
-  - MushroomCow
-  - Cow
-  - Sheep
-  - Pig
-  - EntityHorse
-  - Slime
-  - Ghast
-enabledRiders: 
-  - PigZombie
-  - Skeleton
-  - Zombie
-  - Witch
-  - Creeper
-  - SnowMan
-  - Enderman
-  - WitherSkeleton
-disabledBabyMobs: 
-  - Wolf
-  - MushroomCow
-  - Cow
-  - Sheep
-  - Pig
-  - Chicken
-  - Ozelot
-  - EntityHorse
+enabledMounts:
+- Zombie
+- Spider
+- MushroomCow
+- Cow
+- "Sheep:BLACK"
+- Pig
+- "EntityHorse:SKELETON_HORSE"
+- "EntityHorse:UNDEAD_HORSE"
+- Slime
+- Ghast
+enabledRiders:
+- PigZombie
+- Skeleton
+- Zombie
+- Witch
+- Creeper
+- SnowMan
+- Blaze
+- Enderman
+- WitherSkeleton
+disabledBabyMobs:
+- Wolf
+- MushroomCow
+- Cow
+- Sheep
+- Pig
+- Chicken
+- Ozelot
+- EntityHorse
 #The min/max amount of powers that a mob will get.
 #NOTE: the amount of enabled powers must not be less than the maxpowers.
 #healthMultiplier is what number the infernal mobs health will be multiplied by.
@@ -173,9 +228,11 @@ maxpowers: 7
 healthMultiplier: 4
 healthByPower: false
 healthByDistance: false
+powerByDistance: false
 healthToAdd: 5
+powerToAdd: 1
+xpMultiplier: 8
 addDistance: 200
 enableDrops: true
 dropChance: 1
-xpMultiplier: 8
-enableFarmingDrops: false
+naturalSpawnHeight: 0

@@ -363,8 +363,8 @@ checks:
       active: true
       actions: cancel vl>10 log:morepackets:0:2:if cancel
     nofall:
-      active: true
-      dealdamage: true
+      active: false
+      dealdamage: false
       resetonviolation: false
       resetonteleport: false
       resetonvehicle: true
@@ -378,17 +378,17 @@ checks:
         vcliponly: true
       actions: cancel vl>10 log:passable:0:5:if cancel vl>50 log:passable:0:5:icf cancel
     survivalfly:
-      active: true
+      active: false
       extended:
         vertical-accounting: true
-      falldamage: true
+      falldamage: false
       actions: log:flyshort:3:10:f cancel vl>100 log:flyshort:0:10:if cancel vl>400 log:flylong:0:5:cif cancel vl>1000 log:flylong:0:5:cif cancel cmd:kickfly
       hover:
         active: true
         step: 5
         ticks: 85
         loginticks: 0
-        falldamage: true
+        falldamage: false
         sfviolation: 500
     trace:
       size: 60

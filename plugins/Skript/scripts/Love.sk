@@ -1,0 +1,50 @@
+command /kiss <player>:
+	trigger:
+		if argument is "dinoppar":
+			if player is "pumpkinpepper" or "EvilLittleThing":
+				message "&dYou kissed %arg%!"
+				send "&d%player% &dkissed you!" to the argument
+#				show 20 "heart" particles at location of argument for argument offset by 0.4, 0.7, 0.4
+#				show 20 "heart" particles at location of argument for player offset by 0.4, 0.7, 0.4
+#				show 20 "heart" particles at location of player for argument offset by 0.4, 0.7, 0.4
+#				show 20 "heart" particles at location of player for player offset by 0.4, 0.7, 0.4
+			else:
+				message "&cCan't kiss that person."
+		else:
+			message "&dYou kissed %arg%!"
+			send "&d%player% &dkissed you!" to the argument
+#			show 20 "heart" particles at location of argument for argument offset by 0.4, 0.7, 0.4
+#			show 20 "heart" particles at location of argument for player offset by 0.4, 0.7, 0.4
+#			show 20 "heart" particles at location of player for argument offset by 0.4, 0.7, 0.4
+#			show 20 "heart" particles at location of player for player offset by 0.4, 0.7, 0.4
+command /kissdeath <player>:
+	permission: essentials.socialspy
+	trigger:
+		if {kissdeath.%player%.%arg%} is not set:
+			set {kissdeath.%player%.%arg%} to true
+			message "&dYou kissed %arg% multiple times!"
+			send "&d%player% &dkissed you multiple times!" to the argument
+			loop 20 times:
+#				show 10 "heart" particles at location of argument for argument offset by 0.4, 0.7, 0.4
+#				show 10 "heart" particles at location of argument for player offset by 0.4, 0.7, 0.4
+#				show 10 "heart" particles at location of player for argument offset by 0.4, 0.7, 0.4
+#				show 10 "heart" particles at location of player for player offset by 0.4, 0.7, 0.4
+				wait 10 ticks
+			delete {kissdeath.%player%.%arg%}
+		else:
+			message "&cSorry can't kiss someone more to death than he/she is already being kissed"
+command /kissall:
+	permission: is.op
+	trigger:
+		loop all players:
+			if loop-player is not "dinoppar":
+				send "&dThe server loves you! And %player% acknowledged this by sending you kisses." to the loop-player
+#				show 10 "heart" particles at location of loop-player for loop-player offset by 0.4, 0.7, 0.4
+#				show 10 "heart" particles at location of player for loop-player offset by 0.4, 0.7, 0.4
+# ------------------------------- #
+# -------------HUGS-------------- #
+# ------------------------------- #
+command /hug <player>:
+	trigger:
+		send "&d%player% &dhugged you!" to the argument
+		message "&dYou hugged %arg%&d!"

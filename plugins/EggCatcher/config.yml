@@ -1,0 +1,141 @@
+UsePermissions: true
+UseCatchChance: true
+LooseEggOnFail: true
+UseVaultCost: false
+UseItemCost: true
+UseHealthPercentage: false
+ExplosionEffect: false
+SmokeEffect: false
+NonPlayerCatching: false
+PreventCatchingBabyAnimals: true
+PreventCatchingTamedAnimals: true
+PreventCatchingShearedSheeps: true
+SpawnChickenOnSuccess: false
+SpawnChickenOnFail: true
+VaultTargetBankAccount: ''
+DeleteVillagerInventoryOnCatch: false
+CatchChance:
+  Pig: 100.0
+  Sheep: 100.0
+  MushroomCow: 100.0
+  Cow: 100.0
+  Chicken: 100.0
+  Squid: 100.0
+  Wolf: 100.0
+  Creeper: 100.0
+  Skeleton: 100.0
+  CaveSpider: 100.0
+  Spider: 100.0
+  PigZombie: 100.0
+  Zombie: 100.0
+  MagmaCube: 100.0
+  Slime: 100.0
+  Ghast: 0.0
+  Enderman: 100.0
+  Silverfish: 100.0
+  Blaze: 0.0
+  Villager: 0.0
+  Ocelot: 100.0
+  Witch: 100.0
+  Bat: 100.0
+  Horse: 100.0
+  Endermite: 100.0
+  Guardian: 100.0
+  Rabbit: 100.0
+VaultCost:
+  Pig: 0.0
+  Sheep: 0.0
+  MushroomCow: 0.0
+  Cow: 0.0
+  Chicken: 0.0
+  Squid: 0.0
+  Wolf: 0.0
+  Creeper: 0.0
+  Skeleton: 0.0
+  CaveSpider: 0.0
+  Spider: 0.0
+  PigZombie: 0.0
+  Zombie: 0.0
+  MagmaCube: 0.0
+  Slime: 0.0
+  Ghast: 0.0
+  Enderman: 0.0
+  Silverfish: 0.0
+  Blaze: 0.0
+  Villager: 0.0
+  Ocelot: 0.0
+  Witch: 0.0
+  Bat: 0.0
+  Horse: 0.0
+  Endermite: 0.0
+  Guardian: 0.0
+  Rabbit: 0.0
+ItemCost:
+  ItemId: 331
+  ItemData: 0
+  Amount:
+    Pig: 5
+    Sheep: 5
+    MushroomCow: 5
+    Cow: 5
+    Chicken: 5
+    Squid: 5
+    Wolf: 5
+    Creeper: 5
+    Skeleton: 5
+    CaveSpider: 5
+    Spider: 5
+    PigZombie: 5
+    Zombie: 5
+    MagmaCube: 5
+    Slime: 5
+    Ghast: 5
+    Enderman: 5
+    Silverfish: 5
+    Blaze: 5
+    Villager: 5
+    Ocelot: 5
+    Witch: 5
+    Bat: 5
+    Horse: 5
+    Endermite: 5
+    Guardian: 5
+    Rabbit: 5
+HealthPercentage:
+  Pig: 100.0
+  Sheep: 100.0
+  MushroomCow: 100.0
+  Cow: 100.0
+  Chicken: 100.0
+  Squid: 100.0
+  Wolf: 100.0
+  Creeper: 100.0
+  Skeleton: 100.0
+  CaveSpider: 100.0
+  Spider: 100.0
+  PigZombie: 100.0
+  Zombie: 100.0
+  MagmaCube: 100.0
+  Slime: 100.0
+  Ghast: 100.0
+  Enderman: 100.0
+  Silverfish: 100.0
+  Blaze: 100.0
+  Villager: 100.0
+  Ocelot: 100.0
+  Witch: 100.0
+  Bat: 100.0
+  Horse: 100.0
+  Endermite: 100.0
+  Guardian: 100.0
+  Rabbit: 100.0
+Messages:
+  PermissionFail: You do not have permission to catch this mob!
+  VaultFail: It costs %s dollars to catch this mob!
+  VaultSuccess: You paid %s dollars for catching this mob!
+  ItemCostFail: It costs %s redstone dust to catch this mob!
+  ItemCostSuccess: ''
+  CatchChanceFail: Can't catch this mob!
+  CatchChanceSuccess: ''
+  HealthPercentageFail: The mob has more than %s percent health left and cannot be caught!
+ConfigVersion: 2.5

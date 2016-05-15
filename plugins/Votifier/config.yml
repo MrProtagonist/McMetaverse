@@ -1,0 +1,4 @@
+host: s12.hosthorde.com
+port: 8192
+debug: false
+listener_folder: plugins/Votifier/listeners

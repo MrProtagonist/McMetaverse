@@ -21,6 +21,9 @@ classes:
   Oddjob:
     items: stone_sword, flint_and_steel, netherrack:2, tnt:4, potion:8197:3
     armor: 298,299,300,301
+  Brute:
+    items: diamond_axe, potion:8261:2
+    armor: iron_boots, iron_leggings, iron_chestplate, iron_helmet
 arenas:
   default:
     settings:
@@ -249,6 +252,119 @@ arenas:
       lobby: -1368.5,64,-60.5,347.48,0.0,Metacurse
       spectator: -1365.5,69,-25.5,183.38,0.0,Metacurse
       exit: -1385.5,68,-121.5,197.48,0.0,Metacurse
+    class-limits:
+      Archer: -1
+      Oddjob: -1
+      Chemist: -1
+      Tank: -1
+      Knight: -1
+      Brute: -1
+  Cairo:
+    settings:
+      world: Metacurse
+      enabled: true
+      protect: true
+      entry-fee: ''
+      clear-wave-before-next: false
+      clear-boss-before-next: false
+      clear-wave-before-boss: false
+      soft-restore: false
+      soft-restore-drops: false
+      require-empty-inv-join: false
+      require-empty-inv-spec: false
+      hellhounds: false
+      pvp-enabled: false
+      monster-infight: false
+      allow-teleporting: false
+      spectate-on-death: true
+      auto-respawn: true
+      share-items-in-arena: true
+      min-players: 0
+      max-players: 0
+      max-join-distance: 0
+      first-wave-delay: 5
+      wave-interval: 15
+      final-wave: 0
+      monster-limit: 100
+      monster-exp: false
+      keep-exp: true
+      food-regen: false
+      lock-food-level: true
+      player-time-in-arena: world
+      auto-ignite-tnt: false
+      auto-start-timer: 0
+      start-delay-timer: 0
+      auto-ready: false
+      use-class-chests: false
+      display-waves-as-level: false
+      display-timer-as-level: false
+      use-scoreboards: true
+      isolated-chat: false
+      global-join-announce: false
+      global-end-announce: false
+      show-death-messages: true
+    waves:
+      recurrent:
+        def1:
+          type: default
+          priority: 1
+          frequency: 1
+          monsters:
+            zombies: 10
+            skeletons: 10
+            spiders: 10
+            creepers: 10
+        spec1:
+          type: special
+          priority: 2
+          frequency: 4
+          monsters:
+            powered-creepers: 10
+            zombie-pigmen: 10
+            angry-wolves: 10
+            blazes: 10
+      single:
+        swarm1:
+          type: swarm
+          wave: 6
+          monster: slime
+          amount: low
+        boss1:
+          type: boss
+          wave: 10
+          monster: cave_spider
+          health: high
+          abilities: arrows, root-target, throw-nearby
+    rewards:
+      waves:
+        every:
+          '3': feather, bone, stick
+          '5': dirt:4, gravel:4, stone:4
+          '10': iron_ingot:10, gold_ingot:8
+        after:
+          '7': minecart, storage_minecart, powered_minecart
+          '13': iron_sword, iron_pickaxe, iron_spade
+          '16': diamond_sword
+    coords:
+      spawnpoints:
+        -455,60,-2220: -454.5,60,-2219.5,0.0,0.0,Metacurse
+        -455,60,-2226: -454.5,60,-2225.5,0.0,0.0,Metacurse
+        -467,60,-2238: -466.5,60,-2237.5,0.0,0.0,Metacurse
+        -473,60,-2238: -472.5,60,-2237.5,0.0,0.0,Metacurse
+        -485,60,-2226: -484.5,60,-2225.5,0.0,0.0,Metacurse
+        -485,60,-2220: -484.5,60,-2219.5,0.0,0.0,Metacurse
+        -485,60,-2219: -484.5,60,-2218.5,0.0,0.0,Metacurse
+        -473,60,-2208: -472.5,60,-2207.5,0.0,0.0,Metacurse
+        -467,60,-2208: -466.5,60,-2207.5,0.0,0.0,Metacurse
+      containers: {}
+      p1: -518,60,-2266,0.0,0.0,Metacurse
+      p2: -428,89,-2130,0.0,0.0,Metacurse
+      arena: -469.5,60,-2222.5,181.94,0.0,Metacurse
+      lobby: -469.5,67,-2184.5,178.92,0.0,Metacurse
+      spectator: -469.5,67,-2198.5,176.52,0.0,Metacurse
+      exit: -467.5,66,-2146.5,179.99,0.0,Metacurse
+      l2: -462,66,-2141,0.0,0.0,Metacurse
+      l1: -478,64,-2167,0.0,0.0,Metacurse
     class-limits:
       Archer: -1
       Oddjob: -1

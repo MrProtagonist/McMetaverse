@@ -1,0 +1,26 @@
+users:
+  d5888bee-0de7-498e-9f93-39b9038f7ef9:
+    lastname: EvilLittleThing
+    group: Admin
+    subgroups: []
+    permissions: []
+  dinoppar:
+    group: Admin
+    subgroups:
+    - Builder
+    permissions: []
+  ElgarL:
+    group: Moderator
+    subgroups: []
+    permissions:
+    - groupmanager.noofflineperms
+  KHobbits:
+    group: Moderator
+    subgroups: []
+    permissions:
+    - groupmanager.noofflineperms
+  snowleo:
+    group: Builder
+    subgroups: []
+    permissions:
+    - groupmanager.noofflineperms

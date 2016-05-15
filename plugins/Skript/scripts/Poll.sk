@@ -17,6 +17,17 @@ on script load:
 	
 on join:
 	set {poll.%player%.voted} to false
+command /pollreward <integer>:
+	trigger:
+		if player has permission "essentials.socialspy":
+			if arg is 0:
+				set {poll.reward} to false
+				message "Poll reward set to 0."
+			else:
+				set {poll.reward} to true
+				message "Poll reward set to 150."
+		else:
+			message "&cCan't change poll rewarding."
 command /poll <text>:
 	trigger:
 		if {poll.going} is false:
@@ -40,12 +51,18 @@ command /poll <text>:
 			broadcast "&l- - - - - - - - - - - - - "
 			set {poll.going} to false
 			wait 10 real seconds
-			loop all players:
-				{poll.%loop-player%.voted} is true
-				set {poll.%loop-player%.voted} to false
-				message "&aThank you for participating in the poll. Here is a reward." to loop-player
-				play "LEVEL_UP" specifically to loop-player with pitch 1
-				execute console command "/eco give %loop-player% 150"
+			if {poll.reward} is true:
+				loop all players:
+					{poll.%loop-player%.voted} is true
+					set {poll.%loop-player%.voted} to false
+					message "&aThank you for participating in the poll. Here is a reward." to loop-player
+					play "LEVEL_UP" specifically to loop-player with pitch 1
+					execute console command "/eco give %loop-player% 150"
+			else:
+				loop all players:
+					{poll.%loop-player%.voted} is true
+					set {poll.%loop-player%.voted} to false
+					message "&aThank you for participating in the poll." to loop-player
 		else:
 			if {poll.%player%.voted} is true:
 				message "&cYou already voted!"

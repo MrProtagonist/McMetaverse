@@ -1,0 +1,8 @@
+on click:
+	name of held item contains "Battle dirt"
+	broadcast "&a&lBATTLE DIRT!"
+	loop all blocks in radius 15 of player:
+		loop-block is grass
+		strike lightning at location of loop-block
+	
+	

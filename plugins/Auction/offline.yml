@@ -1,0 +1,14 @@
+18b189d0-b763-4e5d-b8c8-99be3a1e96b7:
+  ==: org.bukkit.inventory.ItemStack
+  type: BOW
+  damage: 117
+  meta:
+    ==: ItemMeta
+    meta-type: UNSPECIFIC
+    enchants:
+      ARROW_DAMAGE: 3
+      DURABILITY: 3
+0e35bab3-f208-4f61-9f48-a67c6c29f94a:
+  ==: org.bukkit.inventory.ItemStack
+  type: EMERALD
+  amount: 64

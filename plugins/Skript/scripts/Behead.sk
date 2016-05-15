@@ -15,42 +15,52 @@
 #
 # This looks like they are being hung if you make the propper stage for it.
 #
-#on click:
-#	clicked block is redstone block
-#	player is "MrProtagonist"
-#	set {sk.behead} to location of clicked block
-#	cancel event
-#	message "OK!"
-#on click:
-#	clicked block is piston
-#	player is "MrProtagonist"
-#	set {sk.piston} to location of clicked block
-#	cancel event
-#	message "OK!"
-#on click:
-#	clicked block is stone button
-#	player is "MrProtagonist"
-#	set {sk.switch} to location of clicked block
-#	cancel event
-#	message "OK!"
-on piston retract:
-	location of event-block is {sk.piston}
-	{behead.killer} is set
-	loop players in radius 2 around event-location:
-		loop-player is not {behead.killer}
-		set {behead.player} to loop-player
-		execute console command "/give %{behead.killer}% 397:3 1 player:%loop-player%"
-		kill loop-player
-		stop
-
+script options:
+	$ developer mode
+command /setbeheadcontrol:
+	trigger:
+		if player is op:
+			set {behead.control} to player
+			message "&cYou can now set the beheader locations, with a redstone block."
+command /resetbeheadcontrol:
+	trigger:
+		if player is op:
+			delete {behead.control}
+			message "&cAny click actions regarding the beheader will not affect it anymore."
+on click:
+	clicked block is redstone block
+	player is {behead.control}
+	set {sk.behead} to location of clicked block
+	cancel event
+	message "OK!"
+on click:
+	clicked block is enchantment table 
+	#	put it on the piston click it, and remove it after using /resetbeheadcontrol
+	player is {behead.control}
+	set {sk.piston} to location of clicked block
+	cancel event
+	message "OK!"
+on click:
+	clicked block is wooden button
+	player is {behead.control}
+	set {sk.switch} to location of clicked block
+	cancel event
+	message "OK!"
 on right click:
-	event-block is stone button
+	event-block is wooden button
 	location of event-block is {sk.switch}
 	set {behead.killer} to player
 	set block at {sk.behead} to air
+	loop all players in radius 2 around block at {sk.piston}:
+		if loop-player is not {behead.killer}:
+			set {behead.player} to loop-player
+	#	broadcast "&e%{behead.player}% was decapitated by %player%"
+		execute console command "/give %{behead.killer}% 397:3 1 player:%loop-player%"
+		kill loop-player
 	wait 3 real seconds
 	set block at {sk.behead} to redstone block
 	delete {behead.killer}
+	stop
 
 on death of player:
 	{behead.player} is player

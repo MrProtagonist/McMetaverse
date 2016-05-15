@@ -1,0 +1,2099 @@
+users:
+  004d639b-6875-4e21-af60-c1c63706e5d4:
+    lastname: null
+    group: Rookie
+    subgroups: []
+    permissions: []
+  004f9666-dba4-4c35-ac83-2b47d145e119:
+    lastname: null
+    group: Rookie
+    subgroups: []
+    permissions: []
+  02406128-6412-4aa6-838a-78af6797f261:
+    lastname: null
+    group: Rookie
+    subgroups: []
+    permissions: []
+  02881699-be58-4ec9-8b16-d912e8c21e08:
+    lastname: xXzonatedbirdXx
+    group: Rookie
+    subgroups: []
+    permissions: []
+  029f6f59-16af-4576-8e7c-7f8c96c4528f:
+    lastname: null
+    group: Noble
+    subgroups: []
+    permissions: []
+  03a3ce4e-7680-4ae8-85b7-d90866630a7f:
+    lastname: null
+    group: Rookie
+    subgroups: []
+    permissions: []
+  03ff2c84-83de-463e-b311-1e3155ae6dab:
+    lastname: null
+    group: Rookie
+    subgroups: []
+    permissions: []
+  0422ea5f-981c-4928-92a5-47ab887b331a:
+    lastname: null
+    group: Regular
+    subgroups: []
+    permissions: []
+    info:
+      prefix: '§f[§c§oRegular§f] '
+      §r§f[§d§oRookie§r]: §r
+  0435c881-a2ce-4a06-8ffe-10b5d8aa71d5:
+    lastname: wyntercain
+    group: Legend
+    subgroups:
+    - Premium
+    permissions:
+    - essentials.gamemode
+    - voxelsniper.litesniper
+    - worldedit*
+    info:
+      suffix: §f [&1 Hayley§f]
+  044d42bc-7854-426e-9ec0-1fc068f6b4d7:
+    lastname: null
+    group: Rookie
+    subgroups: []
+    permissions: []
+  05e60c7e-237c-451f-bb8a-6ffd7e62e9c5:
+    lastname: Roxas568
+    group: Citizen
+    subgroups: []
+    permissions: []
+    info:
+      prefix: '§f[§e§oCitizen§f] '
+      §r§f[§d§oRookie§r]: §r
+  05eeedde-2a1a-466b-964e-7dbc93cf858c:
+    lastname: Frillard
+    group: Regular
+    subgroups: []
+    permissions: []
+    info:
+      prefix: '§f[§c§oRegular§f] '
+      §r§f[§d§oRookie§r]: §r
+  06673a36-e1c8-4772-9f1c-ba0c3c7c00ba:
+    lastname: El_Pterodactyl
+    group: Regular
+    subgroups: []
+    permissions: []
+    info:
+      prefix: '§f[§c§oRegular§f] '
+      §r§f[§d§oRookie§r]: §r
+  06717bee-d2ba-4057-aa1c-5821d1d94094:
+    lastname: McCreepy
+    group: Regular
+    subgroups: []
+    permissions:
+    - skript.collectible
+    info:
+      prefix: '§f[§c§oRegular§f] '
+      §r§f[§d§oRookie§r]: §r
+  07a191a6-8052-466b-8d3b-9b7728accf3e:
+    lastname: Jungle_Shaman
+    group: Regular
+    subgroups: []
+    permissions: []
+    info:
+      prefix: '§f[§c§oRegular§f] '
+      §r§f[§d§oRookie§r]: §r
+  07f65921-cca4-4eda-b1b2-e3e3cd7118b0:
+    lastname: lando1105
+    group: Rookie
+    subgroups: []
+    permissions: []
+  082124ef-8da5-4272-8d40-404bfc1ec6be:
+    lastname: kaikin92
+    group: Rookie
+    subgroups: []
+    permissions: []
+  0856cd5d-6a48-43fa-8afb-850c2dce2172:
+    lastname: Mistidawn98
+    group: Mod
+    subgroups:
+    - Premium
+    permissions:
+    - -autoitem.replaceon.place
+    - bottle.amount
+    - bottle.max
+    - skript.collectible
+    info:
+      prefix: '&f[&6&oCraftsman&f] &f'
+      §r§f[§d§oRookie§r]: §r
+      suffix: ' §f[§2Mistidawn98§f]'
+      '&f[&6&oCraftsman&f]': '&f'
+  0924eaac-930f-4ffb-bb01-513239aa5ef5:
+    lastname: JudePuffz
+    group: Craftsman
+    subgroups: []
+    permissions: []
+    info:
+      prefix: '§f[§6§oCraftsman§f] '
+      §r§f[§d§oRookie§r]: §r
+      suffix: ' §f[Judoe Guild§f]'
+  0965fdd8-3841-42fd-bf90-a59119713905:
+    lastname: null
+    group: Rookie
+    subgroups: []
+    permissions: []
+  0a246679-a5d7-444e-b811-eeb577e48fbd:
+    lastname: Crawford1996
+    group: Citizen
+    subgroups: []
+    permissions: []
+  0a3efa5f-d309-40a0-bebe-d9c8543d67c7:
+    lastname: Mikunii
+    group: Rookie
+    subgroups: []
+    permissions: []
+  0ac743c1-02ba-40c8-9207-080c13c9b9ba:
+    lastname: null
+    group: Rookie
+    subgroups: []
+    permissions: []
+  0ad816de-2317-4d2e-8fd8-9a62227ed389:
+    lastname: null
+    group: Rookie
+    subgroups: []
+    permissions: []
+  0ae680a7-36ca-4143-b3ac-e4b9152e2584:
+    lastname: Swirlz
+    group: Seasoned
+    subgroups: []
+    permissions:
+    - essentials.depth
+    - essentials.getpos
+    - essentials.hat
+    - essentials.itemdb
+    - essentials.me
+    - essentials.near
+    - essentials.sethome.multiple.citizen
+    - essentials.sethome.multiple.regular
+    - essentials.sethome.multiple.rookie
+    - essentials.suicide
+    - essentials.warp
+    - essentials.warp.LIST
+    - quickshop.create.*
+    - quickshop.create.buy
+    - quickshop.create.changeprice
+    - quickshop.create.double
+    - quickshop.create.sell
+    - scavenger.exp
+    - skript.nightvision
+  0c376ecc-a0ee-4042-8250-0b4288a6264c:
+    lastname: null
+    group: Seasoned
+    subgroups: []
+    permissions: []
+  0c5ea6db-1c21-4496-8410-4e26b4b83112:
+    lastname: null
+    group: Citizen
+    subgroups:
+    - Premium
+    permissions:
+    - -autoitem.replaceon.place
+    info:
+      prefix: '§f[§e§oCitizen§f] '
+      §r§f[§d§oRookie§r]: §r
+      suffix: ' §f[§3Mattt§f]'
+  0d3c3ea1-a69e-46ed-95cf-637a70caffb5:
+    lastname: null
+    group: Rookie
+    subgroups: []
+    permissions: []
+  0d4f0b5b-0296-4c0c-8d74-b7695036cd4c:
+    lastname: null
+    group: Rookie
+    subgroups: []
+    permissions: []
+  0d7e689c-9a34-4b5d-9915-31ce3667a25e:
+    lastname: null
+    group: Rookie
+    subgroups: []
+    permissions: []
+  0dcd220e-a9b4-46c8-89ff-b4cd4f6d4838:
+    lastname: rrrrrh
+    group: Champion
+    subgroups: []
+    permissions:
+    - -autoitem.replaceon.place
+    - skript.collectible
+    info:
+      prefix: '§f[§4§oChampion§f] '
+      §r§f[§d§oRookie§r]: §r
+      suffix: ' §f[§6Mitch§f]'
+  0e35bab3-f208-4f61-9f48-a67c6c29f94a:
+    lastname: ManDonut
+    group: Citizen
+    subgroups: []
+    permissions: []
+    info:
+      prefix: '§f[§e§oCitizen§f] '
+      §r§f[§d§oRookie§r]: §r
+  0e3dac50-7bdf-4c7c-9d50-8ea08f26abdc:
+    lastname: null
+    group: Rookie
+    subgroups: []
+    permissions: []
+  0ea2754c-e8a8-4c6e-9c43-bc7958184d46:
+    lastname: null
+    group: Rookie
+    subgroups: []
+    permissions: []
+  100findme:
+    group: Rookie
+    subgroups: []
+    permissions: []
+  10b7f802-b369-47dc-b83b-1383b3b8edb4:
+    lastname: null
+    group: Regular
+    subgroups: []
+    permissions: []
+    info:
+      prefix: '§f[§c§oRegular§f] '
+      §r§f[§d§oRookie§r]: §r
+  1181143d-e2a1-438c-ab4c-f5516010b5c4:
+    lastname: null
+    group: Regular
+    subgroups: []
+    permissions: []
+    info:
+      prefix: '§f[§c§oRegular§f] '
+      §r§f[§d§oRookie§r]: §r
+  11def61b-394c-4955-9060-d44187893e90:
+    lastname: null
+    group: Elite
+    subgroups: []
+    permissions:
+    - essentials.compass
+    - essentials.me
+    - essentials.near
+    - essentials.sethome.multiple.regular
+    - essentials.sethome.multiple.rookie
+    - essentials.suicide
+    - scavenger.xp
+    - vc.2
+    info:
+      prefix: '§f[§a§oElite§f] '
+      suffix: ' §f[BamBamBam§f]'
+  11f235cc-898d-4833-a183-c27b260004e9:
+    lastname: null
+    group: Visitor
+    subgroups: []
+    permissions:
+    - -autoitem.replaceon.place
+  12056564-fefb-416f-8dd2-5825099f966a:
+    lastname: xKittyPlays
+    group: Regular
+    subgroups: []
+    permissions: []
+    info:
+      prefix: '§f[§c§oRegular§f] '
+      §r§f[§d§oRookie§r]: §r
+  1221baba-af31-4bdd-ab9d-2a116433fb23:
+    lastname: null
+    group: Rookie
+    subgroups: []
+    permissions: []
+  12c1a406-b457-4d92-80ee-9c3f72ecddc5:
+    lastname: Risk_400
+    group: Rookie
+    subgroups: []
+    permissions:
+    - skript.collectible
+  12champ:
+    group: Rookie
+    subgroups: []
+    permissions: []
+  139951e3-899e-42c6-b9ac-1d05104b60f1:
+    lastname: Billybillybilly4
+    group: Regular
+    subgroups: []
+    permissions: []
+    info:
+      prefix: '§f[§c§oRegular§f] '
+      §r§f[§d§oRookie§r]: §r
+  140ee2c2-6791-407d-ad8b-24b7b9521434:
+    lastname: null
+    group: Legend
+    subgroups:
+    - Premium
+    permissions:
+    - essentials.fly
+    - essentials.fly.safelogin
+    - essentials.gamemode
+    - essentials.gamemode.self
+  14fc82d7-c0b5-4273-9f17-48243387d4f9:
+    lastname: null
+    group: Regular
+    subgroups: []
+    permissions:
+    - essentials.me
+    - essentials.near
+    - essentials.sethome.multiple.rookie
+    - essentials.workbench
+    - scavenger.exp
+    - skript.extrahealth2
+  15a2702a-834f-4566-8c39-f42ef8a510d7:
+    lastname: null
+    group: Rookie
+    subgroups: []
+    permissions: []
+  160a939c-1b3e-4ab8-926b-05fc2c24bc2f:
+    lastname: ParadoxZero
+    group: Rookie
+    subgroups: []
+    permissions: []
+  162048f5-df04-475b-94b8-f5f392d1cd85:
+    lastname: _NekoChan
+    group: Elite
+    subgroups: []
+    permissions: []
+    info:
+      prefix: '§f[§a§oElite§f] '
+      suffix: ' §f[§4Cow-Chan§f]'
+  16972e37-ac97-4a2b-ad88-e647bb4585a8:
+    lastname: Chibalion
+    group: Citizen
+    subgroups:
+    - Premium
+    permissions: []
+    info:
+      prefix: '§f[§e§oCitizen§f] '
+      §r§f[§d§oRookie§r]: §r
+  1a6f808e-3511-439b-be29-ade61ec29673:
+    lastname: null
+    group: Rookie
+    subgroups: []
+    permissions: []
+  1aa2cda5-84c7-4b9d-8115-db5867e7be0b:
+    lastname: crazzyryley
+    group: Regular
+    subgroups: []
+    permissions: []
+    info:
+      prefix: '§f[§c§oRegular§f] '
+      §r§f[§d§oRookie§r]: §r
+  1aa3a8e7-fd01-4072-a739-611872527c56:
+    lastname: null
+    group: Visitor
+    subgroups: []
+    permissions:
+    - -essentials.helpop
+  1b7f1ada-6fa9-4390-8584-33d7f7fd0bb2:
+    lastname: GamerRick_
+    group: Seasoned
+    subgroups: []
+    permissions: []
+    info:
+      prefix: '§f[§9§oSeasoned§f] '
+      §r§f[§d§oRookie§r]: §r
+  1bf47c3d-074e-47e8-bc37-e21c1ea0aeac:
+    lastname: rfcroc
+    group: Champion
+    subgroups: []
+    permissions:
+    - -autoitem.replaceon.place
+    - BannerMaker.*
+    - bannermaker.getBanner
+    - bannermaker.use
+    - chest.commands.open.pave3.yml
+    - chestcommands.open.pave.yml
+    - chestcommands.open.pave3.yml
+    - chestshop.shop.create
+    - essentials.book
+    - essentials.book.title
+    - essentials.chat.color
+    - essentials.chat.format
+    - essentials.chat.link
+    - essentials.compass
+    - essentials.depth
+    - essentials.enderchest
+    - essentials.ext
+    - essentials.fly
+    - essentials.fly.safelogin
+    - essentials.getpos
+    - essentials.hat
+    - essentials.itemdb
+    - essentials.me
+    - essentials.recipe
+    - essentials.safelogin
+    - essentials.sethome.multiple.champion
+    - essentials.sethome.multiple.craftsman
+    - essentials.sethome.multiple.elite
+    - essentials.sethome.multiple.noble
+    - essentials.sethome.multiple.regular
+    - essentials.sethome.multiple.rookie
+    - essentials.sethome.multiple.seasoned
+    - essentials.signs.format
+    - essentials.signs.magic
+    - essentials.suicide
+    - essentials.warp
+    - essentials.warp.list
+    - essentials.workbench
+    - launchpad.10
+    - quickshop.create.buy
+    - quickshop.create.changeprice
+    - quickshop.create.sell
+    - scavenger.level
+    - scavenger.scavenge
+    - simplesuffix.colors
+    - simplesuffix.format.*
+    - simplesuffix.set.suffix.self
+    - skript.collectible
+    - skript.extrahealth10
+    - skript.extrahealth6
+    - skript.nightvision
+    - skript.trail
+    - vc.10
+    - vc.6
+    - vc.8
+    info:
+      suffix: ' §f[§6AteCaptnHooksHand§f]'
+  1cbd2fe0-3402-47cb-bc9e-7ef7928c4a79:
+    lastname: Quisalas
+    group: Admin
+    subgroups:
+    - Premium
+    permissions:
+    - essentials.me
+    - essentials.tppos
+    - groupmanager.op
+    - irc
+    - irc.list
+    - irc.tab
+    - irc.tablist
+    info:
+      prefix: '§f[§9Admin§f] '
+      suffix: ' §f[§dMistress §9Kitty§f]'
+  1d1eb312-f6c2-498c-9107-0f597981a11c:
+    lastname: null
+    group: Regular
+    subgroups: []
+    permissions: []
+  1d2634f3-15ea-4d1b-a87c-6fa56789cb91:
+    lastname: null
+    group: Rookie
+    subgroups: []
+    permissions: []
+  1d62fd10-aeed-4f60-b910-0daa86a79d54:
+    lastname: Ski32
+    group: Rookie
+    subgroups: []
+    permissions: []
+  1d976471-acd8-43b9-9224-31d5715c84b8:
+    lastname: null
+    group: Rookie
+    subgroups: []
+    permissions: []
+  1dac87bc-df9f-4e5a-ab5c-ee299c94ebbc:
+    lastname: gruvarbetaren
+    group: Rookie
+    subgroups: []
+    permissions: []
+  1db038fb-125d-41b9-a848-18755e5cb7e0:
+    lastname: null
+    group: Seasoned
+    subgroups:
+    - Stone
+    permissions:
+    - essentials.depth
+    - essentials.me
+    - essentials.sethome.multiple.regular
+    - essentials.sethome.multiple.rookie
+    - essentials.workbench
+    - scavenger.exp
+    - scavenger.scavenge
+    - skript.extrahealth2
+  1e1c3657-78d0-46a9-acd6-28aee2978666:
+    lastname: null
+    group: Regular
+    subgroups: []
+    permissions:
+    - essentials.sethome.multiple.regular
+  1e42de72-e955-4dfb-b921-56a74f7c36ae:
+    lastname: null
+    group: Seasoned
+    subgroups: []
+    permissions: []
+    info:
+      suffix: §f [&1Si§f]
+  1ec4e323-0fac-4329-813d-2db025c155c9:
+    lastname: kEv1NnN
+    group: Citizen
+    subgroups: []
+    permissions: []
+    info:
+      prefix: '§f[§e§oCitizen§f] '
+      §r§f[§d§oRookie§r]: §r
+  1f498db3-3a2a-422f-8183-8fcac6e94e51:
+    lastname: null
+    group: Rookie
+    subgroups: []
+    permissions: []
+  1f4acbe7-028b-4b97-a00d-27a7a69194e7:
+    lastname: Armyman767
+    group: Elite
+    subgroups:
+    - Premium
+    permissions:
+    - -autoitem.replaceon.place
+    - chestcommands.command.reload
+    - essentials.gm
+    - essentials.hat
+    - essentials.me
+    - essentials.sethome.multiple.rookie
+    - essentials.workbench
+    - groupmanager*
+    - quickshop.create.buy
+    - quickshop.create.changeprice
+    - quickshop.create.sell
+    - scavenger.scavenge
+    - sk.submissions
+    - skript.extrahealth2
+    - skript.nightvision
+    info:
+      suffix: §f [&6Henry§f]
+  1f6b40fb-0c50-46a8-92b6-4922dea465c6:
+    lastname: Kaiser8812
+    group: Regular
+    subgroups: []
+    permissions: []
+    info:
+      §r§f[§d§oRookie§r]: §r
+  1fe51d5a-2fa4-466c-96f4-ed4c0bde867c:
+    lastname: Clyde_
+    group: Craftsman
+    subgroups: []
+    permissions: []
+    info:
+      prefix: '§f[§6§oCraftsman§f] '
+      §r§f[§d§oRookie§r]: §r
+      suffix: ' §f[Kurt Cobain§f]'
+  217b714f-e01d-4988-b4d8-580bc5e1b891:
+    lastname: Cahllum
+    group: Elite
+    subgroups:
+    - Diamond
+    - Premium
+    permissions:
+    - essentials.helpop.receive
+    - essentials.me
+    - essentials.sethome.multiple.craftsman
+    - essentials.sethome.multiple.rookie
+    - essentials.warp
+    - essentials.warp.LIST
+    - essentials.warps.extreme
+    - essentials.workbench
+    - gprealestate.sell
+    - quickshop.create.*
+    - quickshop.create.buy
+    - quickshop.create.sell
+    - scavenger.exp
+    - scavenger.level
+    - scavenger.scavenge
+    - skript.extrahealth4
+    - skript.nightvision
+    info:
+      suffix: ' §f[§4O§6G§f]'
+  21d7cf65-dd8b-4ec1-99cc-24a4f9466099:
+    lastname: null
+    group: Seasoned
+    subgroups: []
+    permissions:
+    - simplesuffix.set.prefix.self
+    info:
+      prefix: '§f[§9§oSeasoned§f] '
+      §r§f[§d§oRookie§r]: §r
+  226265c7-6ef3-4b1c-8228-38d489264572:
+    lastname: xINS_TryharDx
+    group: Citizen
+    subgroups: []
+    permissions:
+    - essentials.compass
+    - essentials.depth
+    - essentials.getpos
+    - essentials.me
+    - essentials.near
+    - essentials.recipe
+    - essentials.sethome.multiple.regular
+    - essentials.sethome.multiple.rookie
+    - essentials.suicide
+    - scavenger.xp
+    - vc.2
+  22jakob22:
+    group: Visitor
+    subgroups: []
+    permissions:
+    - essentials.fly.safelogin
+    - essentials.signs.color
+    - essentials.signs.magic
+  23a48067-6994-4751-93e0-64c61108b52e:
+    lastname: null
+    group: Rookie
+    subgroups: []
+    permissions: []
+  23d38cd7-94f0-4707-b5ac-8a51ea05d59f:
+    lastname: null
+    group: Owner
+    subgroups: []
+    permissions:
+    - -autoitem.replaceon.place
+    - essentials.gm
+    - essentials.hat
+    info:
+      prefix: '&f[&aFounder&f] &r'
+      suffix: ' §f[I AM THE LIQUOR!§f]'
+  23d87112-7557-4be7-948e-8b58217d31a0:
+    lastname: TheAquaBlitz
+    group: Rookie
+    subgroups: []
+    permissions: []
+  241becd8-0e97-426d-a5c6-a6f54ed048e1:
+    lastname: ReesuDucky
+    group: Craftsman
+    subgroups: []
+    permissions:
+    - -autoitem.replaceon.place
+    - skript.collectible
+    info:
+      prefix: '§f[§6§oCraftsman§f] '
+      §r§f[§d§oRookie§r]: §r
+      suffix: ' §f[Reese''s Cup§f]'
+  25395259-d8e8-4e3c-a591-c9ae5c528b90:
+    lastname: mustachemad
+    group: Rookie
+    subgroups: []
+    permissions: []
+    info:
+      prefix: '§f[§d§oRookie§f] '
+  254bae6b-a6b5-4470-b71b-b74c452baed4:
+    lastname: null
+    group: Rookie
+    subgroups: []
+    permissions: []
+  2576d27f-a9c8-414f-83ec-bd8ce014c7bb:
+    lastname: shadow007uk
+    group: HeadMod
+    subgroups:
+    - Obsidian
+    - Premium
+    - Mod
+    permissions:
+    - -autoitem.replaceon.place
+    - backpack.6
+    - essentials.compass
+    - essentials.depth
+    - essentials.eco
+    - essentials.me
+    - essentials.near
+    - essentials.recipe
+    - essentials.thru
+    - essentials.workbench
+    - limitedcreative.nolimit.*
+    - limitedcreative.nolimit.interact
+    - limitedcreative.nolimit.use
+    - multiverse.teleport.self.*
+    - scavenger.scavenge
+    - skript.collectible
+    - skript.extrahealth2
+    - skript.extrahealth4
+    - skript.extrahealth6
+    - skript.extrahealth8
+    - skript.nightvision
+    info:
+      prefix: '&r&f[&5&oHead Mod&r] &r'
+      suffix: §f [maltesereater &5§f]
+  25c8b7fa-dd4a-4bbb-8cf9-d534cf66d6f9:
+    lastname: NickNackGus
+    group: Champion
+    subgroups: []
+    permissions:
+    - skript.collectible
+    info:
+      prefix: '§f[§4§oChampion§f] '
+      §r§f[§d§oRookie§r]: §r
+      suffix: ' §f[§bSleepy§aKitty§f]'
+  25fcec68-75db-4621-ba25-301593ddae3c:
+    lastname: Trey_P
+    group: Noble
+    subgroups: []
+    permissions: []
+    info:
+      prefix: '§f[§3Noble§f] '
+      §r§f[§d§oRookie§r]: §r
+      suffix: ' §f[§3Horse §4Police§f]'
+  2604b3b4-4a7a-42a0-ad85-c5c274fc4199:
+    lastname: null
+    group: Rookie
+    subgroups: []
+    permissions: []
+  260e3302-5171-4364-a7fa-8e6fcb3315d1:
+    lastname: null
+    group: Rookie
+    subgroups: []
+    permissions: []
+  26276b02-df96-4774-9b64-d646c3387a93:
+    lastname: null
+    group: Rookie
+    subgroups: []
+    permissions:
+    - essentials.sethome.multiple.rookie
+  2658fabf-f489-4e04-8ab0-26a0f004abfa:
+    lastname: Kage_Sage
+    group: Citizen
+    subgroups: []
+    permissions: []
+    info:
+      prefix: '§f[§e§oCitizen§f] '
+      §r§f[§d§oRookie§r]: §r
+  2684ae51-18fa-479f-a1aa-ba202a4a56fa:
+    lastname: null
+    group: Rookie
+    subgroups: []
+    permissions: []
+  279bc456-4d06-4461-b891-e9f50d7f1449:
+    lastname: null
+    group: Rookie
+    subgroups: []
+    permissions: []
+  2805937d-e696-44b9-86b2-a5de6cb4e0eb:
+    lastname: zerexeum_xerneus
+    group: Visitor
+    subgroups: []
+    permissions:
+    - -autoitem.replaceon.place
+  28cb7f00-76c4-41d8-9dd7-a1368add49b4:
+    lastname: null
+    group: Elite
+    subgroups: []
+    permissions:
+    - essentials.book
+    - essentials.book.title
+    - essentials.compass
+    - essentials.depth
+    - essentials.ext
+    - essentials.getpos
+    - essentials.hat
+    - essentials.helpop.receive
+    - essentials.invsee
+    - essentials.itemdb
+    - essentials.me
+    - essentials.near
+    - essentials.sethome.multiple.citizen
+    - essentials.sethome.multiple.craftsman
+    - essentials.sethome.multiple.regular
+    - essentials.sethome.multiple.rookie
+    - essentials.suicide
+    - essentials.top
+    - essentials.warp
+    - essentials.warp.list
+    - essentials.workbench
+    - quickshop.create.buy
+    - quickshop.create.changeprice
+    - quickshop.create.sell
+    - scavenger.exp
+    - scavenger.level
+    - scavenger.scavenge
+    - skript.extrahealth2
+    - skript.extrahealth4
+    - skript.extrahealth6
+    - skript.nightvision
+    info:
+      suffix: §f [&4A&6r&ei&2a&an&ba&3t&1o&5r§f]
+  29262a24-70aa-4824-83ec-5ec43f9a7d29:
+    lastname: RoobLetterman
+    group: Admin
+    subgroups:
+    - Premium
+    - Dev
+    permissions:
+    - -autoitem.replaceon.place
+    - skript.collectible
+    info:
+      prefix: '§f[§5DEV §aSENPAI§f] '
+      suffix: ' §f[§aAKA §5Ruby§f]'
+  29787aae-0bb3-4706-9f81-ab351e4e2f85:
+    lastname: saariebaarie
+    group: Champion
+    subgroups: []
+    permissions:
+    - -autoitem.replaceon.place
+    - skript.collectible
+    info:
+      prefix: '§f[§4§oChampion§f] '
+      §r§f[§d§oRookie§r]: §r
+      suffix: ' §f[§bSassy§dSaar§f]'
+  2aad2922-a1fd-4ad9-8d87-942175de79ad:
+    lastname: XNeurosisX
+    group: Noble
+    subgroups: []
+    permissions:
+    - nonspecificodyssey.biome.*
+    info:
+      prefix: '§f[§b§oNoble§f] '
+      §r§f[§d§oRookie§r]: §r
+      suffix: ' §f[§4Mr.Evil§f]'
+  2b4a5bd4-8c3e-4853-a990-b61830bc2581:
+    lastname: Pauldg
+    group: Noble
+    subgroups: []
+    permissions: []
+    info:
+      prefix: '§f[§b§oNoble§f] '
+      §r§f[§d§oRookie§r]: §r
+      suffix: ' §f[§9Kitty§cSaitamaLevi§f]'
+  2bbb5764-955d-43fe-8fc2-1073e8e4b236:
+    lastname: playerelan101
+    group: Regular
+    subgroups: []
+    permissions: []
+    info:
+      prefix: '§f[§c§oRegular§f] '
+      §r§f[§d§oRookie§r]: §r
+  2c17ccde-072a-4678-af99-5b0b453aee2b:
+    lastname: MilkTheHorse
+    group: Craftsman
+    subgroups: []
+    permissions: []
+    info:
+      prefix: '§f[§6§oCraftsman§f] '
+      §r§f[§d§oRookie§r]: §r
+      suffix: ' §f[§3Horse §4Police§f]'
+  2c23ad66-7b14-4de3-a435-f8a8e29ae3c5:
+    lastname: null
+    group: Citizen
+    subgroups:
+    - Premium
+    permissions:
+    - essentials.fly
+    - essentials.fly.safelogin
+    - essentials.fly.self
+    - essentials.sethome.multiple.rookie
+    - scavenger.xp
+  2c2639dc-db82-480c-bd5e-e3838ba711ef:
+    lastname: TheForgotenTime
+    group: Rookie
+    subgroups: []
+    permissions: []
+  2d0fe667-2c74-4e89-aa0d-5fbe7b2fed0e:
+    lastname: null
+    group: Rookie
+    subgroups: []
+    permissions: []
+  2dbdff86-6e71-4bc6-ac47-83e3e7f7cbb6:
+    lastname: SteamPunkP3nguin
+    group: Visitor
+    subgroups: []
+    permissions:
+    - -autoitem.replaceon.place
+  2e47805e-8f4e-4910-a0c9-9299b11f9ecf:
+    lastname: null
+    group: Noble
+    subgroups: []
+    permissions:
+    - essentials.clearinventory
+    - essentials.compass
+    - essentials.depth
+    - essentials.getpos
+    - essentials.me
+    - essentials.near
+    - essentials.recipe
+    - essentials.sethome.multiple.citizen
+    - essentials.sethome.multiple.craftsman
+    - essentials.sethome.multiple.regular
+    - essentials.sethome.multiple.rookie
+    - essentials.signs.format
+    - essentials.suicide
+    - launchpad.2
+    - launchpad.4
+    - launchpad.6
+    - scavenger.level
+    - scavenger.scavenge
+    - scavenger.xp
+    - skript.extrahealth2
+    - skript.extrahealth4
+    - skript.extrahealth6
+    - vc.2
+    - vc.4
+    - vc.6
+  2e6eff31-e005-47a5-94b0-e1199410f7ec:
+    lastname: Aaron_Herrin
+    group: Citizen
+    subgroups: []
+    permissions: []
+    info:
+      prefix: '§f[§e§oCitizen§f] '
+      §r§f[§d§oRookie§r]: §r
+  2e6f8cda-f022-48c5-8a14-5b2c1961c3ed:
+    lastname: null
+    group: Regular
+    subgroups: []
+    permissions: []
+    info:
+      §r§f[§d§oRookie§r]: §r
+  2e7b6e5b-4529-42f3-806a-43f7ef585a75:
+    lastname: null
+    group: Rookie
+    subgroups: []
+    permissions: []
+  2e81e91c-b615-4ba2-b7e0-e12bda1fcca0:
+    lastname: null
+    group: Visitor
+    subgroups: []
+    permissions:
+    - -autoitem.replaceon.place
+  2e97dde6-b82f-45ba-a5c4-bfbb971671a1:
+    lastname: null
+    group: Rookie
+    subgroups: []
+    permissions: []
+  3043258a-930d-4898-a829-69ff36d7360c:
+    lastname: null
+    group: Regular
+    subgroups: []
+    permissions:
+    - -autoitem.replaceon.place
+    info:
+      prefix: '§f[§c§oRegular§f] '
+      §r§f[§d§oRookie§r]: §r
+  304dc62a-6ab7-4a7b-9869-708e68a48079:
+    lastname: 54Rudie
+    group: Champion
+    subgroups: []
+    permissions: []
+    info:
+      prefix: '§f[§4§oChampion§f] '
+      §r§f[§d§oRookie§r]: §r
+      suffix: ' §f[§411,§012,§413§f]'
+  306ce833-1062-4f6f-9cd6-e501f0a05ddd:
+    lastname: tecnomancer
+    group: Craftsman
+    subgroups: []
+    permissions: []
+    info:
+      prefix: '§f[§6§oCraftsman§f] '
+      §r§f[§d§oRookie§r]: §r
+      suffix: ' §f[come get some§f]'
+  30a67ea0-8824-4875-9c76-df568c3b86c6:
+    lastname: SomeRandomGame
+    group: Regular
+    subgroups: []
+    permissions: []
+    info:
+      prefix: '§f[§c§oRegular§f] '
+      §r§f[§d§oRookie§r]: §r
+  30fa35a4-bfb6-4e79-8206-5d63664819f8:
+    lastname: null
+    group: Citizen
+    subgroups: []
+    permissions:
+    - essentials.sethome.multiple.rookie
+    info:
+      prefix: '§f[§e§oCitizen§f] '
+      §r§f[§d§oRookie§r]: §r
+  31974759-580f-45c0-b27f-97f605e6b7d7:
+    lastname: null
+    group: Rookie
+    subgroups: []
+    permissions: []
+  31v15:
+    group: Regular
+    subgroups: []
+    permissions: []
+  326spiritman:
+    group: Rookie
+    subgroups: []
+    permissions:
+    - essentials.sethome.multiple.rookie
+  3281018a-8a54-4111-ab39-033f9f510b00:
+    lastname: null
+    group: Rookie
+    subgroups: []
+    permissions: []
+  3284b922-454f-4748-b141-2d0e2cb00b3d:
+    lastname: null
+    group: Rookie
+    subgroups: []
+    permissions: []
+  32946ba4-177a-4e25-8a9b-99cd0b4d7963:
+    lastname: Nellahj
+    group: Elite
+    subgroups: []
+    permissions:
+    - essentials.book
+    - essentials.book.title
+    - essentials.chat.color
+    - essentials.chat.format
+    - essentials.compass
+    - essentials.depth
+    - essentials.ext
+    - essentials.getpos
+    - essentials.hat
+    - essentials.itemdb
+    - essentials.jump
+    - essentials.me
+    - essentials.near
+    - essentials.sethome.multiple.citizen
+    - essentials.sethome.multiple.craftsman
+    - essentials.sethome.multiple.noble
+    - essentials.sethome.multiple.regular
+    - essentials.sethome.multiple.rookie
+    - essentials.sethome.multiple.seasoned
+    - essentials.suicide
+    - essentials.top
+    - essentials.warp
+    - essentials.warp.list
+    - essentials.workbench
+    - multiverse.portal.access.creative
+    - quickshop.create.buy
+    - quickshop.create.changeprice
+    - quickshop.create.sell
+    - scavenger.exp
+    - scavenger.level
+    - scavenger.scavenge
+    - simplesuffix.colors
+    - simplesuffix.format.*
+    - simplesuffix.set.suffix.self
+    - skript.extrahealth4
+    - skript.extrahealth6
+    - skript.nightvision
+    - vc.10
+    - vc.6
+    - vc.8
+    - warp.GA
+  332d3ed8-a08e-4e49-b609-9fde64578604:
+    lastname: Swimmer117
+    group: Rookie
+    subgroups: []
+    permissions: []
+  3593a0e6-9d5e-4e36-a221-fa530bcf1716:
+    lastname: null
+    group: Rookie
+    subgroups: []
+    permissions: []
+  35b06fa5-ffff-4a61-8f64-3a49b466c204:
+    lastname: MATRIX_X
+    group: Elite
+    subgroups: []
+    permissions:
+    - -autoitem.replaceon.place
+    - essentials.sethome.multiple.rookie
+    - essentials.warp
+    - essentials.warp.list
+    - scavenger.exp
+    - skript.extrahealth2
+    - vc.2
+    info:
+      prefix: '§f[§a§oElite§f] '
+  36274f90-eceb-46c0-acc1-5df8add1a1fa:
+    lastname: Ashlerose
+    group: Legend
+    subgroups:
+    - Premium
+    permissions:
+    - -irc.message.chat
+    - -autoitem.replaceon.place
+    - bukkit.commands.gamemode
+    - essentials.fly
+    - essentials.fly.safelogin
+    - essentials.fly.self
+    - essentials.top
+    info:
+      prefix: '§f[§a§oQueen§f] '
+      suffix: ' §f[§0Queen§eBey§f]'
+  36bea955-572d-4721-84af-5fb44341e011:
+    lastname: null
+    group: Rookie
+    subgroups: []
+    permissions: []
+  370d76eb-7f68-41c9-8927-d9abf602f244:
+    lastname: null
+    group: Regular
+    subgroups: []
+    permissions: []
+    info:
+      prefix: '§f[§c§oRegular§f] '
+      §r§f[§d§oRookie§r]: §r
+  377228cb-b308-4244-bacc-e4addd8b48c1:
+    lastname: 321bozkurt123
+    group: Elite
+    subgroups: []
+    permissions:
+    - essentials.depth
+    - essentials.getpos
+    - essentials.hat
+    - essentials.itemdb
+    - essentials.near
+    - essentials.recipe
+    - essentials.sethome.multiple.citizen
+    - essentials.sethome.multiple.rookie
+    - essentials.suicide
+    - essentials.warp
+    - essentials.warp.LIST
+    - essentials.workbench
+    - quickshop.create.*
+    - quickshop.create.buy
+    - quickshop.create.sell
+    - scavenger.exp
+    info:
+      suffix: §f [Kaya§f]
+  394f1e62-0af1-4c19-9bc0-aa5fbea10b91:
+    lastname: ROLAND2011A
+    group: Champion
+    subgroups:
+    - Premium
+    permissions:
+    - chestcommands.open.pave.yml
+    - chestcommands.open.pave2.yml
+    - chestcommands.open.pave3.yml
+    - essentials.chat.format
+    - essentials.clearinventory
+    - essentials.compass
+    - essentials.depth
+    - essentials.enderchest
+    - essentials.fly
+    - essentials.fly.safelogin
+    - essentials.getpos
+    - essentials.hat
+    - essentials.me
+    - essentials.near
+    - essentials.recipe
+    - essentials.sell
+    - essentials.sethome.multiple.champion
+    - essentials.sethome.multiple.citizen
+    - essentials.sethome.multiple.craftsman
+    - essentials.sethome.multiple.elite
+    - essentials.sethome.multiple.noble
+    - essentials.sethome.multiple.regular
+    - essentials.sethome.multiple.rookie
+    - essentials.sethome.multiple.seasoned
+    - essentials.signs.color
+    - essentials.signs.format
+    - essentials.signs.magic
+    - essentials.suicide
+    - launchpad.10
+    - launchpad.2
+    - launchpad.4
+    - launchpad.6
+    - launchpad.8
+    - scavenger.level
+    - scavenger.scavenge
+    - scavenger.xp
+    - simplesuffix.colors
+    - simplesuffix.set.suffix.self
+    - skript.extrahealth10
+    - skript.extrahealth2
+    - skript.extrahealth4
+    - skript.extrahealth6
+    - skript.extrahealth8
+    - skript.nightvision
+    - skript.trail
+    - vc.10
+    - vc.2
+    - vc.4
+    - vc.6
+    - vc.8
+    - voxelsniper.sniper
+    - worldedit.*
+    info:
+      suffix: §f [GunSlinger§f]
+  3989a946-a057-44b9-ac1c-443df098d04d:
+    lastname: LilyPichu_
+    group: Champion
+    subgroups: []
+    permissions:
+    - -autoitem.replaceon.place
+    - skript.collectible
+    info:
+      prefix: '§f[§4§oChampion§f] '
+      §r§f[§d§oRookie§r]: §r
+      suffix: ' §f[§d Pichu§f]'
+  3a9cf485-9032-4b58-8844-afcc3b05f8d8:
+    lastname: RavenTheGreat
+    group: Citizen
+    subgroups: []
+    permissions:
+    - -autoitem.replaceon.place
+    - essentials.sethome.multiple.rookie
+    - skript.collectible
+    info:
+      prefix: '§f[§e§oCitizen§f] '
+      §r§f[§d§oRookie§r]: §r
+  3a9d637d-dd9f-4ac4-9dd1-f165d925634b:
+    lastname: abclloyd
+    group: Rookie
+    subgroups: []
+    permissions: []
+  3b5cc975-c839-413e-8024-28491978195e:
+    lastname: NoiseWarrior
+    group: Craftsman
+    subgroups: []
+    permissions:
+    - -autoitem.replaceon.place
+    info:
+      prefix: '§f[§6§oCraftsman§f] '
+      §r§f[§d§oRookie§r]: §r
+      suffix: ' §f[Shay Patrick Cormac§f]'
+  3b937fd8-ebb2-4575-9696-db3bb3035bf4:
+    lastname: nikki64738
+    group: Rookie
+    subgroups: []
+    permissions: []
+  3bf4db5d-b7fc-458f-9537-44168b780a9e:
+    lastname: null
+    group: Citizen
+    subgroups: []
+    permissions: []
+    info:
+      prefix: '§f[§e§oCitizen§f] '
+      §r§f[§d§oRookie§r]: §r
+  3bfc7186-5368-4f8d-aa7f-01ec5a981ffe:
+    lastname: CDNZombieGirl
+    group: Rookie
+    subgroups: []
+    permissions: []
+    info:
+      prefix: '§f[§d§oRookie§f] '
+  3ca00487-3dba-46d0-a56e-da994fa89ebd:
+    lastname: null
+    group: Citizen
+    subgroups: []
+    permissions:
+    - essentials.compass
+    - essentials.getpos
+    - essentials.me
+    - essentials.near
+    - essentials.recipe
+    - essentials.sethome.multiple.regular
+    - essentials.sethome.multiple.rookie
+    - essentials.suicide
+    - vc.2
+  3cc4a189-c569-4a75-8050-0936e610e060:
+    lastname: jujubugs
+    group: Rookie
+    subgroups: []
+    permissions: []
+  3d0e65f5-ea2e-4d14-b343-b2088fdf3deb:
+    lastname: XxAnime_PotatoxX
+    group: Rookie
+    subgroups: []
+    permissions: []
+  3d56cabf-b63d-466f-ab5c-d32be56efc29:
+    lastname: ImGuss
+    group: Craftsman
+    subgroups: []
+    permissions:
+    - essentials.depth
+    - essentials.me
+    - essentials.near
+    - essentials.recipe
+    - essentials.sethome.multiple.citizen
+    - essentials.sethome.multiple.regular
+    - essentials.suicide
+    - launchpad.2
+    - scavenger.level
+    - vc.2
+  3d608c3f-ac7f-4c4f-a86a-9f600ebdaa23:
+    lastname: xXStar_WingXx
+    group: Citizen
+    subgroups: []
+    permissions: []
+    info:
+      prefix: '§f[§e§oCitizen§f] '
+      §r§f[§d§oRookie§r]: §r
+  3e2a6a67-3fbc-4317-a1cf-d05f95d563b1:
+    lastname: ScarValentine
+    group: Regular
+    subgroups: []
+    permissions: []
+    info:
+      §r§f[§d§oRookie§r]: §r
+  3e6caa14-8544-43ea-ae3d-3d3497e302ff:
+    lastname: null
+    group: Rookie
+    subgroups: []
+    permissions:
+    - essentials.sethome.multiple.rookie
+    - skript.collectible
+  3ecb7e85-e9e0-4c52-8ea2-8fdcb30709da:
+    lastname: ProWookieGaming
+    group: Rookie
+    subgroups: []
+    permissions: []
+  3eecf7ec-e1bf-42d6-8d1b-2a9e6d142aab:
+    lastname: Jakeyboy654
+    group: Rookie
+    subgroups: []
+    permissions: []
+  3feb7b1d-c91c-445a-b79d-6c233d6c341f:
+    lastname: DrBloodbathMC
+    group: Dev
+    subgroups: []
+    permissions:
+    - -autoitem.replaceon.place
+    - '*'
+    - denizen.*
+    - denizen.admin
+    - regulars.*
+    - regulars.admin.*
+    - regulars.script.*
+    info:
+      prefix: ''
+      suffix: §f [&2Mr.Slimestone§f]
+  420897aa-9592-487f-b65e-80b7d61bd40e:
+    lastname: Lyasu_
+    group: Regular
+    subgroups: []
+    permissions: []
+    info:
+      prefix: '§f[§c§oRegular§f] '
+      §r§f[§d§oRookie§r]: §r
+  44563de1-aaa3-4fda-a783-28304593b4a6:
+    lastname: crocatillian
+    group: Rookie
+    subgroups: []
+    permissions: []
+  446f017e-6453-4d5c-aaf6-011378eeccaa:
+    lastname: celtbane
+    group: Seasoned
+    subgroups: []
+    permissions:
+    - 15k
+    - essentials.book
+    - essentials.book.title
+    - essentials.chat.color
+    - essentials.chat.format
+    - essentials.chat.link
+    - essentials.clearinventory
+    - essentials.compass
+    - essentials.depth
+    - essentials.getpos
+    - essentials.hat
+    - essentials.itemdb
+    - essentials.jump
+    - essentials.me
+    - essentials.near
+    - essentials.recipe
+    - essentials.sethome.multiple.citizen
+    - essentials.sethome.multiple.craftsman
+    - essentials.sethome.multiple.noble
+    - essentials.sethome.multiple.regular
+    - essentials.sethome.multiple.rookie
+    - essentials.sethome.multiple.seasoned
+    - essentials.signs.format
+    - essentials.signs.magic
+    - essentials.suicide
+    - essentials.top
+    - essentials.tptoggle
+    - essentials.workbench
+    - gprealestate.sell
+    - multiverse.portal.access.creative
+    - quickshop.create.*
+    - quickshop.create.buy
+    - quickshop.create.sell
+    - scavenger.exp
+    - scavenger.level
+    - scavenger.scavenge
+    - simplesuffix.colors
+    - simplesuffix.format.*
+    - simplesuffix.setsuffix.self
+    - skript.extrahealth2
+    - skript.extrahealth4
+    - skript.extrahealth6
+    - skript.extrahealth8
+    - skript.nightvision
+    info:
+      suffix: §f [&9K&2uni§f]
+  4623fdef-c19f-4e4a-bb39-ba9c393f5c10:
+    lastname: null
+    group: Regular
+    subgroups: []
+    permissions: []
+    info:
+      prefix: '§f[§c§oRegular§f] '
+      §r§f[§d§oRookie§r]: §r
+  4635eb9e-2c79-4335-9aac-6f7b6b02c1ac:
+    lastname: Jobthegamer
+    group: Regular
+    subgroups: []
+    permissions: []
+    info:
+      prefix: '§f[§c§oRegular§f] '
+      §r§f[§d§oRookie§r]: §r
+  46726e48-7f12-4d6d-bdf6-187d96e9e3a9:
+    lastname: null
+    group: Rookie
+    subgroups: []
+    permissions: []
+  467725bd-18f5-405e-85e9-040da733a897:
+    lastname: axd47
+    group: Champion
+    subgroups: []
+    permissions: []
+    info:
+      prefix: '§f[§4§oChampion§f] '
+      §r§f[§d§oRookie§r]: §r
+      suffix: ' §f[§6Behemoth§f]'
+  46ceda5a-7dcf-4279-bf1e-7c1dd966d3e2:
+    lastname: dennios51
+    group: Citizen
+    subgroups: []
+    permissions: []
+    info:
+      prefix: '§f[§e§oCitizen§f] '
+      §r§f[§d§oRookie§r]: §r
+  47bef228-b022-4b40-8c23-a2794b008933:
+    lastname: null
+    group: Rookie
+    subgroups: []
+    permissions: []
+  47ec5af7-e48f-40fd-a10c-9391f0470504:
+    lastname: null
+    group: Regular
+    subgroups: []
+    permissions:
+    - -irc.message.chat
+    - essentials.suicide
+    - quickshop.create.*
+    - quickshop.create.buy
+    - quickshop.create.sell
+    - scavenger.exp
+  48264637-6248-431d-9a94-132490e0895b:
+    lastname: iron_ninja
+    group: Seasoned
+    subgroups: []
+    permissions:
+    - -autoitem.replaceon.place
+    info:
+      prefix: '§f[§9§oSeasoned§f] '
+      §r§f[§d§oRookie§r]: §r
+      suffix: ' §f[Server Alchemist§f]'
+  48596363-6e11-411f-8582-9f74530c3620:
+    lastname: null
+    group: Rookie
+    subgroups: []
+    permissions: []
+  491151bb-a8b0-4365-ab59-8cc0ac418e40:
+    lastname: null
+    group: Rookie
+    subgroups: []
+    permissions: []
+  49955ede-1bb6-4502-90e9-6172d367cd8e:
+    lastname: null
+    group: Rookie
+    subgroups: []
+    permissions: []
+  49a00ffb-a5bb-4f51-9c18-c0ae489a8c6b:
+    lastname: Mr_Lexxx
+    group: Rookie
+    subgroups: []
+    permissions: []
+  49b28295-94bc-4abc-befe-e9b724946d34:
+    lastname: null
+    group: Seasoned
+    subgroups: []
+    permissions:
+    - essentials.sethome.multiple.citizen
+    - essentials.workbench
+    - skript.nightvision
+  4a3f1744-573d-4500-b2bb-00ce737c8012:
+    lastname: null
+    group: Citizen
+    subgroups: []
+    permissions: []
+    info:
+      prefix: '§f[§e§oCitizen§f] '
+      §r§f[§d§oRookie§r]: §r
+  4a640806-d6a8-4bd8-b811-3d4402eff101:
+    lastname: G4GamingX
+    group: Champion
+    subgroups: []
+    permissions: []
+    info:
+      prefix: '§f[§4§oChampion§f] '
+      suffix: ' §f[§2HeroOfTime§f]'
+  4a8b221a-b77e-46cc-93d4-c5cec4b73e57:
+    lastname: Cadmael
+    group: Rookie
+    subgroups: []
+    permissions: []
+  4a9792a8-d245-4375-beed-8f990356c5cd:
+    lastname: IvanDice
+    group: Elite
+    subgroups: []
+    permissions:
+    - essentials.chat.format
+    - essentials.compass
+    - essentials.getpos
+    - essentials.hat
+    - essentials.me
+    - essentials.near
+    - essentials.recipe
+    - essentials.sethome.multiple.citizen
+    - essentials.sethome.multiple.craftsman
+    - essentials.sethome.multiple.elite
+    - essentials.sethome.multiple.noble
+    - essentials.sethome.multiple.regular
+    - essentials.sethome.multiple.rookie
+    - essentials.sethome.multiple.seasoned
+    - essentials.signs.format
+    - launchpad.4
+    - launchpad.6
+    - launchpad.8
+    - marry.default
+    - scavenger.level
+    - scavenger.scavenge
+    - scavenger.xp
+    - simplesuffix.set.suffix.self
+    - skript.extrahealth2
+    - skript.extrahealth4
+    - skript.extrahealth6
+    - skript.extrahealth8
+    - vc.10
+    - vc.2
+    - vc.6
+    - vc.8
+  4ba9b7fb-9a9a-45d1-8923-bb69f1d03111:
+    lastname: null
+    group: Rookie
+    subgroups: []
+    permissions: []
+  4c43edea-d81c-42c7-a8c9-7658370eb8b6:
+    lastname: Zergens
+    group: Rookie
+    subgroups: []
+    permissions: []
+  4c907d31-9d9c-4212-b28f-9e6551a5be4b:
+    lastname: null
+    group: Rookie
+    subgroups: []
+    permissions: []
+  4d537701-dfc6-4d35-a7cb-98169c70c0fe:
+    lastname: null
+    group: Rookie
+    subgroups: []
+    permissions: []
+  4dog:
+    group: Visitor
+    subgroups: []
+    permissions:
+    - essentials.chat.color
+    - essentials.chat.magic
+  4ebfd62a-7558-462b-8747-bf72d7f091ae:
+    lastname: mathewreavis
+    group: Rookie
+    subgroups: []
+    permissions: []
+  4f6c718c-bee0-4990-b5fd-9e7074236302:
+    lastname: Terrible_T98
+    group: Noble
+    subgroups: []
+    permissions:
+    - -autoitem.replaceon.place
+    info:
+      prefix: '§f[§b§oNoble§f] '
+      §r§f[§d§oRookie§r]: §r
+      suffix: ' §f[§4KingOfWar§f]'
+  4fead378-d7f5-4f44-9693-66d85aea100e:
+    lastname: TheAlmightyGooby
+    group: Rookie
+    subgroups: []
+    permissions: []
+  50da0187-f73a-4fcb-9ec7-eba00f21bfed:
+    lastname: awsome11900
+    group: Regular
+    subgroups: []
+    permissions:
+    - -autoitem.replaceon.place
+    info:
+      prefix: '§f[§c§oRegular§f] '
+      §r§f[§d§oRookie§r]: §r
+  52085f47-0e73-4dc6-8cbb-888ecc15c7ea:
+    lastname: null
+    group: Citizen
+    subgroups: []
+    permissions: []
+    info:
+      §r§f[§d§oRookie§r]: §r
+  521ce0da-1180-464f-aaac-2968189c4c1d:
+    lastname: Joelvr16
+    group: Champion
+    subgroups: []
+    permissions:
+    - -autoitem.replaceon.place
+    - cannon.test
+    info:
+      prefix: '§f[§4§oChampion§f] '
+      §r§f[§d§oRookie§r]: §r
+      suffix: ' §f[§4BjornsProtégéKitty§f]'
+  522924e2-35ab-4da7-84ff-e9cdcf225175:
+    lastname: xXStar_GamerXx
+    group: Craftsman
+    subgroups: []
+    permissions:
+    - skript.collectible
+    info:
+      prefix: '§f[§6§oCraftsman§f] '
+      §r§f[§d§oRookie§r]: §r
+      suffix: ' §f[Twinsies§f]'
+  522fb2ff-a860-44e1-9f9a-439a6dc9252c:
+    lastname: null
+    group: Rookie
+    subgroups: []
+    permissions: []
+  53125f19-3102-4ed5-81a2-6facfcf22f3f:
+    lastname: BigDaddyPhill
+    group: Craftsman
+    subgroups: []
+    permissions:
+    - skript.collectible
+    info:
+      prefix: '&f[&o&6Craftsman&f] &r'
+  54990a7d-b64f-4ac0-9786-c20105f62752:
+    lastname: SimplyDino__
+    group: Rookie
+    subgroups: []
+    permissions: []
+  54c215d6-f093-4dfc-ba8a-f37a07d2b210:
+    lastname: Vieferd
+    group: Regular
+    subgroups: []
+    permissions: []
+    info:
+      prefix: '§f[§c§oRegular§f] '
+      §r§f[§d§oRookie§r]: §r
+  563e839f-b187-4ad4-97b1-fb49be4594fe:
+    lastname: SirKitty_
+    group: Citizen
+    subgroups: []
+    permissions: []
+    info:
+      prefix: '§f[§e§oCitizen§f] '
+      §r§f[§d§oRookie§r]: §r
+  5777947a-7496-46e5-8b8a-9f284c07a40a:
+    lastname: xPolqr
+    group: Citizen
+    subgroups:
+    - Premium
+    permissions: []
+    info:
+      prefix: '§f[§bMe§f] '
+      §r§f[§d§oRookie§r]: §r
+      suffix: ' §f[§aI§bLove§eSummer§f]'
+  57a32a4d-3b10-4b3f-b4ff-ee11536913d3:
+    lastname: Dan_DiCola
+    group: Regular
+    subgroups: []
+    permissions: []
+    info:
+      prefix: '§f[§c§oRegular§f] '
+      §r§f[§d§oRookie§r]: §r
+  57cab94b-c899-4c77-8fc2-3b7438ad0171:
+    lastname: null
+    group: Rookie
+    subgroups: []
+    permissions: []
+  57d1b460-9032-4b42-9e4d-49fbedd9742a:
+    lastname: null
+    group: Citizen
+    subgroups: []
+    permissions:
+    - essentials.compass
+    - essentials.me
+    - essentials.sethome.multiple.regular
+    - essentials.sethome.multiple.rookie
+    - essentials.warp
+    - essentials.warp.list
+    - essentials.workbench
+    - scavenger.exp
+    - scavenger.level
+    - scavenger.xp
+    - skript.extrahealth2
+    - vc.2
+  57d94360-2b81-4162-9031-a3066aff80fb:
+    lastname: null
+    group: Rookie
+    subgroups: []
+    permissions: []
+  58896ad5-1aad-4b00-bc37-38819e7a038e:
+    lastname: null
+    group: Rookie
+    subgroups: []
+    permissions: []
+  591bfb23-f88d-4e3b-a497-0fb72017bdb3:
+    lastname: null
+    group: Regular
+    subgroups: []
+    permissions: []
+    info:
+      prefix: '§f[§c§oRegular§f] '
+      §r§f[§d§oRookie§r]: §r
+  593bebbc-8fb5-4639-8892-3b90a082c9b1:
+    lastname: null
+    group: Rookie
+    subgroups: []
+    permissions:
+    - essentials.sethome.multiple.rookie
+    - scavenger.xp
+  5961a33e-a7c3-4c0d-a7d0-49d4f86c5aa6:
+    lastname: null
+    group: Rookie
+    subgroups: []
+    permissions: []
+  5980d96b-0aa3-41c2-9428-c484ffbc4b74:
+    lastname: null
+    group: Regular
+    subgroups: []
+    permissions: []
+    info:
+      §r§f[§d§oRookie§r]: §r
+  598536e3-bcad-49f3-a8dd-1973cfcdb056:
+    lastname: null
+    group: Visitor
+    subgroups: []
+    permissions:
+    - -autoitem.replaceon.place
+    - skript.collectible
+    info:
+      prefix: '§f[§b§oNoble§f] '
+      §r§f[§d§oRookie§r]: §r
+      suffix: ' §f[§4CrazyBitch§f]'
+  59da1000-6f7a-4b35-b179-ede1052cdb59:
+    lastname: null
+    group: Regular
+    subgroups: []
+    permissions:
+    - -autoitem.replaceon.place
+    info:
+      §r§f[§d§oRookie§r]: §r
+  59e534e2-9421-4d54-8bf0-e71e4892d83e:
+    lastname: null
+    group: Rookie
+    subgroups: []
+    permissions: []
+  5a5347a4-248f-4909-a0a1-7400243eb52b:
+    lastname: null
+    group: Rookie
+    subgroups: []
+    permissions: []
+  5aee050f-7c46-41ef-8e9a-f6bfcd6bcd40:
+    lastname: null
+    group: Elite
+    subgroups: []
+    permissions: []
+    info:
+      suffix: §f [&4M.R.§f]
+  5c12c106-0a25-44c3-a29e-1c2fffef11fc:
+    lastname: DeadDragon80
+    group: Regular
+    subgroups: []
+    permissions:
+    - essentials.near
+    - essentials.sethome.multiple.rookie
+    - scavenger.exp
+    - skript.extrahealth2
+  5ce2e28a-dc37-4d73-b55e-e0b8486f7126:
+    lastname: null
+    group: Rookie
+    subgroups: []
+    permissions: []
+  5da38290-6e2d-483d-971b-2bd970e4b0e2:
+    lastname: _Sanji_
+    group: Rookie
+    subgroups: []
+    permissions: []
+  5e82a1c3-4b13-4628-b664-59edbec655e3:
+    lastname: klappstyra
+    group: Elite
+    subgroups: []
+    permissions: []
+    info:
+      suffix: §f [&3Cloud§f]
+  5e981139-bb43-446e-a509-fb885ff2e89e:
+    lastname: null
+    group: Rookie
+    subgroups: []
+    permissions: []
+  5eb71a98-399a-4d11-b970-2ced5e437abf:
+    lastname: null
+    group: Citizen
+    subgroups: []
+    permissions:
+    - -autoitem.replaceon.place
+    info:
+      prefix: '§f[§e§oCitizen§f] '
+      §r§f[§d§oRookie§r]: §r
+  5f23e3c6-b592-4e1c-bb7a-66b4424c36f8:
+    lastname: Hobbitsyfeet
+    group: Builder
+    subgroups: []
+    permissions:
+    - -autoitem.replaceon.place
+    - essentials.book
+    - essentials.book.title
+    - essentials.chat.color
+    - essentials.chat.format
+    - essentials.chat.link
+    - essentials.clearinventory
+    - essentials.compass
+    - essentials.enderchest
+    - essentials.ext
+    - essentials.fly
+    - essentials.fly.safelogin
+    - essentials.hat
+    - essentials.invsee
+    - essentials.itemdb
+    - essentials.jump
+    - essentials.near
+    - essentials.powertool
+    - essentials.recipe
+    - essentials.sethome.multiple.citizen
+    - essentials.sethome.multiple.craftsman
+    - essentials.sethome.multiple.noble
+    - essentials.sethome.multiple.regular
+    - essentials.sethome.multiple.rookie
+    - essentials.sethome.multiple.seasoned
+    - essentials.signs.format
+    - essentials.signs.magic
+    - essentials.suicide
+    - essentials.top
+    - essentials.tptoggle
+    - essentials.vc
+    - essentials.warp
+    - essentials.warp.LIST
+    - essentials.workbench
+    - gprealestate.sell
+    - multiverse.portal.access.creative
+    - quickshop.create.*
+    - quickshop.create.buy
+    - quickshop.create.sell
+    - scavenger.exp
+    - scavenger.level
+    - scavenger.scavenge
+    - simplesuffix.colors
+    - simplesuffix.format.*
+    - simplesuffix.set.suffix.self
+    - simplesuffix.setsuffix.self
+    - skript.nightvision
+    - vc.10
+    - worldedit.anyblock
+    info:
+      prefix: ''
+      suffix: §f [&cC&6A&eN&2A&aD&bI&3A&9N§f]
+  5f62e716-e961-4bc7-91f4-bc21797edb75:
+    lastname: dinoppar
+    group: Builder
+    subgroups: []
+    permissions:
+    - -autoitem.replaceon.place
+    - essentials.tpo
+    - essentials.tptoggle
+    - essentials.tptoggle.others
+    info:
+      suffix: ' §f[§3Fight Queen§f]'
+  5f7450de-391b-4fdb-bc40-68fcebecdaf9:
+    lastname: null
+    group: Regular
+    subgroups: []
+    permissions: []
+  5f9c6028-2763-4f35-b7b4-ca9cbe7c6137:
+    lastname: Pog_Mo_Thoin_4
+    group: Mod
+    subgroups: []
+    permissions:
+    - -autoitem.replaceon.place
+    - skript.collectible
+    info:
+      prefix: '§f[§9MOD§f] '
+      §r§f[§d§oRookie§r]: §r
+      suffix: ' §f[§9NillasHubby§f]'
+  612c7aaa-dbb0-40f0-916f-4de7497e0d4d:
+    lastname: underworldlord
+    group: Champion
+    subgroups: []
+    permissions:
+    - -autoitem.replaceon.place
+    info:
+      prefix: '§f[§4§oChampion§f] '
+      §r§f[§d§oRookie§r]: §r
+      suffix: ' §f[§0§lKir§b§lito§f]'
+  613beeff-1620-4579-8199-15c03739da42:
+    lastname: CryingCrow0
+    group: Regular
+    subgroups: []
+    permissions: []
+    info:
+      prefix: '§f[§c§oRegular§f] '
+      §r§f[§d§oRookie§r]: §r
+  618f8fad-123f-49f3-98be-8de0cdd841de:
+    lastname: null
+    group: Regular
+    subgroups:
+    - Premium
+    permissions: []
+    info:
+      prefix: '§f[§c§oRegular§f] '
+      §r§f[§d§oRookie§r]: §r
+  61bfd66f-09ff-4fb0-a4f1-a007caee6e0b:
+    lastname: FishySandcrab
+    group: Rookie
+    subgroups: []
+    permissions: []
+  61d131e0-9218-4be9-bd42-5d816155abd9:
+    lastname: Wolf43684
+    group: Rookie
+    subgroups: []
+    permissions:
+    - rookie
+  61f7f283-4cfe-4126-92cb-af32d4d05993:
+    lastname: null
+    group: Rookie
+    subgroups: []
+    permissions: []
+  62a3adbb-7d13-42e2-8cdf-cf70ef83319d:
+    lastname: tigger4552
+    group: Seasoned
+    subgroups: []
+    permissions:
+    - skript.collectible
+    info:
+      prefix: '§f[§9§oSeasoned§f] '
+      §r§f[§d§oRookie§r]: §r
+      suffix: ' §f[Twinsies§f]'
+  62d0e493-d2d6-43b4-9e90-b66b89c7c554:
+    lastname: null
+    group: Regular
+    subgroups: []
+    permissions:
+    - essentials.me
+    - essentials.sethome.multiple.rookie
+    - skript.extrahealth2
+  639193bf-a77b-4cfc-b38f-2d920cfb1862:
+    lastname: kahat
+    group: Rookie
+    subgroups: []
+    permissions: []
+  6412fdf4-e0f9-4ef1-8efa-d8ba147502e3:
+    lastname: BlueFangGaming
+    group: Citizen
+    subgroups: []
+    permissions:
+    - skript.collectible
+    info:
+      prefix: '§f[§e§oCitizen§f] '
+      §r§f[§d§oRookie§r]: §r
+  648832f8-878b-444f-b631-40816ddc8701:
+    lastname: NeedPigs
+    group: Craftsman
+    subgroups: []
+    permissions:
+    - essentials.me
+    - essentials.sethome.multiple.rookie
+    - skript.collectible
+    info:
+      prefix: '§f[§6§oCraftsman§f] '
+      §r§f[§d§oRookie§r]: §r
+      suffix: ' §f[FreeThePigs§f]'
+  64905c4b-eae4-4baf-9b5b-f58a13ca68c5:
+    lastname: Corndodger
+    group: Rookie
+    subgroups: []
+    permissions: []
+  6580b8ed-45c5-451c-a655-7b5a3a79031e:
+    lastname: null
+    group: Rookie
+    subgroups: []
+    permissions: []
+    info:
+      suffix: §f [IDK§f]
+  6639c78c-9c75-47b4-b144-49dd9d7745a3:
+    lastname: null
+    group: Rookie
+    subgroups: []
+    permissions: []
+  674b79bc-e111-4bb3-9756-b4a648dc1804:
+    lastname: null
+    group: Citizen
+    subgroups: []
+    permissions: []
+    info:
+      prefix: '§f[§e§oCitizen§f] '
+      §r§f[§d§oRookie§r]: §r
+  675b79d8-2786-494c-8e82-69b50205c2e8:
+    lastname: null
+    group: Craftsman
+    subgroups: []
+    permissions:
+    - essentials.sethome.multiple.citizen
+    - quickshop.create.buy
+    - quickshop.create.changeprice
+    - quickshop.create.sell
+  682ded59-b407-4909-8a60-f635c909a9eb:
+    lastname: null
+    group: Citizen
+    subgroups: []
+    permissions:
+    - essentials.me
+    - essentials.sethome.multiple.regular
+    - essentials.sethome.multiple.rookie
+    - essentials.warp
+    - essentials.warp.list
+    - scavenger.level
+    - skript.extrahealth2
+  684a51eb-17d0-42f3-9497-6b96d22f299a:
+    lastname: Godzilla8100
+    group: Rookie
+    subgroups: []
+    permissions: []
+  69fa5689-615f-4787-a824-80291b4b86d1:
+    lastname: HIRULE
+    group: Craftsman
+    subgroups: []
+    permissions:
+    - -autoitem.replaceon.place
+    - essentials.sethome.multiple.regular
+    - essentials.sethome.multiple.rookie
+    - launchpad.2
+    - quickshop.create.buy
+    - quickshop.create.changeprice
+    - quickshop.create.sell
+    - scavenger.exp
+    - scavenger.level
+    - skript.extrahealth2
+    - vc.6
+    info:
+      suffix: §f [Purple Gecko§f]
+  6a5c0ff0-62e5-4686-91a8-444a789a212e:
+    lastname: null
+    group: Citizen
+    subgroups:
+    - Premium
+    permissions: []
+    info:
+      §r§f[§d§oRookie§r]: §r
+      suffix: §f [amazing§f]
+  6a6d9dc2-e806-426c-a5b1-f36f3f545044:
+    lastname: null
+    group: Rookie
+    subgroups: []
+    permissions: []
+  6b095202-9fa9-4d16-96af-e569f4020f88:
+    lastname: platipus50
+    group: Seasoned
+    subgroups: []
+    permissions: []
+    info:
+      suffix: §f [&2Plat§f]
+  6b12fcf1-5b10-4ea2-bfa6-cf66eb893754:
+    lastname: Volt1c
+    group: Citizen
+    subgroups: []
+    permissions:
+    - -autoitem.replaceon.place
+    info:
+      prefix: '§f[§e§oCitizen§f] '
+      §r§f[§d§oRookie§r]: §r
+      su

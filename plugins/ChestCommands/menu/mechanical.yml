@@ -39,15 +39,7 @@ menu-settings:
 # NEVER USE A ' IN ANY OF YOUR TEXT!
 #
 # Example start
-proglass:
-  COMMAND: 'shoptp proshop'
-  NAME: '&d[p] &aPro&fGlass &d[p]'
-  LORE:
-    - '&f&oEvery type of glass, always in stock!'
-  ID: glass
-  KEEP-OPEN: false
-  POSITION-X: 2
-  POSITION-Y: 1
+
 #  DATA-VALUE: 2
 # Remove the # from the line above to use the data value setting
 # Example end
@@ -59,15 +51,7 @@ divider1:
   POSITION-X: 1
   POSITION-Y: 1
   DATA-VALUE: 0
-Reggies Classy Shop for Classly Mechanics:
-  COMMAND: 'shopwarp 2'
-  NAME: 'Reggies Classy Mechanics Shop'
-  LORE:
-    - 'Where the classy Mechanics buy their classy supplies!'
-  ID: redstone
-  KEEP-OPEN: false
-  POSITION-X: 1
-  POSITION-Y: 2
+
 #  DATA-VALUE: 2
 
 divider2:

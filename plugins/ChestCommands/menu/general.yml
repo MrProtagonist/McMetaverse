@@ -60,10 +60,10 @@ divider1:
   POSITION-Y: 1
   DATA-VALUE: 0
 evilsshop:
-  COMMAND: 'shopwarp 3'
-  NAME: '&d[p] &aEvils Shop &d[p]'
+  COMMAND: 'shopwarp 47'
+  NAME: '&d[p] &aEvil`s General Store &d[p]'
   LORE:
-    - '&f&oI have a little bit of everything. :)'
+    - '&f&oI buy and sell a little bit of everything.'
   ID: 169
   KEEP-OPEN: false
   POSITION-X: 2
@@ -76,16 +76,16 @@ divider2:
   POSITION-X: 3
   POSITION-Y: 1
   DATA-VALUE: 0
-Quisshop:
-  COMMAND: 'shopwarp 5'
-  NAME: '&d[p] &bQuissys Quantities &d[p]'
+mistidawn98shop:
+  COMMAND: 'shopwarp 48'
+  NAME: '&d[p] &aGallifrey &d[p]'
   LORE:
-    - '&f&oA vast array of most of the useful items in the game. Buying and Selling!'
-  ID: 170
+    - '&f&oFor all the Time Lords'
+  ID: 322
   KEEP-OPEN: false
-  POSITION-X: 1
-  POSITION-Y: 2
-  DATA-VALUE: 3
+  POSITION-X: 4
+  POSITION-Y: 1
+  DATA-VALUE: 1
 divider3:
   NAME: ''
   ID: 160
@@ -93,15 +93,15 @@ divider3:
   POSITION-X: 5
   POSITION-Y: 1
   DATA-VALUE: 0
-GusApeshop:
-  COMMAND: 'shopwarp 9'
-  NAME: '&d[p] &aGus and Apes General Store &d[p]'
+trainbowshop:
+  COMMAND: 'shopwarp 49'
+  NAME: '&d[p] &aRainbow`s Sea Shop &d[p]'
   LORE:
-    - '&f&oGeneral goods and excellent deals!'
-  ID: 264
+    - '&f&oI sell some of the most common things needed to survive.'
+  ID: 89
   KEEP-OPEN: false
-  POSITION-X: 3
-  POSITION-Y: 2
+  POSITION-X: 6
+  POSITION-Y: 1
   DATA-VALUE: 0
 divider4:
   NAME: ''
@@ -110,16 +110,16 @@ divider4:
   POSITION-X: 7
   POSITION-Y: 1
   DATA-VALUE: 0
-SlendyShop:
-  COMMAND: 'shopwarp 10'
-  NAME: '&d[p] &aSlendyShop &d[p]'
+interpriseshop:
+  COMMAND: 'shopwarp 50'
+  NAME: '&d[p] &aInter`s Market &d[p]'
   LORE:
-    - '&f&oThe Slendiest of shops'
-  ID: 15
+    - '&f&oWe have a little of everything you might need.'
+  ID: 153
   KEEP-OPEN: false
-  POSITION-X: 4
+  POSITION-X: 8
   POSITION-Y: 1
-  DATA-VALUE: 3
+  DATA-VALUE: 0
 divider5:
   NAME: ''
   ID: 160
@@ -127,26 +127,16 @@ divider5:
   POSITION-X: 9
   POSITION-Y: 1
   DATA-VALUE: 0
-TitanKidshop:
-  COMMAND: 'shopwarp 13'
-  NAME: '&d[p] &bTitans New Metal & Other Shop &d[p]'
+brightenstarshop:
+  COMMAND: 'shopwarp 51'
+  NAME: '&d[p] &aDranaco`s Mining Goods &d[p]'
   LORE:
-    - '&f&oAll the metal you can buy and more'
-  ID: 265
+    - '&f&oA market for all your ore needs (-Redstone)!'
+  ID: 425
   KEEP-OPEN: false
-  POSITION-X: 6
-  POSITION-Y: 1
-  DATA-VALUE: 0
-RoobsBlackMarket:
-  COMMAND: 'shopwarp 11'
-  NAME: '&d[p] &aRoobs Black Market &d[p]'
-  LORE:
-    - '&f&oWe got what you need here at Roobs'
-  ID: 279
-  KEEP-OPEN: false
-  POSITION-X: 5
+  POSITION-X: 1
   POSITION-Y: 2
-  DATA-VALUE: 0
+  DATA-VALUE: 15
 divider6:
   NAME: ''
   ID: 160
@@ -154,25 +144,16 @@ divider6:
   POSITION-X: 2
   POSITION-Y: 2
   DATA-VALUE: 0
-DocsKnickKnacks:
-  COMMAND: 'shopwarp 14'
-  NAME: '&d[p] &bDocs Knick Knacks &d[p]'
+quisalasshop:
+  COMMAND: 'shopwarp 52'
+  NAME: '&d[p] &aQuissy`s Quantities &d[p]'
   LORE:
-    - '&f&oA Variety of Items! :D'
-  ID: 381
+    - '&f&oWell-stocked store with a bit of everything.'
+    - '&f&oBuying AND Selling.'
+  ID: 357
   KEEP-OPEN: false
-  POSITION-X: 7
+  POSITION-X: 3
   POSITION-Y: 2
-  DATA-VALUE: 0
-TreysTreasures:
-  COMMAND: 'shopwarp 15'
-  NAME: '&d[p] &bTreys Treasures &d[p]'
-  LORE:
-    - '&f&oFull of Everything and Nothing'
-  ID: 61
-  KEEP-OPEN: false
-  POSITION-X: 8
-  POSITION-Y: 1
   DATA-VALUE: 0
 divider7:
   NAME: ''
@@ -181,14 +162,14 @@ divider7:
   POSITION-X: 4
   POSITION-Y: 2
   DATA-VALUE: 0
-UnderworldLordShop:
-  COMMAND: 'shopwarp 21'
-  NAME: '&d[p] &aUnders Pharmacy &d[p]'
+terribletshop:
+  COMMAND: 'shopwarp 53'
+  NAME: '&d[p] &aT`s Medieval Shop &d[p]'
   LORE:
-    - '&f&oFor all your drug and item needs!'
-  ID: 353
+    - '&f&oYe Ole Shop'
+  ID: 54
   KEEP-OPEN: false
-  POSITION-X: 9
+  POSITION-X: 5
   POSITION-Y: 2
   DATA-VALUE: 0
 divider8:
@@ -198,15 +179,15 @@ divider8:
   POSITION-X: 6
   POSITION-Y: 2
   DATA-VALUE: 0
-HIRULEShop:
-  COMMAND: 'shopwarp 23'
-  NAME: '&d[p] &aHIRULEs General Store &d[p]'
+xnillaxshop:
+  COMMAND: 'shopwarp 54'
+  NAME: '&d[p] &aWalmart &d[p]'
   LORE:
-    - '&f&oNice doing business with you!'
-  ID: 296
+    - '&f&oWalmart - Save money, live better. *'
+  ID: 266
   KEEP-OPEN: false
-  POSITION-X: 2
-  POSITION-Y: 3
+  POSITION-X: 7
+  POSITION-Y: 2
   DATA-VALUE: 0
 divider9:
   NAME: ''
@@ -214,17 +195,7 @@ divider9:
   KEEP-OPEN: true
   POSITION-X: 8
   POSITION-Y: 2
-  DATA-VALUE: 0
-PixeltastticShop:
-  COMMAND: 'shopwarp 24'
-  NAME: '&d[p] &aGalactia Market Street &d[p]'
-  LORE:
-    - '&f&oVisit Galactia Market Street, we have everything you need!'
-  ID: 24
-  KEEP-OPEN: false
-  POSITION-X: 4
-  POSITION-Y: 3
-  DATA-VALUE: 2
+
 divider10:
   NAME: ''
   ID: 160
@@ -232,16 +203,7 @@ divider10:
   POSITION-X: 1
   POSITION-Y: 3
   DATA-VALUE: 0
-HornedZepherShop:
-  COMMAND: 'shopwarp 26'
-  NAME: '&d[p] &aHornys Banner Emporium &d[p]'
-  LORE:
-    - '&f&oA Selection of banners to decorate your home,whether patroitic or for fun.'
-  ID: 425
-  KEEP-OPEN: false
-  POSITION-X: 6
-  POSITION-Y: 3
-  DATA-VALUE: 0
+
 divider11:
   NAME: ''
   ID: 160
@@ -249,16 +211,7 @@ divider11:
   POSITION-X: 3
   POSITION-Y: 3
   DATA-VALUE: 0
-swordsandriches:
-  COMMAND: 'shopwarp 27'
-  NAME: '&d[p] &aSwords and Riches &d[p]'
-  LORE:
-    - '&f&oBuilding blocks, farm needs, and general goods at cheap prices!'
-  ID: 168
-  KEEP-OPEN: false
-  POSITION-X: 8
-  POSITION-Y: 3
-  DATA-VALUE: 0
+
 divider12:
   NAME: ''
   ID: 160
@@ -266,6 +219,7 @@ divider12:
   POSITION-X: 5
   POSITION-Y: 3
   DATA-VALUE: 0
+
 divider13:
   NAME: ''
   ID: 160
@@ -280,16 +234,6 @@ divider14:
   POSITION-X: 9
   POSITION-Y: 3
   DATA-VALUE: 0
-ironworkpotionshop:
-  COMMAND: 'shopwarp 29'
-  NAME: '&d[p] &aIron Work Potion Shop &d[p]'
-  LORE:
-    - '&f&oiron_ninja potions, gear, and guardian mob farm.'
-  ID: 373
-  KEEP-OPEN: false
-  POSITION-X: 1
-  POSITION-Y: 4
-  DATA-VALUE: 0
 divider15:
   NAME: ''
   ID: 160
@@ -297,17 +241,7 @@ divider15:
   POSITION-X: 2
   POSITION-Y: 4
   DATA-VALUE: 0
-vpunisherfinegoods:
-  COMMAND: 'shopwarp 30'
-  NAME: '&d[p] &avPunishers Fine Goods &d[p]'
-  LORE:
-    - '&f&oWelcome to my shop! Items sold here will be restocked regularly'
-    - '&f&oso buy what you need!'
-  ID: 278
-  KEEP-OPEN: false
-  POSITION-X: 3
-  POSITION-Y: 4
-  DATA-VALUE: 0
+
 divider16:
   NAME: ''
   ID: 160
@@ -315,16 +249,7 @@ divider16:
   POSITION-X: 4
   POSITION-Y: 4
   DATA-VALUE: 0
-ittwitsshop:
-  COMMAND: 'shopwarp 31'
-  NAME: '&d[p] &aIt_twits Atlantic Brewery &d[p]'
-  LORE:
-    - '&f&oPotions at a cheap price.'
-  ID: 379
-  KEEP-OPEN: false
-  POSITION-X: 5
-  POSITION-Y: 4
-  DATA-VALUE: 0
+
 divider17:
   NAME: ''
   ID: 160
@@ -332,16 +257,7 @@ divider17:
   POSITION-X: 6
   POSITION-Y: 4
   DATA-VALUE: 0
-sirkittysshop:
-  COMMAND: 'shopwarp 32'
-  NAME: '&d[p] &aSirKittys Mystical General Store &d[p]'
-  LORE:
-    - '&f&oWhimsical Store of Generalness'
-  ID: 327
-  KEEP-OPEN: false
-  POSITION-X: 7
-  POSITION-Y: 4
-  DATA-VALUE: 0
+
 divider18:
   NAME: ''
   ID: 160
@@ -349,17 +265,7 @@ divider18:
   POSITION-X: 8
   POSITION-Y: 4
   DATA-VALUE: 0
-desdes1971sshop:
-  COMMAND: 'shopwarp 35'
-  NAME: '&d[p] &aGloW_ShoP &d[p]'
-  LORE:
-    - '&f&oHeyHey cannot find what you are looking for?'
-    - '&f&oCome to glow shop!'
-  ID: 89
-  KEEP-OPEN: false
-  POSITION-X: 9
-  POSITION-Y: 4
-  DATA-VALUE: 0
+
 divider0:
   NAME: ''
   ID: 160
@@ -367,17 +273,7 @@ divider0:
   POSITION-X: 1
   POSITION-Y: 5
   DATA-VALUE: 0
-  
-captkrunkshop:
-  COMMAND: 'shopwarp 36'
-  NAME: '&d[p] &aCaptnKrunks Walmart Shop &d[p]'
-  LORE:
-    - '&f&oNeed Walmart priced goods? We got what you need!'
-  ID: 388
-  KEEP-OPEN: false
-  POSITION-X: 2
-  POSITION-Y: 5
-  DATA-VALUE: 0 
+
 divider19:
   NAME: ''
   ID: 160
@@ -385,6 +281,7 @@ divider19:
   POSITION-X: 3
   POSITION-Y: 5
   DATA-VALUE: 0
+
 divider20:
   NAME: ''
   ID: 160
@@ -392,6 +289,7 @@ divider20:
   POSITION-X: 5
   POSITION-Y: 5
   DATA-VALUE: 0
+
 divider21:
   NAME: ''
   ID: 160
@@ -399,6 +297,7 @@ divider21:
   POSITION-X: 7
   POSITION-Y: 5
   DATA-VALUE: 0
+
 divider22:
   NAME: ''
   ID: 160

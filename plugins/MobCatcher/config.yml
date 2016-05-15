@@ -1,20 +1,21 @@
 # 
-#  MobCatcher v3.2
+#  MobCatcher v3.26
 #  
 #  For help with the Config file, see the BukkitDev page.  
 #  
 PluginEnabled:
-  Metacurse: true
-  Metacurse_nether: true
-  Metacurse_the_end: true
-  Creative: true
-  Minigame: true
-  Sandbox: true
-  Never_End: true
-  Vanilla: true
+  MetaOmega: true
+  MetaOmega_nether: true
+  MetaOmega_the_end: true
+  contest: true
+  resource_nether: true
   resource: true
+  sandbox: true
+  Hyperverse_nether: true
+  Hyperverse: true
+  Minigame: true
 CaptureItem:
-  Enabled: true
+  Enabled: false
   ItemName: '[all names]'
   ItemID: 344
   UsedOnCapture: true
@@ -23,7 +24,7 @@ ProjectileCaptures:
   SpawnEggsDirectToInventory: false
   MissedEggsSpawnChickens: true
   Type:
-    Egg: true
+    Egg: false
     Snowball: false
     Arrow: false
     EnderPearl: false
@@ -43,6 +44,7 @@ SaveDataAndRemoveStackability: true
 EffectsEnabled: true
 ThrownSpawnEggsEnabled: true
 CanCaptureMobSpawnerMobs: true
+ChangedMobSpawnersUseEggData: false
 IronGolemsProtectVillagersFromCaptures: true
 Dispensers:
   Capture: false
@@ -77,7 +79,7 @@ SimpleConfig:
     Spider: true
     Zombie: true
     Slime: true
-    Ghast: false
+    Ghast: true
     Enderman: true
     Sliverfish: true
     Blaze: false
@@ -88,8 +90,8 @@ SimpleConfig:
     Squid: true
     Wolf: true
     AngryWolf: true
-    MooShroom: true
-    Villager: false
+    Mooshroom: true
+    Villager: true
     Ocelot: true
     IronGolem: true
     SnowGolem: true
@@ -102,7 +104,8 @@ SimpleConfig:
     Rabbit: true
     Endermite: true
     Guardian: true
-    ElderGuardian: true
+    ElderGuardian: false
+    Shulker: true
 ComplexConfig:
   Enabled: false
   Vault: false
@@ -171,7 +174,7 @@ ComplexConfig:
     Chance: 100
     MustBeKilled: false
   Ghast:
-    Enabled: false
+    Enabled: true
     ItemName: redstone dust
     ItemID: 331
     Amount: 5
@@ -186,7 +189,7 @@ ComplexConfig:
     VaultCost: 10.0
     Chance: 100
     MustBeKilled: false
-  Silverfish:
+  Sliverfish:
     Enabled: true
     ItemName: redstone dust
     ItemID: 331
@@ -267,12 +270,12 @@ ComplexConfig:
     Chance: 100
     MustBeKilled: false
   Villager:
-    Enabled: false
+    Enabled: true
     ItemName: redstone dust
     ItemID: 331
-    Amount: 5
+    Amount: 1000000000
     VaultCost: 10.0
-    Chance: 100
+    Chance: 0
     MustBeKilled: false
   Ocelot:
     Enabled: true
@@ -378,4 +381,11 @@ ComplexConfig:
     VaultCost: 10.0
     Chance: 100
     MustBeKilled: false
-ChangedMobSpawnersUseEggData: false
+  Shulker:
+    Enabled: true
+    ItemName: redstone dust
+    ItemID: 331
+    Amount: 5
+    VaultCost: 10.0
+    Chance: 100
+    MustBeKilled: false

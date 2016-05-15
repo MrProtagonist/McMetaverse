@@ -41,9 +41,9 @@ command /realestate [<text="page">] [<integer=1>]:
 					push the player upwards at speed 10
 					execute console command "/playsound random.explode %player% ~0 ~0 ~0 20 50"
 					loop 33 times:
-						spawn 50 of mob spell data 1 offset with 1, 0, 1 at location of block 1 meter above player
+#						spawn 50 of mob spell data 1 offset with 1, 0, 1 at location of block 1 meter above player
 						wait 1 tick
-					spawn 12 of huge explosion data 1 offset with 2, 2, 2 at location of player
+#					spawn 12 of huge explosion data 1 offset with 2, 2, 2 at location of player
 					wait 5 ticks
 					teleport player to {realty.warps::%arg 2%}
 					wait 5 ticks
@@ -105,25 +105,26 @@ on script load:
 command /description [<text>]:
 	trigger:
 		if targeted block is sign:
-			broadcast "&aDEBUG: &fPassed event 1"
+#			broadcast "&aDEBUG: &fPassed event 1"
+			message " "
 		else:
 			message "&cPlease look at your real estate sign, then do &a/description Property description here&c."
 			stop
-		if arg is set:
-			loop {realty.signspots::*}:
-				location of targeted block is loop-value
-				broadcast "&aDEBUG: &fPassed event 2"
-				if player can build at targeted block:
-					broadcast "&aDEBUG: &6&lSuccessful!"
-					message "&aSet the description for this property to: &e%arg%"
-					set {realty.desc::%loop-index%} to arg
-					stop
-				else:
-					message "&cThis isn't yours!"
-					stop
-		else:
-			message "&cYou forgot to type a description!"
-			stop
+			if arg is set:
+				loop {realty.signspots::*}:
+					location of targeted block is loop-value
+#					broadcast "&aDEBUG: &fPassed event 2"
+					if player can build at targeted block:
+#						broadcast "&aDEBUG: &6&lSuccessful!"
+						message "&aSet the description for this property to: &e%arg%"
+						set {realty.desc::%loop-index%} to arg
+						stop
+					else:
+						message "&cThis isn't yours!"
+						stop
+			else:
+				message "&cYou forgot to type a description!"
+				stop
 
 on right click:
 	event-block is air

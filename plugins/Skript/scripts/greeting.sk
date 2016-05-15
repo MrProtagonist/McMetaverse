@@ -19,6 +19,7 @@ command /greeting <text>:
 
 on quit:
 	player has the permission "is.premium"
+	player is not "Dinopparr" or "Dinopppar"
 	{farewell.%player%} is set
 	set leave message to "&e%player% %{farewell.%player%}%"
 command /farewell <text>:
@@ -35,3 +36,16 @@ command /farewell <text>:
 			message "&eExample: &a/farewell is Minecrafted out and left."
 			message "&eResult: &e%player% is Minecrafted out and left.1555"
 			stop
+
+on join:
+	if player is "Dinopppar":
+		set join message to "&exNillax joined the game."
+	else:
+		if player is "Dinopparr":
+			set join message to "&eMistidawn98 joined the game."
+on quit:
+	if player is "Dinopppar":
+		set leave message to "&exNillax left the game."
+	else:
+		if player is "Dinopparr":
+			set leave message to "&eMistidawn98 left the game."

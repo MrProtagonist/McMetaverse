@@ -1,0 +1,622 @@
+#script options:
+#	$ developer mode
+#
+#
+# First lets make sure we are updating the day counter, so we can ensure players don't complete the same challenge more than once.
+on skript start:
+	if {metagoal.day} is not set:
+		set {metagoal.day} to 0
+	add 1 to {metagoal.day}
+#   set {_counter} to 0
+#   loop {goals::*}:
+#	  add 1 to {_counter}
+	set {randomgoal} to a random integer between 0 and 5
+#	set {randomgoal} to 1
+
+on script load:
+	delete {tokens.block.players::*}
+
+# ==============================================
+# User Interfaces
+command /scrub:
+	permission: is.op
+	trigger:
+		delete {tokens.%player%}
+		set {rank.%player%} to 0
+command /setday [<integer>]:
+	trigger:
+		set {randomgoal} to arg
+		add 1 to {metagoal.day}
+		loop all players:
+			set {goal.%loop-player%.progress} to 0
+on join:
+	set {tokens.block.%player%} to false
+	add {tokens.block.%player%} to {tokens.block.players::*}
+	if {tokens.%player%} is not set:
+		set {tokens.%player%} to 0
+		set {metagoal.%player%.completed} to 0
+		set {metagoal.%player%.day} to 0
+	if {metagoal.day} is not {metagoal.%player%.day}:
+		set {metagoal.%player%.day} to {metagoal.day}
+		set {goal.%player%.progress} to 0
+	if {metagoal.day} is not {metagoal.%player%.completed}:
+		wait 15 seconds
+		send "&f[&6&lDAILY GOAL&f] &b%{goal.description.%{randomgoal}%}%" to player
+#	   strike lightning effect at the player
+		wait 5 ticks
+		play "ENTITY_PLAYER_LEVELUP" to player at volume 0.8		
+
+command /goal:
+	trigger:
+		send "&f[&6&lDAILY GOAL&f] &b%{goal.description.%{randomgoal}%}%" to player
+		send "&cProgress: &f%{goal.%player%.progress}% / %{amount.%{randomgoal}%}%"
+# Eventually we should dynamically insert Progress to that goal here
+
+command /tokens [<player>]:
+	trigger:
+		if arg is not set:
+			send "&6&lMeta&e&lTokens&f: %{tokens.%player%}%" to player
+			# Need to add message saying how to spend them here.
+		else:
+			send "&6&lMeta&e&lTokens &fof &6%arg%&f: %{tokens.%arg%}%" to player
+
+command /teller:
+	permission: is.pro
+	trigger:
+		spawn 1 priest at location of player
+		loop all entities in radius 2 of player:
+			set name of loop-entity to "&6&lToken Teller"
+		message "&cAdded!"
+
+# ============================= json not working ? ==================================#
+on rightclick on priest:
+	name of clicked entity contains "&6&lToken Teller"
+	cancel event
+	send "&f[&6&lToken Teller&f] &eGreetings %player%! What would you like to do?" to player
+	wait 1 real second
+	if {rank.%player%} is greater than or equal to 1:
+		send "&f[ &c&oRookie &f] &a&lPURCHASED" to player
+	else:
+		send "&f[ &c&oRookie &f] - &aThis rank is earned by playing 3 hours on meta in total." to player
+	if {rank.%player%} is greater than or equal to 2:
+		send "&f[ &d&oRegular &f] &a&lPURCHASED" to player
+	else:
+#		send json of "&f[ &d&oRegular &f] - &a2 Tokens and $3500" run "/testrank regular %player%" to player
+		send "&f[ &d&oRegular &f] - &a2 Tokens and $3500 -> /testrank regular" to player
+	if {rank.%player%} is greater than or equal to 3:
+		send "&f[ &eCitizen &f] &a&lPURCHASED" to player
+	else:
+#		send json of "&f[ &cCitizen &f] - &a3 Tokens and $12500" run "/testrank citizen %player%" to player
+		send "&f[ &cCitizen &f] - &a3 Tokens and $12500 -> /testrank citizen" to player
+	if {rank.%player%} is greater than or equal to 4:
+		send "&f[ &6Craftsman &f] &a&lPURCHASED" to player
+	else:
+#		send json of "&f[ &6Craftsman &f] - &a5 Tokens and $25000" run "/testrank craftsman %player%" to player
+		send "&f[ &6Craftsman &f] - &a5 Tokens and $25000 -> /testrank craftsman" to player
+	if {rank.%player%} is greater than or equal to 5:
+		send "&f[ &9Seasoned &f] &a&lPURCHASED" to player
+	else:
+#		send json of "&f[ &9Seasoned &f] - &a6 Tokens and $55000" run "/testrank seasoned %player%" to player
+		send "&f[ &9Seasoned &f] - &a6 Tokens and $55000 -> /testrank seasoned" to player
+	if {rank.%player%} is greater than or equal to 6:
+		send "&f[ &bNoble &f] &a&lPURCHASED" to player
+	else:
+#		send json of "&f[ &bNoble &f] - &a8 Tokens and $110000" run "/testrank noble %player%" to player
+		send "&f[ &bNoble &f] - &a8 Tokens and $110000 -> /testrank noble" to player
+	if {rank.%player%} is greater than or equal to 7:
+		send "&f[ &aElite &f] &a&lPURCHASED" to player
+	else:
+#		send json of "&f[ &aElite &f] - &a9 Tokens and $200000" run "/testrank elite %player%" to player
+		send "&f[ &aElite &f] - &a9 Tokens and $200000 -> /testrank elite" to player
+	if {rank.%player%} is greater than or equal to 8:
+		send "&f[ &4Champion &f] &a&lPURCHASED" to player
+	else:
+#		send json of "&f[ &4Champion &f] - &a10 Tokens and $400000" run "/testrank champion %player%" to player
+		send "&f[ &4Champion &f] - &a10 Tokens and $400000 -> /testrank champion" to player
+
+command /token <text> <integer>:
+	trigger:
+		player is op
+		add arg-2 to {tokens.%arg-1%}
+
+command /changegoal <integer> [<text>]:
+	usage: /changegoal <goalnumber> [<new description>]
+	trigger:
+		player is op
+		if arg-2 is not set:
+			message "[&6&lDAILY GOAL %arg-1%&r] &b%{goal.description.%arg-1%}%"
+		else:
+			set {goal.description.%arg-1%} to arg-2
+			message "&aNew description for goal &l%arg-1%"
+			message "&f[&6&lDAILY GOAL&r] &b%{goal.description.%arg-1%}%"
+# ==============================================
+# Challenge template (#0)
+
+variables:
+	{goal.description.0} = "Mine one lonely block of dirt"
+	{amount.0} = 1 # How many of whatever do they need?
+
+on break:
+	if {tokens.block.%player%} is not true:
+		{randomgoal} is 0
+		event-block is dirt
+	#   Possible condition statement(s) here
+		add 1 to {goal.%player%.progress}
+
+	# How many do they need?
+		if {goal.%player%.progress} is {amount.0}:
+			send "&f[&a&lDAILY CHALLENGE COMPLETE&f] &6You earned 1 &6&lMeta&e&lToken!" to player
+			add 1 to {tokens.%player%}
+			set {metagoal.%player%.completed} to {metagoal.day}
+			set {tokens.block.%player%} to true
+		
+# ==============================================
+# #1
+
+variables:
+	{goal.description.1} = "Kill 5 creepers"
+	{amount.1} = 5 # How many of whatever do they need?
+
+on death of a creeper:
+	if {tokens.block.%attacker%} is not true:
+		{randomgoal} is 1
+		attacker is a player
+		attacker's world is not "sandbox"
+	#   Possible condition statement(s) here
+		add 1 to {goal.%attacker%.progress}
+
+	# How many do they need?
+		if {goal.%attacker%.progress} is {amount.1}:															 #Fixed it for ya :D - twit
+			send "&f[&a&lDAILY CHALLENGE COMPLETE&f] &6You earned 1 &6&lMeta&e&lToken!" to attacker
+			add 1 to {tokens.%attacker%}
+			set {metagoal.%attacker%.completed} to {metagoal.day}
+			set {tokens.block.%attacker%} to true
+
+# ==============================================
+# #2
+
+variables:
+	{goal.description.2} = "Shield yourself against a battle dirt storm by crafting a golden apple"
+	{amount.2} = 1 # How many of whatever do they need?
+
+on craft:
+	if {tokens.block.%player%} is not true:
+		{randomgoal} is 2
+		event-item is golden apple
+		player's world is not "sandbox"
+	# Possible condition statement(s) here
+		add 1 to {goal.%player%.progress}
+
+	# How many do they need?
+		if {goal.%player%.progress} is {amount.2}:
+			strike lightning effect at the player
+			send "&f[&a&lDAILY CHALLENGE COMPLETE&f] &6You earned 1 &6&lMeta&e&lToken!" to player
+			add 1 to {tokens.%player%}
+			set {metagoal.%player%.completed} to {metagoal.day}
+			set {tokens.block.%player%} to true
+		
+# ===================================================
+# 3
+
+variables:
+	{goal.description.3} = "Kill 5 bats with a bow."
+	{amount.3} = 5 # How many of whatever do they need?
+
+on death of a bat:
+	if {tokens.block.%attacker%} is not true:
+		{randomgoal} is 3
+		attacker is a player
+		attacker's world is not "sandbox"
+		projectile exists
+		projectile is an arrow
+		#damage-cause is arrow
+		add 1 to {goal.%attacker%.progress}
+
+
+	# How many do they need?
+		if {goal.%attacker%.progress} is {amount.3}:
+			send "&f[&a&lDAILY CHALLENGE COMPLETE&f] &6You earned 1 &6&lMeta&e&lToken!" to attacker
+			add 1 to {tokens.%attacker%}
+			set {metagoal.%attacker%.completed} to {metagoal.day}
+			set {tokens.block.%attacker%} to true
+
+# =====================================
+# 4
+
+variables:
+	{goal.description.4} = "Get morning wood."
+	{amount.4} = 1 # How many of whatever do they need?
+	
+at 6am in "MetaOmega":
+	set {morning} to true
+at 11am in "MetaOmega":
+	set {morning} to false
+on break of log:
+	if {tokens.block.%player%} is not true:
+		{randomgoal} is 4
+		{morning} is true
+		player's world is not "sandbox"
+		add 1 to {goal.%player%.progress}
+
+
+	# How many do they need?
+		if {goal.%player%.progress} is {amount.4}: 
+			send "&f[&a&lDAILY CHALLENGE COMPLETE&f] &6You earned 1 &6&lMeta&e&lToken!" to player
+			add 1 to {tokens.%player%}
+			set {metagoal.%player%.completed} to {metagoal.day}
+			set {tokens.block.%player%} to true
+		
+# ==============================================
+# 5
+
+variables:
+	{goal.description.5} = "Mine 2 stacks of stone"
+	{amount.5} = 128 # How many of whatever do they need?
+
+on break:
+	if {tokens.block.%player%} is not true:
+		{randomgoal} is 5
+		event-block is stone
+		player's world is not "sandbox"
+# Possible condition statement(s) here
+		add 1 to {goal.%player%.progress}
+	
+# How many do they need?
+		if {goal.%player%.progress} is equal to {amount.5}:
+			send "&f[&a&lDAILY CHALLENGE COMPLETE&f] &6You earned 1 &6&lMeta&e&lToken!" to player
+			add 1 to {tokens.%player%}
+			set {metagoal.%player%.completed} to {metagoal.day}
+			set {tokens.block.%player%} to true
+		
+# ==============================================
+# 6
+
+variables:
+	{goal.description.6} = "Bake bread for all the apocalypse survivors."
+	{amount.6} = 1 # How many of whatever do they need?						 <----- set this to how many NPCs are at spawn.
+
+on craft of bread:
+	{randomgoal} is 6
+	player's world is not "sandbox"
+#   Possible condition statement(s) here
+	add 1 to {goal.%player%.progress}
+	wait 2 ticks
+# How many do they need?
+	if {goal.%player%.progress} is {amount.6}:
+		send "&f[&a&lDAILY CHALLENGE COMPLETE&f] &6You earned 1 &6&lMeta&e&lToken!" to player
+		add 1 to {tokens.%player%}
+		set {metagoal.%player%.completed} to {metagoal.day}
+		set {tokens.block.%player%} to true
+		
+		
+		
+		
+		
+# ======================================================
+# Passive Goals
+# ======================================================
+
+#1 Kill 30 bats
+on death of bat:
+	attacker is player
+	attacker's world is not "sandbox"
+	if {passivegoal.%attacker%.1} is not set:
+		set {passivegoal.%attacker%.1} to 0
+	add 1 to {passivegoal.%attacker%.1}
+	{passivegoal.%attacker%.1} is equal to 30
+	send "&f[&a&lSECRET CHALLENGE COMPLETE&f] &6You earned 1 &6&lMeta&e&lToken&6 for killing 30 bats!" to attacker
+	add 1 to {tokens.%attacker%}
+	
+#2 Kill 30 Creepers
+on death of creeper:
+	attacker is player
+	attacker's world is not "sandbox"
+	if {passivegoal.%attacker%.2} is not set:
+		set {passivegoal.%attacker%.2} to 0
+	add 1 to {passivegoal.%attacker%.2}
+	{passivegoal.%attacker%.2} is equal to 30
+	send "&f[&a&lSECRET CHALLENGE COMPLETE&f] &6You earned 1 &6&lMeta&e&lToken&6 for killing 30 creepers!" to attacker
+	add 1 to {tokens.%attacker%}
+
+#3 Kill 30 Skeletons
+on death of skeleton:
+	attacker is player
+	attacker's world is not "sandbox"
+	if {passivegoal.%attacker%.3} is not set:
+		set {passivegoal.%attacker%.3} to 0
+	add 1 to {passivegoal.%attacker%.3}
+	{passivegoal.%attacker%.3} is equal to 30
+	send "&f[&a&lSECRET CHALLENGE COMPLETE&f] &6You earned 1 &6&lMeta&e&lToken&6 for killing 30 skeletons!" to attacker
+	add 1 to {tokens.%attacker%}
+
+#4 Kill 30 blazes
+on death of blaze:
+	attacker is player
+	attacker's world is not "sandbox"
+	if {passivegoal.%attacker%.4} is not set:
+		set {passivegoal.%attacker%.4} to 0
+	add 1 to {passivegoal.%attacker%.4}
+	{passivegoal.%attacker%.4} is 30
+	send "&f[&a&lSECRET CHALLENGE COMPLETE&f] &6You earned 1 &6&lMeta&e&lToken&6 for killing 30 blazes!" to attacker
+	add 1 to {tokens.%attacker%}
+
+#5 Play for 100 hours (6000 Minutes)
+#9 Play for 50 Hours (3000 Minutes)
+# Also has one for 200 hours
+# (This one does both, and all time based rewards should be added here)
+every real minute:
+	loop all players:
+		{passivegoal.%loop-player%.5} is not set:
+			set {passivegoal.%loop-player%.5} to 0
+		loop-player's world is not "sandbox"
+		add 1 to {passivegoal.%loop-player%.5}
+		if {passivegoal.%loop-player%.5} is equal to 3000:
+			send "&f[&a&lSECRET CHALLENGE COMPLETE&f] &6You earned 1 &6&lMeta&e&lToken&6 for playing over 50 hours!" to loop-player
+			add 1 to {tokens.%loop-player%}
+		if {passivegoal.%loop-player%.5} is equal to 6000:
+			send "&f[&a&lSECRET CHALLENGE COMPLETE&f] &6You earned 1 &6&lMeta&e&lToken&6 for playing over 100 hours!" to loop-player
+			add 1 to {tokens.%loop-player%}
+		if {passivegoal.%loop-player%.5} is equal to 12000:
+			send "&f[&a&lSECRET CHALLENGE COMPLETE&f] &6You earned 1 &6&lMeta&e&lToken&6 for playing over 200 hours!" to loop-player
+			add 1 to {tokens.%loop-player%}
+
+#6 Kill 30 Enderman
+on death of enderman:
+	attacker is player
+	attacker's world is not "sandbox"
+	if {passivegoal.%attacker%.6} is not set:
+		set {passivegoal.%attacker%.6} to 0
+	add 1 to {passivegoal.%attacker%.6}
+	{passivegoal.%attacker%.6} is equal to 30
+	send "&f[&a&lSECRET CHALLENGE COMPLETE&f] &6You earned 1 &6&lMeta&e&lToken&6 for killing 30 enderman!" to attacker
+	add 1 to {tokens.%attacker%}
+
+#7 Kill 30 Squid
+on death of squid:
+	attacker is player
+	attacker's world is not "sandbox"
+	if {passivegoal.%attacker%.7} is not set:
+		set {passivegoal.%attacker%.7} to 0
+	add 1 to {passivegoal.%attacker%.7}
+	{passivegoal.%attacker%.7} is equal to 30
+	send "&f[&a&lSECRET CHALLENGE COMPLETE&f] &6You earned 1 &6&lMeta&e&lToken&6 for killing 30 squid!" to attacker
+	add 1 to {tokens.%attacker%}
+
+#8 Shear 50 sheep
+on rightclick on a sheep: 
+	player's held item is a shears
+	player's world is not "sandbox"
+	if {passivegoal.%player%.8} is not set:
+		set {passivegoal.%player%.8} to 0
+	add 1 to {passivegoal.%player%.8}
+	{passivegoal.%player%.8} is equal to 50
+	send "&f[&a&lSECRET CHALLENGE COMPLETE&f] &6You earned 1&6&lMeta&e&lToken&6 for shearing 50 sheeps!" to player
+	add 1 to {tokens.%player%}
+	
+#9 Play for 50 Hours (3000 Minutes) (CODED ON LINE 298)
+#10 Craft 30 Chests
+#11 Eat 30 Steaks
+on consume of steak:
+	player's world is not "sandbox"
+	if {passivegoal.%player%.11} is not set:
+		set {passivegoal.%player%.11} to 0
+	add 1 to {passivegoal.%player%.11}
+	{passivegoal.%player%.11} is equal to 10
+	send "&f[&a&lSECRET CHALLENGE COMPLETE&f] &6You earned 1 &6&lMeta&e&lToken&6 for eating 30 steaks!" to player
+	add 1 to {tokens.%player%}
+
+#12 Eat 15 Carrots
+on consume of carrot:
+	player's world is not "sandbox"
+	if {passivegoal.%player%.12} is not set:
+		set {passivegoal.%player%.12} to 0
+	add 1 to {passivegoal.%player%.12}
+	{passivegoal.%player%.12} is equal to 15
+	send "&f[&a&lSECRET CHALLENGE COMPLETE&f] &6You earned 1 &6&lMeta&e&lToken&6 for eating 15 carrots!" to player
+	add 1 to {tokens.%player%}
+
+#13 Eat 10 Cakes
+on consume of cake:
+	player's world is not "sandbox"
+	if {passivegoal.%player%.13} is not set:
+		set {passivegoal.%player%.13} to 0
+	add 1 to {passivegoal.%player%.13}
+	{passivegoal.%player%.13} is equal to 10
+	send "&f[&a&lSECRET CHALLENGE COMPLETE&f] &6You earned 1 &6&lMeta&e&lToken&6 for eating 10 cakes!" to player
+	add 1 to {tokens.%player%}
+
+#14 Pick 20 Dandelions
+on break of dandelion:
+	player's world is not "sandbox"
+	if {passivegoal.%player%.14} is not set:
+		set {passivegoal.%player%.14} to 0
+	add 1 to {passivegoal.%player%.14}
+	{passivegoal.%player%.14} is equal to 20
+	send "&f[&a&lSECRET CHALLENGE COMPLETE&f] &6You earned 1 &6&lMeta&e&lToken&6 for picking 20 dandelions!" to player
+	add 1 to {tokens.%player%}
+
+#15 Pick 20 Roses
+on break of rose:
+	player's world is not "sandbox"
+	if {passivegoal.%player%.15} is not set:
+		set {passivegoal.%player%.15} to 0
+	add 1 to {passivegoal.%player%.15}
+	{passivegoal.%player%.15} is equal to 20
+	send "&f[&a&lSECRET CHALLENGE COMPLETE&f] &6You earned 1 &6&lMeta&e&lToken&6 for picking 20 roses!" to player
+	add 1 to {tokens.%player%}
+
+#16 Kill 50 mobs with a bow
+on death:
+	attacker is a player
+	attacker's world is not "sandbox"
+	if {passivegoal.%attacker%.16} is not set:
+		set {passivegoal.%attacker%.16} to 0
+	victim isn't a player
+	projectile exists
+	projectile is an arrow
+	add 1 to {passivegoal.%attacker%.16}
+	{passivegoal.%attacker%.16} is equal to 50
+	send "&f[&a&lSECRET CHALLENGE COMPLETE&f] &6You earned 1 &6&lMeta&e&lToken&6 for killing 50 mobs with a bow!" to attacker
+	add 1 to {tokens.%attacker%}
+	
+#17 Kill 100 mobs with a bow
+on death:
+	attacker is a player
+	attacker's world is not "sandbox"
+	if {passivegoal.%attacker%.17} is not set:
+		set {passivegoal.%attacker%.17} to 0
+	victim isn't a player
+	projectile exists
+	projectile is an arrow
+	add 1 to {passivegoal.%attacker%.17}
+	{passivegoal.%attacker%.17} is equal to 100
+	send "&f[&a&lSECRET CHALLENGE COMPLETE&f] &6You earned 1 &6&lMeta&e&lToken&6 for killing 100 mobs with a bow!" to attacker
+	add 1 to {tokens.%attacker%}
+	
+#18 Eat 20 apples
+on consume of apple:
+	player's world is not "sandbox"
+	if {passivegoal.%player%.18} is not set:
+		set {passivegoal.%player%.18} to 0
+	add 1 to {passivegoal.%player%.18}
+	{passivegoal.%player%.18} is equal to 20
+	send "&f[&a&lSECRET CHALLENGE COMPLETE&f] &6You earned 1 &6&lMeta&e&lToken&6 for eating 20 apples!" to player
+	add 1 to {tokens.%player%}
+	
+	
+#19 Craft 5 Pistons
+on craft of piston:
+	player's world is not "sandbox"
+	if {passivegoal.%player%.19} is not set:
+		set {passivegoal.%player%.19} to 0
+	add 1 to {passivegoal.%player%.19}
+	{passivegoal.%player%.19} is equal to 5
+	send "&f[&a&lSECRET CHALLENGE COMPLETE&f] &6You earned 1 &6&lMeta&e&lToken&6 for crafting 5 pistons!" to player
+	add 1 to {tokens.%player%}
+	
+#20 Craft 5 Sticky Pistons
+on craft of sticky piston:
+	player's world is not "sandbox"
+	if {passivegoal.%player%.20} is not set:
+		set {passivegoal.%player%.20} to 0
+	add 1 to {passivegoal.%player%.20}
+	{passivegoal.%player%.20} is equal to 5
+	send "&f[&a&lSECRET CHALLENGE COMPLETE&f] &6You earned 1 &6&lMeta&e&lToken&6 for crafting 5 sticky pistons!" to player
+	add 1 to {tokens.%player%}
+	
+#21 Craft 5 TNT
+on craft of tnt:
+	player's world is not "sandbox"
+	if {passivegoal.%player%.21} is not set:
+		set {passivegoal.%player%.21} to 0
+	add 1 to {passivegoal.%player%.21}
+	{passivegoal.%player%.21} is equal to 5
+	send "&f[&a&lSECRET CHALLENGE COMPLETE&f] &6You earned 1 &6&lMeta&e&lToken&6 for crafting 5 tnt!" to player
+	add 1 to {tokens.%player%}
+	
+#22 Mine 50 Glowstone
+on mine of glowstone:
+	player's world is not "sandbox"
+	if {passivegoal.%player%.22} is not set:
+		set {passivegoal.%player%.22} to 0
+	add 1 to {passivegoal.%player%.22}
+	{passivegoal.%player%.22} is equal to 50
+	send "&f[&a&lSECRET CHALLENGE COMPLETE&f] &6You earned 1 &6&lMeta&e&lToken&6 for mining 50 glowstone!" to player
+	add 1 to {tokens.%player%}
+	
+#23 Mine 50 Endstone
+on mine of end stone:
+	player's world is not "sandbox"
+	if {passivegoal.%player%.23} is not set:
+		set {passivegoal.%player%.23} to 0
+	add 1 to {passivegoal.%player%.23}
+	{passivegoal.%player%.23} is equal to 50
+	send "&f[&a&lSECRET CHALLENGE COMPLETE&f] &6You earned 1 &6&lMeta&e&lToken&6 for mining 50 endstone!" to player
+	add 1 to {tokens.%player%}
+	
+#24 Mine 50 Obsidian
+on mine of obsidian:
+	player's world is not "sandbox"
+	if {passivegoal.%player%.24} is not set:
+		set {passivegoal.%player%.24} to 0
+	add 1 to {passivegoal.%player%.24}
+	{passivegoal.%player%.24} is equal to 50
+	send "&f[&a&lSECRET CHALLENGE COMPLETE&f] &6You earned 1 &6&lMeta&e&lToken&6 for mining 50 obsidian!" to player
+	add 1 to {tokens.%player%}
+	
+#25 Mine 50 Gold Ore
+on mine of gold ore:
+	player's world is not "sandbox"
+	if {passivegoal.%player%.25} is not set:
+		set {passivegoal.%player%.25} to 0
+	add 1 to {passivegoal.%player%.25}
+	{passivegoal.%player%.25} is equal to 50
+	send "&f[&a&lSECRET CHALLENGE COMPLETE&f] &6You earned 1 &6&lMeta&e&lToken&6 for mining 50 gold ore!" to player
+	add 1 to {tokens.%player%}
+	
+#26 Mine 50 Iron Ore
+on mine of iron ore:
+	player's world is not "sandbox"
+	if {passivegoal.%player%.26} is not set:
+		set {passivegoal.%player%.26} to 0
+	add 1 to {passivegoal.%player%.26}
+	{passivegoal.%player%.26} is equal to 50
+	send "&f[&a&lSECRET CHALLENGE COMPLETE&f] &6You earned 1 &6&lMeta&e&lToken&6 for mining 50 iron ore!" to player
+	add 1 to {tokens.%player%}
+	
+#27 Mine 50 Diamond Ore
+on mine of diamond ore:
+	player's world is not "sandbox"
+	if {passivegoal.%player%.27} is not set:
+		set {passivegoal.%player%.27} to 0
+	add 1 to {passivegoal.%player%.27}
+	{passivegoal.%player%.27} is equal to 50
+	send "&f[&a&lSECRET CHALLENGE COMPLETE&f] &6You earned 1 &6&lMeta&e&lToken&6 for mining 50 diamond ore!" to player
+	add 1 to {tokens.%player%}
+	
+#28 Kill 30 Cows
+on death of cow:
+	attacker is player
+	attacker's world is not "sandbox"
+	if {passivegoal.%attacker%.28} is not set:
+		set {passivegoal.%attacker%.28} to 0
+	add 1 to {passivegoal.%attacker%.28}
+	{passivegoal.%attacker%.28} is equal to 30
+	send "&f[&a&lSECRET CHALLENGE COMPLETE&f] &6You earned 1 &6&lMeta&e&lToken&6 for killing 30 cows!" to attacker
+	add 1 to {tokens.%attacker%}
+
+#29 Kill 30 Sheep
+on death of sheep:
+	attacker is player
+	attacker's world is not "sandbox"
+	if {passivegoal.%attacker%.29} is not set:
+		set {passivegoal.%attacker%.29} to 0
+	add 1 to {passivegoal.%attacker%.29}
+	{passivegoal.%attacker%.29} is equal to 30
+	send "&f[&a&lSECRET CHALLENGE COMPLETE&f] &6You earned 1 &6&lMeta&e&lToken&6 for killing 30 sheep!" to attacker
+	add 1 to {tokens.%attacker%}
+
+#30 Kill 30 Pigs
+on death of pig:
+	attacker is a player
+	attacker's world is not "sandbox"
+	if {passivegoal.%attacker%.30} is not set:
+		set {passivegoal.%attacker%.30} to 0
+	add 1 to {passivegoal.%attacker%.30}
+	{passivegoal.%attacker%.30} is equal to 30
+	send "&f[&a&lSECRET CHALLENGE COMPLETE&f] &6You earned 1 &6&lMeta&e&lToken&6 for killing 30 pigs!" to attacker
+	add 1 to {tokens.%attacker%}
+
+#31 Kill 20 Rabbits
+on death of rabbit:
+	attacker is a player
+	attacker's world is not "sandbox"
+	send "%{passivegoal.%attacker%.31}%" to attacker
+	if {passivegoal.%attacker%.31} is not set:
+		set {passivegoal.%attacker%.31} to 0
+	add 1 to {passivegoal.%attacker%.31}
+	{passivegoal.%attacker%.31} is equal to 20
+	send "&f[&a&lSECRET CHALLENGE COMPLETE&f] &6You earned 1 &6&lMeta&e&lToken&6 for killing 20 bunnies!" to attacker
+	add 1 to {tokens.%attacker%}
+
+#32 Craft 10 Jack-O-Lanterns

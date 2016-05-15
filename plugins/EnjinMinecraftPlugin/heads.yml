@@ -1,26 +1,455 @@
 heads:
-  TopPlayer:
+  TopMonthlyVoter:
     '0':
       hashead: true
       world: Metaverse
-      headx: -95
+      headx: -103
       heady: 102
-      headz: 236
-      signx: -95
+      headz: 242
+      signx: -103
       signy: 101
-      signz: 237
+      signz: 241
+      position: 4
+    '2':
+      hashead: true
+      world: Metaverse
+      headx: -101
+      heady: 102
+      headz: 242
+      signx: -101
+      signy: 101
+      signz: 241
+      position: 3
+    '4':
+      hashead: true
+      world: Metaverse
+      headx: -101
+      heady: 102
+      headz: 242
+      signx: -101
+      signy: 101
+      signz: 241
+      position: 3
+    '10':
+      hashead: true
+      world: Metaverse
+      headx: -97
+      heady: 102
+      headz: 242
+      signx: -97
+      signy: 101
+      signz: 241
+      position: 1
+    '14':
+      hashead: true
+      world: Metaverse
+      headx: -103
+      heady: 102
+      headz: 242
+      signx: -103
+      signy: 101
+      signz: 241
+      position: 4
+    '23':
+      hashead: true
+      world: Metaverse
+      headx: -99
+      heady: 102
+      headz: 242
+      signx: -99
+      signy: 101
+      signz: 241
+      position: 2
+    '33':
+      hashead: true
+      world: Metaverse
+      headx: -99
+      heady: 102
+      headz: 242
+      signx: -99
+      signy: 101
+      signz: 241
+      position: 2
+    '38':
+      hashead: true
+      world: Metacurse
+      headx: -6
+      heady: 71
+      headz: -90
+      signx: -5
+      signy: 70
+      signz: -90
+      position: 4
+    '42':
+      hashead: true
+      world: Metaverse
+      headx: -97
+      heady: 102
+      headz: 242
+      signx: -97
+      signy: 101
+      signz: 241
+      position: 1
+    '43':
+      hashead: true
+      world: Metacurse
+      headx: -6
+      heady: 71
+      headz: -88
+      signx: -5
+      signy: 70
+      signz: -88
+      position: 3
+    '47':
+      hashead: true
+      world: Metacurse
+      headx: -6
+      heady: 71
+      headz: -84
+      signx: -5
+      signy: 70
+      signz: -84
+      position: 1
+    '50':
+      hashead: true
+      world: Metacurse
+      headx: -6
+      heady: 71
+      headz: -86
+      signx: -5
+      signy: 70
+      signz: -86
+      position: 2
+    '52':
+      hashead: true
+      world: Metacurse
+      headx: -6
+      heady: 71
+      headz: -82
+      signx: -5
+      signy: 70
+      signz: -82
       position: 0
+    '59':
+      hashead: true
+      world: Metacurse
+      headx: -6
+      heady: 71
+      headz: -88
+      signx: -5
+      signy: 70
+      signz: -88
+      position: 3
+    '64':
+      hashead: true
+      world: Metacurse
+      headx: -6
+      heady: 71
+      headz: -86
+      signx: -5
+      signy: 70
+      signz: -86
+      position: 2
+    '68':
+      hashead: true
+      world: Metacurse
+      headx: -6
+      heady: 71
+      headz: -84
+      signx: -5
+      signy: 70
+      signz: -84
+      position: 1
+    '69':
+      hashead: true
+      world: Metacurse
+      headx: -6
+      heady: 71
+      headz: -82
+      signx: -5
+      signy: 70
+      signz: -82
+      position: 0
+    '74':
+      hashead: true
+      world: Metacurse
+      headx: -6
+      heady: 71
+      headz: -90
+      signx: -5
+      signy: 70
+      signz: -90
+      position: 4
+  LatestMembers:
     '1':
       hashead: true
       world: Metacurse
       headx: 0
       heady: 71
-      headz: -90
+      headz: -100
       signx: -1
       signy: 70
-      signz: -90
+      signz: -100
+      position: 2
+    '5':
+      hashead: true
+      world: Metacurse
+      headx: 0
+      heady: 71
+      headz: -98
+      signx: -1
+      signy: 70
+      signz: -98
+      position: 1
+    '7':
+      hashead: true
+      world: Metacurse
+      headx: 0
+      heady: 71
+      headz: -100
+      signx: -1
+      signy: 70
+      signz: -100
+      position: 2
+    '11':
+      hashead: true
+      world: MetaOmega
+      headx: -318
+      heady: 39
+      headz: 476
+      signx: -317
+      signy: 38
+      signz: 477
+      position: 0
+    '12':
+      hashead: true
+      world: MetaOmega
+      headx: -318
+      heady: 39
+      headz: 474
+      signx: -317
+      signy: 38
+      signz: 475
+      position: 2
+    '13':
+      hashead: true
+      world: MetaOmega
+      headx: -318
+      heady: 39
+      headz: 475
+      signx: -317
+      signy: 38
+      signz: 476
+      position: 1
+    '15':
+      hashead: true
+      world: Metaverse
+      headx: -64
+      heady: 102
+      headz: 20
+      signx: -63
+      signy: 101
+      signz: 20
+      position: 2
+    '16':
+      hashead: true
+      world: Metaverse
+      headx: -64
+      heady: 102
+      headz: 21
+      signx: -63
+      signy: 101
+      signz: 21
+      position: 1
+    '17':
+      hashead: true
+      world: Metaverse
+      headx: -64
+      heady: 102
+      headz: 22
+      signx: -63
+      signy: 101
+      signz: 22
+      position: 0
+    '18':
+      hashead: true
+      world: MetaOmega
+      headx: -318
+      heady: 39
+      headz: 473
+      signx: -317
+      signy: 38
+      signz: 474
+      position: 3
+    '20':
+      hashead: true
+      world: MetaOmega
+      headx: -318
+      heady: 39
+      headz: 476
+      signx: -317
+      signy: 38
+      signz: 477
+      position: 0
+    '21':
+      hashead: true
+      world: MetaOmega
+      headx: -318
+      heady: 39
+      headz: 475
+      signx: -317
+      signy: 38
+      signz: 476
+      position: 1
+    '24':
+      hashead: true
+      world: MetaOmega
+      headx: -318
+      heady: 39
+      headz: 474
+      signx: -317
+      signy: 38
+      signz: 475
+      position: 2
+    '25':
+      hashead: true
+      world: MetaOmega
+      headx: -318
+      heady: 39
+      headz: 473
+      signx: -317
+      signy: 38
+      signz: 474
+      position: 3
+    '26':
+      hashead: true
+      world: Metacurse
+      headx: 0
+      heady: 71
+      headz: -98
+      signx: -1
+      signy: 70
+      signz: -98
+      position: 1
+    '29':
+      hashead: true
+      world: Metacurse
+      headx: 0
+      heady: 71
+      headz: -96
+      signx: -1
+      signy: 70
+      signz: -96
+      position: 0
+    '30':
+      hashead: false
+      world: MetaOmega
+      signx: -317
+      signy: 38
+      signz: 473
       position: 4
-    '2':
+    '34':
+      hashead: true
+      world: Metaverse
+      headx: -113
+      heady: 102
+      headz: 236
+      signx: -113
+      signy: 101
+      signz: 237
+      position: 2
+    '36':
+      hashead: true
+      world: Metacurse
+      headx: 0
+      heady: 71
+      headz: -96
+      signx: -1
+      signy: 70
+      signz: -96
+      position: 0
+    '46':
+      hashead: true
+      world: Metaverse
+      headx: -113
+      heady: 102
+      headz: 236
+      signx: -113
+      signy: 101
+      signz: 237
+      position: 2
+    '48':
+      hashead: true
+      world: Metaverse
+      headx: -111
+      heady: 102
+      headz: 236
+      signx: -111
+      signy: 101
+      signz: 237
+      position: 1
+    '49':
+      hashead: true
+      world: Metaverse
+      headx: -109
+      heady: 102
+      headz: 236
+      signx: -109
+      signy: 101
+      signz: 237
+      position: 0
+    '60':
+      hashead: true
+      world: Metaverse
+      headx: -109
+      heady: 102
+      headz: 236
+      signx: -109
+      signy: 101
+      signz: 237
+      position: 0
+    '66':
+      hashead: true
+      world: Metaverse
+      headx: -111
+      heady: 102
+      headz: 236
+      signx: -111
+      signy: 101
+      signz: 237
+      position: 1
+    '77':
+      hashead: true
+      world: Metaverse
+      headx: -64
+      heady: 102
+      headz: 22
+      signx: -63
+      signy: 101
+      signz: 22
+      position: 0
+    '78':
+      hashead: true
+      world: Metaverse
+      headx: -64
+      heady: 102
+      headz: 20
+      signx: -63
+      signy: 101
+      signz: 20
+      position: 2
+    '79':
+      hashead: true
+      world: Metaverse
+      headx: -64
+      heady: 102
+      headz: 21
+      signx: -63
+      signy: 101
+      signz: 21
+      position: 1
+  TopPlayer:
+    '3':
       hashead: true
       world: Metacurse
       headx: 0
@@ -30,27 +459,17 @@ heads:
       signy: 70
       signz: -88
       position: 3
-    '5':
-      hashead: true
-      world: Metaverse
-      headx: -101
-      heady: 102
-      headz: 236
-      signx: -101
-      signy: 101
-      signz: 237
-      position: 3
     '6':
       hashead: true
       world: Metacurse
       headx: 0
       heady: 71
-      headz: -82
+      headz: -86
       signx: -1
       signy: 70
-      signz: -82
-      position: 0
-    '16':
+      signz: -86
+      position: 2
+    '8':
       hashead: true
       world: Metacurse
       headx: 0
@@ -60,17 +479,37 @@ heads:
       signy: 70
       signz: -84
       position: 1
-    '20':
+    '9':
+      hashead: true
+      world: Metacurse
+      headx: 0
+      heady: 71
+      headz: -82
+      signx: -1
+      signy: 70
+      signz: -82
+      position: 0
+    '19':
       hashead: true
       world: Metaverse
-      headx: -99
+      headx: -101
       heady: 102
       headz: 236
-      signx: -99
+      signx: -101
       signy: 101
       signz: 237
-      position: 2
-    '21':
+      position: 3
+    '27':
+      hashead: true
+      world: Metacurse
+      headx: 0
+      heady: 71
+      headz: -88
+      signx: -1
+      signy: 70
+      signz: -88
+      position: 3
+    '28':
       hashead: true
       world: Metaverse
       headx: -103
@@ -82,56 +521,6 @@ heads:
       position: 4
     '31':
       hashead: true
-      world: Metacurse
-      headx: 0
-      heady: 71
-      headz: -86
-      signx: -1
-      signy: 70
-      signz: -86
-      position: 2
-    '32':
-      hashead: true
-      world: Metaverse
-      headx: -99
-      heady: 102
-      headz: 236
-      signx: -99
-      signy: 101
-      signz: 237
-      position: 2
-    '34':
-      hashead: true
-      world: Metaverse
-      headx: -97
-      heady: 102
-      headz: 236
-      signx: -97
-      signy: 101
-      signz: 237
-      position: 1
-    '39':
-      hashead: true
-      world: Metacurse
-      headx: 0
-      heady: 71
-      headz: -84
-      signx: -1
-      signy: 70
-      signz: -84
-      position: 1
-    '43':
-      hashead: true
-      world: Metacurse
-      headx: 0
-      heady: 71
-      headz: -82
-      signx: -1
-      signy: 70
-      signz: -82
-      position: 0
-    '45':
-      hashead: true
       world: Metaverse
       headx: -101
       heady: 102
@@ -140,7 +529,7 @@ heads:
       signy: 101
       signz: 237
       position: 3
-    '46':
+    '32':
       hashead: true
       world: Metacurse
       headx: 0
@@ -150,27 +539,27 @@ heads:
       signy: 70
       signz: -90
       position: 4
-    '48':
+    '35':
       hashead: true
       world: Metacurse
       headx: 0
       heady: 71
-      headz: -88
+      headz: -90
       signx: -1
       signy: 70
-      signz: -88
-      position: 3
-    '52':
+      signz: -90
+      position: 4
+    '37':
       hashead: true
-      world: Metaverse
-      headx: -97
-      heady: 102
-      headz: 236
-      signx: -97
-      signy: 101
-      signz: 237
-      position: 1
-    '54':
+      world: MetaOmega
+      headx: -312
+      heady: 39
+      headz: 481
+      signx: -312
+      signy: 38
+      signz: 480
+      position: 2
+    '39':
       hashead: true
       world: Metaverse
       headx: -103
@@ -180,17 +569,117 @@ heads:
       signy: 101
       signz: 237
       position: 4
-    '60':
+    '40':
+      hashead: true
+      world: MetaOmega
+      headx: -310
+      heady: 39
+      headz: 481
+      signx: -310
+      signy: 38
+      signz: 480
+      position: 4
+    '41':
+      hashead: true
+      world: MetaOmega
+      headx: -314
+      heady: 39
+      headz: 481
+      signx: -314
+      signy: 38
+      signz: 480
+      position: 0
+    '44':
+      hashead: true
+      world: MetaOmega
+      headx: -314
+      heady: 39
+      headz: 481
+      signx: -314
+      signy: 38
+      signz: 480
+      position: 0
+    '45':
+      hashead: true
+      world: MetaOmega
+      headx: -313
+      heady: 39
+      headz: 481
+      signx: -313
+      signy: 38
+      signz: 480
+      position: 1
+    '51':
+      hashead: true
+      world: MetaOmega
+      headx: -310
+      heady: 39
+      headz: 481
+      signx: -310
+      signy: 38
+      signz: 480
+      position: 4
+    '53':
+      hashead: true
+      world: MetaOmega
+      headx: -312
+      heady: 39
+      headz: 481
+      signx: -312
+      signy: 38
+      signz: 480
+      position: 2
+    '54':
+      hashead: true
+      world: MetaOmega
+      headx: -311
+      heady: 39
+      headz: 481
+      signx: -311
+      signy: 38
+      signz: 480
+      position: 3
+    '55':
+      hashead: true
+      world: Metaverse
+      headx: -99
+      heady: 102
+      headz: 236
+      signx: -99
+      signy: 101
+      signz: 237
+      position: 2
+    '57':
       hashead: true
       world: Metacurse
       headx: 0
       heady: 71
-      headz: -86
+      headz: -82
       signx: -1
       signy: 70
-      signz: -86
-      position: 2
-    '61':
+      signz: -82
+      position: 0
+    '58':
+      hashead: true
+      world: Metaverse
+      headx: -97
+      heady: 102
+      headz: 236
+      signx: -97
+      signy: 101
+      signz: 237
+      position: 1
+    '62':
+      hashead: true
+      world: Metacurse
+      headx: 0
+      heady: 71
+      headz: -84
+      signx: -1
+      signy: 70
+      signz: -84
+      position: 1
+    '65':
       hashead: true
       world: Metaverse
       headx: -95
@@ -200,426 +689,124 @@ heads:
       signy: 101
       signz: 237
       position: 0
-  TopMonthlyVoter:
-    '3':
-      hashead: true
-      world: Metaverse
-      headx: -99
-      heady: 102
-      headz: 242
-      signx: -99
-      signy: 101
-      signz: 241
-      position: 2
-    '7':
-      hashead: true
-      world: Metacurse
-      headx: -6
-      heady: 71
-      headz: -82
-      signx: -5
-      signy: 70
-      signz: -82
-      position: 0
-    '8':
-      hashead: true
-      world: Metacurse
-      headx: -6
-      heady: 71
-      headz: -90
-      signx: -5
-      signy: 70
-      signz: -90
-      position: 4
-    '9':
-      hashead: true
-      world: Metacurse
-      headx: -6
-      heady: 71
-      headz: -88
-      signx: -5
-      signy: 70
-      signz: -88
-      position: 3
-    '11':
-      hashead: true
-      world: Metaverse
-      headx: -97
-      heady: 102
-      headz: 242
-      signx: -97
-      signy: 101
-      signz: 241
-      position: 1
-    '12':
-      hashead: true
-      world: Metacurse
-      headx: -6
-      heady: 71
-      headz: -90
-      signx: -5
-      signy: 70
-      signz: -90
-      position: 4
-    '15':
-      hashead: true
-      world: Metaverse
-      headx: -103
-      heady: 102
-      headz: 242
-      signx: -103
-      signy: 101
-      signz: 241
-      position: 4
-    '24':
-      hashead: true
-      world: Metacurse
-      headx: -6
-      heady: 71
-      headz: -84
-      signx: -5
-      signy: 70
-      signz: -84
-      position: 1
-    '27':
-      hashead: true
-      world: Metaverse
-      headx: -101
-      heady: 102
-      headz: 242
-      signx: -101
-      signy: 101
-      signz: 241
-      position: 3
-    '29':
-      hashead: true
-      world: Metacurse
-      headx: -6
-      heady: 71
-      headz: -82
-      signx: -5
-      signy: 70
-      signz: -82
-      position: 0
-    '30':
-      hashead: true
-      world: Metaverse
-      headx: -101
-      heady: 102
-      headz: 242
-      signx: -101
-      signy: 101
-      signz: 241
-      position: 3
-    '33':
-      hashead: true
-      world: Metaverse
-      headx: -97
-      heady: 102
-      headz: 242
-      signx: -97
-      signy: 101
-      signz: 241
-      position: 1
-    '36':
-      hashead: true
-      world: Metacurse
-      headx: -6
-      heady: 71
-      headz: -86
-      signx: -5
-      signy: 70
-      signz: -86
-      position: 2
-    '37':
-      hashead: true
-      world: Metacurse
-      headx: -6
-      heady: 71
-      headz: -86
-      signx: -5
-      signy: 70
-      signz: -86
-      position: 2
-    '38':
-      hashead: true
-      world: Metaverse
-      headx: -99
-      heady: 102
-      headz: 242
-      signx: -99
-      signy: 101
-      signz: 241
-      position: 2
-    '53':
-      hashead: true
-      world: Metacurse
-      headx: -6
-      heady: 71
-      headz: -84
-      signx: -5
-      signy: 70
-      signz: -84
-      position: 1
-    '57':
-      hashead: true
-      world: Metaverse
-      headx: -103
-      heady: 102
-      headz: 242
-      signx: -103
-      signy: 101
-      signz: 241
-      position: 4
-    '58':
-      hashead: true
-      world: Metacurse
-      headx: -6
-      heady: 71
-      headz: -88
-      signx: -5
-      signy: 70
-      signz: -88
-      position: 3
-  LatestMembers:
-    '4':
-      hashead: true
-      world: Metaverse
-      headx: -113
-      heady: 102
-      headz: 236
-      signx: -113
-      signy: 101
-      signz: 237
-      position: 2
-    '10':
+    '67':
       hashead: true
       world: Metacurse
       headx: 0
       heady: 71
-      headz: -96
+      headz: -86
       signx: -1
       signy: 70
-      signz: -96
-      position: 0
-    '14':
+      signz: -86
+      position: 2
+    '70':
       hashead: true
       world: Metaverse
-      headx: -111
+      headx: -99
       heady: 102
       headz: 236
-      signx: -111
+      signx: -99
+      signy: 101
+      signz: 237
+      position: 2
+    '72':
+      hashead: true
+      world: Metaverse
+      headx: -95
+      heady: 102
+      headz: 236
+      signx: -95
+      signy: 101
+      signz: 237
+      position: 0
+    '73':
+      hashead: true
+      world: Metaverse
+      headx: -97
+      heady: 102
+      headz: 236
+      signx: -97
       signy: 101
       signz: 237
       position: 1
-    '17':
+    '76':
       hashead: true
-      world: Metaverse
-      headx: -64
-      heady: 102
-      headz: 21
-      signx: -63
-      signy: 101
-      signz: 21
+      world: MetaOmega
+      headx: -311
+      heady: 39
+      headz: 481
+      signx: -311
+      signy: 38
+      signz: 480
+      position: 3
+    '80':
+      hashead: true
+      world: MetaOmega
+      headx: -313
+      heady: 39
+      headz: 481
+      signx: -313
+      signy: 38
+      signz: 480
       position: 1
-    '18':
-      hashead: true
-      world: Metaverse
-      headx: -64
-      heady: 102
-      headz: 20
-      signx: -63
-      signy: 101
-      signz: 20
-      position: 2
-    '19':
-      hashead: true
-      world: Metacurse
-      headx: 0
-      heady: 71
-      headz: -98
-      signx: -1
-      signy: 70
-      signz: -98
-      position: 1
+  RecentVoter:
     '22':
       hashead: true
-      world: Metaverse
-      headx: -111
-      heady: 102
-      headz: 236
-      signx: -111
-      signy: 101
-      signz: 237
+      world: MetaOmega
+      headx: -310
+      heady: 39
+      headz: 475
+      signx: -310
+      signy: 38
+      signz: 476
       position: 1
-    '25':
-      hashead: true
-      world: Metaverse
-      headx: -64
-      heady: 102
-      headz: 21
-      signx: -63
-      signy: 101
-      signz: 21
-      position: 1
-    '26':
-      hashead: true
-      world: Metacurse
-      headx: 0
-      heady: 71
-      headz: -96
-      signx: -1
-      signy: 70
-      signz: -96
-      position: 0
-    '28':
-      hashead: true
-      world: Metaverse
-      headx: -109
-      heady: 102
-      headz: 236
-      signx: -109
-      signy: 101
-      signz: 237
-      position: 0
-    '35':
-      hashead: true
-      world: Metaverse
-      headx: -64
-      heady: 102
-      headz: 22
-      signx: -63
-      signy: 101
-      signz: 22
-      position: 0
-    '40':
-      hashead: true
-      world: Metaverse
-      headx: -64
-      heady: 102
-      headz: 20
-      signx: -63
-      signy: 101
-      signz: 20
-      position: 2
-    '44':
-      hashead: true
-      world: Metaverse
-      headx: -109
-      heady: 102
-      headz: 236
-      signx: -109
-      signy: 101
-      signz: 237
-      position: 0
-    '47':
-      hashead: true
-      world: Metaverse
-      headx: -113
-      heady: 102
-      headz: 236
-      signx: -113
-      signy: 101
-      signz: 237
-      position: 2
-    '49':
-      hashead: true
-      world: Metacurse
-      headx: 0
-      heady: 71
-      headz: -98
-      signx: -1
-      signy: 70
-      signz: -98
-      position: 1
-    '50':
-      hashead: true
-      world: Metacurse
-      headx: 0
-      heady: 71
-      headz: -100
-      signx: -1
-      signy: 70
-      signz: -100
-      position: 2
     '56':
       hashead: true
-      world: Metacurse
-      headx: 0
-      heady: 71
-      headz: -100
-      signx: -1
-      signy: 70
-      signz: -100
+      world: MetaOmega
+      headx: -309
+      heady: 39
+      headz: 475
+      signx: -309
+      signy: 38
+      signz: 476
       position: 2
-    '59':
+    '61':
       hashead: true
-      world: Metaverse
-      headx: -64
-      heady: 102
-      headz: 22
-      signx: -63
-      signy: 101
-      signz: 22
-      position: 0
-  RecentDonator:
-    '13':
-      hashead: true
-      world: Metacurse
-      headx: -6
-      heady: 71
-      headz: -98
-      signx: -5
-      signy: 70
-      signz: -98
+      world: MetaOmega
+      headx: -310
+      heady: 39
+      headz: 475
+      signx: -310
+      signy: 38
+      signz: 476
       position: 1
-    '23':
+    '63':
       hashead: true
-      world: Metacurse
-      headx: -6
-      heady: 71
-      headz: -96
-      signx: -5
-      signy: 70
-      signz: -96
+      world: MetaOmega
+      headx: -311
+      heady: 39
+      headz: 475
+      signx: -311
+      signy: 38
+      signz: 476
       position: 0
-    '41':
+    '71':
       hashead: true
-      world: Metacurse
-      headx: -6
-      heady: 71
-      headz: -96
-      signx: -5
-      signy: 70
-      signz: -96
+      world: MetaOmega
+      headx: -311
+      heady: 39
+      headz: 475
+      signx: -311
+      signy: 38
+      signz: 476
       position: 0
-    '42':
+    '75':
       hashead: true
-      world: Metacurse
-      headx: -6
-      heady: 71
-      headz: -98
-      signx: -5
-      signy: 70
-      signz: -98
-      position: 1
-    '51':
-      hashead: true
-      world: Metacurse
-      headx: -6
-      heady: 71
-      headz: -100
-      signx: -5
-      signy: 70
-      signz: -100
-      position: 2
-    '55':
-      hashead: true
-      world: Metacurse
-      headx: -6
-      heady: 71
-      headz: -100
-      signx: -5
-      signy: 70
-      signz: -100
+      world: MetaOmega
+      headx: -309
+      heady: 39
+      headz: 475
+      signx: -309
+      signy: 38
+      signz: 476
       position: 2

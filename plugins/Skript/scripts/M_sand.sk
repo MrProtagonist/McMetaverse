@@ -1,0 +1,301 @@
+on script load:
+	loop all players:
+		set {sandstorm.%loop-player%.playing} to false
+		set {sandstorm.%loop-player%.spectating} to false
+	set {sandstorm.going} to false
+	set {sandstorm.countdown} to false
+	if {sandstorm.top.time.fake} is not set:
+		set {sandstorm.top.time.fake} to 1
+command /joinsandstorm:
+	trigger:
+#		player can't hold 36 wood swords:
+#			message "&e&oClear your inventory &6&oand armor &e&obefore joining &6&oSand&c&oStorm&e&o."
+#			stop
+		if {sandstorm.going} is true:
+			message "&c&oA game is already in session!"
+		else:
+			if {sandstorm.players} is smaller than 0:
+				set {sandstorm.players} to 0
+			{sandstorm.%player%.spectating} is not set:
+				set {sandstorm.%player%.spectating} to true
+				set {sandstorm.%player%.playing} to false
+			{sandstorm.%player%.spectating} is not true
+#			teleport player to {sandstorm.lobby}
+			set {sandstorm.%player%.spectating} to true
+			add 1 to {sandstorm.players}
+			message "&e&oYou have joined &6&oSand&c&oStorm&e&o."
+			message "&f[&aHIGH SCORE&f] %{sandstorm.top.player}% - %{sandstorm.top.time.fake}%"
+command /sandstormcontrol:
+	trigger:
+		if player has permission "essentials.socialspy":
+			if {sandstormcontrol} is not set:
+				set {sandstormcontrol} to player
+				message "&cYou can now set the 3 wooden buttons for the &nsandstorm&r&c minigame."
+			else:
+				delete {sandstormcontrol}
+on click:
+	event-block is wooden button
+	if player is {sandstormcontrol}:
+		if {sk.joinsandstorm} is not set:
+			set {sk.joinsandstorm} to location of clicked block
+			message "Joinsandstorm button set!"
+		else:
+			if {sk.startsandstorm} is not set:
+				set {sk.startsandstorm} to location of clicked block
+				message "Startsandstorm button set!"
+			else:
+				if {sk.leavesandstorm} is not set:
+					set {sk.leavesandstorm} to location of clicked block
+					message "Leavesandstorm button set!"
+				else:
+					message "All button locations have already been set. Execute /resetsandstorm to delete them."
+	else:
+		if location of event-block is {sk.joinsandstorm}:
+			make player execute "joinsandstorm"
+		else:
+			if location of event-block is {sk.startsandstorm}:
+				make player execute "startsandstorm"
+			else:
+				if location of event-block is {sk.leavesandstorm}:
+					make player execute "leavesandstorm"
+command /clearsand:
+	trigger:
+		if {sandstorm.going} is false:
+			loop all blocks in radius 60 of {sandstorm.spawn}:
+				loop-block is sand:1
+				set loop-block to air
+command /resetsandstorm:
+	trigger:
+		if player is op:
+			loop all blocks in radius 60 of {sandstorm.spawn}:
+				loop-block is sand:1
+				set loop-block to air
+				set {sandstorm.going} to false
+			set {sandstorm.players} to 0
+			loop all players:
+				if {sandstorm.%loop-player%.spectating} is true:
+					delete {sandstorm.%loop-player%.spectating}
+				else:
+					if {sandstorm.%loop-player%.playing} is true:
+						delete {sandstorm.%loop-player%.playing}
+						make loop-player execute "sandstorm"
+						wait 2 ticks
+						make loop-player execute "sandstorm"
+		if player is {sandstormcontrol}:
+			delete {sk.joinsandstorm}
+			delete {sk.startsandstorm}
+			delete {sk.leavesandstorm}
+		else:
+			message "&cTo reset the button locations as well, type /sandstormcontrol and execute /resetsandstorm again."
+command /leavesandstorm:
+	trigger:
+		if {sandstorm.%player%.spectating} is true:
+			set {sandstorm.%player%.spectating} to false
+			set {sandstorm.%player%.playing} to false
+			remove 1 from {sandstorm.players}
+			message "&e&oYou have left the &6&oSand&c&oStorm&e&o game lobby."
+		else:
+			message "&cCan't leave the &6&oSand&c&oStorm&r&c game lobby if you haven't joined it."
+command /sandstorm:
+	trigger:
+		teleport player to {sandstorm.lobby}
+		if {sandstorm.going} is true:
+			message "&e&oWelcome to the &6&oSand&c&oStorm&e&o, watch the game below!"
+		else:
+			message "&e&oWelcome to the &6&oSand&c&oStorm&e&o, join the game lobby by clicking the join button."
+command /startsandstorm:
+	trigger:
+		if {sandstorm.players} is greater than 0:
+			{sandstorm.going} is not true
+			{sandstorm.countdown} is not true
+			set {sandstorm.countdown} to true
+			broadcast "&6&oSand&c&oStorm&6&o will be starting in 30 seconds."
+			wait 15 real seconds
+			broadcast "&6&oSand&c&oStorm&6&o will be starting in 10 seconds."
+			wait 10 real seconds
+			if {sandstorm.players} is greater than 0:
+				broadcast "&6&oSand&c&oStorm&6&o has begun! Type &a/sandstorm &6&oto watch!"
+				set {sandstorm.players} to 0
+				execute console command "clearsand"
+				loop all players:
+					if {sandstorm.%loop-player%.spectating} is true:
+						set {sandstorm.%loop-player%.spectating} to false
+						set {sandstorm.%loop-player%.playing} to true
+						add 1 to {sandstorm.players}
+						teleport loop-player to {sandstorm.spawn}
+						execute console command "tptoggle %loop-player% off"
+						execute console command "god %loop-player% off"
+						execute console command "fly %loop-player% off"
+				set {sandstorm.started} to now
+				set {sandstorm.going} to true
+				set {sandstorm.countdown} to false
+				set {sandstorm.count} to 0
+				set {sandstorm.timer} to 0
+				loop {sandstorm.list::*}:
+					add 1 to {sandstorm.count}
+				while {sandstorm.going} is true:
+					wait 2 ticks
+		#			add .1 to {_chance}
+					add 1 to {sandstorm.timer}
+					set {randomasfucka} to a random integer between {sandstorm.count} and 0
+					set {randomasfuckb} to a random integer between {sandstorm.count} and 0
+					spawn damaging falling block of red sand at {sandstorm.list::%{randomasfucka}%}
+					spawn damaging falling block of red sand at {sandstorm.list::%{randomasfuckb}%}
+			else:
+				broadcast "&f[&aSERVER&f]&6&oSand&c&oStorm&r&e has been canceled due to a lack of players!"
+		else:
+			message "&4Can't start the &6&oSand&c&oStorm&r&4 without any players!"
+on break:
+	if {sandstorm.%player%.spectating} is true:
+		message "&cNo breaking blocks while you are in the &6&oSand&c&oStorm&c lobby!"
+		message "&cPlease do /leavesandstorm first!"
+		cancel event
+	if {sandstorm.%player%.playing} is true:
+		message "&cNo breaking blocks while you are in the &6&oSand&c&oStorm&c lobby!"
+		message "&cPlease do /leavesandstorm first!"
+		cancel event
+on damage:
+	if {sandstorm.%victim%.spectating} is true:
+		cancel event
+	if {sandstorm.%victim%.playing} is true:
+		attacker is a player
+		cancel event
+on death:
+	if {sandstorm.%player%.playing} is true:
+		execute console command "tptoggle %player% on"
+		set {death} to difference between {sandstorm.started} and now
+		set death message to "&e%player% was crushed by the &6&oSand&c&oStorm&e after %{death}%."
+		remove 1 from {sandstorm.players}
+		set {sandstorm.%player%.playing} to false
+		set {sandstorm.%player%.spectating} to true
+		if {sandstorm.top.%player%.fake} is not set:
+			message "&f[&aSERVER&f] &6You just set a personal high score for &6&oSand&c&oStorm&a!"
+			set {sandstorm.top.%player%.fake} to {sandstorm.timer}
+			set {sandstorm.top.%player%.real} to {death}
+		if {sandstorm.top.%player%.fake} is less than {sandstorm.timer}:
+			message "&f[&aSERVER&f] &6You just set a personal high score for &6&oSand&c&oStorm&a!"
+			set {sandstorm.top.%player%.fake} to {sandstorm.timer}
+			set {sandstorm.top.%player%.real} to {death}
+		if {sandstorm.players} is equal to 0:
+			set {sandstorm.return} to player
+			set {sandstorm.going} to false
+			wait 2 ticks
+			broadcast "&f[&aSERVER&f] &6%player% &ais the winner of &6&oSand&c&oStorm&6!"
+			set {temppay} to {sandstorm.timer} * 2
+			set {temppay2} to {temppay} / 10
+			execute console command "eco give %player% %{temppay2}%"
+			if {sandstorm.timer} is greater than {sandstorm.top.time.fake}:
+				wait 2 real seconds
+				broadcast "&f[&aSERVER&f] &6%player% &ajust set the &aHIGH SCORE for &6&oSand&c&oStorm&a!"
+				set {sandstorm.top.time.fake} to {death}
+				set {sandstorm.top.player} to player
+			loop all players:
+				set {sandstorm.%loop-player%.playing} to false
+				set {sandstorm.%loop-player%.spectating} to false
+			set {sandstorm.going} to false
+			set {sandstorm.countdown} to false
+			set {sandstorm.player} to 0
+			wait 3 real seconds
+			execute console command "clearsand"
+			wait 3 real seconds
+			execute console command "clearsand"
+			
+on respawn:
+	{sandstorm.%player%.spectating} is true:
+		teleport player to {sandstorm.lobby}
+		teleport player to {sandstorm.lobby}
+		if {sandstorm.going} is false:
+			set {sandstorm.%player%.spectating} to false
+	else:
+		if {sandstorm.return} is player:
+			teleport player to {sandstorm.lobby}
+			teleport player to {sandstorm.lobby}
+			delete {sandstorm.return}
+on quit:
+	if {sandstorm.%player%.playing} is true:
+		execute console command "tptoggle %player% on"
+		remove 1 from {sandstorm.players}
+		set {sandstorm.%player%.playing} to false
+		set {sandstorm.%player%.spectating} to true
+		if {sandstorm.players} is equal to 0:
+			set {sandstorm.return} to player
+			set {sandstorm.going} to false
+			wait 2 ticks
+			broadcast "&f[&aSERVER&f] &6%player% &ais the winner of &6&oSand&c&oStorm&6!"
+			execute console command "eco give %player% 200"
+			if {sandstorm.timer} is greater than {sandstorm.top.%player%}:
+				wait 2 real seconds
+				broadcast "&f[&aSERVER&f] &6%player% &ajust set the &aHIGH SCORE for &6&oSand&c&oStorm&a!"
+				set {sandstorm.top.time} to {death}
+				set {sandstorm.top.player} to player
+			if {sandstorm.timer} is greater than {sandstorm.top.time.fake}:
+				wait 2 real seconds
+				broadcast "&f[&aSERVER&f] &6%player% &ajust set the &aHIGH SCORE for &6&oSand&c&oStorm&a!"
+				set {sandstorm.top.time.fake} to {death}
+				set {sandstorm.top.player} to player
+			set {sandstorm.going} to false
+			loop all players:
+				set {sandstorm.%loop-player%.playing} to false
+				set {sandstorm.%loop-player%.spectating} to false
+			set {sandstorm.going} to false
+			set {sandstorm.countdown} to false
+			set {sandstorm.player} to 0
+			wait 2 real seconds
+			execute console command "clearsand"
+on join:
+	if {sandstorm.%player%.spectating} is true:
+		set {sandstorm.%player%.spectating} to false
+		wait 2 ticks
+		teleport player to {sandstorm.lobby}
+		wait 2 ticks
+		teleport player to {sandstorm.lobby}
+	else:
+		if {sandstorm.return} is player:
+			teleport player to {sandstorm.lobby}
+			teleport player to {sandstorm.lobby}
+			delete {sandstorm.return}
+on command:
+	if {sandstorm.going} is true:
+		if {sandstorm.%player%.playing} is true:
+			if command is not "a":
+				cancel event
+				message "&cNo commands allowed while you are playing &6&oSand&c&oStorm&c!"
+		if {sandstorm.%player%.spectating} is true:
+			if command is not "leavesandstorm" or "a":
+				cancel event
+				message "&cNo commands allowed while you are in the &6&oSand&c&oStorm&c lobby!"
+				message "&cPlease do /leavesandstorm first!"
+	else:
+		if {sandstorm.%player%.spectating} is true:
+			if command is not "leavesandstorm" or "startsandstorm" or "a":
+				cancel event
+				message "&cNo commands allowed while you are in the &6&oSand&c&oStorm&c lobby!"
+				message "&cPlease do /leavesandstorm first!"
+command /scansand:
+	permission: sk.sandstorm
+	trigger:
+		delete {sandstorm.list::*}
+		loop all blocks in radius 35 of player:
+			loop-block is glowstone
+			add location of loop-block to {sandstorm.list::*}
+		message "&aDone!"
+command /setsand <integer>:
+	permission: sk.sandstorm
+	trigger:
+		if arg is 1:
+			set {sandstorm.lobby} to location of player
+			message "Lobby set!"
+		if arg is 2:
+			set {sandstorm.spawn} to location of player
+			message "Spawn set!"
+every tick:
+	{sandstorm.going} is true
+	set {supertemptime} to difference between {sandstorm.started} and now
+#	loop all players:
+#		{sandstorm.%loop-player%.playing} is true
+#		execute console command "tm amsg %loop-player% &6Survived for %{supertemptime}%"
+on place:
+	if {sandstorm.%player%.playing} is true:
+		message "&cNo placing blocks while you are in the &6&oSand&c&oStorm&c lobby!"
+		message "&cPlease do /leavesandstorm first!"
+		cancel event

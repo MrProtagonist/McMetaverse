@@ -101,6 +101,7 @@ overridden-commands:
 disabled-commands:
   - nick
   - nickname
+  - kick
 #  - clear
 
 # These commands will be shown to players with socialSpy enabled.
@@ -225,7 +226,7 @@ kits:
   tools:
     delay: 86400
     items:
-      - 284 1 name:&6Land_Claim_Shovel lore:Right_click_to_claim_land.
+      - 286 1 name:&6Land_Claim_Axe lore:Right_click_to_claim_land.
       - 54 1 name:&6Temp_Claim_Chest lore:Expand_to_make_permanent.
       - 50 20 name:&eMcMetaverse_Promotional_Torch lore:Let_there_be_light!
       - 357 30
@@ -698,7 +699,7 @@ newbies:
 # Set this to lowest, if you want Multiverse to handle the respawning.
 # Set this to high, if you want EssentialsSpawn to handle the respawning.
 # Set this to highest, if you want to force EssentialsSpawn to handle the respawning.
-respawn-listener-priority: high
+respawn-listener-priority: lowest
 
 # When users die, should they respawn at their first home or bed, instead of the spawnpoint?
 respawn-at-home: false

@@ -1,0 +1,22 @@
+users:
+  2576d27f-a9c8-414f-83ec-bd8ce014c7bb:
+    lastname: shadow007uk
+    group: Default
+    subgroups: []
+    permissions:
+    - biometp.use
+  ElgarL:
+    group: Moderator
+    subgroups: []
+    permissions:
+    - groupmanager.noofflineperms
+  KHobbits:
+    group: Moderator
+    subgroups: []
+    permissions:
+    - groupmanager.noofflineperms
+  snowleo:
+    group: Builder
+    subgroups: []
+    permissions:
+    - groupmanager.noofflineperms

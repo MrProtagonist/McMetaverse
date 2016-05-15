@@ -6,3 +6,10 @@ worlds:
   Hyperverse:
     portalgoesto:
       NETHER: Hyperverse_nether
+  MetaOmega:
+    portalgoesto:
+      NETHER: MetaOmega_nether
+      END: MetaOmega
+  resource:
+    portalgoesto:
+      NETHER: resource_nether

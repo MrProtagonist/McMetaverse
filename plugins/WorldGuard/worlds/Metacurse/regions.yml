@@ -10,14 +10,227 @@
 # REMEMBER TO KEEP PERIODICAL BACKUPS.
 #
 regions:
+    biomewarp:
+        min: {x: 4011.0, y: 62.0, z: 6709.0}
+        max: {x: 4032.0, y: 93.0, z: 6735.0}
+        members: {}
+        flags: {use: allow, mob-spawning: deny}
+        owners: {}
+        type: cuboid
+        priority: 0
+    sandstorm:
+        min: {x: -1417.0, y: 18.0, z: -2070.0}
+        max: {x: -1341.0, y: 101.0, z: -1982.0}
+        members: {}
+        flags: {entry: allow, use: allow, use-group: NON_MEMBERS, interact: allow,
+            interact-group: NON_MEMBERS, mob-spawning: deny}
+        owners: {}
+        type: cuboid
+        priority: 0
+    scramble:
+        min: {x: 422.0, y: 47.0, z: -3616.0}
+        max: {x: 490.0, y: 118.0, z: -3543.0}
+        members:
+            unique-ids: [f01a2307-e90d-4503-9f19-640806fa8808]
+        flags: {build: allow, build-group: MEMBERS, block-break: allow, mob-spawning: deny,
+            block-break-group: MEMBERS}
+        owners: {}
+        type: cuboid
+        priority: 0
+    prize_protection:
+        min: {x: 313.0, y: 1.0, z: 77.0}
+        max: {x: 349.0, y: 15.0, z: 113.0}
+        members: {}
+        flags: {entry: deny, use: deny, use-group: NON_MEMBERS, interact: deny, interact-group: NON_MEMBERS,
+            mob-spawning: deny}
+        owners: {}
+        type: cuboid
+        priority: 0
+    pogo:
+        min: {x: -856.0, y: 0.0, z: 967.0}
+        max: {x: -679.0, y: 255.0, z: 1134.0}
+        members: {}
+        flags: {use: allow, interact: allow, mob-spawning: deny}
+        owners: {}
+        type: cuboid
+        priority: 0
+    sharpshooter:
+        min: {x: 255.0, y: 58.0, z: -24.0}
+        max: {x: 352.0, y: 84.0, z: 16.0}
+        members: {}
+        flags: {interact: allow, mob-spawning: deny}
+        owners: {}
+        type: cuboid
+        priority: 0
+    biomewarp4:
+        min: {x: 672.0, y: 75.0, z: -2824.0}
+        max: {x: 692.0, y: 102.0, z: -2798.0}
+        members: {}
+        flags: {use: allow, mob-spawning: deny}
+        owners: {}
+        type: cuboid
+        priority: 0
+    biomewarp5:
+        min: {x: 2235.0, y: 68.0, z: -126.0}
+        max: {x: 2262.0, y: 101.0, z: -106.0}
+        members: {}
+        flags: {use: allow, mob-spawning: deny}
+        owners: {}
+        type: cuboid
+        priority: 0
+    biomewarp11:
+        min: {x: 1473.0, y: 70.0, z: -1283.0}
+        max: {x: 1499.0, y: 100.0, z: -1263.0}
+        members: {}
+        flags: {use: allow, mob-spawning: deny}
+        owners: {}
+        type: cuboid
+        priority: 0
+    biomewarp6:
+        min: {x: -2443.0, y: 63.0, z: -86.0}
+        max: {x: -2417.0, y: 83.0, z: -66.0}
+        members: {}
+        flags: {use: allow, mob-spawning: deny}
+        owners: {}
+        type: cuboid
+        priority: 0
+    biomewarp12:
+        min: {x: 388.0, y: 62.0, z: -2886.0}
+        max: {x: 408.0, y: 83.0, z: -2860.0}
+        members: {}
+        flags: {use: allow, mob-spawning: deny}
+        owners: {}
+        type: cuboid
+        priority: 0
+    biomewarp7:
+        min: {x: -1678.0, y: 66.0, z: -1495.0}
+        max: {x: -1652.0, y: 109.0, z: -1475.0}
+        members: {}
+        flags: {use: allow, mob-spawning: deny}
+        owners: {}
+        type: cuboid
+        priority: 0
+    biomewarp2:
+        min: {x: -1609.0, y: 66.0, z: -2506.0}
+        max: {x: -1583.0, y: 84.0, z: -2486.0}
+        members: {}
+        flags: {use: allow, mob-spawning: deny}
+        owners: {}
+        type: cuboid
+        priority: 0
+    fishing:
+        min: {x: 3274.0, y: 46.0, z: -2671.0}
+        max: {x: 3385.0, y: 94.0, z: -2512.0}
+        members: {}
+        flags: {use: allow, mob-damage: deny, interact: allow, mob-spawning: deny}
+        owners: {}
+        type: cuboid
+        priority: 0
+    biomewarp3:
+        min: {x: -65.0, y: 67.0, z: -2770.0}
+        max: {x: -39.0, y: 99.0, z: -2750.0}
+        members: {}
+        flags: {use: allow, mob-spawning: deny}
+        owners: {}
+        type: cuboid
+        priority: 0
+    spleef:
+        min: {x: 483.0, y: 46.0, z: -3757.0}
+        max: {x: 629.0, y: 124.0, z: -3604.0}
+        members:
+            unique-ids: [e9ade66d-f8b1-47c8-8f04-5778549f6cc9, 844ec7e4-0bac-4429-a98a-bd90ed4eaac7,
+                3b5cc975-c839-413e-8024-28491978195e, c4b84cc5-1d04-49d0-a07d-0a0a10a44502,
+                28cb7f00-76c4-41d8-9dd7-a1368add49b4, a0153744-06c4-433d-b0b8-9068f0d9921b,
+                c182d024-d470-43f8-81e6-56fb964c7ed1, d78121cf-e92d-489c-9cac-10224ebfc40f,
+                241becd8-0e97-426d-a5c6-a6f54ed048e1, 872a002c-88b8-411b-b8eb-d874c9e66d60,
+                805d5c74-bb6e-483d-9943-0a37f00680ac, f14dba96-d50d-4e68-a0d5-d3dd1e6e45ac,
+                6cb1752e-2474-407e-9441-ddd83ffb5dda, d725cc47-7117-4dac-a87e-9d509d1f08e4,
+                761cfbf5-a5aa-4e6f-b894-6baafe5e5da5, 563e839f-b187-4ad4-97b1-fb49be4594fe,
+                7a636650-3cbf-4968-b6b4-8be3b20a7b93, 7c38ecf9-b839-4c52-bf34-59f3ce75cca4,
+                a231903c-ec5e-46de-b8cd-b1c510c8d433, 2b4a5bd4-8c3e-4853-a990-b61830bc2581]
+        flags: {build: allow, use: allow, feed-delay: 1, build-group: MEMBERS, feed-amount: 2,
+            block-break: allow, interact: allow, heal-amount: 2, mob-spawning: deny,
+            heal-delay: 1, heal-min-health: 5.0, block-break-group: MEMBERS}
+        owners: {}
+        type: cuboid
+        priority: 0
+    biomewarp10:
+        min: {x: -5212.0, y: 63.0, z: -2670.0}
+        max: {x: -5193.0, y: 83.0, z: -2645.0}
+        members: {}
+        flags: {use: allow, mob-spawning: deny}
+        owners: {}
+        type: cuboid
+        priority: 0
+    dinotown:
+        min: {x: -2419.0, y: 21.0, z: 2759.0}
+        max: {x: -2068.0, y: 129.0, z: 3051.0}
+        members: {}
+        flags: {mob-spawning: deny}
+        owners:
+            unique-ids: [0c89e771-4db1-4be1-bced-3c40c04ee7d5]
+        type: cuboid
+        priority: 0
     spawn:
         min: {x: -204.0, y: 1.0, z: -263.0}
-        flags: {feed-delay: 1, vehicle-place: allow, pvp: deny, greeting: §bNow entering Spawn,
-            feed-amount: 10, use: allow, heal-amount: 10, mob-spawning: deny, creeper-explosion: deny,
-            heal-delay: 1, farewell: §cNow leaving Spawn - PVP and Mobs enabled!,
-            tnt: deny, mob-damage: deny}
         max: {x: 157.0, y: 191.0, z: 83.0}
-        priority: 0
-        type: cuboid
+        members:
+            unique-ids: [5f23e3c6-b592-4e1c-bb7a-66b4424c36f8, e94c7811-4aac-4acc-9a71-e49e8c68908a,
+                2576d27f-a9c8-414f-83ec-bd8ce014c7bb]
+        flags: {use: allow, greeting: §bNow entering Spawn, feed-amount: 10, interact: allow,
+            pvp: deny, mob-spawning: deny, creeper-explosion: deny, vehicle-place: allow,
+            feed-delay: 1, mob-damage: deny, tnt: deny, heal-amount: 10, heal-delay: 1,
+            farewell: §cNow leaving Spawn - PVP and Mobs enabled!}
         owners: {}
+        type: cuboid
+        priority: 0
+    prizeroom:
+        min: {x: 271.0, y: 2.0, z: 77.0}
+        max: {x: 313.0, y: 37.0, z: 114.0}
         members: {}
+        flags:
+            use: allow
+            blocked-cmds: [/tpohere, /tpa, /tpo, /jump, /tpahere, /teleport, //thru,
+                /tphere, /tp, /j]
+            interact: allow
+        owners: {}
+        type: cuboid
+        priority: 0
+    boatrace:
+        min: {x: 126.0, y: 47.0, z: 229.0}
+        max: {x: 266.0, y: 103.0, z: 390.0}
+        members: {}
+        flags: {use: allow, interact: allow, mob-spawning: deny}
+        owners: {}
+        type: cuboid
+        priority: 0
+    biomewarp8:
+        min: {x: 1743.0, y: 75.0, z: -692.0}
+        max: {x: 1763.0, y: 98.0, z: -666.0}
+        members: {}
+        flags: {use: allow, mob-spawning: deny}
+        owners: {}
+        type: cuboid
+        priority: 0
+    biomewarp9:
+        min: {x: -105.0, y: 67.0, z: -2330.0}
+        max: {x: -85.0, y: 102.0, z: -2304.0}
+        members: {}
+        flags: {use: allow, mob-spawning: deny}
+        owners: {}
+        type: cuboid
+        priority: 0
+    archery:
+        min: {x: 262.0, y: 62.0, z: -20.0}
+        max: {x: 345.0, y: 88.0, z: 15.0}
+        members: {}
+        flags: {interact: allow, mob-spawning: deny}
+        owners: {}
+        type: cuboid
+        priority: 0
+    __global__:
+        members: {}
+        flags: {mob-damage: allow, interact: allow}
+        owners: {}
+        type: global
+        priority: 0

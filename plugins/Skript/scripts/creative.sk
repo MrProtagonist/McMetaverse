@@ -1,5 +1,5 @@
-script options:
-    $ developer mode
+#script options:
+#    $ developer mode
 on spawn:
 	event-entity is not a player
 	entity is not "armour stand" or "item frame" or "painting"
@@ -15,7 +15,7 @@ command /killmobsforme:
 			loop-entity is not "item frame"
 			kill loop-entity
 on weather change to rain or thunder:
-	world is "sandbox":
+	if world is "sandbox":
 		set weather of "sandbox" to sunny
 on skript start:
 	if {contest.length} is not 0:
@@ -44,18 +44,33 @@ command /contest:
 				stop
 			message "&cSorry, you can't go here unless a contest is going!"
 			stop
-on command "vc":
-	if player is in world "contest" or "sandbox":
-		player does not have the permissions "essentials.socialspy"
-		message "&cSorry, you can't do that!"
+on command:
+	if the player's world is "contest" or "sandbox":
+		if player does not have permission "plots.claim":
+			command is not "meta" or "login" or "a" or "spawn" or "gmc" or "gms"
+			message "&cYou can't use those commands in sandbox if you are not premium or seasoned."
+			cancel event
+on command "//wand":
+	if the player's world is "contest":
+		player is not op
+		message "&cCan't use worldedit here!"
 		cancel event
-		stop
-on command "plots" or "plot claim" or "plot auto":
-	if player is in world "contest":
-		player does not have the permission "essentials.socialspy"
-		message "&cSorry, you can't do that!"
-		cancel event
-		stop
+on break:
+	if the player's world is "sandbox":
+		if player does not have permission "plots.claim":
+			message "&cCan't break blocks if you're not premium or seasoned."
+			cancel event
+on place:
+	if the player's world is "sandbox":
+		if player does not have permission "plots.claim":
+			message "&cCan't place blocks if you're not premium or seasoned."
+			cancel event
+on command "/plot claim" or "/plot auto" or "/plot unclaim":
+	if player's world is "contest":
+		if player does not have the permission "essentials.socialspy":
+			cancel event
+			message "&cSorry, you can't do that!"
+			stop
 command /seecontest:
 	trigger:
 		message "Length: %{contest.length}%"
@@ -108,6 +123,7 @@ every hour:
 #	{contest.going} is false
 #	cancel event
 every 2 real seconds:
+#	player is online
 	loop all players:
 		if loop-player is in world "Hyperverse":
 			loop-player's gamemode is creative

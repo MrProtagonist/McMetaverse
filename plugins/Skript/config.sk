@@ -1,4 +1,4 @@
-#     __________________________________________________________
+﻿#     __________________________________________________________
 #    / /                                                   / /\ \
 #    \_\___________________________________________________\_\/ /
 #        / /    _____    __            __                    / /
@@ -58,7 +58,7 @@ automatically download new version: false
 # If you're concerned about changes use '/skript update changes' for a full list of changes since your current version.
 
 
-enable effect commands: false
+enable effect commands: true
 effect command token: !
 # If 'enable effect commands' is set to true, chat messages starting with the 'effect command token' will be interpreted as effects and executed.
 # The token can be longer than a single character, but it should not start with '/' as that starts a command.
@@ -77,6 +77,21 @@ effect command token: !
 allow ops to use effect commands: false
 # Whether server operators which do not have the permission "skript.effectcommands" should have access to effect commands.
 # This setting is mainly useful for servers that do not run any permissions plugin.
+
+
+player variable fix: true
+#Whether to enable the player variable fix if a player has rejoined and was reciding inside a variable.
+#Player objects inside a variable(list or normal) are not updated to the new player object
+#A server creates whenever a player rejoins. 
+#Basicly the variable holds the old player object when a player has rejoined thus rendering the variable kinda broken.
+#This fix should work around that and whenever a invalid(old) player object is attempted to be get through a variable
+#It will check if the player is online and then get the valid(new) player object and update the variable object to that one.
+#By Mirre
+
+use player UUIDs in variable names: false
+# Whether to use a player's UUID instead of their name in variables, e.g. {home.%player%} will look like
+# {home.e5240337-a4a2-39dd-8ed9-e5ce729a8522} instead of {home.njol}.
+# Please note that if this setting is changed old variables WILL NOT be renamed automatically.
 
 
 date format: default
@@ -116,6 +131,7 @@ log player commands: true
 number accuracy: 2
 # How many digits should be displayed after the dot at maximum when displaying numbers.
 # Zeroes will never be displayed at all, so this setting only applies to numbers that actually have a decimal part with one or more non-zero digits.
+# Money bypasses this setting and is displayed as configured in your economy plugin if you have one.
 
 
 maximum target block distance: 100
@@ -127,6 +143,7 @@ maximum target block distance: 100
 case sensitive: false
 # Whether Skript's functions should be case sensitive or not.
 # This e.g. applies to the effect 'replace' and the conditions 'contains' and 'is/is not'.
+# Variable names are case-insensitive irrespective of this setting.
 
 
 disable variable conflict warnings: false
@@ -134,7 +151,9 @@ disable variable conflict warnings: false
 # I recommend to not touch this option, but if you do so you should at least set it back to false
 # whenever you create new scripts with new variables.
 
-
+disable variable will not be saved warnings: false
+#Disables the "... i.e contents cannot be saved ..." warning when reloading and something in your scripts sets a variable(non local) to a value that is not serializable.
+#By Mirre.
 
 # ==== Variables ====
 
@@ -172,12 +191,12 @@ databases:
 		# ! Please note that you should set 'pattern', 'monitor changes' and 'monitor interval' to the same values on all servers that access the same database!
 		
 		# == MySQL configuration ==
-		host: localhost# Where the database server is located at, e.g. 'example.com', 'localhost', or '192.168.1.100'
-		port: 3306# 3306 is MySQL's default port, i.e. you likely won't need to change this value
+		host: localhost # Where the database server is located at, e.g. 'example.com', 'localhost', or '192.168.1.100'
+		port: 3306 # 3306 is MySQL's default port, i.e. you likely won't need to change this value
 		user: root
 		password: pass
-		database: skript# The database to use. Skript will automatically create a table 'variables21' in this database if it doesn't exist
-		# (If the table exists but is defined differently that how Skript expects it to be you'll get errors and no variables will be saved and/or loaded)
+		database: skript # The database to use. Skript will automatically create a table 'variables21' in this database if it doesn't exist
+		                 # (If the table exists but is defined differently that how Skript expects it to be you'll get errors and no variables will be saved and/or loaded)
 		
 		# == SQLite/CSV configuration ==
 		file: ./plugins/Skript/variables.db
@@ -189,14 +208,14 @@ databases:
 		# Variables are saved constantly no matter what is set here, thus a server crash will never make you loose any variables.
 		# Set this to 0 to disable this feature.
 		
-		
+	
 	MySQL example:
 		# A MySQL database example, with options unrelated to MySQL removed.
 		
-		type: disabled# change to line below to enable this database
+		type: disabled # change to line below to enable this database
 		# type: MySQL
 		
-		pattern: synced_.*# this pattern will save all variables that start with 'synced_' in this MySQL database.
+		pattern: synced_.* # this pattern will save all variables that start with 'synced_' in this MySQL database.
 		
 		host: localhost
 		port: 3306
@@ -206,22 +225,22 @@ databases:
 		
 		monitor changes: true
 		monitor interval: 20 seconds
-		
+	
 	SQLite example:
 		# An SQLite database example.
 		
-		type: disabled# change to line below to enable this database
+		type: disabled # change to line below to enable this database
 		# type: SQLite
 		
-		pattern: db_.*# this pattern will save all variables that start with 'db_' in this SQLite database.
+		pattern: db_.* # this pattern will save all variables that start with 'db_' in this SQLite database.
 		
 		file: ./plugins/Skript/variables.db
 		# SQLite databases must end in '.db'
-		
-		backup interval: 0# 0 = don't create backups
+    	
+		backup interval: 0 # 0 = don't create backups
 		monitor changes: false
 		monitor interval: 20 seconds
-		
+	
 	default:
 		# The default "database" is a simple text file, with each variable on a separate line and the variable's name, type, and value separated by commas.
 		# This is the last database in this list to catch all variables that have not been saved anywhere else.
@@ -234,17 +253,17 @@ databases:
 		file: ./plugins/Skript/variables.csv
 		
 		backup interval: 2 hours
-		
-		# PS: If you don't want some variables to be saved in any database (e.g. variables that contain an %entity% which usually despawn when the server is shut down)
-		# you can modify the last database's pattern to not match all variables, e.g. use '(?!x_).*' to match all variables that don't start with 'x_'.
-		# Be very cautious when doing this however as unsaved variables cannot be recovered after the server has been stopped.
-		# I recommend to use a single character to denote unsaved variables (similar to local variables' '_'), e.g. '-', in which case the last database's pattern should be '(?!-).*'.
-		
-		
-		
-		# ==== Settings that should not be changed ====
-		
-version: 2.1.2
+	
+	# PS: If you don't want some variables to be saved in any database (e.g. variables that contain an %entity% which usually despawn when the server is shut down)
+	# you can modify the last database's pattern to not match all variables, e.g. use '(?!x_).*' to match all variables that don't start with 'x_'.
+	# Be very cautious when doing this however as unsaved variables cannot be recovered after the server has been stopped.
+	# I recommend to use a single character to denote unsaved variables (similar to local variables' '_'), e.g. '-', in which case the last database's pattern should be '(?!-).*'.
+
+
+
+# ==== Settings that should not be changed ====
+
+version: 2.2-Fixes-V9b
 # DO NOT CHANGE THIS VALUE MANUALLY!
 # This saves for which version of Skript this configuration was written for.
 # If it does not match the version of the .jar file then the config will be updated automatically.

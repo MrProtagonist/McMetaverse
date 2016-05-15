@@ -1,0 +1,88 @@
+Command /dropstuff [<player>]:
+	permission: essentials.socialspy
+	trigger:
+		force drop inventory of arg 1 at arg 1
+command /ridetrain:
+	permission: is.pro
+	trigger:
+		loop all players:
+			send "&bYou have been invited to ride on somebody's head. Should you choose to accept this odd invitation, type /letsride" to loop-player
+		set {rider} to player
+command /makehouse:
+	permission: is.pro
+	trigger:
+		paste schematic "Home" at location of player
+command /letsride:
+	trigger:
+		if {rider} isn't player:
+			make player ride {rider}
+			set {rider} to player
+			message "&aYou have joined the train! Do not dismount until it is as tall as we can get it."
+		else:
+			message "&aYou Can't Ride Yourself Silly"
+command /blind <player>:
+	permission: essentials.socialspy
+	trigger:
+		send "&cYou have picked up a plague and are infecting this land! Run!" to arg
+		loop 30 times:
+			loop all blocks in radius 20 of arg:
+				loop-block is not air
+				make arg see loop-block as bedrock permanently
+			wait 1 real second
+		wait 10 real seconds
+		send "&cYour plague has become dormant... For now." to arg
+		restore all updates
+command /push <player>:
+	permission: essentials.socialspy
+	trigger:
+		send "&c%player% has shooed you away!" to arg
+		loop 20 times:
+			push the argument from player
+			wait 5 ticks
+on script load:
+	loop all players:
+		set {trolling.%loop-player%} to false
+command /troll <player>:
+	permission: essentials.socialspy
+	trigger:
+		message "&aTrolling %argument-player%!"
+		loop all blocks in radius 5 of argument-player:
+			distance between loop-block and argument-player is greater than 3
+			loop-block is air or plant
+			make argument-player see loop-block as bedrock
+		set {trolling.%argument-player%} to true
+		set the argument-player's walk speed to 0.01
+		set the argument-player's fly speed to 0.01
+		loop 20 times:
+			send " " to argument-player
+		send "&f[&aSERVER&f] &cYou have put on timeout for one minute." to argument-player
+		send "&f[&aSERVER&f] &cPlease take the time to rectify your behavior. If you continue to cause problems after you are released, more serious and possibly permanent actions may be taken." to argument-player
+		wait 10 real seconds
+		send "&f[&aSERVER&f] &cYou have been released. Don't make us regret it." to argument-player
+		set {trolling.%argument-player%} to false
+		loop all blocks in radius 8 of argument-player:
+			loop-block is air or plant
+			make argument-player see loop-block as air
+		set the argument-player's walk speed to .2
+		set the argument-player's fly speed to .2
+
+
+		
+on click:
+	{trolling.%player%} is true
+	cancel event
+on command:
+	{trolling.%player%} is true
+	cancel event
+on teleport:
+	{trolling.%player%} is true
+	cancel event
+on chat:
+	{trolling.%player%} is true
+	cancel event
+on damage:
+	{trolling.%victim%} is true
+	cancel event
+on break:
+	{trolling.%player%} is true
+	cancel event

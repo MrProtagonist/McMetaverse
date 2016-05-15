@@ -136,8 +136,11 @@ command /profile [<text>] [<text>] [<text>] [<text>]:
 				send "§aYour Nickname was set to ""%arg 3%"""
 			else if arg 2 is "gender":
 				if arg 3 is set:
-					set {profilesk2.%player%.gender} to arg 3
-					send "§aYour Gender was set to ""%arg 3%"""
+					if arg 3 is equal to "Male" or "Female":
+						set {profilesk2.%player%.gender} to arg 3
+						send "§aYour Gender was set to ""%arg 3%"""
+					else:
+						send "§aYour Gender can't be set to ""%arg 3%"""
 				else:
 					send "§cUnkown Gender! Known Genders: Male and Female"
 			else if arg 2 is "color":

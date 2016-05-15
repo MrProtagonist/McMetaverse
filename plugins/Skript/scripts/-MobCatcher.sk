@@ -1,0 +1,45 @@
+script options:
+	$ developer mode
+options:
+	Prefix: &6[&cMobCatcher&6] &e
+	Valid Mobs: cow, mooshroom, chicken, sheep, rabbit, pig, horse, wolf, squid, cat or ocelot
+	Item: diamonds
+	Amount: 5
+	Chance: 100
+	
+on script load:
+	set {mobc.mooshroom} to "MushroomCow"
+	set {mobc.ocelot} to "Ozelot"
+	set {mobc.horse} to "EntityHorse"
+	set {mobc.zombie pigman} to "PigZombie"
+	set {mobc.magma cube} to "LavaSlime"
+
+on damage of {@Valid Mobs}:
+	if the projectile is an egg:
+		if the attacker has {@Amount} {@Item}:
+			cancel event
+			chance of {@Chance}%:
+				#= Correct for mobs that have a different entity ID name than their used one
+				set {_mob} to "%victim%"
+				if {mobc.%{_mob}%} is set:
+					set {_mobID} to "%{mobc.%{_mob}%}%"
+				else:
+					set {_mobID} to 1st char in each word of "%victim%" to caps
+				
+				#= Grab the mob's NBT now
+				set {_nbt} to nbt of victim
+				
+				#= Remove the Pos tag, otherwise mobs from this egg will teleport to the capture one's position
+				remove "Pos" from {_nbt}
+				
+				#= Get rid of the trailing } so we can shove the mod's id tag into the EntityTag
+				set {_nbt} to the first (length of "%{_nbt}%" - 1) characters of "%{_nbt}%"
+				
+				#= Replace the mob with the egg!
+				delete victim
+				execute console command "execute %attacker% ~ ~ ~ playsound minecraft:entity.blaze.shoot player @a %victim's x loc% %victim's y loc% %victim's z loc% 1 1"
+				execute console command "execute %attacker% ~ ~ ~ summon Item %victim's x loc% %victim's y loc% %victim's z loc% {Item:{Count:1, id:spawn_egg, tag:{ench:[], EntityTag:%{_nbt}%, id:%{_mobID}%}}}}"
+				
+				remove {@Amount} {@Item} from the attacker
+		else:
+			send "{@Prefix}You need {@Amount} {@Item} to catch that mob." to attacker

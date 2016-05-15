@@ -26,18 +26,18 @@ regions:
         type: cuboid
         owners: {}
         members: {}
-    contestback:
-        min: {x: 1845.0, y: 0.0, z: -561.0}
-        flags: {entry: deny}
-        max: {x: 1983.0, y: 255.0, z: -561.0}
-        priority: 0
-        type: cuboid
-        owners: {}
-        members: {}
     contestright:
         min: {x: 1844.0, y: 0.0, z: -560.0}
         flags: {entry: deny}
         max: {x: 1844.0, y: 255.0, z: -265.0}
+        priority: 0
+        type: cuboid
+        owners: {}
+        members: {}
+    contestback:
+        min: {x: 1845.0, y: 0.0, z: -561.0}
+        flags: {entry: deny}
+        max: {x: 1983.0, y: 255.0, z: -561.0}
         priority: 0
         type: cuboid
         owners: {}

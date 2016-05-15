@@ -1,5 +1,5 @@
-﻿script options:
-    $ developer mode
+﻿#script options:
+#    $ developer mode
 variables:
 	{warnings.%player%} = 0
 on join:
@@ -127,6 +127,10 @@ command /globalmute <text>:
 		wait 1 real minutes
 		set {chat.is.muted} to false
 		broadcast "&a&oCHAT IS NOW ENABLED!"
+command /removemute:
+	trigger:
+		set {chat.is.muted} to false
+		broadcast "&a&oCHAT IS NOW ENABLED! (QUICKER!)"
 on login:
 	if {warnings.%player%} is not set:
 		set {warnings.%player%} to 0
@@ -170,14 +174,13 @@ command /clearwarnings <text>:
 			message "&e&oDONE!"
 		else:
 			message "&c&oCould not find: &a%arg%"
-command /warn <player> <text>:
+command /warn <offlineplayer=%player%> <text>:
 	description: Warns a player.
 	usage: /warn <player> <text>
 	permission: skript.warn
 	trigger:
 		if {warnings.%argument 1%} is not set:
 			message "&cCould not find a valid player with that name! Be sure it is full and correct!"
-			stop trigger
 		add 1 to {warnings.%arg 1%}
 		add now to {warnings.%argument 1%.time::*}
 		add arg 2 to {warnings.%argument 1%.reason::*}

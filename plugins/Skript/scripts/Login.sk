@@ -1,7 +1,15 @@
 variables:
 	{setpin.%player%} = false
 	{pin.%player%} = "null"
-
+	
+on region exit:
+	if {CPB.%player%} is true:
+		set {CPB.%player%} to false
+	
+command /RBC <text>:
+	trigger:
+		set {CPB.%player%} to false
+		
 on login:
 	if {setpin.%player%} is false:
 		wait 10 real seconds
@@ -75,7 +83,7 @@ command /setpin <text> [<text>]:
 				message " "
 				message "&a&oUsage: /setpin {pin} {newpin}"
 		else if hashed arg 1 is {pin.%player%}:
-			set {pin.%player%} to hashed arg 2
+			set {pin.%player%} to arg 2
 			set {setpin.%player%} to true
 			message " "
 			message "&a&oPin changed!"
@@ -110,9 +118,9 @@ command /forgotpin <text>:
 on command:
 	{setpin.%player%} is true
 	{locked.%player%} is true
-	command is not "login" or "mcstats" or "mcscoreboard" or "rules" or "agree"
-	message "&e&oYou must first &a&o/login&e&o."
-	cancel the event
+	if command is not "vanish" or "login" or "mcstats" or "mcscoreboard" or "rules" or "agree":
+		message "&e&oYou must first &a&o/login&e&o."
+		cancel the event
 on chat:
 	{locked.%player%} is true
 	cancel the event
@@ -133,14 +141,3 @@ on damage:
 		cancel event
 	if {locked.%attacker%} is true:
 		cancel event
-command /logout:
-	trigger:
-		if {setpin.%player%} is false or {setpin.%player%} is not set:
-			message "&e&oYou have not set a server pin. You can make one with &a&o/setpin&e&o."
-			stop
-		set {locked.%player%} to true
-		set {locked.%player%.pos} to location of player
-		apply jump boost -5 to the player for 100000000 hours
-		wait 1 tick
-		set the player's walk speed to 0.01
-		message "&c&oSuccessfully Logged Out!"

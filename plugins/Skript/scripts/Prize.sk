@@ -47,9 +47,11 @@ command /prize [<player>]:
 	trigger:
 		if arg is set:
 #			broadcast "&f[&aPRIZEROOM DEBUG&f] &e%arg% hasn't been picked today and has the lowest score!"
-			arg can hold 1 wood sword
-#				wait 1 real second
+			if arg can hold 1 wood sword:
+				wait 1 real second
 #				broadcast "&f[&aPRIZEROOM DEBUG&f] &e%arg% has room in their inventory! Sending them!"
+			else:
+				send "&cThe player needs room in his inventory" to the player
 			{inprizeroom.%arg%} is false
 			set {inprizeroom.%arg%} to true
 			set {lastspot.%arg%} to location of arg
@@ -83,12 +85,13 @@ command /prize [<player>]:
 			broadcast "&f[&4Prize Room&f] &4%arg% has been kicked from the prize room for taking longer than 10 minutes."
 			execute console command "region removemember prize_protection %arg% -w Metacurse"
 		else:
+			set {prizeroom.busy} to true
 			chance of 70%:
 				set {_tempscore} to 999
 				set {_playercount} to 0
 				delete {prize.scores::*}
 				delete {prize.players::*}
-				loop all players in world "Metacurse":
+				loop all players in world "MetaOmega":
 					add 1 to {_playercount}
 					if {prizeroom.%loop-player%.times} is not set:
 						set {prizeroom.%loop-player%.times} to 0
@@ -111,26 +114,27 @@ command /prize [<player>]:
 #					message "&cNew Loop!"
 				loop {prize.players::*}:
 					set {_difference} to difference between {prizeroom.%loop-value%.last} and now
-		#			broadcast "&f[&aPRIZEROOM DEBUG&f] &e%loop-value%: %{_difference}%"
+#					broadcast "&f[&aPRIZEROOM DEBUG&f] &e%loop-value%: %{_difference}%"
 					if {_difference} is greater than 6 hours:
-		#				broadcast "&f[&aPRIZEROOM DEBUG&f] &e%loop-value% hasn't been picked today and has the lowest score!"
+#						broadcast "&f[&aPRIZEROOM DEBUG&f] &e%loop-value% hasn't been picked today and has the lowest score!"
 						loop-value can hold 1 wood sword
-		#				wait 1 real second
-		#				broadcast "&f[&aPRIZEROOM DEBUG&f] &e%loop-value% has room in their inventory! Sending them!"
+						wait 1 real second
+#						broadcast "&f[&aPRIZEROOM DEBUG&f] &e%loop-value% has room in their inventory! Sending them!"
 						{inprizeroom.%loop-value%} is not true
 
 # Start of new part
 						message "Inviting %loop-value%"
-						send "&f[&dPrize Room&f] &6You have been invited to the Prize Room! Type &a/letsgo&6 within 60 seconds to claim your prize!" to loop-value
+						send "&f[&dPrize Room&f] &6You have been invited to the Prize Room! Type &a/letsgo&6 within 5 minutes to claim your prize!" to loop-value
 						set {prizeroom.invited} to loop-value
-						wait 60 real seconds
-						if {inprizeroom.%loop-value%} is not true:
-							send "&f[&dPrize Room&f] &cYou have run out of time to accept your invitation to the Prize Room." to loop-value
-							delete {prizeroom.invited}
-							wait 1 tick
-						else:
-							delete {prizeroom.invited}
-							stop
+						wait 300 real seconds
+						if {prizeroom.busy} is true:
+							if {inprizeroom.%loop-value%} is not true:
+								send "&f[&dPrize Room&f] &cYou have run out of time to accept your invitation to the Prize Room." to loop-value
+								delete {prizeroom.invited}
+								wait 1 tick
+							else:
+								delete {prizeroom.invited}
+								stop
 
 command /letsgo:
 	trigger:
@@ -171,7 +175,6 @@ command /letsgo:
 
 
 
-
 every real hour:
 	execute console command "/prize"
 on command:
@@ -198,6 +201,7 @@ on rightclick on button:
 	set {inprizeroom.%player%} to false
 	broadcast "&f[&4Prize Room&f] &b%player% has chosen their prize from the Prize Room!"
 	execute console command "region removemember prize_protection %player% -w Metacurse"
+	set {prizeroom.busy} to false
 on quit:
 	{inprizeroom.%player%} is true
 	teleport player to {lastspot.%player%}
@@ -206,6 +210,7 @@ on quit:
 	execute console command "region removemember prize_protection %player% -w Metacurse"
 	set {inprizeroom.%player%} to false
 	set leave message to "&e%player% left before picking a prize in the Prize Room! Too bad."
+	set {prizeroom.busy} to false
 on damage:
 	{inprizeroom.%victim%} is true
 	cancel event

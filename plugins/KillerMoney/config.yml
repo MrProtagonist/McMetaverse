@@ -18,7 +18,7 @@ DisableOnTheseWorlds:
 AllowSpawnerFarming: false
 
 # You can enable or disable that, the players get message if he/she earn money.
-SendMessageWhenEarnMoney: true
+SendMessageWhenEarnMoney: false
 
 # The money multiplier. You can change it on double coins weekend. Money * Multiplier.
 GlobalMultiplier: 1
@@ -193,7 +193,7 @@ PIG_ZOMBIE:
    Chance: 100
    
 PLAYER:
-   Enabled: true
+   Enabled: false
    Negative: false
    MinMoney: 0
    MaxMoney: 0

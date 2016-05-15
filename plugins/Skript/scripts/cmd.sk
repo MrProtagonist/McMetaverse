@@ -1,5 +1,3 @@
-script options:
-    $ developer mode
 on script load:
 	loop all players:
 		set {special.%loop-player%.last} to 0
@@ -20,6 +18,10 @@ command /proleave:
 	permission: essentials.socialspy
 	trigger:
 		broadcast "&e%player% left the game."
+command /projoin:
+	permission: essentials.socialspy
+	trigger:
+		broadcast "&e%player% joined the game."
 on join:
 	{special.%player%.last} is not set:
 		set {special.%player%.last} to 0
@@ -52,11 +54,11 @@ every 2 ticks:
 		if {cmddoor.open} is not set:
 			set {cmddoor.open} to true
 			wait 1 real second
-			execute console command "/playsound dig.stone %loop-player%"
+			execute console command "/playsound dig.stone block %loop-player% ~ ~ ~"
 			loop {cmd.door::*}:
 				set block at loop-value-2 to cobblestone
 			wait 2 real seconds
-			execute console command "/playsound dig.stone %loop-player%"
+			execute console command "/playsound dig.stone block %loop-player% ~ ~ ~"
 			loop {cmd.door::*}:
 				set block at loop-value-2 to air
 	if {_loopcounta} is 0:
@@ -71,21 +73,24 @@ every 2 ticks:
 		if {cmddoor2.open} is not set:
 			set {cmddoor2.open} to true
 			wait 1 real second
-			execute console command "/playsound dig.stone %loop-player%"
+#			execute console command "/playsound dig.stone block %loop-player% ~ ~ ~"
+# Can't hear the sounds twit, and getting 'too far away to hear the sound' with or without ~ ~ ~ #
+			play raw sound "dig.stone" at loop-player with pitch 1 volume 10
 			loop {cmd2.door::*}:
 				set block at loop-value-2 to cobblestone
 			wait 2 real seconds
-			execute console command "/playsound dig.stone %loop-player%"
+			play raw sound "dig.stone" at loop-player with pitch 1 volume 10
+#			execute console command "/playsound dig.stone block %loop-player% ~ ~ ~"
 			loop {cmd2.door::*}:
 				set block at loop-value-2 to air
 	if {_loopcountb} is 0:
 		loop {cmd2.door::*}:
-			set block at location of block at loop-value to stone brick
+			set block at location of block at loop-value to stone
 		delete {cmddoor2.open}
 			
 every 2 ticks:
-	spawn 40 of portal data 1 offset with 2, 2, 2 at {specialblock}
-	spawn 30 of portal data 1 offset with 0, 2, 0 at {specialblock}
+#	spawn 40 of portal data 1 offset with 2, 2, 2 at {specialblock}
+#	spawn 30 of portal data 1 offset with 0, 2, 0 at {specialblock}
 	loop all players in radius 3 around block at {specialblock}:
 		if {special.%loop-player%.last} is not {special.day}:
 			set {special.%loop-player%.last} to {special.day}
@@ -99,20 +104,20 @@ on chat:
 		cancel event
 		if message contains "Notch":
 			send "%display name of player%: %message%" to player
-			execute console command "playsound note.pling %player%"
+			execute console command "playsound note.pling record %player% ~ ~ ~"
 			wait 2 real seconds
 			send "&f[&aSERVER&f] &eToday &aNotch&e thinks you deserve..." to player
 			wait 1 real second
 			strike lightning effect at the player
 			set {_randomnum} to a random integer between 1 and 43
 			if {_randomnum} is 1:
-				give a egg to player
+				execute console command "give %player% egg 1"
 				send "&f[&aSERVER&f] &aA single egg." to player
 			if {_randomnum} is 2:
-				give a coal to player
+				execute console command "give %player% coal 1"
 				send "&f[&aSERVER&f] &aA lump of coal for you." to player
 			if {_randomnum} is 3:
-				give a cake to player
+				execute console command "give %player% cake 1"
 				send "&f[&aSERVER&f] &aA cake! Happy Birthday!" to player
 			if {_randomnum} is 4:
 				execute console command "/bless %player%"
@@ -132,7 +137,7 @@ on chat:
 				ignite player
 				send "&f[&aSERVER&f] &4&lIGNITED! &cVisit more often and the Gods will smile upon you!" to player
 			if {_randomnum} is 10:
-				give player a diamond
+				execute console command "give %player% diamond 1"
 				send "&f[&aSERVER&f] &aA diamond for your troubles." to player
 			if {_randomnum} is 11:
 				if difference between {special.%player%.last} and now is greater than 3 days:
@@ -149,7 +154,7 @@ on chat:
 				execute console command "/givetoken %player%"
 			if {_randomnum} is 14:
 				execute console command "/manuaddp %player% skript.collectible"
-				send "&f[&aSERVER&f] &aYou now have access to the special /collectible block!" to player
+				send "&f[&aSERVER&f] &aYou now have access to the special /collectible block! check the recipe behind me!" to player
 			if {_randomnum} is 15:
 				send "&f[&aSERVER&f] &6Knock knock." to player
 				wait 2 real second
@@ -179,10 +184,10 @@ on chat:
 			if {_randomnum} is 19:
 				send "&f[&aSERVER&f] &cNothing happened. Very rare. You must be extremely unfaithful to the Gods." to player
 			if {_randomnum} is 20:
-				give player a dirt
+				execute console command "give %player% dirt 1"
 				send "&f[&aSERVER&f] &cA peice of dirt." to player
 			if {_randomnum} is 21:
-				give player a rose
+				execute console command "give %player% rose 1"
 				send "&f[&aSERVER&f] &aA rose, because you are beautiful on the inside!" to player
 				wait 2 real seconds
 				send "&f[&aSERVER&f] &aBut only on the inside." to player
@@ -192,7 +197,7 @@ on chat:
 			if {_randomnum} is 23:
 				broadcast "&e%player% likes lamp."
 			if {_randomnum} is 24:
-				give player an apple
+				execute console command "give %player% apple 1"
 				send "&f[&aSERVER&f] &aAn apple, to promote good health!" to player
 			if {_randomnum} is 25:
 				send "&f[&aSERVER&f] &cJailtime!" to player
@@ -204,19 +209,19 @@ on chat:
 			if {_randomnum} is 27:
 				execute console command "enjin addpoints %player% 25"
 			if {_randomnum} is 28:
-				give player a strad disc
+				execute console command "give %player% stradcd 1"
 				send "&f[&aSERVER&f] &aThe Strad music disc!"
 			if {_randomnum} is 29:
-				give player a stal disc
+				execute console command "give %player% stalcd 1"
 				send "&f[&aSERVER&f] &aThe Stal music disc!"
 			if {_randomnum} is 30:
-				give player a chirp disc
+				execute console command "give %player% chirpcd 1"
 				send "&f[&aSERVER&f] &aThe Chirp music disc!"
 			if {_randomnum} is 31:
-				give player a 13-disc
+				execute console command "give %player% 13cd 1"
 				send "&f[&aSERVER&f] &aThe 13 music disc!"
 			if {_randomnum} is 32:
-				give player a ender chest
+				execute console command "give %player% enderchest 1"
 				send "&f[&aSERVER&f] &aAn ender chest!" to player
 			if {_randomnum} is 33:
 				send "&f[&aSERVER&f] &aA life quote! &eBelieve nothing you hear and only half of what you see."
@@ -239,11 +244,11 @@ on chat:
 				apply potion of night vision to the player for 30 minutes
 				send "&f[&aSERVER&f] &aThirty minutes of Night Vision!"	
 			if {_randomnum} is 40:
-				give player 5 mycelium
+				execute console command "give %player% mycelium 5"
 				send "&f[&aSERVER&f] &aFive Mycelium!"	
 			if {_randomnum} is 41:
-				give player dirt of knockback 10 and sharpness 10 and fire aspect 10 named "&aBattle Dirt"
-				send "&f[&aSERVER&f] &aAn enchanted block of dirt!"	
+				send "&f[&aSERVER&f] &aA pat on the back for making it here! Oh, and $1."	
+				execute console command "eco give %player% 1"
 			if {_randomnum} is 42:
 				spawn a chicken at location of player
 				send "&f[&aSERVER&f] &aA ride on a chicken!"	
@@ -265,7 +270,7 @@ on chat:
 						delete {blocking.%player%}
 						delete {blockstart.%player%}
 						send "&f[&aSERVER&f] &aYou restrictions have been lifted. Sorry about that!"
-						stop
+					stop
 					close inventory of player
 					wait 1 tick
 			stop
@@ -275,3 +280,10 @@ on chat:
 			wait 5 real seconds
 			message "&f[&aSERVER&f] &cNext time, be sure your prayer contains the word &aNotch&c in it."
 			delete {special.%player%.enable}
+command /setcollectible:
+	trigger:
+		player is op
+		set {collectible.location} to location of the player
+command /collectible:
+	trigger:
+		teleport player to {collectible.location}

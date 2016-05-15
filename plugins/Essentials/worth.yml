@@ -1,35 +1,19 @@
 worth:
-
-  # Items not listed in this file will not be sellable on the server
-  # Setting the worth to 0 will sell items for free, delete the item or set to -1 to disable.
-
-  # This will set the worth of all logs to '2'
-  log: 2.0  
-
-  # This will work similar to the above syntax
+  log: 2.0
   wool:
     '0': 20
-    
-  # This will only allow selling leaves with datavalue '0' and '1'
-  leaves: 
-    '0': 1.0
-    '1': 1.0
-    
-  # This will allow the selling of all, but sells '0' slightly cheaper  
+  leaves: 1.0
   sapling:
-    '0': 2.0  
+    '0': 2.0
     '*': 2.5
-
-
   stonebutton: 6.0
-  wood: 0.50
-  arrow: 3.50
+  wood: 0.5
+  arrow: 3.5
   diamondpickaxe: 650.0
   rawfish: 5.0
   minecart: 23.0
   leatherchestplate: 85.0
   storageminecart: 30.0
-  leaves: 1.0
   feather: 3.0
   goldchestplate: 6.5
   mushroomsoup: 4.5
@@ -105,7 +89,7 @@ worth:
   rails: 22.0
   ironore: 18.0
   leatherhelmet: 52.0
-  stone: 3.00
+  stone: 3.0
   egg: 1.0
   diamondore: 200.0
   woodhoe: 2.0
@@ -162,14 +146,14 @@ worth:
   goldaxe: 6.0
   bone: 2.0
   diamond: 200.0
-  glass: 3.00
+  glass: 3.0
   goldspade: 6.0
   lapisblock: 950.0
   lavabucket: 40.0
   wheat: 9.0
   ladder: 0.5
   sugarcaneblock: 15.0
-  bowl: 0.50
+  bowl: 0.5
   chainmailchestplate: 40.0
   diamondboots: 850.0
   lapisore: 100.0
@@ -184,3 +168,5 @@ worth:
   ironboots: 22.0
   step: 1.5
   sugar: 10.0
+  smoothbrick:
+    '0': 3.0

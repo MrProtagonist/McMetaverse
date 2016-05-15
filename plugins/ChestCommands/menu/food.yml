@@ -59,15 +59,7 @@ divider1:
   POSITION-X: 1
   POSITION-Y: 1
   DATA-VALUE: 0
-Ryanfoodshop:
-  COMMAND: 'shopwarp 4'
-  NAME: '&d[p] &aRyans Bakery &d[p]'
-  LORE:
-    - '&f&oFor all your food needs! :D'
-  ID: 103
-  KEEP-OPEN: false
-  POSITION-X: 2
-  POSITION-Y: 1
+
 divider2:
   NAME: ''
   ID: 160
@@ -75,15 +67,7 @@ divider2:
   POSITION-X: 3
   POSITION-Y: 1
   DATA-VALUE: 0
-Titansfoodshop:
-  COMMAND: 'shopwarp 16'
-  NAME: '&d[p] &aTitans Barn Food & Farming Supply &d[p]'
-  LORE:
-    - '&f&oWe have things from seeds and bonemeal to carrots and bread.'
-  ID: 391
-  KEEP-OPEN: false
-  POSITION-X: 4
-  POSITION-Y: 1
+
 divider3:
   NAME: ''
   ID: 160
@@ -91,15 +75,7 @@ divider3:
   POSITION-X: 5
   POSITION-Y: 1
   DATA-VALUE: 0
-bismarksbakery:
-  COMMAND: 'shopwarp 28'
-  NAME: '&d[p] &aBismarks Bakery &d[p]'
-  LORE:
-    - '&f&oCome here for your baking needs.'
-  ID: 357
-  KEEP-OPEN: false
-  POSITION-X: 6
-  POSITION-Y: 1
+
 divider4:
   NAME: ''
   ID: 160
@@ -107,15 +83,7 @@ divider4:
   POSITION-X: 7
   POSITION-Y: 1
   DATA-VALUE: 0
-nitrogengaming1sshop:
-  COMMAND: 'shopwarp 34'
-  NAME: '&d[p] &aGriffith Farmers Market &d[p]'
-  LORE:
-    - '&f&oa bigger farmers market with unbeatable prices.'
-  ID: 393
-  KEEP-OPEN: false
-  POSITION-X: 8
-  POSITION-Y: 1
+
 divider5:
   NAME: ''
   ID: 160
@@ -123,6 +91,7 @@ divider5:
   POSITION-X: 9
   POSITION-Y: 1
   DATA-VALUE: 0
+
 divider6:
   NAME: ''
   ID: 160
@@ -130,6 +99,7 @@ divider6:
   POSITION-X: 2
   POSITION-Y: 2
   DATA-VALUE: 0
+
 divider7:
   NAME: ''
   ID: 160

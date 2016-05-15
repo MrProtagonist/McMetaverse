@@ -1,17 +1,38 @@
-﻿on sign change:
-	line 1 of block is "[vc]"
-	if {vc.%player%.max} is equal to {vc.%player%.count}:
-		message "&c&oYou don't have permission to make more virtual chests!"
-		stop
-	set {vc.temp.%player%.vcnumber} to line 2 of block
-	set {vc.%player%::%{vc.temp.%player%.vcnumber}%} to location of block 1 meters behind block
-	set line 1 of block to "&aVirtual Chest"
-	set line 2 of block to "&l%{vc.temp.%player%.vcnumber}%"
-	set line 3 of block to "Owned by"
-	set line 4 of block to player's name
-	message "&aVirtual chest &6%{vc.temp.%player%.vcnumber}% at %{vc.%player%::%{vc.temp.%player%.vcnumber}%}%&a created."
-	add 1 to {vc.%player%.count}
-	
+﻿on script load:
+	set {_null} to null
+on sign change:
+	if line 1 of block is "[vc]":
+		if player's world is "metaomega":
+			line 2 of block is not set:
+				message "&c&oYou didn't set a name for your virtual chest."
+				stop
+			loop {vc.%player%::*}:
+				if line 2 of block is loop-index:
+					message "&c&oYou already have a virtual chest by that name."
+					stop
+			if {vc.%player%.max} is equal to {vc.%player%.count}:
+				message "&c&oYou don't have permission to make more virtual chests!"
+				stop
+			set {vc.temp.%player%.vcnumber} to line 2 of block
+			set {vc.%player%::%{vc.temp.%player%.vcnumber}%} to location of block 1 meters behind block
+			set line 1 of block to "&aVirtual Chest"
+			set line 2 of block to "&l%{vc.temp.%player%.vcnumber}%"
+			set line 3 of block to "Owned by"
+			set line 4 of block to player's name
+			message "&aVirtual chest &6%{vc.temp.%player%.vcnumber}% at %{vc.%player%::%{vc.temp.%player%.vcnumber}%}%&a created."
+			add 1 to {vc.%player%.count}
+		else:
+			message "&cYou can't make a virtual chest here!"
+			cancel event
+command /purgevc <player>:
+	trigger:
+		if player is op:
+			message "%{vc.%arg%.count}%"
+			message "%{vc.%arg%.max}%"
+on command "vc":
+	if player's world is "contest" or "minigame" or "sandbox":
+		message "&cSorry, you can't do that here!"
+		cancel event
 command /vc [<text>] [<text>]:
 	trigger:
 		if {vc.%player%.count} is not set:
@@ -52,44 +73,88 @@ command /vc [<text>] [<text>]:
 			{vc.%player%.max} is not 1337
 			set {vc.%player%.max} to 1337
 		if arg 1 is "list":
-			set {_vctempcount} to 0
-			loop {vc.%player%::*}:
-				add 1 to {_vctempcount}
-			set {vc.%player%.count} to {_vctempcount}
-			message "&l- - - [ &b&l&oMy Virtual Chests&r&l ] - - -"
-			loop {vc.%player%::*}:
-				message " &a&l%loop-index% &r- %loop-value%"
-			message " "
-			message "You have used %{vc.%player%.count}% / %{vc.%player%.max}% virtual chests available to you."
-			stop
-		if arg 1 is "remove":
-			loop {vc.%player%::*}:
-				loop-index is arg 2
-				delete {vc.%player%::%arg 2%}
-				message "&cDeleted"
-				subtract 1 from {vc.%player%.count}
-				stop
-			message "&c&oFound no chest by that name!"
-		if arg 1 is set:
 			if arg 2 is not set:
-				if {vc.%player%::%arg 1%} is set:
-					message "&a&oOpening your virtual chest..."
-					execute console command "playsound portal.travel %player%"
-					wait 1 real second
-					open the inventory of the block at {vc.%player%::%arg 1%} to the player
+				set {_vctempcount} to 0
+				loop {vc.%player%::*}:
+					add 1 to {_vctempcount}
+				set {vc.%player%.count} to {_vctempcount}
+				message "&l- - - [ &b&l&oMy Virtual Chests&r&l ] - - -"
+				loop {vc.%player%::*}:
+					message " &a&l%loop-index% &r- %loop-value%"
+					message " "
+					message "&a&l ------------------------------------ "
+				message "You have used %{vc.%player%.count}% / %{vc.%player%.max}% virtual chests available to you."
+			else:
+				if player has permission "essentials.socialspy":
+					set {_vcplayertempcount} to 0
+					loop {vc.%arg 2%::*}:
+						add 1 to {_vcplayertempcount}
+					set {vc.%arg 2%.count} to {_vcplayertempcount}
+					message "&l- - - [ &b&l&o%arg 2%'s Virtual Chests&r&l ] - - -"
+					loop {vc.%arg 2%::*}:
+						message " &a&l%loop-index% &r- %loop-value%"
+						message " "
+						message "&a&l ------------------------------------ "
+					message "&6&o%arg 2%&r has used %{vc.%arg 2%.count}% / %{vc.%arg 2%.max}% virtual chests available."
 				else:
-					message "&cThis virtual chest does not exist."
+					if argument 2 is player:
+						set {_vctempcount} to 0
+						loop {vc.%player%::*}:
+							add 1 to {_vctempcount}
+						set {vc.%player%.count} to {_vctempcount}
+						message "&l- - - [ &b&l&oMy Virtual Chests&r&l ] - - -"
+						loop {vc.%player%::*}:
+							message " &a&l%loop-index% &r- %loop-value%"
+							message " "
+							message "&a&l ------------------------------------ "
+						message "You have used %{vc.%player%.count}% / %{vc.%player%.max}% virtual chests available to you."
+					else:
+						message "&cYou can't view other player's virtual chest list!"
+		if arg 1 is "remove":
+			if arg 2 is set:
+				loop {vc.%player%::*}:
+					if loop-index is arg 2:
+						set {vc.%player%.delete} to true
+						delete {vc.%player%::%arg 2%}
+						message "&cDeleted"
+						subtract 1 from {vc.%player%.count}
+						stop
+					else:
+						set {vc.%player%.delete} to false
+				wait 2 ticks
+				if {vc.%player%.delete} is false:
+					message "&c&oFound no chest by that name!"
+			else:
+				message "Correct usage: /vc remove <vcname>"
+		if arg 1 is set:
+			if arg 1 does not contain "remove" or "list":
+				if arg 2 is not set:
+					if {vc.%player%::%arg 1%} is set:
+						if player has permission "vc.use":
+							if the block at {vc.%player%::%arg 1%} is a chest or trapped chest:
+								message "&a&oOpening your virtual chest..."
+								wait 1 real second
+								open the inventory of the block at {vc.%player%::%arg 1%} to the player
+							else:
+								message "&cThese blocks aren't chests, remove the vc with /vc remove and put the sign on a chest instead."
+						else:
+							message "&cYou can't use that command!"
+					else:
+						message "&cThis virtual chest does not exist."
 		else:
 			message " "
 			message "&l- - - [ &b&l&oVirtual Chest Menu &r&l] - - -"
 			message "&a/vc <name>&r - Open an existing virtual chest"
-			message "&a/vc list&r - List your virtual chests"
+			if player is op:
+				message "&a/vc list <playername>&r - List your or another player's"
+				message " virtual chests. leaving the playername argument open"
+				message " shows your own vc list by default."
+			else:
+				message "&a/vc list&r - List your virtual chests"
 			message "&a/vc remove <name>&r - Delete a virtual chest"
 			message " "
 			message "&l- - - [ &6Making a Virtual Chest &r&l] - - -"
 			message " Simply place a sign &con the ground in front of&r any container."
-
 			message "  &eWrite the following:"
 			message "                    |       [vc]       |"  
 			message "                    |   Some name   |"
-			

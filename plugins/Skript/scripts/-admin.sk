@@ -1,0 +1,16 @@
+script options:
+	$ developer mode
+	
+on teleport:
+	player has the permission "essentials.socialspy"
+	name of player is "MrProtagonist"
+	wait 1 tick
+	strike lightning effect at location of player
+	
+on join:
+	name of player is "MrProtagonist"
+	strike lightning effect at location of player
+
+on quit:
+	name of player is "MrProtagonist"
+	strike lightning effect at location of player

@@ -1,8 +1,8 @@
 spawns: 
-  newbies: 
-    world: Metacurse
-    x: -66.52338789726414
-    y: 70.0
-    z: -71.8420252550131
-    yaw: -180.0759
-    pitch: 0.51589215
+  default: 
+    world: MetaOmega
+    x: -302.840563315579
+    y: 33.0
+    z: 510.2787078377156
+    yaw: -290.70917
+    pitch: -1.2000319

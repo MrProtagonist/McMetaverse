@@ -1,253 +1,116 @@
 users:
-  18psimpson:
-    group: Default
+  1cbd2fe0-3402-47cb-bc9e-7ef7928c4a79:
+    lastname: Quisalas
+    group: Visitor
     subgroups: []
     permissions: []
     info:
-      suffix: §f [&6&lThor &8&lOdinson§f]
-  abdomen9:
-    group: Default
-    subgroups: []
-    permissions: []
-    info:
-      suffix: §f [Gabe§f]
-  Armyman767:
-    group: Default
-    subgroups: []
-    permissions: []
-    info:
-      prefix: ''
-  Ashlerose:
-    group: Default
-    subgroups: []
-    permissions: []
-    info:
-      prefix: '§f[§5§oBright Star of Hate§f] '
-      suffix: §f [&4-Queen-§f]
-  Awesome1887:
-    group: Default
-    subgroups: []
-    permissions: []
-    info:
-      suffix: §f [&b&l*&5&lB&4&l3&5&lAST&b&l*§f]
-  bluedemon0015:
-    group: Admin
-    subgroups: []
-    permissions: []
-    info:
-      suffix: §f [&1noot§f]
-  CaptainStupid:
-    group: Default
-    subgroups: []
-    permissions: []
-    info:
-      prefix: '§f[&2Head Dev§f] '
-      suffix: §f [&4Hater§f]
-  Cartatwin:
-    group: Default
-    subgroups: []
-    permissions: []
-    info:
-      suffix: §f [Leah§f]
-  celtbane:
-    group: Default
-    subgroups: []
-    permissions: []
-    info:
-      suffix: §f [&9K&2uni§f]
-  Chaos9863:
-    group: Default
-    subgroups: []
-    permissions: []
-    info:
-      suffix: §f [&dg§f]
-  CuddlyCanadian:
-    group: Default
-    subgroups: []
-    permissions: []
-    info:
-      prefix: '§f[&e&oCitizen&r§f] '
-  CuddlyPanda:
-    group: Default
-    subgroups: []
-    permissions: []
-    info:
-      prefix: '§f[§5§o&bPotato§f] '
-      suffix: §f [&aMoney &6Maker§f]
-  DaBomb1661:
-    group: Default
-    subgroups: []
-    permissions: []
-    info:
-      suffix: §f [&4Boom&3Stick§f]
-  darkeye932:
-    group: Default
-    subgroups: []
-    permissions: []
-    info:
-      suffix: §f [&7Lil &3Mic§f]
-  dinoppar:
-    group: Admin
-    subgroups: []
-    permissions: []
-    info:
-      prefix: '§f[&3Architect§f] '
-      suffix: §f [&3Snorlax§f]
-  DrBloodbathMC:
-    group: Default
+      prefix: '§f[§5§o&9Admin§f] '
+      suffix: §f [&o&dSkript&r&5ress§f]
+  3feb7b1d-c91c-445a-b79d-6c233d6c341f:
+    lastname: DrBloodbathMC
+    group: Visitor
     subgroups: []
     permissions: []
     info:
       prefix: ''
       suffix: §f [&2Mr.Slimestone§f]
-  DrieIceyGirl:
-    group: Default
-    subgroups: []
-    permissions: []
-    info:
-      suffix: §f [&3&lIc&b&ley§f]
-  ElgarL:
-    group: Moderator
-    subgroups: []
-    permissions:
-    - groupmanager.noofflineperms
-  EvilLittleThing:
-    group: Default
-    subgroups: []
-    permissions: []
-    info:
-      prefix: '§f[§5§o&9Admin§f] '
-      suffix: §f [&4EvilLady§f]
-  FoxTrotMC:
-    group: Default
-    subgroups: []
-    permissions: []
-    info:
-      prefix: ''
-      suffix: §f [&bS&1k&ai&2t&ct&4l&de&5s§f]
-  ghost482:
-    group: Default
-    subgroups: []
-    permissions: []
-    info:
-      suffix: §f [&3*&bYETI&3*§f]
-  green11:
-    group: Default
-    subgroups: []
-    permissions: []
-    info:
-      suffix: §f [PinkDubstepGun§f]
-  gussy05:
-    group: Default
-    subgroups: []
-    permissions: []
-    info:
-      suffix: §f [&bMrsProtagonist§f]
-  Hobbitsyfeet:
+  5f23e3c6-b592-4e1c-bb7a-66b4424c36f8:
+    lastname: Hobbitsyfeet
     group: Builder
     subgroups: []
     permissions: []
     info:
       prefix: ''
       suffix: §f [&cC&6A&eN&2A&aD&bI&3A&9N§f]
-  Icespot744:
-    group: Default
-    subgroups: []
-    permissions: []
-    info:
-      suffix: §f [&2Funky Bunch§f]
-  Infiniterose:
-    group: Default
-    subgroups: []
-    permissions: []
-    info:
-      suffix: §f [&4Qu&6ee&en &aOf &2Qu&3ee&1rs§f]
-  Interprise:
-    group: Default
-    subgroups: []
-    permissions: []
-    info:
-      suffix: §f [AcceptingJobs§f]
-  ItsDanielBro:
-    group: Default
-    subgroups: []
-    permissions: []
-    info:
-      suffix: §f [&4A&6r&ei&2a&an&ba&3t&1o&5r§f]
-  KHobbits:
-    group: Moderator
-    subgroups: []
+  5f62e716-e961-4bc7-91f4-bc21797edb75:
+    lastname: dinoppar
+    group: Admin
+    subgroups:
+    - Builder
     permissions:
-    - groupmanager.noofflineperms
-  kristycream:
-    group: Default
+    - -autoitem.replaceon.place
+    info:
+      prefix: '§f[&3Architect§f] '
+      suffix: §f [&3Snorlax§f]
+  70b3e014-4b7b-4da6-b3ce-7e87541bd336:
+    lastname: RosyAmber
+    group: Mod
+    subgroups: []
+    permissions: []
+  761cfbf5-a5aa-4e6f-b894-6baafe5e5da5:
+    lastname: NitrogenPlayz
+    group: Visitor
     subgroups: []
     permissions: []
     info:
-      prefix: '§f[§5§o&bDonut§f] '
-      suffix: §f [&b&lMonkey§f]
-  Kyokokat:
-    group: Default
+      prefix: '§f[§4§oChampion§f] '
+  904f167d-2f03-426b-b133-1a321d5eb55e:
+    lastname: craftio
+    group: Dev
     subgroups: []
     permissions: []
     info:
-      prefix: '§f[§5§o&b<3§f] '
-      suffix: §f [&6G&3inger&bFox§f]
-  lacerfacerxd:
-    group: Default
+      suffix: §f [&BP＆C§f]
+  950d8d97-4195-429f-839b-d65b7782b90b:
+    lastname: gussy05
+    group: Visitor
     subgroups: []
     permissions: []
     info:
-      suffix: §f [&cL&6A&eC&aI&2F&3E&9R§f]
-  lordlankovic:
-    group: Default
+      suffix: §f [&bMrsProtagonist§f]
+  97cb8bf8-c6ee-4511-b6bd-d00dc1bc4fbb:
+    lastname: pumpkinpepper
+    group: Visitor
     subgroups: []
     permissions: []
     info:
-      suffix: §f [&6M'lady§f]
-  Luna482:
-    group: Default
+      prefix: '§f[&o&3Legend&r§f] '
+      suffix: §f [&eBluh§f]
+  bf683cfa-db8d-430c-a7fd-fbe0304021c8:
+    lastname: TwitchBox20
+    group: Visitor
     subgroups: []
     permissions: []
     info:
-      suffix: §f [&5MommaSquirrel§f]
-  McNicholas:
-    group: Default
+      suffix: §f [&cUn&fpossibly &c&oFast§f]
+  CaptainStupid:
+    group: Visitor
     subgroups: []
     permissions: []
     info:
-      suffix: §f [&7&4╪Toki Wartooth╪§f]
-  MrProtagonist:
-    group: Default
+      prefix: '§f[&2Head Dev§f] '
+      suffix: §f [&4Hater§f]
+  d5888bee-0de7-498e-9f93-39b9038f7ef9:
+    lastname: EvilLittleThing
+    group: Admin
+    subgroups: []
+    permissions: []
+    info:
+      prefix: '§f[§5§o&9Admin§f] '
+      suffix: §f [&4EvilLady§f]
+  f01a2307-e90d-4503-9f19-640806fa8808:
+    lastname: MrProtagonist
+    group: Visitor
     subgroups: []
     permissions: []
     info:
       prefix: '§f[&aFounder§f] '
       suffix: §f [&c&oRetired§f]
-  Nitrogengaming1:
-    group: Default
+  Jungle_Shaman:
+    group: Regular
+    subgroups: []
+    permissions: []
+  Korbin57:
+    group: Elite
+    subgroups: []
+    permissions: []
+  McNicholas:
+    group: Visitor
     subgroups: []
     permissions: []
     info:
-      suffix: §f [&aSuffix§f]
-  PalMac14:
-    group: Default
-    subgroups: []
-    permissions: []
-    info:
-      suffix: §f [PayPal§f]
-  platipus50:
-    group: Default
-    subgroups: []
-    permissions: []
-    info:
-      suffix: §f [&2Plat§f]
-  PoisonousKoala:
-    group: Default
-    subgroups: []
-    permissions: []
-    info:
-      suffix: §f [&aPGang§f]
+      suffix: §f [&7&4╪Toki Wartooth╪§f]
   Post_Rogue:
     group: Admin
     subgroups: []
@@ -255,119 +118,22 @@ users:
     info:
       prefix: '§f[§5§o&2Head Admin§f] '
       suffix: §f [&2LoZ§f]
-  pumpkinpepper:
-    group: Default
-    subgroups: []
-    permissions: []
-    info:
-      prefix: '§f[&o&3Legend&r§f] '
-      suffix: §f [&eBluh§f]
-  Quisalas:
-    group: Default
-    subgroups: []
-    permissions: []
-    info:
-      prefix: '§f[§5§o&9Admin§f] '
-      suffix: §f [&dWyrd&5&oSister§f]
-  retroville268773:
-    group: Default
-    subgroups: []
-    permissions: []
-    info:
-      suffix: §f [&7OldMan§f]
-  rfcroc:
-    group: Default
-    subgroups: []
-    permissions: []
-    info:
-      suffix: §f [&2old Saltie§f]
   RubySerpent:
-    group: Default
+    group: Visitor
     subgroups: []
     permissions: []
     info:
       suffix: §f [&5Roob&aLetterman§f]
-  Sarahliz:
-    group: Default
-    subgroups: []
-    permissions: []
-    info:
-      suffix: §f [&1S&2Y&3C&4O&5P&6H&7A&8N&9T&dA§f]
   scatzbro:
-    group: Default
+    group: Visitor
     subgroups: []
     permissions: []
     info:
       suffix: §f [&4CHRIS§f]
   shadow007uk:
-    group: Default
+    group: Visitor
     subgroups: []
     permissions: []
     info:
-      suffix: §f [maltesereater &5§f]
-  shaunticlair:
-    group: Default
-    subgroups: []
-    permissions: []
-    info:
-      suffix: §f [Mycelium Kitty§f]
-  Sherlock1010:
-    group: Default
-    subgroups: []
-    permissions: []
-    info:
-      suffix: §f [&4Kewl &cGamer§f]
-  ShionSkaii:
-    group: Default
-    subgroups: []
-    permissions: []
-    info:
-      suffix: §f [&dForget Me Not§f]
-  snowleo:
-    group: Builder
-    subgroups: []
-    permissions:
-    - groupmanager.noofflineperms
-  Sompor:
-    group: Default
-    subgroups: []
-    permissions: []
-    info:
-      suffix: §f [Husky§f]
-  swordassassin54:
-    group: Default
-    subgroups: []
-    permissions: []
-    info:
-      suffix: §f [IDK§f]
-  uberwookie:
-    group: Default
-    subgroups: []
-    permissions: []
-    info:
-      prefix: '§f[&bNOT Staff§f] '
-      suffix: §f [&bJerkface§f]
-  x_Odysseus_x:
-    group: Default
-    subgroups: []
-    permissions: []
-    info:
-      suffix: §f [&4Lord Israphel§f]
-  xLegendaryFlamex:
-    group: Default
-    subgroups: []
-    permissions: []
-    info:
-      suffix: §f [&aAllMyLostBoyzzz§f]
-  ZombieGirl159:
-    group: Default
-    subgroups: []
-    permissions: []
-    info:
-      suffix: §f [&4Th&6ee &eon&2e a&bnd &5On&dly§f]
-  zthemonster:
-    group: Default
-    subgroups: []
-    permissions: []
-    info:
-      suffix: §f [&5Pixie&4Dust§f]
+      prefix: '§f[§5§o&5&oHead Mod§f] '
+      suffix: §f [&cOptimus&9Prime§f]

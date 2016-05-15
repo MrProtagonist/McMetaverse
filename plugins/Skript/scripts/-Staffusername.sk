@@ -1,0 +1,36 @@
+on chat:
+	if player is "dinopppar":
+		cancel event
+		set player tab name to "xNillax"
+		loop all players:
+			send "[&4&oChampion&r] xNillax [&bTimelord&9Kitty&r] %message%" to the loop-player
+	else:
+		if player is "dinopparr":
+			cancel event
+			set player tab name to "Mistidawn98"
+			loop all players:
+				send "[&6&oCraftsman&r] Mistidawn98 [&9mistidawn98&r] %message%" to the loop-player
+every 3 seconds in "MetaOmega" or "resource" or "MetaOmega_nether":
+	loop all players:
+		if loop-player is "Dinopppar":
+			set loop-player tab name to "xNillax"
+			set the loop-player's display name to "xNillax"
+		else:
+			if loop-player is "Dinopparr":
+				set loop-player tab name to "Mistidawn98"
+on command "/me":
+	if player is "Dinopppar":
+		cancel event
+		message "&cCommand disabled until namechange"
+	else:
+		if player is "Dinopparr":
+			cancel event
+			message "&cCommand disabled until namechange"
+on command "/chat":
+	if player is "Dinopppar":
+		cancel event
+		message "&cCommand disabled until namechange"
+	else:
+		if player is "Dinopparr":
+			cancel event
+			message "&cCommand disabled until namechange"

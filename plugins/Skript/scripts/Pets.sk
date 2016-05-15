@@ -297,6 +297,7 @@ on damage:
 			cancel event
 		else:
 			send "&f[&dPets&f] &cYour pet is taking %damage cause% damage!" to {owner.%victim%}
+
 on death:
 	{owner.%entity%} is set
 	clear drops

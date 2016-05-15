@@ -1,0 +1,135 @@
+script options:
+	$ developer mode
+on click:
+	player has the permission "essentials.socialspy"
+	if name of player's held item is "&c&lJail Player":
+		execute console command "jail %target player% 1"
+		stop
+	if name of player's held item is "&c&lBan Player":
+		ban "%target player%" because of "&c&lThe Ban Hammer has spoken!"
+		broadcast "&a%player%&e has banned &a%target player%&e!"
+		stop
+	if name of player's held item is "&c&lKick Player":
+		kick target player because of "&a%player% &chas kicked &e%target player%&c for stepping out of line!"
+		broadcast "&a%player%&e has kicked &a%target player%&e for stepping out of line!"
+		stop
+	if name of player's held item is "&c&lMute Player":
+		make player execute "mute %target player%"
+		# broadcast "&a%player%&e has muted &a%target player%&e for an indefinite amount of time!"
+		stop
+	if name of player's held item is "&6&lPlague Player":
+		make player execute "blind %target player%"
+		# broadcast "&a%player%&e has infected &a%target player%&e with a plague!"
+		stop
+	if name of player's held item is "&6&lShoo Player":
+		make player execute "push %target player%"
+		stop
+	if name of player's held item is "&6&lTrap Player":
+		make player execute "troll %target player%"
+		stop
+	if name of player's held item is "&6&lGlobal Mute for 1 Min":
+		make player execute "globalmute Please drop all topics and behave yourself to prevent possible punishment."
+		stop
+		
+function saveInventory(p:Player, t:Text):
+	clear {inventories.%{_p}%.%{_t}%.items::*} and {inventories.%{_p}%.%{_t}%.armor::*}
+	loop items in {_p}'s inventory:
+		add loop-item to {inventories.%{_p}%.%{_t}%.items::*}
+	add {_p}'s chestplate, {_p}'s leggings, {_p}'s helmet, and {_p}'s boots to {inventories.%{_p}%.%{_t}%.armor::*}
+
+function restoreInventory(p:Player,t:Text):
+	clear {_p}'s inventory
+	loop {inventories.%{_p}%.%{_t}%.items::*}:
+		give {_p} loop-value
+	loop {inventories.%{_p}%.%{_t}%.armor::*}:
+		equip {_p} with loop-value	
+
+command /toolkit:
+	permission: essentials.socialspy
+	trigger:
+		if {usingtools.%player%} is not set:
+			set {usingtools.%player%} to true
+			message "&e--&a&l STAFF MODE ENABLED &e--"
+			saveInventory(player,"A")
+			clear player's inventory
+			set {particule.%UUID of player%.flame} to true
+			execute console command "give %player% glass 1 name:&b&lInspect_Block"
+			execute console command "give %player% obsidian 1 name:&6&lTrap_Player"
+			execute console command "give %player% 381 1 name:&6&lPlague_Player"
+			execute console command "give %player% feather 1 name:&6&lShoo_Player"
+			execute console command "give %player% iron_bars 1 name:&c&lJail_Player"
+			execute console command "give %player% 166 1 name:&c&lMute_Player"
+			execute console command "give %player% 166 1 name:&c&lKick_Player"
+			execute console command "give %player% 166 1 name:&c&lBan_Player"
+			execute console command "give %player% 166 1 name:&6&lGlobal_Mute_for_1_Min"
+			equip player with glowing chain leggings
+			equip player with glowing chain boots
+			equip player with glowing chain chestplate
+			equip player with glowing chain helmet
+		else:
+			delete {usingtools.%player%}
+			message "&e--&c&l STAFF MODE DISABLED &e--"
+			set {particule.%UUID of player%.flame} to false
+			restoreInventory(player,"A")
+on tool change:
+	if name of player's held item is "&b&lInspect Block":
+		set {inspecting.%player%} to true
+		make player execute "/co i"
+		stop
+	if {inspecting.%player%} is true:
+		set {inspecting.%player%} to false
+		make player execute "/co i"
+		stop
+		
+command /question <player> [<integer>]:
+	permission: essentials.socialspy
+	trigger:
+		strike lightning effect at location of arg 1
+		set {spotbefore.%arg 1%} to location of arg 1
+		teleport player to {interrogation.staff}
+		make player execute "/chat join Interrogation"
+		wait 3 ticks
+		if arg 2 is set:
+			teleport arg 1 to {interrogation.%arg 2%}
+		else:
+			teleport arg 1 to {interrogation.1}
+		broadcast "&6%arg 1%&c has been called into the interrogation room by staff. Do not attempt to contact this person until they are out, and do not ask questions about why they are being questioned in chat."
+		send "&e-- &a&lYOU ARE NOW BEING INTERROGATED BY STAFF&e --" to arg 1
+		send "&e-- &a&lPLEASE COOPERATE AND BE TRUTHFUL, OR YOU MAY FACE PUNISHMENT&e --" to arg 1
+		send "&e-- &a&lDO NOT SPEAK UNLESS ASKED TO SPEAK&e --" to arg 1
+		make arg 1 execute "/chat join Interrogation"
+		set {questioning.%arg 1%} to true
+		set the arg 1's walk speed to 0.01
+		
+command /release <player>:
+	permission: essentials.socialspy
+	trigger:
+		set the arg's walk speed to .2
+		delete {questioning.%arg%}
+		teleport arg to {spotbefore.%arg%}
+		teleport arg to {spotbefore.%arg%}
+		make arg execute "/chat leave Interrogation"
+		broadcast "&6%arg%&a has been released from the interrogation room. You may now talk to them."
+		send "&e-- &a&lYOU ARE NO LONGER BEING INTERROGATED BY STAFF&e --" to arg
+		loop {questioning.list::*}:
+			loop-value is "%arg%"
+			delete {questioning.list::%loop-index%}
+		
+on chat:
+	{questioning.%player%} is true
+	cancel event
+	message "&cYour chat is disabled until you are released from the interrogation room."
+on command:
+	{questioning.%player%} is true
+	cancel event
+	message "&cYou are locked until you are released from questioning."
+	
+on chat:
+	loop {questioning.list::*}
+		remove loop-value from chat recipients
+		
+
+on any move:
+	if {particule.%UUID of player%.flame} is true:
+		set {flame.%UUID of player%} to location of player
+		show 3 "flame" particles at location of player for player offset by 0.4, 0.7, 0.4

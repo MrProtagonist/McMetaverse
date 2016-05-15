@@ -2,7 +2,7 @@ on script load:
 	delete {randommessage::*}
 
 variables:
-	{randommessage::1} = "Highly detailed statistics are gathered about each player."
+	{randommessage::1} = "If you enjoy our server, be sure to help us keep it running by making a purchase on our website or becoming a &5&oPremium&e&o member."
 	{randommessage::2} = "You get paid for welcoming players who join! Be a good neighbor!"
 	{randommessage::3} = "If you have any problems or concerns, please submit a &a&o/ticket&e&o."
 	{randommessage::4} = "Like us on Facebook for special offers and inside information!"
@@ -43,9 +43,9 @@ every 8 real minutes:
 		set {_num} to 1
 	set {announce.last} to {_num}
 	broadcast "&f[&aSERVER&f] &e&o%{randommessage::%{_num}%}%"
-	if {_num} is 1:
-		loop all players:
-			send "&f[&aSERVER&f] &eFind yours at &ahttp://s12.hosthorde.com:8080/player/%loop-player%" to loop-player
-command /msgmeplz:
-	trigger:
-		send "&f[&aSERVER&f] &eFind yours at &a&o&nhttp://s12.hosthorde.com:8080/player/%player%" to player
+#	if {_num} is 1:
+#		loop all players:
+#			send "&f[&aSERVER&f] &eFind yours at &ahttp://s12.hosthorde.com:8080/player/%loop-player%" to loop-player
+#command /msgmeplz:
+#	trigger:
+#		send "&f[&aSERVER&f] &eFind yours at &a&o&nhttp://s12.hosthorde.com:8080/player/%player%" to player

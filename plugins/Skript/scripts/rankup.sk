@@ -3,6 +3,7 @@ on join:
 		set {ranked.%player%} to true
 		if player has permission "is.visitor":
 			set {rank.%player%} to 0
+			set {rookierank.%player%} to 0
 		if player has permission "is.rookie":
 			set {rank.%player%} to 1
 		if player has permission "is.regular":
@@ -24,40 +25,58 @@ command /debugrank:
 	trigger:
 		loop all players:
 			broadcast "&f[&aDEBUG&f] %{ranked.%loop-player%}% &e%loop-player%&f: %{rank.%loop-player%}%"
-command /setrank [<player>] [<integer>]:
+command /setrank [<offlineplayer=%player%>] [<integer>]:
 	permission: is.pro
 	trigger:
-		if arg-2 is 0:
-			set {rank.%arg-1%} to 0
-			execute console command "manpromote %arg 1% visitor"
-		if arg-2 is 1:
-			set {rank.%arg-1%} to 1
-			execute console command "manpromote %arg 1% rookie"
-		if arg-2 is 2:
-			set {rank.%arg-1%} to 2
-			execute console command "manpromote %arg 1% regular"
-		if arg-2 is 3:
-			set {rank.%arg-1%} to 3
-			execute console command "manpromote %arg 1% citizen"
-		if arg-2 is 4:
-			set {rank.%arg-1%} to 4
-			execute console command "manpromote %arg 1% craftsman"
-		if arg-2 is 5:
-			set {rank.%arg-1%} to 5
-			execute console command "manpromote %arg 1% seasoned"
-		if arg-2 is 6:
-			set {rank.%arg-1%} to 6
-			execute console command "manpromote %arg 1% noble"
-		if arg-2 is 7:
-			set {rank.%arg-1%} to 7
-			execute console command "manpromote %arg 1% elite"
-		if arg-2 is 8:
-			set {rank.%arg-1%} to 8
-			execute console command "manpromote %arg 1% champion"
+		if arg-2 is set:
+			if arg-2 is greater than {rank.%arg-1%}:
+				set {prode} to "promote"
+			else:
+				set {prode} to "demote"
+			if arg-2 is 0:
+				set {rank.%arg-1%} to 0
+				execute console command "man%{prode}% %arg 1% visitor"
+				make argument 1 execute "fixprefix"
+			if arg-2 is 1:
+				set {rank.%arg-1%} to 1
+				execute console command "man%{prode}% %arg 1% rookie"
+				make argument 1 execute "fixprefix"
+			if arg-2 is 2:
+				set {rank.%arg-1%} to 2
+				execute console command "man%{prode}% %arg 1% regular"
+				make argument 1 execute "fixprefix"
+			if arg-2 is 3:
+				set {rank.%arg-1%} to 3
+				execute console command "man%{prode}% %arg 1% citizen"
+				make argument 1 execute "fixprefix"
+			if arg-2 is 4:
+				set {rank.%arg-1%} to 4
+				execute console command "man%{prode}% %arg 1% craftsman"
+				make argument 1 execute "fixprefix"
+			if arg-2 is 5:
+				set {rank.%arg-1%} to 5
+				execute console command "man%{prode}% %arg 1% seasoned"
+				make argument 1 execute "fixprefix"
+			else if arg-2 is 6:
+				set {rank.%arg-1%} to 6
+				execute console command "man%{prode}% %arg 1% noble"
+				make argument 1 execute "fixprefix"
+			else if arg-2 is 7:
+				set {rank.%arg-1%} to 7
+				execute console command "man%{prode}% %arg 1% elite"
+				make argument 1 execute "fixprefix"
+			else if arg-2 is 8:
+				set {rank.%arg-1%} to 8
+				execute console command "man%{prode}% %arg 1% champion"
+				make argument 1 execute "fixprefix"
+			else if arg-2 is greater than 8:
+				message "&cInvalid input. %arg 1% %arg 2%"
+				stop
+			else if arg-2 is smaller than 0:
+				message "&cInvalid input. %arg 1% %arg 2%"
+				stop
 		else:
-			message "&cInvalid input. %arg 1% %arg 2%"
-			stop
-		
+			message "&cMust input a ranknumber."
 command /fixrank:
 	trigger:
 		if {rank.%player%} is 0:
@@ -85,24 +104,39 @@ every minute:
 		{rank.%loop-player%} is 0
 		set {rank.%loop-player%} to 1
 		broadcast "&f[&aDEBUG&f] Automagically fixed %loop-player%'s rank variable!"
+every 10 real seconds in "MetaOmega" or "resource" or "MetaOmega_nether":
+	loop all players:
+		{rank.%loop-player%} is 0
+		add 1 to {rookierank.%loop-player%}
+		if {rookierank.%loop-player%} is 1200:
+			send "&aCongratulations, you have been promoted to &d&oRookie!" to the loop-player
+			execute console command "manpromote %loop-player% rookie"
+			add 1 to {rank.%loop-player%}
+			broadcast "&6%loop-player% has just been promoted to &d&oRookie&6!"
+			wait 2 ticks
+			make loop-player execute "fixprefix"
+			delete {rookierank.%loop-player%}
 command /testrank <text>:
 	usage: &aUsage:&e /testrank (rank name)
 	trigger:
-		if argument is "rookie":
-			make player execute "autorank check"
-			stop trigger
+#		if argument is "rookie":
+#			make player execute "autorank check"
+#			stop trigger
 		if argument is "regular":
 			if {rank.%player%} is 1:
-				if player's balance is greater than or equal to 5000:
-					execute console command "eco take %player% 5000"
-					message "&aCongratulations, you have been promoted!"
-					execute console command "manpromote %player% regular"
-					execute console command "manuaddv %player% &r&f[&d&oRookie&r] &r"
-					add 1 to {rank.%player%}
-					play "LEVEL_UP" specifically to player with pitch 1
-					broadcast "&6%player% has just been promoted to &cRegular&6!"
-					wait 2 ticks
-					make player execute "fixprefix"
+				if player's balance is greater than or equal to 3500:
+					if {tokens.%player%} is greater than or equal to 2:
+						execute console command "eco take %player% 3500"
+						message "&aCongratulations, you have been promoted!"
+						execute console command "manpromote %player% regular"
+						execute console command "manuaddv %player% &r&f[&d&oRookie&r] &r"
+						add 1 to {rank.%player%}
+						broadcast "&6%player% has just been promoted to &cRegular&6!"
+						wait 2 ticks
+						make player execute "fixprefix"
+						remove 2 from {tokens.%player%}
+					else:
+						message "&cSorry, you don't have enough tokens for this!"
 				else:
 					message "&cSorry, you don't have enough money for this!"
 			else:
@@ -110,15 +144,18 @@ command /testrank <text>:
 				stop trigger
 		if argument is "citizen":
 			if {rank.%player%} is 2:
-				if player's balance is greater than or equal to 15000:
-					execute console command "eco take %player% 15000"
-					message "&aCongratulations, you have been promoted!"
-					execute console command "manpromote %player% citizen"
-					add 1 to {rank.%player%}
-					play "LEVEL_UP" specifically to player with pitch 1
-					broadcast "&6%player% has just been promoted to &eCitizen&6!"
-					wait 2 ticks
-					make player execute "fixprefix"
+				if player's balance is greater than or equal to 12500:
+					if {tokens.%player%} is greater than or equal to 3:
+						execute console command "eco take %player% 12500"
+						message "&aCongratulations, you have been promoted!"
+						execute console command "manpromote %player% citizen"
+						add 1 to {rank.%player%}
+						broadcast "&6%player% has just been promoted to &eCitizen&6!"
+						wait 2 ticks
+						make player execute "fixprefix"
+						remove 3 from {tokens.%player%}
+					else:
+						message "&cSorry, you don't have enough tokens for this!"
 				else:
 					message "&cSorry, you don't have enough money for this!"
 			else:
@@ -126,15 +163,18 @@ command /testrank <text>:
 				stop trigger
 		if argument is "craftsman":
 			if {rank.%player%} is 3:
-				if player's balance is greater than or equal to 35000:
-					execute console command "eco take %player% 35000"
-					message "&aCongratulations, you have been promoted!"
-					execute console command "manpromote %player% craftsman"
-					add 1 to {rank.%player%}
-					play "LEVEL_UP" specifically to player with pitch 1
-					broadcast "&6%player% has just been promoted to &6Craftsman&6!"
-					wait 2 ticks
-					make player execute "fixprefix"
+				if player's balance is greater than or equal to 25000:
+					if {tokens.%player%} is greater than or equal to 5:
+						execute console command "eco take %player% 25000"
+						message "&aCongratulations, you have been promoted!"
+						execute console command "manpromote %player% craftsman"
+						add 1 to {rank.%player%}
+						broadcast "&6%player% has just been promoted to &6Craftsman&6!"
+						wait 2 ticks
+						make player execute "fixprefix"
+						remove 5 from {tokens.%player%}
+					else:
+						message "&cSorry, you don't have enough tokens for this!"
 				else:
 					message "&cSorry, you don't have enough money for this!"
 			else:
@@ -142,16 +182,19 @@ command /testrank <text>:
 				stop trigger
 		if argument is "seasoned":
 			if {rank.%player%} is 4:
-				if player's balance is greater than or equal to 75000:
-					execute console command "eco take %player% 75000"
-					message "&aCongratulations, you have been promoted!"
-					execute console command "manpromote %player% seasoned"
-					add 1 to {rank.%player%}
-					play "LEVEL_UP" specifically to player with pitch 1
-					broadcast "&6%player% has just been promoted to &9Seasoned&6!"
-					wait 2 ticks
-					make player execute "fixprefix"
-					make player execute "scavenger:scavengeron"
+				if player's balance is greater than or equal to 55000:
+					if {tokens.%player%} is greater than or equal to 6:
+						execute console command "eco take %player% 55000"
+						message "&aCongratulations, you have been promoted!"
+						execute console command "manpromote %player% seasoned"
+						add 1 to {rank.%player%}
+						broadcast "&6%player% has just been promoted to &9Seasoned&6!"
+						wait 2 ticks
+						make player execute "fixprefix"
+						make player execute "scavenger:scavengeron"
+						remove 6 from {tokens.%player%}
+					else:
+						message "&cSorry, you don't have enough tokens for this!"
 				else:
 					message "&cSorry, you don't have enough money for this!"
 			else:
@@ -159,15 +202,18 @@ command /testrank <text>:
 				stop trigger
 		if argument is "noble":
 			if {rank.%player%} is 5:
-				if player's balance is greater than or equal to 125000:
-					execute console command "eco take %player% 125000"
-					message "&aCongratulations, you have been promoted!"
-					execute console command "manpromote %player% noble"
-					add 1 to {rank.%player%}
-					play "LEVEL_UP" specifically to player with pitch 1
-					broadcast "&6%player% has just been promoted to &bNoble&6!"
-					wait 2 ticks
-					make player execute "fixprefix"
+				if player's balance is greater than or equal to 110000:
+					if {tokens.%player%} is greater than or equal to 8:
+						execute console command "eco take %player% 110000"
+						message "&aCongratulations, you have been promoted!"
+						execute console command "manpromote %player% noble"
+						add 1 to {rank.%player%}
+						broadcast "&6%player% has just been promoted to &bNoble&6!"
+						wait 2 ticks
+						make player execute "fixprefix"
+						remove 8 from {tokens.%player%}
+					else:
+						message "&cSorry, you don't have enough tokens for this!"
 				else:
 					message "&cSorry, you don't have enough money for this!"
 			else:
@@ -175,15 +221,18 @@ command /testrank <text>:
 				stop trigger
 		if argument is "elite":
 			if {rank.%player%} is 6:
-				if player's balance is greater than or equal to 250000:
-					execute console command "eco take %player% 250000"
-					message "&aCongratulations, you have been promoted!"
-					execute console command "manpromote %player% elite"
-					add 1 to {rank.%player%}
-					play "LEVEL_UP" specifically to player with pitch 1
-					broadcast "&6%player% has just been promoted to &aElite&6!"
-					wait 2 ticks
-					make player execute "fixprefix"
+				if player's balance is greater than or equal to 200000:
+					if {tokens.%player%} is greater than or equal to 9:
+						execute console command "eco take %player% 200000"
+						message "&aCongratulations, you have been promoted!"
+						execute console command "manpromote %player% elite"
+						add 1 to {rank.%player%}
+						broadcast "&6%player% has just been promoted to &aElite&6!"
+						wait 2 ticks
+						make player execute "fixprefix"
+						remove 9 from {tokens.%player%}
+					else:
+						message "&cSorry, you don't have enough tokens for this!"
 				else:
 					message "&cSorry, you don't have enough money for this!"
 			else:
@@ -191,15 +240,18 @@ command /testrank <text>:
 				stop trigger
 		if argument is "champion":
 			if {rank.%player%} is 7:
-				if player's balance is greater than or equal to 500000:
-					execute console command "eco take %player% 500000"
-					message "&aCongratulations, you have been promoted!"
-					execute console command "manpromote %player% Champion"
-					add 1 to {rank.%player%}
-					play "LEVEL_UP" specifically to player with pitch 1
-					broadcast "&6%player% has just been promoted to &4Champion&6!"
-					wait 2 ticks
-					make player execute "fixprefix"
+				if player's balance is greater than or equal to 400000:
+					if {tokens.%player%} is greater than or equal to 10:
+						execute console command "eco take %player% 400000"
+						message "&aCongratulations, you have been promoted!"
+						execute console command "manpromote %player% Champion"
+						add 1 to {rank.%player%}
+						broadcast "&6%player% has just been promoted to &4Champion&6!"
+						wait 2 ticks
+						make player execute "fixprefix"
+						remove 10 from {tokens.%player%}
+					else:
+						message "&cSorry, you don't have enough tokens for this!"
 				else:
 					message "&cSorry, you don't have enough money for this!"
 			else:
@@ -208,5 +260,5 @@ command /testrank <text>:
 command /resetmyrank:
 	permission: is.op
 	trigger:
-		set {rank.%player%} to 1
+		set {rank.%player%} to 0
 		message "&aReady to go boss!"

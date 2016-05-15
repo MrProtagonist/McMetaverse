@@ -105,10 +105,10 @@ worlds:
       create_signs: true
       auto_merge: false
     wall:
-      block: '44'
       height: 64
       filling: '1:0'
       block_claimed: '44:1'
+      block: '44'
     event:
       spawn:
         breeding: false
@@ -156,10 +156,10 @@ worlds:
       create_signs: true
       auto_merge: false
     wall:
-      block: '44'
       height: 64
       filling: '1:0'
       block_claimed: '44:1'
+      block: '44'
     event:
       spawn:
         breeding: false

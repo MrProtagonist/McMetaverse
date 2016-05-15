@@ -1,0 +1,2 @@
+The nether is enabled however it is under construction.
+Inventory linking seems to bug out and we're fixing it asap.

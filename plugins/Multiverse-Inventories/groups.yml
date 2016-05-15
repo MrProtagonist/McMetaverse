@@ -1,0 +1,24 @@
+# Multiverse-Inventories Groups
+
+# To ADD, DELETE, and EDIT groups use the command /mvinv group.
+# No support will be given for those who manually edit these groups.
+groups:
+  Metacurse:
+    worlds:
+    - metacurse
+    - never_end
+    - resource_nether
+    - resource
+    - metacurse_the_end
+    - metacurse_nether
+    - metaomega_nether
+    - metaomega_the_end
+    - metaomega
+    shares:
+    - all
+  Hyperverse:
+    worlds:
+    - Hyperverse
+    - Hyperverse_nether
+    shares:
+    - all

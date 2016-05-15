@@ -950,3 +950,205 @@ could not found expected ':'
 
 ============================================================================
 
+2015-07-11 11-11
+=============================== GM ERROR LOG ===============================
+= ERROR REPORT START - 2.1.20 (Phoenix) =
+
+java.lang.IllegalArgumentException: Bad format found in 'subgroups' for user: c9b13476-64f9-4737-8143-5cf570ad5517 in file: plugins/GroupManager/worlds/metacurse/users.yml
+	at org.anjocaido.groupmanager.dataholder.WorldDataHolder.loadUsers(WorldDataHolder.java:900)
+	at org.anjocaido.groupmanager.dataholder.WorldDataHolder.loadUsers(WorldDataHolder.java:514)
+	at org.anjocaido.groupmanager.dataholder.worlds.WorldsHolder.loadWorld(WorldsHolder.java:684)
+	at org.anjocaido.groupmanager.dataholder.worlds.WorldsHolder.loadWorld(WorldsHolder.java:640)
+	at org.anjocaido.groupmanager.dataholder.worlds.WorldsHolder.initialWorldLoading(WorldsHolder.java:110)
+	at org.anjocaido.groupmanager.dataholder.worlds.WorldsHolder.initialLoad(WorldsHolder.java:100)
+	at org.anjocaido.groupmanager.dataholder.worlds.WorldsHolder.resetWorldsHolder(WorldsHolder.java:92)
+	at org.anjocaido.groupmanager.GroupManager.onEnable(GroupManager.java:181)
+	at org.anjocaido.groupmanager.GroupManager.onCommand(GroupManager.java:1827)
+	at org.bukkit.command.PluginCommand.execute(PluginCommand.java:44)
+	at org.bukkit.command.SimpleCommandMap.dispatch(SimpleCommandMap.java:141)
+	at org.bukkit.craftbukkit.v1_8_R1.CraftServer.dispatchCommand(CraftServer.java:646)
+	at net.minecraft.server.v1_8_R1.PlayerConnection.handleCommand(PlayerConnection.java:1115)
+	at net.minecraft.server.v1_8_R1.PlayerConnection.a(PlayerConnection.java:950)
+	at net.minecraft.server.v1_8_R1.PacketPlayInChat.a(PacketPlayInChat.java:26)
+	at net.minecraft.server.v1_8_R1.PacketPlayInChat.a(PacketPlayInChat.java:53)
+	at net.minecraft.server.v1_8_R1.PacketHandleTask.run(SourceFile:13)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:471)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:262)
+	at net.minecraft.server.v1_8_R1.MinecraftServer.z(MinecraftServer.java:696)
+	at net.minecraft.server.v1_8_R1.DedicatedServer.z(DedicatedServer.java:316)
+	at net.minecraft.server.v1_8_R1.MinecraftServer.y(MinecraftServer.java:634)
+	at net.minecraft.server.v1_8_R1.MinecraftServer.run(MinecraftServer.java:537)
+	at java.lang.Thread.run(Thread.java:745)
+
+============================================================================
+
+2015-08-23 15-24
+=============================== GM ERROR LOG ===============================
+= ERROR REPORT START - 2.1.20 (Phoenix) =
+
+java.lang.IllegalArgumentException: The following file couldn't pass on Parser.
+plugins/GroupManager/worlds/sandbox/groups.yml
+	at org.anjocaido.groupmanager.dataholder.WorldDataHolder.loadGroups(WorldDataHolder.java:577)
+	at org.anjocaido.groupmanager.dataholder.WorldDataHolder.loadGroups(WorldDataHolder.java:497)
+	at org.anjocaido.groupmanager.dataholder.worlds.WorldsHolder.loadWorld(WorldsHolder.java:678)
+	at org.anjocaido.groupmanager.dataholder.worlds.WorldsHolder.loadWorld(WorldsHolder.java:640)
+	at org.anjocaido.groupmanager.dataholder.worlds.WorldsHolder.loadAllSearchedWorlds(WorldsHolder.java:160)
+	at org.anjocaido.groupmanager.dataholder.worlds.WorldsHolder.initialLoad(WorldsHolder.java:104)
+	at org.anjocaido.groupmanager.dataholder.worlds.WorldsHolder.resetWorldsHolder(WorldsHolder.java:92)
+	at org.anjocaido.groupmanager.GroupManager.onEnable(GroupManager.java:181)
+	at org.anjocaido.groupmanager.GroupManager.onCommand(GroupManager.java:1827)
+	at org.bukkit.command.PluginCommand.execute(PluginCommand.java:44)
+	at org.bukkit.command.SimpleCommandMap.dispatch(SimpleCommandMap.java:141)
+	at org.bukkit.craftbukkit.v1_8_R1.CraftServer.dispatchCommand(CraftServer.java:646)
+	at net.minecraft.server.v1_8_R1.PlayerConnection.handleCommand(PlayerConnection.java:1115)
+	at net.minecraft.server.v1_8_R1.PlayerConnection.a(PlayerConnection.java:950)
+	at net.minecraft.server.v1_8_R1.PacketPlayInChat.a(PacketPlayInChat.java:26)
+	at net.minecraft.server.v1_8_R1.PacketPlayInChat.a(PacketPlayInChat.java:53)
+	at net.minecraft.server.v1_8_R1.PacketHandleTask.run(SourceFile:13)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:471)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:262)
+	at net.minecraft.server.v1_8_R1.MinecraftServer.z(MinecraftServer.java:696)
+	at net.minecraft.server.v1_8_R1.DedicatedServer.z(DedicatedServer.java:316)
+	at net.minecraft.server.v1_8_R1.MinecraftServer.y(MinecraftServer.java:634)
+	at net.minecraft.server.v1_8_R1.MinecraftServer.run(MinecraftServer.java:537)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: while scanning for the next token
+found character 	 '\t(TAB)' that cannot start any token. (Do not use \t(TAB) for indentation)
+ in 'reader', line 42, column 1:
+    	default: false
+    ^
+
+	at org.yaml.snakeyaml.scanner.ScannerImpl.fetchMoreTokens(ScannerImpl.java:420)
+	at org.yaml.snakeyaml.scanner.ScannerImpl.checkToken(ScannerImpl.java:226)
+	at org.yaml.snakeyaml.parser.ParserImpl$ParseBlockMappingValue.produce(ParserImpl.java:586)
+	at org.yaml.snakeyaml.parser.ParserImpl.peekEvent(ParserImpl.java:158)
+	at org.yaml.snakeyaml.parser.ParserImpl.checkEvent(ParserImpl.java:143)
+	at org.yaml.snakeyaml.composer.Composer.composeNode(Composer.java:132)
+	at org.yaml.snakeyaml.composer.Composer.composeMappingNode(Composer.java:231)
+	at org.yaml.snakeyaml.composer.Composer.composeNode(Composer.java:155)
+	at org.yaml.snakeyaml.composer.Composer.composeMappingNode(Composer.java:231)
+	at org.yaml.snakeyaml.composer.Composer.composeNode(Composer.java:155)
+	at org.yaml.snakeyaml.composer.Composer.composeDocument(Composer.java:122)
+	at org.yaml.snakeyaml.composer.Composer.getSingleNode(Composer.java:105)
+	at org.yaml.snakeyaml.constructor.BaseConstructor.getSingleData(BaseConstructor.java:120)
+	at org.yaml.snakeyaml.Yaml.loadFromReader(Yaml.java:481)
+	at org.yaml.snakeyaml.Yaml.load(Yaml.java:424)
+	at org.anjocaido.groupmanager.dataholder.WorldDataHolder.loadGroups(WorldDataHolder.java:572)
+	... 23 more
+
+============================================================================
+
+2015-08-23 15-27
+=============================== GM ERROR LOG ===============================
+= ERROR REPORT START - 2.1.20 (Phoenix) =
+
+java.lang.IllegalArgumentException: The following file couldn't pass on Parser.
+plugins/GroupManager/worlds/sandbox/groups.yml
+	at org.anjocaido.groupmanager.dataholder.WorldDataHolder.loadGroups(WorldDataHolder.java:577)
+	at org.anjocaido.groupmanager.dataholder.WorldDataHolder.loadGroups(WorldDataHolder.java:497)
+	at org.anjocaido.groupmanager.dataholder.worlds.WorldsHolder.loadWorld(WorldsHolder.java:678)
+	at org.anjocaido.groupmanager.dataholder.worlds.WorldsHolder.loadWorld(WorldsHolder.java:640)
+	at org.anjocaido.groupmanager.dataholder.worlds.WorldsHolder.loadAllSearchedWorlds(WorldsHolder.java:160)
+	at org.anjocaido.groupmanager.dataholder.worlds.WorldsHolder.initialLoad(WorldsHolder.java:104)
+	at org.anjocaido.groupmanager.dataholder.worlds.WorldsHolder.resetWorldsHolder(WorldsHolder.java:92)
+	at org.anjocaido.groupmanager.GroupManager.onEnable(GroupManager.java:181)
+	at org.anjocaido.groupmanager.GroupManager.onCommand(GroupManager.java:1827)
+	at org.bukkit.command.PluginCommand.execute(PluginCommand.java:44)
+	at org.bukkit.command.SimpleCommandMap.dispatch(SimpleCommandMap.java:141)
+	at org.bukkit.craftbukkit.v1_8_R1.CraftServer.dispatchCommand(CraftServer.java:646)
+	at net.minecraft.server.v1_8_R1.PlayerConnection.handleCommand(PlayerConnection.java:1115)
+	at net.minecraft.server.v1_8_R1.PlayerConnection.a(PlayerConnection.java:950)
+	at net.minecraft.server.v1_8_R1.PacketPlayInChat.a(PacketPlayInChat.java:26)
+	at net.minecraft.server.v1_8_R1.PacketPlayInChat.a(PacketPlayInChat.java:53)
+	at net.minecraft.server.v1_8_R1.PacketHandleTask.run(SourceFile:13)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:471)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:262)
+	at net.minecraft.server.v1_8_R1.MinecraftServer.z(MinecraftServer.java:696)
+	at net.minecraft.server.v1_8_R1.DedicatedServer.z(DedicatedServer.java:316)
+	at net.minecraft.server.v1_8_R1.MinecraftServer.y(MinecraftServer.java:634)
+	at net.minecraft.server.v1_8_R1.MinecraftServer.run(MinecraftServer.java:537)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: while scanning for the next token
+found character 	 '\t(TAB)' that cannot start any token. (Do not use \t(TAB) for indentation)
+ in 'reader', line 43, column 1:
+    	permissions:
+    ^
+
+	at org.yaml.snakeyaml.scanner.ScannerImpl.fetchMoreTokens(ScannerImpl.java:420)
+	at org.yaml.snakeyaml.scanner.ScannerImpl.checkToken(ScannerImpl.java:226)
+	at org.yaml.snakeyaml.parser.ParserImpl$ParseBlockMappingKey.produce(ParserImpl.java:558)
+	at org.yaml.snakeyaml.parser.ParserImpl.peekEvent(ParserImpl.java:158)
+	at org.yaml.snakeyaml.parser.ParserImpl.checkEvent(ParserImpl.java:143)
+	at org.yaml.snakeyaml.composer.Composer.composeMappingNode(Composer.java:226)
+	at org.yaml.snakeyaml.composer.Composer.composeNode(Composer.java:155)
+	at org.yaml.snakeyaml.composer.Composer.composeMappingNode(Composer.java:231)
+	at org.yaml.snakeyaml.composer.Composer.composeNode(Composer.java:155)
+	at org.yaml.snakeyaml.composer.Composer.composeMappingNode(Composer.java:231)
+	at org.yaml.snakeyaml.composer.Composer.composeNode(Composer.java:155)
+	at org.yaml.snakeyaml.composer.Composer.composeDocument(Composer.java:122)
+	at org.yaml.snakeyaml.composer.Composer.getSingleNode(Composer.java:105)
+	at org.yaml.snakeyaml.constructor.BaseConstructor.getSingleData(BaseConstructor.java:120)
+	at org.yaml.snakeyaml.Yaml.loadFromReader(Yaml.java:481)
+	at org.yaml.snakeyaml.Yaml.load(Yaml.java:424)
+	at org.anjocaido.groupmanager.dataholder.WorldDataHolder.loadGroups(WorldDataHolder.java:572)
+	... 23 more
+
+============================================================================
+
+2015-08-23 15-28
+=============================== GM ERROR LOG ===============================
+= ERROR REPORT START - 2.1.20 (Phoenix) =
+
+java.lang.IllegalArgumentException: The following file couldn't pass on Parser.
+plugins/GroupManager/worlds/sandbox/groups.yml
+	at org.anjocaido.groupmanager.dataholder.WorldDataHolder.loadGroups(WorldDataHolder.java:577)
+	at org.anjocaido.groupmanager.dataholder.WorldDataHolder.loadGroups(WorldDataHolder.java:497)
+	at org.anjocaido.groupmanager.dataholder.worlds.WorldsHolder.loadWorld(WorldsHolder.java:678)
+	at org.anjocaido.groupmanager.dataholder.worlds.WorldsHolder.loadWorld(WorldsHolder.java:640)
+	at org.anjocaido.groupmanager.dataholder.worlds.WorldsHolder.loadAllSearchedWorlds(WorldsHolder.java:160)
+	at org.anjocaido.groupmanager.dataholder.worlds.WorldsHolder.initialLoad(WorldsHolder.java:104)
+	at org.anjocaido.groupmanager.dataholder.worlds.WorldsHolder.resetWorldsHolder(WorldsHolder.java:92)
+	at org.anjocaido.groupmanager.GroupManager.onEnable(GroupManager.java:181)
+	at org.anjocaido.groupmanager.GroupManager.onCommand(GroupManager.java:1827)
+	at org.bukkit.command.PluginCommand.execute(PluginCommand.java:44)
+	at org.bukkit.command.SimpleCommandMap.dispatch(SimpleCommandMap.java:141)
+	at org.bukkit.craftbukkit.v1_8_R1.CraftServer.dispatchCommand(CraftServer.java:646)
+	at net.minecraft.server.v1_8_R1.PlayerConnection.handleCommand(PlayerConnection.java:1115)
+	at net.minecraft.server.v1_8_R1.PlayerConnection.a(PlayerConnection.java:950)
+	at net.minecraft.server.v1_8_R1.PacketPlayInChat.a(PacketPlayInChat.java:26)
+	at net.minecraft.server.v1_8_R1.PacketPlayInChat.a(PacketPlayInChat.java:53)
+	at net.minecraft.server.v1_8_R1.PacketHandleTask.run(SourceFile:13)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:471)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:262)
+	at net.minecraft.server.v1_8_R1.MinecraftServer.z(MinecraftServer.java:696)
+	at net.minecraft.server.v1_8_R1.DedicatedServer.z(DedicatedServer.java:316)
+	at net.minecraft.server.v1_8_R1.MinecraftServer.y(MinecraftServer.java:634)
+	at net.minecraft.server.v1_8_R1.MinecraftServer.run(MinecraftServer.java:537)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: while scanning for the next token
+found character 	 '\t(TAB)' that cannot start any token. (Do not use \t(TAB) for indentation)
+ in 'reader', line 43, column 1:
+    	permissions:
+    ^
+
+	at org.yaml.snakeyaml.scanner.ScannerImpl.fetchMoreTokens(ScannerImpl.java:420)
+	at org.yaml.snakeyaml.scanner.ScannerImpl.checkToken(ScannerImpl.java:226)
+	at org.yaml.snakeyaml.parser.ParserImpl$ParseBlockMappingKey.produce(ParserImpl.java:558)
+	at org.yaml.snakeyaml.parser.ParserImpl.peekEvent(ParserImpl.java:158)
+	at org.yaml.snakeyaml.parser.ParserImpl.checkEvent(ParserImpl.java:143)
+	at org.yaml.snakeyaml.composer.Composer.composeMappingNode(Composer.java:226)
+	at org.yaml.snakeyaml.composer.Composer.composeNode(Composer.java:155)
+	at org.yaml.snakeyaml.composer.Composer.composeMappingNode(Composer.java:231)
+	at org.yaml.snakeyaml.composer.Composer.composeNode(Composer.java:155)
+	at org.yaml.snakeyaml.composer.Composer.composeMappingNode(Composer.java:231)
+	at org.yaml.snakeyaml.composer.Composer.composeNode(Composer.java:155)
+	at org.yaml.snakeyaml.composer.Composer.composeDocument(Composer.java:122)
+	at org.yaml.snakeyaml.composer.Composer.getSingleNode(Composer.java:105)
+	at org.yaml.snakeyaml.constructor.BaseConstructor.getSingleData(BaseConstructor.java:120)
+	at org.yaml.snakeyaml.Yaml.loadFromReader(Yaml.java:481)
+	at org.yaml.snakeyaml.Yaml.load(Yaml.java:424)
+	at org.anjocaido.groupmanager.dataholder.WorldDataHolder.loadGroups(WorldDataHolder.java:572)
+	... 23 more
+
+============================================================================
+

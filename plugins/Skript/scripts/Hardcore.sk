@@ -37,39 +37,39 @@ command /sethyper:
 		message "&aSet hyperverse spawn!"
 on break:
 	player does not have the permission "essentials.socialspy"
-	player is in world "Hyperverse"
+	player's world is "Hyperverse"
 	distance between player and {hyper} is less than 100:
 		message "&cYou must go further away from spawn to break or place!"
 		cancel event
 on place:
 	player does not have the permission "essentials.socialspy"
-	player is in world "Hyperverse"
+	player's world is "Hyperverse"
 	distance between player and {hyper} is less than 100:
 		message "&cYou must go further away from spawn to break or place!"
 		cancel event
 on damage:
-	victim is in world "Hyperverse"
+	victim's world is "Hyperverse"
 	victim is a player
 	attacker is a player
 	distance between attacker and {hyper} is less than 100:
 		cancel event
 		send "Cannot PVP in the spawn area!" to attacker
 on death:
-	player is in world "Hyperverse"
+	player's world is "Hyperverse"
 	if {bed.%player%} is set:
 		set {bedspawn.%player%} to true
 	else:
 		set {bedspawn.%player%} to false
 on place of ender chest:
-	player is in world "Hyperverse"
+	player's world is "Hyperverse"
 	cancel event
 	message "&cThis item is disabled in this world!"
 on rightclick on ender chest:
-	player is in world "Hyperverse"
+	player's world is "Hyperverse"
 	cancel event
 	message "&cThis item is disabled in this world!"
 on craft of ender chest:
-	player is in world "Hyperverse"
+	player's world is "Hyperverse"
 	cancel event
 	message "&cThis item is disabled in this world!"
 on respawn:
@@ -82,15 +82,23 @@ on respawn:
 		wait 1 tick
 		teleport player to {hyper}
 	delete {bedspawn.%player%}
+on command "/ec":
+	player's world is "Hyperverse"
+	cancel event
+	message "&cThis command is not allowed in this world!"
+on command "/vc":
+	player's world is "Hyperverse"
+	cancel event
+	message "&cThis command is not allowed in this world!"
 on command:
-	player is in world "Hyperverse"
+	player's world is "Hyperverse"
 	player does not have the permission "is.op"
 	command is not "bed" or "spawn" or "meta" or "hyper" or "list" or "login" or "claimslist" or "transferclaim" or "trust" or "untrust" or "buyclaimblocks" or "sellclaimblocks" or "permissiontrust" or "trustlist" or "accesstrust" or "containertrust" or "abandonclaim" or "msg" or "m" or "r" or "reply" or "message" or "mail" or "ping" or "me" or "suicide" or "ticket" or "replyticket" or "tickets" or "a"
 	cancel event
 	message "&cThis command is not allowed in this world!"
 command /bed:
 	trigger:
-		if player is in world "Hyperverse":
+		if player's world is "Hyperverse":
 			if {bed.%player%} is set:
 				teleport player to {bed.%player%}
 				wait 3 ticks
@@ -102,7 +110,7 @@ command /bed:
 			message "&cYou must be in the Hyperverse before using this command!"
 			stop
 on rightclick:
-	player is in world "Hyperverse"
+	player's world is "Hyperverse"
 	event-block is bed
 	player can build at location of event-block
 	set {bed.%player%} to location of player

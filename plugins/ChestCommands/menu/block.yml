@@ -62,12 +62,12 @@ divider1:
   POSITION-X: 1
   POSITION-Y: 1
   DATA-VALUE: 0
-CrafioShop:
-  COMMAND: 'shopwarp 20'
-  NAME: '&d[p] &aSaar and Crafts Woolrich &d[p]'
+saariebaarieshop:
+  COMMAND: 'shopwarp 55'
+  NAME: '&d[p] &aSarah`s Quartz Shop &d[p]'
   LORE:
-    - '&f&oThis is Woolrich, the best wool there is to find.'
-  ID: 35
+    - '&f&oYou can buy quartz here.'
+  ID: 406
   KEEP-OPEN: false
   POSITION-X: 2
   POSITION-Y: 1
@@ -79,16 +79,7 @@ divider2:
   POSITION-X: 3
   POSITION-Y: 1
   DATA-VALUE: 0
-MistiShop:
-  COMMAND: 'shopwarp 22'
-  NAME: '&d[p] &aMistis Shop &d[p]'
-  LORE:
-    - '&f&oAt Mistis Shop we mainly sell wool and a few other items at affordable prices!'
-  ID: 35
-  KEEP-OPEN: false
-  POSITION-X: 1
-  POSITION-Y: 2
-  DATA-VALUE: 11
+
 divider3:
   NAME: ''
   ID: 160
@@ -96,6 +87,7 @@ divider3:
   POSITION-X: 5
   POSITION-Y: 1
   DATA-VALUE: 0
+
 divider4:
   NAME: ''
   ID: 160

@@ -1,0 +1,167 @@
+RandomSK javascript guide.
+
+Warnings/Disclaimer:
+	* My implementation of Javascript into Skript may have some limits.
+	* I am not aware of the performance of this.
+	* If you are getting errors you are most likely doing something wrong in Javascript or when you call your javascript in Skript
+	  or perhaps because of my implementation you can't do it that way or because of a problem in my implementation.
+	* Only test your code on a test server and confirm there are no errors before using it on a real server.
+	* I am not an expert at javascript so this guide might be lacking.
+	  
+This is a really powerful and raw tool.
+Having some knowledge about Javascript and/or Java is great here. 
+If you really are clueless about them I suggest learning a bit. Since you will most likely have errors getting thrown and don't understand what too do.
+
+
+
+Javascript features:
+	
+	Effects:
+		evaluate [java]script %string% [[with] arguments %~objects%]
+		load javascript from %string%
+		(renew|restart) javascript engine
+	Expressions:
+		[extended] execute [java]script %string% [[with] arguments %~objects%]
+
+Important info!:
+	The "[[with] arguments %~objects%]" is a bit special.
+	The "~" in the "%~objects%" forces the objects put there to be expressions or (normal or list)variable.
+	Literals such as numbers, booleans or other classinfo that has be parsed to create a object doesn't work to put there.
+	Strings work fine there since they don't have to be parsed.
+	Example on what you can't do:
+		execute javascript "someMathFunction" arguments (10 and 25)
+		execute javascript "someBooleanFunction" arguments true
+	Example on how you should do it:
+		set {_list::*} to (10 and 25)
+		execute javascript "someMathFunction" arguments {_list::*}
+		set {_bool} to true
+		execute javascript "someBooleanFunction" arguments {_bool}
+	Reason why I force this is because of a problem with literals and %objects%. 
+	The literal number '10' becomes unparsed and will error when my code executes. https://github.com/Njol/Skript/blob/master/src/main/java/ch/njol/skript/lang/UnparsedLiteral.java#L43
+	I dunno if I have explained it good. 
+	You might not understand this right now but it's an good idea to put all your arguments in a list and using that list.
+	
+
+Evaluate effect:
+	Pattern: "evaluate [java]script %string% [[with] arguments %~objects%]"
+	Example: 
+		evaluate javascript "print('Hello')" #Executes the print function. Prints Hello in the console.
+		evaluate javascript "function printHello() { print('Hello') }" #Creates and loads the function inside the string and can be used after.
+		evaluate javascript "printHello()" #Executes the created function above. Prints Hello in the console.
+		evaluate javascript "print" with arguments "Hello"
+	
+Load Javascript Effect:
+	Info: You should store javascripts(*.js files) inside "plugins/RandomSK/javascripts"
+	Pattern: "load javascript from %string%"
+	Example:
+		#Loads the javascript from ScriptTest.js and overwrites the old functions that were loaded from the same file before.
+		on script load:
+			load javascript from "ScriptTest.js"
+		
+Renew Engine Effect:
+	Info: This renews the engine and discards all the previous loaded functions from the above method or created through the "Evaluate" effect or "Execute" expression.
+	Pattern: "(renew|restart) javascript engine"
+	Example:
+		#Renews the engine and loads the ScriptTest.js.
+		on script load:
+			renew javascript engine
+			load javascript from "ScriptTest.js"
+	Note: Renewing is not needed if you don't want to. Read the Example comment on "Load Javascript Effect".
+	
+Execute Expression:
+	Pattern:
+		[extended] execute [java]script %string% [[with] arguments %~objects%]
+	Info: 
+		The "extended" part is similar to my metadata expression.
+		If you expect the executed javascript to return multiple values then use the "extended" prefix.
+		Take note this works exactly the same as the Evaluate effect except that this returns values.
+	Example:
+		#I have these two functions in a .js file loaded previously in the on script load.
+		
+		function times2(i) { 
+			return i * 2; #returns single value
+		}
+		
+		function lolxd(s) { 
+			var lol = 'lol';
+			return [lol, s]; #returns multiple values
+		}
+		
+		function stringplus(stringlol, stringxd) { 
+			return stringlol + stringxd;
+		}
+	
+		#Skript part:
+		
+		#If you read the "Important info!" a bit above you should understand why I set the 5 to a variable before using it.
+		set {_five} to 5 
+		set {_ten} to execute javascript "times2" with arguments {_five}
+		message "%{_ten}%" #Messages 10.
+		
+		set {_values::*} to extended execute javascript "lolxd" with arguments "xD"
+		#In this case you can also do the below since the argument should be a string.
+		set {_values::*} to extended execute javascript "lolxd('xD')"
+		message "%{_values::*}%" #Messages Lol and xD.
+		
+		#Take note here that there are multiple arguments in stringplus. 
+		#Then you have to supply the arguments in the right order.
+		#We put "LOL" first because we want it to be "stringlol" in the javascript and "XD" for the "stringxd"
+		set {_value} to execute javascript "stringplus" with arguments ("LOL" and "XD")
+		
+	
+About the Javascript engine and the Evaluate and Execute features.
+I basicly think of the engine as a commandline where you can define functions or variables.
+And the Evaluate and Execute features are where you write to the commandline.
+
+Variables Example:
+	evaluate javascript "var two = 1+1;" #defines the var "two" to be 1+1 which is 2?
+	set {_two} to execute javascript "two" #gets the var "two"
+	message "%{_two}%"
+	
+Function Example(Is the same as an another example):
+	evaluate javascript "function printHello() { print('Hello') }" #defines function inside the string and can be used anytime after.
+	evaluate javascript "printHello()" #Executes the defined function above. Prints Hello in the console.
+	
+You can reuse these functions or variables anytime without actually defining them again.
+These variables/functions should be kept/stored until you use the "renew" effect or stop the server. 
+	
+	
+	
+	
+Now then time to explain the "powerful" part of this.
+You can execute java code. For example the Bukkit API which I will be using in a example. 
+You need to have some knowledge about Java/Bukkit API. Understanding how to look through the Bukkit API(https://hub.spigotmc.org/javadocs/spigot/) javadocs can be great here.
+If you are doing something wrong, it will error. 
+And I don't think I will answer all your "why does this javascript error/throw warnings" posts in the RandomSK thread because that would usually mean you are not ready for this and are doing something wrong in the javascript or during the execution.
+
+
+Basic Bukkit API example:
+
+#JavaScript
+function createInventory(size, title){
+	var Bukkit = Java.type('org.bukkit.Bukkit'); #We can access static methods with this for example.
+	var inventory = Bukkit.createInventory(null, size, title); #Accesses the static method Bukkit.createInventory(...)
+	return inventory;
+}
+#Skript
+set {_args::*} to 10 and "Hello"
+set {_inventory} to execute javascript "createInventory" with arguments {_args::*}
+#Now you have a new inventory with no owner. Works the same/similar to SkQueries BlankInventories.
+
+#JavaScript 
+function creeperSetPowered(creeper, b){
+	if(creeper != null && b != null){ #Check to see so the creeper or b is not null.
+		if(creeper instanceof (Java.type('org.bukkit.entity.Creeper'))) #Ensure that the creeper object is actually a creeper and not any other entity or something.
+			creeper.setPowered(b); #Makes the creeper powered if true and turns off if powered if it's false(if b is not a boolean it will error).
+	}
+}
+#Skript
+set {_args::*} to targeted entity and true
+evaluate javascript "creeperSetPowered" with arguments {_args::*}
+
+
+
+
+
+Here you are. If you feel ready. Set it to true. Don't write anything below this.
+Enable Javascript: false

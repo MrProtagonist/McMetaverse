@@ -1,5 +1,5 @@
 CountdownLength: 5
-Distance: 5000000000.0
+Distance: 5.0E9
 Messages:
   error-not-involved: '&bTrading> &7You are currently not involved in any trades'
   error-trade-already-accepted: '&bTrading> &7The trade has already been accepted'

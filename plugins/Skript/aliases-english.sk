@@ -1386,10 +1386,13 @@ default aliases:
 
 
 	# -- fish --
-	[<any>] fish¦es = 349, 350
-	fish item¦s = 349
+	[any] fish = 349-350
+	raw salmon = 349:1
+	clownfish = 349:2
 	raw fish¦es = 349
+	pufferfish = 349:3
 	cooked fish¦es = 350
+	cooked salmon = 350:1
 
 
 	# -- dyes: see wool & dyes
@@ -1522,6 +1525,9 @@ default aliases:
 	{extended potion} {splash potion} {potion effect} potion {potion tier} item¦s = 373
 
 
+	# -- red sand --
+	red sand = 12:1
+	
 	# -- spider eye & fermented spider eye --
 	spider eye¦s = 375
 	fermented spider eye¦s = 376
@@ -1585,6 +1591,7 @@ default aliases:
 		ocelot @an = :98
 		iron golem @an = :99
 		horse = :100
+		rabbit = :101
 		villager = :120
 		ender crystal = :200
 
@@ -1689,3 +1696,49 @@ default aliases:
 	ward [music] disc¦s = 2265
 	11-disc¦s = 2266
 	wait [music] disc¦s = 2267
+
+
+
+	slime block = 165
+	barrier = 166
+	iron trapdoor = 167
+	prismarine = 168
+	sea lantern = 169
+	standing banner = 176
+	wall banner = 177
+	daylight detector inverted = 178
+	red sandstone = 179
+	red sandstone stairs = 180
+	red sandstone double slab = 181
+	red sandstone slab = 182
+	spruce fence gate = 183
+	birch fence gate = 184
+	jungle fence gate = 185
+	dark oak fence gate = 186
+	acacia fence gate = 187
+	spruce fence = 188
+	birch fence = 189
+	jungle fence = 190
+	dark oak fence = 191
+	acacia fence = 192
+	spruce door block = 193
+	birch door block = 194
+	jungle door block = 195
+	acacia door block = 196
+	dark oak door block = 197
+	prismarine shard = 409
+	prismarine crystals = 410
+	rabbit = 411
+	cooked rabbit = 412
+	rabbit stew = 413
+	rabbit foot = 414
+	rabbit hide = 415
+	armo[u]r stand = 416
+	mutton = 423
+	cooked mutton = 424
+	banner = 425
+	spruce door = 427
+	birch door = 428
+	jungle door = 429
+	acacia door = 430
+	dark oak door = 431

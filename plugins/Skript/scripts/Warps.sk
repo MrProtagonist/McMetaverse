@@ -1,5 +1,5 @@
-script options:
-    $ developer mode
+#script options:
+#    $ developer mode
 command /warpeffect [<text>]:
 	permission: skript.warpeffect
 	trigger:
@@ -26,6 +26,16 @@ command /particles:
 	trigger:
 		message "&eParticles:&a huge explosion&f,&a large explode&f,&a fireworks spark&f,&a bubble&f,&a suspended&f,&a depth suspend&f,&a town aura&f,&a crit&f,&a magic crit&f,&a smoke&f,&a mob spell&f,&a mob spell ambient&f,&a spell&f,&a instant spell&f,&a witch magic&f,&a note&f,&a portal&f,&a enchantment table&f,&a explode&f,&a flame&f,&a lava&f,&a footstep&f,&a splash&f,&a large smoke&f,&a cloud&f,&a red dust&f,&a snowball poof&f,&a drip water&f,&a drip lava&f,&a snow shovel&f,&a slime&f,&a heart&f,&a angry villager and happy villager"
 
+command /setminigames:
+	description: Set location for minigames area.
+	permission: essentials.socialspy
+	trigger:
+		set {minigames} to location of player
+		message "<lime>Minigame warp point set!"
+		stop
+command /minigames:
+	trigger:
+		teleport player to {minigames}
 command /setss:
 	description: Set location for perm shop.
 	permission: essentials.socialspy
@@ -49,7 +59,7 @@ on player teleport:
 				wait 1 tick
 		else:
 			loop 12 times:
-				spawn 10 of mob spell data 1 offset with 1, 1, 1 at location of player
+#				spawn 10 of mob spell data 1 offset with 1, 1, 1 at location of player
 				wait 1 tick
 command /consolewarp <player>:
 	description: The warp effects handler
@@ -63,42 +73,74 @@ command /consolewarp <player>:
 					wait 1 tick
 			else:
 				loop 33 times:
-					spawn 10 of mob spell data 1 offset with 1, 1, 1 at location of arg
+#					spawn 10 of mob spell data 1 offset with 1, 1, 1 at location of arg
 					wait 1 tick
 		if arg does not have permission "skript.warpeffect":
 			loop 33 times:
-				spawn 20 of mob spell data 1 offset with 1, 1, 1 at location of arg
+#				spawn 20 of mob spell data 1 offset with 1, 1, 1 at location of arg
 				wait 1 tick
-		spawn 12 of huge explosion data 1 offset with 2, 2, 2 at location of arg
+#		spawn 12 of huge explosion data 1 offset with 2, 2, 2 at location of arg
 		wait 5 ticks
 command /ss:
 	description: Warp to the perm shop.
 	trigger:
 		set {lastwarp.%player%} to now
 #		push the player upwards at speed 10
-		execute console command "/playsound random.explode %player% ~0 ~0 ~0 20 50"
+#		execute console command "/playsound random.explode %player% ~0 ~0 ~0 20 50"
 		execute console command "consolewarp %player%"
 		wait 38 ticks
 		teleport player to {sk.ss}
 		message "&a&oYou are now at the Server Shop."
 on damage:
-	if difference between {lastwarp.%player%} and now is less than 3 seconds:
+	if difference between {lastwarp.%victim%} and now is less than 3 seconds:
 		cancel event
 command /sandbox:
 	trigger:
-		execute console command "/playsound random.explode %player% ~0 ~0 ~0 20 50"
 		execute console command "consolewarp %player%"
 		wait 38 ticks
 		message "&a&oYou are now in The Sandbox."
-		teleport player to {sandbox}
-on command "plot claim" or "plot auto" or "plots":
-	player is in the world "sandbox"
-	if {rank.%player%} is less than 5:
-		message "&cYou must be the Seasoned rank to claim a plot here!"
-		cancel event
+		if {sandbox.%player%.certify} is not set:
+			set {sandbox.%player%.certify} to false
+#		teleport player to {sandbox}
+#=======Premium or Seasoned check========#
+		if player has permission "is.premium":
+			execute console command "mvtp %player% sandbox"
+			if player does not have permission "plots.claim":
+				wait 2 ticks
+				execute console command "manselect sandbox"
+				wait 2 ticks
+				execute console command "manpromote %player% certified"
+				wait 2 ticks
+				execute console command "manselect metacurse"
+				if {sandbox.%player%.certify} is true:
+					set {sandbox.%player%.certify} to false
+				message "&aYou can now claim and build in up to 3 plots in sandbox!"
+		else:
+			execute console command "mvtp %player% sandbox"
+			wait 2 ticks
+			if {rank.%player%} is greater than 4:
+				if player does not have permission "plots.claim":
+					wait 2 ticks
+					execute console command "manselect sandbox"
+					wait 2 ticks
+					execute console command "manpromote %player% certified"
+					wait 2 ticks
+					execute console command "manselect metacurse"
+					if {sandbox.%player%.certify} is true:
+						set {sandbox.%player%.certify} to false
+					message "&aYou can now claim and build in up to 3 plots in sandbox!"
+			else:
+				if {sandbox.%player%.certify} is false:
+					wait 2 ticks
+					execute console command "manselect sandbox"
+					wait 2 ticks
+					execute console command "mandemote %player% default"
+					wait 2 ticks
+					execute console command "manselect metacurse"
+					set {sandbox.%player%.certify} to true
 command /spawn:
 	trigger:
-		execute console command "/playsound random.explode %player% ~0 ~0 ~0 20 50"
+#		execute console command "/playsound random.explode %player% ~0 ~0 ~0 20 50"
 		execute console command "consolewarp %player%"
 		wait 38 ticks
 		message "&a&oYou are now at Spawn"

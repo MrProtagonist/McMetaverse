@@ -1,0 +1,40 @@
+users:
+  0c89e771-4db1-4be1-bced-3c40c04ee7d5:
+    lastname: dinoppar
+    group: Admin
+    subgroups:
+    - Builder
+    permissions: []
+    info:
+      prefix: '§f[§3Architect§f] '
+      suffix: ' §f[§3Snorlax§f]'
+  612c7aaa-dbb0-40f0-916f-4de7497e0d4d:
+    lastname: underworldlord
+    group: Moderator
+    subgroups: []
+    permissions: []
+  d5888bee-0de7-498e-9f93-39b9038f7ef9:
+    lastname: EvilLittleThing
+    group: Admin
+    subgroups: []
+    permissions: []
+  ElgarL:
+    group: Moderator
+    subgroups: []
+    permissions:
+    - groupmanager.noofflineperms
+  f01a2307-e90d-4503-9f19-640806fa8808:
+    lastname: MrProtagonist
+    group: Owner
+    subgroups: []
+    permissions: []
+  KHobbits:
+    group: Moderator
+    subgroups: []
+    permissions:
+    - groupmanager.noofflineperms
+  snowleo:
+    group: Builder
+    subgroups: []
+    permissions:
+    - groupmanager.noofflineperms

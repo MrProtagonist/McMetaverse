@@ -46,66 +46,69 @@ command /sharpshooter:
 		message "&a&oWelcome to &b&oSharp Shooter&a&o!"
 		message "&6Press the button by the arena to play!"
 		
-command /playsharpshooter:
+command /playsharpshooter <player>:
 	trigger:
 		if {archery.busy} is not set:
-			if player's inventory contains bow and arrow:
-				set {archery.busy} to player
-				message "&f[&aARCHERY&f] &eHigh score is %{archery.top.score}% set by %{archery.top.player}%"
-				teleport player to {archery.spawn}
-				set {archery.%player%} to 0
-				set {archery.countdown} to true
-				set {archery.%player%.sneak} to now
-				message "&aStarting in 5 seconds."
-				set {archery.level} to 1
-				player has the permission "essentials.fly.self":
-					execute console command "fly off %player%"
-				player is op:
-					execute console command "god off %player%"
-					execute console command "gms %player%"
-				execute console command "tm msg %player% &aGet Ready!"
-				wait 5 real seconds
-				execute console command "tm msg %player% &aStart!"
-				set {_randomnum} to a random integer between 1 and {archery.total}
-				set block at {archery.list::%{_randomnum}%} to glowstone
-				set {_distance} to distance between shooter and {archery.list::%{_randomnum}%}
-				execute console command "tm amsg %shooter% &aTarget Distance: &e%{_distance}% blocks away"
-				set {archery.countdown} to false
-				set {archery.going} to true
-				wait 60 real seconds
-				execute console command "tm msg %player% &6TIME UP!"
-				teleport player to {archery.spec}
-				teleport player to {archery.spec}
-				delete {archery.busy}
-				play "LEVEL_UP" specifically to player with pitch 1
-				loop all blocks in radius 50 of {archery.blockspot}:
-					loop-block is glowstone
-					set loop-block to air
-				wait 3 real seconds
-				set {_pay} to {archery.%player%} * 5
-				execute console command "tm msg %player% &6%{archery.%player%}% points"
-				execute console command "eco give %player% %{_pay}%"
-				if {archery.%player%} is greater than {archery.top.score}:
-					wait 2 real seconds
-					broadcast "&f[&aSERVER&f] &6%player% &ajust set the &aHIGH SCORE for &a with &6%{archery.%player%}% points&a!"
-					play "LEVEL_UP" specifically to player with pitch 1
-					set {archery.top.score} to {archery.%player%}
-					set {archery.top.player} to player
-				else:
-					broadcast "&f[&aSERVER&f] &6%player% &ajust got &6%{archery.%player%}% points&a in &b&oSharp Shooter&a!"
-				set {archery.going} to false
-				delete {archery.%player%}
+			set {archery.busy} to arg
+			send "&f[&aARCHERY&f] &eHigh score is %{archery.top.score}% set by %{archery.top.arg}%" to arg
+			teleport arg to {archery.spawn}
+			set {archery.%arg%} to 0
+			set {archery.countdown} to true
+			set {archery.%arg%.sneak} to now
+			send "&aStarting in 5 seconds." to arg
+			set {archery.level} to 1
+			execute console command "fly %arg% off"
+			arg is op:
+				execute console command "god off %arg%"
+				execute console command "gms %arg%"
+			execute console command "give %arg% bow 1"
+			execute console command "give %arg% arrow 64"
+			execute console command "give %arg% arrow 64"
+			execute console command "tm msg %arg% &aGet Ready!"
+			execute console command "give %arg% "
+			wait 5 real seconds
+			execute console command "tm msg %arg% &aStart!"
+			set {_randomnum} to a random integer between 1 and {archery.total}
+			set block at {archery.list::%{_randomnum}%} to glowstone
+			set {_distance} to distance between shooter and {archery.list::%{_randomnum}%}
+			execute console command "tm amsg %shooter% &aTarget Distance: &e%{_distance}% blocks away"
+			set {archery.countdown} to false
+			set {archery.going} to true
+			wait 60 real seconds
+			execute console command "tm msg %arg% &6TIME UP!"
+			teleport arg to {archery.spec}
+			teleport arg to {archery.spec}
+			delete {archery.busy}
+			play "LEVEL_UP" specifically to arg with pitch 1
+			loop all blocks in radius 50 of {archery.blockspot}:
+				loop-block is glowstone
+				set loop-block to air
+			wait 3 real seconds
+			set {_pay} to {archery.%arg%} * 5
+			execute console command "tm msg %arg% &6%{archery.%arg%}% points"
+			execute console command "eco give %arg% %{_pay}%"
+			if {archery.%arg%} is greater than {archery.top.score}:
+				wait 2 real seconds
+				broadcast "&f[&aSERVER&f] &6%arg% &ajust set the &aHIGH SCORE for &a with &6%{archery.%arg%}% points&a!"
+				play "LEVEL_UP" specifically to arg with pitch 1
+				set {archery.top.score} to {archery.%arg%}
+				set {archery.top.arg} to arg
+			clear the argument's inventory
+			loop {archery.list::*}:
+				set block at location of loop-value to air
+				wait 1 tick
 			else:
-				message "&cYou need to bring your own supplies!"
-				stop
+				broadcast "&f[&aSERVER&f] &6%arg% &ajust got &6%{archery.%arg%}% points&a in &b&oSharp Shooter&a!"
+			set {archery.going} to false
+			delete {archery.%arg%}
 		else:
-			message "&cSomebody is already in the range! Teleporting you to spectator area."
-			teleport player to {archery.spec}
+			send "&cSomebody is already in the range! Teleporting you to spectator area." to arg
+			teleport arg to {archery.spec}
 			stop
 
 on jump:
 	player is {archery.busy}
-	if {archery.level} is 3:
+	if {archery.level} is 2:
 		message "&cYou are already as high as you can go!"
 		stop
 	teleport player to location of block 5 meters above player
@@ -138,6 +141,7 @@ command /archeryscan:
 			add location of loop-block to {archery.list::*}
 			set loop-block to air
 			add 1 to {_counter}
+			wait 1 tick
 		broadcast "&aAdded %{_counter}% possible archery target locations!"
 on command:
 	player is {archery.busy}

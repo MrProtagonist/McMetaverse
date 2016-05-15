@@ -1,3 +1,6 @@
+# Use a YAML editor like NotepadPlusPlus to edit this file.  
+# After editing, back up your changes before reloading the server in case you made a syntax error.  
+# Use dollar signs ($) for formatting codes, which are documented here: http://minecraft.gamepedia.com/Formatting_codes
 Messages:
   RespectingClaims:
     Text: Now respecting claims.
@@ -70,7 +73,7 @@ Messages:
   BasicClaimsMode:
     Text: Returned to basic claim creation mode.
   SubdivisionMode:
-    Text: Subdivision mode.  Use your shovel to create subdivisions in your existing claims.  Use /basicclaims to exit.
+    Text: Subdivision mode.  Use your axe to create subdivisions in your existing claims.  Use /basicclaims to exit.
   SubdivisionVideo2:
     Text: 'Click for Subdivision Help: {0}'
     Notes: 0:video URL
@@ -177,7 +180,7 @@ Messages:
   AutomaticClaimNotification:
     Text: This chest and nearby blocks are protected from breakage and theft.
   UnprotectedChestWarning:
-    Text: This chest is NOT protected.  Consider using a golden shovel to expand an existing claim or to create a new one.
+    Text: This chest is NOT protected.  Consider using a golden axe to expand an existing claim or to create a new one.
   ThatPlayerPvPImmune:
     Text: You can't injure defenseless players.
   CantFightWhileImmune:
@@ -185,8 +188,8 @@ Messages:
   NoDamageClaimedEntity:
     Text: That belongs to {0}.
     Notes: '0: owner name'
-  ShovelBasicClaimMode:
-    Text: Shovel returned to basic claims mode.
+  axeBasicClaimMode:
+    Text: axe returned to basic claims mode.
   RemainingBlocks:
     Text: You may claim up to {0} more blocks.
     Notes: '0: remaining blocks'
@@ -228,8 +231,8 @@ Messages:
   BlockClaimed:
     Text: That block has been claimed by {0}.
     Notes: '0: claim owner'
-  SiegeNoShovel:
-    Text: You can't use your shovel tool while involved in a siege.
+  SiegeNoaxe:
+    Text: You can't use your axe tool while involved in a siege.
   RestoreNaturePlayerInChunk:
     Text: Unable to restore.  {0} is in that chunk.
     Notes: '0: nearby player'
@@ -249,24 +252,24 @@ Messages:
   ResizeFailOverlap:
     Text: Can't resize here because it would overlap another nearby claim.
   ResizeStart:
-    Text: Resizing claim.  Use your shovel again at the new location for this corner.
+    Text: Resizing claim.  Use your axe again at the new location for this corner.
   ResizeFailOverlapSubdivision:
-    Text: You can't create a subdivision here because it would overlap another subdivision.  Consider /abandonclaim to delete it, or use your shovel at a corner to resize it.
+    Text: You can't create a subdivision here because it would overlap another subdivision.  Consider /abandonclaim to delete it, or use your axe at a corner to resize it.
   SubdivisionStart:
-    Text: Subdivision corner set!  Use your shovel at the location for the opposite corner of this new subdivision.
+    Text: Subdivision corner set!  Use your axe at the location for the opposite corner of this new subdivision.
   CreateSubdivisionOverlap:
     Text: Your selected area overlaps another subdivision.
   SubdivisionSuccess:
     Text: Subdivision created!  Use /trust to share it with friends.
   CreateClaimFailOverlap:
-    Text: You can't create a claim here because it would overlap your other claim.  Use /abandonclaim to delete it, or use your shovel at a corner to resize it.
+    Text: You can't create a claim here because it would overlap your other claim.  Use /abandonclaim to delete it, or use your axe at a corner to resize it.
   CreateClaimFailOverlapOtherPlayer:
     Text: You can't create a claim here because it would overlap {0}'s claim.
     Notes: '0: other claim owner'
   ClaimsDisabledWorld:
     Text: Land claims are disabled in this world.
   ClaimStart:
-    Text: Claim corner set!  Use the shovel again at the opposite corner to claim a rectangle of land.  To cancel, put your shovel away.
+    Text: Claim corner set!  Use the axe again at the opposite corner to claim a rectangle of land.  To cancel, put your axe away.
   NewClaimTooSmall:
     Text: This claim would be too small.  Any claim must be at least {0} x {0}.
     Notes: '0: minimum claim size'
@@ -423,3 +426,101 @@ Messages:
     Text: That player is immune to /siege.
   SetClaimBlocksSuccess:
     Text: Updated accrued claim blocks.
+  PlayerTooCloseForFire2:
+    Text: You can't start a fire this close to another player.
+  NewClaimTooNarrow:
+    Text: This claim would be too small.  Any claim must be at least {0} blocks wide.
+    Notes: '0: minimum claim width'
+  IgnoreConfirmation:
+    Text: You're now ignoring chat messages from that player.
+  NotIgnoringPlayer:
+    Text: You're not ignoring that player.
+  UnIgnoreConfirmation:
+    Text: You're no longer ignoring chat messages from that player.
+  SeparateConfirmation:
+    Text: Those players will now ignore each other in chat.
+  UnSeparateConfirmation:
+    Text: Those players will no longer ignore each other in chat.
+  NotIgnoringAnyone:
+    Text: You're not ignoring anyone.
+  TrustListHeader:
+    Text: 'Explicit permissions here:'
+  Manage:
+    Text: Manage
+  Build:
+    Text: Build
+  Containers:
+    Text: Containers
+  Access:
+    Text: Access
+  StartBlockMath:
+    Text: '{0} blocks from play + {1} bonus = {2} total.'
+  ClaimsListHeader:
+    Text: 'Claims:'
+  ContinueBlockMath:
+    Text: ' (-{0} blocks)'
+  EndBlockMath:
+    Text: ' = {0} blocks left to spend'
+  NoClaimDuringPvP:
+    Text: You can't claim lands during PvP combat.
+  UntrustAllOwnerOnly:
+    Text: Only the claim owner can clear all its permissions.
+  ManagersDontUntrustManagers:
+    Text: Only the claim owner can demote a manager.
+  BookAuthor:
+    Text: BigScary
+  BookTitle:
+    Text: How to Claim Land
+  BookIntro:
+    Text: Claim land to protect your stuff!  Click the link above to learn land claims in 3 minutes or less.  :)
+  BookDisabledChestClaims:
+    Text: '  On this server, placing a chest will NOT claim land for you.'
+  BookUsefulCommands:
+    Text: 'Useful Commands:'
+  BookLink:
+    Text: 'Click: {0}'
+    Notes: '{0}: video URL'
+  BookTools:
+    Text: Our claim tools are {0} and {1}.
+    Notes: '0: claim modification tool name; 1:claim information tool name'
+  ResizeClaimTooNarrow:
+    Text: This new size would be too small.  Claims must be at least {0} blocks wide.
+    Notes: '0: minimum claim width'
+  ResizeClaimInsufficientArea:
+    Text: This claim would be too small.  Any claim must use at least {0} total claim blocks.
+    Notes: '0: minimum claim area'
+  NoProfanity:
+    Text: Please moderate your language.
+  PlayerNotIgnorable:
+    Text: You can't ignore that player.
+  NoEnoughBlocksForChestClaim:
+    Text: Because you don't have any claim blocks available, no automatic land claim was created for you.  You can use /ClaimsList to monitor your available claim block total.
+  IsIgnoringYou:
+    Text: That player is ignoring you.
+  MustHoldModificationToolForThat:
+    Text: You must be holding a golden axe to do that.
+  StandInClaimToResize:
+    Text: Stand inside the land claim you want to resize.
+  ClaimsExtendToSky:
+    Text: Land claims always extend to max build height.
+  ClaimsAutoExtendDownward:
+    Text: Land claims auto-extend deeper into the ground when you place blocks under them.
+  MinimumRadius:
+    Text: Minimum radius is {0}.
+    Notes: '0: minimum radius'
+  RadiusRequiresGoldenaxe:
+    Text: You must be holding a golden axe when specifying a radius.
+  ClaimTooSmallForActiveBlocks:
+    Text: This claim isn't big enough to support any active block types (hoppers, spawners, beacons...).  Make the claim bigger first.
+  TooManyActiveBlocksInClaim:
+    Text: This claim is at its limit for active block types (hoppers, spawners, beacons...).  Either make it bigger, or remove other active blocks first.
+  ShovelBasicClaimMode:
+    Text: Shovel returned to basic claims mode.
+  SiegeNoShovel:
+    Text: You can't use your shovel tool while involved in a siege.
+  RadiusRequiresGoldenShovel:
+    Text: You must be holding a golden shovel when specifying a radius.
+  ConsoleOnlyCommand:
+    Text: That command may only be executed from the server console.
+  WorldNotFound:
+    Text: World not found.

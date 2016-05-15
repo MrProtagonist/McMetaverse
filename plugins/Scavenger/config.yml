@@ -8,7 +8,7 @@ Global:
   SingleItemKeeps: false
   SlotBasedRecovery: false
   UseTheOrMethod: true
-  Debug: true
+  Debug: false
   Permissions: true
   OpsAllPerms: false
   WorldGuardPVPIgnore: false

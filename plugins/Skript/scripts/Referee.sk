@@ -1,0 +1,124 @@
+script options:
+	$ developer mode
+
+command /kick <player> <text>:
+	permission: essentials.socialspy
+	trigger:
+		set {_staffcount} to 0
+		if {referee.number} is not set:
+			set {referee.number} to 0
+		add 1 to {referee.number}
+		set {referee.player} to player
+		loop all players:
+			loop-player has the permission "essentials.socialspy"
+			add 1 to {_staffcount}
+		if {_staffcount} is greater than 1:
+			set {staff.voting} to true
+			set {staff.approved} to 0
+			set {staff.started} to player
+			delete {staff.approval.list::*}
+			loop all players:
+				loop-player has the permission "essentials.socialspy"
+				send "&f[&eReferee&f] &e%player% wants to kick %arg 1% for: &c%arg 2%" to loop-player
+				send "&f[&eReferee&f] &eIf you support this decision, type &a/confirm&e." to loop-player
+			wait 30 real seconds
+			set {staff.voting} to false
+			if {staff.approved} is greater than or equal to 1:
+				kick arg 1 because of "&a%player% &chas kicked &e%arg 1%&c for %arg 2%!"
+				broadcast "&a%player% &chas kicked &e%arg 1%&c for: %arg 2%!"
+				create file "plugins/Skript/logs/referee/%{referee.number}%.log"
+				wait 2 real seconds
+				create line "Time - %now%" in "plugins/Skript/logs/referee/%{referee.number}%.log"
+				create line "Punisher - %player%" in "plugins/Skript/logs/referee/%{referee.number}%.log"
+				create line "Punishee - %arg 1%" in "plugins/Skript/logs/referee/%{referee.number}%.log"
+				create line "Reason - %arg 2%" in "plugins/Skript/logs/referee/%{referee.number}%.log"
+				create line "Successful - Yes" in "plugins/Skript/logs/referee/%{referee.number}%.log"
+				set {staff.approved} to 0
+				delete {staff.approval.flatlist}
+				set {staff.approval.flatlist} to "%player%, "
+				loop {staff.approval.list::*}:
+					set {staff.approval.flatlist} to "%{staff.approval.flatlist}%%loop-value%, "
+				create line "Supported By - %{staff.approval.flatlist}%" in "plugins/Skript/logs/referee/%{referee.number}%.log"
+				delete {players.online.now}
+				set {players.online.now} to "%player%, "
+				loop all players:
+					player is not loop-player
+					set {players.online.now} to "%{players.online.now}%%loop-player%, "
+				create line "Players Online - %{players.online.now}%" in "plugins/Skript/logs/referee/%{referee.number}%.log"
+				create line "Chat Log:" in "plugins/Skript/logs/referee/%{referee.number}%.log"
+			else:
+				message "&f[&eReferee&f] &eNobody supported you."
+				create file "plugins/Skript/logs/referee/%{referee.number}%.log"
+				wait 2 real seconds
+				create line "Time - %now%" in "plugins/Skript/logs/referee/%{referee.number}%.log"
+				create line "Punisher - %player%" in "plugins/Skript/logs/referee/%{referee.number}%.log"
+				create line "Punishee - %arg 1%" in "plugins/Skript/logs/referee/%{referee.number}%.log"
+				create line "Reason - %arg 2%" in "plugins/Skript/logs/referee/%{referee.number}%.log"
+				create line "Successful - Yes" in "plugins/Skript/logs/referee/%{referee.number}%.log"
+		else:
+			kick arg 1 because of "&a%player% &chas kicked &e%arg 1%&c for %arg 2%!"
+			broadcast "&a%player% &chas kicked &e%arg 1%&c for: %arg 2%!"
+			create file "plugins/Skript/logs/referee/%{referee.number}%.log"
+			wait 2 real seconds
+			create line "Time - %now%" in "plugins/Skript/logs/referee/%{referee.number}%.log"
+			create line "Punisher - %player%" in "plugins/Skript/logs/referee/%{referee.number}%.log"
+			create line "Punishee - %arg 1%" in "plugins/Skript/logs/referee/%{referee.number}%.log"
+			create line "Reason - %arg 2%" in "plugins/Skript/logs/referee/%{referee.number}%.log"
+			create line "Successful - Yes" in "plugins/Skript/logs/referee/%{referee.number}%.log"
+			set {staff.approved} to 0
+			delete {staff.approval.flatlist}
+			set {staff.approval.flatlist} to "%player%, "
+			loop {staff.approval.list::*}:
+				set {staff.approval.flatlist} to "%{staff.approval.flatlist}%%loop-value%, "
+			create line "Supported By - %{staff.approval.flatlist}%" in "plugins/Skript/logs/referee/%{referee.number}%.log"
+			delete {players.online.now}
+			set {players.online.now} to "%player%, "
+			loop all players:
+				player is not loop-player
+				set {players.online.now} to "%{players.online.now}%%loop-player%, "
+			create line "Players Online - %{players.online.now}%" in "plugins/Skript/logs/referee/%{referee.number}%.log"
+			create line "Chat Log:" in "plugins/Skript/logs/referee/%{referee.number}%.log"
+		set {staff.voting} to false
+		delete {staff.approved}
+		set {tracking.%{referee.number}%} to now
+		add {referee.number} to {tracking.chat::*}
+		
+
+on chat:
+	loop {tracking.chat::*}:
+		create line "[%now%] %player%: %message%" in "plugins/Skript/logs/referee/%loop-value%.log"
+		difference between {tracking.%loop-value%} and now is greater than 5 real minutes
+		delete {tracking.chat::%loop-index%} from {tracking.chat::*}
+		delete {tracking.%{loop-value%}}
+on join:
+	loop {tracking.chat::*}:
+		create line "[%now%] %player% joined the game." in "plugins/Skript/logs/referee/%loop-value%.log"
+		difference between {tracking.%loop-value%} and now is greater than 5 real minutes
+		delete {tracking.chat::%loop-index%} from {tracking.chat::*}
+		delete {tracking.%{loop-value%}}
+on quit:
+	loop {tracking.chat::*}:
+		create line "[%now%] %player% left the game." in "plugins/Skript/logs/referee/%loop-value%.log"
+		difference between {tracking.%loop-value%} and now is greater than 5 real minutes
+		delete {tracking.chat::%loop-index%} from {tracking.chat::*}
+		delete {tracking.%{loop-value%}}
+
+command /confirm:
+	permission: essentials.socialspy
+	trigger:
+		{staff.voting} is true
+		{staff.started} is not player
+		add 1 to {staff.approved}
+		add player to {staff.approval.list::*}
+		message "&aYou have confirmed your support to kick the player."
+
+	
+
+# 1 - Time
+# 2 - Punisher
+# 3 - Punishee
+# 4 - Reason
+# 5 - Successful Kick
+# 6 - Staff who supported
+# 7 - Players online
+# 8 - Chat after

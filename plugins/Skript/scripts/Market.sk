@@ -1,4 +1,3 @@
-
 command /submit:
 	trigger:
 		loop 10 times:
@@ -10,8 +9,6 @@ command /submit:
 		message "&c&lREQUIRES: &fA stocked shop that is fully claimed"
 		message "                &fA name and short description of your shop"
 		message "                &fDecided on an item you want for the shop icon"
-		message "                &fVERY IMPORTANT: you cannot use an apostrophe"
-		message "                &fexample: Post_Rogue's would become Post_Rogues"
 		message " "
 		message "&eIf you have completed all the requirements, type &a/continue"
 		set {submit.%player%} to 0
@@ -116,22 +113,22 @@ on chat:
 			set {market.warps.%{shopwarp.count}%} to player's location
 			add id of player's tool to {submissions.id::*}
 			add data value of player's tool to {submissions.datavalue::*}
-			play note pling at player with pitch 1
-			play note pling at player with pitch 1
-			play note bass drum at player with pitch 1.4
-			play note snare drum at player with pitch 1.5
+#			play note pling at player with pitch 1
+#			play note pling at player with pitch 1
+#			play note bass drum at player with pitch 1.4
+#			play note snare drum at player with pitch 1.5
 			wait 5.5 ticks
-			play note pling at player with pitch 1
-			play note pling at player with pitch 1
-			play note snare drum at player with pitch 1.6
+#			play note pling at player with pitch 1
+#			play note pling at player with pitch 1
+#			play note snare drum at player with pitch 1.6
 			wait 5.5 ticks
-			play note pling at player with pitch 1
-			play note pling at player with pitch 1
-			play note bass drum at player with pitch 1.6
-			play note snare drum at player with pitch 1.6
+#			play note pling at player with pitch 1
+#			play note pling at player with pitch 1
+#			play note bass drum at player with pitch 1.6
+#			play note snare drum at player with pitch 1.6
 			wait 5.5 ticks
-			play note pling at player with pitch 1
-			play note pling at player with pitch 1.4
+#			play note pling at player with pitch 1
+#			play note pling at player with pitch 1.4
 			set {submit.%player%} to 0
 			message "&a&oShop submitted! Please allow up to 72 hours for your submission to be approved and posted."
 			stop
@@ -148,7 +145,6 @@ command /shopwarp <integer>:
 		message "&a&oNow warping to %{market.name.%arg%}%&a."
 		set {lastwarp.%player%} to now
 #		push the player upwards at speed 10
-		execute console command "/playsound random.explode %player% ~0 ~0 ~0 20 50"
 		execute console command "consolewarp %player%"
 #		wait 38 ticks
 		teleport the player to {market.warps.%arg%}
@@ -156,7 +152,12 @@ command /moveshop <integer>:
 	permission: sk.submissions
 	trigger:
 		set {market.warps.%arg%} to location of player
-		message "&aMoved warp for %{market.name.%arg%}% to here!"
+		message "&aMoved warp for &6%{market.name.%arg%}% &ato here!"
+command /nameshop <integer> <text>:
+	trigger:
+		if player is op:
+			message "&aSet the name of &6%{market.name.%arg-1%}% &ato &6%arg-2%"
+			set {market.name.%arg-1%} to arg-2
 command /submissions [<text>] [<text>]:
 	permission: sk.submissions
 	trigger:

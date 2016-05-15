@@ -1,0 +1,198 @@
+script options:
+	$ developer mode
+	
+# OPTIONS   
+on script load:
+	set {frolf.playercount} to 0
+	set {frolf.going} to false
+	set {frolf.countdown} to false
+	set {frolf.course} to 1
+	delete {frolf.shooting}
+	delete {frolf.players::*}
+	delete {frolf.teecount}
+	loop all players:
+		delete {frolf.%loop-player%.loc}
+		delete {frolf.%loop-player%.playing}
+
+
+# =============================================================================
+# JOIN FROLF
+command /frolf:
+	trigger:
+		{frolf.%player%.playing} is not set
+		{frolf.going} is false
+		set {frolf.%player%.playing} to true
+		message "&a&lWelcome to Frolf."
+# Add player to the game counter
+		add player to {frolf.players::*}
+		add 1 to {frolf.playercount}
+		set action bar of player to "&a%{frolf.playercount}% ready to play Frolf!"
+		teleport player to {frolf.lobby}
+#	   set {frolf.%player%.loc} to location of block at player's head
+#	   apply jump boost -5 to the player for 100000000 hours
+#	   set the player's walk speed to 0.01
+
+
+# =======================================================================
+
+# SETUP FROLF ENVIRONMENT
+command /setfrolf <text> [<integer>]:
+	trigger:
+		if arg 1 is "lobby":
+			set {frolf.lobby} to location of player
+			message "&aDone!"
+		if arg 1 is "spec":
+			set {frolf.spec} to location of player
+			message "&aDone!"
+		if arg 1 is "spawn":
+			set {frolf.spawn} to location of player
+			message "&aDone!"
+		if arg 1 is "course":
+			set {frolf.setting} to player
+			set {frolf.counter} to 1
+			message "&aNow in edit mode. Place glowstone in order."
+			delete {frolf.goals::*}
+		if arg 1 is "tee":
+			add location of player to {frolf.tees::%arg 2%}
+			message "&aAdded tee number %arg 2%"
+
+
+# SETUP FROLF GOALS (After using /setfrolf course)
+on place of glowstone:
+	{frolf.setting} is player
+	add location of event-block to {frolf.goals::*}
+	message "&cAdded hole %{frolf.counter}%!"
+	add 1 to {frolf.counter}
+
+# ========================================================================
+
+# START FROLF
+command /startfrolf:
+	permission: is.op
+	trigger:
+		{frolf.playercount} is greater than 0
+		{frolf.countdown} is false
+		set {frolf.countdown} to true
+		broadcast "&aFrolf Starting in 10 seconds."
+		wait 10 real seconds
+		loop all players:
+			{frolf.%loop-player%.playing} is true
+#		   teleport loop-player to {frolf.spawn}
+			set action bar of loop-player to "&a&lFrolf has started!"
+			set {frolf.shootcount.%loop-player%} to 0
+			set {frolf.totalshots.%loop-player%} to 0
+#		wait 3 real seconds
+# Sets which player to warp next
+#		set {frolf.warpcounter} to 2
+# Sees how many goals are set and sets the total hole count to that.
+		set {frolf.holecount} to 0
+		loop {frolf.tees::*}:
+			add 1 to {frolf.holecount}
+# Sets the current hole to 1
+		set {frolf.course} to 1
+# Set that player 1 is shooting first
+		set {frolf.shootcount} to 1
+		set {_warpcount} to 1
+		loop blocks in radius 10 around {frolf.tees::%{frolf.course}%}:
+			loop-block is obsidian
+			broadcast "&f[&aDEBUG&f] Passed phase 1"
+			{frolf.%{frolf.players::%{_warpcount}%}%.playing} is true
+			broadcast "&f[&aDEBUG&f] Passed phase 2"
+			teleport {frolf.players::%{_warpcount}%} to location of block 1 meter above loop-block
+			set {frolf.%{frolf.players::%{_warpcount}%}%.shooting} to true
+			set {frolf.%{frolf.players::%{_warpcount}%}%.loc} to location of block at player's head
+			apply jump boost -5 to {frolf.players::%{_warpcount}%} for 100000000 hours
+			set {frolf.players::%{_warpcount}%}'s walk speed to 0.01
+			set walk speed of {frolf.players::%{_warpcount}%} to 0.01
+			add 1 to {_warpcount}
+		wait 10 ticks
+# Close enough =]
+		set {_frolfdistance} to distance between {frolf.players::1} and {frolf.goals::1}
+		loop all players:
+			{frolf.%loop-player%.playing} is true
+			set action bar of loop-player to "&6%{_frolfdistance}% blocks away."
+# ===========================================================================================================================		
+		
+# PROJECTILE SHOOT AND HIT
+on shoot:
+	{frolf.%shooter%.playing} is true
+	if {frolf.%shooter%.shooting} is true:
+#		if {frolf.%shooter%.shot} is true:
+#			send "&cWait for your shot to land!" to shooter
+#			cancel event
+		wait 3 ticks
+		execute console command "gm 1 %shooter%"
+		make shooter ride the projectile
+		set {frolf.%shooter%.shot} to true
+# Per Hole counter
+		add 1 to {frolf.shootcount.%shooter%}
+# Total Shots
+		add 1 to {frolf.totalshots.%shooter%}
+		loop all players:
+			{frolf.%loop-player%.playing} is true
+			loop-player is not shooter
+			set action bar of loop-player to "&a&l%shooter% just took their %{frolf.shootcount.%shooter%}% shot!"
+
+
+on projectile hit:
+	{frolf.%shooter%.shot} is true
+	set {frolf.%shooter%.shot} to false
+	if {frolf.%shooter%.loc} is set:
+#		set the shooter's walk speed to .2
+#		remove jump boost from the shooter
+
+# Add 1 to total shoots taken by player.
+		set {_distance} to distance between {frolf.%shooter%.loc} and the shooter
+		send "&a&lShot went %{_distance}% blocks!" to shooter
+		set action bar of shooter to "&a&lShot went %{_distance}% blocks!"
+		
+# So they don't get stuck in the wall hopefully... Will probably need tweaked majorly.
+		execute console command "top %shooter%"
+# Resets their shoot location to where they landed, for next shot
+		delete {frolf.%shooter%.loc}
+		set {frolf.%shooter%.loc} to location of block at shooter's head
+# Let's put them in Spectator mode until their next turn.
+		execute console command "gm 3 %shooter%"
+# Check to see if they hit the target (or should have)
+		loop blocks in radius 2 around projectile:
+			loop-block is glowstone
+# Later, add a check that they hit the right hole. For now, we won't.
+			set {frolf.score.%shooter%::%{frolf.course}%} to {frolf.shootcount.%shooter%}
+			set {frolf.shootcount.%shooter%} to 0
+# Tell everyone they hit the target and in how many shoots
+			loop all players:
+				{frolf.%loop-player%.playing} is true
+				send "&a&l%shooter% finished the hole in %{frolf.shootcount.%shooter%}% shots!" to loop-player
+				add 1 to {frolf.finished}
+# Check to see if everyone has finished the hole (if they were the last one)
+				if {frolf.finished} is {frolf.players}:
+					set {frolf.finished} to 0
+					add 1 to {frolf.course}
+				
+				
+# Kill the arrow dead
+		kill projectile
+		delete projectile
+		wait 1 real second
+# Check if it is time to move to the next course	
+		if {frolf.finished} is 0:
+			set {_warpcount} to 0
+			loop all blocks in radius 10 of {frolf.tees::%{frolf.course}%}:
+				loop-block is obsidian
+				{frolf.%{frolf.tees::%{_warpcount}%}%.playing} is true
+				teleport {frolf.players::%{_warpcount}%} to location of block 1 meter above loop-block
+				set {frolf.%{frolf.players::%{_warpcount}%}%.shooting} to true
+				set {frolf.%{frolf.players::%{_warpcount}%}%.loc} to location of block at {frolf.players::%{_warpcount}%}'s head
+				apply jump boost -5 to {frolf.players::%{_warpcount}%} for 100000000 hours
+				set {frolf.players::%{_warpcount}%}'s walk speed to 0.01
+				set walk speed of {frolf.players::%{_warpcount}%} to 0.01
+				add 1 to {_warpcount}
+			wait 10 ticks
+# Close enough =]
+		set {_frolfdistance} to distance between {frolf.players::1} and {frolf.goals::%{frolf.course}%}
+		loop all players:
+			{frolf.%loop-player%.playing} is true
+			set action bar of loop-player to "&6%{_frolfdistance}% blocks away."
+# Keep the below line
+		set {frolf.shooting.%shooter%} to true
+	 
