@@ -25,9 +25,9 @@ classes:
     items: diamond_axe, potion:8261:2
     armor: iron_boots, iron_leggings, iron_chestplate, iron_helmet
 arenas:
-  default:
+  Nereus:
     settings:
-      world: Metacurse
+      world: Minigame
       enabled: true
       protect: true
       entry-fee: ''
@@ -80,240 +80,7 @@ arenas:
             skeletons: 10
             spiders: 10
             creepers: 10
-            silverfish: 10
-        spec1:
-          type: special
-          priority: 2
-          frequency: 4
-          monsters:
-            powered-creepers: 10
-            zombie-pigmen: 10
-            angry-wolves: 10
-            blazes: 10
-      single:
-        swarm1:
-          type: swarm
-          wave: 6
-          monster: slime
-          amount: low
-        boss1:
-          type: boss
-          wave: 10
-          monster: cave_spider
-          health: high
-          abilities: arrows, root-target, throw-nearby
-    rewards:
-      waves:
-        every:
-          '3': feather, bone, stick
-          '5': dirt:4, gravel:4, stone:4
-          '10': iron_ingot:10, gold_ingot:8
-        after:
-          '7': bookshelf
-          '13': iron_sword, iron_pickaxe, iron_spade
-          '16': diamond_sword
-    coords:
-      spawnpoints: {}
-      containers: {}
-    class-limits:
-      Archer: -1
-      Oddjob: -1
-      Chemist: -1
-      Tank: -1
-      Knight: -1
-  Nordic:
-    settings:
-      world: Metacurse
-      enabled: true
-      protect: true
-      entry-fee: ''
-      clear-wave-before-next: false
-      clear-boss-before-next: false
-      clear-wave-before-boss: false
-      soft-restore: false
-      soft-restore-drops: false
-      require-empty-inv-join: false
-      require-empty-inv-spec: false
-      hellhounds: false
-      pvp-enabled: false
-      monster-infight: false
-      allow-teleporting: false
-      spectate-on-death: true
-      auto-respawn: true
-      share-items-in-arena: true
-      min-players: 0
-      max-players: 0
-      max-join-distance: 0
-      first-wave-delay: 5
-      wave-interval: 15
-      final-wave: 0
-      monster-limit: 100
-      monster-exp: false
-      keep-exp: true
-      food-regen: false
-      lock-food-level: true
-      player-time-in-arena: world
-      auto-ignite-tnt: false
-      auto-start-timer: 0
-      start-delay-timer: 0
-      auto-ready: false
-      use-class-chests: false
-      display-waves-as-level: false
-      display-timer-as-level: false
-      use-scoreboards: true
-      isolated-chat: false
-      global-join-announce: false
-      global-end-announce: false
-      show-death-messages: true
-    waves:
-      recurrent:
-        def1:
-          type: default
-          priority: 1
-          frequency: 1
-          monsters:
-            zombies: 10
-            skeletons: 10
-            spiders: 10
-            creepers: 10
-            silverfish: 10
-        spec1:
-          type: special
-          priority: 2
-          frequency: 4
-          monsters:
-            powered-creepers: 10
-            zombie-pigmen: 10
-            witches: 10
-            blazes: 10
-      single:
-        swarm1:
-          type: swarm
-          wave: 6
-          monster: slime
-          amount: low
-        boss1:
-          type: boss
-          wave: 10
-          monster: cave_spider
-          health: high
-          abilities: arrows, root-target, throw-nearby
-    rewards:
-      waves:
-        every:
-          '3': feather, bone, stick
-          '5': dirt:4, gravel:4, stone:4
-          '10': iron_ingot:10, gold_ingot:8
-        after:
-          '7': bookshelf
-          '13': iron_sword, iron_pickaxe, iron_spade
-          '16': diamond_sword
-    coords:
-      spawnpoints:
-        -1388,65,7: -1387.5,65,7.5,0.0,0.0,Metacurse
-        -1389,65,6: -1388.5,65,6.5,0.0,0.0,Metacurse
-        -1388,65,5: -1387.5,65,5.5,0.0,0.0,Metacurse
-        -1387,65,6: -1386.5,65,6.5,0.0,0.0,Metacurse
-        -1369,65,-14: -1368.5,65,-13.5,0.0,0.0,Metacurse
-        -1370,65,-13: -1369.5,65,-12.5,0.0,0.0,Metacurse
-        -1369,65,-12: -1368.5,65,-11.5,0.0,0.0,Metacurse
-        -1368,65,-13: -1367.5,65,-12.5,0.0,0.0,Metacurse
-        -1350,65,5: -1349.5,65,5.5,0.0,0.0,Metacurse
-        -1349,65,6: -1348.5,65,6.5,0.0,0.0,Metacurse
-        -1350,65,7: -1349.5,65,7.5,0.0,0.0,Metacurse
-        -1351,65,6: -1350.5,65,6.5,0.0,0.0,Metacurse
-        -1368,65,25: -1367.5,65,25.5,0.0,0.0,Metacurse
-        -1369,65,26: -1368.5,65,26.5,0.0,0.0,Metacurse
-        -1370,65,25: -1369.5,65,25.5,0.0,0.0,Metacurse
-        -1369,65,24: -1368.5,65,24.5,0.0,0.0,Metacurse
-        -1372,65,14: -1371.5,65,14.5,0.0,0.0,Metacurse
-        -1369,65,18: -1368.5,65,18.5,0.0,0.0,Metacurse
-        -1366,65,14: -1365.5,65,14.5,0.0,0.0,Metacurse
-        -1361,65,8: -1360.5,65,8.5,0.0,0.0,Metacurse
-        -1358,65,6: -1357.5,65,6.5,0.0,0.0,Metacurse
-        -1361,65,4: -1360.5,65,4.5,0.0,0.0,Metacurse
-        -1366,65,-2: -1365.5,65,-1.5,0.0,0.0,Metacurse
-        -1369,65,-6: -1368.5,65,-5.5,0.0,0.0,Metacurse
-        -1372,65,-2: -1371.5,65,-1.5,0.0,0.0,Metacurse
-        -1377,65,4: -1376.5,65,4.5,0.0,0.0,Metacurse
-        -1380,65,6: -1379.5,65,6.5,0.0,0.0,Metacurse
-        -1377,65,8: -1376.5,65,8.5,0.0,0.0,Metacurse
-      containers:
-        -1365,69,-22: -1365,69,-22,0.0,0.0,Metacurse
-        -1367,69,-22: -1367,69,-22,0.0,0.0,Metacurse
-        -1369,69,-22: -1369,69,-22,0.0,0.0,Metacurse
-        -1371,69,-22: -1371,69,-22,0.0,0.0,Metacurse
-        -1373,69,-22: -1373,69,-22,0.0,0.0,Metacurse
-      l1: -1380,63,-77,0.0,0.0,Metacurse
-      l2: -1358,85,-42,0.0,0.0,Metacurse
-      p1: -1400,59,-32,0.0,0.0,Metacurse
-      p2: -1343,78,32,0.0,0.0,Metacurse
-      arena: -1368.5,65,6.5,5.48,0.0,Metacurse
-      lobby: -1368.5,64,-60.5,347.48,0.0,Metacurse
-      spectator: -1365.5,69,-25.5,183.38,0.0,Metacurse
-      exit: -1385.5,68,-121.5,197.48,0.0,Metacurse
-    class-limits:
-      Archer: -1
-      Oddjob: -1
-      Chemist: -1
-      Tank: -1
-      Knight: -1
-      Brute: -1
-  Cairo:
-    settings:
-      world: Metacurse
-      enabled: true
-      protect: true
-      entry-fee: ''
-      clear-wave-before-next: false
-      clear-boss-before-next: false
-      clear-wave-before-boss: false
-      soft-restore: false
-      soft-restore-drops: false
-      require-empty-inv-join: false
-      require-empty-inv-spec: false
-      hellhounds: false
-      pvp-enabled: false
-      monster-infight: false
-      allow-teleporting: false
-      spectate-on-death: true
-      auto-respawn: true
-      share-items-in-arena: true
-      min-players: 0
-      max-players: 0
-      max-join-distance: 0
-      first-wave-delay: 5
-      wave-interval: 15
-      final-wave: 0
-      monster-limit: 100
-      monster-exp: false
-      keep-exp: true
-      food-regen: false
-      lock-food-level: true
-      player-time-in-arena: world
-      auto-ignite-tnt: false
-      auto-start-timer: 0
-      start-delay-timer: 0
-      auto-ready: false
-      use-class-chests: false
-      display-waves-as-level: false
-      display-timer-as-level: false
-      use-scoreboards: true
-      isolated-chat: false
-      global-join-announce: false
-      global-end-announce: false
-      show-death-messages: true
-    waves:
-      recurrent:
-        def1:
-          type: default
-          priority: 1
-          frequency: 1
-          monsters:
-            zombies: 10
-            skeletons: 10
-            spiders: 10
-            creepers: 10
+            wolves: 10
         spec1:
           type: special
           priority: 2
@@ -347,27 +114,30 @@ arenas:
           '16': diamond_sword
     coords:
       spawnpoints:
-        -455,60,-2220: -454.5,60,-2219.5,0.0,0.0,Metacurse
-        -455,60,-2226: -454.5,60,-2225.5,0.0,0.0,Metacurse
-        -467,60,-2238: -466.5,60,-2237.5,0.0,0.0,Metacurse
-        -473,60,-2238: -472.5,60,-2237.5,0.0,0.0,Metacurse
-        -485,60,-2226: -484.5,60,-2225.5,0.0,0.0,Metacurse
-        -485,60,-2220: -484.5,60,-2219.5,0.0,0.0,Metacurse
-        -485,60,-2219: -484.5,60,-2218.5,0.0,0.0,Metacurse
-        -473,60,-2208: -472.5,60,-2207.5,0.0,0.0,Metacurse
-        -467,60,-2208: -466.5,60,-2207.5,0.0,0.0,Metacurse
+        -119,45,-161: -118.5,45,-160.5,0.0,0.0,Minigame
+        -125,45,-161: -124.5,45,-160.5,0.0,0.0,Minigame
+        -125,45,-167: -124.5,45,-166.5,0.0,0.0,Minigame
+        -119,45,-167: -118.5,45,-166.5,0.0,0.0,Minigame
+        -114,45,-172: -113.5,45,-171.5,0.0,0.0,Minigame
+        -122,45,-174: -121.5,45,-173.5,0.0,0.0,Minigame
+        -130,45,-172: -129.5,45,-171.5,0.0,0.0,Minigame
+        -132,45,-164: -131.5,45,-163.5,0.0,0.0,Minigame
+        -130,45,-156: -129.5,45,-155.5,0.0,0.0,Minigame
+        -122,45,-154: -121.5,45,-153.5,0.0,0.0,Minigame
+        -114,45,-156: -113.5,45,-155.5,0.0,0.0,Minigame
       containers: {}
-      p1: -518,60,-2266,0.0,0.0,Metacurse
-      p2: -428,89,-2130,0.0,0.0,Metacurse
-      arena: -469.5,60,-2222.5,181.94,0.0,Metacurse
-      lobby: -469.5,67,-2184.5,178.92,0.0,Metacurse
-      spectator: -469.5,67,-2198.5,176.52,0.0,Metacurse
-      exit: -467.5,66,-2146.5,179.99,0.0,Metacurse
-      l2: -462,66,-2141,0.0,0.0,Metacurse
-      l1: -478,64,-2167,0.0,0.0,Metacurse
+      p1: -140,43,-182,0.0,0.0,Minigame
+      p2: -104,70,-146,0.0,0.0,Minigame
+      l1: -103,49,-182,0.0,0.0,Minigame
+      l2: -95,56,-173,0.0,0.0,Minigame
+      lobby: -99.5,50,-176.5,-89.18,0.0,Minigame
+      spectator: -121.5,63,-163.5,-266.82,0.0,Minigame
+      exit: -106.5,50,-181.5,39.66,0.0,Minigame
+      arena: -121.5,45,-163.5,31.65,0.0,Minigame
     class-limits:
-      Archer: -1
       Oddjob: -1
-      Chemist: -1
-      Tank: -1
       Knight: -1
+      Archer: -1
+      Tank: -1
+      Brute: -1
+      Chemist: -1
