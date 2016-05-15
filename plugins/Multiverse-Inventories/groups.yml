@@ -20,5 +20,7 @@ groups:
     worlds:
     - Hyperverse
     - Hyperverse_nether
+    - hyper
+    - hyper_nether
     shares:
     - all
