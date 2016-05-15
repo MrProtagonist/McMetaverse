@@ -78,6 +78,8 @@ command /playsharpshooter <player>:
 			execute console command "tm msg %arg% &6TIME UP!"
 			teleport arg to {archery.spec}
 			teleport arg to {archery.spec}
+			set block at {archery.list::%{_randomnum}%} to air
+			execute console command "ci %arg%"
 			delete {archery.busy}
 			play "LEVEL_UP" specifically to arg with pitch 1
 			loop all blocks in radius 50 of {archery.blockspot}:
@@ -93,7 +95,6 @@ command /playsharpshooter <player>:
 				play "LEVEL_UP" specifically to arg with pitch 1
 				set {archery.top.score} to {archery.%arg%}
 				set {archery.top.arg} to arg
-			clear the argument's inventory
 			loop {archery.list::*}:
 				set block at location of loop-value to air
 				wait 1 tick
