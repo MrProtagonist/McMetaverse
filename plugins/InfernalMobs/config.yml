@@ -74,7 +74,7 @@ spawnMessages:
 - '&cSomething is coming...'
 - '&cYou hear a mob nearby...'
 enabledworlds:
-- hyperverse
+- hyper
 enabledmobs:
 #- Chicken
 - PigZombie
