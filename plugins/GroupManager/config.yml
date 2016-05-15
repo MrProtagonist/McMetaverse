@@ -55,6 +55,9 @@ settings:
           - groups
           hyperverse:
           - users
+          hyper:
+          - users
+          - groups
         sandbox:
           contest:
           - users
