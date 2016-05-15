@@ -3,24 +3,24 @@
 # Shows if there is available new version on login with tryme.versioncheck permission node
 ShowNewVersion: true
 # Do you want Quiz to start with server
-EnableOnStartup: false
+EnableOnStartup: true
 # Defines what command will be performed when server/plugin starts
 # This works only when EnableOnStartup is enabled
 CommandToPerform: tryme qmode
 # Players needed to start scheduled quiz game
 MinPlayersToRun: 4
 # Interval betwen questions in seconds
-Interval: 300
+Interval: 500
 # Time limit for answer
-TimeForAnswer: 300
+TimeForAnswer: 60
 # Broadcasts answer after answer time ends
 ShowAnswer: true
 # Do you want to use sheduler for your server
-UseScheduler: false
+UseScheduler: true
 # How often to check for schedule in seconds. Keep it at 60 sec if you dont care about seconds :)
 SchedulerInterval: 12
 # You need to enable this one to use so caled Daily rewards for best quiz game players
-DailyScheduler: false
+DailyScheduler: true
 # Do you want to use option to answer just by typing into chat
 UseChatAnswer: true
 # Do you want to use commands to answer into questions (no spam into chat)
@@ -55,7 +55,7 @@ Titles:
   # Do you want to Show SubTitle
   ShowSubtitle: true
   # Do you want to Show ActionBar
-  ShowActionBar: false
+  ShowActionBar: true
   # How fast you want for text to apear in ticks (do not applay for action bars)
   FadeInTicks: 20
   # How long you want to keep title visible in ticks (do not applay for action bars)
