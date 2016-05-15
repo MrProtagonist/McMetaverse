@@ -50,7 +50,7 @@ on command:
 			command is not "meta" or "login" or "a" or "spawn" or "gmc" or "gms"
 			message "&cYou can't use those commands in sandbox if you are not premium or seasoned."
 			cancel event
-on command "//wand":
+on command "//wand" or "//pos1" or "//pos2" pr "//hpos1" or "//hpos2" or "//chunk" or "//sel" or "//generate" or "//hcyl" or "//cyl" or "//sphere" or "//hsphere" or "//pyramid" or "//hpydramid" or "/forestgen" or "/pumpkins" or "//fill" or "//fillr" or "//drain" or "/fixwater" or "/fixlava" or "removeabove" or "/removebelow" or "/replacenear" or "/removenear" or "/remove" or "/tool":
 	if the player's world is "contest":
 		player is not op
 		message "&cCan't use worldedit here!"
