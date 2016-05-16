@@ -40,7 +40,7 @@ worlds:
       pitch: 0.0
       yaw: 0.0
     autoLoad: 'false'
-    bedRespawn: 'true'
+    bedRespawn: 'false'
     worldBlacklist:
     - MetaOmega
     - MetaOmega_nether
@@ -93,7 +93,7 @@ worlds:
       pitch: 0.0
       yaw: 0.0
     autoLoad: 'true'
-    bedRespawn: 'true'
+    bedRespawn: 'false'
     worldBlacklist: []
     environment: NORMAL
     seed: '-2022587122827011182'
@@ -141,7 +141,7 @@ worlds:
       pitch: 0.0
       yaw: 0.0
     autoLoad: 'true'
-    bedRespawn: 'true'
+    bedRespawn: 'false'
     worldBlacklist: []
     environment: NETHER
     seed: '-6328472150022802790'
@@ -189,7 +189,7 @@ worlds:
       pitch: 0.0
       yaw: 0.0
     autoLoad: 'true'
-    bedRespawn: 'true'
+    bedRespawn: 'false'
     worldBlacklist: []
     environment: NORMAL
     seed: '9217151930429372681'
@@ -237,7 +237,7 @@ worlds:
       pitch: 0.0
       yaw: 0.0
     autoLoad: 'false'
-    bedRespawn: 'true'
+    bedRespawn: 'false'
     worldBlacklist: []
     environment: NORMAL
     seed: '1225919396829760140'
@@ -285,7 +285,7 @@ worlds:
       pitch: 0.0
       yaw: 0.0
     autoLoad: 'true'
-    bedRespawn: 'true'
+    bedRespawn: 'false'
     worldBlacklist: []
     environment: NORMAL
     seed: '-78517947212430546'
@@ -333,7 +333,7 @@ worlds:
       pitch: 0.0
       yaw: 0.0
     autoLoad: 'false'
-    bedRespawn: 'true'
+    bedRespawn: 'false'
     worldBlacklist: []
     environment: NETHER
     seed: '5804761707011619674'
@@ -381,7 +381,7 @@ worlds:
       pitch: 0.0
       yaw: 0.0
     autoLoad: 'true'
-    bedRespawn: 'true'
+    bedRespawn: 'false'
     worldBlacklist: []
     environment: NORMAL
     seed: '-6323836291643608736'
@@ -429,7 +429,7 @@ worlds:
       pitch: 0.0
       yaw: 0.0
     autoLoad: 'true'
-    bedRespawn: 'true'
+    bedRespawn: 'false'
     worldBlacklist: []
     environment: NETHER
     seed: '8354213722778043370'
@@ -477,7 +477,7 @@ worlds:
       pitch: 0.0
       yaw: 0.0
     autoLoad: 'false'
-    bedRespawn: 'true'
+    bedRespawn: 'false'
     worldBlacklist: []
     environment: NORMAL
     seed: '-604754494422562081'
@@ -520,7 +520,7 @@ worlds:
     spawnLocation:
       ==: MVNullLocation (It's a bug if you see this in your config file)
     autoLoad: 'false'
-    bedRespawn: 'true'
+    bedRespawn: 'false'
     worldBlacklist: []
     environment: 'null'
     seed: '0'
@@ -568,7 +568,7 @@ worlds:
       pitch: 0.0
       yaw: 0.0
     autoLoad: 'false'
-    bedRespawn: 'true'
+    bedRespawn: 'false'
     worldBlacklist: []
     environment: THE_END
     seed: '-2263306213011844870'
@@ -616,7 +616,7 @@ worlds:
       pitch: 0.0
       yaw: 0.0
     autoLoad: 'true'
-    bedRespawn: 'true'
+    bedRespawn: 'false'
     worldBlacklist: []
     environment: NORMAL
     seed: '4546701710854278590'
@@ -664,7 +664,7 @@ worlds:
       pitch: 0.0
       yaw: 0.0
     autoLoad: 'false'
-    bedRespawn: 'true'
+    bedRespawn: 'false'
     worldBlacklist: []
     environment: THE_END
     seed: '5804761707011619674'
@@ -760,7 +760,7 @@ worlds:
       pitch: 0.0
       yaw: 0.0
     autoLoad: 'true'
-    bedRespawn: 'true'
+    bedRespawn: 'false'
     worldBlacklist: []
     environment: THE_END
     seed: '-8782512776046188231'
@@ -808,7 +808,7 @@ worlds:
       pitch: 0.0
       yaw: 0.0
     autoLoad: 'true'
-    bedRespawn: 'true'
+    bedRespawn: 'false'
     worldBlacklist: []
     environment: NETHER
     seed: '-6323836291643608736'
