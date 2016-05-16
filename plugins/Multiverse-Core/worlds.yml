@@ -727,7 +727,7 @@ worlds:
     style: NORMAL
     pvp: 'true'
     scale: '16.0'
-    respawnWorld: ''
+    respawnWorld: 'MetaOmega_the_end'
     allowWeather: 'true'
     difficulty: NORMAL
     spawning:
