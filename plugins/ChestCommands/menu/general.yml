@@ -195,7 +195,16 @@ divider9:
   KEEP-OPEN: true
   POSITION-X: 8
   POSITION-Y: 2
-
+gussysshop:
+  COMMAND: 'shopwarp 56'
+  NAME: '&d[p] &aGussys Pop up Shop &d[p]'
+  LORE:
+    - '&f&oEver changing and Random cheap stock! *'
+  ID: 258
+  KEEP-OPEN: false
+  POSITION-X: 9
+  POSITION-Y: 2
+  DATA-VALUE: 0
 divider10:
   NAME: ''
   ID: 160
