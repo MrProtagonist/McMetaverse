@@ -26,6 +26,7 @@ command /setanswer <text>:
 			message "Try: /setanswer Answer here"
 command /answer <text>:
 	trigger:
+		world is not "Hyper"
 		{quiz.going} is true
 		if {quiz.answer} contains arg:
 			broadcast " "
