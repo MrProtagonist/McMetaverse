@@ -1,0 +1,11 @@
+on command "/auc":
+    player is in the world "Hyper"
+    cancel event
+	
+on command "/auction":
+    player is in the world "Hyper"
+    cancel event
+	
+on command "/bid":
+    player is in the world "Hyper"
+    cancel event
