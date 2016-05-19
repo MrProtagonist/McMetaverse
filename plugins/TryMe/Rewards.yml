@@ -4,7 +4,7 @@ Example:
   Simplerewards:
   # This is example, real rewards below
     RewardName:
-      Chance: 20
+      Chance: 5
       # Chance to pick this question in percentage
       Money: 20
       # How much money to give player for correct answer
@@ -42,43 +42,190 @@ Example:
 Rewards:
   SimpleRewards:
     First:
-      Chance: 10
+      Chance: 5
       Money: 100
       Items:
         '1':
-          Id: 272
+          Id: 384
           Meta: 0
-          Qty: 1
-          Name: '&2Stone Sword'
+          Qty: 5
     Second:
-      Chance: 20
+      Chance: 5
       Money: 20
       Items:
         '1':
-          Id: 276
+          Id: 341
           Meta: 0
-          Qty: 1
-          Lore: 
-          - '&bSpecial Prize'
-          - '&bfor [player]'
+          Qty: 10
     Third:
-      Chance: 30
+      Chance: 5
       Money: 10
       Items:
         '1':
-          Id: 283
+          Id: 169
           Meta: 0
-          Qty: 1
-          Name: '&2Stone Sword'
+          Qty: 3
+    Fourth:
+      Chance: 5
+      Money: 100
+      Items:
+        '1':
+          Id: 19
+          Meta: 0
+          Qty: 3
+    Fifth:
+      Chance: 5
+      Money: 20
+      Items:
+        '1':
+          Id: 155
+          Meta: 0
+          Qty: 8
+    Sixth:
+      Chance: 5
+      Money: 10
+      Items:
+        '1':
+          Id: 45
+          Meta: 0
+          Qty: 8
+    Seventh:
+      Chance: 5
+      Money: 100
+      Items:
+        '1':
+          Id: 89
+          Meta: 0
+          Qty: 8
+    Eighth:
+      Chance: 3
+      Money: 20
+      Items:
+        '1':
+          Id: 168
+          Meta: 0
+          Qty: 10
+    Ninth:
+      Chance: 3
+      Money: 10
+      Items:
+        '1':
+          Id: 168
+          Meta: 1
+          Qty: 10
+    Tenth:
+      Chance: 3
+      Money: 100
+      Items:
+        '1':
+          Id: 168
+          Meta: 2
+          Qty: 10
+    Eleventh:
+      Chance: 5
+      Money: 100
+      Items:
+        '1':
+          Id: 373
+          Meta: 8230
+          Qty: 2
+      Broadcasts:
+      - '&3[player] &ajust got a potion!'
+    Twelfth:
+      Chance: 5
+      Money: 100
+      Items:
+        '1':
+          Id: 373
+          Meta: 8259
+          Qty: 2
+      Broadcasts:
+      - '&3[player] &ajust got a potion!'
+    Thirteenth:
+      Chance: 5
+      Money: 100
+      Items:
+        '1':
+          Id: 373
+          Meta: 8225
+          Qty: 2
+      Broadcasts:
+      - '&3[player] &ajust got a potion!'
+    Fourteenth:
+      Chance: 5
+      Money: 100
+      Items:
+        '1':
+          Id: 373
+          Meta: 8235
+          Qty: 2
+      Broadcasts:
+      - '&3[player] &ajust got a potion!'
+    Fifteenth:
+      Chance: 5
+      Money: 10
+      Items:
+        '1':
+          Id: 206
+          Meta: 0
+          Qty: 10
+    Sixteenth:
+      Chance: 5
+      Money: 100
+      Items:
+        '1':
+          Id:201
+          Meta: 0
+          Qty: 10
+    Seventeenth:
+      Chance: 5
+      Money: 20
+      Items:
+        '1':
+          Id: 202
+          Meta: 0
+          Qty: 10
+    Eighteenth:
+      Chance: 3
+      Money: 10
+      Items:
+        '1':
+          Id: 357
+          Meta: 0
+          Qty: 4
+          Name: '&2Special Cookies'
           Lore: 
           - '&bSpecial Prize'
           - '&bfor [player]'
-          Enchants:
-          - DAMAGE_ALL=1
-          - FIRE_ASPECT=1
+      Broadcasts:
+      - '&3[player] &ajust got some Special Cookies!'
+    Nineteenth:
+      Chance: 3
+      Money: 10
+      Items:
+        '1':
+          Id: 400
+          Meta: 0
+          Qty: 2
+          Name: '&2Secret Ingredient Pie'
+          Lore: 
+          - '&bSpecial Prize'
+          - '&bfor [player]'
+    Twentieth:
+      Chance: 3
+      Money: 10
+      Items:
+        '1':
+          Id: 413
+          Meta: 0
+          Qty: 3
+          Name: '&2Mystery Stew'
+          Lore: 
+          - '&bSpecial Prize'
+          - '&bfor [player]'
   BetterRewards:
-    Fourth:
-      Chance: 10
+    Twenty-First:
+      Chance: 5
       Money: 10
       Commands:
       - 'give [player] tnt 1'
@@ -86,13 +233,13 @@ Rewards:
       - '&aYou just got some TnT'
       Broadcasts:
       - '&3[player] &ajust got some TnT!'
-    Fifth:
-      Chance: 10
+    Twenty-second:
+      Chance: 5
       Commands:
       - 'give [player] apple 1'
       PrivateMessages:
       - '&aYou got a tasty apple'
-    Sixth:
+    Twenty-third:
       Chance: 2
       PrivateMessages:
       - '&cSorry, you didn''t win anything this time'
