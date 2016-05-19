@@ -2,7 +2,7 @@
 # Just keep them where there are now and everything will be ok :)
 
 info:
-  prefix: '&e[&aTryMe&e] '
+  prefix: '&f[&e&l/Quiz&f] '
   RewardBroadcast: '&6[player] wins!'
   CantFindCategory: '&2Cant find any category you defined. Posible: &3[categories]&c.'
   CantFindRewardCategory: '&2Cant find any reward category you defined. Posible: &3[categories]&c.'

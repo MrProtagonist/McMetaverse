@@ -1,4 +1,4 @@
-command /quiz <text>:
+command /proquiz <text>:
 	permission: essentials.socialspy
 	trigger:
 		if arg is set:

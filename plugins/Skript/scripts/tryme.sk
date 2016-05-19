@@ -1,0 +1,4 @@
+command /quiz <text>:
+	aliases: quis, quisalas
+	trigger:
+		make player execute "/answ %arg%"
