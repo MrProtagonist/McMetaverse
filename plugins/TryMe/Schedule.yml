@@ -24,7 +24,7 @@
 
 Timer:
   '1':
-    Mode: ALL
+    Mode: all
     From: '09:10:00'
     Until: '10:15:10'
     Categories:
@@ -34,7 +34,7 @@ Timer:
     Rewards:
     - All
   '2':
-    Mode: Decode
+    Mode: Flash
     From: '11:20:15'
     Until: '12:00:00'
     Categories:
@@ -44,7 +44,7 @@ Timer:
     Rewards:
     - All
   '3':
-    Mode: ALL
+    Mode: Decode
     From: '14:00:25'
     Until: '16:00:00'
     Categories:
