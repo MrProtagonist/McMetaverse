@@ -1,0 +1,34 @@
+npc:
+  Guardian:
+    SpawnCount: 1
+    HP: 40
+    Speed: 0.3
+    Drops:
+      '283':
+        Chance: 40
+        Count: 1
+      '286':
+        Chance: 30
+        Count: 1
+  Warrior:
+    SpawnChance: 4
+    HP: 40
+    Speed: 0.3
+    Drops:
+      '307':
+        Chance: 25
+        Count: 1
+      '306':
+        Chance: 20
+        Count: 1
+  Demon:
+    SpawnChance: 4
+    HP: 40
+    Speed: 0.3
+    Drops:
+      '322':
+        Chance: 40
+        Count: 1
+      '397':
+        Chance: 20
+        Count: 1
