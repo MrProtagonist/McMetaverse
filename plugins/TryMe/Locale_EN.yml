@@ -4,12 +4,12 @@
 info:
   prefix: '&f[&e&l/Quiz&f] '
   RewardBroadcast: '&6[player] wins!'
-  CantFindCategory: '&2Cant find any category you defined. Posible: &3[categories]&c.'
-  CantFindRewardCategory: '&2Cant find any reward category you defined. Posible: &3[categories]&c.'
+  CantFindCategory: '&2Cant find any category you defined. Possible: &3[categories]&c.'
+  CantFindRewardCategory: '&2Cant find any reward category you defined. Possible: &3[categories]&c.'
   CantFindGameMode: '&2Cant find game mode. Posible: &3qmode, fmode, dmode, mmode&c.'
   PluginStoped: '&4Plugin has been stopped!'
   PlayTimeStart: '&3Quiz game have been started!'
-  PlayTimeStop: '&3Quiz game have been stoped! Thx for playing!'
+  PlayTimeStop: '&3Quiz game have been stopped! Thx for playing!'
   AnsweringTimeEnded: '&cYour answer ware correct but answering time ended!'
   TopPlayers: '&2Top &3[number] &2players in &3[gamemode] &2mode, ordered by &3[orderby]
     &2in &3[sortingmode]&2!'

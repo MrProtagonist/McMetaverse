@@ -42,40 +42,29 @@ Example:
 Rewards:
   SimpleRewards:
     First:
-      Chance: 10
+      Chance: 30
       Money: 100
       Items:
         '1':
-          Id: 272
+          Id: 384
           Meta: 0
-          Qty: 1
-          Name: '&2Stone Sword'
+          Qty: 5
     Second:
-      Chance: 20
+      Chance: 25
       Money: 20
       Items:
         '1':
-          Id: 276
+          Id: 341
           Meta: 0
-          Qty: 1
-          Lore: 
-          - '&bSpecial Prize'
-          - '&bfor [player]'
+          Qty: 10
     Third:
-      Chance: 30
+      Chance: 23
       Money: 10
       Items:
         '1':
-          Id: 283
+          Id: 169
           Meta: 0
-          Qty: 1
-          Name: '&2Stone Sword'
-          Lore: 
-          - '&bSpecial Prize'
-          - '&bfor [player]'
-          Enchants:
-          - DAMAGE_ALL=1
-          - FIRE_ASPECT=1
+          Qty: 3
   BetterRewards:
     Fourth:
       Chance: 10
@@ -105,37 +94,32 @@ DailyRewards:
     First:
       Money: 1000
       PrivateMessages:
-      - '&3[player] &2You got the most quiz answers right in the last 24 hours!'
-      - '&3[player] &aYou got $1,000!'
+      - '&3[player] &2You have are best quiz game player from last 24 hours!'
+      - '&3[player] &2For this you have got 1000 money!'
     Second:
       Money: 800
       PrivateMessages:
-      - '&3[player] &2You got the second most quiz answers right in the last 24 hours!'
-      - '&3[player] &aYou got $800!'
+      - '&3[player] &2You have are second best quiz game player from last 24 hours!'
+      - '&3[player] &2For this you have got 800 money!'
     Third:
       Money: 600
       PrivateMessages:
-      - '&3[player] &2You got the third most quiz answers right in the last 24 hours!'
-      - '&3[player] &aYou got $600!'
+      - '&3[player] &2You have are third best quiz game player from last 24 hours!'
+      - '&3[player] &2For this you have got 600 money!'
   Weekly:
     First:
-      Money: 400
+      Money: 600
       PrivateMessages:
-      - '&3[player] &2You are the top quiz answerer from the last 7 days!'
-      - '&3[player] &aYou got $400!'
-    Second:
-      Money: 300
-      PrivateMessages:
-      - '&3[player] &2You are the second highest quiz answerer from the last 7 days!'
-      - '&3[player] &aYou got $300!'
-  Monthly:
-    First:
-      Money: 1000
-      PrivateMessages:
-      - '&3[player] &2You are the top quiz answerer from the last month!'
-      - '&3[player] &aYou got $1000!'
+      - '&3[player] &2You are one of best quiz game players from last 7 days!'
+      - '&3[player] &2For this you have got 600 money!'
     Second:
       Money: 800
       PrivateMessages:
-      - '&3[player] &2You are the second top quiz answerer from the last month!'
-      - '&3[player] &aYou got $800!'
+      - '&3[player] &2You are one of best quiz game players from last 7 days!'
+      - '&3[player] &2For this you have got 800 money!'
+  Monthly:
+    Second:
+      Money: 800
+      PrivateMessages:
+      - '&3[player] &2You are one of best quiz game players from last month!'
+      - '&3[player] &2For this you have got 800 money!'
