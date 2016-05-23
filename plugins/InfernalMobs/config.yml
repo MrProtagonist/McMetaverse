@@ -10,7 +10,7 @@
 #nameTagsName and bossBarsName have these special tags: <mobLevel> = the amount of powers the boss has.
 #<abilities> = A list of about 3-5 (whatever can fit) names of abilities the boss has.
 #<mobName> = Name of the mob, so if the mob is a creeper the mobName will be "Creeper".
-chance: 100
+chance: 80
 #mobChances:
 #  Ghast: 150
 #levelChance:
@@ -74,7 +74,7 @@ spawnMessages:
 - '&cSomething is coming...'
 - '&cYou hear a mob nearby...'
 enabledworlds:
-- hyper
+- Hyper
 enabledmobs:
 #- Chicken
 - PigZombie
