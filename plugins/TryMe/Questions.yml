@@ -361,7 +361,7 @@ Data:
       - oceans
       - jungles and Deserts
     '74':
-      Question: '&6Does netherwart only grow in the nether?'
+      Question: '&6Does netherwart only naturally spawn in the nether?'
       Answers:
       - 'true'
       - yes
