@@ -223,6 +223,7 @@ groups:
     - sht.ticket
     - TogglePVP.toggle
     - trading.trade
+    - tryme.commandanswer
     inheritance:
     - g:bukkit_default
     - g:essentials_default
@@ -578,6 +579,16 @@ groups:
     info:
       build: false
       prefix: '[&a&oEmerald&r]&a '
+      suffix: ''
+  SeniorMod:
+    default: false
+    permissions:
+    - bukkit.command.gamemode
+    inheritance:
+    - mod
+    info:
+      build: true
+      prefix: '&r&f[&4&oSenior Mod&r] '
       suffix: ''
   TrialDev:
     default: false
@@ -995,7 +1006,7 @@ groups:
     - legend
     info:
       build: true
-      prefix: '&r&f[&2ADMIN&r] '
+      prefix: '&r&f[&9&oAdmin&r] '
       suffix: ''
   Decorator:
     default: false
@@ -1189,5 +1200,5 @@ groups:
     - dev
     info:
       build: false
-      prefix: '&r&f[&5&oHead Mod&r] &r'
+      prefix: '&r&f[&d&oHead Mod&r] &r'
       suffix: ''
