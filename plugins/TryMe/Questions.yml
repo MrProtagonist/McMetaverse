@@ -19,7 +19,7 @@ Data:
       Answers:
       - MrProtagonist
     '4':
-      Question: '&6What year was Minecraft released in?'
+      Question: '&6When was Minecraft released in?'
       Answers:
       - '2009'
       - 2009 may
@@ -44,6 +44,7 @@ Data:
       - 1 meter
       - 100 cm
       - 100 centimeters
+      - 1m
     '9':
       Question: '&6What block has the ID of 1?'
       Answers:
@@ -91,6 +92,7 @@ Data:
       Question: '&6What tool is used to prepare soil for crops?'
       Answers:
       - hoe
+      - your mom
     '20':
       Question: '&6What is, in unmodified Minecraft, the strongest material for armour?'
       Answers:
@@ -263,10 +265,14 @@ Data:
       Answers:
       - Telltale Games
       - Telltale
+      - Tell Tale
     '55':
       Question: '&6Which block can be used as a weapon?'
       Answers:
       - tnt
+      - cactus
+      - lava
+      - fire
     '56':
       Question: '&6Which block slows someone walking across it?'
       Answers:
@@ -372,8 +378,7 @@ Data:
       - redstone
       - glowstone dust
       - gunpowder
-      - ferm
-      - spider eye
+      - fermented spider eye
     '76':
       Question: '&6How many bites can you take out of cake?'
       Answers:
@@ -643,7 +648,7 @@ Data:
       - wheat
       - heads
       - player heads
-      - inverted dylight sensor
+      - daylight sensor
     '126':
       Question: '&6How much longer (percentage) will armor last in average with Unbreaking
         I enchantment?'
@@ -918,6 +923,8 @@ Data:
       Answers:
       - Idaho
       - United States
+      - America
+      - USA
 
     '180':
       Question: '&6Name your favorite admin.'
