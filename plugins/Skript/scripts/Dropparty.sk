@@ -1,4 +1,4 @@
-﻿on login:
+on login:
 	set {joinedparty.%player%} to false
 	add 1 to {login.dropparty}
 	{login.dropparty} is 12
@@ -6,8 +6,8 @@
 	set {dropparty.donetoday} to true
 	wait 10 seconds
 	broadcast "&f[&aSERVER&f] &eEnough players are logged in to trigger the daily drop party!"
-	loop all players:
-		execute console command "/playsound note.pling %loop-player%"
+#	loop all players:
+#		execute console command "/playsound note.pling %loop-player%"
 	wait 2 real seconds
 	execute console command "/startdrop"
 	
@@ -76,10 +76,10 @@ on right click with double plant:
 command /drop:
 	description: Warp to the drop party area.
 	trigger:
-		player is op
+#		player is op
 		message "&a&oYou are whisked away to the Drop Party area."
 		set {warping.%player%} to true
-		push the player upwards at speed 10
+#		push the player upwards at speed 10
 #		execute console command "/playsound random.explode %player% ~0 ~0 ~0 20 50"
 		loop 33 times:
 #			spawn 50 of mob spell data 1 offset with 1, 0, 1 at location of block 1 meter above player
