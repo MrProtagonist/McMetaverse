@@ -22,14 +22,14 @@ on rightclick on librarian:
 	replace all "$" with "" in {_bal}
 	set {_temp.number} to {_bal} parsed as number
 	send "&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-" to player
-	send json of "&f[ &bWithdraw All &f(&a$%{bank.vault::%UUID of player%}%&f) &f]" run "/withdraw %{bank.vault::%UUID of player%}-0.01%" to player
-	send json of "&f[ &bWithdraw &a$10,000 &f]" run "/withdraw 10000" to player
-	send json of "&f[ &bWithdraw &a$1,000 &f]" run "/withdraw 1000" to player
-	send json of "&f[ &bWithdraw &a$100 &f]" run "/withdraw 100" to player
-	send json of "&f[ &cDeposit &a$100 &f]" run "/deposit 100" to player
-	send json of "&f[ &cDeposit &a$1,000 &f]" run "/deposit 1000" to player
-	send json of "&f[ &cDeposit &a$10,000 &f]" run "/deposit 10000" to player
-	send json of "&f[ &cDeposit All &f(&a%player's balance%&f) ]" run "/deposit %{_temp.number}%" to player
+	send umbaska json of "&f[ &bWithdraw All &f(&a$%{bank.vault::%UUID of player%}%&f) &f]" run "/withdraw %{bank.vault::%UUID of player%}-0.01%" to player
+	send umbaska json of "&f[ &bWithdraw &a$10,000 &f]" run "/withdraw 10000" to player
+	send umbaska json of "&f[ &bWithdraw &a$1,000 &f]" run "/withdraw 1000" to player
+	send umbaska json of "&f[ &bWithdraw &a$100 &f]" run "/withdraw 100" to player
+	send umbaska json of "&f[ &cDeposit &a$100 &f]" run "/deposit 100" to player
+	send umbaska json of "&f[ &cDeposit &a$1,000 &f]" run "/deposit 1000" to player
+	send umbaska json of "&f[ &cDeposit &a$10,000 &f]" run "/deposit 10000" to player
+	send umbaska json of "&f[ &cDeposit All &f(&a%player's balance%&f) ]" run "/deposit %{_temp.number}%" to player
 	send "&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-" to player
 	send "&6Current Balance: &a%player's balance%" to player
 	send "&6Bank Account Total: &a$%{bank.vault::%UUID of player%}%" to player
