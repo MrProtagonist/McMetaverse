@@ -1,4 +1,4 @@
-﻿#script options:
+#script options:
 #    $ developer mode
 variables:
 	{warnings.%player%} = 0
