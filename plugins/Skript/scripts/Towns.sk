@@ -40,22 +40,22 @@ command /certify:
 			set {towns.certified::%{townwarp.count}%} to "Never"
 			set {towns.biome::%{townwarp.count}%} to biome at the player
 			set {towns.warp::%{townwarp.count}%} to player's location
-			play note pling at player with pitch 1
-			play note pling at player with pitch 1
-			play note bass drum at player with pitch 1.4
-			play note snare drum at player with pitch 1.5
+#			play note pling at player with pitch 1
+#			play note pling at player with pitch 1
+#			play note bass drum at player with pitch 1.4
+#			play note snare drum at player with pitch 1.5
 			wait 5.5 ticks
-			play note pling at player with pitch 1
-			play note pling at player with pitch 1
-			play note snare drum at player with pitch 1.6
-			wait 5.5 ticks
-			play note pling at player with pitch 1
-			play note pling at player with pitch 1
-			play note bass drum at player with pitch 1.6
-			play note snare drum at player with pitch 1.6
-			wait 5.5 ticks
-			play note pling at player with pitch 1
-			play note pling at player with pitch 1.4
+#			play note pling at player with pitch 1
+#			play note pling at player with pitch 1
+#			play note snare drum at player with pitch 1.6
+#			wait 5.5 ticks
+#			play note pling at player with pitch 1
+#			play note pling at player with pitch 1
+#			play note bass drum at player with pitch 1.6
+#			play note snare drum at player with pitch 1.6
+#			wait 5.5 ticks
+#			play note pling at player with pitch 1
+#			play note pling at player with pitch 1.4
 			delete {certify.%player%}
 			message "&f[&aSERVER&f] &a&oTown submitted! Please allow up to 72 hours for your submission to be reviewed."
 			stop
@@ -106,6 +106,29 @@ command /towns [<text>] [<text>]:
 				message "&aSuccessfully certified %{towns.name::%arg 2%}%!&e Be sure they have a warp in the &a/towns&e menu and at the server warp hub!"
 			else:
 				message "&cInvalid town id number!"
+		if arg 1 is "clearall":
+			if player is op:
+				if player is {townkiller}:
+					delete {towns.certified::*}
+					delete {towns.name::*}
+					delete {towns.warp::*}
+					delete {towns.owner::*}
+					delete {townwarp.count}
+					message "&4Deleted all towns from the list."
+					message "&4Toggling townadmin..."
+					wait 2 real seconds
+					make player execute "townadmin"
+				else:
+					message "&cAre you sure you want to do this? Execute &6&o/townadmin&r&4 first."
+command /townadmin:
+	trigger:
+		if player is op:
+			if {townkiller} is not set:
+				set {townkiller} to player
+				message "&cYou can now do &6&o/towns clearall&r&4 to delete the town list."
+			else:
+				delete {townkiller}
+				message "&cToggled townadmin for you."
 command /owners:
 	trigger:
 		loop {towns.owner::*}:
