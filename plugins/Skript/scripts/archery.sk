@@ -7,7 +7,7 @@ on script load:
 on shoot:
 	shooter is {archery.busy}
 	ignite the projectile
-    trail projectile with particle drip lava
+	trail projectile with particle drip lava
 	set metadata "type" of projectile to "explosive"
 on projectile hit:
 	set {_type} to metadata "type" of projectile
