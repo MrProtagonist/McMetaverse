@@ -85,6 +85,9 @@ command /resetsandstorm:
 			delete {sk.joinsandstorm}
 			delete {sk.startsandstorm}
 			delete {sk.leavesandstorm}
+			delete {sandstorm.top.player}
+			delete {sandstorm.top.time.fake}
+			set {sandstorm.top.time.real} to 0
 		else:
 			message "&cTo reset the button locations as well, type /sandstormcontrol and execute /resetsandstorm again."
 command /leavesandstorm:
@@ -142,7 +145,7 @@ command /startsandstorm:
 					spawn damaging falling block of red sand at {sandstorm.list::%{randomasfucka}%}
 					spawn damaging falling block of red sand at {sandstorm.list::%{randomasfuckb}%}
 			else:
-				broadcast "&f[&aSERVER&f]&6&oSand&c&oStorm&r&e has been canceled due to a lack of players!"
+				broadcast "&f[&aSERVER&f] &6&oSand&c&oStorm&r&e has been canceled due to a lack of players!"
 		else:
 			message "&4Can't start the &6&oSand&c&oStorm&r&4 without any players!"
 on break:
@@ -168,31 +171,32 @@ on death:
 		remove 1 from {sandstorm.players}
 		set {sandstorm.%player%.playing} to false
 		set {sandstorm.%player%.spectating} to true
-		if {sandstorm.top.%player%.fake} is not set:
-			message "&f[&aSERVER&f] &6You just set a personal high score for &6&oSand&c&oStorm&a!"
-			set {sandstorm.top.%player%.fake} to {sandstorm.timer}
-			set {sandstorm.top.%player%.real} to {death}
-		if {sandstorm.top.%player%.fake} is less than {sandstorm.timer}:
-			message "&f[&aSERVER&f] &6You just set a personal high score for &6&oSand&c&oStorm&a!"
-			set {sandstorm.top.%player%.fake} to {sandstorm.timer}
-			set {sandstorm.top.%player%.real} to {death}
 		if {sandstorm.players} is equal to 0:
 			set {sandstorm.return} to player
-			set {sandstorm.going} to false
 			wait 2 ticks
 			broadcast "&f[&aSERVER&f] &6%player% &ais the winner of &6&oSand&c&oStorm&6!"
 			set {temppay} to {sandstorm.timer} * 2
 			set {temppay2} to {temppay} / 10
 			execute console command "eco give %player% %{temppay2}%"
-			if {sandstorm.timer} is greater than {sandstorm.top.time.fake}:
+			if {sandstorm.top.player} is not set:
 				wait 2 real seconds
 				broadcast "&f[&aSERVER&f] &6%player% &ajust set the &aHIGH SCORE for &6&oSand&c&oStorm&a!"
 				set {sandstorm.top.time.fake} to {death}
+				set {sandstorm.top.time.real} to {sandstorm.timer}
 				set {sandstorm.top.player} to player
+				set {sandstorm.going} to false
+			else:
+				set {sandstorm.going} to false
+				wait 1 tick
+				if {sandstorm.timer} is greater than {sandstorm.top.time.real}:
+					wait 2 real seconds
+					broadcast "&f[&aSERVER&f] &6%player% &ajust set the &aHIGH SCORE for &6&oSand&c&oStorm&a!"
+					set {sandstorm.top.time.fake} to {death}
+					set {sandstorm.top.time.real} to {sandstorm.timer}
+					set {sandstorm.top.player} to player
 			loop all players:
 				set {sandstorm.%loop-player%.playing} to false
 				set {sandstorm.%loop-player%.spectating} to false
-			set {sandstorm.going} to false
 			set {sandstorm.countdown} to false
 			set {sandstorm.player} to 0
 			wait 3 real seconds
@@ -223,17 +227,19 @@ on quit:
 			wait 2 ticks
 			broadcast "&f[&aSERVER&f] &6%player% &ais the winner of &6&oSand&c&oStorm&6!"
 			execute console command "eco give %player% 200"
-			if {sandstorm.timer} is greater than {sandstorm.top.%player%}:
-				wait 2 real seconds
-				broadcast "&f[&aSERVER&f] &6%player% &ajust set the &aHIGH SCORE for &6&oSand&c&oStorm&a!"
-				set {sandstorm.top.time} to {death}
-				set {sandstorm.top.player} to player
-			if {sandstorm.timer} is greater than {sandstorm.top.time.fake}:
+			if {sandstorm.top.player} is not set:
 				wait 2 real seconds
 				broadcast "&f[&aSERVER&f] &6%player% &ajust set the &aHIGH SCORE for &6&oSand&c&oStorm&a!"
 				set {sandstorm.top.time.fake} to {death}
 				set {sandstorm.top.player} to player
-			set {sandstorm.going} to false
+				set {sandstorm.going} to false
+			else:
+				set {sandstorm.going} to false
+				if {sandstorm.timer} is greater than {sandstorm.top.time.fake}:
+					wait 2 real seconds
+					broadcast "&f[&aSERVER&f] &6%player% &ajust set the &aHIGH SCORE for &6&oSand&c&oStorm&a!"
+					set {sandstorm.top.time.fake} to {death}
+					set {sandstorm.top.player} to player
 			loop all players:
 				set {sandstorm.%loop-player%.playing} to false
 				set {sandstorm.%loop-player%.spectating} to false
