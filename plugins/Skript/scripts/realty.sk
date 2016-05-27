@@ -24,6 +24,7 @@ command /realestate [<text="page">] [<integer=1>]:
 				stop
 			else:
 				message "&cPage, %arg-2%, Not Found. The Highest Page Is %{_pages}%"
+				message "&cThere are no real estates for sale yet!"
 		else:
 #			if arg is "clear":
 #				player has the permission "is.op.as.fuck"
