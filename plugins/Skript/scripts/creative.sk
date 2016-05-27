@@ -25,6 +25,74 @@ at 10am in "sandbox":
 on script load:
 	if {contest.going} is not set:
 		set {contest.going} to false
+on world change:
+	wait 1 ticks
+	if the player's world is "sandbox":
+		if player does not have permission "worldedit.*":
+			execute console command "manselect sandbox"
+			wait 1 tick
+			execute console command "manuaddp %player% worldedit.*"
+	else:
+		if the player's world is "contest":
+			run player command "manudelp %player% worldedit.*" as op
+			message "&cNo world edit here, sorry ;3"
+			if player does not have permission "essentials.socialspy":
+				wait 2 ticks
+				set the player's prefix to "&f[&d&oContest&f]&r "
+command /setsandbox:
+	description: Set location for sandbox
+	permission: is.pro
+	trigger:
+		set {sandbox} to location of player
+		message "<lime>Sandbox warp set!"
+		stop
+command /sandbox:
+	trigger:
+#		execute console command "consolewarp %player%"
+		wait 2 ticks
+		message "&a&oYou are now in The Sandbox."
+		if {sandbox.%player%.certify} is not set:
+			set {sandbox.%player%.certify} to false
+		if player does not have permission "essentials.socialspy":
+			wait 2 ticks
+			run player command "mvtp %player% sandbox" as op
+			wait 2 ticks
+			set the player's prefix to "&f[&e&oSandbox&f]&r "
+#=======Premium or Seasoned check========#
+		if player has permission "is.premium":
+			execute console command "mvtp %player% sandbox"
+			if player does not have permission "plots.claim":
+				wait 2 ticks
+				execute console command "manselect sandbox"
+				wait 2 ticks
+				execute console command "manpromote %player% certified"
+				wait 2 ticks
+				execute console command "manselect metacurse"
+				if {sandbox.%player%.certify} is true:
+					set {sandbox.%player%.certify} to false
+				message "&aYou can now claim and build in up to 3 plots in sandbox!"
+		else:
+			wait 2 ticks
+			if {rank.%player%} is greater than 4:
+				if player does not have permission "plots.claim":
+					wait 2 ticks
+					execute console command "manselect sandbox"
+					wait 2 ticks
+					execute console command "manpromote %player% certified"
+					wait 2 ticks
+					execute console command "manselect metacurse"
+					if {sandbox.%player%.certify} is true:
+						set {sandbox.%player%.certify} to false
+					message "&aYou can now claim and build in up to 3 plots in sandbox!"
+			else:
+				if {sandbox.%player%.certify} is false:
+					wait 2 ticks
+					execute console command "manselect sandbox"
+					wait 2 ticks
+					execute console command "mandemote %player% default"
+					wait 2 ticks
+					execute console command "manselect metacurse"
+					set {sandbox.%player%.certify} to true
 command /setcontest:
 	permission: is.pro
 	trigger:
@@ -33,27 +101,22 @@ command /setcontest:
 command /contest:
 	trigger:
 		if {contest.going} is true:
-			teleport player to {contest}
+			execute console command "mvtp %player% contest"
 			message "&eWelcome to the contest world! Use &a/gmc&e to go into creative mode!"
 			message "&eCurrent Contest: &f%{contest.name}%"
 			message "&eHours Remaining: &f%{contest.length}%"
 			stop
 		else:
 			if player has the permission "essentials.socialspy":
-				teleport player to {contest}
+				execute console command "mvtp %player% contest"
 				stop
 			message "&cSorry, you can't go here unless a contest is going!"
 			stop
 on command:
 	if the player's world is "contest" or "sandbox":
-		if player does not have permission "plots.claim":
-			command is not "meta" or "login" or "a" or "spawn" or "gmc" or "gms"
-			message "&cYou can't use those commands in sandbox if you are not premium or seasoned."
-			cancel event
-on command "//wand" or "//pos1" or "//pos2" pr "//hpos1" or "//hpos2" or "//chunk" or "//sel" or "//generate" or "//hcyl" or "//cyl" or "//sphere" or "//hsphere" or "//pyramid" or "//hpydramid" or "/forestgen" or "/pumpkins" or "//fill" or "//fillr" or "//drain" or "/fixwater" or "/fixlava" or "removeabove" or "/removebelow" or "/replacenear" or "/removenear" or "/remove" or "/tool":
-	if the player's world is "contest":
 		player is not op
-		message "&cCan't use worldedit here!"
+		command is not "meta" or "login" or "a" or "spawn" or "gmc" or "gms"
+		message "&cYou can't use those commands here!"
 		cancel event
 on break:
 	if the player's world is "sandbox":
@@ -122,36 +185,36 @@ every hour:
 #	player is in world "contest"
 #	{contest.going} is false
 #	cancel event
-every 2 real seconds:
+#every 2 real seconds:
 #	player is online
-	loop all players:
-		if loop-player is in world "Hyperverse":
-			loop-player's gamemode is creative
-			loop-player does not have the permission "-autoitem.replaceon.place"
-			execute console command "manuaddp %loop-player% -autoitem.replaceon.place"
-		if loop-player is in world "contest":
-			loop-player's gamemode is creative
-			loop-player does not have the permission "-autoitem.replaceon.place"
-			execute console command "manuaddp %loop-player% -autoitem.replaceon.place"
-		if loop-player is in world "sandbox":
-			loop-player's gamemode is creative
-			loop-player does not have the permission "-autoitem.replaceon.place"
-			execute console command "manuaddp %loop-player% -autoitem.replaceon.place"
-		else:
-			{autofill.%loop-player%} is not set:
-				set {autofill.%loop-player%} to false
-			loop-player's gamemode is creative:
-				{autofill.%loop-player%} is true
-				set {autofill.%loop-player%} to false
-				execute console command "manuaddp %loop-player% -autoitem.replaceon.place"
-				send "&e&oDisabling AutoFill for you. &f=]" to loop-player
-			loop-player's gamemode is survival:
-				loop-player has the permission "-autoitem.replaceon.place"
-				{autofill.%loop-player%} is not true
-				set {autofill.%loop-player%} to true
-				execute console command "manudelp %loop-player% -autoitem.replaceon.place"
-				send "&e&oEnabling AutoFill for you. &f=]" to loop-player
-			
+#	loop all players:
+#		if loop-player is in world "Hyperverse":
+#			loop-player's gamemode is creative
+#			loop-player does not have the permission "-autoitem.replaceon.place"
+#			execute console command "manuaddp %loop-player% -autoitem.replaceon.place"
+#		if loop-player is in world "contest":
+#			loop-player's gamemode is creative
+#			loop-player does not have the permission "-autoitem.replaceon.place"
+#			execute console command "manuaddp %loop-player% -autoitem.replaceon.place"
+#		if loop-player is in world "sandbox":
+#			loop-player's gamemode is creative
+#			loop-player does not have the permission "-autoitem.replaceon.place"
+#			execute console command "manuaddp %loop-player% -autoitem.replaceon.place"
+#		else:
+#			{autofill.%loop-player%} is not set:
+#				set {autofill.%loop-player%} to false
+#			loop-player's gamemode is creative:
+#				{autofill.%loop-player%} is true
+#				set {autofill.%loop-player%} to false
+#				execute console command "manuaddp %loop-player% -autoitem.replaceon.place"
+#				send "&e&oDisabling AutoFill for you. &f=]" to loop-player
+#			loop-player's gamemode is survival:
+#				loop-player has the permission "-autoitem.replaceon.place"
+#				{autofill.%loop-player%} is not true
+#				set {autofill.%loop-player%} to true
+#				execute console command "manudelp %loop-player% -autoitem.replaceon.place"
+#				send "&e&oEnabling AutoFill for you. &f=]" to loop-player
+#			
 command /stalk:
 	permission: essentials.socialspy
 	trigger:
