@@ -1,334 +1,105 @@
 #script options:
 #    $ developer mode
-on script load:
-	set {fishing.countdown} to false
-	set {fishing.going} to false
-	set {fishing.players} to 0
-	set {fishing.top.score} to 0
-	loop all players:
-		set {fishing.%loop-player%.playing} to false
-on join:
-	set {fishing.%player%.playing} to false
-on pickup of raw fish:
-	{fishing.%player%.playing} is true
-	set {_rand} to a random integer between 2 and 30
-	set {_rand2} to a random integer between 1 and 5
-	if {_rand2} is 1:
-		set {_final} to 1.23 * {_rand}
-	if {_rand2} is 2:
-		set {_final} to 1.41 * {_rand}
-	if {_rand2} is 3:
-		set {_final} to 1.68 * {_rand}
-	if {_rand2} is 4:
-		set {_final} to 1.79 * {_rand}
-	if {_rand2} is 5:
-		set {_final} to 2.14 * {_rand}
-	chance of 15%:
-		set {_final} to {_final} * 2
-	chance of 20%:
-		set {_final} to {_final} / 2
-	execute console command "tm amsg %player% &aYou got a &6&l%{_final}% lb&a fish."
-	set {fishing.%player%.last} to {_final}
-	if {fishing.%player%.last} is greater than {fishing.%player%.best}:
-		set {fishing.%player%.best} to {fishing.%player%.last}
-	if {fishing.%player%.last} is greater than {fishing.session.top}:
-		set {fishing.session.top} to {fishing.%player%.last}
-		set {fishing.session.player} to player
-	loop all players:
-		{fishing.%loop-player%.playing} is true
-		send "&a%player%&f got a %{_final}% lb fish." to loop-player
-#	broadcast "&f[&aFISHING DEBUG&f] %player% got a %{_final}% lb fish after calculations."
-#	broadcast "&f[&aFISHING DEBUG&f] Current best for %player% is a %{fishing.%player%.best}% lb fish."
-#	broadcast "&f[&aFISHING DEBUG&f] Current session high score is by %{fishing.session.player}% for a %{fishing.session.top}% lb fish."
-	delete item
-	stop
-on pickup of raw salmon:
-	{fishing.%player%.playing} is true
-	set {_rand} to a random integer between 10 and 45
-	set {_rand2} to a random integer between 1 and 5
-	if {_rand2} is 1:
-		set {_final} to 1.23 * {_rand}
-	if {_rand2} is 2:
-		set {_final} to 1.41 * {_rand}
-	if {_rand2} is 3:
-		set {_final} to 1.68 * {_rand}
-	if {_rand2} is 4:
-		set {_final} to 1.79 * {_rand}
-	if {_rand2} is 5:
-		set {_final} to 2.14 * {_rand}
-	chance of 15%:
-		set {_final} to {_final} * 2
-	chance of 20%:
-		set {_final} to {_final} / 2
-	execute console command "tm amsg %player% &aYou got a &6&l%{_final}% lb&a fish."
-	set {fishing.%player%.last} to {_final}
-	if {fishing.%player%.last} is greater than {fishing.%player%.best}:
-		set {fishing.%player%.best} to {fishing.%player%.last}
-	if {fishing.%player%.last} is greater than {fishing.session.top}:
-		set {fishing.session.top} to {fishing.%player%.last}
-		set {fishing.session.player} to player
-	loop all players:
-		{fishing.%loop-player%.playing} is true
-		send "&a%player%&f got a %{_final}% lb fish." to loop-player
-#	broadcast "&f[&aFISHING DEBUG&f] %player% got a %{_final}% lb fish after calculations."
-#	broadcast "&f[&aFISHING DEBUG&f] Current best for %player% is a %{fishing.%player%.best}% lb fish."
-#	broadcast "&f[&aFISHING DEBUG&f] Current session high score is by %{fishing.session.player}% for a %{fishing.session.top}% lb fish."
-	delete item
-	stop
-on pickup of clownfish:
-	{fishing.%player%.playing} is true
-	set {_rand} to a random integer between 25 and 100
-	set {_rand2} to a random integer between 1 and 5
-	if {_rand2} is 1:
-		set {_final} to 1.23 * {_rand}
-	if {_rand2} is 2:
-		set {_final} to 1.41 * {_rand}
-	if {_rand2} is 3:
-		set {_final} to 1.68 * {_rand}
-	if {_rand2} is 4:
-		set {_final} to 1.79 * {_rand}
-	if {_rand2} is 5:
-		set {_final} to 2.14 * {_rand}
-	chance of 15%:
-		set {_final} to {_final} * 2
-	chance of 20%:
-		set {_final} to {_final} / 2
-	set {fishing.%player%.last} to {_final}
-	if {fishing.%player%.last} is greater than {fishing.%player%.best}:
-		set {fishing.%player%.best} to {fishing.%player%.last}
-	if {fishing.%player%.last} is greater than {fishing.session.top}:
-		set {fishing.session.top} to {fishing.%player%.last}
-		set {fishing.session.player} to player
-	loop all players:
-		{fishing.%loop-player%.playing} is true
-		send "&a%player%&f got a %{_final}% lb fish." to loop-player
-#	broadcast "&f[&aFISHING DEBUG&f] %player% got a %{_final}% lb fish after calculations."
-#	broadcast "&f[&aFISHING DEBUG&f] Current best for %player% is a %{fishing.%player%.best}% lb fish."
-#	broadcast "&f[&aFISHING DEBUG&f] Current session high score is by %{fishing.session.player}% for a %{fishing.session.top}% lb fish."
-	delete item
-	stop
-on pickup of pufferfish:
-	{fishing.%player%.playing} is true
-	set {_rand} to a random integer between 3 and 75
-	set {_rand2} to a random integer between 1 and 5
-	if {_rand2} is 1:
-		set {_final} to 1.23 * {_rand}
-	if {_rand2} is 2:
-		set {_final} to 1.41 * {_rand}
-	if {_rand2} is 3:
-		set {_final} to 1.68 * {_rand}
-	if {_rand2} is 4:
-		set {_final} to 1.79 * {_rand}
-	if {_rand2} is 5:
-		set {_final} to 2.14 * {_rand}
-	chance of 15%:
-		set {_final} to {_final} * 2
-	chance of 20%:
-		set {_final} to {_final} / 2
-	execute console command "tm amsg %player% &aYou got a &6&l%{_final}% lb&a fish."
-	set {fishing.%player%.last} to {_final}
-	if {fishing.%player%.last} is greater than {fishing.%player%.best}:
-		set {fishing.%player%.best} to {fishing.%player%.last}
-	if {fishing.%player%.last} is greater than {fishing.session.top}:
-		set {fishing.session.top} to {fishing.%player%.last}
-		set {fishing.session.player} to player
-	loop all players:
-		{fishing.%loop-player%.playing} is true
-		send "&a%player%&f got a %{_final}% lb fish." to loop-player
-#	broadcast "&f[&aFISHING DEBUG&f] %player% got a %{_final}% lb fish after calculations."
-#	broadcast "&f[&aFISHING DEBUG&f] Current best for %player% is a %{fishing.%player%.best}% lb fish."
-#	broadcast "&f[&aFISHING DEBUG&f] Current session high score is by %{fishing.session.player}% for a %{fishing.session.top}% lb fish."
-	delete item
-	stop
-on pickup:
-	{fishing.%player%.playing} is true
-	message "&cBummer! That isn't a fish!"
-	delete item
-	
-
-command /setfish <integer>:
-	permission: is.pro
+# ###################################
+# ##       Json Changelog 1.2      ##
+# ###################################
+# ## Author: MrProtagonist         ##
+# ## Created for: McMetaverse      ##
+# ## Web: McMetaverse.com          ##
+# ## IP: Play.McMetaverse.com      ##
+# ###################################
+# Special thanks to it_twit for adding Pagination
+#
+#command /changelog [<integer=1>]:
+#    usage: /changelog [<page>]
+#    trigger:
+#        set {_days} to 0
+#        loop {change.index::*}:
+#            add 1 to {_days}
+#        set {_pages} to ceil({_days}/17)
+#        if arg 1 > {_pages}:
+#            message "&d---------------------------------------------------"
+#            message "           &cThat Page Doesn't Exist"
+#            message "&d---------------------------------------------------"
+#            stop
+#        message " "
+#        message "&d---------------------------------------------------"
+#        message "&dServer Change Log&f - Hover over a day for details!"
+#        set {_temp} to 1
+#        loop {change.index::*}:
+#            if {_temp} > ((arg)-1)*15:
+#                if {_temp} <= arg*15:
+#                    send umbaska json of "&f[&a%loop-value%&f]" tooltip "%colored {change.log.%loop-value%::*}%" to player
+#            add 1 to {_temp}
+#        message "&d---------------------Page %arg 1%/%{_pages}%----------------------"
+#        message "&eType &a/changelog <page>&e to view a specific page."
+command /log <text>:
+    permission: sk.log
+    trigger:
+        if {change.days::%day%/%month%/%year%} is not set:
+            set {change.days::%day%/%month%/%year%} to true
+            add "%day%/%month%/%year%" to {change.index::*}
+            add "&b%player%&e - %arg%" to {change.log.%day%/%month%/%year%::*}
+            message "&aAdded to the change log!"
+            broadcast "&f[&aServer Update&f] &b&o%arg%"
+            stop
+        add "%new line%&b%player%&e - %arg%&r" to {change.log.%day%/%month%/%year%::*}
+        message "&aAdded to the change log!"
+        broadcast "&f[&aServer Update&f] &b&o%arg%"
+command /clearlog:
+    executable by: console
+    permission: sk.log
+    trigger:
+        loop {change.days::*}:
+            delete {change.log.%loop-index%::*}
+        delete {change.days::*}
+        delete {change.index::*}
+command /spooflog <text>:
+	permission: sk.log
 	trigger:
-		if argument is 1:
-			set {fishing.spec} to location of player
-			message "spec set"
-		if argument is 2:
-			set {fishing.spawn} to location of player
-			message "spawn set"
-command /leavefish:
-	trigger:
-		if {fishing.%player%.playing} is true:
-			message "&cRemoving you from the fishing players list."
-			set {fishing.%player%.playing} to false
-			remove 1 from {fishing.players}
-			loop all items in the player's inventory:
-				set loop-item to air
-		else:
-			message "&cCan't leave the &bFishing Tourney&c if you haven't joined it!"
-on command:
-	if {fishing.%player%.playing} is true:
-		if command is not "leavefish" or "startfish" or "a":
-			cancel event
-			message "&cCan't execute this command while playing &bFishing Tourney&c do &6&o/leavefish&r&c first!"
-command /fish:
-	trigger:
-		{fishing.%player%.playing} is not true
-		if {fishing.going} is not true:
-			if player can hold 36 wood swords:
-				teleport player to {fishing.spec}
-				set {fishing.%player%.last} to 0
-				set {fishing.%player%.playing} to true
-				message "&aJoined &6&oFishing Tourney"
-				send player title "&6Highscore" with subtitle "" for 2 seconds
-				wait 2 real seconds
-				send player title "&a%{fishing.top.player}%" with subtitle "" for 2 seconds
-				wait 2 real seconds
-				send player title "&a%{fishing.top.score}% lbs" with subtitle "" for 2 seconds
-				if {fishing.%player%.best} is not set:
-					set {fishing.%player%.best} to 0
-				if {fishing.players} is smaller than 0:
-					set {fishing.players} to 0
-				add 1 to {fishing.players}
-			else:
-				message "&cEmpty your inventory first!"
-				stop
-		else:
-			teleport player to {fishing.spec}
-			wait 2 ticks
-			message "&cA tourney is already going! Please wait."
-			stop
-command /startfish:
-	trigger:
-		if {fishing.%player%.playing} is true:
-			if {fishing.players} is greater than 0:
-				{fishing.going} is not true
-				{fishing.countdown} is not true
-				set {fishing.countdown} to true
-				set {fishing.session.top} to 1
-				broadcast "&aFishing Tournament starting in 10 seconds."
-				wait 5 real seconds
-				loop all players:
-					{fishing.%loop-player%.playing} is true
-					send loop-player title "&aGet ready!" with subtitle "" for 2 seconds
-					set {fishing.%loop-player%.last} to 0
-					set {fishing.%loop-player%.best} to 0
-					loop-player has the permission "essentials.fly.self":
-						execute console command "fly off %loop-player%"
-					loop-player is op:
-						execute console command "god off %loop-player%"
-						execute console command "god %loop-player% off"
-						execute console command "gms %loop-player%"
-				wait 5 real seconds
-				loop all players:
-					{fishing.%loop-player%.playing} is true
-					send loop-player title "&aStart!" with subtitle "" for 2 seconds
-					teleport loop-player to {fishing.spawn}
-					give loop-player a fishing rod
-				set {fishing.countdown} to false
-				set {fishing.going} to true
-				wait 60 real seconds
-				loop all players:
-					{fishing.%loop-player%.playing} is true
-					send loop-player title "&62 more minutes!" with subtitle "" for 2 seconds
-				wait 60 real seconds
-				loop all players:
-					{fishing.%loop-player%.playing} is true
-					send loop-player title "&61 more minute!!" with subtitle "" for 2 seconds
-				wait 60 real seconds
-				loop all players:
-					{fishing.%loop-player%.playing} is true
-					send loop-player title "&6Time's up!" with subtitle "" for 2 seconds
-					loop all items in loop-player's inventory:
-						set loop-item to air
-					teleport loop-player to {fishing.spec}
-					teleport loop-player to {fishing.spec}
-				wait 2 real seconds
-				loop all players:
-					{fishing.%loop-player%.playing} is true
-					send loop-player title "&6Winners!" with subtitle "" for 2 seconds
-				wait 2 real seconds
-				loop all players:
-					{fishing.%loop-player%.playing} is true
-					set {fishing.%loop-player%.playing} to false
-					send loop-player title "&a%{fishing.session.players}% lbs" with subtitle "" for 2 seconds
-				wait 2 real seconds
-				loop all players:
-					{fishing.%loop-player%.playing} is true
-					set {fishing.%loop-player%.playing} to false
-					send loop-player title "&a%{fishing.session.top}% lbs" with subtitle "" for 2 seconds
-					remove 1 fishing rod from the loop-player's inventory
-				set {_pay} to {fishing.session.top} * 2
-				execute console command "eco give %{fishing.session.player}% %{_pay}%"
-				if {fishing.top.score} is not set:
-					set {fishing.top.score} to 0
-					set {fishing.top.player} to "MrProtagonist"
-				if {fishing.session.top} is greater than {fishing.top.score}:
-					{fishing.going} is true
-					wait 2 real seconds
-					broadcast "&f[&aSERVER&f] &6%{fishing.session.player}% &ajust set the &aHIGH SCORE for &6&oFishing Tourney&a with a&6 %{fishing.session.top}% lb&a fish!"
-					set {fishing.top.score} to {fishing.session.top}
-					set {fishing.top.player} to {fishing.session.player}
-				set {fishing.going} to false
-				set {fishing.countdown} to false
-				set {fishing.players} to 0
-			else:
-				message "&aCan't start the Fishing Tourney without any players, do /fish first."
-		else:
-			message "&cCan't execute this command, do /fish first"
-command /fishstats:
-	permission: is.pro
-	trigger:
-		broadcast "&f[&aDEBUG&f] Top Score: %{fishing.top.score}%"
-		broadcast "&f[&aDEBUG&f] Top Player: %{fishing.top.player}%"
-on quit:
-	if {fishing.%player%.playing} is true:
-		{fishing.going} is true
-		remove 1 fishing rod from the player's inventory
-		subtract 1 from {fishing.players}
-		if {fishing.players} is 0:
-			set {fishing.going} to false
-			set {fishing.countdown} to false
-			broadcast "&eThe &6&oFishing Tourney &r&ehas ended because all players left the game."
-			
-command /resetfish:
-	trigger:
-		player is op
-		set {fishing.players} to 0
-		delete {sk.startfish}
-		delete {sk.leavefish}
-		message "Playercount and buttons for fish reset!"
-command /fishcontrol:
-	trigger:
-		if player has permission "essentials.socialspy":
-			if {fishcontrol} is not set:
-				set {fishcontrol} to player
-				message "&cYou can now set the 2 wooden buttons for the &nfishing&r&c minigame."
-			else:
-				delete {fishcontrol}
-on click:
-	clicked block is wooden button
-	if player is {fishcontrol}:
-		if {sk.startfish} is not set:
-			set {sk.startfish} to location of clicked block
-			message "Startfish button set!"
-		else:
-			set {sk.leavefish} to location of clicked block
-			message "Leavefish button set!"
-	else:
-		if location of event-block is {sk.startfish}:
-			make player execute "startfish"
-		else:
-			if location of event-block is {sk.leavefish}:
-				make player execute "leavefish"
-on break:
-	{fishing.%player%.playing} is true
-	cancel event
-on drop:
-	{fishing.%player%.playing} is true
-	cancel event
-on damage:
-	{fishing.%victim%.playing} is true
-	cancel event
-on inventory click:
-	{fishing.%player%.playing} is true
-	cancel event
+		broadcast "&f[&aServer Update&f] &b&o%arg%"
+#command /shouldonlybeusedoncechangelogcmd:
+	#permission: is.pro
+	#trigger:
+		#set {change.index::1} to "3/5/2015"
+		#set {change.index::2} to "5/5/2015"
+		#set {change.index::3} to "7/5/2015"
+		#set {change.index::4} to "9/5/2015"
+		#set {change.index::5} to "12/5/2015"
+		#set {change.index::6} to "16/5/2015"
+		#set {change.index::7} to "4/6/2015"
+		#set {change.index::8} to "10/6/2015"
+		#set {change.index::9} to "13/6/2015"
+		#set {change.index::10} to "14/6/2015"
+		#set {change.index::11} to "16/6/2015"
+		#set {change.index::12} to "17/6/2015"
+		#set {change.index::13} to "18/6/2015"
+		#message "This Probably Worked"
+command /changelog [<integer=1>]:
+    usage: /changelog [<page>]
+    trigger:
+        set {_days} to 0
+        loop {change.index::*}:
+            add 1 to {_days}
+        set {_pages} to ceil({_days}/17)
+        if arg 1 > {_pages}:
+            message "&d---------------------------------------------------"
+            message "           &cThat Page Doesn't Exist"
+            message "&d---------------------------------------------------"
+            stop
+        message " "
+        message "&d---------------------------------------------------"
+        message "&dServer Change Log&f - Hover over a day for details!"
+        set {_temp} to 1
+        loop size of {change.index::*} times:
+            set {_t} to size of {change.index::*} - loop-number - 1
+            if loop-number > ((arg)-1)*15:
+                if loop-number <= arg*15:
+                    send umbaska json of "&f[&a%{change.index::%{_t}%}%&f]" tooltip "%colored {change.log.%{change.index::%{_t}%}%::*}%" to player
+        #loop {_Toplist::*}:
+        #    if {_temp} > ((arg)-1)*15:
+        #        if {_temp} <= arg*15:
+        #            send umbaska json of "&f[&a%loop-index%&f]" tooltip "%colored {change.log.%loop-index%::*}%" to player
+        #    add 1 to {_temp}
+        message "&d---------------------Page %arg 1%/%{_pages}%----------------------"
+        message "&eType &a/changelog <page>&e to view a specific page."
