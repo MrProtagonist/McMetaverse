@@ -37,6 +37,11 @@ region enter:
 				message "&e&oWarping to Sandbox..."
 				wait 1 second
 				make player execute "sandbox"
+			else:
+				if "%region at player%" contains "wildernesswarp":
+					message "&e&oWarping to a random location in the world..."
+					wait 1 second
+					run player command "rtp" as op
 on step over 103:
 	wait 1 tick
 	if "%region at player%" contains "spawn":
