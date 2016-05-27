@@ -1,11 +1,11 @@
 on command "/auc":
-    player is in the world "Hyper"
-    cancel event
+	the player's world is "Hyper" or "Hyper_nether"
+	cancel event
 	
 on command "/auction":
-    player is in the world "Hyper"
-    cancel event
+	the player's world is "Hyper" or "Hyper_nether"
+	cancel event
 	
 on command "/bid":
-    player is in the world "Hyper"
-    cancel event
+	the player's world is "Hyper" or "Hyper_nether"
+	cancel event
