@@ -520,7 +520,7 @@ Data:
       Answers:
       - '61'
     '105':
-      Question: '&6How many biome categeries are there?'
+      Question: '&6How many biome categories are there?'
       Answers:
       - '5'
       - five
@@ -869,9 +869,10 @@ Data:
       - '300'
       - three hundred
     '170':
-      Question: '&6With what you can breed Chickens?'
+      Question: '&6With what can you breed Chickens?'
       Answers:
       - wheat seeds
+      - seeds
     '171':
       Question: '&6How many minutes do you need to grow a chicken into an adult?'
       Answers:
