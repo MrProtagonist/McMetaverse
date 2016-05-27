@@ -4,11 +4,11 @@ command /vote:
 	trigger:
 		message " "
 		message "&6&lVoting Sites:"
-		send json of "(&a1&f) &ePlanet Minecraft" tooltip "Click here to vote!" open "http://www.planetminecraft.com/server/mcmetaversecom-survival-server-247/vote/" to player
-		send json of "(&a2&f) &eMinecraft-MP" tooltip "Click here to vote!" open "http://minecraft-mp.com/server/9482/vote/" to player
-		send json of "(&a3&f) &eMinecraft-Index" tooltip "Click here to vote!" open "http://www.minecraft-index.com/2969-mcmetaverse-network/vote" to player
-		send json of "(&a4&f) &eTopG" tooltip "Click here to vote!" open "http://topg.org/Minecraft/in-391050" to player
-		send json of "(&a5&f) &eMinecraft Server List" tooltip "Click here to vote!" open "http://minecraft-server-list.com/server/107426/vote/" to player
+		send umbaska json of "(&a1&f) &ePlanet Minecraft" tooltip "Click here to vote!" open "http://www.planetminecraft.com/server/mcmetaversecom-survival-server-247/vote/" to player
+		send umbaska json of "(&a2&f) &eMinecraft-MP" tooltip "Click here to vote!" open "http://minecraft-mp.com/server/9482/vote/" to player
+		send umbaska json of "(&a3&f) &eMinecraft-Index" tooltip "Click here to vote!" open "http://www.minecraft-index.com/2969-mcmetaverse-network/vote" to player
+		send umbaska json of "(&a4&f) &eTopG" tooltip "Click here to vote!" open "http://topg.org/Minecraft/in-391050" to player
+		send umbaska json of "(&a5&f) &eMinecraft Server List" tooltip "Click here to vote!" open "http://minecraft-server-list.com/server/107426/vote/" to player
 		message "&6Click a link to vote and get a prize! Vote daily!"
 
 
