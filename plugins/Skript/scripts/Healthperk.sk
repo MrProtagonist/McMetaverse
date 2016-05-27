@@ -17,14 +17,21 @@ command /healthreset:
 				set {sethealth.%loop-player%.2} to false
 command /forcehealth:
 	trigger:
-		loop all players:
-			if loop-player has permission "skript.extrahealth10":
-				set the maximum health of the loop-player to 20
-			else if loop-player has permission "skript.extrahealth8":
-				set the maximum health of the loop-player to 18
-			else if loop-player has permission "skript.extrahealth6":
-				set the maximum health of the loop-player to 16
-			else if loop-player has permission "skript.extrahealth4":
-				set the maximum health of the loop-player to 14
-			else if loop-player has permission "skript.extrahealth2":
-				set the maximum health of the loop-player to 12
+		if player has permission "skript.extrahealth10":
+			set the maximum health of the player to 20
+		else if player has permission "skript.extrahealth8":
+			set the maximum health of the player to 18
+		else if player has permission "skript.extrahealth6":
+			set the maximum health of the player to 16
+		else if player has permission "skript.extrahealth4":
+			set the maximum health of the player to 14
+		else if player has permission "skript.extrahealth2":
+			set the maximum health of the player to 12
+on join:
+	if player has permission "skript.extrahealth2":
+		if the player's world is not "hyper" or "hyper_nether":
+			make player execute "forcehealth"
+on respawn:
+	if player has permission "skript.extrahealth2":
+		if the player's world is not "hyper" or "hyper_nether":
+			make player execute "forcehealth"
