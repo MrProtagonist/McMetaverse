@@ -68,51 +68,44 @@ command /teller:
 			set name of loop-entity to "&6&lToken Teller"
 		message "&cAdded!"
 
-# ============================= json not working ? ==================================#
+# ============================= umbaska json not working ? ==================================#
 on rightclick on priest:
 	name of clicked entity contains "&6&lToken Teller"
 	cancel event
 	send "&f[&6&lToken Teller&f] &eGreetings %player%! What would you like to do?" to player
 	wait 1 real second
 	if {rank.%player%} is greater than or equal to 1:
-		send "&f[ &c&oRookie &f] &a&lPURCHASED" to player
+		send umbaska json of "&f[ &d&oRookie &f] &a&lPURCHASED" tooltip "&6Costs: 3 hours of ingame playtime.%new line%&e&oPermissions granted to &d&oRookies&e&o:%new line%- Set 2 &a&o/home&f's (&a&o/sethome&f <homename>).%new line%- Create shops (&a&o/submit&f).%new line%- Access to &a&o/ci&f to clear inventory.%new line%- Access to &a&o/recipe&f to show item recipes.%new line%- Can put urls/links in chat." to player
 	else:
-		send "&f[ &c&oRookie &f] - &aThis rank is earned by playing 3 hours on meta in total." to player
+		send umbaska json of "&f[ &d&oRookie &f] - &aThis rank is earned by playing 3 hours%new line%               &aon meta in total." tooltip "&e&oPermissions Granted to &d&oRookies&e&o:%new line%- Set 2 &a&o/home&f's (&a&o/sethome&f <homename>).%new line%- Create shops (&a&o/submit&f).%new line%- Access to &a&o/ci&f to clear inventory.%new line%- Access to &a&o/recipe&f to show item recipes.%new line%- Can put urls/links in chat." to player
 	if {rank.%player%} is greater than or equal to 2:
-		send "&f[ &d&oRegular &f] &a&lPURCHASED" to player
+		send umbaska json of "&f[ &c&oRegular &f] &a&lPURCHASED" tooltip "&6Costs: 2 tokens and $3,500.%new line%&e&oPermissions granted to &c&oRegulars&e&o:%new line%- Set 3 &a&o/home&f's (&a&o/sethome&f <homename>).%new line%- Sell realestate (&a&o/learn&f realestate).%new line%- Access to &a&o/depth&f to see your depth level as opposed to sea level.%new line%- Perform emotes in chat with &a&o/me&f.%new line%- Access to &a&o/wb&f for a virtual workbench.%new line%- Access to &a&o/auction&f to auction items in chat." to player
 	else:
-#		send json of "&f[ &d&oRegular &f] - &a2 Tokens and $3500" run "/testrank regular %player%" to player
-		send "&f[ &d&oRegular &f] - &a2 Tokens and $3500 -> /testrank regular" to player
+		send umbaska json of "&f[ &c&oRegular &f] - &a2 Tokens and $3,500" tooltip "&e&oPermissions granted to &c&oRegulars&e&o:%new line%- Set 3 &a&o/home&f's (&a&o/sethome&f <homename>).%new line%- Sell realestate (&a&o/learn&f realestate).%new line%- Access to &a&o/depth&f to see your depth level as opposed to sea level.%new line%- Perform emotes in chat with &a&o/me&f.%new line%- Access to &a&o/wb&f for a virtual workbench.%new line%- Access to &a&o/auction&f to auction items in chat." run "/testrank regular" to player
 	if {rank.%player%} is greater than or equal to 3:
-		send "&f[ &eCitizen &f] &a&lPURCHASED" to player
+		send umbaska json of "&f[ &eCitizen &f] &a&lPURCHASED" tooltip "&6Costs: 3 tokens and $12,500.%new line%&e&oPermissions granted to Citizens:%new line%- Set 4 &a&o/home&f's (&a&o/sethome&f <homename>).%new line%- Access to &a&o/guard&f.%new line%- Can format chat with &ac&2o&bl&3o&cr&4s&f, &lbold&r and &oitalics&r.%new line%- Scavenger saves levels on death." to player
 	else:
-#		send json of "&f[ &cCitizen &f] - &a3 Tokens and $12500" run "/testrank citizen %player%" to player
-		send "&f[ &cCitizen &f] - &a3 Tokens and $12500 -> /testrank citizen" to player
+		send umbaska json of "&f[ &eCitizen &f] - &a3 Tokens and $12,500" tooltip "&e&oPermissions granted to Citizens:%new line%- Set 4 &a&o/home&f's (&a&o/sethome&f <homename>).%new line%- Access to &a&o/guard&f.%new line%- Can format chat with &ac&2o&bl&3o&cr&4s&f, &lbold&r and &oitalics&r.%new line%- Scavenger saves levels on death." run "/testrank citizen" to player
 	if {rank.%player%} is greater than or equal to 4:
-		send "&f[ &6Craftsman &f] &a&lPURCHASED" to player
+		send umbaska json of "&f[ &6Craftsman &f] &a&lPURCHASED" tooltip "&6Costs: 5 tokens and $25,000.%new line%&e&oPermissions granted to &6&oCraftsmen&e&o:%new line%- Set 5 &a&o/home&f's (&a&o/sethome&f <homename>).%new line%- 2 extra health hearts.%new line%- Access to &a&o/near&f to who's nearby.%new line%- Access to &a&o/compass&f to show you your bearings.%new line%- Access to &a&o/suffix&f to set your suffix (&a&o/delsuffix&f to remove it).%new line%- Access to &a&o/vc&f to set up to 2 virtual chests." to player
 	else:
-#		send json of "&f[ &6Craftsman &f] - &a5 Tokens and $25000" run "/testrank craftsman %player%" to player
-		send "&f[ &6Craftsman &f] - &a5 Tokens and $25000 -> /testrank craftsman" to player
+		send umbaska json of "&f[ &6Craftsman &f] - &a5 Tokens and $25,000" tooltip "&e&oPermissions granted to &6&oCraftsmen&e&o:%new line%- Set 5 &a&o/home&f's (&a&o/sethome&f <homename>).%new line%- 2 extra health hearts.%new line%- Access to &a&o/near&f to who's nearby.%new line%- Access to &a&o/compass&f to show you your bearings.%new line%- Access to &a&o/suffix&f to set your suffix (&a&o/delsuffix&f to remove it).%new line%- Access to &a&o/vc&f to set up to 2 virtual chests." run "/testrank craftsman" to player
 	if {rank.%player%} is greater than or equal to 5:
-		send "&f[ &9Seasoned &f] &a&lPURCHASED" to player
+		send umbaska json of "&f[ &9Seasoned &f] &a&lPURCHASED" tooltip "&6Costs: 6 tokens and $55,000.%new line%&e&oPermissions granted to &9&oSeasoners&e&o:%new line%- Set 7 &a&o/home&f's (&a&o/sethome&f <homename).%new line%- 4 extra health hearts.%new line%- Scavenger saves items on death.%new line%- Claim up to 3 plots in the &a&o/sandbox&r world with &a&o/plot auto&f and/or &a&o/plot claim&f.%new line%- Access to &a&o/top&f to jump to the highest safe surface.%new line%- Can format signs with &ac&2o&bl&3o&cr&4s&f, &lbold&r and &oitalics&r.%new line%- Set up to 4 virtual chests." to player
 	else:
-#		send json of "&f[ &9Seasoned &f] - &a6 Tokens and $55000" run "/testrank seasoned %player%" to player
-		send "&f[ &9Seasoned &f] - &a6 Tokens and $55000 -> /testrank seasoned" to player
+		send umbaska json of "&f[ &9Seasoned &f] - &a6 Tokens and $55,000" tooltip "&e&oPermissions granted to &9&oSeasoners&e&o:%new line%- Set 7 &a&o/home&f's (&a&o/sethome&f <homename).%new line%- 4 extra health hearts.%new line%- Scavenger saves items on death.%new line%- Claim up to 3 plots in the &a&o/sandbox&r world with &a&o/plot auto&f and/or &a&o/plot claim&f.%new line%- Access to &a&o/top&f to jump to the highest safe surface.%new line%- Can format signs with &ac&2o&bl&3o&cr&4s&f, &lbold&r and &oitalics&r.%new line%- Set up to 4 virtual chests." run "/testrank seasoned" to player
 	if {rank.%player%} is greater than or equal to 6:
-		send "&f[ &bNoble &f] &a&lPURCHASED" to player
+		send umbaska json of "&f[ &bNoble &f] &a&lPURCHASED" tooltip "&6Costs: 8 tokens and $110,000.%new line%&e&oPermissions granted to &b&oNobles&e&o:%new line%- Set 10 &a&o/home&f's (&a&o/sethome&f <homename>).%new line%- 6 extra health hearts.%new line%- Can format &a&o/suffix&f with &ac&2o&bl&3o&cr&4s&f, &lbold&r and &oitalics&r.%new line%- Access to &a&o/hat&f to wear the item in your &umain&r hand as a hat.%new line%- Access to &a&o/bottle&f to store your experience in a virtual bottle.%new line%- Set up to 6 virtual chests." to player
 	else:
-#		send json of "&f[ &bNoble &f] - &a8 Tokens and $110000" run "/testrank noble %player%" to player
-		send "&f[ &bNoble &f] - &a8 Tokens and $110000 -> /testrank noble" to player
+		send umbaska json of "&f[ &bNoble &f] - &a8 Tokens and $110,000" tooltip "&e&oPermissions granted to &b&oNobles&e&o:%new line%- Set 10 &a&o/home&f's (&a&o/sethome&f <homename>).%new line%- 6 extra health hearts.%new line%- Can format &a&o/suffix&f with &ac&2o&bl&3o&cr&4s&f, &lbold&r and &oitalics&r.%new line%- Access to &a&o/hat&f to wear the item in your &umain&r hand as a hat.%new line%- Access to &a&o/bottle&f to store your experience in a virtual bottle.%new line%- Set up to 6 virtual chests." run "/testrank noble" to player
 	if {rank.%player%} is greater than or equal to 7:
-		send "&f[ &aElite &f] &a&lPURCHASED" to player
+		send umbaska json of "&f[ &aElite &f] &a&lPURCHASED" tooltip "&6Costs: 9 Tokens and $200,000.%new line%&e&oPermissions granted to &a&oElites&e&o:%new line%- 8 extra health hearts.%new line%- Access to &a&o/ec&f to access your enderchest from anywhere in the world.%new line%- Access to &a&o/nv&f to toggle night vision.%new line%- Access to &a&o/jump&f to teleport to the block your cursor is facing.%new line%- Set up to 8 virtual chests." to player
 	else:
-#		send json of "&f[ &aElite &f] - &a9 Tokens and $200000" run "/testrank elite %player%" to player
-		send "&f[ &aElite &f] - &a9 Tokens and $200000 -> /testrank elite" to player
+		send umbaska json of "&f[ &aElite &f] - &a9 Tokens and $200,000" tooltip "&e&oPermissions granted to &a&oElites&e&o:%new line%- 8 extra health hearts.%new line%- Access to &a&o/ec&f to access your enderchest from anywhere in the world.%new line%- Access to &a&o/nv&f to toggle night vision.%new line%- Access to &a&o/jump&f to teleport to the block your cursor is facing.%new line%- Set up to 8 virtual chests." run "/testrank elite" to player
 	if {rank.%player%} is greater than or equal to 8:
-		send "&f[ &4Champion &f] &a&lPURCHASED" to player
+		send umbaska json of "&f[ &4Champion &f] &a&lPURCHASED" tooltip "&6Costs: 10 Tokens and $400,000.%new line%&e&oPermissions granted to &4&oChampions&e&o:%new line%- Set unlimited &a&o/home&f's (&a&o/sethome&f <homename>).%new line%- 10 extra health hearts.%new line%- Access to &a&o/ext&f to extinguish yourself if you are on fire.%new line%- Access to &a&o/fly&f to toggle fly-mode.%new line%- Set up to 10 virtual chests." to player
 	else:
-#		send json of "&f[ &4Champion &f] - &a10 Tokens and $400000" run "/testrank champion %player%" to player
-		send "&f[ &4Champion &f] - &a10 Tokens and $400000 -> /testrank champion" to player
+		send umbaska json of "&f[ &4Champion &f] - &a10 Tokens and $400,000" tooltip "&e&oPermissions granted to &4&oChampions&e&o:%new line%- Set unlimited &a&o/home&f's (&a&o/sethome&f <homename>).%new line%- 10 extra health hearts.%new line%- Access to &a&o/ext&f to extinguish yourself if you are on fire.%new line%- Access to &a&o/fly&f to toggle fly-mode.%new line%- Set up to 10 virtual chests." run "/testrank champion" to player
 
 command /token <text> <integer>:
 	trigger:
