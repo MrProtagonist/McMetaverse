@@ -22,9 +22,9 @@ SchedulerInterval: 12
 # You need to enable this one to use so caled Daily rewards for best quiz game players
 DailyScheduler: true
 # Do you want to use option to answer just by typing into chat
-UseChatAnswer: true
+UseChatAnswer: false
 # Do you want to use commands to answer into questions (no spam into chat)
-UseCommandAnswer: false
+UseCommandAnswer: true
 # Do you want to use random fireworks after correct answer
 UseFireworks: true
 DataBase:
@@ -51,11 +51,11 @@ Chat:
   UseLowPriority: true
 Titles:
   # Do you want to show Title
-  ShowTitle: true
+  ShowTitle: false
   # Do you want to Show SubTitle
-  ShowSubtitle: true
+  ShowSubtitle: false
   # Do you want to Show ActionBar
-  ShowActionBar: true
+  ShowActionBar: false
   # How fast you want for text to apear in ticks (do not applay for action bars)
   FadeInTicks: 20
   # How long you want to keep title visible in ticks (do not applay for action bars)
