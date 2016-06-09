@@ -40,6 +40,9 @@ on command "/marry tp":
 		execute console command "manuaddp %player% -tryme.*"
 		execute console command "manuaddp %player% -scavenger.*"
 on command "/back":
+	if player is in world "Hyper" or "Hyper_nether":
+		cancel event
+		stop
 	wait 2 ticks
 	if the player's world is "Hyper" or "Hyper_nether":
 		if player does not have permission "-mcmmo.*":
