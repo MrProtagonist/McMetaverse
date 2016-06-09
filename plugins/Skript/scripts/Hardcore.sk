@@ -10,7 +10,7 @@ command /meta:
 		set {warping.%player%} to true
 		set rf max hp of player to 20
 		wait 1 tick
-		teleport player to {spawn}
+		execute console command "mvtp %player% MetaOmega"
 		message "&aYou are now in Metaverse Spawn. PVP is now off."
 		set {pvp.%player%} to 0
 		wait 2 real seconds
@@ -20,7 +20,7 @@ command /hyper:
 		set {warping.%player%} to true
 		set rf max hp of player to 20
 		wait 1 tick
-		teleport player to {hyper}
+		execute console command "mvtp %player% hyper"
 		set player's fly mode to false
 		message "&aYou are now in the Hyperverse Spawn. PVP is now on!"
 		set {pvp.%player%} to 1
