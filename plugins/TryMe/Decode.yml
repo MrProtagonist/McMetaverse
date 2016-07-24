@@ -1,27 +1,27 @@
 Data:
   Easy:
-  - Oak
-  - Lava
-  - Sand
-  - Wood
-  - Water
-  - Glass
-  - Rail
-  - Wool
-  - Torch
-  - Fire
-  - Chest
-  - Sign
-  - Lever
-  - Snow
-  - Portal
-  - Vines
-  - Beacon
-  - Anvil
-  - Apple
-  - Bow
-  - Arrow
-  - Coal
+  - oak
+  - lava
+  - sand
+  - wood
+  - water
+  - glass
+  - rail
+  - wool
+  - torch
+  - fire
+  - chest
+  - sign
+  - lever
+  - snow
+  - portal
+  - vines
+  - beacon
+  - anvil
+  - apple
+  - bow
+  - arrow
+  - coal
   Normal:
   - Podzol
   - Spruce
