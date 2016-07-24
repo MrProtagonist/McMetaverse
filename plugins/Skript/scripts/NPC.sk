@@ -1,5 +1,6 @@
-#script options:
-#	$ developer mode
+script options:
+	$ developer mode
+#
 command /jake:
 	permission: is.pro
 	trigger:

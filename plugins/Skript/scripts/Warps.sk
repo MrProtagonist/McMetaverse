@@ -43,13 +43,6 @@ command /setss:
 		set {sk.ss} to location of player
 		message "<lime>Warp point set!"
 		stop
-command /setsandbox:
-	description: Set location for sandbox
-	permission: is.pro
-	trigger:
-		set {sandbox} to location of player
-		message "<lime>Sandbox warp set!"
-		stop  
 on player teleport:
 	wait 1 tick
 	if player has the permission "skript.warpeffect":
@@ -94,50 +87,6 @@ command /ss:
 on damage:
 	if difference between {lastwarp.%victim%} and now is less than 3 seconds:
 		cancel event
-command /sandbox:
-	trigger:
-		execute console command "consolewarp %player%"
-		wait 38 ticks
-		message "&a&oYou are now in The Sandbox."
-		if {sandbox.%player%.certify} is not set:
-			set {sandbox.%player%.certify} to false
-#		teleport player to {sandbox}
-#=======Premium or Seasoned check========#
-		if player has permission "is.premium":
-			execute console command "mvtp %player% sandbox"
-			if player does not have permission "plots.claim":
-				wait 2 ticks
-				execute console command "manselect sandbox"
-				wait 2 ticks
-				execute console command "manpromote %player% certified"
-				wait 2 ticks
-				execute console command "manselect metacurse"
-				if {sandbox.%player%.certify} is true:
-					set {sandbox.%player%.certify} to false
-				message "&aYou can now claim and build in up to 3 plots in sandbox!"
-		else:
-			execute console command "mvtp %player% sandbox"
-			wait 2 ticks
-			if {rank.%player%} is greater than 4:
-				if player does not have permission "plots.claim":
-					wait 2 ticks
-					execute console command "manselect sandbox"
-					wait 2 ticks
-					execute console command "manpromote %player% certified"
-					wait 2 ticks
-					execute console command "manselect metacurse"
-					if {sandbox.%player%.certify} is true:
-						set {sandbox.%player%.certify} to false
-					message "&aYou can now claim and build in up to 3 plots in sandbox!"
-			else:
-				if {sandbox.%player%.certify} is false:
-					wait 2 ticks
-					execute console command "manselect sandbox"
-					wait 2 ticks
-					execute console command "mandemote %player% default"
-					wait 2 ticks
-					execute console command "manselect metacurse"
-					set {sandbox.%player%.certify} to true
 command /spawn:
 	trigger:
 #		execute console command "/playsound random.explode %player% ~0 ~0 ~0 20 50"

@@ -4,7 +4,6 @@ on script load:
 	set {fishing.countdown} to false
 	set {fishing.going} to false
 	set {fishing.players} to 0
-	set {fishing.top.score} to 0
 	loop all players:
 		set {fishing.%loop-player%.playing} to false
 on join:
@@ -144,8 +143,6 @@ on pickup:
 	{fishing.%player%.playing} is true
 	message "&cBummer! That isn't a fish!"
 	delete item
-	
-
 command /setfish <integer>:
 	permission: is.pro
 	trigger:
@@ -250,7 +247,7 @@ command /startfish:
 				loop all players:
 					{fishing.%loop-player%.playing} is true
 					set {fishing.%loop-player%.playing} to false
-					send loop-player title "&a%{fishing.session.players}% lbs" with subtitle "" for 2 seconds
+					send loop-player title "&a%{fishing.session.player}% lbs" with subtitle "" for 2 seconds
 				wait 2 real seconds
 				loop all players:
 					{fishing.%loop-player%.playing} is true
@@ -261,7 +258,7 @@ command /startfish:
 				execute console command "eco give %{fishing.session.player}% %{_pay}%"
 				if {fishing.top.score} is not set:
 					set {fishing.top.score} to 0
-					set {fishing.top.player} to "MrProtagonist"
+					set {fishing.top.player} to player
 				if {fishing.session.top} is greater than {fishing.top.score}:
 					{fishing.going} is true
 					wait 2 real seconds
@@ -294,9 +291,17 @@ command /resetfish:
 	trigger:
 		player is op
 		set {fishing.players} to 0
-		delete {sk.startfish}
-		delete {sk.leavefish}
-		message "Playercount and buttons for fish reset!"
+		if {fishcontrol} is player:
+			delete {sk.startfish}
+			delete {sk.leavefish}
+		else:
+			message "&cTo also remove the button locations, do /fishcontrol and execute this command again."
+		set {fishing.top.score} to 0
+		delete {fishing.top.player}
+		if {fishcontrol} is player:
+			message "Playercount, highscore and buttons for fish reset!"
+		else:
+			message "Playercount and highscore for fish reset!"
 command /fishcontrol:
 	trigger:
 		if player has permission "essentials.socialspy":
@@ -305,6 +310,7 @@ command /fishcontrol:
 				message "&cYou can now set the 2 wooden buttons for the &nfishing&r&c minigame."
 			else:
 				delete {fishcontrol}
+				message "&cRemoved fishcontrolling from you"
 on click:
 	clicked block is wooden button
 	if player is {fishcontrol}:

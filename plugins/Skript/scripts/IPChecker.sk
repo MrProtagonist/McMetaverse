@@ -1,0 +1,14 @@
+script options:
+	$ developer mode
+on join:
+	loop {alts.%ip address of the player%::*}:
+		loop-value is player
+		stop
+	add player to {alts.%ip address of the player%::*}
+
+command /alts <player>:
+	permission: essentials.socialspy
+	trigger:
+		message "&6Accounts found using the IP address of %arg%:"
+		loop {alts.%ip address of arg%::*}:
+			message "&f[&6%loop-index%&f] &a%loop-value%"

@@ -1,4 +1,4 @@
-﻿#script options:
+#script options:
 #	$ developer mode
 on join:
 	wait 1 tick
@@ -118,42 +118,45 @@ command "/donor":
 command /fixprefix [<player>]:
 	executable by: players, console
 	trigger:
-		if arg is set:
-			if player is op:
-				set {_prefix} to the player-argument
-				message "&cFixing %arg%'s prefix."
-			else:
-				message "&cYou can't set another player's prefix!"
+		if the player's world is "sandbox" or "contest":
+			message "&cCan't execute that here!"
 		else:
-			set {_prefix} to the player
-			message "&cFixing your prefix."
-#		if primary group of player is "Owner":
-#			set prefix of {_prefix} to "&f[&aOwner&f] "
-#			stop
-		if {rank.%player%} is equal to 8:
-			set prefix of {_prefix} to "&f[&4&oChampion&f] "
-			stop
-		if {rank.%player%} is equal to 7:
-			set prefix of {_prefix} to "&f[&a&oElite&f] "
-			stop
-		if {rank.%player%} is equal to 6:
-			set prefix of {_prefix} to "&f[&b&oNoble&f] "
-			stop
-		if {rank.%player%} is equal to 5:
-			set prefix of {_prefix} to "&f[&9&oSeasoned&f] "
-			stop
-		if {rank.%player%} is equal to 4:
-			set prefix of {_prefix} to "&f[&6&oCraftsman&f] "
-			stop
-		if {rank.%player%} is equal to 3:
-			set prefix of {_prefix} to "&f[&e&oCitizen&f] "
-			stop
-		if {rank.%player%} is equal to 2:
-			set prefix of {_prefix} to "&f[&c&oRegular&f] "
-			stop
-		if {rank.%player%} is equal to 1:
-			set prefix of {_prefix} to "&f[&d&oRookie&f] "
-			stop
+			if arg is set:
+				if player is op:
+					set {_prefix} to the player-argument
+					message "&cFixing %arg%'s prefix."
+				else:
+					message "&cYou can't set another player's prefix!"
+			else:
+				set {_prefix} to the player
+#				message "&cFixing your prefix."
+	#		if primary group of player is "Owner":
+	#			set prefix of {_prefix} to "&f[&aOwner&f] "
+	#			stop
+			if {rank.%player%} is equal to 8:
+				set prefix of {_prefix} to "&f[&4&oChampion&f] "
+				stop
+			if {rank.%player%} is equal to 7:
+				set prefix of {_prefix} to "&f[&a&oElite&f] "
+				stop
+			if {rank.%player%} is equal to 6:
+				set prefix of {_prefix} to "&f[&b&oNoble&f] "
+				stop
+			if {rank.%player%} is equal to 5:
+				set prefix of {_prefix} to "&f[&9&oSeasoned&f] "
+				stop
+			if {rank.%player%} is equal to 4:
+				set prefix of {_prefix} to "&f[&6&oCraftsman&f] "
+				stop
+			if {rank.%player%} is equal to 3:
+				set prefix of {_prefix} to "&f[&e&oCitizen&f] "
+				stop
+			if {rank.%player%} is equal to 2:
+				set prefix of {_prefix} to "&f[&c&oRegular&f] "
+				stop
+			if {rank.%player%} is equal to 1:
+				set prefix of {_prefix} to "&f[&d&oRookie&f] "
+				stop
 on join:
 	if player does not have the permission "is.premium":
 		if player does not have the permission "essentials.socialspy":
@@ -184,21 +187,22 @@ on join:
 command /prefix <text>:
 	permission: sk.prefix
 	trigger:
-		if player doesn't have permission "essentials.socialspy":
-			if arg is set:
-				set {_l} to length of the string arg-1
-				if {_l} is greater than 20:
-					message "&cPrefix is too long! Please shorten it!"
-					stop
-				else:
-					set the player's prefix to "&f[%colored arg-1%&f] "
-					send "&aYour prefix has been set to: &f[%colored arg-1%&f] " to the player
-					stop
+#		if player doesn't have permission "essentials.socialspy":
+		if arg is set:
+			set {prefix.%player%} to arg-1
+			set {_l} to length of the string arg-1
+			if {_l} is greater than 20:
+				message "&cPrefix is too long! Please shorten it!"
+				stop
 			else:
-				message "&cUsage: /prefix <Prefix Here>"
+				set the player's prefix to "&f[%colored arg-1%&f] "
+				send "&aYour prefix has been set to: &f[%colored arg-1%&f] " to the player
 				stop
 		else:
-			message "&cYou are staff, it is mandatory to have your prefix set correctly to your rank!"
+			message "&cUsage: /prefix <Prefix Here>"
+			stop
+#		else:
+#			message "&cYou are staff, it is mandatory to have your prefix set correctly to your rank!"
 command /suffix <text>:
 	permission: sk.suffix
 	trigger:

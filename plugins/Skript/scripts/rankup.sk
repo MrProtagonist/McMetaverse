@@ -98,6 +98,10 @@ command /fixrank:
 		if {rank.%player%} is 8:
 			execute console command "manpromote %player% champion"
 		message "&aYou have been placed in your proper rank."
+command /checkrank <offlineplayer=%player%>:
+	permission: essentials.socialspy
+	trigger:
+		message "&6RankID: &e%{rank.%arg-1%}%" to player
 every minute:
 	loop all players:
 		loop-player has the permission "is.rookie"

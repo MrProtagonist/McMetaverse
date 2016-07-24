@@ -82,26 +82,26 @@ command /kick <player> <text>:
 		delete {staff.approved}
 		set {tracking.%{referee.number}%} to now
 		add {referee.number} to {tracking.chat::*}
-		
+
 
 on chat:
 	loop {tracking.chat::*}:
 		create line "[%now%] %player%: %message%" in "plugins/Skript/logs/referee/%loop-value%.log"
 		difference between {tracking.%loop-value%} and now is greater than 5 real minutes
-		delete {tracking.chat::%loop-index%} from {tracking.chat::*}
-		delete {tracking.%{loop-value%}}
+		delete {tracking.chat::%loop-index%}
+		delete {tracking.%loop-value%}
 on join:
 	loop {tracking.chat::*}:
 		create line "[%now%] %player% joined the game." in "plugins/Skript/logs/referee/%loop-value%.log"
 		difference between {tracking.%loop-value%} and now is greater than 5 real minutes
-		delete {tracking.chat::%loop-index%} from {tracking.chat::*}
-		delete {tracking.%{loop-value%}}
+		delete {tracking.chat::%loop-index%}
+		delete {tracking.%loop-value%}
 on quit:
 	loop {tracking.chat::*}:
 		create line "[%now%] %player% left the game." in "plugins/Skript/logs/referee/%loop-value%.log"
 		difference between {tracking.%loop-value%} and now is greater than 5 real minutes
-		delete {tracking.chat::%loop-index%} from {tracking.chat::*}
-		delete {tracking.%{loop-value%}}
+		delete {tracking.chat::%loop-index%}
+		delete {tracking.%loop-value%}
 
 command /confirm:
 	permission: essentials.socialspy
@@ -112,7 +112,7 @@ command /confirm:
 		add player to {staff.approval.list::*}
 		message "&aYou have confirmed your support to kick the player."
 
-	
+
 
 # 1 - Time
 # 2 - Punisher

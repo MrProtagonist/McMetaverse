@@ -15,7 +15,7 @@ on join:
 		wait 2 real seconds
 		execute console command "tm msg %player% &6Welcome back<nl>%player%"
 		wait 5 real seconds
-		execute console command "tm msg %player% &bWe missed you...<nl>&câ™¥"
+		execute console command "tm msg %player% &bWe missed you...<nl>&c♥"
 on script load:
 	if {today} is not set:
 		set {today} to 0
@@ -105,6 +105,14 @@ variables:
 #	{wchat::fagg} = "friend"
 #	{wchat::faggot} = "friend"
 #	{wchat::gay} = "joyous"
+command /removefix <text>:
+	trigger:
+		if player is op:
+			if {wchat::%arg%} is set:
+				delete {wchat::%arg%}
+				message "%arg% removed"
+			else:
+				message "Not in the list!"
 on chat:
 	loop {wchat::*}:
 		replace all loop-index with loop-value in message
@@ -234,18 +242,18 @@ command /rules:
 		message "&f&l============================================="
 		message "&c&lServer Rules and Guidelines&b - Hover for more info!"
 		message " "
-		send json of "             &f[&a1&f] &oNo griefing, stealing or scamming" tooltip "&eGriefing:&f Destroying something that is not yours.%new line%&eStealing:&f Taking something that is not yours.%new line%&eScamming:&f Misleading another player for your gain." to player
-		send json of "             &f[&a2&f] &oBe respectful and use common sense" tooltip "&fExcessive swearing, rudeness, rage quitting or %new line%harassment of any kind is not tolerated. %new line%(purposely renaming your account to that of a staffmember applies to that aswell)." to player
-		send json of "             &f[&a3&f] &oNever ask for handouts" tooltip "&eHandouts:&f Anything you did not earn or attempt to trade for.%new line%&bThis includes items, ranks, homes, money, etc." to player
-		send json of "             &f[&a4&f] &oNo spam or excessive CAPS" tooltip "&eSpam:&f Saying more than a message a second.%new line%&eExcessive CAPS:&f Consecutive sentences in all CAPS." to player
-		send json of "             &f[&a5&f] &oNo advertising" tooltip "&eAdvertising:&f Posting the website or IP of a server we don't run.%new line%&bThis includes in game, our website, and our TeamSpeak." to player
-		send json of "             &f[&a6&f] &oNo bugs, exploits, mods or boosting" tooltip "&eBugs:&f Anything that doesn't function as intended and benefits you.%new line%&eExploits:&f Tricking normal game mechanics for your gain.%new line%&eMods:&f Something that alters your game which gives you an advantage over others.%new line%&eBoosting:&f Gaining experience, levels, items, etc. in any abnormally fast way.%new line%&bThis rule covers things like golem farms, afk machines, auto clickers, etc." to player
-		send json of "             &f[&a7&f] &oNo endless redstone" tooltip "&fThis includes redstone clocks, loops,%new line%&fand any other contraption that can endlessly loop." to player
-		send json of "             &f[&a8&f] &oNo arguing with staff" tooltip "&eWhy?&f It is inappropriate to argue with staff in chat.%new line%&fIf you question a decision, you may &a/msg&f that staff.%new line%&fIf you got punished, create an appeal on the website for all staff to review." to player
-		send json of "             &f[&a9&f] &oNo public eyesores" tooltip "&ePublic Eyesore:&f Anything that any normal player can find%new line%&fwhile exploring the world that is unpleasant.%new line%&fThis includes things like penises, 1x1 dirt towers, death pits,%new line%&ffloating lava, dirt houses, hidden public traps, etc." to player
-		send json of "             &f[&a10&f] &oNothing that could cause lag" tooltip "&eLag:&f Anything that slows down the entire server.%new line%&bThis includes things like forcing entities onto the same block,%new line%tightly confined mass farms, redstone clocks, etc." to player
-		send json of "             &f[&a11&f] &oNo undercutting the Server Shop" tooltip "&fYou cannot sell items for less than the%new line%Server Shop buys for.%new line%&eNO ECONOMY BREAKERS AT ALL!" to player
-		send json of "             &f[&a12&f] &oKeep public chat in English" tooltip "&fIf you need to chat in another language,%new line%join a /chat room or use /msg.%new line%&eThis is so Staff can regulate chat." to player
+		send umbaska json of "             &f[&a1&f] &oNo griefing, stealing or scamming" tooltip "&eGriefing:&f Destroying something that is not yours.%new line%&eStealing:&f Taking something that is not yours.%new line%&eScamming:&f Misleading another player for your gain." to player
+		send umbaska json of "             &f[&a2&f] &oBe respectful and use common sense" tooltip "&fExcessive swearing, rudeness, rage quitting or %new line%harassment of any kind is not tolerated. %new line%(purposely renaming your account to that of a staffmember applies to that aswell)." to player
+		send umbaska json of "             &f[&a3&f] &oNever ask for handouts" tooltip "&eHandouts:&f Anything you did not earn or attempt to trade for.%new line%&bThis includes items, ranks, homes, money, etc." to player
+		send umbaska json of "             &f[&a4&f] &oNo spam or excessive CAPS" tooltip "&eSpam:&f Saying more than a message a second.%new line%&eExcessive CAPS:&f Consecutive sentences in all CAPS." to player
+		send umbaska json of "             &f[&a5&f] &oNo advertising" tooltip "&eAdvertising:&f Posting the website or IP of a server we don't run.%new line%&bThis includes in game, our website, and our TeamSpeak." to player
+		send umbaska json of "             &f[&a6&f] &oNo bugs, exploits, mods or boosting" tooltip "&eBugs:&f Anything that doesn't function as intended and benefits you.%new line%&eExploits:&f Tricking normal game mechanics for your gain.%new line%&eMods:&f Something that alters your game which gives you an advantage over others.%new line%&eBoosting:&f Gaining experience, levels, items, etc. in any abnormally fast way.%new line%&bThis rule covers things like golem farms, afk machines, auto clickers, etc." to player
+		send umbaska json of "             &f[&a7&f] &oNo endless redstone" tooltip "&fThis includes redstone clocks, loops,%new line%&fand any other contraption that can endlessly loop." to player
+		send umbaska json of "             &f[&a8&f] &oNo arguing with staff" tooltip "&eWhy?&f It is inappropriate to argue with staff in chat.%new line%&fIf you question a decision, you may &a/msg&f that staff.%new line%&fIf you got punished, create an appeal on the website for all staff to review." to player
+		send umbaska json of "             &f[&a9&f] &oNo public eyesores" tooltip "&ePublic Eyesore:&f Anything that any normal player can find%new line%&fwhile exploring the world that is unpleasant.%new line%&fThis includes things like penises, 1x1 dirt towers, death pits,%new line%&ffloating lava, dirt houses, hidden public traps, etc." to player
+		send umbaska json of "             &f[&a10&f] &oNothing that could cause lag" tooltip "&eLag:&f Anything that slows down the entire server.%new line%&bThis includes things like forcing entities onto the same block,%new line%tightly confined mass farms, redstone clocks, etc." to player
+		send umbaska json of "             &f[&a11&f] &oNo undercutting the Server Shop" tooltip "&fYou cannot sell items for less than the%new line%Server Shop buys for.%new line%&eNO ECONOMY BREAKERS AT ALL!" to player
+		send umbaska json of "             &f[&a12&f] &oKeep public chat in English" tooltip "&fIf you need to chat in another language,%new line%join a /chat room or use /msg.%new line%&eThis is so Staff can regulate chat." to player
 		message " "
 		message "&f[&6NOTE&f] &e&oThis server is intended for adults. We allow cursing. By agreeing to these rules, you agree to not be bothered by profanity."
 		message "&f&l============================================="

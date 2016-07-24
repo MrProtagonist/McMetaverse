@@ -147,7 +147,9 @@ command /pvpon:
 				message "<yellow>PVP is &c&oactivated&r<yellow>!"
 				stop trigger
 every 10 real seconds:
-	loop all players in world "Hyperverse":
+	loop all players in world "hyper":
+		set {pvp.%loop-player%} to 1
+	loop all players in world "hyper_nether":
 		set {pvp.%loop-player%} to 1
 command /pvpoff:
 		description: Toggles PVP on
@@ -192,21 +194,21 @@ command /togglepvp:
 						stop trigger
 
 on damage:
-		victim is a player
+	victim is a player
+	attacker is a player
+	if {pvp.%attacker%} is 0:
 		attacker is a player
-		if {pvp.%attacker%} is 0:
-				attacker is a player
-				victim is a player
-				cancel event
-				send "<yellow>You can't attack while your PVP is turned off!" to attacker
-				stop trigger
-		else:
-			send "PVP should be working." to attacker
-		if {pvp.%victim%} is 0:
-				cancel event
-				send "<yellow>You can't attack players that have PVP turned off!" to attacker
-		else:
-			send "PVP should be working." to victim
+		victim is a player
+		cancel event
+		send "<yellow>You can't attack while your PVP is turned off!" to attacker
+		stop trigger
+#	else:
+#		send "PVP should be working." to attacker
+	if {pvp.%victim%} is 0:
+		cancel event
+		send "<yellow>You can't attack players that have PVP turned off!" to attacker
+#	else:
+#		send "PVP should be working." to victim
 on death:
 	victim is a player
 	attacker is a player

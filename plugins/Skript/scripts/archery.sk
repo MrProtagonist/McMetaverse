@@ -7,11 +7,12 @@ on script load:
 on shoot:
 	shooter is {archery.busy}
 	ignite the projectile
+	trail projectile with particle drip lava
 	set metadata "type" of projectile to "explosive"
 on projectile hit:
 	set {_type} to metadata "type" of projectile
 	if "%{_type}%" is "explosive":
-#		create explosion of force 2 at event-location
+		create explosion of force 1 at event-location
 on projectile hit:
 	shooter is {archery.busy}
 	wait 1 tick
@@ -27,9 +28,9 @@ on projectile hit:
 			kill loop-entity
 		add 1 to {archery.%shooter%}
 		execute console command "tm msg %shooter% &6%{archery.%shooter%}%"
-		set {_randomnum} to a random integer between 1 and {archery.total}
-		set block at {archery.list::%{_randomnum}%} to glowstone
-		set {_distance} to distance between shooter and {archery.list::%{_randomnum}%}
+		set {randomnum} to a random integer between 1 and {archery.total}
+		set block at {archery.list::%{randomnum}%} to glowstone
+		set {_distance} to distance between shooter and {archery.list::%{randomnum}%}
 		execute console command "tm amsg %shooter% &aNext Target: &e%{_distance}% blocks away"
 command /setshooter <integer>:
 	permission: is.pro
@@ -50,7 +51,7 @@ command /playsharpshooter <player>:
 	trigger:
 		if {archery.busy} is not set:
 			set {archery.busy} to arg
-			send "&f[&aARCHERY&f] &eHigh score is %{archery.top.score}% set by %{archery.top.arg}%" to arg
+			send "&f[&aARCHERY&f] &eHigh score is %{archery.top.score}% set by %{archery.top.player}%" to arg
 			teleport arg to {archery.spawn}
 			set {archery.%arg%} to 0
 			set {archery.countdown} to true
@@ -68,9 +69,9 @@ command /playsharpshooter <player>:
 			execute console command "give %arg% "
 			wait 5 real seconds
 			execute console command "tm msg %arg% &aStart!"
-			set {_randomnum} to a random integer between 1 and {archery.total}
-			set block at {archery.list::%{_randomnum}%} to glowstone
-			set {_distance} to distance between shooter and {archery.list::%{_randomnum}%}
+			set {randomnum} to a random integer between 1 and {archery.total}
+			set block at {archery.list::%{randomnum}%} to glowstone
+			set {_distance} to distance between shooter and {archery.list::%{randomnum}%}
 			execute console command "tm amsg %shooter% &aTarget Distance: &e%{_distance}% blocks away"
 			set {archery.countdown} to false
 			set {archery.going} to true
@@ -78,13 +79,10 @@ command /playsharpshooter <player>:
 			execute console command "tm msg %arg% &6TIME UP!"
 			teleport arg to {archery.spec}
 			teleport arg to {archery.spec}
-			set block at {archery.list::%{_randomnum}%} to air
+			set block at {archery.list::%{randomnum}%} to air
 			execute console command "ci %arg%"
 			delete {archery.busy}
 			play "LEVEL_UP" specifically to arg with pitch 1
-			loop all blocks in radius 50 of {archery.blockspot}:
-				loop-block is glowstone
-				set loop-block to air
 			wait 3 real seconds
 			set {_pay} to {archery.%arg%} * 5
 			execute console command "tm msg %arg% &6%{archery.%arg%}% points"
@@ -94,10 +92,7 @@ command /playsharpshooter <player>:
 				broadcast "&f[&aSERVER&f] &6%arg% &ajust set the &aHIGH SCORE for &a with &6%{archery.%arg%}% points&a!"
 				play "LEVEL_UP" specifically to arg with pitch 1
 				set {archery.top.score} to {archery.%arg%}
-				set {archery.top.arg} to arg
-			loop {archery.list::*}:
-				set block at location of loop-value to air
-				wait 1 tick
+				set {archery.top.player} to arg
 			else:
 				broadcast "&f[&aSERVER&f] &6%arg% &ajust got &6%{archery.%arg%}% points&a in &b&oSharp Shooter&a!"
 			set {archery.going} to false
@@ -106,7 +101,11 @@ command /playsharpshooter <player>:
 			send "&cSomebody is already in the range! Teleporting you to spectator area." to arg
 			teleport arg to {archery.spec}
 			stop
-
+command /resetsharpshooter:
+	permission: is.pro
+	trigger:
+		set {archery.top.player} to "nobody"
+		set {archery.top.score} to 1
 on jump:
 	player is {archery.busy}
 	if {archery.level} is 2:
