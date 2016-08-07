@@ -1,46 +1,56 @@
 command /bottle [<integer>]:
+	permission: bottle.use
 	trigger:
-		if {bottle.%player%} is not set:
-			set {bottle.%player%} to 0
-		if argument is not set:
-			if {bottle.%player%} is 0:
-				if the player's level is greater than or equal to 15:
-					set {bottle.%player%} to the player's level
-					set the player's level to 0
-					message "&eAll your levels have been stored into a magical bottle"
-					message "&eDo &a/bottlemax &eto retrieve them all"
-				else:
-					message "&cCan't add levels yet, you need to be atleast level 15!"
-			else:
-				if the player's level is greater than or equal to 15:
-					set {_bottle} to the player's level
-					set {bottle.%player%} to {_bottle} + {bottle.%player%}
-					set the player's level to 0
-					message "&eAll your levels have been stored into a magical bottle"
-					message "&eDo &a/bottlemax &eto retrieve them all"
-				else:
-					message "&cCan't add levels yet, you need to be atleast level 15!"
-		else:
-			if argument is smaller than 15:
-				message "&cCan't add levels yet, you need to put in atleast level 15!"
-			else:
+		if the player's level is greater than 14:
+			if {bottle.%player%} is not set:
+				set {bottle.%player%} to 0
+			if argument isn't set:
 				if {bottle.%player%} is 0:
-					set {bottle.%player%} to argument
-					reduce the player's level by argument
-					message "&e%arg% of your levels have been added to your magical bottle"
-					message "&eDo &a/bottlemax &eto retrieve them all"
-				else:
-					set {_level} to the player's level
-					set {_bottle} to the argument
-					set {bottle.%player%} to {_bottle} + {bottle.%player%}
-					set the player's level to {_level} - {_bottle}
-					if the player's level is 0:
+					if the player's level is greater than or equal to 15:
+						set {bottle.%player%} to the player's level
+						set the player's level to 0
 						message "&eAll your levels have been stored into a magical bottle"
 						message "&eDo &a/bottlemax &eto retrieve them all"
 					else:
-						message "&e%arg% of your levels have been added to your magical bottle"
+						message "&cCan't add levels yet, you need to be atleast level 15!"
+				else:
+					if the player's level is greater than or equal to 15:
+						set {_bottle} to the player's level
+						set {bottle.%player%} to {_bottle} + {bottle.%player%}
+						set the player's level to 0
+						message "&eAll your levels have been stored into a magical bottle"
 						message "&eDo &a/bottlemax &eto retrieve them all"
+					else:
+						message "&cCan't add levels yet, you need to be atleast level 15!"
+			else:
+				if argument is smaller than 15:
+					message "&cCan't add this amount, you need to put in atleast level 15!"
+				else:
+					set {_levelstaken} to argument
+					set {_playerlevel} to the player's level
+					if {_playerlevel} is greater than {_levelstaken} - 1:
+						if {bottle.%player%} is 0:
+							set {bottle.%player%} to argument
+							reduce the player's level by argument
+							message "&e%arg% of your levels have been added to your magical bottle"
+							message "&eDo &a/bottlemax &eto retrieve them all"
+						else:
+							set {_level} to the player's level
+							set {_bottle} to the argument
+							set {bottle.%player%} to {_bottle} + {bottle.%player%}
+							set the player's level to {_level} - {_bottle}
+							if the player's level is 0:
+								message "&eAll your levels have been stored into a magical bottle"
+								message "&eDo &a/bottlemax &eto retrieve them all"
+							else:
+								message "&e%arg% of your levels have been added to your magical bottle"
+								message "&eDo &a/bottlemax &eto retrieve them all"
+					else:
+						message "&cYou don't have that amount of levels!"
+		else:
+			message "&cYou don't have enough levels to do that! You need to be atleast level 15."
 command /bottlemax:
+	permission: bottle.use
 	trigger:
 		if {bottle.%player%} is set:
 			if {bottle.%player%} is not 0:
@@ -52,13 +62,18 @@ command /bottlemax:
 		else:
 			message "&cPlease add levels to your magical bottle first."
 command /bottles [<text>]:
+	permission: bottle.use
 	trigger:
 		if arg is not set:
 			if {bottle.%player%} is set:
 				message "&eYou have &l%{bottle.%player%}%&r &elevels stored into your magical bottle!"
+			else:
+				message "&cYou have no levels stored yet, try /bottle"
 		else:
 			if player has permission "essentials.socialspy":
 				if {bottle.%arg%} is set:
 					message "&e%arg% has &l%{bottle.%arg%}%&r &elevels stored into his/her magical bottle!"
+				else:
+					message "&e%arg% has no levels stored yet!"
 			else:
 				message "&cOnly staff can see other player's magical bottle!"

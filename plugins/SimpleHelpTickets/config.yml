@@ -15,9 +15,9 @@ OnJoin:
   DisplayTicketAdmin: true
   DisplayTicketUser: true
 MySQL:
-  USE_MYSQL: true
+  USE_MYSQL: false
   hostname: localhost
   hostport: 3306
-  database: 430
-  user: 430
-  password: bf56ae2042
+  database: tickets
+  user: MYSQLUSER
+  password: MYSQLPASS

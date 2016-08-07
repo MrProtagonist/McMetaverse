@@ -1,10 +1,11 @@
 users:
   0856cd5d-6a48-43fa-8afb-850c2dce2172:
-    lastname: null
+    lastname: Mistidawn98
     group: Default
     subgroups: []
     permissions:
     - -autoitem.replaceon.place
+    - essentials.socialspy
   1bf47c3d-074e-47e8-bc37-e21c1ea0aeac:
     lastname: rfcroc
     group: Default
@@ -12,24 +13,60 @@ users:
     permissions:
     - essentials.fly
     - essentials.msg
+  1cbd2fe0-3402-47cb-bc9e-7ef7928c4a79:
+    lastname: null
+    group: Default
+    subgroups: []
+    permissions:
+    - -autoitem.*
   29262a24-70aa-4824-83ec-5ec43f9a7d29:
     lastname: RoobLetterman
     group: Default
     subgroups: []
     permissions:
     - -autoitem.replaceon.place
+  2dbdff86-6e71-4bc6-ac47-83e3e7f7cbb6:
+    lastname: null
+    group: Default
+    subgroups: []
+    permissions:
+    - -mcmmo.ability.all
+    - -mcmmo.skill.all
+    - -tryme.*
+    - -scavenger.*
+  3feb7b1d-c91c-445a-b79d-6c233d6c341f:
+    lastname: null
+    group: Default
+    subgroups: []
+    permissions:
+    - -autoitem.*
+  521ce0da-1180-464f-aaac-2968189c4c1d:
+    lastname: null
+    group: Default
+    subgroups: []
+    permissions:
+    - -autoitem.*
   5f62e716-e961-4bc7-91f4-bc21797edb75:
     lastname: dinoppar
     group: Default
     subgroups: []
     permissions:
     - -autoitem.replaceon.place
-  70b3e014-4b7b-4da6-b3ce-7e87541bd336:
+  648832f8-878b-444f-b631-40816ddc8701:
     lastname: null
     group: Default
     subgroups: []
     permissions:
+    - -autoitem.*
+  70b3e014-4b7b-4da6-b3ce-7e87541bd336:
+    lastname: RosyAmber
+    group: Default
+    subgroups: []
+    permissions:
     - -autoitem.replaceon.place
+    - essentials.home
+    - essentials.socialspy
+    - frameprotect.admin
   7404e056-e6f3-4bbe-a209-f59901b5dabe:
     lastname: null
     group: Default
@@ -37,11 +74,45 @@ users:
     permissions: []
     info:
       §r§f[§d§oRookie§r]: §r
+  7624e965-5280-4ee0-a2da-9499c5b1a8ed:
+    lastname: null
+    group: Default
+    subgroups: []
+    permissions: []
+    info:
+      §r§f[§d§oRookie§r]: §r
+  799c4fd6-0201-4d1e-b345-b70e5f24f567:
+    lastname: null
+    group: Default
+    subgroups: []
+    permissions:
+    - -autoitem.*
+  7c3e5b54-b7f7-4ddf-8a8d-0037ec1a6f1a:
+    lastname: null
+    group: Default
+    subgroups: []
+    permissions:
+    - -mcmmo.ability.all
+    - -tryme.*
+    - -scavenger.*
+  87c29ece-cf33-49ab-a32d-9d17a254b751:
+    lastname: null
+    group: Default
+    subgroups: []
+    permissions:
+    - -autoitem.*
+  8d992951-c494-41a8-8c3c-90359e4fcd81:
+    lastname: null
+    group: Default
+    subgroups: []
+    permissions:
+    - skript.collectible
   904f167d-2f03-426b-b133-1a321d5eb55e:
     lastname: craftio
     group: Default
     subgroups: []
     permissions:
+    - -autoitem.*
     - nonspecificodyssey.biome.*
   9ed48de9-4f1a-4dad-b709-bcf9d6d2b80e:
     lastname: null
@@ -55,6 +126,30 @@ users:
     subgroups: []
     permissions:
     - -autoitem.replaceon.place
+  b1d97497-f3dc-4360-9a28-7575993185b2:
+    lastname: null
+    group: Default
+    subgroups: []
+    permissions:
+    - -autoitem.*
+  b477454d-6838-4449-ae80-9c0f3357511f:
+    lastname: null
+    group: Default
+    subgroups: []
+    permissions:
+    - -autoitem.replaceon.place
+  b76b1e70-3da5-4f2f-9738-5327923d5e94:
+    lastname: null
+    group: Default
+    subgroups: []
+    permissions:
+    - -autoitem.*
+  ba46c6b1-5a20-431e-ae30-37762751cd39:
+    lastname: null
+    group: Default
+    subgroups: []
+    permissions:
+    - -autoitem.*
   bf683cfa-db8d-430c-a7fd-fbe0304021c8:
     lastname: TwitchBox20
     group: Default
@@ -92,11 +187,26 @@ users:
     subgroups: []
     permissions:
     - -autoitem.replaceon.place
+  dd8df2ba-6dce-47cc-ad77-cb59d4944953:
+    lastname: null
+    group: Default
+    subgroups: []
+    permissions:
+    - -mcmmo.ability.all
+    - -mcmmo.skill.all
+    - -tryme.*
+    - -scavenger.*
   ElgarL:
     group: Moderator
     subgroups: []
     permissions:
     - groupmanager.noofflineperms
+  f01a2307-e90d-4503-9f19-640806fa8808:
+    lastname: null
+    group: Default
+    subgroups: []
+    permissions:
+    - -autoitem.*
   KHobbits:
     group: Moderator
     subgroups: []

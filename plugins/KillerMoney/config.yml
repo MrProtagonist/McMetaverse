@@ -167,8 +167,8 @@ GUARDIAN:
 IRON_GOLEM:
    Enabled: true
    Negative: true
-   MinMoney: 15
-   MaxMoney: 15
+   MinMoney: 50
+   MaxMoney: 50
    Chance: 100
    
 MAGMA_CUBE:

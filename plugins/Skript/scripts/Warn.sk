@@ -240,6 +240,19 @@ command /warnings <text>:
 		else:
 			message "&a&oNo entries found for %arg%!"
 			stop
+			
+command /removewarning <player> <integer>:
+	trigger:
+		if player is op:
+			if arg-1 is set:
+				if arg-2 is set:
+					delete {warnings.%arg-1%.by::%arg-2%}
+					remove 1 from {warnings.%arg-1%}
+					message "&e&oDONE!"
+				else:
+					message "&cPlease input a warning ID"
+			else:
+				message "&cPlease input a playername."
 
 command /resetwarnings <player>:
 	description: Resets a player's warn count.

@@ -1,0 +1,139 @@
+# Command to register their pick and move screens.
+command /paveontop <integer> <material> <material>:
+	permission: essentials.socialspy
+	trigger:
+		arg-1 < 6
+		arg-3 isn't air
+		message "Now Paving On Top of %arg-2% With %arg-3%"
+		while player has arg-3:
+			wait 2 ticks
+			loop all blocks in radius arg-1 around the player:
+				player can build at location of loop-block
+				loop-block is not arg-2
+				loop-block is not arg-3
+				loop-block is not bedrock
+				if block 1 meter below loop-block is arg-2:
+					remove arg-3 from inventory of the player
+					set block at location of loop-block to arg-3
+		message "&cYou ran out of %arg-3%!"
+		stop	
+command /pave <integer> <material>:
+	permission: essentials.socialspy
+	trigger:
+		arg-1 < 6
+		arg-2 isn't air
+		message "Now Paving With %arg-2%"
+		while player has arg-2:
+			wait 2 ticks
+			loop all blocks in radius arg-1 around the player:
+				player can build at location of loop-block
+				#loop-block is water or lava or grass or stone or dirt or soulsand or magma or netherrack
+				loop-block is not air or plant or bedrock
+				loop-block is not arg-2
+				if block 1 meter above loop-block is air or plant:
+					remove arg-2 from inventory of the player
+					set block at location of loop-block to arg-2
+		message "&cYou ran out of %arg-2%!"
+		stop	
+#command /pave2 <text>:
+#	permission: chestcommands.open.pave.yml
+#	trigger:
+#		if arg is "cobblestone" or "dirt" or "sand" or "gravel" or "sandstone" or "brick" or "stone brick" or "quartz block" or "stone":
+#			set {pave.%player%.material} to arg
+#			wait 1 tick
+#			make player execute "pave3"
+#command /pave4 <integer>:
+#	permission: chestcommands.open.pave.yml
+#	trigger:
+#		arg is between 1 and 3
+#		set {pave.%player%.radius} to arg
+#		message "&aNow paving in a radius of %arg% with %{pave.%player%.material}%!"
+#		message "&c&oCAUTION: &cTo end the paving, you must empty your inventory of all of this kind of block!"
+#		if {pave.%player%.material} is "cobblestone":
+#			while player has 1 cobblestone:
+#				wait 1 tick
+#				loop all blocks in radius {pave.%player%.radius} around the player:
+#					player can build at location of loop-block
+#					loop-block is not air or cobblestone or plant
+#					if block 1 meter above loop-block is air or plant:
+#						remove 1 cobblestone from inventory of the player
+#						set block at location of loop-block to cobblestone
+#			message "&cYou ran out of cobblestone!"
+#			stop	
+#		if {pave.%player%.material} is "dirt":
+#			while player has 1 dirt:
+#				wait 1 tick
+#				loop all blocks in radius {pave.%player%.radius} around the player:
+#					player can build at location of loop-block
+#					loop-block is not air or dirt or plant
+#					if block 1 meter above loop-block is air or plant:
+#						remove 1 dirt from inventory of the player
+#						set block at location of loop-block to dirt
+#			message "&cYou ran out of dirt!"
+#			stop	
+#		if {pave.%player%.material} is "sand":
+#			while player has 1 sand:
+#				wait 1 tick
+#				loop all blocks in radius {pave.%player%.radius} around the player:
+#					player can build at location of loop-block
+#					loop-block is not air or sand or plant
+#					if block 1 meter above loop-block is air or plant:
+#						remove 1 sand from inventory of the player
+#						set block at location of loop-block to sand
+#			message "&cYou ran out of sand!"
+#			stop	
+#		if {pave.%player%.material} is "gravel":
+#			while player has 1 gravel:
+#				wait 1 tick
+#				loop all blocks in radius {pave.%player%.radius} around the player:
+#					player can build at location of loop-block
+#					loop-block is not air or gravel or plant
+#					if block 1 meter above loop-block is air or plant:
+#						remove 1 gravel from inventory of the player
+#						set block at location of loop-block to gravel
+#			message "&cYou ran out of gravel!"
+#			stop	
+#		if {pave.%player%.material} is "brick":
+#			while player has 1 brick:
+#				wait 1 tick
+#				loop all blocks in radius {pave.%player%.radius} around the player:
+#					player can build at location of loop-block
+#					loop-block is not air or brick or plant
+#					if block 1 meter above loop-block is air or plant:
+#						remove 1 brick from inventory of the player
+#						set block at location of loop-block to brick
+#			message "&cYou ran out of brick!"
+#			stop	
+#		if {pave.%player%.material} is "stone brick":
+#			while player has 1 stone brick:
+#				wait 1 tick
+#				loop all blocks in radius {pave.%player%.radius} around the player:
+#					player can build at location of loop-block
+#					loop-block is not air or stone brick or plant
+#					if block 1 meter above loop-block is air or plant:
+#						remove 1 stone brick from inventory of the player
+#						set block at location of loop-block to stone brick
+#			message "&cYou ran out of stone brick!"
+#			stop	
+#		if {pave.%player%.material} is "quartz block":
+#			while player has 1 quartz block:
+#				wait 1 tick
+#				loop all blocks in radius {pave.%player%.radius} around the player:
+#					player can build at location of loop-block
+#					loop-block is not air or quartz block or plant
+#					if block 1 meter above loop-block is air or plant:
+#						remove 1 quartz block from inventory of the player
+#						set block at location of loop-block to quartz block
+#			message "&cYou ran out of quartz block!"
+#			stop	
+#		if {pave.%player%.material} is "stone":
+#			while player has 1 stone:
+#				wait 1 tick
+#				loop all blocks in radius {pave.%player%.radius} around the player:
+#					player can build at location of loop-block
+#					loop-block is not air or stone or plant
+#					if block 1 meter above loop-block is air or plant:
+#						remove 1 stone from inventory of the player
+#						set block at location of loop-block to stone
+#			message "&cYou ran out of stone!"
+#			stop	

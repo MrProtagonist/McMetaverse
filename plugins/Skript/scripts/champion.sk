@@ -1,0 +1,197 @@
+#script options:
+#   $ developer mode
+on quit:
+	delete {riding.%player%}
+	loop all horses in radius 3 of player:
+		name of loop-entity contains "%player%"
+		kill loop-entity
+on walk on silverfish block:
+	"%region at player%" contains "champion1"
+	set {champion.entering} to true
+	make player execute "firewalk"
+	wait 15 real seconds
+	set {champion.entering} to false
+#command /spawnhorse [<text>]:
+#	permission: is.pro
+#	trigger:
+	#	if arg is "skeleton":
+	#		spawn an unique "skeleton horse" horse colored "chestnut" with patterns of "whitefield" at player
+	#	if arg is "chestnut":
+	#		spawn an unique "horse" horse colored "chestnut" with patterns of "whitefield" at player
+  #   if arg is "undead":
+  #	   spawn an unique "undead horse" horse colored "chestnut" with patterns of "whitefield" at player
+#		if arg is "white":
+#			spawn an unique "horse" horse colored "white" with patterns of "none" at player
+#		if arg is "black":
+#			spawn an unique "horse" horse colored "black" with patterns of "none" at player
+#		if arg is "mule":
+#			spawn an unique "mule" horse colored "brown" with patterns of "none" at player
+#		if arg is "donkey":
+#			spawn an unique "donkey" horse colored "white" with patterns of "none" at player
+#		if arg is "pepper":
+#			spawn an unique "horse" horse colored "white" with patterns of "black dots" at player
+#		if arg is "socks":
+#			spawn an unique "horse" horse colored "dark brown" with patterns of "white" at player
+#		if arg is "paint":
+#			spawn an unique "horse" horse colored "brown" with patterns of "whitefield" at player
+#		if arg is "creamy":
+#			spawn an unique "horse" horse colored "creamy" with patterns of "none" at player
+#		if arg is "dapple":
+#			spawn an unique "horse" horse colored "gray" with patterns of "white dots" at player
+#		set name of spawned entity to "&a%arg%"
+		
+on sign change:
+	player has permission "is.op"
+	if line 1 of block is "-horse-":
+		set line 1 of block to "[&eHorse&r]"
+		set line 2 of block to "&l%line 2 of block%"
+		set line 3 of block to "&lHorse"
+on right click on sign:
+	if line 1 of clicked block contains "Horse":
+		set {horse.%player%} to "%line 2 of clicked block%"
+		message "&aSet your horse type to %line 2 of clicked block%"
+		
+		
+command /ride:
+	permission: is.champion
+	trigger:
+		{riding.%player%} is not set
+		if {horse.%player%} contains "skeleton":
+			spawn an unique "skeleton horse" horse colored "chestnut" with patterns of "whitefield" at player
+		if {horse.%player%} contains "chestnut":
+			spawn an unique "horse" horse colored "chestnut" with patterns of "whitefield" at player
+  #   if {horse.%player%} contains "undead":
+  #	   spawn an unique "undead horse" horse colored "chestnut" with patterns of "whitefield" at player
+		if {horse.%player%} contains "white":
+			spawn an unique "horse" horse colored "white" with patterns of "none" at player
+		if {horse.%player%} contains "black":
+			spawn an unique "horse" horse colored "black" with patterns of "none" at player
+		if {horse.%player%} contains "mule":
+			spawn an unique "mule" horse colored "brown" with patterns of "none" at player
+		if {horse.%player%} contains "donkey":
+			spawn an unique "donkey" horse colored "white" with patterns of "none" at player
+		if {horse.%player%} contains "pepper":
+			spawn an unique "horse" horse colored "white" with patterns of "black dots" at player
+		if {horse.%player%} contains "socks":
+			spawn an unique "horse" horse colored "dark brown" with patterns of "white" at player
+		if {horse.%player%} contains "paint":
+			spawn an unique "horse" horse colored "brown" with patterns of "whitefield" at player
+		if {horse.%player%} contains "buckskin":
+			spawn an unique "horse" horse colored "creamy" with patterns of "none" at player
+		if {horse.%player%} contains "dapple":
+			spawn an unique "horse" horse colored "gray" with patterns of "white dots" at player
+	set name of spawned unique horse to "%player%s Horse"
+	set age of event-entity to adult
+	equip spawned unique horse with a saddle
+	set {riding.%player%} to true
+	make player ride last spawned unique horse
+on vehicle steer:
+#   player is "craftio"
+	"%uncoloured name of player's vehicle%" contains "polar bear"
+	if {_blockjump} is not set:
+		event-button is space
+		push vehicle of player upwards at speed 0.8
+		set {_blockjump} to true
+		wait 1 second
+		delete {_blockjump}
+	event-button is w:
+		push vehicle of player in the direction of player at speed 1
+	event-button is a:
+		push vehicle of player to the left at speed 0.3
+	event-button is d:
+		push vehicle of player to the right at speed 0.3
+	event-button is s:
+		push vehicle of player backwards at speed 0.5
+# polar bear shit
+#on rightclick on creature:
+#   name of entity contains "polar"
+#   make player ride entity
+#   set name of entity to "%player%'s Polar Bear"
+#   set the maximum health of the entity to 1000
+#   make player leash entity
+#   while entity exists:
+#	   change yaw of vehicle of player to yaw of player
+#	   change pitch of vehicle of player to pitch of player
+#	   heal the entity
+#	   wait 1 tick
+#on target:
+#   entity is a polar bear:
+#	   message "Rawr!" to target of entity
+#on vehicle exit:
+#   "%uncoloured name of player's vehicle%" contains "polar bear"
+#   message "debug"
+#   wait 2 ticks
+#   loop all entities in radius 2 of player:
+#	   loop-entity is not a player
+#	   delete loop-entity
+every real second:
+	loop all players:
+		{riding.%loop-player%} is true
+		loop-player is not riding
+		loop all entities in radius 5 of loop-player:
+			loop-entity-2 is not loop-player-1
+			loop-entity-2 is not a player
+			name of loop-entity-2 contains "%loop-player%"
+			name of loop-entity-2 contains "horse"
+			kill loop-entity-2
+			delete {riding.%loop-player%}
+on death of skeleton horse or undead horse or horse or donkey or mule:
+	name of victim contains "horse"
+	loop all players in radius 3 of victim:
+		name of victim contains "%loop-player%"
+		delete {riding.%loop-player%}
+		clear drops
+			
+
+on npc right click:
+	citizen is 40
+	make citizen 40 look at location of player
+	if player has the permission "is.champion":
+		message "&f[&cChampion&f] &aGreetings fellow Champion!"
+		wait 1 real second
+		set {champion.entering} to true
+		wait 1 real second
+		message "&f[&cChampion&f] &aFollow me into the Champions Hall, %player%!"
+		make player execute "firewalk"
+		wait 2 real seconds
+		move citizen 40 to {champion.mid} at speed 1
+		wait 5 real seconds
+		move citizen 40 to {champion.end} at speed 1
+		wait 10 real seconds
+		move citizen 40 to {champion.mid} at speed 1
+		wait 5 real seconds
+		move citizen 40 to {champion.start} at speed 1
+		wait 10 real seconds
+		set {champion.entering} to false
+	else:
+		message "&f[&cChampion&f] &cYou are not worthy of entering yet. Come back when you are a Champion."
+every real second:
+	loop all players in radius 5 of {pushspot}:
+		loop-player does not have the permission "is.champion"
+		push the loop-player from {pushspot}
+		wait 1 tick
+		push the loop-player from {pushspot}
+		#teleport loop-player to {spawn}
+		send "&cEJECTED!" to loop-player
+command /firewalk:
+	trigger:
+		delete {fire.path::*}
+#	   message "&aLighting the way."
+		loop 70 times:
+			wait 5 ticks
+			loop all blocks in radius 7 of player:
+				loop-block is netherrack
+				set the block at location of block 1 meter above loop-block to fire
+				add location of loop-block to {fire.path::*}
+		loop {fire.path::*}:
+			set the block at location of block 1 meter above loop-value to air
+#	   message "&cBack to normal."
+command /setchampa:
+	trigger:
+		set {champion.start} to location of player
+command /setchampb:
+	trigger:
+		set {champion.mid} to location of player
+command /setchampc:
+	trigger:
+		set {champion.end} to location of player

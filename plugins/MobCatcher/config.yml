@@ -1,30 +1,40 @@
 # 
-#  MobCatcher v3.26
+#  MobCatcher v3.28
 #  
 #  For help with the Config file, see the BukkitDev page.  
 #  
 PluginEnabled:
-  MetaOmega: true
-  MetaOmega_nether: true
-  MetaOmega_the_end: true
+  MetaSanctus: true
+  MetaSanctus_nether: true
+  MetaSanctus_the_end: true
+  world_herobrine_graveyard: true
+  '{Hyperverse}': true
+  Hyperverse3: true
   contest: true
   resource_nether: true
   resource: true
+  Minigame: true
+  Hyper_nether: true
+  HyperVerse2: true
+  Hyper: true
+  Dino_Safe: true
   sandbox: true
+  MetaOmega: true
+  MetaOmega_the_end: true
+  MetaOmega_nether: true
   Hyperverse_nether: true
   Hyperverse: true
-  Minigame: true
 CaptureItem:
-  Enabled: false
+  Enabled: true
   ItemName: '[all names]'
   ItemID: 344
   UsedOnCapture: true
   ReturnedOnSpawn: false
 ProjectileCaptures:
-  SpawnEggsDirectToInventory: false
+  SpawnEggsDirectToInventory: true
   MissedEggsSpawnChickens: true
   Type:
-    Egg: false
+    Egg: true
     Snowball: false
     Arrow: false
     EnderPearl: false
@@ -55,7 +65,7 @@ Messages:
   SpawnEnabled: true
   Permissions: true
 SimpleConfig:
-  Vault: false
+  Vault: true
   PeacefulMobs:
     ItemName: redstone dust
     ItemID: 331
@@ -79,7 +89,7 @@ SimpleConfig:
     Spider: true
     Zombie: true
     Slime: true
-    Ghast: true
+    Ghast: false
     Enderman: true
     Sliverfish: true
     Blaze: false
@@ -91,14 +101,14 @@ SimpleConfig:
     Wolf: true
     AngryWolf: true
     Mooshroom: true
-    Villager: true
+    Villager: false
     Ocelot: true
-    IronGolem: true
+    IronGolem: false
     SnowGolem: true
     Enderdragon: false
     Witch: true
     Bat: true
-    WitherSkeleton: true
+    WitherSkeleton: false
     Wither: false
     Horse: true
     Rabbit: true
@@ -106,6 +116,7 @@ SimpleConfig:
     Guardian: true
     ElderGuardian: false
     Shulker: true
+    PolarBear: true
 ComplexConfig:
   Enabled: false
   Vault: false
@@ -174,7 +185,7 @@ ComplexConfig:
     Chance: 100
     MustBeKilled: false
   Ghast:
-    Enabled: true
+    Enabled: false
     ItemName: redstone dust
     ItemID: 331
     Amount: 5
@@ -270,7 +281,7 @@ ComplexConfig:
     Chance: 100
     MustBeKilled: false
   Villager:
-    Enabled: true
+    Enabled: false
     ItemName: redstone dust
     ItemID: 331
     Amount: 1000000000
@@ -286,7 +297,7 @@ ComplexConfig:
     Chance: 100
     MustBeKilled: false
   IronGolem:
-    Enabled: true
+    Enabled: false
     ItemName: redstone dust
     ItemID: 331
     Amount: 5
@@ -294,7 +305,7 @@ ComplexConfig:
     Chance: 100
     MustBeKilled: false
   SnowGolem:
-    Enabled: true
+    Enabled: false
     ItemName: redstone dust
     ItemID: 331
     Amount: 5
@@ -326,7 +337,7 @@ ComplexConfig:
     Chance: 100
     MustBeKilled: false
   WitherSkeleton:
-    Enabled: true
+    Enabled: false
     ItemName: redstone dust
     ItemID: 331
     Amount: 5
@@ -374,7 +385,7 @@ ComplexConfig:
     Chance: 100
     MustBeKilled: false
   ElderGuardian:
-    Enabled: true
+    Enabled: false
     ItemName: redstone dust
     ItemID: 331
     Amount: 5
@@ -382,6 +393,14 @@ ComplexConfig:
     Chance: 100
     MustBeKilled: false
   Shulker:
+    Enabled: true
+    ItemName: redstone dust
+    ItemID: 331
+    Amount: 5
+    VaultCost: 10.0
+    Chance: 100
+    MustBeKilled: false
+  PolarBear:
     Enabled: true
     ItemName: redstone dust
     ItemID: 331

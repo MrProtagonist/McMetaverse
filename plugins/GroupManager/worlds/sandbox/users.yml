@@ -1,4 +1,19 @@
 users:
+  0435c881-a2ce-4a06-8ffe-10b5d8aa71d5:
+    lastname: wyntercain
+    group: Certified
+    subgroups: []
+    permissions:
+    - worldedit.*
+    info:
+      prefix: '§f[§e§oSandbox§f]§r '
+  0670f9c1-81a8-4dbf-a17d-0d29b64b89df:
+    lastname: zab92396
+    group: Default
+    subgroups: []
+    permissions: []
+    info:
+      prefix: '§f[§d§oContest§f]§r '
   0856cd5d-6a48-43fa-8afb-850c2dce2172:
     lastname: Mistidawn98
     group: Certified
@@ -7,6 +22,9 @@ users:
     - essentials.socialspy
     - plots.admin.command.setowner
     - plots.set.owner
+    - worldedit.*
+    info:
+      prefix: '§f[§d§oContest§f]§r '
   0c376ecc-a0ee-4042-8250-0b4288a6264c:
     lastname: null
     group: Default
@@ -23,6 +41,21 @@ users:
     info:
       prefix: '§f[&3Architect§f] '
       suffix: §f [&3Snorlax§f]
+  1053b8a4-47fa-45d9-85b2-c6101e3cbbd5:
+    lastname: TheSpectreMage
+    group: Default
+    subgroups: []
+    permissions:
+    - worldedit.*
+    info:
+      prefix: '§f[§e§oSandbox§f]§r '
+  15a54ce0-7d6a-4413-b19a-e4b7befa1b02:
+    lastname: Dreadnaught333
+    group: Default
+    subgroups: []
+    permissions: []
+    info:
+      prefix: '§f[§d§oContest§f]§r '
   1b7f1ada-6fa9-4390-8584-33d7f7fd0bb2:
     lastname: GamerRick_
     group: Certified
@@ -32,17 +65,41 @@ users:
     lastname: rfcroc
     group: Certified
     subgroups: []
-    permissions: []
+    permissions:
+    - worldedit.*
     info:
+      prefix: '§f[§e§oSandbox§f]§r '
       suffix: §f [&2old Saltie§f]
+  1c3a5912-f697-4ddb-ae64-a8c67069a7f9:
+    lastname: DanDaSlothBoss
+    group: Default
+    subgroups: []
+    permissions:
+    - worldedit.*
+    info:
+      prefix: '§f[§e§oSandbox§f]§r '
   1cbd2fe0-3402-47cb-bc9e-7ef7928c4a79:
     lastname: Quisalas
     group: Default
     subgroups: []
+    permissions:
+    - -autoitem.*
+    info:
+      suffix: §f [&o&dSkript&r&5ress§f]
+  1fe51d5a-2fa4-466c-96f4-ed4c0bde867c:
+    lastname: Clyde_
+    group: Default
+    subgroups: []
     permissions: []
     info:
-      prefix: '§f[§5§o&9Admin§f] '
-      suffix: §f [&o&dSkript&r&5ress§f]
+      prefix: '§f[§d§oContest§f]§r '
+  241becd8-0e97-426d-a5c6-a6f54ed048e1:
+    lastname: ReesuDucky
+    group: Certified
+    subgroups: []
+    permissions: []
+    info:
+      prefix: '§f[§d§oContest§f]§r '
   2576d27f-a9c8-414f-83ec-bd8ce014c7bb:
     lastname: null
     group: Default
@@ -55,6 +112,8 @@ users:
     group: Certified
     subgroups: []
     permissions: []
+    info:
+      prefix: '§f[§d§oContest§f]§r '
   29262a24-70aa-4824-83ec-5ec43f9a7d29:
     lastname: RoobLetterman
     group: Default
@@ -72,19 +131,65 @@ users:
     group: Certified
     subgroups: []
     permissions: []
+  303f4db6-5fed-41a6-936e-308607a6d327:
+    lastname: kamocan
+    group: Default
+    subgroups: []
+    permissions: []
+    info:
+      prefix: '§f[§d§oContest§f]§r '
   304dc62a-6ab7-4a7b-9869-708e68a48079:
     lastname: 54Rudie
     group: Certified
     subgroups: []
     permissions: []
-  3feb7b1d-c91c-445a-b79d-6c233d6c341f:
+  370d76eb-7f68-41c9-8927-d9abf602f244:
+    lastname: Samkusa
+    group: Default
+    subgroups: []
+    permissions:
+    - worldedit.*
+    info:
+      prefix: '§f[§e§oSandbox§f]§r '
+  37ce73c5-712e-4a92-bcc5-d2e5ae519c47:
     lastname: null
+    group: Default
+    subgroups: []
+    permissions:
+    - -mcmmo.ability.all
+    - -tryme.*
+    - -scavenger.*
+  391cbe0b-0b35-4f71-81d0-9a7a32bf9c9c:
+    lastname: dabeast2002
+    group: Default
+    subgroups: []
+    permissions:
+    - worldedit.*
+    info:
+      prefix: '§f[§e§oSandbox§f]§r '
+  3feb7b1d-c91c-445a-b79d-6c233d6c341f:
+    lastname: DrBloodbathMC
     group: Default
     subgroups: []
     permissions: []
     info:
       prefix: ''
       suffix: §f [&2Mr.Slimestone§f]
+  4367bdcd-0fba-490a-a7c1-a932d4e99d13:
+    lastname: motinabe23
+    group: Default
+    subgroups: []
+    permissions: []
+    info:
+      prefix: '§f[§d§oContest§f]§r '
+  45910a7e-7e9b-425d-9a60-82f1eab5dc56:
+    lastname: BriannaTopBanana
+    group: Default
+    subgroups: []
+    permissions:
+    - worldedit.*
+    info:
+      prefix: '§f[§e§oSandbox§f]§r '
   467725bd-18f5-405e-85e9-040da733a897:
     lastname: axd47
     group: Certified
@@ -99,17 +204,40 @@ users:
     lastname: G4GamingX
     group: Certified
     subgroups: []
-    permissions: []
+    permissions:
+    - skript.collectible
+    info:
+      prefix: '§f[§d§oContest§f]§r '
+  4a8b221a-b77e-46cc-93d4-c5cec4b73e57:
+    lastname: Cadmael
+    group: Default
+    subgroups: []
+    permissions:
+    - worldedit.*
+    info:
+      prefix: '§f[§e§oSandbox§f]§r '
   4f6c718c-bee0-4990-b5fd-9e7074236302:
     lastname: Terrible_T98
     group: Certified
     subgroups: []
     permissions: []
   521ce0da-1180-464f-aaac-2968189c4c1d:
-    lastname: Joelvr16
+    lastname: Jadevn16
+    group: Certified
+    subgroups:
+    - Moderator
+    permissions:
+    - -autoitem.*
+    info:
+      prefix: '§f[§d§oContest§f]§r '
+  522924e2-35ab-4da7-84ff-e9cdcf225175:
+    lastname: xXStar_GamerXx
     group: Certified
     subgroups: []
-    permissions: []
+    permissions:
+    - worldedit.*
+    info:
+      prefix: '§f[§e§oSandbox§f]§r '
   53125f19-3102-4ed5-81a2-6facfcf22f3f:
     lastname: BigDaddyPhill
     group: Default
@@ -117,6 +245,14 @@ users:
     permissions: []
     info:
       prefix: '§f[§5§o&c&oRegular§f] '
+  57a32a4d-3b10-4b3f-b4ff-ee11536913d3:
+    lastname: Dan_DiCola
+    group: Default
+    subgroups: []
+    permissions:
+    - worldedit.*
+    info:
+      prefix: '§f[§e§oSandbox§f]§r '
   5f23e3c6-b592-4e1c-bb7a-66b4424c36f8:
     lastname: Hobbitsyfeet
     group: Builder
@@ -124,46 +260,111 @@ users:
     permissions: []
     info:
       prefix: ''
+  5f62e716-e961-4bc7-91f4-bc21797edb75:
+    lastname: dinoppar
+    group: Default
+    subgroups: []
+    permissions:
+    - plots.worldedit.bypass
   5f9c6028-2763-4f35-b7b4-ca9cbe7c6137:
     lastname: Pog_Mo_Thoin_4
     group: Certified
     subgroups: []
     permissions: []
+    info:
+      prefix: '§f[§d§oContest§f]§r '
+  612c7aaa-dbb0-40f0-916f-4de7497e0d4d:
+    lastname: underworldlord
+    group: Moderator
+    subgroups: []
+    permissions:
+    - -autoitem.*
+    info:
+      prefix: '§f[§d§oContest§f]§r '
+  613beeff-1620-4579-8199-15c03739da42:
+    lastname: CryingCrow0
+    group: Default
+    subgroups: []
+    permissions:
+    - worldedit.*
+    info:
+      prefix: '§f[§e§oSandbox§f]§r '
   62a3adbb-7d13-42e2-8cdf-cf70ef83319d:
     lastname: tigger4552
     group: Certified
     subgroups: []
-    permissions: []
+    permissions:
+    - worldedit.*
+    info:
+      prefix: '§f[§e§oSandbox§f]§r '
+  648832f8-878b-444f-b631-40816ddc8701:
+    lastname: iWxlfie
+    group: Certified
+    subgroups: []
+    permissions:
+    - -autoitem.*
+    info:
+      prefix: '§f[§d§oContest§f]§r '
   6be9aae7-f43b-479c-9e56-c33e8e4d131f:
     lastname: Adryanna01
     group: Certified
     subgroups: []
     permissions: []
+    info:
+      prefix: '§f[§d§oContest§f]§r '
+  6df66900-57bd-43a1-bb1c-0f2387c1087c:
+    lastname: Winterturtle
+    group: Default
+    subgroups: []
+    permissions: []
+    info:
+      prefix: '§f[§d§oContest§f]§r '
   70b3e014-4b7b-4da6-b3ce-7e87541bd336:
     lastname: RosyAmber
-    group: Certified
+    group: Moderator
     subgroups: []
     permissions:
+    - -autoitem.*
     - essentials.socialspy
+    - sk.prefix
+    info:
+      prefix: '§f[§d§oContest§f]§r '
   74589004-55e5-4a0f-810e-9241682d6493:
     lastname: Noobama
     group: Certified
     subgroups: []
     permissions: []
   761cfbf5-a5aa-4e6f-b894-6baafe5e5da5:
-    lastname: NitrogenPlayz
+    lastname: NitrogenSlayz
     group: Certified
+    subgroups: []
+    permissions:
+    - worldedit.*
+    info:
+      prefix: '§f[§d§oContest§f]§r '
+      suffix: §f [&aSuffix§f]
+  7624e965-5280-4ee0-a2da-9499c5b1a8ed:
+    lastname: dpw750
+    group: Default
     subgroups: []
     permissions: []
     info:
-      suffix: §f [&aSuffix§f]
+      prefix: '§f[§d§oContest§f]§r '
   777885e9-9fc8-4b43-99c7-55293af3ded4:
     lastname: Professor_Swifty
     group: Certified
     subgroups: []
     permissions: []
+  78b9240f-f7f6-4b0f-a98d-1fc588e902af:
+    lastname: Emix118
+    group: Default
+    subgroups: []
+    permissions:
+    - worldedit.*
+    info:
+      prefix: '§f[§e§oSandbox§f]§r '
   799c4fd6-0201-4d1e-b345-b70e5f24f567:
-    lastname: null
+    lastname: Post_Rogue
     group: Default
     subgroups: []
     permissions: []
@@ -175,11 +376,60 @@ users:
     group: Certified
     subgroups: []
     permissions: []
+  7aa175c2-fcc1-4759-8a1d-fe8a4f6c1a0f:
+    lastname: gleny
+    group: Default
+    subgroups: []
+    permissions:
+    - worldedit.*
+    info:
+      prefix: '§f[§e§oSandbox§f]§r '
+  7c3e5b54-b7f7-4ddf-8a8d-0037ec1a6f1a:
+    lastname: SuperMelonGRamer
+    group: Default
+    subgroups: []
+    permissions:
+    - -mcmmo.ability.all
+    - -tryme.*
+    - -scavenger.*
+    info:
+      prefix: '§f[§d§oContest§f]§r '
+  7c62a911-cd0e-4d68-96ff-6b72ece1bdc0:
+    lastname: null
+    group: Moderator
+    subgroups: []
+    permissions: []
+  7d25e0a7-cdea-40d0-be24-6ba485b5965a:
+    lastname: Kazeme
+    group: Default
+    subgroups: []
+    permissions:
+    - worldedit.*
+    info:
+      prefix: '§f[§e§oSandbox§f]§r '
+  7e04ca8f-1751-47e5-946c-93170c5db0b7:
+    lastname: p13rc3y7
+    group: Certified
+    subgroups: []
+    permissions:
+    - worldedit.*
+    info:
+      prefix: '§f[§e§oSandbox§f]§r '
   7f03dc90-c322-4b8c-ac12-77fdcb8e124d:
     lastname: JediNick99
     group: Certified
     subgroups: []
     permissions: []
+    info:
+      prefix: '§f[§d§oContest§f]§r '
+  7f5a9ba9-54a9-42ac-b01a-c3f7a852468b:
+    lastname: Heneedsomemilk10
+    group: Default
+    subgroups: []
+    permissions:
+    - worldedit.*
+    info:
+      prefix: '§f[§e§oSandbox§f]§r '
   805d5c74-bb6e-483d-9943-0a37f00680ac:
     lastname: mypcgamesforyou
     group: Certified
@@ -199,24 +449,47 @@ users:
     info:
       prefix: '§f[§5§o&bDonut§f] '
       suffix: §f [&b&lMonkey§f]
+  83c3a173-2bd5-48f7-9fe8-50f18d3a6177:
+    lastname: BlackBartP08
+    group: Certified
+    subgroups: []
+    permissions:
+    - worldedit.*
+    info:
+      prefix: '§f[§d§oContest§f]§r '
+  87c29ece-cf33-49ab-a32d-9d17a254b751:
+    lastname: Mr_Piggies
+    group: Default
+    subgroups: []
+    permissions:
+    - -autoitem.*
+    - worldedit.*
+    info:
+      prefix: '§f[§e§oSandbox§f]§r '
   89943c81-1feb-4a35-9ffd-73471a0266b4:
     lastname: AButtJoke
     group: Certified
     subgroups: []
     permissions: []
+    info:
+      prefix: '§f[§d§oContest§f]§r '
   904f167d-2f03-426b-b133-1a321d5eb55e:
     lastname: craftio
     group: Certified
     subgroups: []
-    permissions: []
+    permissions:
+    - -essentials.afk.auto
     info:
-      prefix: '§f[§eHead DEV§f] '
+      prefix: '§f[§d§oContest§f]§r '
       suffix: ' §f[§4Honour the Code§f]'
   92213fe2-8789-4090-8d30-8628e61f80f6:
     lastname: The_Floww
     group: Certified
     subgroups: []
-    permissions: []
+    permissions:
+    - worldedit.*
+    info:
+      prefix: '§f[§e§oSandbox§f]§r '
   950d8d97-4195-429f-839b-d65b7782b90b:
     lastname: null
     group: Default
@@ -228,7 +501,10 @@ users:
     lastname: BlueDragon103
     group: Certified
     subgroups: []
-    permissions: []
+    permissions:
+    - worldedit.*
+    info:
+      prefix: '§f[§e§oSandbox§f]§r '
   97cb8bf8-c6ee-4511-b6bd-d00dc1bc4fbb:
     lastname: null
     group: Default
@@ -244,6 +520,9 @@ users:
     permissions:
     - plots.set
     - plots.set.floor
+    - worldedit.*
+    info:
+      prefix: '§f[§e§oSandbox§f]§r '
   9c5e4e25-d562-4aa2-afdc-463718c03445:
     lastname: Darkeye932
     group: Certified
@@ -260,17 +539,37 @@ users:
     lastname: bismark66
     group: Certified
     subgroups: []
+    permissions:
+    - worldedit.*
+    info:
+      prefix: '§f[§e§oSandbox§f]§r '
+  9f8c5b92-6147-4980-a2cc-039489158eb1:
+    lastname: NinPando
+    group: Default
+    subgroups: []
     permissions: []
+    info:
+      prefix: '§f[§d§oContest§f]§r '
   a231903c-ec5e-46de-b8cd-b1c510c8d433:
     lastname: JesteryJinx
     group: Certified
     subgroups: []
     permissions: []
+    info:
+      prefix: '§f[§d§oContest§f]§r '
   a5f66711-9e63-4200-b1da-0b675efcba20:
     lastname: Laura_rocks
     group: Certified
     subgroups: []
     permissions: []
+  a6bff124-32ce-4692-8c0c-520f892ec2f8:
+    lastname: Smishkid
+    group: Default
+    subgroups: []
+    permissions:
+    - worldedit.*
+    info:
+      prefix: '§f[§e§oSandbox§f]§r '
   ab2034bd-5556-4d18-bf33-c79f4eebce23:
     lastname: null
     group: Default
@@ -282,18 +581,28 @@ users:
     lastname: uberwookie
     group: Certified
     subgroups: []
-    permissions: []
+    permissions:
+    - worldedit.*
+    info:
+      prefix: '§f[§e§oSandbox§f]§r '
   aba95e1f-2387-4033-ac1b-e8c276726bdc:
     lastname: lvdrone
     group: Certified
     subgroups: []
-    permissions: []
+    permissions:
+    - worldedit.*
+    info:
+      prefix: '§f[§e§oSandbox§f]§r '
   adomiwonder:
     group: Default
     subgroups: []
     permissions: []
     info:
       suffix: §f [MLG§f]
+  Ashen_Hero:
+    group: Moderator
+    subgroups: []
+    permissions: []
   Ashlerose:
     group: Default
     subgroups: []
@@ -301,24 +610,66 @@ users:
     info:
       prefix: '§f[§5§o&4-Queen-§f] '
       suffix: §f [&cUnicorn§f]
-  b3ae4392-e531-48a0-9ab4-24e72ea202e9:
-    lastname: Luci_Chan
-    group: Certified
-    subgroups: []
-    permissions: []
-  b477454d-6838-4449-ae80-9c0f3357511f:
-    lastname: Kyokokat
+  b1d97497-f3dc-4360-9a28-7575993185b2:
+    lastname: Brightenstar
     group: Default
     subgroups: []
     permissions: []
     info:
-      prefix: '§f[§5§o&bCuter Fox <3§f] '
+      prefix: '§f[§d§oContest§f]§r '
+  b2ec9454-7ee3-4e9a-8c47-d8ad4663a7ee:
+    lastname: KitKatzKittenz
+    group: Default
+    subgroups: []
+    permissions:
+    - worldedit.*
+    info:
+      prefix: '§f[§e§oSandbox§f]§r '
+  b3ae4392-e531-48a0-9ab4-24e72ea202e9:
+    lastname: ChibiOtter
+    group: Certified
+    subgroups: []
+    permissions:
+    - worldedit.*
+  b477454d-6838-4449-ae80-9c0f3357511f:
+    lastname: Kyokokat
+    group: Certified
+    subgroups: []
+    permissions:
+    - -autoitem.*
+    - worldedit.*
+    info:
+      prefix: '§f[§e§oSandbox§f]§r '
       suffix: §f [&6G&3inger&bFox§f]
   b6bd0fb5-2698-41c2-be70-506303491bb8:
     lastname: petenoballs
     group: Certified
     subgroups: []
     permissions: []
+  b76b1e70-3da5-4f2f-9738-5327923d5e94:
+    lastname: Callumsjws
+    group: Default
+    subgroups: []
+    permissions:
+    - worldedit.*
+    info:
+      prefix: '§f[§e§oSandbox§f]§r '
+  b88c5bb4-b90e-48e9-97ee-f71158d02825:
+    lastname: I_Am_The_Kirito
+    group: Certified
+    subgroups: []
+    permissions:
+    - worldedit.*
+    info:
+      prefix: '§f[§e§oSandbox§f]§r '
+  ba46c6b1-5a20-431e-ae30-37762751cd39:
+    lastname: Kittycat_girl86
+    group: Default
+    subgroups: []
+    permissions:
+    - -autoitem.*
+    info:
+      prefix: '§f[§d§oContest§f]§r '
   bbc66f2e-7882-4097-9bcc-51ddfe819f74:
     lastname: null
     group: Default
@@ -341,26 +692,56 @@ users:
     permissions: []
   bf683cfa-db8d-430c-a7fd-fbe0304021c8:
     lastname: TwitchBox20
-    group: Default
+    group: Certified
     subgroups: []
     permissions:
     - essentials.socialspy
+    - worldedit.*
     info:
       suffix: §f [&cUn&fpossibly &c&oFast§f]
   bf73d4da-b086-4c60-a85b-0c91a4c8f71d:
     lastname: alimor2001
     group: Certified
     subgroups: []
+    permissions:
+    - worldedit.*
+    info:
+      prefix: '§f[§e§oSandbox§f]§r '
+  BlackBartP08:
+    group: Default
+    subgroups: []
     permissions: []
+    info:
+      prefix: '§f[§e§oSandbox§f]§r '
+  Blue_DemonXx:
+    group: Default
+    subgroups: []
+    permissions: []
+    info:
+      prefix: '§f[§e§oSandbox§f]§r '
   bluedemon0015:
     group: Admin
     subgroups: []
     permissions: []
+  Brightenstar:
+    group: Default
+    subgroups: []
+    permissions: []
+    info:
+      prefix: '§f[§d§oContest§f]§r '
   c08ed49a-0ecc-4cc4-98b5-5378fe0d0345:
     lastname: LucaBuddy
     group: Certified
     subgroups: []
     permissions: []
+  cad624c2-51fd-4ba3-9a84-79120fcb8fb0:
+    lastname: danikachoo
+    group: Certified
+    subgroups: []
+    permissions:
+    - worldedit.*
+    info:
+      prefix: '§f[§e§oSandbox§f]§r '
   cfc0686d-4a22-4bf5-95f5-c42abd662f9a:
     lastname: null
     group: Default
@@ -368,6 +749,12 @@ users:
     permissions: []
     info:
       suffix: §f [&5MommaSquirrel§f]
+  ChibiOtter:
+    group: Default
+    subgroups: []
+    permissions: []
+    info:
+      prefix: '§f[§e§oSandbox§f]§r '
   creeperkiller830:
     group: Default
     subgroups: []
@@ -388,13 +775,16 @@ users:
       prefix: '§f[§5§o&d&oFriendly§f] '
       suffix: §f [&bLover§f]
   d251b84f-707b-46ef-b9c4-960263abad60:
-    lastname: xNillax
+    lastname: SilenceWillFalll
     group: Certified
-    subgroups: []
+    subgroups:
+    - Moderator
     permissions:
     - essentials.socialspy
     - plots.admin.command.setowner
     - plots.set.owner
+    info:
+      prefix: '§f[§d§oContest§f]§r '
   d28f134f-69d3-4c28-abab-a93f5a377582:
     lastname: CaptainStupid
     group: Default
@@ -426,20 +816,62 @@ users:
   d5c574b6-87f7-412c-822f-24be8e9a9b5c:
     lastname: kiekieko
     group: Certified
-    subgroups: []
-    permissions: []
+    subgroups:
+    - Moderator
+    permissions:
+    - worldedit.*
+    info:
+      prefix: '§f[§e§oSandbox§f]§r '
   d78121cf-e92d-489c-9cac-10224ebfc40f:
     lastname: Icespot744
     group: Certified
     subgroups: []
+    permissions:
+    - worldedit.*
+    info:
+      prefix: '§f[§e§oSandbox§f]§r '
+      suffix: §f [&2Funky Bunch§f]
+  db073c9b-2094-4c4b-832c-aba95419660d:
+    lastname: FunyunRob
+    group: Default
+    subgroups: []
     permissions: []
     info:
-      suffix: §f [&2Funky Bunch§f]
+      prefix: '§f[§d§oContest§f]§r '
   db22d861-ddaa-4f0e-a900-8715186ce215:
     lastname: _sting_
     group: Certified
     subgroups: []
     permissions: []
+  dc506779-7416-4ad5-83cf-43548e1b1a67:
+    lastname: ZombieGirl159
+    group: Default
+    subgroups: []
+    permissions: []
+    info:
+      prefix: '§f[§d§oContest§f]§r '
+  de12da72-1114-4e3d-bf2e-0fe7841c0f29:
+    lastname: Sompor
+    group: Default
+    subgroups: []
+    permissions: []
+    info:
+      prefix: '§f[§d§oContest§f]§r '
+  de7eb8e9-1711-4ba3-801a-4a8ad5ede8a3:
+    lastname: TimelessTitanz
+    group: Default
+    subgroups: []
+    permissions:
+    - worldedit.*
+    info:
+      prefix: '§f[§e§oSandbox§f]§r '
+  df92c046-f9df-4118-bd42-4db44e4c05b7:
+    lastname: DrShoopenstein
+    group: Default
+    subgroups: []
+    permissions: []
+    info:
+      prefix: '§f[§d§oContest§f]§r '
   DrieIceyGirl:
     group: Default
     subgroups: []
@@ -447,10 +879,18 @@ users:
     info:
       suffix: §f [&3&lIc&b&ley§f]
   e1d830b4-2d68-4ce6-8d37-2e1769859f72:
-    lastname: jdhdog
+    lastname: OmqItsJustin
     group: Certified
     subgroups: []
     permissions: []
+  e6f940fb-3184-45cf-a91c-27f0d566f675:
+    lastname: Spencer_ROCKS123
+    group: Default
+    subgroups: []
+    permissions:
+    - worldedit.*
+    info:
+      prefix: '§f[§e§oSandbox§f]§r '
   e8fc4905-599f-4c3c-93de-34b6769f71bf:
     lastname: Bad_Monkey
     group: Certified
@@ -461,6 +901,7 @@ users:
     group: Certified
     subgroups: []
     permissions:
+    - -autoitem.*
     - plots.add
     - plots.list
     - plots.list.*
@@ -468,12 +909,15 @@ users:
     - plots.unclaim
     - plots.unlink
     info:
+      prefix: '§f[§d§oContest§f]§r '
       suffix: §f [&BP＆C§f]
   e9ade66d-f8b1-47c8-8f04-5778549f6cc9:
-    lastname: Phoenix_Orion
+    lastname: Ashen_Hero
     group: Certified
-    subgroups: []
+    subgroups:
+    - Moderator
     permissions:
+    - -autoitem.*
     - essentials.socialspy
     info:
       suffix: §f [&6&lThor &8&lOdinson§f]
@@ -484,6 +928,13 @@ users:
     permissions: []
     info:
       suffix: §f [&aAllMyLostBoyzzz§f]
+  ec36837e-7d31-428e-80a9-cddf34253f8b:
+    lastname: Joncar814
+    group: Default
+    subgroups: []
+    permissions: []
+    info:
+      prefix: '§f[§d§oContest§f]§r '
   ElgarL:
     group: Moderator
     subgroups: []
@@ -493,7 +944,9 @@ users:
     lastname: MrProtagonist
     group: Default
     subgroups: []
-    permissions: []
+    permissions:
+    - -autorank.track
+    - -autoitem.*
     info:
       prefix: '§f[&aFounder§f] '
   f0db2f51-b275-4810-9121-3d2a0c8e4581:
@@ -513,16 +966,34 @@ users:
     group: Certified
     subgroups: []
     permissions: []
+    info:
+      prefix: '§f[§d§oContest§f]§r '
   f934be5a-c77d-4f46-9107-232cb72c29ba:
     lastname: dankmemerinos
     group: Certified
     subgroups: []
     permissions: []
+  fa739112-8439-4e63-8619-d6b570c9510e:
+    lastname: sydeli
+    group: Certified
+    subgroups: []
+    permissions:
+    - worldedit.*
+    info:
+      prefix: '§f[§e§oSandbox§f]§r '
   fad02901-bc22-4c5e-a5de-c31dccf35c2f:
     lastname: kizopandas
     group: Certified
     subgroups: []
     permissions: []
+  fc91c573-17d3-41e0-9b59-260899792d6c:
+    lastname: sam12750
+    group: Default
+    subgroups: []
+    permissions:
+    - worldedit.*
+    info:
+      prefix: '§f[§e§oSandbox§f]§r '
   johnl101:
     group: Default
     subgroups: []
@@ -541,6 +1012,18 @@ users:
     info:
       prefix: '§f[§5§oElite§f] '
       suffix: §f [&6Cynamonbun§f]
+  NitrogenSlayz:
+    group: Default
+    subgroups: []
+    permissions: []
+    info:
+      prefix: '§f[§e§oSandbox§f]§r '
+  OmqItsJustin:
+    group: Default
+    subgroups: []
+    permissions: []
+    info:
+      prefix: '§f[§d§oContest§f]§r '
   retroville268773:
     group: Default
     subgroups: []
@@ -589,3 +1072,8 @@ users:
     permissions: []
     info:
       suffix: §f [&4Lord Israphel§f]
+  XNeurosisX:
+    group: Default
+    subgroups:
+    - Moderator
+    permissions: []

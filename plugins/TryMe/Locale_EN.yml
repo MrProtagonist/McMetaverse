@@ -5,7 +5,8 @@ info:
   prefix: '&f[&e&l/Quiz&f] '
   RewardBroadcast: '&6[player] wins!'
   CantFindCategory: '&2Cant find any category you defined. Possible: &3[categories]&c.'
-  CantFindRewardCategory: '&2Cant find any reward category you defined. Possible: &3[categories]&c.'
+  CantFindRewardCategory: '&2Cant find any reward category you defined. Possible:
+    &3[categories]&c.'
   CantFindGameMode: '&2Cant find game mode. Posible: &3qmode, fmode, dmode, mmode&c.'
   PluginStoped: '&4Plugin has been stopped!'
   PlayTimeStart: '&3Quiz game have been started!'

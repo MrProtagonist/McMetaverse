@@ -1,3 +1,4 @@
+configVersion: "1.10"
 #Chance is the chance that a mob will not be infernal, the lower the number the higher the chance. (min 1)
 #Enabledworlds are the worlds that infernal mobs can spawn in.
 #Enabledmobs are the mobs that can become infernal.
@@ -10,7 +11,7 @@
 #nameTagsName and bossBarsName have these special tags: <mobLevel> = the amount of powers the boss has.
 #<abilities> = A list of about 3-5 (whatever can fit) names of abilities the boss has.
 #<mobName> = Name of the mob, so if the mob is a creeper the mobName will be "Creeper".
-chance: 80
+chance: 70
 #mobChances:
 #  Ghast: 150
 #levelChance:
@@ -29,7 +30,7 @@ namePrefix: '&fInfernal'
 nameTagsLevel: 1
 nameTagsName: '&f<prefix> <mobName>'
 bossBarsName: '&fLevel <mobLevel> &f<prefix> <mobName>'
-enableBossBar: false
+enableBossBar: true
 bossBarSettings:
   defaultColor: "PINK"
   defaultStyle: "SOLID"
@@ -74,12 +75,10 @@ spawnMessages:
 - '&cSomething is coming...'
 - '&cYou hear a mob nearby...'
 enabledworlds:
-- Hyper
+- Hyperverse3
 enabledmobs:
 #- Chicken
 - PigZombie
-- Zombie
-- Skeleton
 - Spider
 - CaveSpider
 - Creeper
@@ -94,11 +93,16 @@ enabledmobs:
 - SilverFish
 - Blaze
 #- Squid
-- WitherSkeleton
 - Rabbit
 - Shulker
 - Guardian
 - Endermite
+- PolarBear
+- Zombie
+- Husk
+- Skeleton
+- WitherSkeleton
+- Stray
 enabledCharmSlots:
 - 0
 - 1
@@ -121,7 +125,7 @@ bullwark: true
 rust: true
 sapper: true
 1up: true
-cloaked: false
+cloaked: true
 ender: true
 ghastly: true
 lifesteal: true
@@ -142,9 +146,9 @@ gravity: true
 flying: true
 mounted: true
 morph: true
-ghost: false
+ghost: true
 confusing: true
-ghost: false
+ghost: true
 mamaSpawnAmount: 3
 vengeanceDamage: 6
 berserkDamage: 3
@@ -186,7 +190,6 @@ mobParticles:
 - lavaSpark:1:10
 mountFate: nothing
 enabledMounts:
-- Zombie
 - Spider
 - MushroomCow
 - Cow
@@ -196,6 +199,7 @@ enabledMounts:
 - "EntityHorse:UNDEAD_HORSE"
 - Slime
 - Ghast
+- PolarBear
 enabledRiders:
 - PigZombie
 - Skeleton
@@ -235,4 +239,5 @@ xpMultiplier: 8
 addDistance: 200
 enableDrops: true
 dropChance: 1
+enableFarmingDrops: false
 naturalSpawnHeight: 0

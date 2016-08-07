@@ -1,0 +1,229 @@
+command /resetrecipes:
+	permission: is.op
+	trigger:
+		reset recipes
+
+on script load:
+	execute console command "resetrecipes"
+# Armor
+	register new shaped recipe for chainmail chestplate using Iron Ingot, Diamond, Iron Ingot, Iron Ingot, Iron Ingot, Iron Ingot, Iron Ingot, Iron Ingot, Iron Ingot
+	
+# Leggings
+	register new shaped recipe for chainmail leggings using Iron Ingot, Iron Ingot, Iron Ingot, Iron Ingot, Diamond, Iron Ingot, Iron Ingot, Air, Iron Ingot
+	
+# Boots
+	register new shaped recipe for chainmail boots using Air, Air, Air, Iron Ingot, Diamond, Iron Ingot, Iron Ingot, Air, Iron Ingot
+	
+# Helmet
+	register new shaped recipe for chainmail helmet using Iron Ingot, Iron Ingot, Iron Ingot, Iron Ingot, Diamond, Iron Ingot, air, air, air
+	
+	
+on npc right click:
+	citizen is 354
+	make citizen 354 look at location of player
+	send "&f[&6Haephestus&f] Hey there! Want to buy a set of &4Champion Armor Recipe Books&f?"
+	wait 1 real second
+	send "&f[&6Haephestus&f] &cThese recipe books only work once, and the armor CANNOT be shared with others!"
+	json("%player%", "&f[&aBuy Champion Armor Recipe&f] - &a$10,000||cmd:/buychamparmor")
+	set {buyingarmor.%player%} to true
+	wait 1 real minute
+	set {buyingarmor.%player%} to false
+	
+command /buychamparmor:
+	permission: is.champion
+	trigger:
+		player's balance is greater than or equal to 10000
+		{buyingarmor.%player%} is true
+		execute console command "eco take %player% 10000"
+		execute console command "give %player% enchanted_book 1 name:Champion_Chestplate_Recipe"
+		execute console command "give %player% enchanted_book 1 name:Champion_Boots_Recipe"
+		execute console command "give %player% enchanted_book 1 name:Champion_Helmet_Recipe"
+		execute console command "give %player% enchanted_book 1 name:Champion_Leggings_Recipe"
+		loop all items in player's inventory:
+			if name of loop-item contains "Champion Chestplate Recipe":
+				set the 1st line of lore of loop-item to "Iron Ingot, Diamond, Iron Ingot"
+				set the 2nd line of lore of loop-item to "Iron Ingot, Iron Ingot, Iron Ingot"
+				set the 3nd line of lore of loop-item to "Iron Ingot, Iron Ingot, Iron Ingot"
+				set the 4th line of lore of loop-item to "Owner: %player%"
+			if name of loop-item contains "Champion Boots Recipe":
+				set the 1st line of lore of loop-item to "Air, Air, Air"
+				set the 2nd line of lore of loop-item to "Iron Ingot, Diamond, Iron Ingot"
+				set the 3nd line of lore of loop-item to "Iron Ingot, Air, Iron Ingot"
+				set the 4th line of lore of loop-item to "Owner: %player%"
+			if name of loop-item contains "Champion Helmet Recipe":
+				set the 1st line of lore of loop-item to "Iron Ingot, Iron Ingot, Iron Ingot"
+				set the 2nd line of lore of loop-item to "Iron Ingot, Diamond, Iron Ingot"
+				set the 3nd line of lore of loop-item to "Air, Air, Air"
+				set the 4th line of lore of loop-item to "Owner: %player%"
+			if name of loop-item contains "Champion Leggings Recipe":
+				set the 1st line of lore of loop-item to "Iron Ingot, Iron Ingot, Iron Ingot"
+				set the 2nd line of lore of loop-item to "Iron Ingot, Diamond, Iron Ingot"
+				set the 3nd line of lore of loop-item to "Iron Ingot, Air, Iron Ingot"
+				set the 4th line of lore of loop-item to "Owner: %player%"
+		message "&aEnjoy!"
+		delete {buyingarmor.%player%}
+
+On craft of chainmail helmet:
+	if player has the permission "is.champion":
+		loop all items in player's inventory:
+			loop-item is enchanted book
+		#	message "&aFound book!"
+			1st line of lore of loop-item contains "Iron Ingot, Iron Ingot, Iron Ingot"
+		#	message "&aFirst line of lore passed!"
+			2nd line of lore of loop-item contains "Iron Ingot, Diamond, Iron Ingot"
+		#	message "&aSecond line of lore passed!"
+			3nd line of lore of loop-item contains "Air, Air, Air"
+		#	message "&aThird line of lore passed!"
+			4th line of lore of loop-item contains "Owner: %player%"
+		#	message "&aFourth line of lore passed!"
+			remove loop-item from player's inventory
+			message "&cRemoved your book!"
+			loop 10 times:
+				wait 2 real seconds
+				loop all items in player's inventory:
+					loop-item-2 is chainmail helmet
+					set name of loop-item-2 to "&4Champion Helmet"
+					set 1st line of lore of loop-item-2 to "Owner: %player%"
+					enchant loop-item-2 with protection 2
+					stop
+			stop
+		message "&cYou are missing the required recipe book!"
+		cancel event
+	else:
+		if player's inventory contains enchanted book named "Chainmail Helmet Recipe":
+			remove 1 enchanted book named "Chainmail Helmet" from the inventory of event-player
+			message "&cRemoved your book!"
+			cancel event
+		else:
+			message "&cYou are not a champion!"
+			cancel event
+
+every 10 real second:
+	loop all players:
+		if helmet of loop-player is chainmail helmet:
+			name of loop-player's helmet contains "champion"
+			1st line of lore of loop-player's helmet does not contain "%loop-player%"
+			set helmet of loop-player to air
+			send "&cYour helmet has disappeared, as you are not worthy." to loop-player
+		if leggings of loop-player is chainmail leggings:
+			name of loop-player's leggings contains "champion"
+			1st line of lore of loop-player's leggings does not contain "%loop-player%"
+			set leggings of loop-player to air
+			send "&cYour leggings have disappeared, as you are not worthy." to loop-player
+		if chestplate of loop-player is chainmail chestplate:
+			name of loop-player's chestplate contains "champion"
+			1st line of lore of loop-player's chestplate does not contain "%loop-player%"
+			set chestplate of loop-player to air
+			send "&cYour chestplate has disappeared, as you are not worthy." to loop-player
+		if boots of loop-player is chainmail boots:
+			name of loop-player's boots contains "champion"
+			1st line of lore of loop-player's boots does not contain "%loop-player%"
+			set boots of loop-player to air
+			send "&cYour boots have disappeared, as you are not worthy." to loop-player
+			
+On craft of chainmail leggings:
+	if player has the permission "is.champion":
+		loop all items in player's inventory:
+			loop-item is enchanted book
+		#	message "&aFound book!"
+			1st line of lore of loop-item contains "Iron Ingot, Iron Ingot, Iron Ingot"
+		#	message "&aFirst line of lore passed!"
+			2nd line of lore of loop-item contains "Iron Ingot, Diamond, Iron Ingot"
+		#	message "&aSecond line of lore passed!"
+			3nd line of lore of loop-item contains "Iron Ingot, Air, Iron Ingot"
+		#	message "&aThird line of lore passed!"
+			4th line of lore of loop-item contains "Owner: %player%"
+		#	message "&aFourth line of lore passed!"
+			remove loop-item from player's inventory
+			message "&cRemoved your book!"
+			loop 10 times:
+				wait 2 real seconds
+				loop all items in player's inventory:
+					loop-item-2 is chainmail leggings
+					set name of loop-item-2 to "&4Champion Leggings"
+					set 1st line of lore of loop-item-2 to "Owner: %player%"
+					enchant loop-item-2 with protection 2
+					stop
+			stop
+		message "&cYou are missing the required recipe book!"
+		cancel event
+	else:
+		if player's inventory contains enchanted book named "Chainmail leggings Recipe":
+			remove 1 enchanted book named "Chainmail leggings" from the inventory of event-player
+			message "&cRemoved your book!"
+			cancel event
+		else:
+			message "&cYou are not a champion!"
+			cancel event
+
+			
+On craft of chainmail boots:
+	if player has the permission "is.champion":
+		loop all items in player's inventory:
+			loop-item is enchanted book
+		#	message "&aFound book!"
+			1st line of lore of loop-item contains "Air, Air, Air"
+		#	message "&aFirst line of lore passed!"
+			2nd line of lore of loop-item contains "Iron Ingot, Diamond, Iron Ingot"
+		#	message "&aSecond line of lore passed!"
+			3nd line of lore of loop-item contains "Iron Ingot, Air, Iron Ingot"
+		#	message "&aThird line of lore passed!"
+			4th line of lore of loop-item contains "Owner: %player%"
+		#	message "&aFourth line of lore passed!"
+			remove loop-item from player's inventory
+			message "&cRemoved your book!"
+			loop 10 times:
+				wait 2 real seconds
+				loop all items in player's inventory:
+					loop-item-2 is chainmail boots
+					set name of loop-item-2 to "&4Champion Boots"
+					set 1st line of lore of loop-item-2 to "Owner: %player%"
+					enchant loop-item-2 with protection 2
+					stop
+			stop
+		message "&cYou are missing the required recipe book!"
+		cancel event
+	else:
+		if player's inventory contains enchanted book named "Chainmail boots Recipe":
+			remove 1 enchanted book named "Chainmail boots" from the inventory of event-player
+			message "&cRemoved your book!"
+			cancel event
+		else:
+			message "&cYou are not a champion!"
+			cancel event
+			
+			
+On craft of chainmail chestplate:
+	if player has the permission "is.champion":
+		loop all items in player's inventory:
+			loop-item is enchanted book
+		#	message "&aFound book!"
+			1st line of lore of loop-item contains "Iron Ingot, Diamond, Iron Ingot"
+		#	message "&aFirst line of lore passed!"
+			2nd line of lore of loop-item contains "Iron Ingot, Iron Ingot, Iron Ingot"
+		#	message "&aSecond line of lore passed!"
+			3nd line of lore of loop-item contains "Iron Ingot, Iron Ingot, Iron Ingot"
+		#	message "&aThird line of lore passed!"
+			4th line of lore of loop-item contains "Owner: %player%"
+		#	message "&aFourth line of lore passed!"
+			remove loop-item from player's inventory
+			message "&cRemoved your book!"
+			loop 10 times:
+				wait 2 real seconds
+				loop all items in player's inventory:
+					loop-item-2 is chainmail chestplate
+					set name of loop-item-2 to "&4Champion Chestplate"
+					set 1st line of lore of loop-item-2 to "Owner: %player%"
+					enchant loop-item-2 with protection 2
+					stop
+			stop
+		message "&cYou are missing the required recipe book!"
+		cancel event
+	else:
+		if player's inventory contains enchanted book named "Chainmail chestplate Recipe":
+			remove 1 enchanted book named "Chainmail chestplate" from the inventory of event-player
+			message "&cRemoved your book!"
+			cancel event
+		else:
+			message "&cYou are not a champion!"
+			cancel event

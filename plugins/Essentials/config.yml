@@ -101,7 +101,8 @@ overridden-commands:
 disabled-commands:
   - nick
   - nickname
-  - kick
+  - vanish
+#  - kick
 #  - clear
 
 # These commands will be shown to players with socialSpy enabled.
@@ -325,7 +326,7 @@ auto-afk: 300
 # After this timeout in seconds, the user will be kicked from the server.
 # essentials.afk.kickexempt node overrides this feature.
 # Set to -1 for no timeout.
-auto-afk-kick: -1
+auto-afk-kick: 600
 
 # Set this to true, if you want to freeze the player, if he is afk.
 # Other players or monsters can't push him out of afk mode then.

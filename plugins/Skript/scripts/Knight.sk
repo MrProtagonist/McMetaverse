@@ -1,53 +1,73 @@
 script options:
     $ developer mode
+on npc right click:
+	citizen is 109
+	make citizen 109 look at location of player
+	player has the permission "is.champion"
+	if {hasguard.%player%} is not set:
+		send "&f[&6Head of Security&f] Hello! Would you like to employ a body guard sir?"
+		json("%player%", "&f[&a$200&f] Get a Guard||cmd:/getguard")
+		set {gettingguard.%player%} to true
+		wait 1 real minute
+		delete {gettingguard.%player%}
+		stop
+	else:
+		send "&f[&6Head of Security&f] Your body guard keeping you out of trouble? You can interact with it using &a/guard"
 on script load:
 	loop {guard.entities::*}:
 		kill loop-value
 		damage loop-value by 50 hearts
 		send "&cYour &6&lMeta&c&lKnight&c has just died due to the skript being reloaded. Here is some compensation for another." to {guard.owners::%loop-index%}
 		execute console command "eco give %{guard.owners::%loop-index%}% 250"
+	loop all players:
+		delete {hasguard.%loop-player%}
 	delete {guard.entities::*}
 	delete {guard.owners::*}
 	delete {guard.active::*}
 
+command /getguard:
+	permission: is.champion
+	trigger:
+		{gettingguard.%player%} is true
+		{hasguard.%player%} is not set
+		loop {guard.owners::*}:
+			if player is loop-value:
+				message "&cYou already have a &6&lMeta&c&lKnight"
+				stop
+		if player's balance is greater than 200:
+			spawn 1 iron golem at player
+			execute console command "eco take %player% 200"
+			set metadata "type" of spawned entity to player
+			set name of spawned entity to "&6Meta&cKnight"
+			add spawned entity to {guard.entities::*}
+			add player to {guard.owners::*}
+			add true to {guard.active::*}
+			set {hasguard.%player%} to true
+			stop
+		else:
+			message "&cYou don't have enough money!"
+			stop
 command /guard [<text>]:
 	permission: sk.guard
 	trigger:
-		if arg is "golem":
-			loop {guard.owners::*}:
-				if player is loop-value:
-					message "&cYou already have a &6&lMeta&c&lKnight"
-					stop
-			if player's balance is greater than 250:
-				spawn 1 iron golem at player
-				execute console command "eco take %player% 250"
-				set metadata "type" of spawned entity to player
-				set name of spawned entity to "&6&lMeta&c&lKnight"
-				add spawned entity to {guard.entities::*}
-				add player to {guard.owners::*}
-				add true to {guard.active::*}
-				stop
-			else:
-				message "&cYou don't have enough money!"
-				stop
-		if arg is "snow":
-			loop {guard.owners::*}:
-				if player is loop-value:
-					message "&cYou already have a &6&lMeta&c&lKnight"
-					stop
-			if player's balance is greater than 250:
-				spawn 1 snow golem at player
-				execute console command "eco take %player% 250"
-				set metadata "type" of spawned entity to player
-				set name of spawned entity to "&6&lMeta&c&lKnight"
-				add spawned entity to {guard.entities::*}
-				add player to {guard.owners::*}
-				add true to {guard.active::*}
-				stop
-			else:
-				message "&cYou don't have enough money!"
-				stop
-		if arg is "clear":
+	#	if arg is "snow":
+	#		loop {guard.owners::*}:
+	#			if player is loop-value:
+	#				message "&cYou already have a &6&lMeta&c&lKnight"
+	#				stop
+		#	if player's balance is greater than 250:
+		#		spawn 1 snow golem at player
+		#		execute console command "eco take %player% 250"
+		#		set metadata "type" of spawned entity to player
+		#		set name of spawned entity to "&6&lMeta&c&lKnight"
+		#		add spawned entity to {guard.entities::*}
+		#		add player to {guard.owners::*}
+		#		add true to {guard.active::*}
+		#		stop
+		#	else:
+		#		message "&cYou don't have enough money!"
+		#		stop
+		if arg is "kill":
 			loop {guard.owners::*}:
 				player is loop-value
 				kill {guard.entities::%loop-index%}
@@ -55,6 +75,7 @@ command /guard [<text>]:
 				delete {guard.entities::%loop-index%}
 				delete {guard.owners::%loop-index%}
 				delete {guard.active::%loop-index%}
+				delete {hasguard.%player%}
 				message "&cYour &6&lMeta&c&lKnight&c has died."
 				stop
 		if arg is "stay":
@@ -75,11 +96,11 @@ command /guard [<text>]:
 			stop
 		else:
 			message "&e============================================="
-			message "&a/guard golem&e - For $250, spawns a Iron Golem to protect you."
-			message "&a/guard snow&e - For $250, spawns a Snow Golem to protect you."
-			message "&a/guard clear&e - Kills any guard you have."
+		#	message "&a/guard golem&e - For $250, spawns a Iron Golem to protect you."
+		#	message "&a/guard snow&e - For $250, spawns a Snow Golem to protect you."
 			message "&a/guard stay&e - Your guard won't follow you, but he may wander."
 			message "&a/guard come&e - Your guard will come to you."
+			message "&a/guard kill&e - Kills any guard you have."
 			message "&e============================================="
 			
 			
@@ -107,12 +128,14 @@ on quit:
 		delete {guard.entities::%loop-index%}
 		delete {guard.owners::%loop-index%}
 		delete {guard.active::%loop-index%}
+	delete {hasguard.%player%}
 	
 on damage:
 	victim is iron golem or snow golem
 	attacker is a player
+	name of victim contains "knight"
 	send "&cYou can't hurt a &6&lMeta&c&lKnight&c!" to attacker
-	send "&cUse lava if this is not your Knight." to attacker
+	# send "&cUse lava if this is not your Knight." to attacker
 	cancel event
 
 on damage:
@@ -121,10 +144,11 @@ on damage:
 	name of attacker contains "Knight"
 	cancel event
 on death of iron golem:
+	clear drops
 	loop {guard.entities::*}:
 		loop-value is attacker
-		clear drops
 		send "&cYour &6&lMeta&c&lKnight&c has just died." to {guard.owners::%loop-index%}
 		delete {guard.entities::%loop-index%}
 		delete {guard.active::%loop-index%}
+		delete {hasguard.%{guard.owners::%loop-index%}%}
 		delete {guard.owners::%loop-index%}

@@ -1,9 +1,13 @@
+command /gimmehearts:
+	trigger:
+		run player command "/particle heart ~ ~ ~ 1 1 1 0.1 100" as op
 command /kiss <player>:
 	trigger:
 		if argument is "dinoppar":
-			if player is "pumpkinpepper" or "EvilLittleThing":
+			if player is "pumpkinpepper" or "EvilLittleThing" or "MrProtagonist":
 				message "&dYou kissed %arg%!"
 				send "&d%player% &dkissed you!" to the argument
+				execute console command "/particle heart ~ ~ ~ 1 1 1 0.1 100 force %arg%"
 #				show 20 "heart" particles at location of argument for argument offset by 0.4, 0.7, 0.4
 #				show 20 "heart" particles at location of argument for player offset by 0.4, 0.7, 0.4
 #				show 20 "heart" particles at location of player for argument offset by 0.4, 0.7, 0.4
@@ -13,6 +17,8 @@ command /kiss <player>:
 		else:
 			message "&dYou kissed %arg%!"
 			send "&d%player% &dkissed you!" to the argument
+			make arg execute "/gimmehearts"
+			make player execute "/gimmehearts"
 #			show 20 "heart" particles at location of argument for argument offset by 0.4, 0.7, 0.4
 #			show 20 "heart" particles at location of argument for player offset by 0.4, 0.7, 0.4
 #			show 20 "heart" particles at location of player for argument offset by 0.4, 0.7, 0.4
@@ -48,3 +54,7 @@ command /hug <player>:
 	trigger:
 		send "&d%player% &dhugged you!" to the argument
 		message "&dYou hugged %arg%&d!"
+command /brofist <player>:
+	trigger:
+		send "&2%player% &2gave you a manly handshake!  Like a man." to the argument
+		message "&2You showed manly affection to %arg%&2!"

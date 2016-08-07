@@ -1,0 +1,84 @@
+# This is the script for personal pads. For the server launchpad list, look in 1_8_core
+script options:
+	$ developer mode
+	
+command /testtoken <player>:
+	permission: is.op
+	trigger:
+		give arg shiny double plant named "&a&lWarp rune" with lore "✓ Warp to Spawn"
+#		execute console command "/give %arg% 175 1 name:§a§l§oD§b§l§oR§c§l§oO§d§l§oP_§e§l§oP§1§l§oA§2§l§oR§3§l§oT§4§l§oY§6§o§l_Token lore:&f&oHold_and_right_click_to_start_an_instant_drop_party!"
+		send "&6&oYou just received a &a&lWarp rune!" to arg
+on right click with double plant:
+	name of player's tool contains "warp rune"
+	lore of player's tool contains "✓ Warp to Spawn"
+	set player's tool to air
+	strike lightning effect at the player
+	message "&b&lYou ride a bolt of lightning to Spawn."
+	wait 1 real second
+	play "ENTITY_PLAYER_LEVELUP" to player at volume 0.8	
+	teleport player to {spawn}
+#=========================================================================#
+#	cancel event
+on damage:
+	if damage cause is lava or fire:
+		if "%region at victim%" contains "spawn":
+			set damage to 0
+region enter:
+	{warping.%player%} is not true
+	wait 1 tick
+	if "%region at player%" contains "end":
+		set the no damage time of player to 3 seconds
+		message "%{warping.%player%}%"
+		message "[&4Apocalypse Colonials&f]: &eYou are now being teleported to the End Colonies!"
+		wait 1 real second
+		message "[&4Apocalypse Colonials&f]: &eBeware of the dragon!"
+		wait 1 real second
+		make player execute "end"
+		wait 1 real second
+		set {warping.%player%} to false
+		extinguish the player
+		message "%{warping.%player%}%"
+	else:
+		if "%region at player%" contains "hyperversewarp":
+			set {warping.%player%} to true
+			message "&e&oWarping to Hyperverse..."
+			wait 1 second
+			make player execute "hyper"
+			wait 1 real second
+			set {warping.%player%} to false
+		else:
+			if "%region at player%" contains "sandboxwarp":
+				set {warping.%player%} to true
+				message "&e&oWarping to Sandbox..."
+				wait 1 second
+				make player execute "sandbox"
+				wait 1 real second
+				set {warping.%player%} to false
+			else:
+				if "%region at player%" contains "wildernesswarp":
+					set {warping.%player%} to true
+					message "&e&oWarping to a random location in the world..."
+					wait 1 second
+					run player command "rtp" as op
+					wait 1 real second
+					{warping.%player%}
+				else:
+					if "%region at player%" contains "resource":
+						set {warping.%player%} to true
+						message "&e&oWarping to resource world..."
+						wait 1 second
+						run player command "resource" as op
+						wait 1 real second
+						set {warping.%player%} to false
+					else:
+						if "%region at player%" contains "minigame":
+							set {warping.%player%} to true
+							message "&e&oWarping to Minigames..."
+							wait 1 second
+							run player command "minigames" as op
+							wait 1 real second
+							set {warping.%player%} to false
+							
+on death:
+	if player has 1 443:
+		remove all 443 from the player's inventory

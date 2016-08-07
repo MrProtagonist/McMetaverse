@@ -30,7 +30,7 @@ command /stopdrop:
 	permission:drop.op
 	trigger:
 		set {dropparty.freeze} to true
-		message "&c&lDrop party will not go."
+		Broadcast "&c&lDrop party canceled!"
 command /setdrop:
 	description: Set location for drop party.
 	permission: drop.set
@@ -63,8 +63,8 @@ command /dropparty:
 command /givetoken <player>:
 	permission: is.op
 	trigger:
-		give arg shiny double plant named "&a&l&oD&b&l&oR&c&l&oO&d&l&oP &e&l&oP&1&l&oA&2&l&oR&3&l&oT&4&l&oY&6&o Token" with lore "✓ &f&oHold and right click to start an instant drop party!"
-#		execute console command "/give %arg% 175 1 name:§a§l§oD§b§l§oR§c§l§oO§d§l§oP_§e§l§oP§1§l§oA§2§l§oR§3§l§oT§4§l§oY§6§o§l_Token lore:&f&oHold_and_right_click_to_start_an_instant_drop_party!"
+#		give arg double plant named "&a&l&oD&b&l&oR&c&l&oO&d&l&oP &e&l&oP&1&l&oA&2&l&oR&3&l&oT&4&l&oY&6&o Token" with lore "✓ &f&oHold and right click to start an instant drop party!"
+		execute console command "/give %arg% 175 1 name:§a§l§oD§b§l§oR§c§l§oO§d§l§oP_§e§l§oP§1§l§oA§2§l§oR§3§l§oT§4§l§oY§6§o§l_Token lore:✓&f&oHold_and_right_click_to_start_an_instant_drop_party!"
 		send "&6&oYou just received a &a&l&oD&b&l&oR&c&l&oO&d&l&oP &e&l&oP&1&l&oA&2&l&oR&3&l&oT&4&l&oY&6&o token!" to arg
 on right click with double plant:
 	name of player's tool contains "token"
@@ -174,7 +174,7 @@ command /startdrop:
 	permission: essentials.socialspy
 	trigger:
 		{dropparty.starting} is false
-		set {dropparty.freeze} to false
+		# set {dropparty.freeze} to false
 		set {dropparty.starting} to true
 		set block 21 meters above {drop.togglepos} to diamond block
 		set block 20 meters above {drop.togglepos} to diamond block
@@ -197,18 +197,25 @@ command /startdrop:
 			set {joinedparty.%loop-player%} to false
 		broadcast "&a&l&oD&b&l&oR&c&l&oO&d&l&oP &e&l&oP&1&l&oA&2&l&oR&3&l&oT&4&l&oY&f&o will start in 2 minutes. Type &a&o/join&f&o to participate!"
 		wait 60 second
+		{dropparty.freeze} is false
 		broadcast "&a&l&oD&b&l&oR&c&l&oO&d&l&oP &e&l&oP&1&l&oA&2&l&oR&3&l&oT&4&l&oY&f&o will start in 1 minute. Type &a&o/join&f&o to participate!"
 		wait 30 second
+		{dropparty.freeze} is false
 		broadcast "&a&l&oD&b&l&oR&c&l&oO&d&l&oP &e&l&oP&1&l&oA&2&l&oR&3&l&oT&4&l&oY&f&o will start in 30 seconds. Be sure you cleared your inventory!"
 		wait 15 second
+		{dropparty.freeze} is false
 		broadcast "&a&l&oD&b&l&oR&c&l&oO&d&l&oP &e&l&oP&1&l&oA&2&l&oR&3&l&oT&4&l&oY&f&o will start in 15 seconds. Type &a&o/join&f&o to participate!"
 		wait 13 second
+		{dropparty.freeze} is false
 		broadcast "&a&l&oD&b&l&oR&c&l&oO&d&l&oP &e&l&oP&1&l&oA&2&l&oR&3&l&oT&4&l&oY&f&o will start in 3."
 		wait 1 second
+		{dropparty.freeze} is false
 		broadcast "&a&l&oD&b&l&oR&c&l&oO&d&l&oP &e&l&oP&1&l&oA&2&l&oR&3&l&oT&4&l&oY&f&o will start in 2."
 		wait 1 second
+		{dropparty.freeze} is false
 		broadcast "&a&l&oD&b&l&oR&c&l&oO&d&l&oP &e&l&oP&1&l&oA&2&l&oR&3&l&oT&4&l&oY&f&o will start in 1."
 		wait 1 second
+		{dropparty.freeze} is false
 		broadcast "&a&l&oD&b&l&oR&c&l&oO&d&l&oP &e&l&oP&1&l&oA&2&l&oR&3&l&oT&4&l&oY&5&l&o!"
 		set {dropparty.donetoday} to true
 		set {dropparty.starting} to false

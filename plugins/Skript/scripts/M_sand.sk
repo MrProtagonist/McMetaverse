@@ -148,6 +148,14 @@ command /startsandstorm:
 				broadcast "&f[&aSERVER&f] &6&oSand&c&oStorm&r&e has been canceled due to a lack of players!"
 		else:
 			message "&4Can't start the &6&oSand&c&oStorm&r&4 without any players!"
+on command "/back":
+	wait 2 ticks
+	if the player's world is "minigame":
+		if "%region at player%" contains "sandstorm":
+			make player execute "back"
+			set {_backlocation} to location of player
+			wait 1 tick
+			teleport player to {_backlocation}
 on break:
 	if {sandstorm.%player%.spectating} is true:
 		message "&cNo breaking blocks while you are in the &6&oSand&c&oStorm&c lobby!"

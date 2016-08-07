@@ -19,12 +19,9 @@ Data:
       Answers:
       - MrProtagonist
     '4':
-      Question: '&6When was Minecraft released in?'
+      Question: '&6In which year was Minecraft officially released?'
       Answers:
       - '2009'
-      - 2009 may
-      - 2009 may 17
-      - 2009/05/17
     '5':
       Question: '&6What company did Notch create?'
       Answers:
@@ -204,6 +201,7 @@ Data:
       Question: '&6What did c418 use for Ghast sounds?'
       Answers:
       - cat
+      - cats
       - his cat
     '44':
       Question: '&6What happens when a creeper is struck by lightning?'
@@ -393,6 +391,7 @@ Data:
       Answers:
       - carrot
       - a carrot
+      - carrots
     '79':
       Question: '&6What tames ocelots?'
       Answers:
@@ -456,6 +455,7 @@ Data:
       Question: '&6What do zombies drop when killed?'
       Answers:
       - rotten flesh
+      - bacon
     '93':
       Question: '&6How many different sizes are there of slimes?'
       Answers:
@@ -907,19 +907,13 @@ Data:
       - Shadow
 
     '177':
-      Question: '&6Who is our current Head Dev?'
-      Answers:
-      - Craftio
-      - Bjorn
-
-    '178':
       Question: '&6What is MrProtagonist''s skin based on?'
       Answers:
       - The Big Lebowski
       - Lebowski
       - The Dude
 
-    '179':
+    '178':
       Question: '&6Where is our server based?'
       Answers:
       - Idaho
@@ -927,7 +921,7 @@ Data:
       - America
       - USA
 
-    '180':
+    '179':
       Question: '&6Name your favorite admin.'
       Answers:
       - All of Them

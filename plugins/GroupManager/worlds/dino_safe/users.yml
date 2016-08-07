@@ -1,0 +1,50 @@
+users:
+  1cbd2fe0-3402-47cb-bc9e-7ef7928c4a79:
+    lastname: Quisalas
+    group: Default
+    subgroups: []
+    permissions:
+    - -essentials.afk.auto
+    info:
+      prefix: '§f[§9Admin§f] '
+      suffix: §f [§1Wynter's§dMistress§f]
+  5f62e716-e961-4bc7-91f4-bc21797edb75:
+    lastname: dinoppar
+    group: Default
+    subgroups: []
+    permissions: []
+    info:
+      prefix: '§f[§3Architect§f] '
+      suffix: §f [§3Fight Queen§f]
+  799c4fd6-0201-4d1e-b345-b70e5f24f567:
+    lastname: Post_Rogue
+    group: Default
+    subgroups: []
+    permissions: []
+    info:
+      prefix: '§f[§2Admin§f] '
+      suffix: §f [§2LoZ§f]
+  d5888bee-0de7-498e-9f93-39b9038f7ef9:
+    lastname: EvilLittleThing
+    group: Default
+    subgroups: []
+    permissions:
+    - -essentials.afk.auto
+    info:
+      prefix: '§f[§9Head Admin§f] '
+      suffix: §f [§9Mrs.Evil§f]
+  ElgarL:
+    group: Moderator
+    subgroups: []
+    permissions:
+    - groupmanager.noofflineperms
+  KHobbits:
+    group: Moderator
+    subgroups: []
+    permissions:
+    - groupmanager.noofflineperms
+  snowleo:
+    group: Builder
+    subgroups: []
+    permissions:
+    - groupmanager.noofflineperms

@@ -2,7 +2,7 @@
 #	$ developer mode
 command /sunny:
 	trigger:
-		if player is in world "MetaOmega":
+		if player is in world "MetaSanctus":
 			if player's balance is greater than 100:
 				if {sunny.blocked} is false:
 					set {_world} to player's world
@@ -15,7 +15,7 @@ command /sunny:
 					message "&4&lCANNOT EXECUTE THIS"
 			else:
 				message "&cNot enough money!"
-		else if player has permission "sunny.free":
+		else if player has permission "essentials.socialspy":
 			set {_world} to player's world
 			set weather of {_world} to clear
 			set time in {_world} to 6am

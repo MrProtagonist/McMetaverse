@@ -35,7 +35,9 @@ on join:
 #	player has netherstar named "&f&l&k.&e&l&k.&f&l&k.&r &6&lWedding Ring &f&l&k.&e&l&k.&f&l&k."
 #	message "&cUnable to craft beacons with a wedding ring!"
 #	cancel event
-	
+on craft of beacon:
+	cancel event
+	message "&cSorry, temporarily disabled. Ask an admin or dev to trade your beacon crafting material for a beacon."
 on mor.inventory click: #Stahp all dem haxersss.
     if cursor item is nether star named "&f&l&k.&e&l&k.&f&l&k.&r &6&lWedding Ring &f&l&k.&e&l&k.&f&l&k.":
         if event-number is 5:
@@ -168,7 +170,7 @@ on join:
 #		set the player's prefix to "&f[&6Dev&f] "
 #	else:
 #		if player has permission "is.headadmin":
-#			set the player's prefix to "&f[&2Head Admin&f] "
+#			set the player's prefix to "&f[&9Head Admin&f] "
 #		else:
 #			if player has permission "is.headmod":
 #				set the player's prefix to "&f[&5Head Mod&f] "
@@ -183,7 +185,7 @@ on join:
 #							set the player's prefix to "&f[&9Admin&f] "
 #						else:
 #							if player has permission "is.mod":
-#								set the player's prefix to "&f[&cMod&f] "
+#								set the player's prefix to "&f[&5Mod&f] "
 command /prefix <text>:
 	permission: sk.prefix
 	trigger:
@@ -191,7 +193,7 @@ command /prefix <text>:
 		if arg is set:
 			set {prefix.%player%} to arg-1
 			set {_l} to length of the string arg-1
-			if {_l} is greater than 20:
+			if {_l} is greater than 24:
 				message "&cPrefix is too long! Please shorten it!"
 				stop
 			else:
@@ -208,7 +210,7 @@ command /suffix <text>:
 	trigger:
 		if arg-1 is set:
 			set {_l} to length of the string arg-1
-			if {_l} is greater than 20:
+			if {_l} is greater than 24:
 				message "&cSuffix is too long! Please shorten it!"
 				stop
 			else:
@@ -217,11 +219,11 @@ command /suffix <text>:
 						send "&cYou can't do formatted suffixes yet!" to the player
 						stop
 					else:
-						set the player's suffix to " &f[%colored arg%&f]"
+						set the player's suffix to "&f [%colored arg%&f]"
 						send "&aYour suffix has been set to: &f[%colored arg%&f]" to the player
 						stop
 				else:
-					set the player's suffix to " &f[%arg%&f]"
+					set the player's suffix to "&f [%arg%&f]"
 					send "&aYour suffix has been set to: &f[%arg%&f]" to the player
 					stop
 		else:
@@ -265,6 +267,7 @@ command /name <text>:
 	trigger:
 		if argument is set:
 			if player has permission "essentials.socialspy":
+				player's tool is not chainmail helmet or chainmail chestplate or chainmail boots or chainmail leggings
 				set the name of player's tool to "%colored arg%"
 				message "&aItem successfully renamed!"
 			else:
@@ -288,6 +291,7 @@ command /lore <integer> <text>:
 			message "&cSorry but you can't set the lore to that"
 		else:
 			if player has permission "essentials.socialspy":
+				player's tool is not chainmail helmet or chainmail chestplate or chainmail boots or chainmail leggings
 				if arg 1 is 1:
 					set line 1 of lore of player's tool to "%colored arg 2%"
 					play "LEVEL_UP" specifically to player with pitch 1
@@ -307,6 +311,7 @@ command /lore <integer> <text>:
 				else:
 					message "&cUsage: &a/lore &f<1-4> &aMy lore on my chosen line here!"
 			else:
+				player's tool is not chainmail helmet or chainmail chestplate or chainmail boots or chainmail leggings
 				if {day.count.%player%.lore} is not {day.count}:
 					if arg 1 is 1:
 						set the 1st line of lore of player's tool to "%colored arg 2%"

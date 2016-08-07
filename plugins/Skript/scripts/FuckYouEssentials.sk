@@ -1,0 +1,21 @@
+on command "/sethome":
+	set {_argument} to arguments
+	set {_world} to the player's world
+	wait 1 tick
+	set {playerhomes.%player%::%{_argument}%} to location of player
+on command "/delhome":
+	set {_argument} to arguments
+	wait 1 tick
+	delete {playerhomes.%player%::%{_argument}%}
+on command "/home":
+	set {_argument} to arguments
+	wait 1 tick
+	if {_argument} is not "list":
+		if {_argument} does not contain ":":
+			wait 3 ticks
+			set {playerhomes.%player%::%{_argument}%} to location of player
+command /listhomes <player>:
+	trigger:
+		player is op
+		loop {playerhomes.%arg%::*}:
+			message "&a%loop-index% &r- &e%loop-value%"

@@ -13,3 +13,10 @@ worlds:
   resource:
     portalgoesto:
       NETHER: resource_nether
+  Hyper:
+    portalgoesto:
+      END: Hyper
+      NETHER: Hyper_nether
+  Hyper_nether:
+    portalgoesto:
+      NETHER: Hyper

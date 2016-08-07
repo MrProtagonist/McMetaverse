@@ -1,8 +1,18 @@
 ﻿on script load:
 	set {_null} to null
+command /clearvc:
+	trigger:
+		delete {vc.%player%::*}
+		set {deletedvc.%player%} to true
+		delete {vc.%player%.count}
+		delete {vc.%player%.max}
+on join:
+	{deletedvc.%player%} is not set
+	set {deletedvc.%player%} to true
+	delete {vc.%player%::*}
 on sign change:
 	if line 1 of block is "[vc]":
-		if player's world is "metaomega":
+		if player's world is "MetaSanctus":
 			line 2 of block is not set:
 				message "&c&oYou didn't set a name for your virtual chest."
 				stop
@@ -29,6 +39,7 @@ command /purgevc <player>:
 		if player is op:
 			message "%{vc.%arg%.count}%"
 			message "%{vc.%arg%.max}%"
+			message "%{deletedvc.%arg%}%"
 on command "vc":
 	if player's world is "contest" or "minigame" or "sandbox":
 		message "&cSorry, you can't do that here!"

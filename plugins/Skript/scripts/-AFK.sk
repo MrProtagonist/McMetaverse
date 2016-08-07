@@ -1,0 +1,55 @@
+every 5 real seconds:
+	loop all players:
+		if loop-player has permission "essentials.socialspy":
+			set {_temploc} to loop-player's location
+			if {afk.location.%loop-player%} is not set:
+				set {afk.location.%loop-player%} to {_temploc}
+			json("%loop-player%", "Hover me||ttp: Location: %{_temploc}% - AFK mode: %{afk.%loop-player%}% - Old Location: %{afk.location.%loop-player%}%")
+command /testafk:
+	trigger:
+		if {afk.%player%} is not set:
+			set {afk.%player%} to true
+			set the player's tablist name to "&bAFK&r %player%"
+		else:
+			delete {afk.%player%}
+			if player is op:
+				set the player's tablist name to "&c%player%"
+			else:
+				set the player's tablist name to "%player%"
+on quit:
+	if {afk.%player%} is true:
+		delete {afk.%player%}
+		set the player's tablist name to "%player%"
+	delete {afk.count.%player%}
+	delete {afk.location.%player%}
+on any move:
+	if {afk.%player%} is true:
+		delete {afk.%player%}
+		set the player's tablist name to "%player%"
+	delete {afk.count.%player%}
+	delete {afk.location.%player%}
+on place:
+	if {afk.%player%} is true:
+		delete {afk.%player%}
+		set the player's tablist name to "%player%"
+	delete {afk.count.%player%}
+	delete {afk.location.%player%}
+on death:
+	if {afk.%player%} is true:
+		delete {afk.%player%}
+		set the player's tablist name to "%player%"
+	delete {afk.count.%player%}
+	delete {afk.location.%player%}
+#on command:
+#	if {afk.%player%} is true:
+#		wait 2 ticks
+#		delete {afk.%player%}
+#		set the player's tablist name to "%player%"
+#	delete {afk.count.%player%}
+#	delete {afk.location.%player%}
+on chat:
+	if {afk.%player%} is true:
+		delete {afk.%player%}
+		set the player's tablist name to "%player%"
+	delete {afk.count.%player%}
+	delete {afk.location.%player%}

@@ -1,8 +1,10 @@
 debug: false
-authkey: 20961ff09c069eacf2391649274730bb593ac42eb173948744
+authkey: 918ae07595244ed240397e639816f67d9eada9bc70881ea898
 https: true
 autoupdate: true
+collectplayerstats: true
 sendstatsinterval: 5
+listenforbans: true
 statscollected:
   player:
     travel: true
@@ -16,6 +18,4 @@ statscollected:
     playerkicks: true
 buycommand: buy
 usebuygui: true
-collectplayerstats: true
 loggingenabled: true
-listenforbans: true

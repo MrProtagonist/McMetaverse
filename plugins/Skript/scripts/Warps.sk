@@ -34,6 +34,7 @@ command /setminigames:
 		message "<lime>Minigame warp point set!"
 		stop
 command /minigames:
+	aliases: /minigame
 	trigger:
 		teleport player to {minigames}
 command /setss:
@@ -43,17 +44,17 @@ command /setss:
 		set {sk.ss} to location of player
 		message "<lime>Warp point set!"
 		stop
-on player teleport:
-	wait 1 tick
-	if player has the permission "skript.warpeffect":
-		if {warpeffect.%player%} is set:
-			loop 12 times:
-				show 30 "%{warpeffect.%player%}%" particles at location of player for player offset by 2, 2 and 2
-				wait 1 tick
-		else:
-			loop 12 times:
+#on player teleport:
+#	wait 1 tick
+#	if player has the permission "skript.warpeffect":
+#		if {warpeffect.%player%} is set:
+#			loop 12 times:
+#				show 30 "%{warpeffect.%player%}%" particles at location of player for player offset by 2, 2 and 2
+#				wait 1 tick
+#		else:
+#			loop 12 times:
 #				spawn 10 of mob spell data 1 offset with 1, 1, 1 at location of player
-				wait 1 tick
+#				wait 1 tick
 command /consolewarp <player>:
 	description: The warp effects handler
 	permission: is.console
@@ -80,8 +81,8 @@ command /ss:
 		set {lastwarp.%player%} to now
 #		push the player upwards at speed 10
 #		execute console command "/playsound random.explode %player% ~0 ~0 ~0 20 50"
-		execute console command "consolewarp %player%"
-		wait 38 ticks
+#		execute console command "consolewarp %player%"
+#		wait 38 ticks
 		teleport player to {sk.ss}
 		message "&a&oYou are now at the Server Shop."
 on damage:
@@ -90,8 +91,8 @@ on damage:
 command /spawn:
 	trigger:
 #		execute console command "/playsound random.explode %player% ~0 ~0 ~0 20 50"
-		execute console command "consolewarp %player%"
-		wait 38 ticks
+#		execute console command "consolewarp %player%"
+#		wait 38 ticks
 		message "&a&oYou are now at Spawn"
 		set {lastwarp.%player%} to now
 #		push the player upwards at speed 10

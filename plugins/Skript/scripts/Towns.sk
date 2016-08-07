@@ -130,18 +130,16 @@ command /townadmin:
 				delete {townkiller}
 				message "&cToggled townadmin for you."
 command /owners:
+	permission: essentials.socialspy
 	trigger:
 		loop {towns.owner::*}:
 			message "&l%loop-index%&e %loop-value% &f- &a%{towns.name::%loop-index%}%"
-command /testtowns:
-	trigger:
-		loop {towns.name::*}:
-			message "%loop-index% &a%loop-value% &e%{towns.owner::%loop-index%}%"
+
 command /town [<text>] [<text>]:
 	trigger:
 		if arg 1 is not set:
 			message "&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-[ &aTOWN MENU &f&l]-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-"
-			message "&eTOWNS YOU OWN:"
+			message "&eTOWN YOU OWN:"
 			set {_ownedtowns} to 0
 			loop {towns.owner::*}:
 				if {towns.owner::%loop-index%} is player:
@@ -158,8 +156,10 @@ command /town [<text>] [<text>]:
 				message " - &c&oNo certified town residency found"
 			message "&a/town list&e to see all official player towns."
 			message "&a/town view name&e to view a town's information."
-			message "&a/town edit name&e to manage a town you own."
-			message "&a/certify&e to apply your town for certification."
+			message "&a/town edit name&e to manage your town."
+			message "&a/town warps&e to go to the town warp hub."
+			if player has the permission "essentials.socialspy":
+				message "&a/certify&e to apply your town for certification."
 			message "&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l--&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-"
 			stop
 		if arg 1 is "edit":
@@ -171,8 +171,20 @@ command /town [<text>] [<text>]:
 							message "&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-[ &aTOWN MENU &f&l]-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-"
 							message "&a&nYou are now editing %arg 2%!"
 							message "&oYou can:"
-							message " &a/town add username&e to add somebody to your resident list."
-							message " &a/town remove username&e to remove somebody from your resident list."
+							message " &a/town add <username>&e to add somebody to your resident list."
+							message " &a/town remove <username>&e to remove somebody from your resident list."
+							message " &a/town movespawn&e to move your town's spawn to your current location."
+							message " &a/town theme add&e to add held block to your town's prefered material list."
+							message " &a/town theme remove&e to remove held block to your town's prefered material list."
+							message "&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l--&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-"
+							stop
+						if player has the permission "town.admin":
+							set {towns.%player%.editing} to loop-index
+							message "&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-[ &aTOWN MENU &f&l]-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-"
+							message "&a&nYou are now editing %arg 2%!"
+							message "&oYou can:"
+							message " &a/town add <username>&e to add somebody to your resident list."
+							message " &a/town remove <username>&e to remove somebody from your resident list."
 							message " &a/town movespawn&e to move your town's spawn to your current location."
 							message " &a/town theme add&e to add held block to your town's prefered material list."
 							message " &a/town theme remove&e to remove held block to your town's prefered material list."

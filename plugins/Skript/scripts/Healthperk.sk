@@ -1,8 +1,9 @@
 #script options:
 #    $ developer mode
-every 20 real seconds:
-	execute console command "forcehealth"
+#every 20 real seconds:
+#	execute console command "forcehealth"
 command /healthreset:
+	permission: is.op
 	trigger:
 		loop all players:
 			if loop-player has permission "skript.extrahealth10":

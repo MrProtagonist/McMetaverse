@@ -137,6 +137,7 @@ groups:
     - plots.unlink
     - plots.untrust
     - plots.use
+    - plots.visit
     - sunny.free
     inheritance:
     - default
@@ -178,7 +179,6 @@ groups:
     - voxelsniper.*
     - voxelsniper.sniper
     - vsr.plotme
-    - worldedit.*
     inheritance:
     - g:groupmanager_default
     - g:bukkit_default

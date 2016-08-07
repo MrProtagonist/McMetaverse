@@ -1,0 +1,5 @@
+checkForUpdates: true
+sitPermissionDefault: true
+sitDown: '&bYou are now sitting.'
+sitFail: '&cYou cannot sit in the air!'
+sitUp: '&bYou are no longer sitting.'

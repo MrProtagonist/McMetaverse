@@ -1,6 +1,7 @@
+
 #
 #  Experience configuration
-#  Last updated on 1.5.04-SNAPSHOT-b94
+#  Last updated on 1.5.06-SNAPSHOT-b145
 #
 #  Configure the experience formula and experience settings here.
 #
@@ -46,7 +47,7 @@ Experience_Formula:
         Axes: 1.0
         Repair: 1.0
         Fishing: 1.0
-        Alchemy: 1.0
+        Alchemy: 0.2
     # XP earned by players with the permission mcmmo.perks.xp.customboost.<skillname> will get multiplied
     # with 1.25 by default, resulting in a 25% XP boost
     Custom_XP_Perk:
@@ -168,6 +169,9 @@ Experience:
         Water_Lily: 100
         White_Tulip: 150
         Yellow_Flower: 100
+        Chorus_Plant: 1
+        Beetroot_Block: 50
+        Chorus_Flower: 25
     Mining:
         Coal_Ore: 100
         Diamond_Ore: 750
@@ -178,7 +182,7 @@ Experience:
         Hard_Clay: 30
         Iron_Ore: 250
         Lapis_Ore: 400
-        Mossy_Cobblestone: 30
+        Mossy_Cobblestone: 100
         Netherrack: 30
         Obsidian: 150
         Packed_Ice: 50
@@ -189,6 +193,11 @@ Experience:
         Stone: 30
         Red_Sandstone: 100
         Prismarine: 70
+        Purpur_Slab: 150
+        Purpur_Stairs: 250
+        End_Bricks: 200
+        Purpur_Pillar: 250
+        Purpur_Block: 200
     Repair:
         Base: 1000.0
         Wood: 0.6
@@ -231,9 +240,10 @@ Experience:
             Magma_Cube: 2.0
             Ender_Dragon: 0.0
             Wither: 0.0
-            Witch: 0.0
+            Witch: 3.0
             Iron_Golem: 2.0
             Wither_Skeleton: 4.0
             Endermite: 2.0
             Guardian: 3.0
             Elder_Guardian: 4.0
+            Shulker: 2.0

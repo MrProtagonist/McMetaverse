@@ -1,6 +1,6 @@
-#command /end:
-#	trigger:
-#		teleport player to {endcave}
+command /end:
+	trigger:
+		run player command "mvtp MetaSanctus_the_end" as op
 command /setend:
 	trigger:
 		if player is op:
@@ -11,8 +11,96 @@ command /endremoveall:
 		loop all players in world "MetaOmega_the_end":
 			make loop-player execute "spawn"
 			make loop-player execute "spawn"
-on any move:
-	if the player's world is "MetaOmega_the_end" or "Metacurse":
-		if the player does not have the permission "essentials.socialspy":
-			make player execute "meta"
-			make player execute "meta"
+			
+			
+command /rider:
+	trigger:
+		if player is "craftio":
+			if {rider} is not set:
+				set {rider} to player
+				message "start riding"
+			else:
+				delete {rider}
+				message "stop riding"
+#command /craftifreeze <player>:
+#	trigger:
+#		if {frozen.%arg%} is not set:
+#			set {frozen.%arg%} to true
+#		else:
+#			delete {frozen.%arg%}
+#command /craftirocket <player>:
+#	trigger:
+#		push the argument upwards with force 200
+#		wait 2 real seconds
+#		push the argument upwards with force 200
+#		wait 2 real seconds
+#		push the argument upwards with force 200
+#on any move:
+#	if {frozen.%player%} is set:
+#		cancel event
+#		message "Sorry Cap, courtesy of craft. no moving!"
+command /rideplayer <player>:
+	trigger:
+		if player is {rider}:
+			make player ride argument
+				
+on shoot:
+	if player is {rider}:
+		projectile is firework rocket
+		message "%projectile%"
+			
+on place of armor stand:
+	if player is {rider}:
+		set {riderspot} to location of block
+			
+#on any move:
+#	if the player's world is "MetaOmega_the_end" or "Metacurse":
+#		if the player does not have the permission "essentials.socialspy":
+#			make player execute "meta"
+#			make player execute "meta"
+#on world change:
+#	wait 5 ticks
+#	if the player's world is "Minigame":
+#		if player is "FunyunRob":
+#			execute console command "gm 1 %player%"
+on step over 19:
+	if "%region at player%" contains "funyun":
+		wait 1 tick
+		push the player upwards at speed 1
+		message "Up you go!"
+on step over 19:1:
+	if "%region at player%" contains "funyun":
+		wait 1 tick
+		thrust player upwards with force 0.4
+		wait 2 ticks
+		thrust player forward with force 0.5
+		message "Up you go!"
+command /sethookoff:
+	trigger:
+		player is op
+		set {hookers.lobby} to location of player
+		message "SET!"
+command /hookoff:
+	trigger:
+		teleport player to {hookers.lobby}
+on prepare item craft:
+	player is "craftio"
+	if player has nether star named "&f&l&k.&e&l&k.&f&l&k.&r &6&lWedding Ring &f&l&k.&e&l&k.&f&l.":
+		message "debug"
+#on any move:
+#	if player is "craftio":
+#		if the player's gamemode is spectator:
+#			set the player's gamemode to survival
+#command /craftiohide:
+#	trigger:
+#		name of player is "craftio"
+#		if {hidden.%player%} is not set:
+#			set {hidden.%player%} to player
+#			hide {hidden.%player%} from all players
+#			message "debug"
+#		else:
+#			reveal {hidden.%player%} from all players
+#			delete {hidden.%player%}
+#			message "debug2"
+#every 2 ticks:
+#	loop all players:

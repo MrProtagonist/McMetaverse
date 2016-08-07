@@ -34,19 +34,19 @@ command /resetresource:
 		set player's gamemode to creative
 		message " "
 		message "&ePlease stand on flat ground and do &a/setplatform."
-on world change:
-	if event-world is not "resource":
-		execute console command "manselect metaomega"#		
-		wait 1 tick
-		if player has permission "nonspecificodyssey.biome.*":
-			execute console command "manudelp %event-player% nonspecificodyssey.biome.*"
+#on world change:
+#	if event-world is not "resource":
+#		execute console command "manselect metaomega"
+#		wait 1 tick
+#		if player has permission "nonspecificodyssey.biome.*":
+#			execute console command "manudelp %event-player% nonspecificodyssey.biome.*"
 #	else:
 #		execute console command "manselect metaomega"
 #		wait 1 tick
 #		if player doesn't have the permission "nonspecificodyssey.biome.*":
 #			execute console command "manuaddp %event-player% nonspecificodyssey.biome.*"
 command /setplatform:
-	permission: is.evil
+	permission: is.op
 	trigger:
 		message "&aGenerating..."
 		set {resource.spawn} to player's location
@@ -71,9 +71,8 @@ command /resource:
 	trigger:
 		teleport player to {resource.spawn}
 		message "&aWelcome to the Resource world!"
-		message "&cDo not build here! This world resets often!"
+		message "&c&l&nDo not build here! This world resets often!"
 		wait 2 real seconds
-		message " "
 		message "&eType &a/biometp&e to warp to a biome of your choosing."
 command /biometp <text>:
 	trigger:

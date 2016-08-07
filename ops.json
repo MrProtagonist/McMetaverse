@@ -1,0 +1,80 @@
+[
+  {
+    "uuid": "612c7aaa-dbb0-40f0-916f-4de7497e0d4d",
+    "name": "underworldlord",
+    "level": 4,
+    "bypassesPlayerLimit": false
+  },
+  {
+    "uuid": "5f62e716-e961-4bc7-91f4-bc21797edb75",
+    "name": "dinoppar",
+    "level": 4,
+    "bypassesPlayerLimit": false
+  },
+  {
+    "uuid": "1cbd2fe0-3402-47cb-bc9e-7ef7928c4a79",
+    "name": "Quisalas",
+    "level": 4,
+    "bypassesPlayerLimit": false
+  },
+  {
+    "uuid": "7c62a911-cd0e-4d68-96ff-6b72ece1bdc0",
+    "name": "it_twit",
+    "level": 4,
+    "bypassesPlayerLimit": false
+  },
+  {
+    "uuid": "799c4fd6-0201-4d1e-b345-b70e5f24f567",
+    "name": "Post_Rogue",
+    "level": 4,
+    "bypassesPlayerLimit": false
+  },
+  {
+    "uuid": "2576d27f-a9c8-414f-83ec-bd8ce014c7bb",
+    "name": "shadow007uk",
+    "level": 4,
+    "bypassesPlayerLimit": false
+  },
+  {
+    "uuid": "d28f134f-69d3-4c28-abab-a93f5a377582",
+    "name": "CaptainStupid",
+    "level": 4,
+    "bypassesPlayerLimit": false
+  },
+  {
+    "uuid": "d5888bee-0de7-498e-9f93-39b9038f7ef9",
+    "name": "EvilLittleThing",
+    "level": 4,
+    "bypassesPlayerLimit": false
+  },
+  {
+    "uuid": "97cb8bf8-c6ee-4511-b6bd-d00dc1bc4fbb",
+    "name": "pumpkinpepper",
+    "level": 4,
+    "bypassesPlayerLimit": false
+  },
+  {
+    "uuid": "f01a2307-e90d-4503-9f19-640806fa8808",
+    "name": "MrProtagonist",
+    "level": 4,
+    "bypassesPlayerLimit": false
+  },
+  {
+    "uuid": "66995f1c-6e47-4178-b826-8a5353fe7aff",
+    "name": "Colahdetank",
+    "level": 4,
+    "bypassesPlayerLimit": false
+  },
+  {
+    "uuid": "23d38cd7-94f0-4707-b5ac-8a51ea05d59f",
+    "name": "McNicholas",
+    "level": 4,
+    "bypassesPlayerLimit": false
+  },
+  {
+    "uuid": "3feb7b1d-c91c-445a-b79d-6c233d6c341f",
+    "name": "DrBloodbathMC",
+    "level": 4,
+    "bypassesPlayerLimit": false
+  }
+]

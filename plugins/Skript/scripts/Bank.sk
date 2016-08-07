@@ -4,17 +4,19 @@ on script load:
 	if {bank.day} is not set:
 		set {bank.day} to 0
 	add 1 to {bank.day}
+		
+	
 command /banker:
 	permission: is.pro
 	trigger:
 		spawn 1 librarian at location of player
 		loop all entities in radius 2 of player:
 			set name of loop-entity to "&6&lBank Teller"
-		play "LEVEL_UP" specifically to player with pitch 1
+#		play "LEVEL_UP" specifically to player with pitch 1
 		message "&cAdded!"
 
-on rightclick on librarian:
-	name of clicked entity contains "&6&lBank Teller"
+on rightclick on villager:
+	name of clicked entity contains "Bank Teller"
 	cancel event
 	send "&f[&6&lBank Teller&f] &eGreetings %player%! What would you like to do?" to player
 	wait 1 real second
@@ -22,14 +24,16 @@ on rightclick on librarian:
 	replace all "$" with "" in {_bal}
 	set {_temp.number} to {_bal} parsed as number
 	send "&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-" to player
-	send umbaska json of "&f[ &bWithdraw All &f(&a$%{bank.vault::%UUID of player%}%&f) &f]" run "/withdraw %{bank.vault::%UUID of player%}-0.01%" to player
-	send umbaska json of "&f[ &bWithdraw &a$10,000 &f]" run "/withdraw 10000" to player
-	send umbaska json of "&f[ &bWithdraw &a$1,000 &f]" run "/withdraw 1000" to player
-	send umbaska json of "&f[ &bWithdraw &a$100 &f]" run "/withdraw 100" to player
-	send umbaska json of "&f[ &cDeposit &a$100 &f]" run "/deposit 100" to player
-	send umbaska json of "&f[ &cDeposit &a$1,000 &f]" run "/deposit 1000" to player
-	send umbaska json of "&f[ &cDeposit &a$10,000 &f]" run "/deposit 10000" to player
-	send umbaska json of "&f[ &cDeposit All &f(&a%player's balance%&f) ]" run "/deposit %{_temp.number}%" to player
+	
+	json("%player%", "&f[ &bWithdraw All &f(&a$%{bank.vault::%UUID of player%}%&f) ]||cmd:/withdraw %{bank.vault::%UUID of player%}-0.01%")
+	json("%player%", "&f[ &bWithdraw &f(&a$10,000&f) ]||cmd:/withdraw 10000")
+	json("%player%", "&f[ &bWithdraw &f(&a$1,000&f) ]||cmd:/withdraw 1000")
+	json("%player%", "&f[ &bWithdraw &f(&a$100&f) ]||cmd:/withdraw 100")
+	json("%player%", "&f[ &cDeposit &f(&a$100&f) ]||cmd:/deposit 100")
+	json("%player%", "&f[ &cDeposit &f(&a$1,000&f) ]||cmd:/deposit 1000")
+	json("%player%", "&f[ &cDeposit &f(&a$10,000&f) ]||cmd:/deposit 10000")
+	json("%player%", "&f[ &cDeposit All &f(&a%{_bal}%&f) ]||cmd:/deposit %{_temp.number}%")
+	
 	send "&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-&b&l-&f&l-" to player
 	send "&6Current Balance: &a%player's balance%" to player
 	send "&6Bank Account Total: &a$%{bank.vault::%UUID of player%}%" to player
@@ -49,7 +53,10 @@ on join:
 	player is online
 	if {bank.%player%.day} is not {bank.day}:
 		set {bank.%player%.day} to {bank.day}
-		set {_interest} to {bank.vault::%UUID of player%} * 0.002
+		if player has the permission "is.champion":
+			set {_interest} to {bank.vault::%UUID of player%} * 0.004
+		else:
+			set {_interest} to {bank.vault::%UUID of player%} * 0.002
 		message "&f[&6BANK&f] &aYou just got $%{_interest}% in daily interest!"
 		add {_interest} to {bank.vault::%UUID of player%}
 		add {_interest} to {bank.interest::%UUID of player%}
@@ -58,25 +65,84 @@ command /setbank:
 	trigger:
 		set {bank} to player's location
 		message "&aDone!"
+		
+on npc right click:
+	citizen is 110
+	make citizen 110 look at location of player
+	player has the permission "is.champion"
+	send "&f[&6Banker Wally&f] Hello fellow Champion! When I heard you had joined our ranks, I took a look at your bank account."
+	wait 3 real seconds
+	send "&f[&6Banker Wally&f] I pulled some strings and was able to &adouble your interest rate&f."
+	wait 3 real seconds
+	send "&f[&6Banker Wally&f] That means you owe me. Remember that."
+		
+# player transfers #
 
 command /deposit <number>:
 	trigger:
-		if {banking.%player%} is true:
-			if arg is set:
-				if {bank.vault::%UUID of player%} is not set:
-					set {bank.vault::%UUID of player%} to 0
-				if player's balance is greater than or equal to arg:
-					execute console command "eco take %player% %arg%"
-					add arg to {bank.vault::%UUID of player%}
-					message "&6Successfuly deposited &a$%arg%&6!"
-					message "&6Bank Account Total: &a$%{bank.vault::%UUID of player%}%"
-				else:
-					message "&cYou don't have &a$%arg%&c to deposit!"
-					stop
+#		if {banking.%player%} is true:
+		if arg is set:
+			if {bank.vault::%UUID of player%} is not set:
+				set {bank.vault::%UUID of player%} to 0
+			if player's balance is greater than or equal to arg:
+				execute console command "eco take %player% %arg%"
+				add arg to {bank.vault::%UUID of player%}
+				message "&6Successfuly deposited &a$%arg%&6!"
+				message "&6Bank Account Total: &a$%{bank.vault::%UUID of player%}%"
 			else:
-				message "&cIncorrect usage. Try doing &a/deposit (amount)"
+				message "&cYou don't have &a$%arg%&c to deposit!"
+				stop
 		else:
-			message "&cYou must use a banker in the bank &a/spawn&c."
+			message "&cIncorrect usage. Try doing &a/deposit (amount)"
+#		else:
+#			message "&cYou must use a banker in the bank &a/spawn&c."
+command /withdraw <number>:
+	trigger:
+#		if {banking.%player%} is true:
+		if arg is set:
+			if {bank.vault::%UUID of player%} is not set:
+				set {bank.vault::%UUID of player%} to 0
+			if {bank.vault::%UUID of player%} is greater than or equal to arg:
+				execute console command "eco give %player% %arg%"
+				subtract arg from {bank.vault::%UUID of player%}
+				message "&6Successfuly withdrew &a$%arg%&6 from your bank account!"
+				message "&6Bank Account Total: &a$%{bank.vault::%UUID of player%}%"
+			else:
+				message "&cYou don't have &a$%arg%&c in the bank to withdraw!"
+				stop
+		else:
+			message "&cIncorrect usage. Try doing &a/deposit (amount)"
+#		else:
+#			message "&cYou must use a banker in the bank &a/spawn&c."
+
+# operator transfers #
+
+command /addbank <number> [<offlineplayer=%player%>]:
+	trigger:
+		if player is op:
+			if {bank.vault::%UUID of arg-2%} is not set:
+				set {bank.vault::%UUID of arg-2%} to 0
+			if player's balance is greater than or equal to arg-1:
+				execute console command "eco take %player% %arg-1%"
+				add arg-1 to {bank.vault::%UUID of arg-2%}
+				message "&6Successfuly deposited &a$%arg-1%&6 to %arg-2%'s bank account!"
+				message "&6Bank Account Total of %arg-2%: &a$%{bank.vault::%UUID of arg-2%}%"
+			else:
+				message "&cYou don't have &a$%arg-1%&c to deposit!"
+				stop
+command /subtractbank <number> [<offlineplayer=%player%>]:
+	trigger:
+		if player is op:
+			if {bank.vault::%UUID of arg-2%} is not set:
+				set {bank.vault::%UUID of arg-2%} to 0
+			if {bank.vault::%UUID of arg-2%} is greater than or equal to arg-1:
+				execute console command "eco give %player% %arg-1%"
+				subtract arg-1 from {bank.vault::%UUID of arg-2%}
+				message "&6Successfuly withdrew &a$%arg-1%&6 from %arg-2%'s bank account!"
+				message "&6Bank Account Total: &a$%{bank.vault::%UUID of arg-2%}%"
+			else:
+				message "&c%arg-2% doesn't have &a$%arg-1%&c in the bank!"
+				stop
 on join:
 	set {banking.%player%} to false
 	if size of {accounts.%UUID of player%::*} is 0:
@@ -95,38 +161,24 @@ command /accounts <player>:
 	permission: essentials.socialspy
 	trigger:
 		message "&aAccounts of %arg%: &6%{accounts.%UUID of argument-player%::*}%"
-command /withdraw <number>:
-	trigger:
-		if {banking.%player%} is true:
-			if arg is set:
-				if {bank.vault::%UUID of player%} is not set:
-					set {bank.vault::%UUID of player%} to 0
-				if {bank.vault::%UUID of player%} is greater than or equal to arg:
-					subtract arg from {bank.vault::%UUID of player%}
-					execute console command "eco give %player% %arg%"
-					message "&6Successfuly withdrew &a$%arg%&6!"
-					message "&6Bank Account Total: &a$%{bank.vault::%UUID of player%}%"
-				else:
-					message "&cYou don't have &a$%arg%&c in the bank to withdraw!"
-					stop
-			else:
-				message "&cIncorrect usage. Try doing &a/deposit (amount)"
-		else:
-			message "&cYou must use a banker in the bank &a/spawn&c."
 command /bank <offlineplayer=%player%>:
 	trigger:
 		if {bank.vault::%UUID of player%} is not set:
 			set {bank.vault::%UUID of player%} to 0
 		if {bank.vault::%UUID of arg%} is set:
-			if argument is not player:
-				if player has permission "essentials.socialspy":
+			if argument is not set:
+				message "&6Bank Account Total: &a$%{bank.vault::%UUID of player%}%"
+				message "&6Total Interest Earned: &a$%{bank.interest::%UUID of player%}%"
+			else:
+				if argument is not player:
+					if player has permission "essentials.socialspy":
+						message "&6Bank Account Total: &a$%{bank.vault::%UUID of arg%}%"
+						message "&6Total Interest Earned: &a$%{bank.interest::%UUID of arg%}%"
+					else:
+						message "&cCan't view another player's bank account!"
+				else:
 					message "&6Bank Account Total: &a$%{bank.vault::%UUID of arg%}%"
 					message "&6Total Interest Earned: &a$%{bank.interest::%UUID of arg%}%"
-				else:
-					message "&cCan't view another player's bank account!"
-			else:
-				message "&6Bank Account Total: &a$%{bank.vault::%UUID of arg%}%"
-				message "&6Total Interest Earned: &a$%{bank.interest::%UUID of arg%}%"
 		else:
 			message "&cError: &4Player does not have a Bank Account yet!"
 command /debugbank:

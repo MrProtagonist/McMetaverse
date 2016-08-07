@@ -1,0 +1,5 @@
+command /allplayers:
+	trigger:
+		player is op
+		loop all players:
+			message "%loop-player%"

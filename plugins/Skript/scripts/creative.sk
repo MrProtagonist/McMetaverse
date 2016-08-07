@@ -48,7 +48,7 @@ command /setsandbox:
 		stop
 command /sandbox:
 	trigger:
-#		execute console command "consolewarp %player%"
+		execute console command "consolewarp %player%"
 		wait 2 ticks
 		message "&a&oYou are now in The Sandbox."
 		if {sandbox.%player%.certify} is not set:
@@ -175,46 +175,45 @@ every hour:
 		stop
 	subtract 1 from {contest.length}
 	broadcast "&f[&dContest&f] &6The &e&l%{contest.name}% &6contest has %{contest.length}% hours left! Type &a/contest&6 for more details!"
-#on place:
-#	player does not have the permission "essentials.socialspy"
-#	player is in world "contest"
-#	{contest.going} is false
-#	cancel event
-#on break:
-#	player does not have the permission "essentials.socialspy"
-#	player is in world "contest"
-#	{contest.going} is false
-#	cancel event
+on place:
+	player does not have the permission "essentials.socialspy"
+	player is in world "contest"
+	{contest.going} is false
+	cancel event
+on break:
+	player does not have the permission "essentials.socialspy"
+	player is in world "contest"
+	{contest.going} is false
+	cancel event
 #every 2 real seconds:
-#	player is online
 #	loop all players:
-#		if loop-player is in world "Hyperverse":
+#		if loop-player is in world "Hyperverse3":
 #			loop-player's gamemode is creative
-#			loop-player does not have the permission "-autoitem.replaceon.place"
-#			execute console command "manuaddp %loop-player% -autoitem.replaceon.place"
+#			loop-player does not have the permission "-autoitem.*"
+#			execute console command "/manuaddp %loop-player% -autoitem.*"
 #		if loop-player is in world "contest":
 #			loop-player's gamemode is creative
-#			loop-player does not have the permission "-autoitem.replaceon.place"
-#			execute console command "manuaddp %loop-player% -autoitem.replaceon.place"
+#			loop-player does not have the permission "-autoitem.*"
+#			execute console command "/manuaddp %loop-player% -autoitem.*"
 #		if loop-player is in world "sandbox":
 #			loop-player's gamemode is creative
-#			loop-player does not have the permission "-autoitem.replaceon.place"
-#			execute console command "manuaddp %loop-player% -autoitem.replaceon.place"
+#			loop-player does not have the permission "-autoitem.*"
+#			execute console command "/manuaddp %loop-player% -autoitem.*"
 #		else:
 #			{autofill.%loop-player%} is not set:
 #				set {autofill.%loop-player%} to false
 #			loop-player's gamemode is creative:
 #				{autofill.%loop-player%} is true
 #				set {autofill.%loop-player%} to false
-#				execute console command "manuaddp %loop-player% -autoitem.replaceon.place"
+#				execute console command "manuaddp %loop-player% -autoitem.*"
 #				send "&e&oDisabling AutoFill for you. &f=]" to loop-player
 #			loop-player's gamemode is survival:
-#				loop-player has the permission "-autoitem.replaceon.place"
+#				loop-player has the permission "-autoitem.*"
 #				{autofill.%loop-player%} is not true
 #				set {autofill.%loop-player%} to true
-#				execute console command "manudelp %loop-player% -autoitem.replaceon.place"
+#				execute console command "manudelp %loop-player% -autoitem.*"
 #				send "&e&oEnabling AutoFill for you. &f=]" to loop-player
-#			
+			
 command /stalk:
 	permission: essentials.socialspy
 	trigger:

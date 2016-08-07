@@ -1,5 +1,5 @@
-﻿script options:
-		$ developer mode
+﻿#script options:
+#		$ developer mode
 on script load:
 	loop all players:
 		{inprizeroom.%loop-player%} is not set
@@ -12,12 +12,14 @@ command /setprize:
 command /prizetoken <player>:
 	permission: is.op
 	trigger:
-		give arg shiny double plant named "&b&lPrize Room Pass" with lore "✓ Hold and right click to go to the prize room!"
+		# give arg double plant named "&b&lPrize Room Pass" with lore "✓ Hold and right click to go to the prize room!"
+		execute console command "/give %arg% 175 1 name:§b§lPrize_Room_Pass lore:✓&f&oHold_and_right_click_to_go_to_the_prize_room!"
+		send "&6&oYou just received a &a&l&oD&b&l&oR&c&l&oO&d&l&oP &e&l&oP&1&l&oA&2&l&oR&3&l&oT&4&l&oY&6&o token!" to arg
 		send "&6&oYou just received a &b&lPrize Room Pass" to arg
 on right click with double plant:
 	lore of player's tool contains "✓"
 	name of player's tool contains "pass"
-	set player's tool to air
+	remove 1 double plant from the player's inventory
 	broadcast "&a&o&l%player%&r&6&o just used a &b&l&oPrize Room Pass&6&o!"
 	wait 3 real seconds
 	execute console command "/prize %player%"
@@ -30,6 +32,14 @@ on join:
 	if {prizeroom.%player%.fixed} is not set:
 		set {prizeroom.%player%.fixed} to true
 		set {prizeroom.%player%.times} to 0
+on command "/back":
+	wait 2 ticks
+	if "%region at player%" contains "prize":
+		make player execute "back"
+		set {_backlocation} to location of player
+		wait 1 tick
+		teleport player to {_backlocation}
+		message "&cCan't go into the &nPrize Room&r&c without an invite!"
 #command /clearprize:
 #	permission: you.dont.have.permission.to.ever.use.this.you.fucktard
 #	trigger:
@@ -42,6 +52,24 @@ on join:
 #	trigger:
 #		loop all players:
 #			message "%loop-player% - %{prizeroom.%loop-player%.times}% times - %{prizeroom.%loop-player%.last}%"
+
+command /optout:
+	trigger:
+		if {optout.%player%} is true:
+			set {optout.%player%} to false
+			message "&aYou will now receive invitations to the prize room"
+		else:
+			set {optout.%player%} to true
+			message "&cYou will no longer receive invitations to the prize room."
+			
+on load:
+	set {prizeroom.busy} to false
+	loop all players:
+		{optout.%loop-player%} is not set:
+			set {optout.%loop-player%} to false
+on join:
+	{optout.%player%} is not set:
+		set {optout.%player%} to false
 command /prize [<player>]:
 	permission: is.pro
 	trigger:
@@ -52,13 +80,14 @@ command /prize [<player>]:
 #				broadcast "&f[&aPRIZEROOM DEBUG&f] &e%arg% has room in their inventory! Sending them!"
 			else:
 				send "&cThe player needs room in his inventory" to the player
+				stop
 			{inprizeroom.%arg%} is false
 			set {inprizeroom.%arg%} to true
 			set {lastspot.%arg%} to location of arg
 			wait 1 tick
 			teleport arg to {prizeroom}
 			set arg's fly mode to true
-			execute console command "region addmember prize_protection %arg% -w Metacurse"
+			execute console command "region addmember prize %arg% -w MetaSanctus"
 			broadcast "&f[&dPrize Room&f] &d%arg% is now in the prize room!"
 			wait 1 real second
 			send "&f[&dPrize Room&f] &aWelcome to the Prize Room! Fly has been enabled for you. Select one prize." to arg
@@ -83,58 +112,72 @@ command /prize [<player>]:
 				set arg's fly mode to false
 			set {inprizeroom.%arg%} to false
 			broadcast "&f[&4Prize Room&f] &4%arg% has been kicked from the prize room for taking longer than 10 minutes."
-			execute console command "region removemember prize_protection %arg% -w Metacurse"
+			execute console command "region removemember prize %arg% -w MetaSanctus"
 		else:
-			set {prizeroom.busy} to true
-			chance of 70%:
+			chance of 40%:
 				set {_tempscore} to 999
 				set {_playercount} to 0
 				delete {prize.scores::*}
 				delete {prize.players::*}
-				loop all players in world "MetaOmega":
+				loop all players:
+				#	broadcast "&f[&aPRIZEROOM DEBUG&f] &aFound %loop-player%."
+				#	broadcast "&f[&aPRIZEROOM DEBUG&f] &fOpt-out: &e%{optout.%loop-player%}%"
+				#	broadcast "&f[&aPRIZEROOM DEBUG&f] &fTimes Visited: &e%{prizeroom.%loop-player%.times}%"
+					if {prizeroom.%loop-player%.last} is not set:
+						set {prizeroom.%loop-player%.last} to now
+					set {_difference} to difference between {prizeroom.%loop-player%.last} and now
+				#	broadcast "&f[&aPRIZEROOM DEBUG&f] &e%loop-player% last went %{_difference}% ago."
 					add 1 to {_playercount}
+					{optout.%loop-player%} is not true
+					loop-player's gamemode is not creative
+					"%world of loop-value%" contains "MetaSanctus"
+					{inprizeroom.%loop-player%} is not true
+					loop-value can hold 1 wood sword
+					{_difference} is not less than 6 hours
 					if {prizeroom.%loop-player%.times} is not set:
 						set {prizeroom.%loop-player%.times} to 0
 					add {prizeroom.%loop-player%.times} to {prize.scores::*}
 					add loop-player to {prize.players::*}
-		#			broadcast "&f[&aPRIZEROOM DEBUG&f] &eIdentified %{_playercount}% players."
+				#	broadcast "&f[&aPRIZEROOM DEBUG&f] &a%loop-player% meets list of requirements!"
+			#	broadcast "&f[&aPRIZEROOM DEBUG&f] &e%{_playercount}% players qualified to be considered. Needs 4."
 				{_playercount} is greater than 4
-				loop 10 times:
+				loop 15 times:
 					loop {prize.scores::*}:
 						if loop-value-2 is less than {_tempscore}:
 							set {_tempscore} to loop-value-2
-							message "&a%{prize.players::%loop-index%}% passed!"
-						if loop-value-2 is {_tempscore}:
-							message "&a%{prize.players::%loop-index%}% is the running leader!"
+					#		broadcast "&a%{prize.players::%loop-index%}% passed!"
+					#	if loop-value-2 is {_tempscore}:
+					#		broadcast "&f[&aPRIZEROOM DEBUG&f] &a%{prize.players::%loop-index%}% is the running leader!"
 						else:
 							delete {prize.scores::%loop-index%}
-							message "&cDeleted %{prize.players::%loop-index%}%!"
+					#		broadcast "&f[&aPRIZEROOM DEBUG&f] &cDisqualified %{prize.players::%loop-index%}%!"
 							delete {prize.players::%loop-index%}
 					wait 1 tick
-#					message "&cNew Loop!"
 				loop {prize.players::*}:
-					set {_difference} to difference between {prizeroom.%loop-value%.last} and now
-#					broadcast "&f[&aPRIZEROOM DEBUG&f] &e%loop-value%: %{_difference}%"
-					if {_difference} is greater than 6 hours:
-#						broadcast "&f[&aPRIZEROOM DEBUG&f] &e%loop-value% hasn't been picked today and has the lowest score!"
-						loop-value can hold 1 wood sword
+				#	broadcast "&f[&aPRIZEROOM DEBUG&f] &a&oInviting %loop-value%..."
+					set {prizeroom.busy} to true
+					send "&f[&dPrize Room&f] &6You have been invited to the Prize Room! Type &a/letsgo&6 within 5 minutes to claim your prize!" to loop-value
+					set {prizeroom.invited} to loop-value
+					wait 5 real seconds
+					send "&f[&dPrize Room&f] &6If you do not want to go, simply type &a/decline&6." to loop-value
+					set {prizeroom.declined} to false
+					loop 295 times:
 						wait 1 real second
-#						broadcast "&f[&aPRIZEROOM DEBUG&f] &e%loop-value% has room in their inventory! Sending them!"
-						{inprizeroom.%loop-value%} is not true
-
-# Start of new part
-						message "Inviting %loop-value%"
-						send "&f[&dPrize Room&f] &6You have been invited to the Prize Room! Type &a/letsgo&6 within 5 minutes to claim your prize!" to loop-value
-						set {prizeroom.invited} to loop-value
-						wait 300 real seconds
-						if {prizeroom.busy} is true:
-							if {inprizeroom.%loop-value%} is not true:
-								send "&f[&dPrize Room&f] &cYou have run out of time to accept your invitation to the Prize Room." to loop-value
-								delete {prizeroom.invited}
-								wait 1 tick
-							else:
-								delete {prizeroom.invited}
-								stop
+						if {prizeroom.declined} is true:
+							stop
+					if {prizeroom.busy} is true:
+						if {inprizeroom.%loop-value%} is not true:
+							send "&f[&dPrize Room&f] &cYou have run out of time to accept your invitation to the Prize Room." to loop-value
+							delete {prizeroom.invited}
+							wait 1 tick
+						else:
+							delete {prizeroom.invited}
+							stop
+command /decline:
+	trigger:
+		{prizeroom.invited} is "%player%"
+		set {prizeroom.declined} to true
+		message "&cYou have declined to go to the prize room. You can opt out of future invitations by using &a/optout"
 
 command /letsgo:
 	trigger:
@@ -145,7 +188,7 @@ command /letsgo:
 		wait 1 tick
 		teleport player to {prizeroom}
 		set player's fly mode to true
-		execute console command "region addmember prize_protection %player% -w Metacurse"
+		execute console command "region addmember prize %player% -w MetaSanctus"
 		broadcast "&f[&dPrize Room&f] &d%player% is now in the prize room!"
 		wait 1 real second
 		send "&f[&dPrize Room&f] &aWelcome to the Prize Room! Fly has been enabled for you. Select one prize." to player
@@ -163,19 +206,23 @@ command /letsgo:
 		wait 2 real minutes
 		{inprizeroom.%player%} is true
 		send "&f[&dPrize Room&f] &4You have been kicked from the prize room!" to player
-		teleport player to {lastspot}
-		teleport player to {lastspot}
+		teleport player to {lastspot.%player%}
+		wait 1 tick
+		teleport player to {lastspot.%player%}
 		wait 1 real second
 		if player does not have the permission "essentials.fly":
 			set player's fly mode to false
 		wait 1 real second
 		set {inprizeroom.%player%} to false
 		broadcast "&f[&4Prize Room&f] &4%player% has been kicked from the prize room for taking longer than 10 minutes."
-		execute console command "region removemember prize_protection %player% -w Metacurse"
+		execute console command "region removemember prize %player% -w MetaSanctus"
 
+command /resetprizeplayer <player>:
+	permission: is.op
+	trigger:
+		set {inprizeroom.%arg%} to false
 
-
-every real hour:
+every 30 real minutes:
 	execute console command "/prize"
 on command:
 	{inprizeroom.%player%} is true
@@ -200,14 +247,14 @@ on rightclick on button:
 	wait 1 real second
 	set {inprizeroom.%player%} to false
 	broadcast "&f[&4Prize Room&f] &b%player% has chosen their prize from the Prize Room!"
-	execute console command "region removemember prize_protection %player% -w Metacurse"
+	execute console command "region removemember prize %player% -w MetaSanctus"
 	set {prizeroom.busy} to false
 on quit:
 	{inprizeroom.%player%} is true
 	teleport player to {lastspot.%player%}
 	teleport player to {lastspot.%player%}
 	set player's fly mode to false
-	execute console command "region removemember prize_protection %player% -w Metacurse"
+	execute console command "region removemember prize %player% -w MetaSanctus"
 	set {inprizeroom.%player%} to false
 	set leave message to "&e%player% left before picking a prize in the Prize Room! Too bad."
 	set {prizeroom.busy} to false

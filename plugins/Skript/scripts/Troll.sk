@@ -1,7 +1,12 @@
-Command /dropstuff [<player>]:
-	permission: essentials.socialspy
-	trigger:
-		force drop inventory of arg 1 at arg 1
+#Command /dropstuff [<player>]:
+#	permission: essentials.socialspy
+#	trigger:
+#		set {_dropitall} to arg
+#		loop all items in inventory of arg:
+#			set {_inv::%loop-item%} to loop-item
+#		drop {_inv::*} at location of 
+# current duplicates the inv, need umbaska #
+
 #command /ridetrain:
 #	permission: is.pro
 #	trigger:

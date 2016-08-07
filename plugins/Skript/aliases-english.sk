@@ -1592,6 +1592,7 @@ default aliases:
 		iron golem @an = :99
 		horse = :100
 		rabbit = :101
+		polar bear = :102
 		villager = :120
 		ender crystal = :200
 

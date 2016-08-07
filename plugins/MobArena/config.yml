@@ -1,4 +1,4 @@
-# MobArena v0.96.9 - Config-file
+# MobArena v0.97.1 - Config-file
 # Read the Wiki for details on how to set up this file: http://goo.gl/F5TTc
 # Note: You -must- use spaces instead of tabs!
 global-settings:
@@ -28,7 +28,7 @@ arenas:
   Nereus:
     settings:
       world: Minigame
-      enabled: true
+      enabled: false
       protect: true
       entry-fee: ''
       clear-wave-before-next: false
@@ -80,7 +80,7 @@ arenas:
             skeletons: 10
             spiders: 10
             creepers: 10
-            wolves: 10
+            wolves: 0
         spec1:
           type: special
           priority: 2
@@ -88,7 +88,7 @@ arenas:
           monsters:
             powered-creepers: 10
             zombie-pigmen: 10
-            angry-wolves: 10
+            angry-wolves: 0
             blazes: 10
       single:
         swarm1:

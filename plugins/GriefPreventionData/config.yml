@@ -1,28 +1,32 @@
 # Default values are perfect for most servers.  If you want to customize and have a question, look for the answer here first: http://dev.bukkit.org/bukkit-plugins/grief-prevention/pages/setup-and-configuration/
 GriefPrevention:
   SeaLevelOverrides:
-    MetaOmega: -1
-    MetaOmega_nether: -1
-    MetaOmega_the_end: -1
-    contest: -1
+    MetaSanctus: -1
+    MetaSanctus_nether: -1
+    MetaSanctus_the_end: -1
+    world_herobrine_graveyard: -1
     resource_nether: -1
+    contest: -1
     resource: -1
     sandbox: -1
-    Hyperverse_nether: -1
-    Hyperverse: -1
+    '{Hyperverse}': -1
+    plotmetest: -1
     Minigame: -1
+    Hyperverse3: -1
   Claims:
     Mode:
-      MetaOmega: Survival
+      '{Hyperverse}': Survival
+      contest: Disabled
+      sandbox: Disabled
+      resource: Disabled
+      MetaSanctus_nether: Disabled
+      plotmetest: Survival
+      MetaSanctus_the_end: Disabled
+      world_herobrine_graveyard: Survival
+      Hyperverse3: Survival
+      MetaSanctus: Survival
+      Minigame: Disabled
       resource_nether: Disabled
-      contest: Survival
-      Minigame: Survival
-      resource: Survival
-      Hyperverse_nether: Disabled
-      Hyperverse: Survival
-      sandbox: Survival
-      MetaOmega_nether: Disabled
-      MetaOmega_the_end: Disabled
     PreventTheft: true
     ProtectCreatures: true
     PreventButtonsSwitches: true
@@ -32,8 +36,14 @@ GriefPrevention:
     EnderPearlsRequireAccessTrust: true
     ProtectHorses: true
     InitialBlocks: 500
-    BlocksAccruedPerHour: 200
-    MaxAccruedBlocks: 276447232
+    Claim Blocks Accrued Per Hour:
+      Default: 200
+      With 'fasteraccrual' Permission: 110
+      With 'fastestaccrual' Permission: 125
+    Max Accrued Claim Blocks:
+      Default: 276447232
+      With 'moreaccrued' Permission: 5000
+      With 'mostaccrued' Permission: 10000
     AbandonReturnRatio: 1.0
     AutomaticNewPlayerClaimsRadius: 4
     ExtendIntoGroundDistance: 5
@@ -54,7 +64,7 @@ GriefPrevention:
     MaximumNumberOfClaimsPerPlayer: 0
     CreationRequiresWorldGuardBuildPermission: true
     PortalGenerationRequiresPermission: false
-    VillagerTradingRequiresPermission: true
+    VillagerTradingRequiresPermission: false
     CommandsRequiringAccessTrust: /sethome
     DeliverManuals: true
     ManualDeliveryDelaySeconds: 30
@@ -70,16 +80,18 @@ GriefPrevention:
     DeathMessageCooldownSeconds: 60
   PvP:
     RulesEnabledInWorld:
-      MetaOmega: true
-      MetaOmega_nether: true
-      MetaOmega_the_end: true
-      contest: true
+      MetaSanctus: true
+      MetaSanctus_nether: true
+      MetaSanctus_the_end: true
+      world_herobrine_graveyard: true
       resource_nether: true
+      contest: true
       resource: true
       sandbox: true
-      Hyperverse_nether: true
-      Hyperverse: true
+      '{Hyperverse}': true
+      plotmetest: true
       Minigame: false
+      Hyperverse3: true
     ProtectFreshSpawns: true
     PunishLogout: true
     CombatTimeoutSeconds: 15

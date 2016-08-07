@@ -1,4 +1,4 @@
-on script load:
+on script load: 
 	loop {pets.pets::*}:
 		kill loop-value
 		damage loop-value by 50 hearts
@@ -8,8 +8,153 @@ on script load:
 	delete {pets.active::*}
 	loop all players:
 		delete {pet.%loop-player%}
+		
+		
+on npc right click:
+	citizen is 107
+	make citizen 107 look at location of player
+	player has the permission "is.champion"
+	if {pet.%player%} is not set:
+		send "&f[&6Pokemon Breeder&f] Hello! Choose your pokemon!"
+		json("%player%", "&f[&aCat&f]||cmd:/getpet cat")
+		json("%player%", "&f[&aDog&f]||cmd:/getpet dog")
+		json("%player%", "&f[&aSheep&f]||cmd:/getpet sheep")
+		json("%player%", "&f[&aRabbit&f]||cmd:/getpet rabbit")
+		json("%player%", "&f[&aPig&f]||cmd:/getpet pig")
+		json("%player%", "&f[&aCow&f]||cmd:/getpet cow")
+		json("%player%", "&f[&aChicken&f]||cmd:/getpet chicken")
+		json("%player%", "&f[&aMooshroom&f]||cmd:/getpet mooshroom")
+		json("%player%", "&f[&aBear&f]||cmd:/getpet bear")
+		set {gettingpet.%player%} to true
+		wait 1 real minute
+		delete {gettingpet.%player%}
+		stop
+	else:
+		send "&f[&6Pokemon Breeder&f] How is your pokemon working out? You can interact with it using &a/pet"
+			
+command /getpet <text>:
+	permission: is.champion
+	trigger:
+		{gettingpet.%player%} is set
+		if arg 1 is "cat" or "dog" or "rabbit" or "sheep" or "pig" or "mooshroom" or "cow" or "chicken" or "villager" or "bear":
+			if arg 1 is "villager":
+				spawn a villager at player
+				set age of spawned entity to baby
+				set name of spawned entity to "&d%player%'s %arg 1%"
+				add spawned entity to {pets.pets::*}
+				tame spawned entity to player
+				add player to {pets.owners::*}
+				add true to {pets.active::*}
+				set {pet.%player%} to spawned entity
+				set {pet.type.%player%} to arg
+			if arg 1 is "cat":
+				spawn a ocelot at player
+				set age of spawned entity to baby
+				set name of spawned entity to "&d%player%'s %arg 1%"
+				add spawned entity to {pets.pets::*}
+				tame spawned entity to player
+				add player to {pets.owners::*}
+				add true to {pets.active::*}
+				set {pet.%player%} to spawned entity
+				set {pet.type.%player%} to arg
+			if arg 1 is "bear":
+				run player command "/summon PolarBear ~ ~ ~ {Age:-3000}" as OP
+				loop all entities in radius 2 of player:
+					loop-entity is not "iron golem" or "cat" or "dog" or "rabbit" or "sheep" or "pig" or "mooshroom" or "cow" or "chicken" or "villager" or "arrow" or "creeper" or "wolf" or "shulker" or "enderman"
+					loop-entity is not a player
+				#	set name of loop-entity to "&aParsed that Bitch!"
+					set name of loop-entity to "&d%player%'s %arg 1%"
+					tame loop-entity to player
+					add loop-entity to {pets.pets::*}
+					add player to {pets.owners::*}
+					add true to {pets.active::*}
+					set {pet.%player%} to loop-entity
+					set {pet.type.%player%} to arg
+			if arg 1 is "dog":
+				spawn a wolf at player
+				set age of spawned entity to baby
+				set the wolf collar of spawned entity to red
+				set name of spawned entity to "&d%player%'s %arg 1%"
+				tame spawned entity to player
+				add spawned entity to {pets.pets::*}
+				add player to {pets.owners::*}
+				add true to {pets.active::*}
+				set {pet.%player%} to spawned entity
+				set {pet.type.%player%} to arg
+			if arg 1 is "rabbit":
+				spawn a rabbit at player
+				set age of spawned entity to baby
+				set name of spawned entity to "&d%player%'s %arg 1%"
+				add spawned entity to {pets.pets::*}
+				add player to {pets.owners::*}
+				add true to {pets.active::*}
+				set {pet.%player%} to spawned entity
+				set {pet.type.%player%} to arg
+			if arg 1 is "chicken":
+				spawn a chicken at player
+				set age of spawned entity to baby
+				set name of spawned entity to "&d%player%'s %arg 1%"
+				add spawned entity to {pets.pets::*}
+				add player to {pets.owners::*}
+				add true to {pets.active::*}
+				set {pet.%player%} to spawned entity
+				set {pet.type.%player%} to arg
+			if arg 1 is "cow":
+				spawn a cow at player
+				set age of spawned entity to baby
+				set name of spawned entity to "&d%player%'s %arg 1%"
+				add spawned entity to {pets.pets::*}
+				add player to {pets.owners::*}
+				add true to {pets.active::*}
+				set {pet.%player%} to spawned entity
+				set {pet.type.%player%} to arg
+			if arg 1 is "sheep":
+				spawn a sheep at player
+				set age of spawned entity to baby
+				set name of spawned entity to "&d%player%'s %arg 1%"
+				add spawned entity to {pets.pets::*}
+				add player to {pets.owners::*}
+				add true to {pets.active::*}
+				set {pet.%player%} to spawned entity
+				set {pet.type.%player%} to arg
+			if arg 1 is "pig":
+				spawn a pig at player
+				set age of spawned entity to baby
+				set name of spawned entity to "&d%player%'s %arg 1%"
+				add spawned entity to {pets.pets::*}
+				add player to {pets.owners::*}
+				add true to {pets.active::*}
+				set {pet.%player%} to spawned entity
+				set {pet.type.%player%} to arg
+			if arg 1 is "mooshroom":
+				spawn a mooshroom at player
+				set age of spawned entity to baby
+				set name of spawned entity to "&d%player%'s %arg 1%"
+				add spawned entity to {pets.pets::*}
+				add player to {pets.owners::*}
+				add true to {pets.active::*}
+				set {pet.%player%} to spawned entity
+				set {pet.type.%player%} to arg
+			set {pet.%player%.name} to "%player%'s %arg%"
+			set {pet.%player%.baby} to true
+			set {owner.%spawned entity%} to player
+			set {pet.%player%.when} to now
+			if {pet.%player%.total} is not set:
+				set {pet.%player%.total} to 0
+			add 1 to {pet.%player%.total}
+			message "&f[&dPets&f] &aEnjoy pet number %{pet.%player%.total}%!"
+		else:
+			message "&d-------------------------------------------------"
+			message "&6&lPet Menu"
+			message "&fUSAGE - &a/pet <type> <name>"
+			message "&ePet Types:"
+			message "&fCat, dog, pig, sheep, mooshroom, cow, rabbit, chicken"
+			message "&d-------------------------------------------------"
+			stop
+						
+
 command /pet [<text>] [<text>]:
-#	permission: is.premium
+	permission: is.champion
 	trigger:
 		if arg 1 is set:
 			if arg 2 is set:
@@ -107,99 +252,27 @@ command /pet [<text>] [<text>]:
 							stop
 						message "&f[&dPets&f] &cInvalid color. &eAcceptable colors:&f red, blue, green, purple, yellow, orange, magenta, cyan, pink, brown, black, white, grey, lime."
 						stop
-					message "&cYou have a pet already!"
-					stop
-				else:
-					if arg 1 is "cat":
-						spawn a ocelot at player
-						set age of spawned entity to baby
-						set name of spawned entity to "&d&l%arg 2%"
-						add spawned entity to {pets.pets::*}
-						tame spawned entity to player
-						add player to {pets.owners::*}
-						add true to {pets.active::*}
-						set {pet.%player%} to spawned entity
-					if arg 1 is "dog":
-						spawn a wolf at player
-						set age of spawned entity to baby
-						set the wolf collar of spawned entity to red
-						set name of spawned entity to "&f[&a%player%&f] &d&l%arg 2%"
-						tame spawned entity to player
-						add spawned entity to {pets.pets::*}
-						add player to {pets.owners::*}
-						add true to {pets.active::*}
-						set {pet.%player%} to spawned entity
-					if arg 1 is "rabbit":
-						spawn a rabbit at player
-						set age of spawned entity to baby
-						set name of spawned entity to "&d&l%arg 2%"
-						add spawned entity to {pets.pets::*}
-						add player to {pets.owners::*}
-						add true to {pets.active::*}
-						set {pet.%player%} to spawned entity
-					if arg 1 is "chicken":
-						spawn a chicken at player
-						set age of spawned entity to baby
-						set name of spawned entity to "&d&l%arg 2%"
-						add spawned entity to {pets.pets::*}
-						add player to {pets.owners::*}
-						add true to {pets.active::*}
-						set {pet.%player%} to spawned entity
-					if arg 1 is "cow":
-						spawn a cow at player
-						set age of spawned entity to baby
-						set name of spawned entity to "&d&l%arg 2%"
-						add spawned entity to {pets.pets::*}
-						add player to {pets.owners::*}
-						add true to {pets.active::*}
-						set {pet.%player%} to spawned entity
-					if arg 1 is "sheep":
-						spawn a sheep at player
-						set age of spawned entity to baby
-						set name of spawned entity to "&d&l%arg 2%"
-						add spawned entity to {pets.pets::*}
-						add player to {pets.owners::*}
-						add true to {pets.active::*}
-						set {pet.%player%} to spawned entity
-					if arg 1 is "pig":
-						spawn a pig at player
-						set age of spawned entity to baby
-						set name of spawned entity to "&d&l%arg 2%"
-						add spawned entity to {pets.pets::*}
-						add player to {pets.owners::*}
-						add true to {pets.active::*}
-						set {pet.%player%} to spawned entity
-					if arg 1 is "mooshroom":
-						spawn a mooshroom at player
-						set age of spawned entity to baby
-						set name of spawned entity to "&d&l%arg 2%"
-						add spawned entity to {pets.pets::*}
-						add player to {pets.owners::*}
-						add true to {pets.active::*}
-						set {pet.%player%} to spawned entity
-					else:
-						message "&d-------------------------------------------------"
-						message "&6&lPet Menu"
-						message "&fUSAGE - &a/pet <type> <name>"
-						message "&ePet Types:"
-						message "&fCat, dog, pig, sheep, mooshroom, cow, rabbit, chicken"
-						message "&d-------------------------------------------------"
-						stop
-					set {pet.%player%.name} to arg 2
-					set {pet.%player%.baby} to true
-					set {owner.%spawned entity%} to player
-					set {pet.%player%.when} to now
-					if {pet.%player%.total} is not set:
-						set {pet.%player%.total} to 0
-					add 1 to {pet.%player%.total}
-					message "&f[&dPets&f] &aEnjoy pet number %{pet.%player%.total}%!"
+					if arg 1 is "name":
+						if {pet.%player%} is set:
+							loop all entities in radius 10 of player:
+								loop-entity is not player
+								name of loop-entity contains "%player%"
+								set name of loop-entity to "&d%arg 2%"
+								set {pet.%player%.name} to "%arg 2%"
+							# set name of {pet.%player%} to "&d%arg 2%"
+								message "Set name of your pet to &d%arg 2%"
+								stop
+							message "&cYour pet is either too far away, or already has a name."
+						else:
+							message "&f[&dPets&f] &cYou have no pet!"
+							stop	
 			else:
 				if arg 1 is "stay":
 					if {pet.%player%} is set:
 						loop {pets.owners::*}:
 							player is loop-value
 							set {pets.active::%loop-index%} to false
-							message "&f[&dPets&f] &cYour pet will no longer follow you."
+							message "&f[&dPets&f] &cYour pet will no longer follow you, but it may wander..."
 							stop
 						message "&f[&dPets&f] &cFound no pet!"
 						stop
@@ -220,27 +293,19 @@ command /pet [<text>] [<text>]:
 						stop
 				if arg 1 is "baby":
 					if {pet.%player%} is set:
-						if {pet.%player%.baby} is true:
-							message "&f[&dPets&f] &cYour pet is already a baby!"
-							stop
-						else:
-							set age of {pet.%player%} to baby
-							set {pet.%player%.baby} to true
-							message "&f[&dPets&f] &aYour pet is now a baby!"
-							stop
+						set age of {pet.%player%} to baby
+						set {pet.%player%.baby} to true
+						message "&f[&dPets&f] &aYour pet is now a baby!"
+						stop
 					else:
 						message "&f[&dPets&f] &cYou have no pet!"
 						stop
 				if arg 1 is "adult":
 					if {pet.%player%} is set:
-						if {pet.%player%.baby} is false:
-							message "&f[&dPets&f] &cYour pet is already an adult!"
-							stop
-						else:
-							set age of {pet.%player%} to adult
-							set {pet.%player%.baby} to false
-							message "&f[&dPets&f] &aYour pet is now an adult!"
-							stop
+						set age of {pet.%player%} to adult
+						set {pet.%player%.baby} to false
+						message "&f[&dPets&f] &aYour pet is now an adult!"
+						stop
 					else:
 						message "&f[&dPets&f] &cYou have no pet!"
 						stop
@@ -264,7 +329,8 @@ command /pet [<text>] [<text>]:
 				loop {pets.owners::*}:
 					loop-value is player
 					message "&d-------------------------------------------------"
-					message "&6Pet Name:&d&l %{pet.%player%.name}%"
+					message "&6Pet Name:&d %{pet.%player%.name}%"
+					message "&6Pet Type:&d %{pet.type.%player%}%"
 					message "&6Pet Health: &e%health of {pet.%player%}%"
 					if {pet.%player%.baby} is true:
 						message "&6Pet Age: &eBaby"
@@ -278,6 +344,7 @@ command /pet [<text>] [<text>]:
 					message "&6Total Pets Ever: &e%{pet.%player%.total}%"
 					message "&d-------------------------------------------------"
 					message "&a/Pet come &f- Pet will follow you."
+					message "&a/Pet name <text> &f- Set your pet's name."
 					message "&a/Pet stay &f- Pet will not follow you. May wander."
 					message "&a/Pet baby &f- Pet will be a baby."
 					message "&a/Pet adult &f- Pet will be an adult."
@@ -285,12 +352,7 @@ command /pet [<text>] [<text>]:
 					message "&a/Pet kill &f- Pet will die."
 					message "&d-------------------------------------------------"
 			else:
-				message "&d-------------------------------------------------"
-				message "&6&lPet Menu"
-				message "&fUSAGE - &a/pet <type> <name>"
-				message "&ePet Types:"
-				message "&fCat, dog, pig, sheep, mooshroom, cow, rabbit, chicken"
-				message "&d-------------------------------------------------"
+				message "&cYou have no active pet. You can get a new one at the Champion Hall."
 on damage:
 	{owner.%victim%} is set:
 		if damage cause is fall:

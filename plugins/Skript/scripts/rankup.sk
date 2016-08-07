@@ -1,4 +1,13 @@
 on join:
+	wait 10 real seconds
+	{fixedrankof.%player%} is not set
+	set {fixedrankof.%player%} to true
+	make player execute "/fixrank"
+	message "&eAttempting to fix your rank... If this does not work, type &a/fixrank"
+	execute console command "/kit tools %player%"
+	teleport player to {spawn}
+	teleport player to {spawn}
+on join:
 	if {ranked.%player%} is not set:
 		set {ranked.%player%} to true
 		if player has permission "is.visitor":
@@ -108,7 +117,10 @@ every minute:
 		{rank.%loop-player%} is 0
 		set {rank.%loop-player%} to 1
 		broadcast "&f[&aDEBUG&f] Automagically fixed %loop-player%'s rank variable!"
-every 10 real seconds in "MetaOmega" or "resource" or "MetaOmega_nether":
+command /rookiechecktime <player=%player%>:
+	trigger:
+		message "&6Playtime: &e%{rookierank.%arg-1%}%/1200"
+every 10 real seconds in "MetaSanctus" or "resource" or "MetaSanctus_nether":
 	loop all players:
 		{rank.%loop-player%} is 0
 		add 1 to {rookierank.%loop-player%}
@@ -120,6 +132,18 @@ every 10 real seconds in "MetaOmega" or "resource" or "MetaOmega_nether":
 			wait 2 ticks
 			make loop-player execute "fixprefix"
 			delete {rookierank.%loop-player%}
+command /fixrookie <player>:
+	permission: is.op
+	trigger:
+		{rank.%arg%} is smaller than 1
+		send "&aCongratulations, you have been promoted to &d&oRookie!" to the arg
+		execute console command "manpromote %arg% rookie"
+		add 1 to {rank.%arg%}
+		broadcast "&6%arg% has just been promoted to &d&oRookie&6!"
+		wait 2 ticks
+		make arg execute "fixprefix"
+		delete {rookierank.%arg%}
+
 command /testrank <text>:
 	usage: &aUsage:&e /testrank (rank name)
 	trigger:

@@ -73,7 +73,7 @@ Messages:
   BasicClaimsMode:
     Text: Returned to basic claim creation mode.
   SubdivisionMode:
-    Text: Subdivision mode.  Use your axe to create subdivisions in your existing claims.  Use /basicclaims to exit.
+    Text: Subdivision mode.  Use your golden axe create subdivisions in your existing claims.  Use /basicclaims to exit.
   SubdivisionVideo2:
     Text: 'Click for Subdivision Help: {0}'
     Notes: 0:video URL
@@ -170,9 +170,8 @@ Messages:
     Text: This chest is full.
   DonationSuccess:
     Text: Item(s) transferred to chest!
-  PlayerTooCloseForFire:
-    Text: You can't start a fire this close to {0}.
-    Notes: '0: other player''s name'
+  PlayerTooCloseForFire2:
+    Text: You can't start a fire this close to another player.
   TooDeepToClaim:
     Text: This chest can't be protected because it's too deep underground.  Consider moving it.
   ChestClaimConfirmation:
@@ -188,8 +187,8 @@ Messages:
   NoDamageClaimedEntity:
     Text: That belongs to {0}.
     Notes: '0: owner name'
-  axeBasicClaimMode:
-    Text: axe returned to basic claims mode.
+  AxeBasicClaimMode:
+    Text: Golden Axe returned to basic claims mode.
   RemainingBlocks:
     Text: You may claim up to {0} more blocks.
     Notes: '0: remaining blocks'
@@ -231,16 +230,13 @@ Messages:
   BlockClaimed:
     Text: That block has been claimed by {0}.
     Notes: '0: claim owner'
-  SiegeNoaxe:
+  SiegeNoAxe:
     Text: You can't use your axe tool while involved in a siege.
   RestoreNaturePlayerInChunk:
     Text: Unable to restore.  {0} is in that chunk.
     Notes: '0: nearby player'
   NoCreateClaimPermission:
     Text: You don't have permission to claim land.
-  ResizeClaimTooSmall:
-    Text: This new size would be too small.  Claims must be at least {0} x {0}.
-    Notes: '0: minimum claim size'
   ResizeNeedMoreBlocks:
     Text: You don't have enough blocks for this size.  You need {0} more.
     Notes: '0: how many needed'
@@ -270,9 +266,9 @@ Messages:
     Text: Land claims are disabled in this world.
   ClaimStart:
     Text: Claim corner set!  Use the axe again at the opposite corner to claim a rectangle of land.  To cancel, put your axe away.
-  NewClaimTooSmall:
-    Text: This claim would be too small.  Any claim must be at least {0} x {0}.
-    Notes: '0: minimum claim size'
+  NewClaimTooNarrow:
+    Text: This claim would be too small.  Any claim must be at least {0} blocks wide.
+    Notes: '0: minimum claim width'
   CreateClaimInsufficientBlocks:
     Text: You don't have enough blocks to claim that entire area.  You need {0} more blocks.
     Notes: '0: additional blocks needed'
@@ -333,9 +329,6 @@ Messages:
     Notes: '0: permission; 1: adjustment amount; 2: new total bonus'
   InvalidPermissionID:
     Text: Please specify a player name, or a permission in [brackets].
-  UntrustOwnerOnly:
-    Text: Only {0} can revoke permissions here.
-    Notes: '0: claim owner''s name'
   HowToClaimRegex:
     Text: (^|.*\W)how\W.*\W(claim|protect|lock)(\W.*|$)
     Notes: This is a Java Regular Expression.  Look it up before editing!  It's used to tell players about the demo video when they ask how to claim land.
@@ -347,13 +340,13 @@ Messages:
   BuildingOutsideClaims:
     Text: Other players can build here, too.  Consider creating a land claim to protect your work!
   TrappedWontWorkHere:
-    Text: Sorry, unable to find a safe location to teleport you to.  Contact an admin, or consider /kill if you don't want to wait.
+    Text: Sorry, unable to find a safe location to teleport you to.  Contact an admin.
   CommandBannedInPvP:
     Text: You can't use that command while in PvP combat.
   UnclaimCleanupWarning:
     Text: The land you've unclaimed may be changed by other players or cleaned up by administrators.  If you've built something there you want to keep, you should reclaim it.
   BuySellNotConfigured:
-    Text: Sorry, buying anhd selling claim blocks is disabled.
+    Text: Sorry, buying and selling claim blocks is disabled.
   NoTeleportPvPCombat:
     Text: You can't teleport while fighting another player.
   NoTNTDamageAboveSeaLevel:
@@ -426,11 +419,6 @@ Messages:
     Text: That player is immune to /siege.
   SetClaimBlocksSuccess:
     Text: Updated accrued claim blocks.
-  PlayerTooCloseForFire2:
-    Text: You can't start a fire this close to another player.
-  NewClaimTooNarrow:
-    Text: This claim would be too small.  Any claim must be at least {0} blocks wide.
-    Notes: '0: minimum claim width'
   IgnoreConfirmation:
     Text: You're now ignoring chat messages from that player.
   NotIgnoringPlayer:
@@ -508,19 +496,22 @@ Messages:
   MinimumRadius:
     Text: Minimum radius is {0}.
     Notes: '0: minimum radius'
-  RadiusRequiresGoldenaxe:
+  RadiusRequiresGoldenAxe:
     Text: You must be holding a golden axe when specifying a radius.
   ClaimTooSmallForActiveBlocks:
     Text: This claim isn't big enough to support any active block types (hoppers, spawners, beacons...).  Make the claim bigger first.
   TooManyActiveBlocksInClaim:
     Text: This claim is at its limit for active block types (hoppers, spawners, beacons...).  Either make it bigger, or remove other active blocks first.
+  ConsoleOnlyCommand:
+    Text: That command may only be executed from the server console.
+  WorldNotFound:
+    Text: World not found.
+  AdjustBlocksAllSuccess:
+    Text: Adjusted all online players' bonus claim blocks by {0}.
+    Notes: '0: adjustment amount'
   ShovelBasicClaimMode:
     Text: Shovel returned to basic claims mode.
   SiegeNoShovel:
     Text: You can't use your shovel tool while involved in a siege.
   RadiusRequiresGoldenShovel:
     Text: You must be holding a golden shovel when specifying a radius.
-  ConsoleOnlyCommand:
-    Text: That command may only be executed from the server console.
-  WorldNotFound:
-    Text: World not found.

@@ -7,8 +7,7 @@ config:
   DestroyTorches: true
   DestroyTorchesRadius: 5
   Worlds:
-  - Hyper
-  - Hyper_nether
+  - 'Hyperverse3'
   TotemExplodes: true
   OnlyWalkingMode: false
   BuildStuff: true
@@ -17,7 +16,7 @@ config:
   WriteBooks: true
   Killable: false
   UsePotionEffects: true
-  CaveChance: 40
+  CaveChance: 20
   BookChance: 5
   SignChance: 5
   DeathMessage: You cannot kill me!
@@ -34,7 +33,7 @@ config:
   BookMessages:
   - White eyes in dark...
   - '... was last what I saw ...'
-  - '... before i was dead.'
+  - '... before I was dead.'
   Drops:
     '264':
       count: 1
@@ -56,10 +55,10 @@ config:
     Sword: true
     Apple: true
   HerobrineHP: 300
-  AttackCreative: true
+  AttackCreative: false
   AttackOP: true
   SecuredArea:
-    Build: true
+    Build: false
     Attack: true
     Haunt: true
     Signs: true

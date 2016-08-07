@@ -38,12 +38,13 @@ on login:
 		{locked.%player%} is true
 		message "&e&oPlease &a&o/login&e&o with your pin."
 		
-every real second:
-	loop all players:
-		{locked.%loop-player%} is true
+#every real second:
+#	loop all players:
+#		{locked.%loop-player%} is true
 #		teleport loop-player to {locked.%loop-player%.pos}
-		apply jump boost -5 to the loop-player for 100000000 hours
-		set the loop-player's walk speed to 0.01
+#		player is not flying
+#		apply jump boost -5 to the loop-player for 100000000 hours
+#		set the loop-player's walk speed to 0.01
    
 command /login <text>:
 	description: Login.
@@ -69,6 +70,8 @@ command /login <text>:
 			set the player's walk speed to .2
 			remove jump boost from the player
 			set {locked.%player%} to false
+			if player does not have permission "essentials.fly":
+				set player's fly mode to false
 command /setpin <text> [<text>]:
 	description: Set a pin.
 	usage: /setpin {pin} {newpin}
@@ -121,6 +124,12 @@ on command:
 	if command is not "vanish" or "login" or "mcstats" or "mcscoreboard" or "rules" or "agree" or "forcehealth":
 		message "&e&oYou must first &a&o/login&e&o."
 		cancel the event
+on any movement:
+	{locked.%player%} is true
+	set player's fly mode to true
+	cancel event
+	message "&e&oYou must first &a&o/login&e&o."
+	stop
 on chat:
 	{locked.%player%} is true
 	cancel the event

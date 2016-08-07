@@ -1,0 +1,4 @@
+on world change:
+	wait 2 ticks
+	if player's world is not "sandbox" or "contest":
+		set player's gamemode to survival

@@ -1,0 +1,58 @@
+# You will need to place the sign in the claim, as well as worldguard the claim
+command /purge:
+	permission: is.pro.or.craft
+	trigger:
+		delete {house.signs::*}
+		delete {house.owners::*}
+		delete {house.timer::*}
+		delete {scan.%region at player%::*}
+		
+on sign change:
+	player has permission "is.pro"
+	if line 1 of block is "-House-":
+		set line 1 of block to "[&4Noob House&r]"
+		set line 3 of block to "&a&oAvailable"
+		if {housenumber} is not set:
+			set {housenumber} to 1
+		add location of event-block to {house.signs::%{housenumber}%}
+		add 1 to {housenumber}
+on right click on sign:
+	if line 1 of block contains "Noob House":
+		if line 3 of block contains "Available":
+			loop {house.signs::*}:
+				"%region at player%" contains event-block
+				add player to {house.owner::%loop-index%}
+				set {house.timer::%loop-index%} to now
+				message "&aYou started renting this house! You have 3 minutes."
+		else:
+			message "&cThis house is owned by %line 3 of event-block%"
+on region enter:
+	loop {house.signs::*}:
+		"%region at player%" contains loop-value
+		message "This house is occupied by %loop-value%."
+every real minute:
+	loop {house.timer::*}:
+		subtract 1 from {house.timer::%loop-index%}
+		if {house.timer::%loop-index%} is less than 0:
+			set line 3 of block at {house.signs::%loop-index%} to "&a&oAvailable"
+			
+command /scanhouse:
+	permission: is.pro
+	trigger:
+		set {_scancount} to 0
+		message "&aProcess begun!"
+		loop all blocks in radius 4 of player:
+			wait 1 tick
+			loop-block is not air
+			"%region at loop-block%" contains "scan"
+			message "saved %{_scancount}%"
+			set {scan.%region at loop-block%::%location of loop-block%} to true
+			add 1 to {_scancount}
+		message "&aCOMPLETE! Scanned %{_scancount}% and added to the list %region at player%"
+on break:
+	{scan.%region at event-block%::%location of event-block%} is true
+	player has the permission "is.op"
+	cancel event
+	message "&cThis is scanned!"
+
+

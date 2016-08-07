@@ -1,0 +1,72 @@
+#script options:
+#	$ developer mode
+#every 15 real seconds:
+#	loop all players:
+#		name of loop-player contains "Protagonist"
+#		if {spot.%loop-player%} is set:
+#			{spot.%loop-player%} is loop-player's location
+#			chance of 10%:
+#		execute console command "/playsound mob.creeper.say block %loop-player% ~ ~ ~ 8 1"
+#		execute console command "/playsound game.tnt.primed block %loop-player% ~ ~ ~ 8 1"
+#				stop
+#			chance of 10%:
+#				execute console command "/playsound entity.generic.explode block %loop-player% ~ ~ ~ 7 1"
+#				stop
+#		set {spot.%loop-player%} to loop-player's location
+#			
+#every 1 real minute:
+#	loop all players:
+#		name of loop-player contains "Protagonist"
+#		send "Number 2!" to loop-player
+#		loop blocks in radius 30 of loop-player:
+#			loop-block is door or chest
+#			chance of 100%:
+#				set {_fuckery} to location of loop-block
+#				toggle block at {_fuckery}
+#				if loop-block is door:
+#					execute console command "/playsound block.wooden_door.open block %loop-player% ~ ~ ~ 8 1"
+#				else:
+#					execute console command "/playsound block.chest.open block %loop-player% ~ ~ ~ 8 1"
+#				wait 4 real seconds
+#				if loop-block is door:
+#					execute console command "/playsound block.wooden_door.close block %loop-player% ~ ~ ~ 8 1"
+#				else:
+#					execute console command "/playsound block.chest.close block %loop-player% ~ ~ ~ 8 1"
+#				toggle block at {_fuckery}
+#				set {fuckery.found} to false
+#				stop
+command /fuckup <player>:
+	trigger:
+		if player has permission "essentials.socialspy":
+			loop all blocks in radius 30 of player argument:
+				loop-block is not air or stone or dirt or grass
+				if loop-block is wooden door block or chest:
+					if loop-block is wooden door block:
+						play "BLOCK_WOODEN_DOOR_OPEN" to argument at volume 1
+						open loop-block
+						wait 2 tick
+						play "BLOCK_WOODEN_DOOR_CLOSE" to argument at volume 1
+						close loop-block
+					play chest open animation at loop-block
+					wait 2 ticks
+					play chest close animation at loop-block
+				#	message "%loop-block%"
+command /blockfuckery [<player>]:
+	trigger:
+		if player has permission "essentials.socialspy":
+			if argument is not set:
+				if {fuckblock.%player%} is not set:
+					set {fuckblock.%player%} to true
+					message "&eYou have successfully &4disabled&e Fuckery for yourself!"
+				else:
+					delete {fuckblock.%player%}
+					message "&eYou have successfully &2enabled&e Fuckery for yourself!"
+			else:
+				if {fuckblock.%arg%} is not set:
+					set {fuckblock.%arg%} to true
+					message "&eYou have successfully &4disabled&e Fuckery for %arg%!"
+					send "&c%player%&c has removed the evil ghosts for you!" to the argument
+				else:
+					delete {fuckblock.%arg%}
+					message "&eYou have successfully &2enabled&e Fuckery for %arg%!"
+					send "&c%player%&c has brought the evil ghosts back to you!" to the argument

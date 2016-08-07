@@ -1,104 +1,1005 @@
-﻿options:
-    # The variable containing the player's currency, or player's money for external plugin economies with Vaul
-    # This variable should always contain an numerical value.
-    
-    # --- Slots ---
-    # The inital amount of money to pay to play slots
-    slots-pay: 10
-    # The money recieved for minor wins
-    slots-win-minor: 100
-    # The money recieved for a jackpot
-    slots-jackpot: 1000
+﻿#script options:
+#	$ developer mode
+
+
+options:
+	# The variable containing the player's currency, or player's money for external plugin economies with Vaul
+	# This variable should always contain an numerical value.
+
+	# --- Slots ---
+	# The inital amount of money to pay to play slots
+	slots-pay: 10
+	# The money recieved for minor wins
+	slots-win-minor: 100
+	# The money recieved for a jackpot
+	slots-jackpot: 1000
+	# The inital amount of money to pay to play RPS
+	rps-pay: 10
+	# The inital amount of money to pay to play Coin Flip
+	coinflip-pay: 50
+	
+on npc right click:
+	citizen is 103
+	make citizen 103 look at location of player
+	# name of clicked entity contains "Dealer Arizona"
+	# cancel event
+	send "&f[&6Amber's Boytoy&f] I wish Amber loved me..."
+
+on join:
+	set {slots.played.today.%player%} to 0
+	set {slots.bets.today.%player%} to 0
+	set {slots.made.today.%player%} to 0
 on sign change:
-    player has permission "casino.slots"
-    if line 1 of block is "-Slots-":
-        set line 1 of block to "[&4Slots&r]"
-        set line 3 of block to "&a&oReady"
+	player has permission "casino.slots"
+	if line 1 of block is "-Slots-":
+		set line 1 of block to "[&4Slots&r]"
+		set line 4 of block to "&a&l$%line 4 of block%"
+		set line 3 of block to "&a&oReady"
+on npc right click:
+	citizen is 99
+	make citizen 99 look at location of player
+	message "&f[&6Bookie&f] Hello! Here are your slot machine statistics:"
+	message "&aTotal Plays: &e%{slots.played.%player%}%"
+	message "&aTotal Bet: &e%{slots.bets.%player%}%"
+	message "&aTotal Won: &e%{slots.made.%player%}%"
+	message "&bPlays Today: &e%{slots.played.today.%player%}%"
+	message "&bBet Today: &e%{slots.bets.today.%player%}%"
+	message "&bWon Today: &e%{slots.made.today.%player%}%"
 on right click on sign:
-    if line 1 of block is "[&4Slots&r]":        
-        line 3 of block is "&a&oReady"
-        if player's balance is less than {@slots-pay} dollars:
-            message "&c&oInsufficient money to play this machine"
-            stop
-        remove {@slots-pay} dollars from player's balance
-        message "&a&o$10&r&o paid to the slot machine..."
-        set line 3 of block to "&e-Playing-"
-        loop 60 times:
-            set {_reel1} to a random integer between 1 and 10
-            set {_reel2} to a random integer between 1 and 10
-            set {_reel3} to a random integer between 1 and 10
-            if {_reel1} is 1:
-                set {_reel1} to "■"
-            if {_reel1} is 2:
-                set {_reel1} to "&c♥&r"
-            if {_reel1} is 3:
-                set {_reel1} to "&c♦&r"
-            if {_reel1} is 4:
-                set {_reel1} to "♣"
-            if {_reel1} is 5:
-                set {_reel1} to "♠"
-            if {_reel1} is 6:
-                set {_reel1} to "○"
-            if {_reel1} is 7:
-                set {_reel1} to "•"
-            if {_reel1} is 8:
-                set {_reel1} to "&e☼&r"
-            if {_reel1} is 9:
-                set {_reel1} to "&6▲&r"
-            if {_reel1} is 10:
-                set {_reel1} to "&9▼&r"
-            if {_reel2} is 1:
-                set {_reel2} to "■"
-            if {_reel2} is 2:
-                set {_reel2} to "&c♥&r"
-            if {_reel2} is 3:
-                set {_reel2} to "&c♦&r"
-            if {_reel2} is 4:
-                set {_reel2} to "♣"
-            if {_reel2} is 5:
-                set {_reel2} to "♠"
-            if {_reel2} is 6:
-                set {_reel2} to "○"
-            if {_reel2} is 7:
-                set {_reel2} to "•"
-            if {_reel2} is 8:
-                set {_reel2} to "&e☼&r"
-            if {_reel2} is 9:
-                set {_reel2} to "&6▲&r"
-            if {_reel2} is 10:
-                set {_reel2} to "&9▼&r"
-            if {_reel3} is 1:
-                set {_reel3} to "■"
-            if {_reel3} is 2:
-                set {_reel3} to "&c♥&r"
-            if {_reel3} is 3:
-                set {_reel3} to "&c♦&r"
-            if {_reel3} is 4:
-                set {_reel3} to "♣"
-            if {_reel3} is 5:
-                set {_reel3} to "♠"
-            if {_reel3} is 6:
-                set {_reel3} to "○"
-            if {_reel3} is 7:
-                set {_reel3} to "•"
-            if {_reel3} is 8:
-                set {_reel3} to "&e☼&r"
-            if {_reel3} is 9:
-                set {_reel3} to "&6▲&r"
-            if {_reel3} is 10:
-                set {_reel3} to "&9▼&r"
-            set line 2 of block to "%{_reel1}% %{_reel2}% %{_reel3}%"
-            wait 1 tick
-        set line 3 of block to "&a&oReady"
-        if {_reel1} is {_reel2}:
-            if {_reel1} is {_reel3}:
-                add {@slots-jackpot} dollars to player's balance
-                broadcast "&b%player% &6won the slots jackpot of &a$1000&6!"
-                stop
-            add {@slots-win-minor} dollars to player's balance
-            message "&e&oYou just won &a&o$100!"
-            stop
-        message "&c&oYou lose. Try again?"
-            
-            
-    
+	if line 1 of clicked block contains "Slots":
+		line 3 of block is "&a&oReady"
+		if {slots.bets.%player%} is not set:
+			set {slots.bets.%player%} to 0
+		if {slots.played.%player%} is not set:
+			set {slots.played.%player%} to 0
+		if line 4 of block contains "10":
+			if player's balance is less than 10:
+				message "&c&oInsufficient money to play this machine"
+				stop
+			else:
+				remove 10 from player's balance
+				message "&a&o$10&r&o paid to the slot machine..."
+				add 10 to {slots.bets.%player%}
+				add 1 to {slots.played.%player%}
+				add 1 to {slots.played.today.%player%}
+				add 10 to {slots.bets.today.%player%}
+		if line 4 of block contains "50":
+			if player's balance is less than 50:
+				message "&c&oInsufficient money to play this machine"
+				stop
+			else:
+				remove 50 from player's balance
+				message "&a&o$50&r&o paid to the slot machine..."
+				add 50 to {slots.bets.%player%}
+				add 1 to {slots.played.%player%}
+				add 1 to {slots.played.today.%player%}
+				add 50 to {slots.bets.today.%player%}
+		if line 4 of block contains "200":
+			if player's balance is less than 200:
+				message "&c&oInsufficient money to play this machine"
+				stop
+			else:
+				remove 200 from player's balance
+				message "&a&o$200&r&o paid to the slot machine..."
+				add 200 to {slots.bets.%player%}
+				add 1 to {slots.played.%player%}
+				add 1 to {slots.played.today.%player%}
+				add 200 to {slots.bets.today.%player%}
+		if line 4 of block contains "777":
+			if player's balance is less than 777:
+				message "&c&oInsufficient money to play this machine"
+				stop
+			else:
+				remove 777 from player's balance
+				message "&a&o$777&r&o paid to the slot machine..."
+				add 777 to {slots.bets.%player%}
+				add 1 to {slots.played.%player%}
+				add 1 to {slots.played.today.%player%}
+				add 777 to {slots.bets.today.%player%}
+		if line 4 of block contains "1337":
+			if player's balance is less than 1337:
+				message "&c&oInsufficient money to play this machine"
+				stop
+			else:
+				remove 1337 from player's balance
+				message "&a&o$1337&r&o paid to the slot machine..."
+				add 1337 to {slots.bets.%player%}
+				add 1 to {slots.played.%player%}
+				add 1 to {slots.played.today.%player%}
+				add 1337 to {slots.bets.today.%player%}
+		if line 4 of block contains "2222":
+			if player's balance is less than 2222:
+				message "&c&oInsufficient money to play this machine"
+				stop
+			else:
+				remove 2222 from player's balance
+				message "&a&o$2222&r&o paid to the slot machine..."
+				add 2222 to {slots.bets.%player%}
+				add 1 to {slots.played.%player%}
+				add 1 to {slots.played.today.%player%}
+				add 2222 to {slots.bets.today.%player%}
+		loop all blocks in radius 2 of event-block:
+			if loop-block is lever:
+				toggle loop-block
+		set line 3 of block to "&a-Playing-"
+		loop 30 times:
+			set {_reel1} to a random integer between 1 and 10
+			set {_reel2} to a random integer between 1 and 10
+			set {_reel3} to a random integer between 1 and 10
+			if {_reel1} is 1:
+				set {_reel1} to "■"
+			if {_reel1} is 2:
+				set {_reel1} to "&c♥&r"
+			if {_reel1} is 3:
+				set {_reel1} to "&c♦&r"
+			if {_reel1} is 4:
+				set {_reel1} to "♣"
+			if {_reel1} is 5:
+				set {_reel1} to "♠"
+			if {_reel1} is 6:
+				set {_reel1} to "○"
+			if {_reel1} is 7:
+				set {_reel1} to "•"
+			if {_reel1} is 8:
+				set {_reel1} to "&e☼&r"
+			if {_reel1} is 9:
+				set {_reel1} to "&6▲&r"
+			if {_reel1} is 10:
+				set {_reel1} to "&9▼&r"
+			if {_reel2} is 1:
+				set {_reel2} to "■"
+			if {_reel2} is 2:
+				set {_reel2} to "&c♥&r"
+			if {_reel2} is 3:
+				set {_reel2} to "&c♦&r"
+			if {_reel2} is 4:
+				set {_reel2} to "♣"
+			if {_reel2} is 5:
+				set {_reel2} to "♠"
+			if {_reel2} is 6:
+				set {_reel2} to "○"
+			if {_reel2} is 7:
+				set {_reel2} to "•"
+			if {_reel2} is 8:
+				set {_reel2} to "&e☼&r"
+			if {_reel2} is 9:
+				set {_reel2} to "&6▲&r"
+			if {_reel2} is 10:
+				set {_reel2} to "&9▼&r"
+			if {_reel3} is 1:
+				set {_reel3} to "■"
+			if {_reel3} is 2:
+				set {_reel3} to "&c♥&r"
+			if {_reel3} is 3:
+				set {_reel3} to "&c♦&r"
+			if {_reel3} is 4:
+				set {_reel3} to "♣"
+			if {_reel3} is 5:
+				set {_reel3} to "♠"
+			if {_reel3} is 6:
+				set {_reel3} to "○"
+			if {_reel3} is 7:
+				set {_reel3} to "•"
+			if {_reel3} is 8:
+				set {_reel3} to "&e☼&r"
+			if {_reel3} is 9:
+				set {_reel3} to "&6▲&r"
+			if {_reel3} is 10:
+				set {_reel3} to "&9▼&r"
+			set line 2 of block to "%{_reel1}% %{_reel2}% %{_reel3}%"
+			wait 1 tick
+		loop 10 times:
+#			set {_reel1} to a random integer between 1 and 10
+			set {_reel2} to a random integer between 1 and 10
+			set {_reel3} to a random integer between 1 and 10
+			if {_reel1} is 1:
+				set {_reel1} to "■"
+			if {_reel1} is 2:
+				set {_reel1} to "&c♥&r"
+			if {_reel1} is 3:
+				set {_reel1} to "&c♦&r"
+			if {_reel1} is 4:
+				set {_reel1} to "♣"
+			if {_reel1} is 5:
+				set {_reel1} to "♠"
+			if {_reel1} is 6:
+				set {_reel1} to "○"
+			if {_reel1} is 7:
+				set {_reel1} to "•"
+			if {_reel1} is 8:
+				set {_reel1} to "&e☼&r"
+			if {_reel1} is 9:
+				set {_reel1} to "&6▲&r"
+			if {_reel1} is 10:
+				set {_reel1} to "&9▼&r"
+			if {_reel2} is 1:
+				set {_reel2} to "■"
+			if {_reel2} is 2:
+				set {_reel2} to "&c♥&r"
+			if {_reel2} is 3:
+				set {_reel2} to "&c♦&r"
+			if {_reel2} is 4:
+				set {_reel2} to "♣"
+			if {_reel2} is 5:
+				set {_reel2} to "♠"
+			if {_reel2} is 6:
+				set {_reel2} to "○"
+			if {_reel2} is 7:
+				set {_reel2} to "•"
+			if {_reel2} is 8:
+				set {_reel2} to "&e☼&r"
+			if {_reel2} is 9:
+				set {_reel2} to "&6▲&r"
+			if {_reel2} is 10:
+				set {_reel2} to "&9▼&r"
+			if {_reel3} is 1:
+				set {_reel3} to "■"
+			if {_reel3} is 2:
+				set {_reel3} to "&c♥&r"
+			if {_reel3} is 3:
+				set {_reel3} to "&c♦&r"
+			if {_reel3} is 4:
+				set {_reel3} to "♣"
+			if {_reel3} is 5:
+				set {_reel3} to "♠"
+			if {_reel3} is 6:
+				set {_reel3} to "○"
+			if {_reel3} is 7:
+				set {_reel3} to "•"
+			if {_reel3} is 8:
+				set {_reel3} to "&e☼&r"
+			if {_reel3} is 9:
+				set {_reel3} to "&6▲&r"
+			if {_reel3} is 10:
+				set {_reel3} to "&9▼&r"
+			set line 2 of block to "%{_reel1}% %{_reel2}% %{_reel3}%"
+			wait 1 tick
+		loop 10 times:
+#			set {_reel1} to a random integer between 1 and 10
+#			set {_reel2} to a random integer between 1 and 10
+			set {_reel3} to a random integer between 1 and 10
+			if {_reel1} is 1:
+				set {_reel1} to "■"
+			if {_reel1} is 2:
+				set {_reel1} to "&c♥&r"
+			if {_reel1} is 3:
+				set {_reel1} to "&c♦&r"
+			if {_reel1} is 4:
+				set {_reel1} to "♣"
+			if {_reel1} is 5:
+				set {_reel1} to "♠"
+			if {_reel1} is 6:
+				set {_reel1} to "○"
+			if {_reel1} is 7:
+				set {_reel1} to "•"
+			if {_reel1} is 8:
+				set {_reel1} to "&e☼&r"
+			if {_reel1} is 9:
+				set {_reel1} to "&6▲&r"
+			if {_reel1} is 10:
+				set {_reel1} to "&9▼&r"
+			if {_reel2} is 1:
+				set {_reel2} to "■"
+			if {_reel2} is 2:
+				set {_reel2} to "&c♥&r"
+			if {_reel2} is 3:
+				set {_reel2} to "&c♦&r"
+			if {_reel2} is 4:
+				set {_reel2} to "♣"
+			if {_reel2} is 5:
+				set {_reel2} to "♠"
+			if {_reel2} is 6:
+				set {_reel2} to "○"
+			if {_reel2} is 7:
+				set {_reel2} to "•"
+			if {_reel2} is 8:
+				set {_reel2} to "&e☼&r"
+			if {_reel2} is 9:
+				set {_reel2} to "&6▲&r"
+			if {_reel2} is 10:
+				set {_reel2} to "&9▼&r"
+			if {_reel3} is 1:
+				set {_reel3} to "■"
+			if {_reel3} is 2:
+				set {_reel3} to "&c♥&r"
+			if {_reel3} is 3:
+				set {_reel3} to "&c♦&r"
+			if {_reel3} is 4:
+				set {_reel3} to "♣"
+			if {_reel3} is 5:
+				set {_reel3} to "♠"
+			if {_reel3} is 6:
+				set {_reel3} to "○"
+			if {_reel3} is 7:
+				set {_reel3} to "•"
+			if {_reel3} is 8:
+				set {_reel3} to "&e☼&r"
+			if {_reel3} is 9:
+				set {_reel3} to "&6▲&r"
+			if {_reel3} is 10:
+				set {_reel3} to "&9▼&r"
+			set line 2 of block to "%{_reel1}% %{_reel2}% %{_reel3}%"
+			wait 3 tick
+		loop all blocks in radius 2 of event-block:
+			if loop-block is lever:
+				toggle loop-block
+		set line 3 of block to "&a&oReady"
+		if {slots.made.%player%} is not set:
+			set {slots.made.%player%} to 0
+		if {_reel1} is {_reel2}:
+			if {_reel1} is {_reel3}:
+				if line 4 of block contains "10":
+					execute console command "eco give %player% 777"
+					broadcast "&b%player% &6won the slots jackpot of &a$777&6!"
+					add 777 to {slots.made.%player%}
+					add 777 to {slots.made.today.%player%}
+				if line 4 of block contains "50":
+					execute console command "eco give %player% 1000"
+					broadcast "&b%player% &6won the slots jackpot of &a$1000&6!"
+					add 1000 to {slots.made.%player%}
+					add 1000 to {slots.made.today.%player%}
+				if line 4 of block contains "200":
+					execute console command "eco give %player% 2000"
+					broadcast "&b%player% &6won the slots jackpot of &a$2000&6!"
+					add 2000 to {slots.made.%player%}
+					add 2000 to {slots.made.today.%player%}
+				if line 4 of block contains "777":
+					execute console command "eco give %player% 7500"
+					broadcast "&b%player% &6won the slots jackpot of &a$7500&6!"
+					add 7500 to {slots.made.%player%}
+					add 7500 to {slots.made.today.%player%}
+				if line 4 of block contains "1337":
+					execute console command "eco give %player% 12500"
+					broadcast "&b%player% &6won the slots jackpot of &a$12500&6!"
+					add 12500 to {slots.made.%player%}
+					add 12500 to {slots.made.today.%player%}
+				if line 4 of block contains "2222":
+					execute console command "eco give %player% 20000"
+					broadcast "&b%player% &6won the slots jackpot of &a$20000&6!"
+					add 20000 to {slots.made.%player%}
+					add 20000 to {slots.made.today.%player%}
+				loop all blocks in radius 3 of event-block:
+					loop-block is redstone lamp
+					set block at location of loop-block to glowstone
+					wait 20 ticks
+					set block at location of loop-block to redstone lamp
+					wait 20 ticks
+					set block at location of loop-block to glowstone
+					wait 20 ticks
+					set block at location of loop-block to redstone lamp
+					wait 20 ticks
+					set block at location of loop-block to glowstone
+					wait 20 ticks
+					set block at location of loop-block to redstone lamp
+				stop
+			if line 4 of block contains "10":
+				execute console command "eco give %player% 35"
+				message "&aYou just won  &a$35&6!"
+				add 35 to {slots.made.%player%}
+				add 35 to {slots.made.today.%player%}
+			if line 4 of block contains "50":
+				execute console command "eco give %player% 150"
+				message "&aYou just won  &a$150&6!"
+				add 150 to {slots.made.%player%}
+				add 150 to {slots.made.today.%player%}
+			if line 4 of block contains "200":
+				execute console command "eco give %player% 500"
+				message "&aYou just won  &a$500&6!"
+				add 500 to {slots.made.%player%}
+				add 500 to {slots.made.today.%player%}
+			if line 4 of block contains "777":
+				execute console command "eco give %player% 1999"
+				message "&aYou just won  &a$1999&6!"
+				add 1999 to {slots.made.%player%}
+				add 1999 to {slots.made.today.%player%}
+			if line 4 of block contains "1337":
+				execute console command "eco give %player% 3333"
+				message "&aYou just won  &a$3333&6!"
+				add 3333 to {slots.made.%player%}
+				add 3333 to {slots.made.today.%player%}
+			if line 4 of block contains "2222":
+				execute console command "eco give %player% 5555"
+				message "&aYou just won  &a$5555&6!"
+				add 5555 to {slots.made.%player%}
+				add 5555 to {slots.made.today.%player%}
+			loop all blocks in radius 3 of event-block:
+				loop-block is redstone lamp
+				set block at location of loop-block to glowstone
+				wait 20 ticks
+				set block at location of loop-block to redstone lamp
+				wait 20 ticks
+				set block at location of loop-block to glowstone
+				wait 20 ticks
+				set block at location of loop-block to redstone lamp
+				wait 20 ticks
+				set block at location of loop-block to glowstone
+				wait 20 ticks
+				set block at location of loop-block to redstone lamp
+			stop
+		if {_reel1} is {_reel3}:
+			if line 4 of block contains "10":
+				execute console command "eco give %player% 35"
+				message "&aYou just won  &a$35&6!"
+				add 35 to {slots.made.%player%}
+				add 35 to {slots.made.today.%player%}
+			if line 4 of block contains "50":
+				execute console command "eco give %player% 150"
+				message "&aYou just won  &a$150&6!"
+				add 150 to {slots.made.%player%}
+				add 150 to {slots.made.today.%player%}
+			if line 4 of block contains "200":
+				execute console command "eco give %player% 500"
+				message "&aYou just won  &a$500&6!"
+				add 500 to {slots.made.%player%}
+				add 500 to {slots.made.today.%player%}
+			if line 4 of block contains "777":
+				execute console command "eco give %player% 1999"
+				message "&aYou just won  &a$1999&6!"
+				add 1999 to {slots.made.%player%}
+				add 1999 to {slots.made.today.%player%}
+			if line 4 of block contains "1337":
+				execute console command "eco give %player% 3333"
+				message "&aYou just won  &a$3333&6!"
+				add 3333 to {slots.made.%player%}
+				add 3333 to {slots.made.today.%player%}
+			if line 4 of block contains "2222":
+				execute console command "eco give %player% 5555"
+				message "&aYou just won  &a$5555&6!"
+				add 5555 to {slots.made.%player%}
+				add 5555 to {slots.made.today.%player%}
+			loop all blocks in radius 3 of event-block:
+				loop-block is redstone lamp
+				set block at location of loop-block to glowstone
+				wait 20 ticks
+				set block at location of loop-block to redstone lamp
+				wait 20 ticks
+				set block at location of loop-block to glowstone
+				wait 20 ticks
+				set block at location of loop-block to redstone lamp
+				wait 20 ticks
+				set block at location of loop-block to glowstone
+				wait 20 ticks
+				set block at location of loop-block to redstone lamp
+			stop
+		if {_reel2} is {_reel3}:
+			if line 4 of block contains "10":
+				execute console command "eco give %player% 35"
+				message "&aYou just won  &a$35&6!"
+				add 35 to {slots.made.%player%}
+				add 35 to {slots.made.today.%player%}
+			if line 4 of block contains "50":
+				execute console command "eco give %player% 175"
+				message "&aYou just won  &a$175&6!"
+				add 175 to {slots.made.%player%}
+				add 175 to {slots.made.today.%player%}
+			if line 4 of block contains "200":
+				execute console command "eco give %player% 700"
+				message "&aYou just won  &a$700&6!"
+				add 700 to {slots.made.%player%}
+				add 700 to {slots.made.today.%player%}
+			if line 4 of block contains "777":
+				execute console command "eco give %player% 2625"
+				message "&aYou just won  &a$2625&6!"
+				add 2625 to {slots.made.%player%}
+				add 2625 to {slots.made.today.%player%}
+			if line 4 of block contains "1337":
+				execute console command "eco give %player% 4680"
+				message "&aYou just won  &a$4680&6!"
+				add 4680 to {slots.made.%player%}
+				add 4680 to {slots.made.today.%player%}
+			if line 4 of block contains "2222":
+				execute console command "eco give %player% 7777"
+				message "&aYou just won  &a$7777&6!"
+				add 7777 to {slots.made.%player%}
+				add 7777 to {slots.made.today.%player%}
+			loop all blocks in radius 3 of event-block:
+				loop-block is redstone lamp
+				set block at location of loop-block to glowstone
+				wait 20 ticks
+				set block at location of loop-block to redstone lamp
+				wait 20 ticks
+				set block at location of loop-block to glowstone
+				wait 20 ticks
+				set block at location of loop-block to redstone lamp
+				wait 20 ticks
+				set block at location of loop-block to glowstone
+				wait 20 ticks
+				set block at location of loop-block to redstone lamp
+			stop
+		message "&c&oYou lose. Try again?"
+		
+		
+command /coinflip:
+	trigger:
+		if {playing.coinflip.%player%} is not set:
+			set {playing.coinflip.%player%} to false
+		{playing.coinflip.%player%} is false
+		set {playing.coinflip.%player%} to true
+		if player's balance is less than {@coinflip-pay}:
+			message "&c&oInsufficient money to play this game"
+			stop
+		remove {@coinflip-pay} from player's balance
+		message "&a&o$50&r&o paid to play Coin Flip."
+		message "&aThe coin is tossed in the air..."
+		loop 5 times:
+			message "*Whirl*"
+			wait 5 ticks
+		wait 1 real second
+		set {_randomcoinflip} to a random integer between 1 and 2
+		if {_randomcoinflip} is 1:
+			message "&aIt's Heads! You win!"
+			execute console command "eco give %player% 100"
+		else:
+			message "&cIt's Tails! You lose!"
+		set {playing.coinflip.%player%} to false
+		json("%player%", "&f[&aPlay Again?&f]||cmd:/coinflip")
+command /coinflipman:
+	permission: is.pro
+	trigger:
+		spawn 1 butcher at location of player
+		loop all entities in radius 2 of player:
+			set name of loop-entity to "&6Dealer Urie"
+#			set speed of loop-entity to 0
+		message "&cAdded!"
+		
+
+
+on npc right click:
+	citizen is 101
+	make citizen 101 look at location of player
+	# name of clicked entity contains "Dealer Urie"
+	send "&f[&6Dealer Urie&f] Welcome! Would you like to play Coin Flip? It's &a$50&f to play." to player
+	json("%player%", "&f[&aPlay&f]||cmd:/coinflip2")
+	# cancel event
+	
+	
+	
+command /coinflip2:
+	permission: is.champion
+	trigger:
+		if {playing.coinflip.%player%} is not set:
+			set {playing.coinflip.%player%} to false
+		{playing.coinflip.%player%} is false
+		set {playing.coinflip.%player%} to true
+		if player's balance is less than 500:
+			message "&c&oInsufficient money to play this game"
+			stop
+		remove 500 from player's balance
+		message "&a&o$50&r&o paid to play Coin Flip."
+		message "&aThe coin is tossed in the air..."
+		loop 5 times:
+			message "*Whirl*"
+			wait 5 ticks
+		wait 1 real second
+		set {_randomcoinflip} to a random integer between 1 and 2
+		if {_randomcoinflip} is 1:
+			message "&aIt's Heads! You win!"
+			execute console command "eco give %player% 1000"
+		else:
+			message "&cIt's Tails! You lose!"
+		set {playing.coinflip.%player%} to false
+		json("%player%", "&f[&aPlay Again?&f]||cmd:/coinflip2")
+		
+
+on npc right click:
+	citizen is 197
+	make citizen 197 look at location of player
+	# name of clicked entity contains "Dealer Corp"
+	send "&f[&6Dealer Corp&f] Welcome! Would you like to play Coin Flip? It's &a$500&f to play." to player
+	json("%player%", "&f[&aPlay&f]||cmd:/coinflip2")
+	# cancel event
+			
+		
+		
+		
+		
+command /randnumman:
+	permission: is.pro
+	trigger:
+		spawn 1 butcher at location of player
+		loop all entities in radius 2 of player:
+			set name of loop-entity to "&6Dealer Athena"
+#			set speed of loop-entity to 0
+		message "&cAdded!"
+		
+
+
+on npc right click:
+	citizen is 102
+	make citizen 102 look at location of player
+	# name of clicked entity contains "Dealer Arizona"
+	# cancel event
+	if {playing.randomnum.%player%} is true:
+		send "&f[&6Dealer Arizona&f] Seems like you forgot to give me an answer earlier. Luckily I remembered my number." to player
+		send "Do you think it is higher or lower than 50?" to player
+		json("%player%", "&f[&aHigher&f]||cmd:/higher")
+		json("%player%", "&f[&cLower&f]||cmd:/lower")
+	else:
+		send "&f[&6Dealer Arizona&f] Welcome! Would you like to play Higher or Lower?" to player
+		json("%player%", "&f[&aPlay&f]||cmd:/randnum")
+			
+		
+command /randnum [<integer>]:
+	trigger:
+		if arg is not set:
+			if {playing.randomnum.%player%} is not set:
+				set {playing.randomnum.%player%} to false
+			if {playing.randomnum.%player%} is false:		
+				message "Select your bet:"
+				json("%player%", "&f[&a$10&f]||cmd:/randnum 10")
+				json("%player%", "&f[&a$100&f]||cmd:/randnum 100")
+				json("%player%", "&f[&a$1,000&f]||cmd:/randnum 1000")
+		else:
+			if arg is 10:
+				if player's balance is less than arg:
+					message "&c&oInsufficient money to play this game"
+					stop
+				execute console command "eco take %player% %arg%"
+			if arg is 100:
+				if player's balance is less than arg:
+					message "&c&oInsufficient money to play this game"
+					stop
+				execute console command "eco take %player% %arg%"
+			if arg is 1000:
+				if player's balance is less than arg:
+					message "&c&oInsufficient money to play this game"
+					stop
+				execute console command "eco take %player% %arg%"
+			set {playing.randomnum.%player%} to true
+			set {gamble.randomnum.%player%} to arg
+			send "&f[&6Dealer Athena&f] Ok. I have selected my number. Do you think it is higher or lower than 50?"
+			json("%player%", "&f[&aHigher&f]||cmd:/higher")
+			json("%player%", "&f[&cLower&f]||cmd:/lower")
+command /checkplayerrn <player>:
+	trigger:
+		message "%{playing.randomnum.%arg%}%"
+command /higher:
+	trigger:
+		{playing.randomnum.%player%} is true
+		set {playing.randomnum.%player%} to false
+		set {_randomasfucknumber} to a random integer between 1 and 100
+		if {_randomasfucknumber} is 50:
+			set {_randomasfucknumber} to a random integer between 1 and 100
+		if {_randomasfucknumber} is greater than 50:
+			message "&aThe number was %{_randomasfucknumber}%! You Win!"
+			set {gamble.randomnum.%player%} to {gamble.randomnum.%player%} * 2
+			execute console command "eco give %player% %{gamble.randomnum.%player%}%"
+			json("%player%", "&f[&aPlay Again?&f]||cmd:/randnum")
+		else:
+			message "&cThe number was %{_randomasfucknumber}%! You Lose!"
+			json("%player%", "&f[&aPlay Again?&f]||cmd:/randnum")
+			
+command /lower:
+	trigger:
+		{playing.randomnum.%player%} is true
+		set {playing.randomnum.%player%} to false
+		set {_randomasfucknumber} to a random integer between 1 and 100
+		if {_randomasfucknumber} is 50:
+			set {_randomasfucknumber} to a random integer between 1 and 100
+		if {_randomasfucknumber} is less than 50:
+			message "&aThe number was %{_randomasfucknumber}%! You Win!"
+			set {gamble.randomnum.%player%} to {gamble.randomnum.%player%} * 2
+			execute console command "eco give %player% %{gamble.randomnum.%player%}%"
+			json("%player%", "&f[&aPlay Again?&f]||cmd:/randnum")
+		else:
+			message "&cThe number was %{_randomasfucknumber}%! You Lose!"
+			json("%player%", "&f[&aPlay Again?&f]||cmd:/randnum")
+			
+		
+		
+		
+		
+		
+		
+		
+		
+command /rpsman:
+	permission: is.pro
+	trigger:
+		spawn 1 butcher at location of player
+		loop all entities in radius 2 of player:
+			set name of loop-entity to "&6Dealer Athena"
+#			set speed of loop-entity to 0
+		message "&cAdded!"
+		
+
+
+on npc right click:
+	citizen is 100
+	make citizen 100 look at location of player
+	# name of clicked entity contains "Dealer Athena"
+	send "&f[&6Dealer Athena&f] Welcome! Would you like to play Rock Paper Scissors? It's &a$10&f to play." to player
+	json("%player%", "&f[&aPlay&f]||cmd:/rps")
+	cancel event
+			
+		
+command /rps:
+	trigger:
+		if {playing.rps.%player%} is not set:
+			set {playing.rps.%player%} to false
+		{playing.rps.%player%} is false
+		set {playing.rps.%player%} to true
+		if player's balance is less than {@rps-pay}:
+			message "&c&oInsufficient money to play this game"
+			stop
+		remove {@rps-pay} from player's balance
+		message "&a&o$10&r&o paid to play rock paper scissors."
+		message "Select your choice:"
+		set {_randomrps} to a random integer between 1 and 3
+		 #1 is Rock
+		 #2 is Paper
+		 #3 is Scissors
+		json("%player%", "&f[&aRock&f]||cmd:/rock")
+		json("%player%", "&f[&aPaper&f]||cmd:/paper")
+		json("%player%", "&f[&aScissors&f]||cmd:/scissors")
+	#	if {_randomrps} is 1:
+	
+	
+on npc right click:
+	citizen is 196
+	make citizen 196 look at location of player
+	# name of clicked entity contains "Dealer Ashle"
+	send "&f[&6Dealer Ashlee&f] Welcome! Would you like to play Rock Paper Scissors? It's &a$1000&f to play." to player
+	json("%player%", "&f[&aPlay&f]||cmd:/rps2")
+	cancel event
+			
+		
+command /rps2:
+	permission: is.champion
+	trigger:
+		if {playing.rps.%player%} is not set:
+			set {playing.rps.%player%} to false
+		{playing.rps.%player%} is false
+		set {playing.rps.%player%} to true
+		if player's balance is less than {@rps-pay}:
+			message "&c&oInsufficient money to play this game"
+			stop
+		remove 1000 from player's balance
+		message "&a&o$1000&r&o paid to play rock paper scissors."
+		message "Select your choice:"
+		set {_randomrps} to a random integer between 1 and 3
+		 #1 is Rock
+		 #2 is Paper
+		 #3 is Scissors
+		json("%player%", "&f[&aRock&f]||cmd:/rock2")
+		json("%player%", "&f[&aPaper&f]||cmd:/paper2")
+		json("%player%", "&f[&aScissors&f]||cmd:/scissors2")
+	#	if {_randomrps} is 1:
+
+command /rock:
+	trigger:
+		{playing.rps.%player%} is true
+		set {playing.rps.%player%} to false
+		message "You throw &aRock..."
+		wait 1 real second
+		set {_randomrps} to a random integer between 1 and 3
+		if {_randomrps} is 1:
+			message "&3Dealer threw Rock! It's a tie! You get your money back."
+			execute console command "eco give %player% 10"
+			json("%player%", "&f[&aPlay Again?&f]||cmd:/rps")
+			stop
+		if {_randomrps} is 2:
+			message "&cDealer threw Paper! You lose!"
+			json("%player%", "&f[&aPlay Again?&f]||cmd:/rps")
+			stop
+		if {_randomrps} is 3:
+			message "&aDealer threw Scissors! You win!"
+			execute console command "eco give %player% 20"
+			json("%player%", "&f[&aPlay Again?&f]||cmd:/rps")
+			stop
+		
+command /paper:
+	trigger:
+		{playing.rps.%player%} is true
+		set {playing.rps.%player%} to false
+		message "You throw &aPaper..."
+		wait 1 real second
+		set {_randomrps} to a random integer between 1 and 3
+		if {_randomrps} is 1:
+			message "&aDealer threw Rock! You win!"
+			execute console command "eco give %player% 20"
+			json("%player%", "&f[&aPlay Again?&f]||cmd:/rps")
+			stop
+		if {_randomrps} is 2:
+			message "&eDealer threw Paper! It's a tie! You get your money back."
+			execute console command "eco give %player% 10"
+			json("%player%", "&f[&aPlay Again?&f]||cmd:/rps")
+			stop
+		if {_randomrps} is 3:
+			message "&cDealer threw Scissors! You lose!"
+			json("%player%", "&f[&aPlay Again?&f]||cmd:/rps")
+			stop
+			
+
+command /scissors:
+	trigger:
+		{playing.rps.%player%} is true
+		set {playing.rps.%player%} to false
+		message "You throw &aScissors"
+		wait 1 real second
+		set {_randomrps} to a random integer between 1 and 3
+		if {_randomrps} is 1:
+			message "&cDealer threw Rock! You lose!"
+			json("%player%", "&f[&aPlay Again?&f]||cmd:/rps")
+			stop
+		if {_randomrps} is 2:
+			message "&aDealer threw Paper! You win!"
+			execute console command "eco give %player% 20"
+			json("%player%", "&f[&aPlay Again?&f]||cmd:/rps")
+			stop
+		if {_randomrps} is 3:
+			message "&3Dealer threw Scissors! It's a tie! you get your money back."
+			execute console command "eco give %player% 10"
+			json("%player%", "&f[&aPlay Again?&f]||cmd:/rps")
+			stop
+			
+
+command /rock2:
+	trigger:
+		{playing.rps.%player%} is true
+		set {playing.rps.%player%} to false
+		message "You throw &aRock..."
+		wait 1 real second
+		set {_randomrps} to a random integer between 1 and 3
+		if {_randomrps} is 1:
+			message "&3Dealer threw Rock! It's a tie! You get your money back."
+			execute console command "eco give %player% 1000"
+			json("%player%", "&f[&aPlay Again?&f]||cmd:/rps")
+			stop
+		if {_randomrps} is 2:
+			message "&cDealer threw Paper! You lose!"
+			json("%player%", "&f[&aPlay Again?&f]||cmd:/rps")
+			stop
+		if {_randomrps} is 3:
+			message "&aDealer threw Scissors! You win!"
+			execute console command "eco give %player% 2000"
+			json("%player%", "&f[&aPlay Again?&f]||cmd:/rps")
+			stop
+		
+command /paper2:
+	trigger:
+		{playing.rps.%player%} is true
+		set {playing.rps.%player%} to false
+		message "You throw &aPaper..."
+		wait 1 real second
+		set {_randomrps} to a random integer between 1 and 3
+		if {_randomrps} is 1:
+			message "&aDealer threw Rock! You win!"
+			execute console command "eco give %player% 2000"
+			json("%player%", "&f[&aPlay Again?&f]||cmd:/rps")
+			stop
+		if {_randomrps} is 2:
+			message "&eDealer threw Paper! It's a tie! You get your money back."
+			execute console command "eco give %player% 1000"
+			json("%player%", "&f[&aPlay Again?&f]||cmd:/rps")
+			stop
+		if {_randomrps} is 3:
+			message "&cDealer threw Scissors! You lose!"
+			json("%player%", "&f[&aPlay Again?&f]||cmd:/rps")
+			stop
+command /scissors2:
+	trigger:
+		{playing.rps.%player%} is true
+		set {playing.rps.%player%} to false
+		message "You throw &aScissors"
+		wait 1 real second
+		set {_randomrps} to a random integer between 1 and 3
+		if {_randomrps} is 1:
+			message "&cDealer threw Rock! You lose!"
+			json("%player%", "&f[&aPlay Again?&f]||cmd:/rps")
+			stop
+		if {_randomrps} is 2:
+			message "&aDealer threw Paper! You win!"
+			execute console command "eco give %player% 2000"
+			json("%player%", "&f[&aPlay Again?&f]||cmd:/rps")
+			stop
+		if {_randomrps} is 3:
+			message "&3Dealer threw Scissors! It's a tie! you get your money back."
+			execute console command "eco give %player% 1000"
+			json("%player%", "&f[&aPlay Again?&f]||cmd:/rps")
+			stop
+
+# ============================
+# Craft's Big Casino Project =
+# ============================
+
+variables:
+	{cardlist::1} = "2 of hearts"
+	{cardlist::2} = "3 of hearts"
+	{cardlist::3} = "4 of hearts"
+	{cardlist::4} = "5 of hearts"
+	{cardlist::5} = "6 of hearts"
+	{cardlist::6} = "7 of hearts"
+	{cardlist::7} = "8 of hearts"
+	{cardlist::8} = "9 of hearts"
+	{cardlist::9} = "10 of hearts"
+	{cardlist::10} = "Jack of hearts"
+	{cardlist::11} = "Queen of hearts"
+	{cardlist::12} = "King of hearts"
+	{cardlist::13} = "Ace of hearts"
+	{cardlist::14} = "2 of clubs"
+	{cardlist::15} = "3 of clubs"
+	{cardlist::16} = "4 of clubs"
+	{cardlist::17} = "5 of clubs"
+	{cardlist::18} = "6 of clubs"
+	{cardlist::19} = "7 of clubs"
+	{cardlist::20} = "8 of clubs"
+	{cardlist::21} = "9 of clubs"
+	{cardlist::22} = "10 of clubs"
+	{cardlist::23} = "Jack of clubs"
+	{cardlist::24} = "Queen of clubs"
+	{cardlist::25} = "King of clubs"
+	{cardlist::26} = "Ace of clubs"
+	{cardlist::27} = "2 of diamonds"
+	{cardlist::28} = "3 of diamonds"
+	{cardlist::29} = "4 of diamonds"
+	{cardlist::30} = "5 of diamonds"
+	{cardlist::31} = "6 of diamonds"
+	{cardlist::32} = "7 of diamonds"
+	{cardlist::33} = "8 of diamonds"
+	{cardlist::34} = "9 of diamonds"
+	{cardlist::35} = "10 of diamonds"
+	{cardlist::36} = "Jack of diamonds"
+	{cardlist::37} = "Queen of diamonds"
+	{cardlist::38} = "King of diamonds"
+	{cardlist::39} = "Ace of diamonds"
+	{cardlist::40} = "2 of spades"
+	{cardlist::41} = "3 of spades"
+	{cardlist::42} = "4 of spades"
+	{cardlist::43} = "5 of spades"
+	{cardlist::44} = "6 of spades"
+	{cardlist::45} = "7 of spades"
+	{cardlist::46} = "8 of spades"
+	{cardlist::47} = "9 of spades"
+	{cardlist::48} = "10 of spades"
+	{cardlist::49} = "Jack of spades"
+	{cardlist::50} = "Queen of spades"
+	{cardlist::51} = "King of spades"
+	{cardlist::52} = "Ace of spades"
+
+command /dellist <text>:
+	trigger:
+		player is op:
+			loop {%arg%::*}:
+				message "%loop-value%"
+			message "deleting..."
+			wait 3 seconds
+			delete {%arg%::*}
+			message "deleted!"
+command /listcards:
+	trigger:
+#		player is op:
+		loop {cardlist::*}:
+			json("%player%", "%loop-index%||ttp:%loop-value%")
+			delete {_number}
+
+command /checkcard <integer>:
+	trigger:
+		json("%player%", "Hover over this to see your card: %arg%||ttp:%{cardlist::%arg%}%")
+
+command /dealme:
+	trigger:
+		# rather not have regular players fiddle with this #
+#		if player has permission "essentials.socialspy":
+		delete {cardname1.%player%}
+		delete {cardname2.%player%}
+		if {pokerplayercount} is not set:
+			set {pokerplayercount} to 1
+		set {cardstodeal} to 5 + {pokerplayercount} * 2
+		message "Amount of cards to deal: %{cardstodeal}%"
+		set {card1.%player%} to random integer between 1 and 52
+		set {card2.%player%} to random integer between 1 and 52
+		while {card1.%player%} is equal to {card2.%player%}:
+			set {card2.%player%} to random integer between 1 and 52
+			wait 1 second
+		message "Card 1 index: %{card1.%player%}%"
+		message "Card 2 index: %{card2.%player%}%"
+		loop {cardlist::*}:
+			set {_number} to {_number} + 1
+			if {_number} is equal to {card1.%player%}:
+				message "Card 1: %{cardlist::%loop-index%}%"
+			else:
+				if {card2.%player%} is equal to {_number}:
+					message "Card 2: %{cardlist::%loop-index%}%"
+		delete {_number}
+				

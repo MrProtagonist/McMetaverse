@@ -1,0 +1,6 @@
+script options:
+	$ developer mode
+	
+command /glow:
+	trigger:
+		make player glow

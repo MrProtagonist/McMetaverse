@@ -121,6 +121,92 @@ on rightclick on villager:
 	send "&f[&6Jakob&f] ...Have you seen my sister &6Annie&f?" to player
 	cancel event
 	
+on npc right click:
+	citizen is 90
+	make citizen 90 look at location of player
+	send "&f[&6Champion&f] Hello fellow champion! Be sure to explore around and enjoy your stay!" to player
+	cancel event
+	
+on npc right click:
+	citizen is 85
+	make citizen 85 look at location of player
+	send "&f[&6Natasha&f] Well hi there.  Have you been to the high-stakes casino yet?" to player	
+	wait 2 real seconds
+	send "&f[&6Natasha&f] You can win big there, if you've got the courage to try." to player
+	cancel event
+
+on npc right click:
+	citizen is 86
+	make citizen 86 look at location of player
+	send "&f[&6Dirk&f] Have a drink.  This is top shelf stuff here." to player
+	cancel event	
+	
+on npc right click:
+	citizen is 91
+	make citizen 91 look at location of player
+	send "&f[&6Misha&f] Hey good lookin! What's cookin?" to player
+	cancel event
+	
+on npc right click:
+	citizen is 88
+	make citizen 88 look at location of player
+	send "&f[&6Jax&f] It's a cold world out there... Trust nobody." to player
+	cancel event	
+	
+on npc right click:
+	citizen is 89
+	make citizen 89 look at location of player
+	if {duped.%player%} is true:
+		send "&f[&6George&f] &cI just don't understand... It was a sure thing..." to player
+		stop
+	else:
+		send "&f[&6George&f] I've got a hot tip on the racehorses, but I'm all tapped out. If you loan me some money, we can split it when the ponies come in." to player
+		wait 3 real seconds
+		send "&f[&6George&f] What do you say, buddy?  Want to help a friend out?" to player
+		json("%player%", "&f[&a$500&f]||cmd:/champbet 500")
+		json("%player%", "&f[&a$1000&f]||cmd:/champbet 1000")
+		json("%player%", "&f[&a$2000&f]||cmd:/champbet 2000")
+		cancel event	
+	
+command /champbet <integer>:
+	permission: is.champion
+	trigger:
+		if arg is 500:
+			execute console command "eco take %player% 500"
+		if arg is 1000:
+			execute console command "eco take %player% 1000"
+		if arg is 2000:
+			execute console command "eco take %player% 2000"
+		send "&f[&6George&f] &aThanks! Come back soon, I'll have your reward!" to player
+		wait 1 real minute
+		set {duped.%player%} to true
+		if {dupetimes.%player%} is not set:
+			set {dupetimes.%player%} to 0
+		add 1 to {dupetimes.%player%}
+command /checkdupe <player>:
+	trigger:
+		message "&e%arg% &fhas been duped &a%{dupetimes.%arg%}% times&f."
+on join:
+	{duped.%player%} is true
+	delete {duped.%player%}
+
+on npc right click:
+	citizen is 111
+	make citizen 111 look at location of player
+	send "&f[&6Bartender&f] Care for a drink?" to player
+	wait 2 real seconds
+	send "&f[&6Bartender&f] Why don't you &a/sit &fdown on a stool and take a load off, buddy." to player
+	cancel event
+	
+on npc right click:
+	citizen is 365
+	make citizen 85 look at location of player
+	send "&f[&6McMetaverse Greeter&f] &7Welcome to the server, &a%player%&7! We're happy to have you join us." to player	
+	wait 1 real seconds
+	send "&f[&6McMetaverse Greeter&f] &7If you have any questions, feel free to ask in chat.  We're very friendly." to player
+	wait 2 real seconds
+	send "&f[&6McMetaverse Greeter&f] &7Be sure to read the signs around Spawn to learn more about the server." to player
+	
 on rightclick on villager:
 	name of clicked entity contains "&bJoey"
 	cancel event

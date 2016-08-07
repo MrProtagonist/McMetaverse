@@ -1,0 +1,100 @@
+on any move:
+	if {hideseek.going} is true:
+		if {hideseek.%player%.playing} is true:
+			if player is sneaking:
+				wait 9 ticks
+				set {_returnhider} to location of player
+				wait 1 tick
+				teleport player to {_returnhider}
+command /starthide&seek:
+	trigger:
+		{hideseek.editor} is true
+		message "&cStarted"
+		set {hideseek.going} to true
+		set {hideseek.timer} to 0
+		while {hideseek.going} is true:
+			wait 2 ticks
+			add 1 to {hideseek.timer}
+			if {hideseek.timer} is greater than 99:
+				set {hideseek.going} to false
+				message "&cEnded"
+			else:
+				loop all players:
+					if {hideseek.%player%.playing} is true:
+						if loop-player isn't sneaking:
+							if {hidden.%loop-player%} is true:
+								set {hidden.%loop-player%} to false
+								set {shown.%loop-player%} to true
+								message "&cYou are now shown! Sneak down and release again to hide!"
+								reveal loop-player to all players
+								set block at location of {hideblock.%loop-player%} to air
+								delete {hideblock.%loop-player%}
+command /joinhide&seek:
+	trigger:
+		{hideseek.editor} is true
+		set {hideseek.%player%.playing} to true
+		message "&cAdded to hide & seek"
+command /leavehide&seek:
+	trigger:
+		{hideseek.editor} is true
+		set {hideseek.%player%.playing} to false
+		message "&cRemoved from hide & seek"
+on sneak toggle:
+	if {hideseek.going} is true:
+		if player isn't sneaking:
+			if {hidden.%player%} isn't set:
+				set {hidden.%player%} to true
+			if {shown.%player%} isn't set:
+				set {shown.%player%} to true
+			{hideseek.%player%.playing} is true
+			if {hideblock.%player%} isn't set:
+				set {hideblock.%player%} to location of block at the player
+				remove player from {hideblock.players::*}
+				add player to {hideblock.players::*}
+				set block at player's location to melon
+				set the player's gamemode to survival
+				wait 15 ticks
+				if {shown.%player%} is true:
+					set {shown.%player%} to false
+					set {hidden.%player%} to true
+					message "&aYour are now hidden as a &l%{hideseek.%player%.block}%! &r&aDo not move a muscle!"
+					hide player from all players
+				if {hidden.%player%} is true:
+					set {shown.%player%} to false
+					set {hidden.%player%} to true
+					message "&aYour are now hidden as a &l%{hideseek.%player%.block}%! &r&aDo not move a muscle!"
+					hide player from all players
+on left click:
+	if {hideseek.going} is true:
+		{hideseek.%player%.playing} is true
+		loop {hideblock.players::*}:
+			if location of clicked block is {hideblock.%loop-value%}:
+				set block at location of {hideblock.%loop-value%} to air
+				delete {hideblock.%loop-value%}
+				set {_hideplayer} to loop-value
+				reveal {_hideplayer} to all players
+				message "&4You found %{_hideplayer}%!"
+				send "&cYou have been revealed! Run and hide for your life!" to {_hideplayer}
+				stop
+			else:
+				message "&cHit the melon"
+command /hideseek:
+	trigger:
+		player is "craftio"
+		if {hideseek.going} is not set:
+			set {hideseek.going} to true
+			message "Editor mode OFF"
+			set {hideseek.%player%.playing} to true
+			set {hideseek.%player%.block} to "melon block"
+			set {hideseek.editor} to true
+		else:
+			delete {hideseek.going}
+			message "Editor mode ON"
+			set {hideseek.%player%.playing} to false
+			delete {hideblock.%player%}
+			delete {hideblock.players::*}
+			set {hideseek.editor} to false
+command /hideseekshow:
+	trigger:
+		loop {hideblock.players::*}:
+			message "&e%loop-index% - %loop-value%"

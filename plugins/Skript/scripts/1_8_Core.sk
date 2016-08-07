@@ -8,10 +8,30 @@
 			wait 2 ticks
 			teleport player to {_templocation}
 			send "&4&lGET THE FUCK OUT" to the player
-on damage:
-	"%region at victim%" contains "spawn"
-	damage was caused by fire or burning
-	cancel event
+#every 2 real seconds:
+#	loop all players:
+#		if loop-player does not have permission "is.op":
+#			loop-player is in world "MetaOmega" or "MetaOmega_the_end" or "MetaOmega_nether"
+#			teleport loop-player to {spawn}
+#			teleport loop-player to {spawn}
+on join:
+	{wiped.%player%} is not set
+	set {wiped.%player%} to true
+	execute console command "eco reset %player%"
+	set {bank.vault::%UUID of player%} to 0
+	teleport player to {spawn}
+	teleport player to {spawn}
+command /wipeme:
+	permission: is.op
+	trigger:
+		{wiped.%player%} is not set
+		set {wiped.%player%} to true
+		execute console command "eco reset %player%"
+		set {bank.vault::%UUID of player%} to 0
+#on damage:
+#	"%region at victim%" contains "spawn"
+#	damage was caused by fire or burning
+#	cancel event
 on join:
 	if player's world is "Metacurse":
 		if player does not have permission "essentials.socialspy":
@@ -43,7 +63,7 @@ command /leash:
 			if player can build at location of targeted entity:
 				make player leash  targeted entity
 			else:
-				message "&cYou can't leash an entity where you can't built!"
+				message "&cYou can't leash an entity where you can't build!"
 		else:
 			message "&cYou don't have a leash dumbass!"
 on command "/butcher":
@@ -54,7 +74,7 @@ on join:
 		set {villager.%player%.traded} to now
 on rightclick on villager:
 #	clicked entity has offers
-	name of clicked entity does not contain "Teller"
+	name of clicked entity does not contain "Teller" or "Dealer"
 #	set {_trade} to 1 trade of clicked entity
 #	if third item of {_trade} is emerald:
 	if difference between {villager.%player%.traded} and now is smaller than 3 minutes:
@@ -112,87 +132,69 @@ on place:
 	event-player's world is "Never_End"
 	add location of event-block to {the.never.end.placed::*}
 command /colors:
+	aliases: /colours
 	trigger:
-		message "These are all the color codes you can use in the metaverse!"
-		message "& 0 gives you &0Black"
-		message "& 1 gives you &1Dark Blue"
-		message "& 2 gives you &2Dark Green"
-		message "& 3 gives you &3Cyan"
-		message "& 4 gives you &4Dark Red"
-		message "& 5 gives you &5Dark Pink"
-		message "& 6 gives you &6Gold Yellow"
-		message "& 7 gives you &7Light Gray"
-		message "& 8 gives you &8Dark Gray"
-		message "& 9 gives you &9Light Blue"
-		message "& a gives you &aLight Green"
-		message "& b gives you &bAqua Blue"
-		message "& c gives you &cLight Red"
-		message "& d gives you &dLight Pink"
-		message "& e gives you &eYellow"
-		message "& f gives you &fWhite"
-		message "& l gives you &lBold (Fat) Text"
-		message "& n gives you &nUnderlined Text"
-		message "& o gives you &oItallic (Cursive) Text"
-		message "& r resets the color coded text before"
+		message "&eThese are all the format codes you can use in the metaverse!"
+		json("%player%", "&eMove your cursor over the word: &a&l&oColors||ttp:- &&r0 gives you &0Black%new line%&r- &&r1 gives you &1Dark Blue%new line%&r- &&r2 gives you &2Dark Green%new line%&r- &&r3 gives you &3Cyan%new line%&r- &&r4 gives you &4Dark Red%new line%&r- &&r5 gives you &5Dark Pink%new line%&r- &&r6 gives you &6Gold Yellow%new line%&r- &&r7 gives you &7Light Gray%new line%&r- &&r8 gives you &8Dark Gray%new line%&r- &&r9 gives you &9Light Blue%new line%&r- &&ra gives you &aLight Green%new line%&r- &&rb gives you &bAqua Blue%new line%&r- &&rc gives you &cLight Red%new line%&r- &&rd gives you &dLight Pink%new line%&r- &&re gives you &eYellow%new line%&r- &&rf gives you &fWhite%new line%&r- &&rl gives you &lBold (Fat) Text%new line%&r- &&rn gives you &nUnderlined Text%new line%&r- &&ro gives you &oItallic (Cursive) Text%new line%&r- &&rr resets the color coded text before")
 		
-command /staff [<text>] [<text>]:
-	trigger:
-		if arg 1 is set:
-			if arg 1 is "delete":
-				player has the permission "is.op"
-				if {staff.members::%arg 2%} is set:
-					message "&aRemoved from staff list!"
-					remove {staff.members::%arg 2%} from {staff.members::*}
-					stop
-				else:
-					message "&cEntry not found!"
-					stop
-		else:
-			delete {owners.online::*}
-			delete {admins.online::*}
-			delete {mods.online::*}
-			delete {builders.online::*}
-			delete {headmod.online::*}
-			delete {devs.online::*}
-			loop all players:
-				if primary group of loop-player is "Owner":
-					add loop-player to {owners.online::*}
-				if primary group of loop-player is "Mod":
-					add loop-player to {mods.online::*}
-				if primary group of loop-player is "Admin":
-					add loop-player to {admins.online::*}
-				if primary group of loop-player is "Dev":
-					add loop-player to {devs.online::*}
-				if primary group of loop-player is "Builder":
-					add loop-player to {builders.online::*}
-				if primary group of loop-player is "HeadMod":
-					add loop-player to {headmod.online::*}
-			if {owners.online::1} is set:
-				message "&a&lOwners&e online:"
-				loop {owners.online::*}:
-					message " &6 %loop-value%"
-			if {devs.online::1} is set:
-				message "&a&lDevs&e online:"
-				loop {devs.online::*}:
-					message " &6 %loop-value%"
-			if {admins.online::1} is set:
-				message "&a&lAdmins&e online:"
-				loop {admins.online::*}:
-					message " &6 %loop-value%"
-			if {builders.online::1} is set:
-				message "&a&lWorld Builders&e online:"
-				loop {builders.online::*}:
-					message " &6 %loop-value%"
-			if {headmod.online::1} is set:
-				message "&a&lHead Mods&e online:"
-				loop {headmod.online::*}:
-					message " &6 %loop-value%"
-			if {mods.online::1} is set:
-				message "&a&lMods&e online:"
-				loop {mods.online::*}:
-					message " &6 %loop-value%"
-					
-					
+#command /staff [<text>] [<text>]:
+#	trigger:
+#		if arg 1 is set:
+#			if arg 1 is "delete":
+#				player has the permission "is.op"
+#				if {staff.members::%arg 2%} is set:
+#					message "&aRemoved from staff list!"
+#					remove {staff.members::%arg 2%} from {staff.members::*}
+#					stop
+#				else:
+#					message "&cEntry not found!"
+#					stop
+#		else:
+#			delete {owners.online::*}
+#			delete {admins.online::*}
+#			delete {mods.online::*}
+#			delete {builders.online::*}
+#			delete {headmod.online::*}
+#			delete {devs.online::*}
+#			loop all players:
+#				if primary group of loop-player is "Owner":
+#					add loop-player to {owners.online::*}
+#				if primary group of loop-player is "Mod":
+#					add loop-player to {mods.online::*}
+#				if primary group of loop-player is "Admin":
+#					add loop-player to {admins.online::*}
+#				if primary group of loop-player is "Dev":
+#					add loop-player to {devs.online::*}
+#				if primary group of loop-player is "Builder":
+#					add loop-player to {builders.online::*}
+#				if primary group of loop-player is "HeadMod":
+#					add loop-player to {headmod.online::*}
+#			if {owners.online::1} is set:
+#				message "&a&lOwners&e online:"
+#				loop {owners.online::*}:
+#					message " &6 %loop-value%"
+#			if {devs.online::1} is set:
+#				message "&a&lDevs&e online:"
+#				loop {devs.online::*}:
+#					message " &6 %loop-value%"
+#			if {admins.online::1} is set:
+#				message "&a&lAdmins&e online:"
+#				loop {admins.online::*}:
+#					message " &6 %loop-value%"
+#			if {builders.online::1} is set:
+#				message "&a&lWorld Builders&e online:"
+#				loop {builders.online::*}:
+#					message " &6 %loop-value%"
+#			if {headmod.online::1} is set:
+#				message "&a&lHead Mods&e online:"
+#				loop {headmod.online::*}:
+#					message " &6 %loop-value%"
+#			if {mods.online::1} is set:
+#				message "&a&lMods&e online:"
+#				loop {mods.online::*}:
+#					message " &6 %loop-value%"
+#					
+#					
 #				if loop-value is "now":
 #					message "&a%loop-index%&f &eis online."
 #				else:

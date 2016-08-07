@@ -74,7 +74,7 @@ effect command token: !
 #	!create explosion of force 10000 - likely crashes the server or at least hangs it up for a long time
 #	!ban all players - as the effect implies
 
-allow ops to use effect commands: false
+allow ops to use effect commands: true
 # Whether server operators which do not have the permission "skript.effectcommands" should have access to effect commands.
 # This setting is mainly useful for servers that do not run any permissions plugin.
 

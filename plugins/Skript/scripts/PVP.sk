@@ -1,5 +1,5 @@
-script options:
-	$ developer mode
+#script options:
+#	$ developer mode
 
 variables:
 		{logincount} = 10000
@@ -192,7 +192,13 @@ command /togglepvp:
 						set {pvp.%player%} to 1
 						message "<yellow>PVP is &c&oactivated&r<yellow>!"
 						stop trigger
+					
 
+on combust:
+	event-entity is a player
+	{pvp.%name of event-entity%} is 0
+	cancel event
+	set {fireprotect.%name of event-entity%} to false
 on damage:
 	victim is a player
 	attacker is a player
@@ -206,9 +212,20 @@ on damage:
 #		send "PVP should be working." to attacker
 	if {pvp.%victim%} is 0:
 		cancel event
+		# set {fireprotect.%victim%} to true
 		send "<yellow>You can't attack players that have PVP turned off!" to attacker
+		# wait 1 real second
+		# set {fireprotect.%victim%} to false
 #	else:
 #		send "PVP should be working." to victim
+# on damage:
+	# broadcast "DEBUG - %damage cause%"
+	# damage cause is burning or fire
+	# broadcast "DEBUG 1"
+	# {pvp.%victim%} is 0
+	# broadcast "DEBUG 2"
+	# cancel event
+	# extinguish the victim
 on death:
 	victim is a player
 	attacker is a player

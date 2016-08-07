@@ -1,0 +1,158 @@
+worlds:
+  sandbox:
+    road:
+      width: 7
+      height: 64
+      block: '98'
+    plot:
+      size: 75
+      floor:
+      - '12'
+      filling:
+      - '12'
+      height: 64
+      biome: FOREST
+      bedrock: true
+      create_signs: true
+      auto_merge: false
+    wall:
+      height: 64
+      filling: '1:0'
+      block_claimed: '44:1'
+      block: '44'
+    event:
+      spawn:
+        breeding: false
+        egg: false
+        custom: true
+      pvp: false
+      pve: false
+    economy:
+      use: false
+      prices:
+        claim: 100.0
+        sell: 75.0
+        merge: 100.0
+    home:
+      allow-nonmembers: false
+      default: side
+    world:
+      border: false
+      gamemode: creative
+      max_height: 256
+      min_height: 1
+    schematic:
+      file: 'null'
+      on_claim: false
+      specify_on_claim: false
+    limits:
+      max-members: 128
+    chat:
+      enabled: false
+    flags: {}
+    natural_mob_spawning: false
+    mob_spawner_spawning: false
+  contest:
+    road:
+      width: 7
+      height: 64
+      block: '98'
+    plot:
+      size: 35
+      floor:
+      - '2'
+      filling:
+      - '3'
+      height: 64
+      biome: FOREST
+      bedrock: true
+      create_signs: true
+      auto_merge: false
+    wall:
+      height: 64
+      filling: '1:0'
+      block_claimed: '44:1'
+      block: '44'
+    event:
+      spawn:
+        breeding: false
+        egg: false
+        custom: true
+      pvp: false
+      pve: false
+    economy:
+      use: false
+      prices:
+        claim: 100.0
+        sell: 75.0
+        merge: 100.0
+    home:
+      allow-nonmembers: false
+      default: side
+    world:
+      border: false
+      gamemode: creative
+      max_height: 256
+      min_height: 1
+    schematic:
+      file: 'null'
+      on_claim: false
+      specify_on_claim: false
+    limits:
+      max-members: 128
+    chat:
+      enabled: false
+    flags: {}
+    natural_mob_spawning: false
+    mob_spawner_spawning: false
+  plotmetest:
+    road:
+      width: 0
+      height: 0
+      block: '155:0'
+    plot:
+      size: 0
+      floor:
+      - null
+      filling:
+      - null
+      height: 64
+      biome: FOREST
+      auto_merge: false
+      bedrock: true
+      create_signs: true
+    wall:
+      filling: '1:0'
+      block_claimed: '44:1'
+      height: 64
+      block: '44:0'
+    home:
+      default: side
+      allow-nonmembers: false
+    schematic:
+      specify_on_claim: false
+      on_claim: false
+      file: 'null'
+    economy:
+      prices:
+        merge: 100
+        sell: 100
+        claim: 100
+      use: false
+    chat:
+      enabled: false
+    limits:
+      max-members: 128
+    world:
+      max_height: 256
+      gamemode: creative
+      min_height: 1
+      border: false
+    event:
+      spawn:
+        egg: false
+        breeding: false
+        custom: true
+    natural_mob_spawning: false
+    mob_spawner_spawning: false
+    flags: {}

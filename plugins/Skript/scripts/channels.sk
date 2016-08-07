@@ -25,60 +25,79 @@ on join:
 on quit:
 	if player has permission "essentials.socialspy":
 		set {adminchat.%player%} to false
-command /a [<text>]:
-	permission: essentials.socialspy
-	trigger:
-		if arg is not set:
-			if {adminchat.%player%} is not set:
-				set {adminchat.%player%} to true
-				message "Adminchat: &2ON!"
-			else:
-				if {adminchat.%player%} is true:
-					set {adminchat.%player%} to false
-					message "Adminchat: &4OFF!"
-				else:
-					set {adminchat.%player%} to true
-					message "Adminchat: &2ON!"
-		else:
-			loop all players:
-				if loop-player has the permission "essentials.socialspy":
-					send "&f[&a%event-player%&f]&b: %arg%" to the loop-player
-command /ac [<text>]:
-	permission: essentials.socialspy
-	trigger:
-		if arg is not set:
-			if {adminchat.%player%} is not set:
-				set {adminchat.%player%} to true
-				message "Adminchat: &2ON!"
-			else:
-				if {adminchat.%player%} is true:
-					set {adminchat.%player%} to false
-					message "Adminchat: &4OFF!"
-				else:
-					set {adminchat.%player%} to true
-					message "Adminchat: &2ON!"
-		else:
-			loop all players:
-				if loop-player has the permission "essentials.socialspy":
-					send "&f[&a%event-player%&f]&b: %arg%" to the loop-player
-command /adminchat [<text>]:
-	permission: essentials.socialspy
-	trigger:
-		if arg is not set:
-			if {adminchat.%player%} is not set:
-				set {adminchat.%player%} to true
-				message "Adminchat: &2ON!"
-			else:
-				if {adminchat.%player%} is true:
-					set {adminchat.%player%} to false
-					message "Adminchat: &4OFF!"
-				else:
-					set {adminchat.%player%} to true
-					message "Adminchat: &2ON!"
-		else:
-			loop all players:
-				if loop-player has the permission "essentials.socialspy":
-					send "&f[&a%event-player%&f]&b: %arg%" to the loop-player
+#command /a [<text>]:
+#	aliases: /ac, /adminchat
+#	permission: essentials.socialspy
+#	trigger:
+#		if arg is not set:
+#			if {adminchat.%player%} is not set:
+#				set {adminchat.%player%} to true
+#				message "Adminchat: &2ON!"
+#				if {channel.%player%.enabled} is true:
+#					set {channel.%player%.enabled} to false
+#					message "&aToggled private chat channel."
+#			else:
+#				if {adminchat.%player%} is true:
+#					set {adminchat.%player%} to false
+#					message "Adminchat: &4OFF!"
+#				else:
+#					set {adminchat.%player%} to true
+#					message "Adminchat: &2ON!"
+#					if {channel.%player%.enabled} is true:
+#						set {channel.%player%.enabled} to false
+#						message "&aToggled private chat channel."
+#		else:
+#			loop all players:
+#				if loop-player has the permission "essentials.socialspy":
+#					send "&f[&a%event-player%&f]&b: %arg%" to the loop-player
+#command /ac [<text>]:
+#	permission: essentials.socialspy
+#	trigger:
+#		if arg is not set:
+#			if {adminchat.%player%} is not set:
+#				set {adminchat.%player%} to true
+#				message "Adminchat: &2ON!"
+#				if {channel.%player%.enabled} is true:
+#					set {channel.%player%.enabled} to false
+#					message "&aToggled private chat channel."
+#			else:
+#				if {adminchat.%player%} is true:
+#					set {adminchat.%player%} to false
+#					message "Adminchat: &4OFF!"
+#				else:
+#					set {adminchat.%player%} to true
+#					message "Adminchat: &2ON!"
+#					if {channel.%player%.enabled} is true:
+#						set {channel.%player%.enabled} to false
+#						message "&aToggled private chat channel."
+#		else:
+#			loop all players:
+#				if loop-player has the permission "essentials.socialspy":
+#					send "&f[&a%event-player%&f]&b: %arg%" to the loop-player
+#command /adminchat [<text>]:
+#	permission: essentials.socialspy
+#	trigger:
+#		if arg is not set:
+#			if {adminchat.%player%} is not set:
+#				set {adminchat.%player%} to true
+#				message "Adminchat: &2ON!"
+#				if {channel.%player%.enabled} is true:
+#					set {channel.%player%.enabled} to false
+#					message "&aToggled private chat channel."
+#			else:
+#				if {adminchat.%player%} is true:
+#					set {adminchat.%player%} to false
+#					message "Adminchat: &4OFF!"
+#				else:
+#					set {adminchat.%player%} to true
+#					message "Adminchat: &2ON!"
+#					if {channel.%player%.enabled} is true:
+#						set {channel.%player%.enabled} to false
+#						message "&aToggled private chat channel."
+#		else:
+#			loop all players:
+#				if loop-player has the permission "essentials.socialspy":
+#					send "&f[&a%event-player%&f]&b: %arg%" to the loop-player
 command /closechat <text> <text>:
 	permission: is.pro
 	trigger:

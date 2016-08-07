@@ -95,7 +95,7 @@ command /changelog [<integer=1>]:
             set {_t} to size of {change.index::*} - loop-number - 1
             if loop-number > ((arg)-1)*15:
                 if loop-number <= arg*15:
-                    send umbaska json of "&f[&a%{change.index::%{_t}%}%&f]" tooltip "%colored {change.log.%{change.index::%{_t}%}%::*}%" to player
+                    json("%player%", "&f[&a%{change.index::%{_t}%}%&f]||ttp:%colored {change.log.%{change.index::%{_t}%}%::*}%")
         #loop {_Toplist::*}:
         #    if {_temp} > ((arg)-1)*15:
         #        if {_temp} <= arg*15:

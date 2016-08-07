@@ -1,0 +1,62 @@
+on join:
+	if player has permission "essentials.socialspy":
+		set {staff.%player%.login} to now
+		if {staffcount} is not set:
+			set {staffcount} to 0
+		loop {stafflist::*}:
+			if player is not loop-value:
+				add 1 to {_counter}
+		if {staffcount} is equal to {_counter}:
+			add 1 to {staffcount}
+			add player to {stafflist::*}
+command /staff [<text>] [<text>]:
+	permission: essentials.socialspy
+	trigger:
+		if arg-1 is not set:
+			set {_now} to now
+			loop {stafflist::*}:
+# =========================================================================================================
+# json is cleaner but apparently that "goes through chat too fast" permission to kill myself please. ~Craft
+#			json("%player%", "&a&l%loop-index%&r. &b&o%loop-value%&r||ttp:%{_now}%") 
+# =========================================================================================================
+				if loop-value is not online:
+					set {_offlinedays} to difference between {staff.%loop-value%.logout} and now
+					message "&6%loop-value%&f: &a%{_offlinedays}%."
+				# else:
+				#	message "&7&l%loop-index%&r. &6%loop-value% &f[&aOnline since&f]: &b%{staff.%loop-value%.login}%."
+#				#	message "&a&l%loop-index%&r. &b%loop-value% - %{staff.%loop-value%.logout}%&r."
+#				#	message "Days offline: %{_offlinedays}%"
+		#	message "Current time and date: &c&n%{_now}%&r."
+
+command /addstaff <offlineplayer> <integer>:
+	trigger:
+		if player has the permission "is.op":
+			if arg-1 is set:
+				if arg-2 is set:
+					add 1 to {staffcount}
+					add arg-1 to {stafflist::*}
+					set {_oldnow} to now
+					loop arg-2 times:
+						subtract a day from {_oldnow}
+					set {staff.%arg-1%.logout} to {_oldnow}
+					message "%arg-1% - %{staff.%arg-1%.logout}%"
+
+command /delstaff <offlineplayer>:
+	trigger:
+		if player has the permission "is.op":
+			if arg is set:
+				subtract 1 from {staffcount}
+				remove arg from {stafflist::*}
+				delete {staff.%arg%.login}
+				delete {staff.%arg%.logout}
+on quit:
+	if player has permission "essentials.socialspy":
+		set {staff.%player%.logout} to now
+		
+# to be removed when system is done
+command /resetstafflist:
+	trigger:
+		player is "craftio":
+			delete {stafflist::*}
+			delete {staffcount}
+			

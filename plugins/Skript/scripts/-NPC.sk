@@ -1,0 +1,248 @@
+script options:
+	$ developer mode
+#
+command /jake:
+	permission: is.pro
+	trigger:
+		spawn 1 farmer at location of player
+		loop all entities in radius 2 of player:
+			set name of loop-entity to "&6Jake"
+			set speed of loop-entity to 0
+		message "&cAdded!"
+
+command /markus:
+	permission: is.pro
+	trigger:
+		spawn 1 farmer at location of player
+		loop all entities in radius 2 of player:
+			set name of loop-entity to "&6Markus"
+			set speed of loop-entity to 0
+		message "&cAdded!"
+command /Trevor:
+	permission: is.pro
+	trigger:
+		spawn 1 farmer at location of player
+		loop all entities in radius 2 of player:
+			set name of loop-entity to "&6Trevor"
+			set speed of loop-entity to 0
+		message "&cAdded!"
+
+		
+command /hiro:
+	permission: is.pro
+	trigger:
+		spawn 1 farmer at location of player
+		loop all entities in radius 2 of player:
+			set name of loop-entity to "&e&lHiro"
+			set speed of loop-entity to 0
+		message "&cAdded!"
+
+command /sam:
+	permission: is.pro
+	trigger:
+		spawn 1 farmer at location of player
+		loop all entities in radius 2 of player:
+			set name of loop-entity to "&6Sam"
+			set speed of loop-entity to 0
+		message "&cAdded!"
+
+command /jakob:
+	permission: is.pro
+	trigger:
+		spawn 1 farmer at location of player
+		loop all entities in radius 2 of player:
+			set name of loop-entity to "&6Jakob"
+			set speed of loop-entity to 0
+		message "&cAdded!"
+		
+command /joey:
+	permission: is.pro
+	trigger:
+		spawn 1 farmer at location of player
+		set age of spawned entity to baby
+		loop all entities in radius 2 of player:
+			set name of loop-entity to "&bJoey"
+			set speed of loop-entity to 0
+		message "&cAdded!"
+		
+command /dave:
+	permission: is.pro
+	trigger:
+		spawn 1 farmer at location of player
+		loop all entities in radius 2 of player:
+			set name of loop-entity to "&6Dave"
+			set speed of loop-entity to 0
+		message "&cAdded!"
+		
+		
+command /benjamin:
+	permission: is.pro
+	trigger:
+		spawn 1 librarian at location of player
+		loop all entities in radius 2 of player:
+			set name of loop-entity to "&6Benjamin"
+			set speed of loop-entity to 0
+		message "&cAdded!"
+		
+command /beheadman:
+	permission: is.pro
+	trigger:
+		spawn 1 butcher at location of player
+		loop all entities in radius 2 of player:
+			set name of loop-entity to "&6The Executioner"
+			set speed of loop-entity to 0
+		message "&cAdded!"
+		
+
+
+on rightclick on villager:
+	name of clicked entity contains "&6The Executioner"
+	send "&f[&6The Executioner&f] Sometimes, we have to punish those who only think of themselves..." to player
+	cancel event
+
+on rightclick on villager:
+	name of clicked entity contains "&6Benjamin"
+	send "&f[&6Benjamin&f] Slowly making progress rebuilding what has been taken from us..." to player
+	cancel event
+		
+# Basic NPC. Says one message.
+on rightclick on villager:
+	name of clicked entity contains "&6Trevor"
+	send "&f[&6Trevor&f] Another survivor?!? Lucky you..." to player
+	cancel event
+	
+on rightclick on villager:
+	name of clicked entity contains "&6Sam"
+	send "&f[&6Sam&f] I wish I was dead..." to player
+	cancel event
+	
+on rightclick on villager:
+	name of clicked entity contains "&6Jakob"
+	send "&f[&6Jakob&f] ...Have you seen my sister &6Annie&f?" to player
+	cancel event
+	
+on npc right click:
+	citizen is 83
+	make citizen 83 look at location of player
+	send "&f[&6Champion&f] Hello fellow champion! How's the weather out there today?" to player
+	cancel event
+	
+on npc right click:
+	citizen is 85
+	make citizen 85 look at location of player
+	send "&f[&6Natasha&f] Well hi there.  Have you been to the high-stakes casino yet?  You can win big there, if you've got the courage to try." to player
+	cancel event
+
+on npc right click:
+	citizen is 86
+	make citizen 86 look at location of player
+	send "&f[&6Dirk&f] Have a drink.  This is top shelf stuff here." to player
+	cancel event	
+	
+on npc right click:
+	citizen is 87
+	make citizen 87 look at location of player
+	send "&f[&6Misha&f] Hey good lookin! What's cookin?" to player
+	cancel event
+	
+on npc right click:
+	citizen is 88
+	make citizen 88 look at location of player
+	send "&f[&6Jax&f] It's a cold world out there... Trust nobody." to player
+	cancel event	
+	
+on npc right click:
+	citizen is 89
+	make citizen 89 look at location of player
+	if {duped.%player%} is true:
+		send "&f[&6George&f] &cI just don't understand... It was a sure thing..." to player
+		stop
+	else:
+		send "&f[&6George&f] I've got a hot tip on the racehorses, but I'm all tapped out. If you loan me some money, we can split it when the ponies come in." to player
+		wait 3 real seconds
+		send "&f[&6George&f] What do you say, buddy?  Want to help a friend out?" to player
+		json("%player%", "&f[&a$500&f]||cmd:/champbet 500")
+		json("%player%", "&f[&a$1000&f]||cmd:/champbet 1000")
+		json("%player%", "&f[&a$2000&f]||cmd:/champbet 2000")
+		cancel event	
+	
+command /champbet <integer>:
+	permission: is.champion
+	trigger:
+		if arg is 500:
+			execute console command "eco take %player% 500"
+		if arg is 1000:
+			execute console command "eco take %player% 1000"
+		if arg is 2000:
+			execute console command "eco take %player% 2000"
+		else:
+			stop
+		message "&f[&6George&f] &aThanks! Come back soon, i'll have your reward!"
+		wait 1 real minute
+		set {duped.%player%} to true
+	
+on rightclick on villager:
+	name of clicked entity contains "&bJoey"
+	cancel event
+	send "&f[&bJoey&f] I like the way grass feels on my legs when I wear shorts, too bad this game doesnt have those." to player
+	
+on rightclick on villager:
+	name of clicked entity contains "&6Dave"
+	cancel event
+	send "&f[&6Dave&f] HOW DID I EVEN GET UP HERE?!?!" to player
+	
+# Complex NPC. Gives you a special message the first time, then repeats the same after.
+on rightclick on villager:
+	name of clicked entity contains "&6Markus"
+	cancel event
+	if {talkedtomarkus.%player%} is not set:
+		send "&f[&6Markus&f] WOAH!!! You survived the blast?!? The others will be thrilled to have someone new to talk to!" to player
+		set {talkedtomarkus.%player%} to true
+		wait 3 real seconds
+	send "&f[&6Markus&f] You should go talk to &e&lHiro&f. He'll catch you up on what's been going on." to player
+	
+on rightclick on villager:
+	name of clicked entity contains "&e&lHiro"
+	cancel event
+	if {talkedtohiro.%player%} is not set:
+		send "&f[&e&lHiro&f] Greetings! It's great to see another survivor come through the portal!" to player
+		wait 3 real seconds
+		send "&f[&e&lHiro&f] Your name is &a%player%&f? Nice to meet you. I'll assume you aren't familiar with what happened..." to player
+		wait 4 real seconds
+		send "&f[&e&lHiro&f] The Metaverse was swallowed by a black hole, created by a careless player who blew up too many TNT at once." to player
+		wait 6 real second 
+		send "&f[&e&lHiro&f] A few were transported to this strange new world... While others... Didn't make it." to player
+		wait 5 real seconds
+		set {talkedtohiro.%player%} to true
+	if {hiroquest.%player%} is not true:
+		if player's inventory contains 2 eggs and 64 wood planks:
+			send "&f[&e&lHiro&f] You got the eggs and wood! You will save alot of lives. Thank you. Take this." to player
+			set {hiroquest.%player%} to true
+			add 1 to {tokens.%player%}
+			send "&6You earned 1 &6&lMeta&e&lToken!" to player
+			wait 1 real second
+			send "&f[&e&lHiro&f] You can spend those on many things, such as climbing the ranks of our community." to player
+			stop
+		else:
+			send "&f[&e&lHiro&f] We are trying our best to rebuild. If you want to help, go out into this strange new world and gather supplies. We need &aa stack of wood and two chicken eggs&f. If you bring that to me, i'll reward you greatly." to player
+	else:
+		send "&f[&e&lHiro&f] If you want to help further, help us move out from this cave. Explore the outside world and build safe areas for our people." to player
+# ===== #
+command /resetjake <player>:
+	trigger:
+		player is op
+		delete {talkedtojake.%arg%}
+# ===== #
+on rightclick on villager:
+	name of clicked entity contains "Jake"
+	cancel event
+	if {talkedtojake.%player%} is not set:
+		send "&f[&eJake&f] You know what the best pants are in this world? Khakis, here, have a pair!" to player
+		execute console command "give %player% leatherpants 1 name:Khakis color:240,230,140 lore:Given_by_Jake_from_State_Farm"
+		set {talkedtojake.%player%} to true
+		wait 3 real seconds
+		stop
+	send "&f[&eJake&f] Sorry friend, I only had that one extra pair.." to player
+	
+
+	

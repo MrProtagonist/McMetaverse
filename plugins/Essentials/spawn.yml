@@ -1,8 +1,8 @@
 spawns: 
   default: 
-    world: MetaOmega
-    x: -302.840563315579
-    y: 33.0
-    z: 510.2787078377156
-    yaw: -290.70917
-    pitch: -1.2000319
+    world: MetaSanctus
+    x: 237.5
+    y: 83.0
+    z: 29.5
+    yaw: -89.40006
+    pitch: 2.2499838

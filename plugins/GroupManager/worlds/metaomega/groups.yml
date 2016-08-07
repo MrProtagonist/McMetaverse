@@ -658,6 +658,7 @@ groups:
     default: false
     permissions:
     - -essentials.afk.auto
+    - -essentials.afk.auto.kickexempt
     - BannerMaker.getBanner
     - BannerMaker.getBanner.free
     - BannerMaker.use

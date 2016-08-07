@@ -58,13 +58,13 @@ command /gate:
 # When you place a fence in editing modus, it will be added to the gates list		
 on place of {@gate.types}:
 	{placing.gate.%player%} is true
-	set {gates::%location of event-block%} to location of event-block
+	set {champgates::%location of event-block%} to location of event-block
 	
 
 # When you break a fence in editing mode,it will be removed from the gates list
 on break of {@gate.types}:
 	{placing.gate.%player%} is true
-	delete {gates::%event-location%}
+	delete {champgates::%event-location%}
 
 	
 # When a player quits in editing mode, set it back to normal mode
@@ -76,41 +76,44 @@ on quit:
 	
 # This code checks every second if there is a player around. If set it to more than 1, the gate will be slower.
 every 20 ticks:
-	loop {gates::*}:
+	loop {champgates::*}:
 		set {_loc} to loop-value
 		set {_player.found} to false
 		
 		loop players in radius 12 around block at {_loc}:
+			loop-player has the permission "is.champion"
+			name of loop-player does not contain "Butler"
 			if {placing.gate.%loop-player%} is true:
 				set {_player.found} to false
 				stop loop
 			else:
-				loop-player has the permission "is.champion"
 				set {_player.found} to true
 				
-		loop blocks in radius 10 around block at {_loc}:
-			loop-block is sign
-			line 1 of loop-block is "Gate"
-			line 2 of loop-block is "<red>OFF"
-			set {_player.found} to false
+#		loop blocks in radius 10 around block at {_loc}:
+#			loop-block is sign
+#			line 1 of loop-block is "Gate"
+#			line 2 of loop-block is "<red>OFF"
+#			set {_player.found} to false
 			
 		if {_player.found} is true:
+			{champion.entering} is true
 			block below block at {_loc} is not {@gate.types}
 			block above block at {_loc} is {@gate.types}
-			add {_loc} to {_list.up::*}
+			add {_loc} to {_list.up2::*}
 			
 		else:
 			block at {_loc} is air
 			block above block at {_loc} is {@gate.types}
-			add {_loc} to {_list.down::*}
+			add {_loc} to {_list.down2::*}
 			
 		set {_player.found} to false
 	
 	wait 1 tick
-	loop {_list.up::*}:
+	loop {_list.up2::*}:
+		{champion.entering} is true
 		set {_loc} to loop-value
 		set block at {_loc} to air
-	loop {_list.down::*}:
+	loop {_list.down2::*}:
 		set {_loc} to loop-value
 		set {_type} to type of block above block at {_loc}
 		set block at {_loc} to {_type}

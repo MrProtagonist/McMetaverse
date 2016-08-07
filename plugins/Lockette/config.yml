@@ -25,5 +25,5 @@ broadcast-snoop-target: '[Operators]'
 broadcast-break-target: '[Everyone]'
 broadcast-reload-target: '[Operators]'
 strings-file-name: strings-en.yml
-enable-uuid-support: false
+enable-uuid-support: true
 enable-hopper-blocking: true
