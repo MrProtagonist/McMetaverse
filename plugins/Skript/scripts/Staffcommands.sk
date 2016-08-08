@@ -13,14 +13,15 @@ on click on chest or trapped chest:
 	make the event-block appear closed
 	wait 1 tick
 	make the event-block appear closed
+on region enter:
+	"%region%" contains "drugden"
+	apply nausea 1 to the player for 30 seconds
 on walk on locked chest:
 	"%region at player%" contains "valkyria"
 	apply potion of speed 2 to the player for 1 second
 command /showregion:
 	trigger:
 		message "%region at player%"
-
-
 command /setprowarp:
 	permission: is.pro
 	trigger:

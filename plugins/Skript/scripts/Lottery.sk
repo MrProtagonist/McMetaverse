@@ -5,26 +5,43 @@ on script load:
 		set {lotteryhour} to 0
 	if {ticketcount} is not set:
 		set {ticketcount} to 0
-command /lotto <integer>:
+command /lotto [<integer>]:
 	aliases: /lottery
 	trigger:
-		if arg is between 1 and 100:
-			if player's balance is greater than or equal to 200:
-				if {lottery.tickets::%arg%} is set:
-					message "&cThat number has already been chosen by %{lottery.tickets::%arg%}%!"
-					stop
+		if arg is set:
+			if arg is between 1 and 100:
+				if player's balance is greater than or equal to 200:
+					if {lottery.tickets::%arg%} is set:
+						message "&cThat number has already been chosen by %{lottery.tickets::%arg%}%!"
+						stop
+					else:
+						set {lottery.tickets::%arg%} to player
+						execute console command "eco take %player% 200"
+						add 195 to {lottery.pot}
+						add 1 to {ticketcount}
+						message "&aYou have successfully purchased lottery ticket ##%arg%!"
+						broadcast "&f[&eLOTTO&f] &6Lottery pot is now at &a$%{lottery.pot}%"
+						stop
 				else:
-					set {lottery.tickets::%arg%} to player
-					execute console command "eco take %player% 200"
-					add 195 to {lottery.pot}
-					message "&aYou have successfully purchased lottery ticket ##%arg%!"
-					broadcast "&f[&eLOTTO&f] &6Lottery pot is now at &a$%{lottery.pot}%"
+					message "&cRequires at least $200!"
 					stop
 			else:
-				message "&cRequires at least $200!"
-				stop
+				message "&cMust be between 1 and 100!"
 		else:
-			message "&cMust be between 1 and 100!"
+			message "&6---------------[&aLOTTERY&6]---------------"
+			message "Lotto Pot: &a$%{lottery.pot}%"
+			set {_mycount} to 0
+			loop {lottery.tickets::*}:
+				loop-value is "%player%"
+				add 1 to {_mycount}
+			message "My Tickets: &a%{_mycount}%"
+			message "Total Tickets: &a%{ticketcount}% / 100"
+			set {_lottodifference} to 5 - {lotteryhour}
+			if {_lottodifference} is 0:
+				message "Drawing: &aWithin the hour"
+			else:
+				message "Drawing: &a%{_lottodifference}% hours"
+			message "&eBuy a ticket using &a/lotto <1-100>"
 command /clearlotto:
 	permission: is.op
 	trigger:
@@ -50,3 +67,32 @@ every real hour:
 		add 1 to {lotteryhour}
 		set {_lottodifference} to difference between 5 and {lotteryhour}
 		broadcast "&f[&eLOTTO&f] &6Lottery will be drawn in %{_lottodifference}% hours. There are currently %{ticketcount}% tickets purchased, and the pot is $%{lottery.pot}%"
+		
+command /checklotto:
+	trigger:
+		message "Ticket Count: %{ticketcount}%"
+		set {_actualcount} to 0
+		loop {lottery.tickets::*}:
+			add 1 to {_actualcount}
+		if {_actualcount} is not {ticketcount}:
+			set {ticketcount} to {_actualcount}
+			message "&cFixed the ticket count for you =]"
+		message "Actual Count: %{_actualcount}%"
+		message "Lottery Hour: %{lotteryhour}%"
+		message "Lotto Pot: %{lottery.pot}%"
+		
+command /drawlotto:
+	permission: is.op
+	trigger:
+		set {lotteryhour} to 0
+		set {lotterywinner} to a random integer between 1 and 100
+		if {lottery.tickets::%{lotterywinner}%} is set:
+			broadcast "&f[&eLOTTO&f] &a%{lottery.tickets::%{lotterywinner}%}% just had the winning lottery ticket ##%{lotterywinner}% and won $%{lottery.pot}%!"
+			execute console command "eco give %{lottery.tickets::%{lotterywinner}%}% %{lottery.pot}%"
+			execute console command "mail send %{lottery.tickets::%{lotterywinner}%}% You have won the lottery of %{lottery.pot}%!"
+			set {lottery.pot} to 0
+			delete {lottery.tickets::*}
+		else:
+			broadcast "&f[&eLOTTO&f] &cTicket ##%{lotterywinner}% was drawn but nobody owns it. Continuing with the $%{lottery.pot}% pot."
+		stop
+		

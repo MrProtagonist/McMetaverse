@@ -1,6 +1,51 @@
 script options:
 	$ developer mode
 #
+
+
+command /setdoor3:
+	permission: is.op
+	trigger:
+		if {settingdoor3.%player%} is not set:
+			set {cmd3.doorspot} to location of player
+			delete {cmd3.door::*}
+			set {settingdoor3.%player%} to true
+			message "Now setting magic door..."
+		else:
+			delete {settingdoor3.%player%}
+			message "&aDone!"
+on break:
+	{settingdoor3.%player%} is true
+	cancel event
+	add location of event-block to {cmd3.door::*}
+	message "Added to the list!"
+	
+on npc right click:
+	if citizen is 374:
+		make citizen 374 look at location of player
+		send "&f[&eThug&f] &aHead on up, just be quick about it. Don't want to ruin the hot box."
+		wait 1 real second
+		loop {cmd3.door::*}:
+			set block at location of block at loop-value to air
+			wait 10 ticks
+		wait 10 real seconds
+		loop {cmd3.door::*}:
+			wait 10 ticks
+			set block at location of block at loop-value to redwood wooden plank
+	if citizen is 376:
+		make citizen 376 look at location of player
+		send "&f[&eThug&f] &aHead on down, just be quick about it. Don't want to ruin the hot box."
+		wait 1 real second
+		loop {cmd3.door::*}:
+			set block at location of block at loop-value to air
+			wait 10 ticks
+		wait 10 real seconds
+		loop {cmd3.door::*}:
+			set block at location of block at loop-value to redwood plank
+			wait 10 ticks
+		
+	
+
 command /jake:
 	permission: is.pro
 	trigger:

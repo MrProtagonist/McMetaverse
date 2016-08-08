@@ -191,6 +191,7 @@ command /chat [<text>] [<text>]:
 on chat:
 	{channel.%player%.enabled} is true
 	cancel event
+	send "[%{channel.%event-player%}%] %event-player%: %message%" to console
 	loop all players:
 		if {channel.%loop-player%} is {channel.%player%}:
 			send "&f[&b&o%{channel.%player%}%&f] &6%event-player%&f: &a%message%" to the loop-player

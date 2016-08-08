@@ -55,11 +55,6 @@ on chat:
 		else:
 			message "&f[&aSERVER&f] &e&oThank you for welcoming &6&o%{welcoming}%&e&o! You are a good neighbor!"
 			execute console command "eco give %player% 25"
-command /under:
-	permission: is.op
-	trigger:
-		delete {wchat::mcmetaverse.com}
-		message "&a&oDone!"
 variables:
 	{wchat::-.-} = "?_?"
 	{wchat::<3} = "♥"
