@@ -7,23 +7,23 @@ PluginEnabled:
   MetaSanctus: true
   MetaSanctus_nether: true
   MetaSanctus_the_end: true
-  world_herobrine_graveyard: true
-  '{Hyperverse}': true
-  Hyperverse3: true
-  contest: true
+  world_herobrine_graveyard: false
+  '{Hyperverse}': false
+  Hyperverse3: false
+  contest: false
   resource_nether: true
   resource: true
-  Minigame: true
-  Hyper_nether: true
-  HyperVerse2: true
-  Hyper: true
+  Minigame: false
+  Hyper_nether: false
+  HyperVerse2: false
+  Hyper: false
   Dino_Safe: true
-  sandbox: true
+  sandbox: false
   MetaOmega: true
   MetaOmega_the_end: true
   MetaOmega_nether: true
-  Hyperverse_nether: true
-  Hyperverse: true
+  Hyperverse_nether: false
+  Hyperverse: false
 CaptureItem:
   Enabled: true
   ItemName: '[all names]'
@@ -77,14 +77,14 @@ SimpleConfig:
     ItemName: redstone dust
     ItemID: 331
     Amount: 5
-    VaultCost: 10.0
+    VaultCost: 100.0
     Chance: 100
     MustBeKilled: false
   MobsEnabled:
     PigZombie: true
     MagmaCube: true
     CaveSpider: true
-    Creeper: true
+    Creeper: false
     Skeleton: true
     Spider: true
     Zombie: true
@@ -99,7 +99,7 @@ SimpleConfig:
     Chicken: true
     Squid: true
     Wolf: true
-    AngryWolf: true
+    AngryWolf: false
     Mooshroom: true
     Villager: false
     Ocelot: true

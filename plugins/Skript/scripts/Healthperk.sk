@@ -30,9 +30,9 @@ command /forcehealth:
 			set the maximum health of the player to 12
 on join:
 	if player has permission "skript.extrahealth2":
-		if the player's world is not "hyper" or "hyper_nether":
+		if the player's world is not "Hyperverse3" or "Hyperverse3_nether":
 			make player execute "forcehealth"
 on respawn:
 	if player has permission "skript.extrahealth2":
-		if the player's world is not "hyper" or "hyper_nether":
+		if the player's world is not "Hyperverse3" or "Hyperverse3_nether":
 			make player execute "forcehealth"

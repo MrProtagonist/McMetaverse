@@ -149,3 +149,12 @@ on rightclick:
 	player can build at location of event-block
 	set {bed.%player%} to location of player
 	message "&aYour /bed has been set here!"
+on command "/auc":
+	the player's world is "Hyperverse3" or "Hyperverse3_nether"
+	cancel event
+on command "/auction":
+	the player's world is "Hyperverse3" or "Hyperverse3_nether"
+	cancel event
+on command "/bid":
+	the player's world is "Hyperverse3" or "Hyperverse3_nether"
+	cancel event

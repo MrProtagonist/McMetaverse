@@ -80,7 +80,8 @@ quisshop:
   COMMAND: 'shopwarp 60'
   NAME: '&d[p]Quissys Quantities&d[p]'
   LORE:
-    - '&f&oFully-stocked shop with a little bit of everything.  Buying AND selling.'
+    - '&f&oFully-stocked shop with a little bit of everything.'
+    - '&f&oBuying AND selling.'
   ID: 357
   KEEP-OPEN: false
   POSITION-X: 4
@@ -144,16 +145,16 @@ divider6:
   POSITION-X: 2
   POSITION-Y: 2
   DATA-VALUE: 0
-iwxlfieshop:
-  COMMAND: 'shopwarp 65'
-  NAME: '&d[p]Transport Depot&d[p]'
+Proshop:
+  COMMAND: 'shopwarp 66'
+  NAME: '&d[p]The Dudes Drug Den&d[p]'
   LORE:
-    - '&f&oiWxlfies shop! I have all types of transportation! More Added Soon!'
-  ID: 329
+    - '&f&oTop quality drugs at affordable prices.'
+  ID: 31
   KEEP-OPEN: false
   POSITION-X: 3
   POSITION-Y: 2
-  DATA-VALUE: 0
+  DATA-VALUE: 1
 divider7:
   NAME: ''
   ID: 160
