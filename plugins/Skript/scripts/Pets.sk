@@ -362,8 +362,8 @@ on damage:
 
 on death:
 	{owner.%entity%} is set
-	clear drops
-	remove drops
+		clear drops
+		remove drops
 on quit:
 	loop {pets.owners::*}:
 		loop-value is player
