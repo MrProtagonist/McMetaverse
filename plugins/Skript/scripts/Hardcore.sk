@@ -127,7 +127,6 @@ on command "/vc":
 on command:
 	player's world is "hyperverse3" or "hyperverse3_nether"
 	player does not have the permission "is.op"
-	command is not "bed" or "spawn" or "meta" or "hyperverse3" or "list" or "login" or "hug" or "kiss" or "kissdeath" or "claimslist" or "transferclaim" or "trust" or "untrust" or "buyclaimblocks" or "sellclaimblocks" or "permissiontrust" or "trustlist" or "accesstrust" or "containertrust" or "abandonclaim" or "msg" or "m" or "r" or "reply" or "message" or "mail" or "ping" or "me" or "suicide" or "ticket" or "replyticket" or "tickets" or "a" or "vote"
 	cancel event
 	message "&cThis command is not allowed in this world!"
 command /bed:
