@@ -38,11 +38,17 @@ command /blocksunny:
 		else:
 			set {sunny.blocked} to true
 			message "&eYou'd have to praise the sun to allow this command again!"
-command /time [<time>]:
+command /time [<time>] [<text>]:
 	trigger:
-		if arg is not set:
+		if arg-1 is not set:
 			message "&cIt is now %time%!"
 		else:
-			set {_world} to player's world
+			player is op
+			if arg-2 is set:
+				set {_world} to arg-2
+				wait 1 tick
+			else:
+				set {_world} to the player's world
+				wait 1 tick
 			set time in {_world} to time argument
 			message "&aYou've set the time in %{_world}% to %time argument%"
