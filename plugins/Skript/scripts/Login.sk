@@ -1,15 +1,15 @@
 variables:
 	{setpin.%player%} = false
 	{pin.%player%} = "null"
-	
+
 on region exit:
 	if {CPB.%player%} is true:
 		set {CPB.%player%} to false
-	
+
 command /RBC <text>:
 	trigger:
 		set {CPB.%player%} to false
-		
+
 on login:
 	if {setpin.%player%} is false:
 		wait 10 real seconds
@@ -37,7 +37,7 @@ on login:
 		wait 3 real seconds
 		{locked.%player%} is true
 		message "&e&oPlease &a&o/login&e&o with your pin."
-		
+
 #every real second:
 #	loop all players:
 #		{locked.%loop-player%} is true
@@ -45,7 +45,7 @@ on login:
 #		player is not flying
 #		apply jump boost -5 to the loop-player for 100000000 hours
 #		set the loop-player's walk speed to 0.01
-   
+
 command /login <text>:
 	description: Login.
 	usage: /login {pin}
@@ -86,7 +86,7 @@ command /setpin <text> [<text>]:
 				message " "
 				message "&a&oUsage: /setpin {pin} {newpin}"
 		else if hashed arg 1 is {pin.%player%}:
-			set {pin.%player%} to arg 2
+			set {pin.%player%} to hashed arg 2
 			set {setpin.%player%} to true
 			message " "
 			message "&a&oPin changed!"
