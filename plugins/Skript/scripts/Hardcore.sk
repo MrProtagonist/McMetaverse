@@ -12,49 +12,78 @@ command /meta:
 		wait 1 tick
 		execute console command "mvtp %player% MetaSanctus"
 		message "&aYou are now in Metaverse Spawn. PVP is now off."
-		set {pvp.%player%} to 0
+		set {pvp.%player%} to 1
 		wait 2 real seconds
 		set {warping.%player%} to false
-on world change:
-	if the player's world is "hyperverse3" or "hyperverse3_nether":
-		wait 1 tick
-		# message "&eIncreasing difficulty by perm removal..."
-		wait 1 second
-		execute console command "manuaddp %player% -mcmmo.ability.all"
-		execute console command "manuaddp %player% -mcmmo.skill.all"
-		execute console command "manuaddp %player% -tryme.*"
-		execute console command "manuaddp %player% -scavenger.*"
-		set {hyperverse3.%player%} to true
-	wait 1 tick
-	if the player's world is not "hyperverse3" or "hyperverse3_nether":
-		if {hyperverse3.%player%} is set:
-			wait 1 tick
-			# message "&eGiving normal perms back..."
-			wait 1 second
-			execute console command "manudelp %player% -mcmmo.ability.all"
-			execute console command "manudelp %player% -mcmmo.skill.all"
-			execute console command "manudelp %player% -tryme.*"
-			execute console command "manudelp %player% -scavenger.*"
-			delete {hyperverse3.%player%}
-every 30 real seconds:
-	loop all players:
-		if loop-player's world is "hyperverse3" or "hyperverse3_nether":
-			if loop-player does not have the permission "-mcmmo.ability.all":
-				execute console command "manuaddp %loop-player% -mcmmo.ability.all"
-				execute console command "manuaddp %player% -mcmmo.skill.all"
-				execute console command "manuaddp %loop-player% -tryme.*"
-				execute console command "manuaddp %loop-player% -scavenger.*"
 command /hyper:
 	trigger:
 		set {warping.%player%} to true
 		set rf max hp of player to 20
 		wait 1 tick
-		execute console command "mvtp %player% hyperverse3"
+		execute console command "mvtp %player% Hyperverse3"
 		set player's fly mode to false
 		message "&aYou are now in the Hyper Spawn. PVP is now on!"
-		set {pvp.%player%} to 1
+		set {pvp.%player%} to 0
 		wait 2 real seconds
 		set {warping.%player%} to false
+command /checkhyper:
+	trigger:
+		message "%{hyper.%player%}%"
+on world change:
+	wait 3 ticks
+	if the player's world is "hyperverse3" or "hyperverse3_nether":
+		if {hyper.%player%} is not set:
+			set {hyper.%player%} to true
+			execute console command "manuaddp %player% -mcmmo.ability.all"
+			execute console command "manuaddp %player% -mcmmo.skill.all"
+			execute console command "manuaddp %player% -scavenger.*"
+			execute console command "manuaddp %player% -tryme.*"
+	else:
+		if {hyper.%player%} is true:
+			execute console command "manudelp %player% -mcmmo.ability.all"
+			execute console command "manudelp %player% -mcmmo.skill.all"
+			execute console command "manudelp %player% -scavenger.*"
+			execute console command "manudelp %player% -tryme.*"
+			delete {hyper.%player%}
+#on world change:
+#	if the player's world is "hyperverse3" or "hyperverse3_nether":
+#		wait 1 tick
+#		message "&eIncreasing difficulty by perm removal..."
+#		wait 1 second
+#		if player does not have permission "-scavenger.*":
+#			execute console command "manuaddp %player% -mcmmo.ability.all"
+#			execute console command "manuaddp %player% -mcmmo.skill.all"
+#			execute console command "manuaddp %player% -tryme.*"
+#			execute console command "manuaddp %player% -scavenger.*"
+#		set {hyperverse3.%player%} to true
+#	wait 1 tick
+#	if the player's world is not "hyperverse3" or "hyperverse3_nether":
+#		if {hyperverse3.%player%} is set:
+#			wait 1 tick
+#			# message "&eGiving normal perms back..."
+#			wait 1 second
+#			if player has permission "-scavenger.*":
+#				execute console command "manudelp %player% -mcmmo.ability.all"
+#				execute console command "manudelp %player% -mcmmo.skill.all"
+#				execute console command "manudelp %player% -tryme.*"
+#				execute console command "manudelp %player% -scavenger.*"
+#			delete {hyperverse3.%player%}
+#every 30 real seconds:
+#	loop all players:
+#		if the loop-player's world is "hyperverse3" or "hyperverse3_nether":
+#			if loop-player does not have permission "-mcmmo.ability.all":
+#				execute console command "manuaddp %loop-player% -mcmmo.ability.all"
+#				execute console command "manuaddp %loop-player% -mcmmo.skill.all"
+#				execute console command "manuaddp %loop-player% -tryme.*"
+#				execute console command "manuaddp %loop-player% -scavenger.*"
+#				set {hyperverse3.%player%} to true
+#		else:
+#			if loop-player has permission "-mcmmo.ability.all":
+#				execute console command "manudelp %player% -mcmmo.ability.all"
+#				execute console command "manudelp %player% -mcmmo.skill.all"
+#				execute console command "manudelp %player% -tryme.*"
+#				execute console command "manudelp %player% -scavenger.*"
+#				delete {hyperverse3.%player%}
 on command "/back":
 	if the player's world is "hyperverse3" or "hyperverse3_nether":
 		cancel event
@@ -117,6 +146,10 @@ on respawn:
 		teleport player to {hyperverse3}
 	delete {bedspawn.%player%}
 on command "/ec":
+	player's world is "hyperverse3" or "hyperverse3_nether"
+	cancel event
+	message "&cThis command is not allowed in this world!"
+on command "/enderchest":
 	player's world is "hyperverse3" or "hyperverse3_nether"
 	cancel event
 	message "&cThis command is not allowed in this world!"

@@ -80,48 +80,46 @@ on rightclick on priest:
 	make player execute "/ranks"
 command /ranks:
 	trigger:
-		if the player's world is "MetaSanctus" or "resource" or "MetaSanctus_nether":
-			if {rank.%player%} is greater than or equal to 1:
-				json("%player%", "[&d&oRookie&r] - &a&lPURCHASED&r||ttp:&6Costs: 3 hours of ingame playtime.%new line%&e&oPermissions granted to &d&oRookies&e&o:%new line%&r- Set 2 &a&o/home&f's (&a&o/sethome&f <homename>).%new line%- Create shops (&a&o/submit&f).%new line%- Access to &a&o/ci&f to clear inventory.%new line%- Access to &a&o/recipe&f to show item recipes.%new line%- Can put urls/links in chat.")
-			else:
-				json("%player%", "[&d&oRookie&r] - &6Costs: 3 hours of ingame playtime.||ttp:&e&oPermissions granted to &d&oRookies&e&o:%new line%&r- Set 2 &a&o/home&f's (&a&o/sethome&f <homename>).%new line%- Create shops (&a&o/submit&f).%new line%- Access to &a&o/ci&f to clear inventory.%new line%- Access to &a&o/recipe&f to show item recipes.%new line%- Can put urls/links in chat.")
-			
-			if {rank.%player%} is greater than or equal to 2:
-				json("%player%", "[&c&oRegular&r] - &a&lPURCHASED&r||ttp:&6Costs: 2 tokens and $3,500.%new line%&e&oPermissions granted to &c&oRegulars&e&o:%new line%&r- Set 3 &a&o/home&f's (&a&o/sethome&f <homename>).%new line%- Sell realestate (&a&o/learn&f realestate).%new line%- Access to &a&o/depth&f to see your depth level as opposed to sea level.%new line%- Perform emotes in chat with &a&o/me&f.%new line%- Access to &a&o/wb&f for a virtual workbench.%new line%- Access to &a&o/auction&f to auction items in chat.")
-			else:
-				json("%player%", "[&c&oRegular&r] - &6Costs: 2 tokens and $3,500.||ttp:&e&oPermissions granted to &c&oRegulars&e&o:%new line%&r- Set 3 &a&o/home&f's (&a&o/sethome&f <homename>).%new line%- Sell realestate (&a&o/learn&f realestate).%new line%- Access to &a&o/depth&f to see your depth level as opposed to sea level.%new line%- Perform emotes in chat with &a&o/me&f.%new line%- Access to &a&o/wb&f for a virtual workbench.%new line%- Access to &a&o/auction&f to auction items in chat.||cmd:/testrank regular")
-			
-			if {rank.%player%} is greater than or equal to 3:
-				json("%player%", "[&e&oCitizen&r] - &a&lPURCHASED&r||ttp:&6Costs: 3 tokens and $12,500.%new line%&e&oPermissions granted to Citizens:%new line%&r- Set 4 &a&o/home&f's (&a&o/sethome&f <homename>).%new line%- Can format chat with &ac&2o&bl&3o&cr&4s&f, &lbold&r and &oitalics&r.%new line%- Scavenger saves levels on death.")
-			else:
-				json("%player%", "[&e&oCitizen&r] - &6Costs: 3 tokens and $12,500.||ttp:&e&oPermissions granted to Citizens:%new line%&r- Set 4 &a&o/home&f's (&a&o/sethome&f <homename>).%new line%- Can format chat with &ac&2o&bl&3o&cr&4s&f, &lbold&r and &oitalics&r.%new line%- Scavenger saves levels on death.||cmd:/testrank citizen")
-			
-			if {rank.%player%} is greater than or equal to 4:
-				json("%player%", "[&6&oCraftsman&r] - &a&lPURCHASED&r||ttp:&6Costs: 5 tokens and $25,000.%new line%&e&oPermissions granted to &6&oCraftsmen&e&o:%new line%&r- Set 5 &a&o/home&f's (&a&o/sethome&f <homename>).%new line%- 2 extra health hearts.%new line%- Access to &a&o/near&f to who's nearby.%new line%- Access to &a&o/compass&f to show you your bearings.%new line%- Access to &a&o/suffix&f to set your suffix (&a&o/delsuffix&f to remove it).%new line%- Access to &a&o/vc&f to set up to 2 virtual chests.")
-			else:
-				json("%player%", "[&6&oCraftsman&r] - &6Costs: 5 tokens and $25,000.||ttp:&e&oPermissions granted to &6&oCraftsmen&e&o:%new line%&r- Set 5 &a&o/home&f's (&a&o/sethome&f <homename>).%new line%- 2 extra health hearts.%new line%- Access to &a&o/near&f to who's nearby.%new line%- Access to &a&o/compass&f to show you your bearings.%new line%- Access to &a&o/suffix&f to set your suffix (&a&o/delsuffix&f to remove it).%new line%- Access to &a&o/vc&f to set up to 2 virtual chests.||cmd:/testrank craftsman")
-			
-			if {rank.%player%} is greater than or equal to 5:
-				json("%player%", "[&9&oSeasoned&r] - &a&lPURCHASED&r||ttp:&6Costs: 6 tokens and $55,000.%new line%&e&oPermissions granted to &9&oSeasoners&e&o:%new line%&r- Set 7 &a&o/home&f's (&a&o/sethome&f <homename).%new line%- 4 extra health hearts.%new line%- Scavenger saves items on death.%new line%- Claim up to 3 plots in the &a&o/sandbox&r world with &a&o/plot auto&f and/or &a&o/plot claim&f.%new line%- Access to &a&o/top&f to jump to the highest safe surface.%new line%- Can format signs with &ac&2o&bl&3o&cr&4s&f, &lbold&r and &oitalics&r.%new line%- Set up to 4 virtual chests.")
-			else:
-				json("%player%", "[&9&oSeasoned&r] - &6Costs: 6 tokens and $55,000.||ttp:&e&oPermissions granted to &9&oSeasoners&e&o:%new line%&r- Set 7 &a&o/home&f's (&a&o/sethome&f <homename>).%new line%- 4 extra health hearts.%new line%- Scavenger saves items on death.%new line%- Claim up to 3 plots in the &a&o/sandbox&r world with &a&o/plot auto&f and/or &a&o/plot claim&f.%new line%- Access to &a&o/top&f to jump to the highest safe surface.%new line%- Can format signs with &ac&2o&bl&3o&cr&4s&f, &lbold&r and &oitalics&r.%new line%- Set up to 4 virtual chests.||cmd:/testrank seasoned")
-			
-			if {rank.%player%} is greater than or equal to 6:
-				json("%player%", "[&b&oNoble&r] - &a&lPURCHASED&r||ttp:&6Costs: 8 tokens and $110,000.%new line%&e&oPermissions granted to &b&oNobles&e&o:%new line%&r- Set 10 &a&o/home&f's (&a&o/sethome&f <homename>).%new line%- 6 extra health hearts.%new line%- Can format &a&o/suffix&f with &ac&2o&bl&3o&cr&4s&f, &lbold&r and &oitalics&r.%new line%- Access to &a&o/hat&f to wear the item in your &umain&r hand as a hat.%new line%- Access to &a&o/bottle&f to store your experience in a virtual bottle.%new line%- Set up to 6 virtual chests.")
-			else:
-				json("%player%", "[&b&oNoble&r] - &6Costs: 8 tokens and $110,000.||ttp:&e&oPermissions granted to &b&oNobles&e&o:%new line%&r- Set 10 &a&o/home&f's (&a&o/sethome&f <homename>).%new line%- 6 extra health hearts.%new line%- Can format &a&o/suffix&f with &ac&2o&bl&3o&cr&4s&f, &lbold&r and &oitalics&r.%new line%- Access to &a&o/hat&f to wear the item in your &umain&r hand as a hat.%new line%- Access to &a&o/bottle&f to store your experience in a virtual bottle.%new line%- Set up to 6 virtual chests.||cmd:/testrank noble")
-			
-			if {rank.%player%} is greater than or equal to 7:
-				json("%player%", "[&a&oElite&r] - &a&lPURCHASED&r||ttp:&6Costs: 9 Tokens and $200,000.%new line%&e&oPermissions granted to &a&oElites&e&o:%new line%&r- 8 extra health hearts.%new line%- Access to &a&o/ec&f to access your enderchest from anywhere in the world.%new line%- Access to &a&o/nv&f to toggle night vision.%new line%- Access to &a&o/ext&f to extinguish yourself if you are on fire.%new line%-Set up to 8 virtual chests.")
-			else:
-				json("%player%", "[&a&oElite&r] - &6Costs: 9 Tokens and $200,000.||ttp:&e&oPermissions granted to &a&oElites&e&o:%new line%- 8 extra health hearts.%new line%&r- Access to &a&o/ec&f to access your enderchest from anywhere in the world.%new line%- Access to &a&o/nv&f to toggle night vision.%new line%- Access to &a&o/ext&f to extinguish yourself if you are on fire.%new line%- Set up to 8 virtual chests.||cmd:/testrank elite")
-			
-			if {rank.%player%} is greater than or equal to 8:
-				json("%player%", "[&4&oChampion&r] - &a&lPURCHASED&r||ttp:&6Costs: 10 Tokens and $400,000.%new line%&e&oPermissions granted to &4&oChampions&e&o:%new line%&r- Set unlimited &a&o/home&f's (&a&o/sethome&f <homename>).%new line%- 10 extra health hearts.%new line%- Access to &a&o/fly&f to toggle fly-mode.%new line%- Set up to 10 virtual chests.")
-			else:
-				json("%player%", "[&4&oChampion&r] - &6Costs: 10 Tokens and $400,000.||ttp:&e&oPermissions granted to &4&oChampions&e&o:%new line%&r- Set unlimited &a&o/home&f's (&a&o/sethome&f <homename>).%new line%- 10 extra health hearts.%new line%- Access to &a&o/fly&f to toggle fly-mode.%new line%- Set up to 10 virtual chests.||cmd:/testrank champion")
+		if {rank.%player%} is greater than or equal to 1:
+			json("%player%", "[&d&oRookie&r] - &a&lPURCHASED&r||ttp:&6Costs: 3 hours of ingame playtime.%new line%&e&oPermissions granted to &d&oRookies&e&o:%new line%&r- Set 2 &a&o/home&f's (&a&o/sethome&f <homename>).%new line%- Create shops (&a&o/submit&f).%new line%- Access to &a&o/ci&f to clear inventory.%new line%- Access to &a&o/recipe&f to show item recipes.%new line%- Can put urls/links in chat.")
 		else:
-			message "&cCan't rank up in this world! Please go to the main world"
+			json("%player%", "[&d&oRookie&r] - &6Costs: 3 hours of ingame playtime.||ttp:&e&oPermissions granted to &d&oRookies&e&o:%new line%&r- Set 2 &a&o/home&f's (&a&o/sethome&f <homename>).%new line%- Create shops (&a&o/submit&f).%new line%- Access to &a&o/ci&f to clear inventory.%new line%- Access to &a&o/recipe&f to show item recipes.%new line%- Can put urls/links in chat.")
+		
+		if {rank.%player%} is greater than or equal to 2:
+			json("%player%", "[&c&oRegular&r] - &a&lPURCHASED&r||ttp:&6Costs: 2 tokens and $3,500.%new line%&e&oPermissions granted to &c&oRegulars&e&o:%new line%&r- Set 3 &a&o/home&f's (&a&o/sethome&f <homename>).%new line%- Sell realestate (&a&o/learn&f realestate).%new line%- Access to &a&o/depth&f to see your depth level as opposed to sea level.%new line%- Perform emotes in chat with &a&o/me&f.%new line%- Access to &a&o/wb&f for a virtual workbench.%new line%- Access to &a&o/auction&f to auction items in chat.")
+		else:
+			json("%player%", "[&c&oRegular&r] - &6Costs: 2 tokens and $3,500.||ttp:&e&oPermissions granted to &c&oRegulars&e&o:%new line%&r- Set 3 &a&o/home&f's (&a&o/sethome&f <homename>).%new line%- Sell realestate (&a&o/learn&f realestate).%new line%- Access to &a&o/depth&f to see your depth level as opposed to sea level.%new line%- Perform emotes in chat with &a&o/me&f.%new line%- Access to &a&o/wb&f for a virtual workbench.%new line%- Access to &a&o/auction&f to auction items in chat.||cmd:/testrank regular")
+		
+		if {rank.%player%} is greater than or equal to 3:
+			json("%player%", "[&e&oCitizen&r] - &a&lPURCHASED&r||ttp:&6Costs: 3 tokens and $12,500.%new line%&e&oPermissions granted to Citizens:%new line%&r- Set 4 &a&o/home&f's (&a&o/sethome&f <homename>).%new line%- Can format chat with &ac&2o&bl&3o&cr&4s&f, &lbold&r and &oitalics&r.%new line%- Scavenger saves levels on death.")
+		else:
+			json("%player%", "[&e&oCitizen&r] - &6Costs: 3 tokens and $12,500.||ttp:&e&oPermissions granted to Citizens:%new line%&r- Set 4 &a&o/home&f's (&a&o/sethome&f <homename>).%new line%- Can format chat with &ac&2o&bl&3o&cr&4s&f, &lbold&r and &oitalics&r.%new line%- Scavenger saves levels on death.||cmd:/testrank citizen")
+		
+		if {rank.%player%} is greater than or equal to 4:
+			json("%player%", "[&6&oCraftsman&r] - &a&lPURCHASED&r||ttp:&6Costs: 5 tokens and $25,000.%new line%&e&oPermissions granted to &6&oCraftsmen&e&o:%new line%&r- Set 5 &a&o/home&f's (&a&o/sethome&f <homename>).%new line%- 2 extra health hearts.%new line%- Access to &a&o/near&f to who's nearby.%new line%- Access to &a&o/compass&f to show you your bearings.%new line%- Access to &a&o/suffix&f to set your suffix (&a&o/delsuffix&f to remove it).%new line%- Access to &a&o/vc&f to set up to 2 virtual chests.")
+		else:
+			json("%player%", "[&6&oCraftsman&r] - &6Costs: 5 tokens and $25,000.||ttp:&e&oPermissions granted to &6&oCraftsmen&e&o:%new line%&r- Set 5 &a&o/home&f's (&a&o/sethome&f <homename>).%new line%- 2 extra health hearts.%new line%- Access to &a&o/near&f to who's nearby.%new line%- Access to &a&o/compass&f to show you your bearings.%new line%- Access to &a&o/suffix&f to set your suffix (&a&o/delsuffix&f to remove it).%new line%- Access to &a&o/vc&f to set up to 2 virtual chests.||cmd:/testrank craftsman")
+		
+		if {rank.%player%} is greater than or equal to 5:
+			json("%player%", "[&9&oSeasoned&r] - &a&lPURCHASED&r||ttp:&6Costs: 6 tokens and $55,000.%new line%&e&oPermissions granted to &9&oSeasoners&e&o:%new line%&r- Set 7 &a&o/home&f's (&a&o/sethome&f <homename).%new line%- 4 extra health hearts.%new line%- Scavenger saves items on death.%new line%- Claim up to 3 plots in the &a&o/sandbox&r world with &a&o/plot auto&f and/or &a&o/plot claim&f.%new line%- Access to &a&o/top&f to jump to the highest safe surface.%new line%- Can format signs with &ac&2o&bl&3o&cr&4s&f, &lbold&r and &oitalics&r.%new line%- Set up to 4 virtual chests.")
+		else:
+			json("%player%", "[&9&oSeasoned&r] - &6Costs: 6 tokens and $55,000.||ttp:&e&oPermissions granted to &9&oSeasoners&e&o:%new line%&r- Set 7 &a&o/home&f's (&a&o/sethome&f <homename>).%new line%- 4 extra health hearts.%new line%- Scavenger saves items on death.%new line%- Claim up to 3 plots in the &a&o/sandbox&r world with &a&o/plot auto&f and/or &a&o/plot claim&f.%new line%- Access to &a&o/top&f to jump to the highest safe surface.%new line%- Can format signs with &ac&2o&bl&3o&cr&4s&f, &lbold&r and &oitalics&r.%new line%- Set up to 4 virtual chests.||cmd:/testrank seasoned")
+		
+		if {rank.%player%} is greater than or equal to 6:
+			json("%player%", "[&b&oNoble&r] - &a&lPURCHASED&r||ttp:&6Costs: 8 tokens and $110,000.%new line%&e&oPermissions granted to &b&oNobles&e&o:%new line%&r- Set 10 &a&o/home&f's (&a&o/sethome&f <homename>).%new line%- 6 extra health hearts.%new line%- Can format &a&o/suffix&f with &ac&2o&bl&3o&cr&4s&f, &lbold&r and &oitalics&r.%new line%- Access to &a&o/hat&f to wear the item in your &umain&r hand as a hat.%new line%- Access to &a&o/bottle&f to store your experience in a virtual bottle.%new line%- Set up to 6 virtual chests.")
+		else:
+			json("%player%", "[&b&oNoble&r] - &6Costs: 8 tokens and $110,000.||ttp:&e&oPermissions granted to &b&oNobles&e&o:%new line%&r- Set 10 &a&o/home&f's (&a&o/sethome&f <homename>).%new line%- 6 extra health hearts.%new line%- Can format &a&o/suffix&f with &ac&2o&bl&3o&cr&4s&f, &lbold&r and &oitalics&r.%new line%- Access to &a&o/hat&f to wear the item in your &umain&r hand as a hat.%new line%- Access to &a&o/bottle&f to store your experience in a virtual bottle.%new line%- Set up to 6 virtual chests.||cmd:/testrank noble")
+		
+		if {rank.%player%} is greater than or equal to 7:
+			json("%player%", "[&a&oElite&r] - &a&lPURCHASED&r||ttp:&6Costs: 9 Tokens and $200,000.%new line%&e&oPermissions granted to &a&oElites&e&o:%new line%&r- 8 extra health hearts.%new line%- Access to &a&o/ec&f to access your enderchest from anywhere in the world.%new line%- Access to &a&o/nv&f to toggle night vision.%new line%- Access to &a&o/ext&f to extinguish yourself if you are on fire.%new line%-Set up to 8 virtual chests.")
+		else:
+			json("%player%", "[&a&oElite&r] - &6Costs: 9 Tokens and $200,000.||ttp:&e&oPermissions granted to &a&oElites&e&o:%new line%- 8 extra health hearts.%new line%&r- Access to &a&o/ec&f to access your enderchest from anywhere in the world.%new line%- Access to &a&o/nv&f to toggle night vision.%new line%- Access to &a&o/ext&f to extinguish yourself if you are on fire.%new line%- Set up to 8 virtual chests.||cmd:/testrank elite")
+		
+		if {rank.%player%} is greater than or equal to 8:
+			json("%player%", "[&4&oChampion&r] - &a&lPURCHASED&r||ttp:&6Costs: 10 Tokens and $400,000.%new line%&e&oPermissions granted to &4&oChampions&e&o:%new line%&r- Set unlimited &a&o/home&f's (&a&o/sethome&f <homename>).%new line%- 10 extra health hearts.%new line%- Access to &a&o/fly&f to toggle fly-mode.%new line%- Set up to 10 virtual chests.%new line%Access to Champion Hall which includes:%new line%   - Access to &a&o/pet&f%new line%   - Access to &a&o/ride&f%new line%   - Access to &a&o/guard&f%new line%   - High-stakes Casino")
+		else:
+			json("%player%", "[&4&oChampion&r] - &6Costs: 10 Tokens and $400,000.||ttp:&e&oPermissions granted to &4&oChampions&e&o:%new line%&r- Set unlimited &a&o/home&f's (&a&o/sethome&f <homename>).%new line%- 10 extra health hearts.%new line%- Access to &a&o/fly&f to toggle fly-mode.%new line%- Set up to 10 virtual chests.||cmd:/testrank champion")
+		
 command /token <text> <integer>:
 	trigger:
 		player is op

@@ -15,7 +15,19 @@ on click on chest or trapped chest:
 	make the event-block appear closed
 on region enter:
 	"%region%" contains "drugden"
-	apply nausea 1 to the player for 30 seconds
+	apply nausea 1 to the player for 45 seconds
+on walk on cyan stained clay:
+	"%region at player%" contains "valkyria"
+	wait 2 ticks
+	add now to {prosteps::*}
+	add location of event-block to {prospots::*}
+	set block at location of event-block to diamond block
+every 2 ticks:
+	loop {prosteps::*}:
+		difference between {prosteps::%loop-index%} and now is greater than or equal to 1 second
+		set block at location of block at {prospots::%loop-index%} to cyan stained clay
+		delete {prosteps::%loop-index%}
+		delete {prospots::%loop-index%}
 on walk on locked chest:
 	"%region at player%" contains "valkyria"
 	apply potion of speed 2 to the player for 1 second
@@ -27,13 +39,58 @@ command /setprowarp:
 	trigger:
 		set {prowarp} to location of player
 		message "&aSet!"
-		
+
+	
+command /burningman:
+	permission: is.pro
+	trigger:
+		delete {fire.man::*}
+	#	delete {burning.man::*}
+		set {altitude} to 110
+#	   message "&aLighting the way."
+		loop all blocks in radius 30 of player:
+			loop-block is oak plank
+		#	add location of loop-block to {burning.man::*}
+			if block at location of block 1 meter above loop-block is air:
+				set the block at location of block 1 meter above loop-block to fire
+				add location of block 1 meter above loop-block to {fire.man::*}
+			if block at location of block 1 meter east of loop-block is air:
+				set the block at location of block 1 meter east of loop-block to fire
+				add location of block 1 meter east of loop-block to {fire.man::*}
+			if block at location of block 1 meter west of loop-block is air:
+				set the block at location of block 1 meter west of loop-block to fire
+				add location of block 1 meter west of loop-block to {fire.man::*}
+			if block at location of block 1 meter north of loop-block is air:
+				set the block at location of block 1 meter north of loop-block to fire
+				add location of block 1 meter north of loop-block to {fire.man::*}
+			if block at location of block 1 meter south of loop-block is air:
+				set the block at location of block 1 meter south of loop-block to fire
+				add location of block 1 meter south of loop-block to {fire.man::*}
+		loop 45 times:
+			wait 1 real second
+			loop {burning.man::*}:
+				altitude of block at location of block at loop-value-2 is greater than {altitude}
+				chance of 72%
+				set block at location of block at loop-value-2 to air
+			wait 1 real second
+			loop {fire.man::*}:
+				altitude of block at location of block at loop-value-2 is less than {altitude}
+			#	block at location of block at loop-value-2 is oak plank
+				set block at location of block at loop-value-2 to fire
+			subtract 1 from {altitude}
+			
+command /fixburningman:
+	permission: is.pro
+	trigger:
+		loop {burning.man::*}:
+			set block at location of block at loop-value to oak plank
+		message "&aRestored burning man!"
 command /prowarp <player>:
 	permission: essentials.socialspy
 	trigger:
 		teleport arg to {prowarp}
 		teleport arg to {prowarp}
-		send "&a&oNow leaving MrProtagonist's Office" to arg
+		send "&a&oNow outside MrProtagonist's Office" to arg
 command /provanish [<offlineplayer>]:
 	executable by: players
 	permission: essentials.socialspy

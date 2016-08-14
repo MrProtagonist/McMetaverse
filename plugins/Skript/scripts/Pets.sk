@@ -73,7 +73,6 @@ command /getpet <text>:
 			if arg 1 is "dog":
 				spawn a wolf at player
 				set age of spawned entity to baby
-				set the wolf collar of spawned entity to red
 				set name of spawned entity to "&d%player%'s %arg 1%"
 				tame spawned entity to player
 				add spawned entity to {pets.pets::*}
@@ -360,10 +359,9 @@ on damage:
 		else:
 			send "&f[&dPets&f] &cYour pet is taking %damage cause% damage!" to {owner.%victim%}
 
-on death:
-	{owner.%entity%} is set
-		clear drops
-		remove drops
+#on death:
+#	{owner.%entity%} is set:
+#		clear drops
 on quit:
 	loop {pets.owners::*}:
 		loop-value is player

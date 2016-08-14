@@ -1,0 +1,30 @@
+options:
+    ticks: 3
+
+
+# # #  # # # # # # { CODE } # # # # # # # # # # #
+command /colorbeacon:
+    trigger:
+        if player has permission "*":
+            give player 1 sponge named "&cPlace &9this &aon &etop &aof &9the &cbeacon"
+on place of sponge:
+    name of player's tool is "&cPlace &9this &aon &etop &aof &9the &cbeacon":
+        add location of block to {colorbeacons::*}
+        set {colorbeacon} to 1
+        set block to glass block
+        send "&8&l? &aColor beacon location added successfully!"
+on break:
+    loop {colorbeacons::*}:
+        if location of block is loop-value:
+            remove loop-value from {colorbeacons::*}
+            send "&8&l? &aColor beacon location remove successfully!"
+every {@ticks} ticks:
+    loop {colorbeacons::*}:
+        if data value of block at loop-value is more than 13:
+            set data value of block at loop-value to 1
+        else if data value of block at loop-value is 6:
+            set data value of block at loop-value to 9
+        else if data value of block at loop-value is 11:
+            set data value of block at loop-value to 13
+        else:
+            add 1 to the data value of block at loop-value

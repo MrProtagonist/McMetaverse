@@ -100,12 +100,6 @@ variables:
 	{wchat::/donate} = "§a§o/donate§r"
 	{wchat::/staff} = "§a§o/staff§r"
 #	{wchat::mcmetaverse.com} = "§a§oMcMetaverse.com§r"
-# censored because I, craft is sick and tired of the dumbass complaints about them. #
-#	{wchat::cunt} = "meanie"
-#	{wchat::fag} = "friend"
-#	{wchat::fagg} = "friend"
-#	{wchat::faggot} = "friend"
-#	{wchat::gay} = "joyous"
 command /removefix <text>:
 	trigger:
 		if player is op:
@@ -251,7 +245,7 @@ command /rules:
 		message "&c&lServer Rules and Guidelines&b - Hover for more info!"
 		message " "
 		json("%player%", "             &f[&a1&f] &oNo griefing, stealing or scamming||ttp:&eGriefing:&f Destroying something that is not yours.%new line%&eStealing:&f Taking something that is not yours.%new line%&eScamming:&f Misleading another player for your gain.")
-		json("%player%", "             &f[&a2&f] &oNo use of xray, hacking, cheating, lag creation||ttp:&exray:&f Mods or texture packs that make blocks invisible.%new line%&eHacking:&fBypassing claims, modded fly, breaking blocks too fast.%new line%&eCheating:&fDuping, giving money, giving items.%new line%&eLag Creation:&fRedstone devices, too many animals, open to staff decision.")
+		json("%player%", "             &f[&a2&f] &oNo use of xray, hacking, cheating, lag creation||ttp:&exray:&f Mods or texture packs that make blocks invisible.%new line%&eHacking: &fBypassing claims, modded fly, breaking blocks too fast.%new line%&eCheating: &fDuping, giving money, giving items.%new line%&eLag Creation: &fRedstone devices, too many animals, open to staff decision.")
 		json("%player%", "             &f[&a3&f] &oBe respectful and use common sense||ttp:&eHarassing:&f Rudeness, offensive slurs, or hate speech.%new line%Continuing a line of conversation you were asked to drop.%new line%&b(purposely renaming your account to that of a staffmember applies to that as well)")
 		json("%player%", "             &f[&a4&f] &oNo unnecessary drama or rage quitting||ttp:&eDrama:&f Petty personal fights played out in public.%new line%&eRage quitting:&f Closing the game if you die, get punished, or don't get what you want.")
 		json("%player%", "             &f[&a5&f] &oNo spam or excessive CAPS||ttp:&eSpam:&f Saying more than a message a second.%new line%&eExcessive CAPS:&f Consecutive words in all CAPS.")
@@ -260,9 +254,9 @@ command /rules:
 		json("%player%", "             &f[&a8&f] &oNo arguing with staff||ttp:&eWhy?&f It is inappropriate to argue with staff in chat.%new line%&fIf you question a decision, you may &a/msg&f that staff.%new line%&fIf you got punished, create an appeal on the website for all staff to review.")
 		json("%player%", "             &f[&a9&f] &oNo public eyesores||ttp:&ePublic Eyesore:&f Anything that any normal player can find%new line%&fwhile exploring the world that is unpleasant.%new line%&fThis includes things like penises, 1x1 dirt towers, death pits,%new line%&ffloating lava, dirt houses, hidden public traps, 1x1 farms, etc.")
 		json("%player%", "             &f[&a10&f] &oNo asking for handouts||ttp:&eHandouts:&f Anything you did not earn or attempt to trade for.%new line%&bThis includes items, ranks, homes, money, etc.")
-		json("%player%", "             &f[&a11&f] &oNo PVP unless both parties agree to it||ttp:&ePVP:&f Both parties must agree to the PVP.%new line%Both parties must agree to the terms of the PVP.%new line%You are expected to return items unless you both agree otherwise.%new line%&bPVP must be enabled, by default it is off.")
+		json("%player%", "             &f[&a11&f] &oNo PVP unless both parties agree to it||ttp:&ePVP:&f Both parties must agree to the PVP.%new line%Both parties must agree to the terms of the PVP.%new line%You are expected to return items unless you both agree otherwise.%new line%&bPVP must be enabled, by default PVP is off in /meta.")
 		json("%player%", "             &f[&a12&f] &oNo being an asshole||ttp:&fLaughing at deaths, talking down to people.%new line%Intentionally pushing peoples buttons.%new line%&bIf are you asked to stop talking about something, do so.")
-		json("%player%", "             &f[&a13&f] &oKeep public chat in English||ttp:&fIf you need to chat in another language,%new line%join a /chat room or use /msg.%new line%&eThis is so Staff can regulate chat.") 
+		json("%player%", "             &f[&a13&f] &oKeep public chat in English||ttp:&fIf you need to chat in another language,%new line%join a /chat room or use /msg.%new line%&bThis is so Staff can regulate chat.") 
 		message " "
 		message "&f[&6NOTE&f] &e&oThis server is intended for adults. We allow cursing. By agreeing to these rules, you agree to not be bothered by profanity."
 		message "&f&l============================================="
@@ -287,3 +281,8 @@ command /ts:
 # on chat:
 #	replace all "kristen" with "Kristy" in the message
 #	player's name is "CantThink96"
+command /ticket:
+	trigger:
+		message "&4We are currently phasing out the in-game /ticket system because of the lack of ability to give detail."
+		json("%player%", "(&aClick here for McMetaverse Support&f) ||ttp:&b&oThis will open the Support page on mcmetaverse.com so you can submit a ticket including screenshots.||url:http://www.mcmetaverse.com/support/")
+		#send umbaska json of "(&a1&f) &eMcMetaverse Support" tooltip "Click here to submit a ticket" open "http://www.mcmetaverse.com/support/" to player

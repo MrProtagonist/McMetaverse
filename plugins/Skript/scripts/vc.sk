@@ -169,3 +169,6 @@ command /vc [<text>] [<text>]:
 			message "  &eWrite the following:"
 			message "                    |       [vc]       |"  
 			message "                    |   Some name   |"
+on command "ec":
+	message "&cYou can't use that here"
+	cancel event

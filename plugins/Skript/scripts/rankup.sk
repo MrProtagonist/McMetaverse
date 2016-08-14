@@ -44,39 +44,39 @@ command /setrank [<offlineplayer=%player%>] [<integer>]:
 				set {prode} to "demote"
 			if arg-2 is 0:
 				set {rank.%arg-1%} to 0
-				execute console command "man%{prode}% %arg 1% visitor"
+				run player command "man%{prode}% %arg 1% visitor" as op
 				make argument 1 execute "fixprefix"
 			if arg-2 is 1:
 				set {rank.%arg-1%} to 1
-				execute console command "man%{prode}% %arg 1% rookie"
+				run player command "man%{prode}% %arg 1% rookie" as op
 				make argument 1 execute "fixprefix"
 			if arg-2 is 2:
 				set {rank.%arg-1%} to 2
-				execute console command "man%{prode}% %arg 1% regular"
+				run player command "man%{prode}% %arg 1% regular" as op
 				make argument 1 execute "fixprefix"
 			if arg-2 is 3:
 				set {rank.%arg-1%} to 3
-				execute console command "man%{prode}% %arg 1% citizen"
+				run player command "man%{prode}% %arg 1% citizen" as op
 				make argument 1 execute "fixprefix"
 			if arg-2 is 4:
 				set {rank.%arg-1%} to 4
-				execute console command "man%{prode}% %arg 1% craftsman"
+				run player command "man%{prode}% %arg 1% craftsman" as op
 				make argument 1 execute "fixprefix"
 			if arg-2 is 5:
 				set {rank.%arg-1%} to 5
-				execute console command "man%{prode}% %arg 1% seasoned"
+				run player command "man%{prode}% %arg 1% seasoned" as op
 				make argument 1 execute "fixprefix"
 			else if arg-2 is 6:
 				set {rank.%arg-1%} to 6
-				execute console command "man%{prode}% %arg 1% noble"
+				run player command "man%{prode}% %arg 1% noble" as op
 				make argument 1 execute "fixprefix"
 			else if arg-2 is 7:
 				set {rank.%arg-1%} to 7
-				execute console command "man%{prode}% %arg 1% elite"
+				run player command "man%{prode}% %arg 1% elite" as op
 				make argument 1 execute "fixprefix"
 			else if arg-2 is 8:
 				set {rank.%arg-1%} to 8
-				execute console command "man%{prode}% %arg 1% champion"
+				run player command "man%{prode}% %arg 1% champion" as op
 				make argument 1 execute "fixprefix"
 			else if arg-2 is greater than 8:
 				message "&cInvalid input. %arg 1% %arg 2%"
@@ -89,23 +89,23 @@ command /setrank [<offlineplayer=%player%>] [<integer>]:
 command /fixrank:
 	trigger:
 		if {rank.%player%} is 0:
-			execute console command "manpromote %player% visitor"
+			run player command "manpromote %player% visitor" as op
 		if {rank.%player%} is 1:
-			execute console command "manpromote %player% rookie"
+			run player command "manpromote %player% rookie" as op
 		if {rank.%player%} is 2:
-			execute console command "manpromote %player% regular"
+			run player command "manpromote %player% regular" as op
 		if {rank.%player%} is 3:
-			execute console command "manpromote %player% citizen"
+			run player command "manpromote %player% citizen" as op
 		if {rank.%player%} is 4:
-			execute console command "manpromote %player% craftsman"
+			run player command "manpromote %player% craftsman" as op
 		if {rank.%player%} is 5:
-			execute console command "manpromote %player% seasoned"
+			run player command "manpromote %player% seasoned" as op
 		if {rank.%player%} is 6:
-			execute console command "manpromote %player% noble"
+			run player command "manpromote %player% noble" as op
 		if {rank.%player%} is 7:
-			execute console command "manpromote %player% elite"
+			run player command "manpromote %player% elite" as op
 		if {rank.%player%} is 8:
-			execute console command "manpromote %player% champion"
+			run player command "manpromote %player% champion" as op
 		message "&aYou have been placed in your proper rank."
 command /checkrank <offlineplayer=%player%>:
 	permission: essentials.socialspy
@@ -126,7 +126,7 @@ every 10 real seconds in "MetaSanctus" or "resource" or "MetaSanctus_nether":
 		add 1 to {rookierank.%loop-player%}
 		if {rookierank.%loop-player%} is 1200:
 			send "&aCongratulations, you have been promoted to &d&oRookie!" to the loop-player
-			execute console command "manpromote %loop-player% rookie"
+			run loop-player command "manpromote %loop-player% rookie" as op
 			add 1 to {rank.%loop-player%}
 			broadcast "&6%loop-player% has just been promoted to &d&oRookie&6!"
 			wait 2 ticks
@@ -137,7 +137,7 @@ command /fixrookie <player>:
 	trigger:
 		{rank.%arg%} is smaller than 1
 		send "&aCongratulations, you have been promoted to &d&oRookie!" to the arg
-		execute console command "manpromote %arg% rookie"
+		run player command "manpromote %arg% rookie" as op
 		add 1 to {rank.%arg%}
 		broadcast "&6%arg% has just been promoted to &d&oRookie&6!"
 		wait 2 ticks
@@ -156,7 +156,7 @@ command /testrank <text>:
 					if {tokens.%player%} is greater than or equal to 2:
 						execute console command "eco take %player% 3500"
 						message "&aCongratulations, you have been promoted!"
-						execute console command "manpromote %player% regular"
+						run player command "manpromote %player% regular" as op
 						execute console command "manuaddv %player% &r&f[&d&oRookie&r] &r"
 						add 1 to {rank.%player%}
 						broadcast "&6%player% has just been promoted to &cRegular&6!"
@@ -176,7 +176,7 @@ command /testrank <text>:
 					if {tokens.%player%} is greater than or equal to 3:
 						execute console command "eco take %player% 12500"
 						message "&aCongratulations, you have been promoted!"
-						execute console command "manpromote %player% citizen"
+						run player command "manpromote %player% citizen" as op
 						add 1 to {rank.%player%}
 						broadcast "&6%player% has just been promoted to &eCitizen&6!"
 						wait 2 ticks
@@ -195,7 +195,7 @@ command /testrank <text>:
 					if {tokens.%player%} is greater than or equal to 5:
 						execute console command "eco take %player% 25000"
 						message "&aCongratulations, you have been promoted!"
-						execute console command "manpromote %player% craftsman"
+						run player command "manpromote %player% craftsman" as op
 						add 1 to {rank.%player%}
 						broadcast "&6%player% has just been promoted to &6Craftsman&6!"
 						wait 2 ticks
@@ -214,7 +214,7 @@ command /testrank <text>:
 					if {tokens.%player%} is greater than or equal to 6:
 						execute console command "eco take %player% 55000"
 						message "&aCongratulations, you have been promoted!"
-						execute console command "manpromote %player% seasoned"
+						run player command "manpromote %player% seasoned" as op
 						add 1 to {rank.%player%}
 						broadcast "&6%player% has just been promoted to &9Seasoned&6!"
 						wait 2 ticks
@@ -234,7 +234,7 @@ command /testrank <text>:
 					if {tokens.%player%} is greater than or equal to 8:
 						execute console command "eco take %player% 110000"
 						message "&aCongratulations, you have been promoted!"
-						execute console command "manpromote %player% noble"
+						run player command "manpromote %player% noble" as op
 						add 1 to {rank.%player%}
 						broadcast "&6%player% has just been promoted to &bNoble&6!"
 						wait 2 ticks
@@ -253,7 +253,7 @@ command /testrank <text>:
 					if {tokens.%player%} is greater than or equal to 9:
 						execute console command "eco take %player% 200000"
 						message "&aCongratulations, you have been promoted!"
-						execute console command "manpromote %player% elite"
+						run player command "manpromote %player% elite" as op
 						add 1 to {rank.%player%}
 						broadcast "&6%player% has just been promoted to &aElite&6!"
 						wait 2 ticks
@@ -272,7 +272,7 @@ command /testrank <text>:
 					if {tokens.%player%} is greater than or equal to 10:
 						execute console command "eco take %player% 400000"
 						message "&aCongratulations, you have been promoted!"
-						execute console command "manpromote %player% Champion"
+						run player command "manpromote %player% Champion" as op
 						add 1 to {rank.%player%}
 						broadcast "&6%player% has just been promoted to &4Champion&6!"
 						wait 2 ticks

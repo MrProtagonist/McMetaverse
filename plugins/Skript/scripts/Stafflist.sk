@@ -14,6 +14,8 @@ command /staff [<text>] [<text>]:
 	trigger:
 		if arg-1 is not set:
 			set {_now} to now
+			open chest with 3 rows named "&4&lServer Staff" to player
+			set {_temploopb} to 0
 			loop {stafflist::*}:
 # =========================================================================================================
 # json is cleaner but apparently that "goes through chat too fast" permission to kill myself please. ~Craft
@@ -21,12 +23,81 @@ command /staff [<text>] [<text>]:
 # =========================================================================================================
 				if loop-value is not online:
 					set {_offlinedays} to difference between {staff.%loop-value%.logout} and now
-					message "&6%loop-value%&f: &a%{_offlinedays}%."
+					set {_head} to "%loop-value%" parsed as offline player
+					format slot {_temploopb} of player with skull of {_head} named "%loop-value%" with lore "&7&oOffline||&fLast Online: &7%{_offlinedays}%" to close
+					add 1 to {_temploopb}
+				else:
+				#	set {_offlinedays} to difference between {staff.%loop-value%.logout} and now
+					set {_head} to "%loop-value%" parsed as offline player
+					format slot {_temploopb} of player with skull of {_head} named "%loop-value%" with lore "&a&oOnline" to close
+					add 1 to {_temploopb}
+					#message "&6%loop-value%&f: &a%{_offlinedays}%."
 				# else:
 				#	message "&7&l%loop-index%&r. &6%loop-value% &f[&aOnline since&f]: &b%{staff.%loop-value%.login}%."
 #				#	message "&a&l%loop-index%&r. &b%loop-value% - %{staff.%loop-value%.logout}%&r."
 #				#	message "Days offline: %{_offlinedays}%"
 		#	message "Current time and date: &c&n%{_now}%&r."
+on join:
+	set {join.%player%.time} to now
+on script load:
+	loop all players:
+		{join.%loop-player%.time} is not set
+		set {join.%loop-player%.time} to now
+		
+on command "list" or "online":
+	cancel event
+	make player execute "players"
+command /players:
+	aliases: /list, /online
+	trigger:
+		set {_temploopc} to 0
+		delete {online.players::*}
+		loop all players:
+			add loop-player to {online.players::*}
+		open chest with 5 rows named "&4&lOnline Players" to player
+		loop {online.players::*}:
+			set {_head} to "%loop-value%" parsed as offline player
+			set {_ping} to {_head}'s ping
+			if {pvp.%{_head}%} is 0:
+				set {_pvp} to "&aActivated"
+			else:
+				set {_pvp} to "&cDeactivated"
+			if {profile.%loop-value%.rewarded} is true:
+				set {_profile} to "&aYes"
+			else:
+				set {_profile} to "&cNo"
+			if {_head} has the permission "is.premium":
+				set {_premium} to "&aYes"
+			else:
+				set {_premium} to "&cNo"
+			if {_head} has the permission "essentials.socialspy":
+				if {_head} has the permission "is.admin":
+					if {_head} has the permission "is.op":
+						format slot {_temploopc} of player with skull of {_head} named "%colored {_head}'s prefix%%{_head}%" with lore "&fHealth: &c%health of {_head}% / %maximum health of {_head}%||&fStaff: &aYes||&fPremium: %colored {_premium}%||&fWorld: &e%world of {_head}%||&fPing: &6%{_ping}% ms||&fPVP: %colored {_pvp}%||&fDaily Goal: &e%{goal.%{_head}%.progress}% / %{amount.%{randomgoal}%}%||&fBalance: &a%balance of {_head}%||&fProfile Complete: %colored {_profile}%||&fLogged In: &e%{join.%{_head}%.time}%" to close then run "sudo %player% profile view %{_head}%"
+					else:
+						format slot {_temploopc} of player with skull of {_head} named "%colored {_head}'s prefix%%{_head}%" with lore "&fHealth: &c%health of {_head}% / %maximum health of {_head}%||&fStaff: &aYes||&fPremium: %colored {_premium}%||&fWorld: &e%world of {_head}%||&fPing: &6%{_ping}% ms||&fPVP: %colored {_pvp}%||&fDaily Goal: &e%{goal.%{_head}%.progress}% / %{amount.%{randomgoal}%}%||&fBalance: &a%balance of {_head}%||&fProfile Complete: %colored {_profile}%||&fLogged In: &e%{join.%{_head}%.time}%" to close then run "sudo %player% profile view %{_head}%"
+				else:
+					format slot {_temploopc} of player with skull of {_head} named "%colored {_head}'s prefix%%{_head}%" with lore "&fHealth: &c%health of {_head}% / %maximum health of {_head}%||&fStaff: &aYes||&fPremium: %colored {_premium}%||&fWorld: &e%world of {_head}%||&fPing: &6%{_ping}% ms||&fPVP: %colored {_pvp}%||&fDaily Goal: &e%{goal.%{_head}%.progress}% / %{amount.%{randomgoal}%}%||&fBalance: &a%balance of {_head}%||&fProfile Complete: %colored {_profile}%||&fLogged In: &e%{join.%{_head}%.time}%" to close then run "sudo %player% profile view %{_head}%"
+			else:
+				if {rank.%{_head}%} is 0:
+					format slot {_temploopc} of player with skull of {_head} named "%colored {_head}'s prefix%%{_head}%" with lore "&fHealth: &c%health of {_head}% / %maximum health of {_head}%||&fStaff: &cNo||&fPremium: %colored {_premium}%||&fWorld: &e%world of {_head}%||&fPing: &6%{_ping}% ms||&fPVP: %colored {_pvp}%||&fDaily Goal: &e%{goal.%{_head}%.progress}% / %{amount.%{randomgoal}%}%||&fBalance: &a%balance of {_head}%||&fProfile Complete: %colored {_profile}%||&fLogged In: &e%{join.%{_head}%.time}%" to close then run "sudo %player% profile view %{_head}%"
+				if {rank.%{_head}%} is 1:
+					format slot {_temploopc} of player with skull of {_head} named "%colored {_head}'s prefix%%{_head}%" with lore "&fHealth: &c%health of {_head}% / %maximum health of {_head}%||&fStaff: &cNo||&fPremium: %colored {_premium}%||&fWorld: &e%world of {_head}%||&fPing: &6%{_ping}% ms||&fPVP: %colored {_pvp}%||&fDaily Goal: &e%{goal.%{_head}%.progress}% / %{amount.%{randomgoal}%}%||&fBalance: &a%balance of {_head}%||&fProfile Complete: %colored {_profile}%||&fLogged In: &e%{join.%{_head}%.time}%" to close then run "sudo %player% profile view %{_head}%"
+				if {rank.%{_head}%} is 2:
+					format slot {_temploopc} of player with skull of {_head} named "%colored {_head}'s prefix%%{_head}%" with lore "&fHealth: &c%health of {_head}% / %maximum health of {_head}%||&fStaff: &cNo||&fPremium: %colored {_premium}%||&fWorld: &e%world of {_head}%||&fPing: &6%{_ping}% ms||&fPVP: %colored {_pvp}%||&fDaily Goal: &e%{goal.%{_head}%.progress}% / %{amount.%{randomgoal}%}%||&fBalance: &a%balance of {_head}%||&fProfile Complete: %colored {_profile}%||&fLogged In: &e%{join.%{_head}%.time}%" to close then run "sudo %player% profile view %{_head}%"
+				if {rank.%{_head}%} is 3:
+					format slot {_temploopc} of player with skull of {_head} named "%colored {_head}'s prefix%%{_head}%" with lore "&fHealth: &c%health of {_head}% / %maximum health of {_head}%||&fStaff: &cNo||&fPremium: %colored {_premium}%||&fWorld: &e%world of {_head}%||&fPing: &6%{_ping}% ms||&fPVP: %colored {_pvp}%||&fDaily Goal: &e%{goal.%{_head}%.progress}% / %{amount.%{randomgoal}%}%||&fBalance: &a%balance of {_head}%||&fProfile Complete: %colored {_profile}%||&fLogged In: &e%{join.%{_head}%.time}%" to close then run "sudo %player% profile view %{_head}%"
+				if {rank.%{_head}%} is 4:
+					format slot {_temploopc} of player with skull of {_head} named "%colored {_head}'s prefix%%{_head}%" with lore "&fHealth: &c%health of {_head}% / %maximum health of {_head}%||&fStaff: &cNo||&fPremium: %colored {_premium}%||&fWorld: &e%world of {_head}%||&fPing: &6%{_ping}% ms||&fPVP: %colored {_pvp}%||&fDaily Goal: &e%{goal.%{_head}%.progress}% / %{amount.%{randomgoal}%}%||&fBalance: &a%balance of {_head}%||&fProfile Complete: %colored {_profile}%||&fLogged In: &e%{join.%{_head}%.time}%" to close then run "sudo %player% profile view %{_head}%"
+				if {rank.%{_head}%} is 5:
+					format slot {_temploopc} of player with skull of {_head} named "%colored {_head}'s prefix%%{_head}%" with lore "&fHealth: &c%health of {_head}% / %maximum health of {_head}%||&fStaff: &cNo||&fPremium: %colored {_premium}%||&fWorld: &e%world of {_head}%||&fPing: &6%{_ping}% ms||&fPVP: %colored {_pvp}%||&fDaily Goal: &e%{goal.%{_head}%.progress}% / %{amount.%{randomgoal}%}%||&fBalance: &a%balance of {_head}%||&fProfile Complete: %colored {_profile}%||&fLogged In: &e%{join.%{_head}%.time}%" to close then run "sudo %player% profile view %{_head}%"
+				if {rank.%{_head}%} is 6:
+					format slot {_temploopc} of player with skull of {_head} named "%colored {_head}'s prefix%%{_head}%" with lore "&fHealth: &c%health of {_head}% / %maximum health of {_head}%||&fStaff: &cNo||&fPremium: %colored {_premium}%||&fWorld: &e%world of {_head}%||&fPing: &6%{_ping}% ms||&fPVP: %colored {_pvp}%||&fDaily Goal: &e%{goal.%{_head}%.progress}% / %{amount.%{randomgoal}%}%||&fBalance: &a%balance of {_head}%||&fProfile Complete: %colored {_profile}%||&fLogged In: &e%{join.%{_head}%.time}%" to close then run "sudo %player% profile view %{_head}%"
+				if {rank.%{_head}%} is 7:
+					format slot {_temploopc} of player with skull of {_head} named "%colored {_head}'s prefix%%{_head}%" with lore "&fHealth: &c%health of {_head}% / %maximum health of {_head}%||&fStaff: &cNo||&fPremium: %colored {_premium}%||&fWorld: &e%world of {_head}%||&fPing: &6%{_ping}% ms||&fPVP: %colored {_pvp}%||&fDaily Goal: &e%{goal.%{_head}%.progress}% / %{amount.%{randomgoal}%}%||&fBalance: &a%balance of {_head}%||&fProfile Complete: %colored {_profile}%||&fLogged In: &e%{join.%{_head}%.time}%" to close then run "sudo %player% profile view %{_head}%"
+				if {rank.%{_head}%} is 8:
+					format slot {_temploopc} of player with skull of {_head} named "%colored {_head}'s prefix%%{_head}%" with lore "&fHealth: &c%health of {_head}% / %maximum health of {_head}%||&fStaff: &cNo||&fPremium: %colored {_premium}%||&fWorld: &e%world of {_head}%||&fPing: &6%{_ping}% ms||&fPVP: %colored {_pvp}%||&fDaily Goal: &e%{goal.%{_head}%.progress}% / %{amount.%{randomgoal}%}%||&fBalance: &a%balance of {_head}%||&fProfile Complete: %colored {_profile}%||&fLogged In: &e%{join.%{_head}%.time}%" to close then run "sudo %player% profile view %{_head}%"
+			add 1 to {_temploopc}
 
 command /addstaff <offlineplayer> <integer>:
 	trigger:

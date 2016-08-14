@@ -147,15 +147,15 @@ command /pvpon:
 				message "<yellow>PVP is &c&oactivated&r<yellow>!"
 				stop trigger
 every 10 real seconds:
-	loop all players in world "hyper":
+	loop all players in world "hyperverse3":
 		set {pvp.%loop-player%} to 1
-	loop all players in world "hyper_nether":
+	loop all players in world "hyperverse3_nether":
 		set {pvp.%loop-player%} to 1
 command /pvpoff:
 		description: Toggles PVP on
 		executable by: players
 		trigger:
-				set {pvp.%player%} to 1
+				set {pvp.%player%} to 0
 				message "<yellow>PVP is &a&odeactivated&r<yellow>!"
 				stop trigger
 command /togglepvp:

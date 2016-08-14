@@ -80,11 +80,11 @@ command /ride:
 			spawn an unique "horse" horse colored "creamy" with patterns of "none" at player
 		if {horse.%player%} contains "dapple":
 			spawn an unique "horse" horse colored "gray" with patterns of "white dots" at player
-	set name of spawned unique horse to "%player%s Horse"
-	set age of event-entity to adult
-	equip spawned unique horse with a saddle
-	set {riding.%player%} to true
-	make player ride last spawned unique horse
+		set name of spawned unique horse to "%player%s Horse"
+#		set age of spawned unique horse-entity to adult
+		equip spawned unique horse with a saddle
+		set {riding.%player%} to true
+		make player ride last spawned unique horse
 on vehicle steer:
 #   player is "craftio"
 	"%uncoloured name of player's vehicle%" contains "polar bear"
