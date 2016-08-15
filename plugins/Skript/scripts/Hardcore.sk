@@ -145,18 +145,19 @@ on respawn:
 		wait 1 tick
 		teleport player to {hyperverse3}
 	delete {bedspawn.%player%}
-on command "/ec":
-	player's world is "hyperverse3" or "hyperverse3_nether"
-	cancel event
-	message "&cThis command is not allowed in this world!"
-on command "/enderchest":
-	player's world is "hyperverse3" or "hyperverse3_nether"
-	cancel event
-	message "&cThis command is not allowed in this world!"
+#on command "/ec":
+#	player's world is "hyperverse3" or "hyperverse3_nether"
+#	cancel event
+#	message "&cThis command is not allowed in this world!"
+#on command "/enderchest":
+#	player's world is "hyperverse3" or "hyperverse3_nether"
+#	cancel event
+#	message "&cThis command is not allowed in this world!"
 on command "/vc":
 	player's world is "hyperverse3" or "hyperverse3_nether"
 	cancel event
 	message "&cThis command is not allowed in this world!"
+# /ec, /enderchest, /echest & /endersee should be disabled through the code below.
 on command:
 	player's world is "hyperverse3" or "hyperverse3_nether"
 	player does not have the permission "is.op"
