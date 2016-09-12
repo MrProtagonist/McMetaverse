@@ -1,0 +1,71 @@
+######################
+#+                  +#
+#   MENU SETTINGS    #
+#+                  +#
+######################
+
+menu-settings:
+
+  # name - appears as the title - REQUIRED
+  name: '&a&lNavigation Menu'
+
+  # rows - the number of rows of the chest - REQUIRED
+  rows: 1
+
+  # command - OPTIONAL (you can remove this or set it to '')
+  command: 'nav'
+
+  # The sound played whenever the menu is opened.
+  # List of sounds:
+  # jd.bukkit.org/rb/apidocs/org/bukkit/Sound.html
+  open-sound: NOTE_PLING
+
+  # open-with-item - OPTIONAL (you can remove this or
+  # set the item-id/data-value to 0)
+  # In this case it will open with a book (right click)
+  open-with-item:
+    item-id: 340
+    left-click: false
+    right-click: false
+#   data-value: 0
+
+######################
+#+                  +#
+#       ITEMS        #
+#+                  +#
+######################
+
+Spawn:
+  COMMAND: 'open:spawnwarps.yml'
+  NAME: '&d[p] &e&lSpawn&d[p]'
+  LORE:
+    - '&f&oWarps to areas of Spawn'
+  ID: 399
+  KEEP-OPEN: true
+  POSITION-X: 3
+  POSITION-Y: 1
+
+Resource:
+  COMMAND: 'resource'
+  NAME: '&d[p] &c&lResource World&d[p]'
+  LORE:
+    - '&f&oDirect warp to &a&o/resource'
+    - '&e&oGather resources but &4&ldo not build'
+    - '&f&oWorld is reset regularly'
+  ID: 129
+  KEEP-OPEN: true
+  POSITION-X: 5
+  POSITION-Y: 1
+  
+Block:
+  COMMAND: 'open:biomewarps.yml'
+  NAME: '&d[p] &6&lBiome Warps&d[p]'
+  LORE:
+    - '&f&oWarps to the different biomes'
+    - '&4&oOnly accessible in &a/resource'
+  ID: 2
+  KEEP-OPEN: true
+  POSITION-X: 7
+  POSITION-Y: 1
+  DATA-VALUE: 0
+  

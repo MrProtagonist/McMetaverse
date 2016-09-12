@@ -1,0 +1,287 @@
+######################
+#+                  +#
+#   MENU SETTINGS    #
+#+                  +#
+######################
+
+menu-settings:
+
+  # name - appears as the title - REQUIRED
+  name: '&a&lWarps Inside Spawn'
+
+  # rows - the number of rows of the chest - REQUIRED
+  rows: 3
+
+  # command - OPTIONAL (you can remove this or set it to '')
+  # Bind multiple commands using ; (command: 'menu; m; me')
+  command: 'swarp'
+
+  # The sound played whenever the menu is opened.
+  # List of sounds:
+  # jd.bukkit.org/rb/apidocs/org/bukkit/Sound.html
+  open-sound: NOTE_PLING
+
+  # open-with-item - OPTIONAL
+  # The menu will open only right-clicking with orange wool [35:1]
+  open-with-item:
+    item-id: wool
+    left-click: false
+    right-click: false
+    data-value: 1
+
+#
+# NEVER USE A ' IN ANY OF YOUR TEXT!
+#
+
+spawnwarp:
+  COMMAND: 'spawn'
+  NAME: '&aMcMetaverse &eSpawn'
+  LORE: 
+    - '&5&oStart here for everything in spawn'
+  ID: 98
+  KEEP-OPEN: false
+  POSITION-X: 1
+  POSITION-Y: 1
+  DATA-VALUE: 3
+
+sswarp:
+  COMMAND: 'ss'
+  NAME: '&2$&ferver &2$&fhop'
+  LORE: 
+    - '&2&oBuy and sell blocks and items - No limits'
+  ID: 264
+  KEEP-OPEN: false
+  POSITION-X: 3
+  POSITION-Y: 1
+#  DATA-VALUE: 0
+
+dpwarp:
+  COMMAND: 'warp dp'
+  NAME: '&cDr&6op &ePa&art&by A&drea'
+  LORE:
+    - '&b&oDrop party location arena'
+  ID: 57
+  KEEP-OPEN: false
+  POSITION-X: 5
+  POSITION-Y: 1
+#  DATA-VALUE: 0
+
+casinowarp:
+  COMMAND: 'warp casino'
+  NAME: '&fServer &eCasino'
+  LORE: 
+    - '&d&oTry your luck and win big'
+  ID: 266
+  KEEP-OPEN: false
+  POSITION-X: 7
+  POSITION-Y: 1
+  #  DATA-VALUE: 0
+
+infowarp:
+  COMMAND: 'warp info'
+  NAME: '&aGeneral Information'
+  LORE: 
+    - '&a&oInfo &e&oabout pretty much everything'
+  ID: 323
+  KEEP-OPEN: false
+  POSITION-X: 9
+  POSITION-Y: 1
+  #  DATA-VALUE: 0
+
+noobtownwarp:
+  COMMAND: 'warp nt'
+  NAME: '&3&oCalesco &f- &dNew Player Town'
+  LORE: 
+    - '&e&oFree &lnew player&r &e&otown'
+    - '&e&oTemp housing for &b&o2 weeks'
+    - '&e&oAsk &c&ostaff &e&oto give you a home'
+  ID: 5
+  KEEP-OPEN: false
+  POSITION-X: 2
+  POSITION-Y: 2
+  #  DATA-VALUE: 0
+
+playertownwarp:
+  COMMAND: 'warp pt'
+  NAME: '&9Player-made Towns'
+  LORE: 
+    - '&e&oA bunch of warps to &9&oplayer-made towns'  
+    - '&e&oUse &a&o/certify &e&oto add your own town'
+  ID: 324
+  KEEP-OPEN: false
+  POSITION-X: 4
+  POSITION-Y: 2
+  #  DATA-VALUE: 0
+
+warphubwarp:
+  COMMAND: 'warp worlds'
+  NAME: '&cWarp Hub'
+  LORE:
+    - '&c&oWarp Portals &e&oto the multiple worlds'
+    - '&e&oIncludes &5&oend&e&o, &4&ohyper&e&o, &2&oresource&e&o, and &3&ominigames'
+  ID: 120
+  KEEP-OPEN: false
+  POSITION-X: 6
+  POSITION-Y: 2
+  #  DATA-VALUE: 0
+
+gallowswarp:
+  COMMAND: 'warp gallows'
+  NAME: '&4The Decapitator'
+  LORE: 
+    - '&c&oKill your friends!'
+    - '&c&oCollect their Heads!'
+    - '&c&oGotta cut em all.'
+  ID: 397
+  KEEP-OPEN: false
+  POSITION-X: 8
+  POSITION-Y: 2
+  DATA-VALUE: 3
+
+chapelwarp:
+  COMMAND: 'warp islandw'
+  NAME: '&f&oChapel'
+  LORE:
+    - '&a&oMetaverse &b&oIsland &d&oWedding Chapel'
+    - '&7&oAn ideal place to hold your wedding'
+  ID: 399
+  KEEP-OPEN: false
+  POSITION-X: 1
+  POSITION-Y: 3
+  #  DATA-VALUE: 0
+
+champwarp:
+  COMMAND: 'warp champ'
+  NAME: '&4Champion Hall'
+  LORE:
+    - '&e&oAn Exclusive area for &4&oChampions'
+    - '&e&oExtra commands and perms'
+    - '&e&oCasino, Lounge, and an Adult area'
+  ID: 155
+  KEEP-OPEN: false
+  POSITION-X: 3
+  POSITION-Y: 3
+  DATA-VALUE: 2
+
+profficewarp:
+  COMMAND: 'warp proffice'
+  NAME: '&aMrProtagonists Office'
+  LORE:
+    - '&a&oWhere the bad folk go when they &c&odie'
+  ID: 137
+  KEEP-OPEN: false
+  POSITION-X: 5
+  POSITION-Y: 3
+  #  DATA-VALUE: 0
+
+wildwarp:
+  COMMAND: 'warp wilderness'
+  NAME: '&2Warp Portal to the Wild'
+  LORE:
+    - '&e&oPortal to random teleport'
+    - '&e&oCheck for claims nearby before building'
+  ID: 175
+  KEEP-OPEN: false
+  POSITION-X: 7
+  POSITION-Y: 3
+  DATA-VALUE: 3
+divider1:
+  NAME: ''
+  ID: 160
+  KEEP-OPEN: true
+  POSITION-X: 2
+  POSITION-Y: 1
+  DATA-VALUE: 0
+divider2:
+  NAME: ''
+  ID: 160
+  KEEP-OPEN: true
+  POSITION-X: 4
+  POSITION-Y: 1
+  DATA-VALUE: 0
+divider3:
+  NAME: ''
+  ID: 160
+  KEEP-OPEN: true
+  POSITION-X: 6
+  POSITION-Y: 1
+  DATA-VALUE: 0
+divider4:
+  NAME: ''
+  ID: 160
+  KEEP-OPEN: true
+  POSITION-X: 8
+  POSITION-Y: 1
+  DATA-VALUE: 0
+divider5:
+  NAME: ''
+  ID: 160
+  KEEP-OPEN: true
+  POSITION-X: 1
+  POSITION-Y: 2
+  DATA-VALUE: 0
+divider6:
+  NAME: ''
+  ID: 160
+  KEEP-OPEN: true
+  POSITION-X: 3
+  POSITION-Y: 2
+  DATA-VALUE: 0
+divider7:
+  NAME: ''
+  ID: 160
+  KEEP-OPEN: true
+  POSITION-X: 5
+  POSITION-Y: 2
+  DATA-VALUE: 0
+divider8:
+  NAME: ''
+  ID: 160
+  KEEP-OPEN: true
+  POSITION-X: 7
+  POSITION-Y: 2
+  DATA-VALUE: 0
+divider9:
+  NAME: ''
+  ID: 160
+  KEEP-OPEN: true
+  POSITION-X: 9
+  POSITION-Y: 2
+  DATA-VALUE: 0
+divider10:
+  NAME: ''
+  ID: 160
+  KEEP-OPEN: true
+  POSITION-X: 2
+  POSITION-Y: 3
+  DATA-VALUE: 0
+divider11:
+  NAME: ''
+  ID: 160
+  KEEP-OPEN: true
+  POSITION-X: 4
+  POSITION-Y: 3
+  DATA-VALUE: 0
+divider12:
+  NAME: ''
+  ID: 160
+  KEEP-OPEN: true
+  POSITION-X: 6
+  POSITION-Y: 3
+  DATA-VALUE: 0
+divider13:
+  NAME: ''
+  ID: 160
+  KEEP-OPEN: true
+  POSITION-X: 8
+  POSITION-Y: 3
+  DATA-VALUE: 0
+nav:
+  COMMAND: 'open:nav.yml'
+  NAME: 'Go Back'
+  LORE:
+    - 'Back to the Navigation menu'
+  ID: 388
+  KEEP-OPEN: true
+  POSITION-X: 9
+  POSITION-Y: 3

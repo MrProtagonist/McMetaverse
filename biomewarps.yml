@@ -1,0 +1,193 @@
+
+menu-settings:
+
+  # name - appears as the title - REQUIRED
+  name: '&a&lBiome Warps'
+
+  # rows - the number of rows of the chest - REQUIRED
+  rows: 3
+
+  # command - OPTIONAL (you can remove this or set it to '')
+  # Bind multiple commands using ; (command: 'menu; m; me')
+  command: 'biomes'
+
+  # The sound played whenever the menu is opened.
+  # List of sounds:
+  # jd.bukkit.org/rb/apidocs/org/bukkit/Sound.html
+  open-sound: NOTE_PLING
+
+  # open-with-item - OPTIONAL
+  # The menu will open only right-clicking with orange wool [35:1]
+  open-with-item:
+    item-id: wool
+    left-click: false
+    right-click: false
+    data-value: 1
+
+
+#
+# NEVER USE A ' IN ANY OF YOUR TEXT!
+#
+plainswarp:
+  COMMAND: 'biometp plains'
+  NAME: '&aPlains Biome'
+  LORE: 
+    - 'TP to &aPlains biome&7 to harvest resources'
+  ID: 2
+  KEEP-OPEN: false
+  POSITION-X: 1
+  POSITION-Y: 1
+forestwarp:
+  COMMAND: 'biometp forest'
+  NAME: '&2Forest Biome'
+  LORE: 
+    - 'TP to &2Forest biome&7 to harvest resources'
+  ID: 17
+  KEEP-OPEN: false
+  POSITION-X: 2
+  POSITION-Y: 1
+birchwarp:
+  COMMAND: 'biometp birch_forest'
+  NAME: '&fBirch Forest&7 Biome'
+  LORE: 
+    - 'TP to &fBirch Forest&7 biome to harvest resources'
+  ID: 17
+  KEEP-OPEN: false
+  POSITION-X: 3
+  POSITION-Y: 1
+  DATA-VALUE: 2
+taigawarp:
+  COMMAND: 'biometp taiga'
+  NAME: '&fTaiga Biome'
+  LORE: 
+    - 'TP to &fTaiga biome &7to harvest resources'
+  ID: 17
+  KEEP-OPEN: false
+  POSITION-X: 4
+  POSITION-Y: 1
+  DATA-VALUE: 1
+junglewarp:
+  COMMAND: 'biometp Jungle'
+  NAME: '&aJungle Biome'
+  LORE: 
+    - 'TP to &aJungle biome &7to harvest resources'
+  ID: 17
+  KEEP-OPEN: false
+  POSITION-X: 5
+  POSITION-Y: 1
+  DATA-VALUE: 3
+roofedwarp:
+  COMMAND: 'biometp roofed_forest'
+  NAME: '&2Dark Oak/Roofed Biome'
+  LORE: 
+    - 'TP to &2Roofed biome&7 to harvest resources'
+  ID: 162
+  KEEP-OPEN: false
+  POSITION-X: 6
+  POSITION-Y: 1
+  DATA-VALUE: 1
+savannahwarp:
+  COMMAND: 'biometp savannah'
+  NAME: '&6Savannah Biome'
+  LORE: 
+    - 'TP to &6Savannah biome &7to harvest resources'
+  ID: 162
+  KEEP-OPEN: false
+  POSITION-X: 7
+  POSITION-Y: 1
+snowtaigawarp:
+  COMMAND: 'biometp ice_flats'
+  NAME: '&fSnowy Plains Biome'
+  LORE: 
+    - 'TP to &fSnowy Plains&7 biome to harvest resources'
+  ID: 80
+  KEEP-OPEN: false
+  POSITION-X: 8
+  POSITION-Y: 1
+swampwarp:
+  COMMAND: 'biometp swamp'
+  NAME: '&3Swamp Biome'
+  LORE: 
+    - 'TP to &3Swamp biome&7 to harvest resources'
+  ID: 106
+  KEEP-OPEN: false
+  POSITION-X: 9
+  POSITION-Y: 1
+kamigroves:
+  COMMAND: 'warp groves'
+  NAME: '&9Kamillya Groves'
+  LORE: 
+    - 'Warp to the server &agroves'
+    - '&2Trees &7set aside to be harvested'
+    - 'Make sure you &areplant the trees&7!'
+  ID: 6
+  KEEP-OPEN: false
+  POSITION-X: 1
+  POSITION-Y: 2
+  DATA-VALUE: 0
+desertwarp:
+  COMMAND: 'biometp desert'
+  NAME: '&eDesert Biome'
+  LORE: 
+    - 'TP to &eDesert biome &7to harvest resources'
+  ID: 81
+  KEEP-OPEN: false
+  POSITION-X: 2
+  POSITION-Y: 2
+  DATA-VALUE: 0
+mesawarp:
+  COMMAND: 'biometp mesa'
+  NAME: '&4M&ce&6s&ea &7Biome'
+  LORE: 
+    - 'TP to &4M&ce&6s&ea &7biome to harvest resources'
+  ID: 159
+  KEEP-OPEN: false
+  POSITION-X: 3
+  POSITION-Y: 2
+  DATA-VALUE: 1
+extremehillswarp:
+  COMMAND: 'biome extreme_hills'
+  NAME: '&2Extreme &8Hills &7Biome'
+  LORE: 
+    - 'TP to &2Extreme &8Hills &7biome to harvest resources'
+  ID: 129
+  KEEP-OPEN: false
+  POSITION-X: 4
+  POSITION-Y: 2
+flowerswarp:
+  COMMAND: 'biometp mutated_forest'
+  NAME: '&dFlower &aForest &5Biome'
+  LORE: 
+    - 'TP to &dFlower &aForest &5biome &7to harvest resources'
+  ID: 175
+  KEEP-OPEN: false
+  POSITION-X: 5
+  POSITION-Y: 2
+  DATA-VALUE: 4
+icespikewarp:
+  COMMAND: 'biometp mutated_ice_flats'
+  NAME: '&fIce &9Spike &7Biome'
+  LORE: 
+    - 'TP to &fIce &9Spike &7biome to harvest resources'
+  ID: 174
+  KEEP-OPEN: false
+  POSITION-X: 6
+  POSITION-Y: 2
+mushroomwarp:
+  COMMAND: 'biometp mushroom_island'
+  NAME: '&4Mushroom Biome'
+  LORE: 
+    - 'TP to &4Mushroom biome &7to harvest resources'
+  ID: 100
+  KEEP-OPEN: false
+  POSITION-X: 7
+  POSITION-Y: 2
+back-to-nav:
+  COMMAND: 'open:nav.yml'
+  NAME: 'Go Back'
+  LORE: 
+    - 'Back to the Navigation Menu'
+  ID: 399
+  KEEP-OPEN: false
+  POSITION-X: 9
+  POSITION-Y: 2
