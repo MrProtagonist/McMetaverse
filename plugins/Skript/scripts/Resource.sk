@@ -102,7 +102,7 @@ on command "craftio":
 	message "All the arguments: %arguments%"
 on command:
 	if player is in world "resource":
-		if command is "warp" or "nav":
+		if command is "warp":
 			message "&f&oYou can't use those commands in resource!"
 			cancel event
 on command "/biome":

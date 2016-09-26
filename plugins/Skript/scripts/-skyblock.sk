@@ -1,0 +1,25 @@
+on spread:
+    message "%event-block%" to "it_twit" parsed as player
+    event-block is cobblestone
+	
+    event-world is "skyworld"
+    set {_r} to random integer from 1 to 1000
+    if {_r} >= 250: #Cobblestone 750
+        stop
+    else:
+        if {_r} >= 150: #Coal 100
+            set event-block to coal ore
+        else:
+            if {_r} >= 100: #Iron 50
+                set event-block to iron ore
+            else:
+                if {_r} >= 75: #Gold 25
+                    set event-block to gold ore
+                else:
+                    if {_r} >= 65: #Diamond 10
+                        set event-block to diamond ore
+                    else:
+                        if {_r} >= 60: #Emerald 5
+                            set event-block to emerald ore
+                        else: #Stone 60
+                            set event-block to stone

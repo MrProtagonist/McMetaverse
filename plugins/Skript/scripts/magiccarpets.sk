@@ -1,0 +1,233 @@
+# MagicCarpets.sk v1.2 by RezzedUp
+# ---------
+# REQUIRES:
+# - Skript 2.2
+# - SkQuery
+# ---------
+
+# Permissions:
+#   mc.use
+#     Allows a player to use /mc to spawn a magic carpet
+#   mc.color
+#     Allows a player to change the color of their magic carpet
+
+# Command:
+#   /mc
+#     Spawns a magic carpet for the player
+#   /mc <color>
+#     Changes the magic carpet's color
+
+options:
+    # The rate at which magic carpets will refresh.
+    # Increase the value to reduce lag. (e.g. 5 ticks, or 6 ticks)
+    # Default Value: 3 ticks
+    CARPET_REFRESH: 3 ticks
+    
+    # The length of the carpet.
+    # Default Value: 5
+    CARPET_LENGTH: 5
+    
+    # The width of the carpet.
+    # Default Value: 5
+    CARPET_WIDTH: 5
+    
+    # Protects paintings AND item frames from magic carpets.
+    # Default Value: true
+    PROTECT_PAINTINGS: true
+    
+    # The distance away from a block a painting or item frame must be to protect.
+    # Default Value: 1
+    PAINTING_DISTANCE: 1
+    
+    # Force pistons to wait if a carpet is near.
+    # Default Value: true
+    PATIENT_PISTONS: true
+    
+    # Prevent players from mining a carpet's glass.
+    # Default Value: true
+    PREVENT_STEALING: true
+    
+    # *------------------------------------------------------*
+    
+    # The beginning of this script's variables.
+    # #! DO NOT CHANGE !# if you don't know what you're doing.
+    # Default Value: MagicCarpet
+    VAR_BEGINNING: MagicCarpet
+    
+    # The available colors for players to choose.
+    # #! DO NOT CHANGE !# if you don't know what you're doing.
+    CARPET_COLORS: "clear|red|orange|yellow|light green|green|cyan|light blue|blue|brown|purple|magenta|pink|white|light gray|gray|black"
+    
+    # #! DO NOT CHANGE !# #
+    VER: 1.2
+    
+command /magic [<text>]:
+    permission: mc.use
+    aliases: /magiccarpet, /carpet
+    executable by: players
+    trigger:
+        if arg 1 is not set:
+            if {{@VAR_BEGINNING}::%player's uuid%} is not set:
+                set {{@VAR_BEGINNING}::%player's uuid%} to true
+                send " &f&o* Poof *&7 You've summoned a magic carpet!"
+                invoke "MagicCarpet" from player
+            else:
+                delete {{@VAR_BEGINNING}::%player's uuid%}
+                send " &9&o* Poof *&7 Your magic carpet has vanished!"
+        else:
+            if player has permission "mc.color":
+                set {_colors} to {@CARPET_COLORS}
+                set {_colors::*} to {_colors} split at "|"
+                loop {_colors::*}:
+                    if arg 1 is loop-value:
+                        set {_match} to loop-value
+                        exit 2 sections
+                if {_match} is set:
+                    if {_match} is "clear":
+                        delete {{@VAR_BEGINNING}::%player's uuid%::material}
+                    else:
+                        set {{@VAR_BEGINNING}::%player's uuid%::material} to "%{_match}% stained glass"
+                    if {{@VAR_BEGINNING}::%player's uuid%} is not set:
+                        set {{@VAR_BEGINNING}::%player's uuid%} to true
+                        send " &o* Poof *&7 You've summoned a colorful magic carpet!"
+                        invoke "MagicCarpet" from player
+                    else:
+                        send " &o* Poof *&7 Changed your magic carpet's color to %{_match}%!"
+                else:
+                    send " These are the color options:%nl% &7%{_colors::*}%"
+            else:
+                send "&cYou don't have permission to change your magic carpet's color."
+                
+function MagicCarpet_isCarpetBlock(loc: location) :: boolean:
+    loop {{@VAR_BEGINNING}::*}:
+        set {_uuid} to "%loop-index%"
+        if {{@VAR_BEGINNING}::%{_uuid}%::carpet::%{_loc}%} is set:
+            return true
+            stop
+    return false
+    
+function MagicCarpet_isPaintingOrItemFrame(loc: location, distance: number=1) :: boolean:
+    loop all item frames and paintings:
+        set {_e.loc} to the location of loop-entity 
+        if distance between {_e.loc} and {_loc} is less than or equal to {_distance}:
+            return true
+            stop
+    return false
+
+sub "MagicCarpet":
+    parameter 1 is set # player
+    set {_p} to parameter 1
+    set {_uuid} to "%uuid of {_p}%"
+    
+    while {{@VAR_BEGINNING}::%{_uuid}%} is set:
+        if {_p} is online:
+            if {_p} does not have permission "mc.use":
+                set {_stop} to true
+        else:
+            set {_stop} to true
+            
+        if {_stop} is not set:
+            invoke "MagicCarpet.clear" from {_uuid}
+            if {{@VAR_BEGINNING}::%{_uuid}%::material} is set:
+                invoke "MagicCarpet.generate" from {_p} and {{@VAR_BEGINNING}::%{_uuid}%::material}
+            else:
+                invoke "MagicCarpet.generate" from {_p}
+            wait {@CARPET_REFRESH}
+        else:
+            invoke "MagicCarpet.clear" from {_uuid}
+            delete {{@VAR_BEGINNING}::%{_uuid}%::*}
+            delete {{@VAR_BEGINNING}::%{_uuid}%}
+            stop
+            
+    invoke "MagicCarpet.clear" from {_uuid}
+        
+sub "MagicCarpet.generate":
+    parameter 1 is set # player
+    set {_p} to parameter 1
+    set {_uuid} to "%uuid of {_p}%"
+    if parameter 2 is set: #material
+        set {_material} to "%parameter 2%" parsed as material
+    else:
+        set {_material} to "20" parsed as material
+    
+    if {_p} is sneaking:
+        set {_centerBlock} to the block 2 meters below {_p}
+    else:
+        set {_centerBlock} to the block 1 meter below {_p}
+    set {_halfLength} to rounded down ({@CARPET_LENGTH} / 2)
+    set {_halfWidth} to rounded down ({@CARPET_WIDTH} / 2)
+    set {_baseBlock} to the block {_halfLength} meters north of {_centerBlock}
+    set {_baseBlock} to the block {_halfWidth} meters east of {_baseBlock}
+    
+    loop {@CARPET_LENGTH} times:
+        set {_south++} to loop-number - 1
+        loop {@CARPET_WIDTH} times:
+            set {_west++} to (loop-number-2) - 1
+            set {_block} to the block {_south++} meters south of {_baseBlock}
+            set {_block} to the block {_west++} meters west of {_block}
+            if {_block} is air:
+                set {_loc} to location at {_block}
+                if {@PROTECT_PAINTINGS}:
+                    if MagicCarpet_isPaintingOrItemFrame({_loc}, {@PAINTING_DISTANCE}):
+                        set {_skip} to true
+                if {_skip} is not set:
+                    set {{@VAR_BEGINNING}::%{_uuid}%::carpet::%{_loc}%} to {_loc}
+                    set block at {_block} to {_material}
+                else:
+                    delete {_skip}
+    
+sub "MagicCarpet.clear":
+    parameter 1 is set # player's uuid
+    set {_uuid} to parameter 1
+    
+    if {{@VAR_BEGINNING}::%{_uuid}%::carpet::*} is set:
+        loop {{@VAR_BEGINNING}::%{_uuid}%::carpet::*}:
+            set {_block} to loop-value
+            set block at {_block} to air
+        delete {{@VAR_BEGINNING}::%{_uuid}%::carpet::*}
+        
+sub "MagicCarpet.removeAllData":
+    if {{@VAR_BEGINNING}::*} is not empty:
+        send "&9[MagicCarpets]&r Clearing data & resetting remaining carpets." to console
+        loop {{@VAR_BEGINNING}::*}:
+            set {_uuid} to "%loop-index%"
+            add {_uuid} to {_uuids::*}
+            invoke "MagicCarpet.clear" from {_uuid}
+        delete {{@VAR_BEGINNING}::*}
+        loop all players:
+            loop {_uuids::*}:
+                if "%loop-player-1's uuid%" is loop-value-2:
+                    send " &cYour magic carpet was forced to vanish." to loop-player-1
+                    
+on script load:
+    invoke "MagicCarpet.removeAllData"
+    send "&9[MagicCarpets]&r Loaded MagicCarpets.sk v{@VER} by RezzedUp" to console
+        
+on script unload:
+    send "&9[MagicCarpets]&r Disabling MagicCarpets.sk v{@VER} by RezzedUp" to console
+
+on break:
+    if {@PREVENT_STEALING}:
+        if {{@VAR_BEGINNING}::*} is not empty:
+            set {_loc} to location at event-block
+            if MagicCarpet_isCarpetBlock({_loc}):
+                cancel event
+                stop
+            
+on piston extend:
+    if {@PATIENT_PISTONS}:
+        if {{@VAR_BEGINNING}::*} is not empty:
+            loop blocks in radius 2 around event-block:
+                set {_loc} to location at loop-block
+                if MagicCarpet_isCarpetBlock({_loc}):
+                    cancel event
+                    stop
+                
+on piston retract:
+    if {@PATIENT_PISTONS}:
+        if {{@VAR_BEGINNING}::*} is not empty:
+            loop blocks in radius 2 around event-block:
+                set {_loc} to location at loop-block
+                if MagicCarpet_isCarpetBlock({_loc}):
+                    cancel event
+                    stop

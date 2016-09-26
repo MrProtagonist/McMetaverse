@@ -1,0 +1,102 @@
+function ittwitBroadcastText(t: text):
+	broadcast "[&ait_twit's Assistant&r] %{_t}%"
+function ittwitPulseLocation(t: location):
+	set block at {_t} to redstone block
+	wait 5 ticks
+	set block at {_t} to air
+function ittwitSetLocationTarget(t: text):
+	set {ittwit::locations::%{_t}%} to location of targeted block of "it_twit" parsed as player
+function ittwitDeleteLocation(t: text):
+	delete {ittwit::locations::%{_t}%}
+function ittwitAssistCmd(f: text, p: text):
+
+	set {_m} to {ittwitassistant::message}
+	#delete {ittwitassistant::message}
+	set {_n::*} to {_m} split at " "
+	
+	set {_q::*} to {_p} split at "|"
+	set {_r::*} to {_p} split at " "
+	
+	set {_c} to 0
+	
+	loop {_r::*}:
+		if "%loop-value%" contains "|":
+			add 2 to {_c}
+			set {_x::%loop-index%} to {_q::%{_c}%}
+	loop {_n::*}:
+		if {_x::%loop-index%} is set:
+			if {_x::%loop-index%} is "number":
+				set {_temp} to loop-value parsed as number
+			if {_x::%loop-index%} is "text":
+				set {_temp} to """%loop-value%""" parsed as text
+			if {_x::%loop-index%} is "location":
+				set {_temp} to "{ittwit::locations::%loop-value%}"
+			if {_result} is set:
+				set {_result} to "%{_result}%,"
+			else:
+				set {_result} to ""
+			set {_result} to "%{_result}% %{_temp}%"
+		else:
+			if loop-value isn't {_r::%loop-index%}:
+				stop
+	evaluate "%{_f}%(%{_result}%)"
+on npc right click:
+	if event-number is 395:
+		if {ittwitassistant::%player%} is set:
+			if "it_twit" parsed as offlineplayer is online:
+				make citizen 395 say "I have alerted it_twit and he should be seeing you shortly" to player
+				set {_p} to "it_twit" parsed as player
+				message "%player% is ready to see you." to {_p}
+				message "%player% is ready to see you." to {_p}
+				message "%player% is ready to see you." to {_p}
+				message "%player% is ready to see you." to {_p}
+				message "%player% is ready to see you." to {_p}
+				message "%player% is ready to see you." to {_p}
+				message "%player% is ready to see you." to {_p}
+			else:	
+				make citizen 395 say "Sorry, but it_twit isn't currently online." to player
+		else:
+			make citizen 395 say "It seems that you haven't booked to see it_twit" to player
+			make citizen 395 say "If you want to arrange to see him please use /bookwithtwit <reason>" to player
+
+			
+command /bookwithtwit <text>:
+	usage: /bookwithtwit <reason>
+	trigger:
+		set {ittwitassistantpending::%player%} to arg
+		message "You have requested to see it_twit"
+command /ittwit:reviewbookings:
+	trigger:
+		if "%player%" is "it_twit":
+			loop {ittwitassistantpending::*}:
+				json("%player%", "%loop-index%: %loop-value%||ttp:Click To Allow||cmd:/ittwit:allowbooking %loop-index%")
+command /ittwit:allowbooking <offlineplayer>:
+	trigger:
+		if "%player%" is "it_twit":
+			{ittwitassistantpending::%arg%} is set
+			set {ittwitassistant::%arg%} to {ittwitassistantpending::%arg%}
+			delete {ittwitassistantpending::%arg%}
+			message "Approved %arg%"
+command /ittwit:seen <offlineplayer>:
+	trigger:
+		if "%player%" is "it_twit":
+			delete {ittwitassistant::%arg%}
+on chat:
+	if "%player%" is "it_twit":
+		if first 9 characters of message is "assistant":
+			set {ittwitassistant::message} to message
+			cancel event
+			ittwitAssistCmd("ittwitBroadcastText", "assistant broadcast |text|")
+			ittwitAssistCmd("ittwitPulseLocation", "assistant pulse |location|")
+			ittwitAssistCmd("ittwitSetLocationTarget", "assistant set location |text| to target")
+			ittwitAssistCmd("ittwitDeleteLocation", "assistant delete location |text|")
+			#if message is "assistant toggle door":
+			#	set block at {ittwit::locations::doorblock} to redstone block
+			#	wait 5 ticks
+			#	set block at {ittwit::locations::doorblock} to air
+			#	stop
+			#if message contains "assistant set location ":
+			#	set {_t} to message
+			#	replace all "assistant set location " with "" in {_t}
+			#	set {ittwit::locations::%{_t}%} to location of targeted block
+			#	stop

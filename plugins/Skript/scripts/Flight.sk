@@ -1,0 +1,76 @@
+on region enter:
+	"%region%" contains "aring"
+	{flygame.%player%} is true
+	add 2 to {flygame.%player%.score}
+	send "&a%{flygame.%player%.score}% points!" to event-player
+	
+on region enter:
+	"%region%" contains "bring"
+	{flygame.%player%} is true
+	add 4 to {flygame.%player%.score}
+	send "&a%{flygame.%player%.score}% points!" to event-player
+	
+command /flight:
+	trigger:
+		{flygame.%player%} is not set
+		if player does not have the permission "trailgui.commands.trails":
+			run player command "trail BlackDust" as OP
+		set {flygame.%player%} to true
+		teleport player to {flygame.start}
+		execute console command "fly %player% off"
+		execute console command "gms %player%"
+		set chestplate of player to elytra
+		set {flygame.%player%.score} to 0
+		execute console command "tm msg %player% &aFly my friend!"
+		set {flygame.%player%.started} to now
+		set {flygame.%player%.time} to 0
+
+command /setflight:
+	permission: is.pro
+	trigger:
+		set {flygame.start} to location of player
+		message "&aSet!"
+every 2 ticks in world "Minigame":
+	loop all players:
+		{flygame.%loop-player%} is set
+		execute console command "tm amsg %loop-player% %difference between now and {flygame.%loop-player%.started}%"
+every real second in world "Minigame":
+	loop all players:
+		{flygame.%loop-player%} is set
+		add 1 to {flygame.%loop-player%.time}
+		# difference between now and {flygame.%loop-player%.started} is greater than or equal to 10 seconds
+		block 1 meter below loop-player is not air or gold block or iron block or glowstone or diamond block
+		execute console command "tm msg %loop-player% &cGame over!"
+		send "&aYou got %{flygame.%loop-player%.score}% points in %difference between now and {flygame.%loop-player%.started}%!" to loop-player
+		execute console command "ci %loop-player%"
+		execute console command "eco give %loop-player% %{flygame.%loop-player%.score}%"
+		delete {flygame.%loop-player%}
+		if loop-player does not have the permission "trailgui.commands.trails":
+			run loop-player command "trail clearall" as OP
+		if {flygame.%loop-player%.top} is not set:
+			set {flygame.%loop-player%.top} to 0
+		if {flygame.%loop-player%.score} is greater than {flygame.%loop-player%.top}:
+			send "&aYou just set a personal high score!" to loop-player
+			set {flygame.%loop-player%.top} to {flygame.%loop-player%.score}
+		if {flygame.top} is not set:
+			set {flygame.top} to 0
+		if {flygame.%loop-player%.score} is greater than {flygame.top}:
+			set {_temptime} to difference between now and {flygame.%loop-player%.started}
+			broadcast "&a%loop-player% just set the high score for &6Flight School &awith &6%{flygame.%loop-player%.score}% points &ain &6%{_temptime}%&a!"
+			set {flygame.top} to {flygame.%loop-player%.score}
+			set {flygame.topplayer} to "%loop-player%"
+			set {flygame.toptime} to "%{_temptime}%"
+			stop
+		send "&aHigh Score is by %{flygame.topplayer}% with %{flygame.top}% points in %{flygame.toptime}%." to loop-player
+		
+command /resethighscore:
+	permission: is.pro
+	trigger:
+		delete {flygame.top}
+		delete {flygame.topplayer}
+		delete {flygame.toptime}
+		
+on command:
+	if {flygame.%event-player%} is true:
+		cancel event
+		message "&cCan't do this while playing a minigame!"

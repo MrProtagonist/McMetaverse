@@ -8,7 +8,6 @@ on join:
 				add 1 to {_counter}
 		if {staffcount} is equal to {_counter}:
 			add 1 to {staffcount}
-			add player to {stafflist::*}
 command /staff [<text>] [<text>]:
 	permission: essentials.socialspy
 	trigger:
@@ -18,7 +17,7 @@ command /staff [<text>] [<text>]:
 			set {_temploopb} to 0
 			loop {stafflist::*}:
 # =========================================================================================================
-# json is cleaner but apparently that "goes through chat too fast" permission to kill myself please. ~Craft
+# json is cleaner 
 #			json("%player%", "&a&l%loop-index%&r. &b&o%loop-value%&r||ttp:%{_now}%") 
 # =========================================================================================================
 				if loop-value is not online:
@@ -44,9 +43,12 @@ on script load:
 		{join.%loop-player%.time} is not set
 		set {join.%loop-player%.time} to now
 		
-on command "list" or "online":
+on command "/list":
 	cancel event
-	make player execute "players"
+	make player execute "/players"
+on command "/online":
+	cancel event
+	make player execute "/players"
 command /players:
 	aliases: /list, /online
 	trigger:

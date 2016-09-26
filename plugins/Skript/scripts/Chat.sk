@@ -4,18 +4,7 @@ on chat:
 	loop all players:
 		if "%message%" contains "%loop-player% ":
 			replace all "%loop-player%" with "&6&o%loop-player% &f" in message
-on join:
-	if {welcomed.%player%} is not set:
-		set {welcomed.%player%} to "Notch"
-		wait 2 real seconds
-		execute console command "tm msg %player% &6Welcome <nl>%player%"
-		wait 5 real seconds
-		execute console command "tm amsg %player% &bEnjoy your stay. &c?"
-	else:
-		wait 2 real seconds
-		execute console command "tm msg %player% &6Welcome back<nl>%player%"
-		wait 5 real seconds
-		execute console command "tm msg %player% &bWe missed you...<nl>&c♥"
+
 on script load:
 	if {today} is not set:
 		set {today} to 0
@@ -283,6 +272,6 @@ command /ts:
 #	player's name is "CantThink96"
 command /ticket:
 	trigger:
-		message "&4We are currently phasing out the in-game /ticket system because of the lack of ability to give detail."
+		message "&4We have phased out the in-game /ticket system because of the lack of ability to give detail."
 		json("%player%", "(&aClick here for McMetaverse Support&f) ||ttp:&b&oThis will open the Support page on mcmetaverse.com so you can submit a ticket including screenshots.||url:http://www.mcmetaverse.com/support/")
 		#send umbaska json of "(&a1&f) &eMcMetaverse Support" tooltip "Click here to submit a ticket" open "http://www.mcmetaverse.com/support/" to player

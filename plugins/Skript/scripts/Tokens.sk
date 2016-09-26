@@ -1,3 +1,18 @@
+#on login:
+#	if {tokens::%uuid of player%} is not set:
+#		set {tokens::%uuid of player%} to {tokens.%player%}
+#
+#
+command /updatetokens <player> <offlineplayer>:
+	permission: is.op
+	trigger:
+		player is op
+		set {tokens::%uuid of arg-1%} to {tokens.%arg-2%}
+#
+#
+#
+#
+#
 #script options:
 #	$ developer mode
 #

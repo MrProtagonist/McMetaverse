@@ -6,22 +6,26 @@ variables:
 	{refer.fifth} = 1
 on first join:
 	set {refered.%player%} to false
-command /code [<integer>]:
+command /refer [<integer>]:
 	executable by: players and console
+	aliases: /referral
 	trigger:
 		if arg is not set:
 			if {refer.%player%} is not set:
-				message "&cYou don't have a code yet!"
+				message "&cYou don't have a referral code yet!"
 				wait 1 real second
 				message "&aGenerating code..."
 				set {refer.%player%} to a random integer between 100000 and 999999
+				loop {refer.codes::*}:
+					if loop-value is {refer.%player%}:
+						set {refer.%player%} to a random integer between 100000 and 999999
 				add 0 to {refer.count::*}
 				add {refer.%player%} to {refer.codes::*}
 				add player to {refer.owner::*}
 				wait 2 real seconds
-			message "&a&oYour refer code is: &f&l%{refer.%player%}%"
+			message "&a&oYour referral code is: &f&l%{refer.%player%}%"
 			wait 1 real second
-			message "&eJust have whoever you refer type &a/code (Your ##)&e and you both get a reward!"
+			message "&eJust have whoever you refer type &a/referral (Your ##)&e and you both get a &9&lMeta&5&lKey"
 			stop
 		else:
 			if {refered.%player%} is false:
@@ -35,9 +39,8 @@ command /code [<integer>]:
 						wait 1 real second
 						message "&eYou both get a reward!"
 						wait 1 real second
-						execute console command "eco give %player% 1000"
-						execute console command "eco give %{refer.owner::%loop-index%}% 1500"
-						execute console command "mail send %{refer.owner::%loop-index%}% You were paid $1500 for refering %player%! Keep it up!"
+						execute console command "givekey %player%"
+						execute console command "givekey %{refer.owner::%loop-index%}%"
 						set {refered.%player%} to true
 						add 1 to {refer.count::%loop-index%}
 						set {refer.search} to true
@@ -72,7 +75,7 @@ command /code [<integer>]:
 				{refer.search} is true
 				message "&cUnable to find that code. Try again."
 			else if {refered.%player%} is true:
-				message "&cAlready submitted referal code!"
+				message "&cAlready submitted referral code!"
 			else:
 				message "&cYou joined before codes were made!"
 command /refers:

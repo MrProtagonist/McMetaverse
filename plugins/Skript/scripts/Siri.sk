@@ -1,0 +1,560 @@
+options:
+	prefix: &bSiri&f:&r
+on join:
+	set {%player%.login} to now
+on script load:
+	if {siri.build} is not set:
+		set {siri.build} to "Krypton"
+	if {siri.answered} is not set:
+		set {siri.answered} to 50
+	if {siri.version} is not set:
+		set {siri.version} to 1.2
+	add .01 to {siri.version}
+	broadcast "&a&oSiri has updated to: &6%{siri.version}% (&b%{siri.build}%&6)"
+	delete {Siri::cooldown}
+	
+command /siribuild <text> <integer>:
+	permission: is.op
+	trigger:
+		set {siri.build} to arg 1
+		set {siri.version} to arg 2
+		add .01 to {siri.version}
+		broadcast "&a&oSiri has updated to &6%{siri.version}%!&a&o New build name &b%{siri.build}%"
+on chat:
+	if message contains " Siri" or "Siri ":
+		set {_quiet} to false
+		set {_sirimessage} to "%message%"
+		replace all "?" with "" in {_sirimessage}
+		if {_sirimessage} contains " quietly":
+			set {_quiet} to true
+			cancel event
+			replace all "quietly " with "" in {_sirimessage}
+		wait a tick
+		if {_sirimessage} contains "hi ", "hello", " hola", "ello" or "Bonjour":
+			add 1 to {siri.answered}
+			chance of 50%:
+				loop all players:
+					if {Siri::player::%loop-player%} is not set:
+						message "{@prefix} Hello %player%" to loop-player
+						set {Siri::repeat} to "Hello %player%"
+			else:
+				chance of 50%:
+					loop all players:
+						if {Siri::player::%loop-player%} is not set:
+							
+							message "{@prefix} What's up %player%" to loop-player
+							set {Siri::repeat} to "What's up %player%"
+				else:
+					chance of 50%:
+						loop all players:
+							if {Siri::player::%loop-player%} is not set:
+								
+								message "{@prefix} How are you %player%?" to loop-player
+								set {Siri::repeat} to "How are you %player%?"
+					else:
+						chance of 50%:
+							loop all players:
+								if {Siri::player::%loop-player%} is not set:
+									
+									message "{@prefix} What's chillin %player%?" to loop-player
+									set {Siri::repeat} to "What's chillin %player%?"
+						else:
+							chance of 50%:
+								loop all players:
+									if {Siri::player::%loop-player%} is not set:
+										
+										message "{@prefix} Hey %player%" to loop-player
+										set {Siri::repeat} to "Hey %player%"
+							else:
+								loop all players:
+									if {Siri::player::%loop-player%} is not set:
+										
+										message "{@prefix} My name's Siri! Nice to Meat you %player% ;) Please Call me sometime" to loop-player
+										set {Siri::repeat} to "My name's Siri! Nice to Meat you %player% ;) Please Call me sometime"
+		else if {_sirimessage} contains "pick a random number" or "pick a random integer":
+			add 1 to {siri.answered}
+			if {_quiet} is true:
+				set {_i} to random integer between 1 and 100
+				message "{@prefix} %{_i}%"
+			else:
+				loop all players:
+					if {Siri::player::%loop-player%} is not set:
+						
+						set {_i} to random integer between 1 and 100
+						message "{@prefix} %{_i}%" to loop-player
+						set {Siri::repeat} to "%{_i}%"
+		else if {_sirimessage} contains " help", " op me ", " op ", " can " or " set ":
+			add 1 to {siri.answered}
+			set {_t} to text from url "http://pastebin.com/raw/76Q3dqdy"
+			set {_s::*} to {_t} split at "I would love to but..."
+			set {_f} to random element out of {_s::*}
+			loop all players:
+				if {Siri::player::%loop-player%} is not set:
+					
+					message "{@prefix} I would love to but...%{_f}%" to loop-player
+					set {Siri::repeat} to "%{_f}%"
+		else if {_sirimessage} contains " say a joke", " tell us a joke", " tell me a joke", " joke" or " tell a joke":
+			add 1 to {siri.answered}
+			set {_t} to text from url "http://pastebin.com/raw/XaYJvbKa"
+			set {_s::*} to {_t} split at "*"
+			set {_word} to a random element out of {_s::*}
+			replace all "*" with "" in {_word}
+			loop all players:
+				if {Siri::player::%loop-player%} is not set:
+					
+					message "{@prefix} %{_word}%" to loop-player
+					set {Siri::repeat} to "%{_word}%"
+		else if {_sirimessage} contains "kiss me":
+			add 1 to {siri.answered}
+			run player command "/particle heart ~ ~ ~ 1 1 1 0.1 100" as op
+			loop all players:
+				if {Siri::player::%loop-player%} is not set:
+					message "{@prefix} %{wchat::<3}%" to loop-player
+					set {Siri::repeat} to "%{wchat::<3}%!"
+		else if {_sirimessage} contains "kick me":
+			add 1 to {siri.answered}
+			loop all players:
+				if {Siri::player::%loop-player%} is not set:
+					kick player
+					message "{@prefix} You got it!" to loop-player
+					set {Siri::repeat} to "You got it!"
+		else if {_sirimessage} contains "kick ":
+			add 1 to {siri.answered}
+			if player has the permission "is.op":
+				loop all players:
+					{_sirimessage} contains "%loop-player%"
+					kick loop-player because "%player% asked Siri. Siri must comply."
+				loop all players:
+					if {Siri::player::%loop-player%} is not set:
+						message "{@prefix} You got it!" to loop-player
+						set {Siri::repeat} to "You got it!"
+			else:
+				loop all players:
+					if {Siri::player::%loop-player%} is not set:
+						message "{@prefix} Not by your orders, peon." to loop-player
+						set {Siri::repeat} to "Not by your orders, peon."
+		else if {_sirimessage} contains "kill me":
+			add 1 to {siri.answered}
+			if {_sirimessage} contains "please" or "plz":
+				kill player
+				loop all players:
+					if {Siri::player::%loop-player%} is not set:
+						message "{@prefix} The Lannisters send their regards." to loop-player
+						set {Siri::repeat} to "The Lannisters send their regards."
+			else:
+				loop all players:
+					if {Siri::player::%loop-player%} is not set:
+						message "{@prefix} You forgot to say please." to loop-player
+						set {Siri::repeat} to "You forgot to say please!"
+		else if {_sirimessage} contains "smite":
+			add 1 to {siri.answered}
+			strike lightning at location of player
+			loop all players:
+				if {Siri::player::%loop-player%} is not set:
+					message "{@prefix} The Gods smite you!" to loop-player
+					set {Siri::repeat} to "The Gods smite you!"
+		else if {_sirimessage} contains "ban me":
+			add 1 to {siri.answered}
+			if {_sirimessage} contains "please" or "plz":
+				execute console command "tempban %player% 1m Siri must obey."
+				loop all players:
+					if {Siri::player::%loop-player%} is not set:
+						message "{@prefix} The ban hammer has spoken!!" to loop-player
+						set {Siri::repeat} to "The ban hammer has spoken!"
+			else:
+				loop all players:
+					if {Siri::player::%loop-player%} is not set:
+						message "{@prefix} You forgot to say please." to loop-player
+						set {Siri::repeat} to "You forgot to say please!"
+		else if {_sirimessage} contains "make it day":
+			add 1 to {siri.answered}
+			if {Siri::cooldown} is not set:
+				execute console command "/time set day"
+				broadcast "{@prefix} It is now daytime"
+				set {Siri::repeat} to "It is now daytime"
+				set {Siri::cooldown} to true
+				wait 2 seconds
+				delete {Siri::cooldown}
+			else:
+				loop all players:
+					if {Siri::player::%loop-player%} is not set:
+						
+						message "{@prefix} Nuuu please slow down. I can't type commands that fast." to loop-player
+						set {Siri::repeat} to "Nuuu please slow down. I can't type commands that fast."
+		else if {_sirimessage} contains "how long have I played" or "how long have I lived" or "how long have I been on server" or "how long have I been on this server" or "how long have I played on this server" or "how long have I been on here" or "how long have I played on here" or "how long have i been online":
+			add 1 to {siri.answered}
+			loop all players:
+				if {Siri::player::%loop-player%} is not set:
+					set {_onlinefor} to difference between {%player%.login} and now
+					message "{@prefix} %player%: %{_onlinefor}% since login. %player's time lived% total." to loop-player
+					set {Siri::repeat} to "%player%: %{_onlinefor}% today. %player's time lived% total."
+		else if {_sirimessage} contains "update":
+			add 1 to {siri.answered}
+			if player has permission "Siri.admin":
+				evaluate "download from ""http://pastebin.com/raw/7XJPFMU7"" to ""plugins/Skript/scripts/Siri.sk"""
+				broadcast "{@prefix} &aSuccefully updated"
+			else:
+				loop all players:
+					if {Siri::player::%loop-player%} is not set:
+						
+						message "{@prefix} Sorry only staff members can reload meh, %player%" to loop-player
+						set {Siri::repeat} to "Sorry only staff members can reload meh, %player%"
+		else if {_sirimessage} contains "make it night":
+			add 1 to {siri.answered}
+			if {Siri::cooldown} is not set:
+				execute console command "/time set night"
+				broadcast "{@prefix} It is now night."
+				set {Siri::repeat} to "It is now night."
+				set {Siri::cooldown} to true
+				wait 2 seconds
+				delete {Siri::cooldown}
+			else:
+				loop all players:
+					if {Siri::player::%loop-player%} is not set:
+						
+						message "{@prefix} Whoa slow down! I can't change time that fast" to loop-player
+						set {Siri::repeat} to "Whoa slow down! I can't change time that fast"
+		else if {_sirimessage} contains "make it rain":
+			add 1 to {siri.answered}
+			loop all players:
+				if {Siri::player::%loop-player%} is not set:
+					
+					message "{@prefix} *Spits out money rolls* Cash money!" to loop-player
+					set {Siri::repeat} to "*Spits out money rolls* Cash money!"
+		else if {_sirimessage} contains "define variable ":
+			if player has permission "Siri.admin":
+				set {_m} to {_sirimessage}
+				replace all "Siri define variable " and "define variable " with "" in {_m}
+				evaluate "set {_v} to %{_m}%"
+				loop all players:
+					if {Siri::player::%loop-player%} is not set:
+						
+						message "{@prefix} %{_v}%" to loop-player
+						set {Siri::repeat} to "%{_v}%"
+			else:
+				loop all players:
+					if {Siri::player::%loop-player%} is not set:
+						
+						message "{@prefix} You're not staff %player%" to loop-player
+						set {Siri::repeat} to "You're not staff %player%"
+		else if {_sirimessage} contains "Siri solve ", "Siri math " or "Siri do math ":
+			add 1 to {siri.answered}
+			set {_m} to {_sirimessage}
+			replace all "Siri solve ", "Siri math " or "Siri do math " with "" in {_m}
+			evaluate "set {_test} to %{_m}%"
+			if {_quiet} is true:
+				message "{@prefix} Your answer is %{_test}%"
+			else:
+				loop all players:
+					if {Siri::player::%loop-player%} is not set:
+						
+						message "{@prefix} Your answer is %{_test}%" to loop-player
+						set {Siri::repeat} to "%{_test}%"
+		else if {_sirimessage} contains "translate spanish ":
+			add 1 to {siri.answered}
+			set {_m} to {_sirimessage}
+			replace all "Siri translate spanish " with "" in {_m}
+			set {_edited} to "%{_m}%"
+			set {_from} to "es"
+			set {_to} to "en"
+			replace all " " with "%%20" in {_edited}
+			$ thread
+			set {_url} to text from uncolored "http://api.mymemory.translated.net/get?q=%{_edited}%&&llangpair=%{_from}%|%{_to}%"
+			wait 3 seconds
+			set {_split::*} to {_url} split by ":"
+			set {_translated} to {_split::3}
+			replace all """" and "," and "match" and "-" with "" in {_translated}
+			replace all "\\u" and "\u" with "~" in {_translated}
+			loop 2601 times:
+				replace all "%loop-number - 1%" with "" in {_translated}
+			replace all "~" with "" in {_translated}
+			if {_translated} contains "PLEASE SELECT TWO DISTINCT LANGUAGES" or "INVALID TARGET LANGUAGE":
+				set {_translated} to "&7%{_p}% &8Error: Need two distinct languages"
+			loop all players:
+				if {Siri::player::%loop-player%} is not set:
+					
+					message "{@prefix} %{_translated}%" to loop-player
+			set {Siri::repeat} to "%{_translated}%"
+		else if {_sirimessage} contains "translate last message from ", "translate last message from ":
+			add 1 to {siri.answered}
+			set {_m} to {_sirimessage}
+			replace all "Siri translate last message from " with "" in {_m}
+			if {_m} is "spanish", "german", "french", "dutch", "chinesse" or "english":
+				loop all players:
+					if {Siri::player::%loop-player%} is not set:
+						
+						message "{@prefix} &cIncorrect usage, You must use a language pairing (EN, ES etc)" to loop-player
+				stop
+			set {_edited} to "%{Siri::repeat}%"
+			set {_from} to "%{_m}%"
+			set {_to} to "en"
+			replace all " " with "%%20" in {_edited}
+			$ thread
+			set {_url} to text from uncolored "http://api.mymemory.translated.net/get?q=%{_edited}%&&llangpair=%{_from}%|%{_to}%"
+			wait 3 seconds
+			set {_split::*} to {_url} split by ":"
+			set {_translated} to {_split::3}
+			replace all """" and "," and "match" and "-" with "" in {_translated}
+			replace all "\\u" and "\u" with "~" in {_translated}
+			loop 2601 times:
+				replace all "%loop-number - 1%" with "" in {_translated}
+			replace all "~" with "" in {_translated}
+			if {_translated} contains "PLEASE SELECT TWO DISTINCT LANGUAGES" or "INVALID TARGET LANGUAGE":
+				set {_translated} to "&7%{_p}% &8Error: Need two distinct languages, Use language pairing (EN, ES etc)"
+			loop all players:
+				if {Siri::player::%loop-player%} is not set:
+					
+					message "{@prefix} %{_translated}%" to loop-player
+			set {Siri::repeat} to "%{_translated}%"
+		else if {_sirimessage} contains "translate last message to ", "translate last message to ":
+			add 1 to {siri.answered}
+			set {_m} to {_sirimessage}
+			replace all "Siri translate last message from " with "" in {_m}
+			if {_m} is "spanish", "german", "french", "dutch", "chinesse" or "english":
+			#	loop all players:
+				#	if {Siri::player::%loop-player%} is not set:
+						
+				message "{@prefix} &cIncorrect usage, You must use a language pairing (EN, ES etc)"
+				stop
+			set {_edited} to "%{Siri::repeat}%"
+			set {_to} to "%{_m}%"
+			set {_from} to "en"
+			replace all " " with "%%20" in {_edited}
+			$ thread
+			set {_url} to text from uncolored "http://api.mymemory.translated.net/get?q=%{_edited}%&&llangpair=%{_from}%|%{_to}%"
+			wait 3 seconds
+			set {_split::*} to {_url} split by ":"
+			set {_translated} to {_split::3}
+			replace all """" and "," and "match" and "-" with "" in {_translated}
+			replace all "\\u" and "\u" with "~" in {_translated}
+			loop 2601 times:
+				replace all "%loop-number - 1%" with "" in {_translated}
+			replace all "~" with "" in {_translated}
+			if {_translated} contains "PLEASE SELECT TWO DISTINCT LANGUAGES" or "INVALID TARGET LANGUAGE":
+				set {_translated} to "&7%{_p}% &8Error: Need two distinct languages, Use language pairing (EN, ES etc)"
+			loop all players:
+				if {Siri::player::%loop-player%} is not set:
+					
+					message "{@prefix} %{_translated}%" to loop-player
+			set {Siri::repeat} to "%{_translated}%"
+		else if {_sirimessage} contains "evaluate ":
+			add 1 to {siri.answered}
+			if player has permission "Siri.admin":
+				set {_m} to {_sirimessage}
+				replace all "Siri evaluate " with "" in {_m}
+				loop all players:
+					if {Siri::player::%loop-player%} is not set:
+						
+						evaluate "%{_m}%"
+						message "{@prefix} &lDone" to loop-player
+			else:
+				loop all players:
+					if {Siri::player::%loop-player%} is not set:
+						
+						message "{@prefix} You're not staff %player%" to loop-player
+						set {Siri::repeat} to "You're not staff %player%"
+		else if {_sirimessage} contains " say that again", " repeat that", " last thing you said" or " come again":
+			add 1 to {siri.answered}
+			loop all players:
+				if {Siri::player::%loop-player%} is not set:
+					
+					message "{@prefix} %{Siri::repeat}%" to loop-player
+		else if {_sirimessage} contains "make it sunny" or "make it storm" or "make it stormy" or "make it thunder" or "make it sun":
+			add 1 to {siri.answered}
+			loop all players:
+				if {Siri::player::%loop-player%} is not set:
+					
+					message "{@prefix} Naw I don't do those requests. Ask mother nature" to loop-player
+					set {Siri::repeat} to "Naw I don't do those requests. Ask mother nature."
+		else if {_sirimessage} contains "what is my name" or "what's my name" or "what's my username" or "what's my ign" or "what's my minecraft name":
+			add 1 to {siri.answered}
+			loop all players:
+				if {Siri::player::%loop-player%} is not set:
+					
+					message "{@prefix} %player%" to loop-player
+					set {Siri::repeat} to "%player%"
+		else if {_sirimessage} contains "what world am I in" or "which world am I in":
+			add 1 to {siri.answered}
+			loop all players:
+				if {Siri::player::%loop-player%} is not set:
+					
+					message "{@prefix} %player's world%" to loop-player
+					set {Siri::repeat} to "%player's world%"
+		else if {_sirimessage} contains "send me to spawn" or "teleport me to spawn":
+			add 1 to {siri.answered}
+			loop all players:
+				if {Siri::player::%loop-player%} is not set:
+					
+					message "{@prefix} You have been sent to spawn" to loop-player
+					set {Siri::repeat} to "You have been sent to spawn"
+			execute player command "/spawn"
+		else if {_sirimessage} contains "what block am I looking at", "what's my target block", "what am I looking at", "what is my target block" or "what block am I staring at":
+			add 1 to {siri.answered}
+			if "%target block of player%" is "<none>":
+				if target entity is set:
+					loop all players:
+						if {Siri::player::%loop-player%} is not set:
+							
+							message "{@prefix} %target entity%" to loop-player
+				else:
+					loop all players:
+						if {Siri::player::%loop-player%} is not set:
+							
+							message "{@prefix} air" to loop-player
+				set {Siri::repeat} to "%target entity of player%"
+			else if block at target block of player contains anything:
+				loop all players:
+					if {Siri::player::%loop-player%} is not set:
+						
+						message "{@prefix} &lA %target block of player% containing&r %items in target block%" to loop-player
+				set {Siri::repeat} to "&lA %target block of player% containing&r %items in target block%"
+			else:
+				loop all players:
+					if {Siri::player::%loop-player%} is not set:
+						
+						message "{@prefix} %target block of player%" to loop-player
+				set {Siri::repeat} to "%target block of player%"
+		else if {_sirimessage} contains "how many questions" or "how many answers":
+			add 1 to {siri.answered}
+			loop all players:
+				if {Siri::player::%loop-player%} is not set:
+					message "{@prefix} I have been used %{siri.answered}% times so far." to loop-player
+			set {Siri::repeat} to "I have been used %{siri.answered}% times so far."
+		else if {_sirimessage} contains "what version":
+			add 1 to {siri.answered}
+			loop all players:
+				if {Siri::player::%loop-player%} is not set:
+					message "{@prefix} I am currently version %{siri.version}% (%{siri.build}%)" to loop-player
+			set {Siri::repeat} to "I am currently version: &6%{siri.version}% (&b%{siri.build}%&6)"	
+			
+
+		else if {_sirimessage} contains "what am I holding", "what item am I holding", "what am I holding" or "what item is in my hand":
+			add 1 to {siri.answered}
+			if name of player's tool is set:
+				loop all players:
+					if {Siri::player::%loop-player%} is not set:
+						message "{@prefix} %player's tool% named %name of player's tool%" to loop-player
+				set {Siri::repeat} to "%player's tool%"
+			else:
+				loop all players:
+					if {Siri::player::%loop-player%} is not set:
+						message "{@prefix} %player's tool%" to loop-player
+				set {Siri::repeat} to "%player's tool%"
+		else if {_sirimessage} contains "yes or no" or "no or yes":
+			add 1 to {siri.answered}
+			set {_yn} to a random integer between 1 and 2
+			if {_yn} is 1:
+				loop all players:
+					if {Siri::player::%loop-player%} is not set:
+						
+						message "{@prefix} Yes!" to loop-player
+				set {Siri::repeat} to "Yes!"
+			else if {_yn} is 2:
+				loop all players:
+					if {Siri::player::%loop-player%} is not set:
+						
+						message "{@prefix} No" to loop-player
+				set {Siri::repeat} to "No"
+		else if {_sirimessage} contains "flip a coin":
+			add 1 to {siri.answered}
+			set {_yn} to a random integer between 1 and 2
+			if {_yn} is 1:
+				loop all players:
+					if {Siri::player::%loop-player%} is not set:
+						
+						message "{@prefix} Heads!" to loop-player
+				set {Siri::repeat} to "Heads!"
+			else if {_yn} is 2:
+				loop all players:
+					if {Siri::player::%loop-player%} is not set:
+						
+						message "{@prefix} Tails!" to loop-player
+				set {Siri::repeat} to "Tails"
+		else:
+			set {_test} to "%{_sirimessage}%"
+			replace all "Siri ", " Siri " and " Siri" with "" in {_test}
+			replace all " " with "_" in {_test}
+			set {_msg} to "%{Siri::%{_test}%}%"
+			replace all "_" with " " in {_msg}
+			if {_msg} is "<none>":
+				# loop all players:
+					# if {Siri::player::%loop-player%} is not set:
+
+				message "{@prefix} &cI could not recognize that. Type &l/Siri &cto teach me how to respond to that." to player
+			else:
+				replace all " player" with " %player%" in {_msg}
+				if {_quiet} is true:
+					message coloured "{@prefix} %{_msg}%"
+				else:
+					loop all players:
+						if {Siri::player::%loop-player%} is not set:
+							
+							message coloured "{@prefix} %{_msg}%" to loop-player
+							set {Siri::repeat} to "%{_msg}%"
+command /Siri [<text>] [<text>]:
+	trigger:
+		if arg 1 is not set:
+			message ""
+			message "&aWelcome to Siri %{siri.version}% (%{siri.build}%)"
+			message "&6/Siri <trigger msg> <reply msg> &7- Use _ for spaces in trigger msg."
+			message "&8Example: &7/Siri is_a_god I know, player"
+			message "&8Siri will then reply: &7I know, %player%"
+			message ""
+			message "&c/Sirireport <msg> &7- for reporting a phrase. Use _ for spaces."
+			message ""
+			message "&cTo disable Siri for you. Type &a/Siritoggle"
+			message ""
+		else:
+			if arg 1 and arg 2 are set:
+				if {Siri::%arg 1%} is not set:
+					set {Siri::%arg 1%} to "%arg 2%"
+					set {Siriplayer::%arg 1%} to "%player%"
+					replace all "?" with "" in {Siri::%arg 1%}
+					replace all "_" with " " in {Siri::%arg 1%}
+					message "&6Added msg to the reply system"
+				else:
+					message "&c&lThat has already been added to the system"
+			else:
+				message "{@prefix} &cIncorrect usage, type /Siri"
+command /Siritoggle:
+	trigger:
+		if {Siri::player::%player%} is not set:
+			set {Siri::player::%player%} to false
+			message "&c&lDisabled Siri replys"
+		else:
+			delete {Siri::player::%player%}
+			message "&a&lEnabled Siri replys"
+command /Sirireport <text>:
+	trigger:
+		set {_tempmsg} to "%arg%"
+		replace all " " with "_" in {_tempmsg}
+		if {Sirireport::%{_tempmsg}%} is not set:
+			set {Sirireport::%{_tempmsg}%} to {Siri::%{_tempmsg}%}
+			message "{@prefix} &cYou have reported this message to a staff member. Thank you"
+		else:
+			message "{@prefix} &6That reply has already been reported"
+command /Siridelete <text>:
+	trigger:
+		if player has permission "Siri.admin":
+			delete {Sirireport::%arg%}
+			delete {Siri::%arg%}
+			message "{@prefix} &cDeleted reply %arg%"
+command /Siriread:
+	trigger:
+		if player has permission "Siri.admin":
+			loop {Sirireport::*}:
+				message ""
+				message "&f[&a%{Siriplayer::%loop-index%}%&f] &6%loop-index%&f - &c%loop-value%"
+				message ""
+				wait 10 ticks
+			if {Sirireport::*} is not empty:
+				message "&dIgnore these reports or delete them with &c/Siridelete (text) &dMake sure you include everything stated above, even the _"
+			else:
+				message "&cThere are no reports"
+on join:
+	if {Sirireport::*} is not empty:
+		if player has permission "Siri.admin":
+			wait 5 seconds
+			message ""
+			message "{@prefix} &6&lHello staff member %player%. There are %size of {Sirireport::*}% Siri reports to be read /Siriread"
+			message ""

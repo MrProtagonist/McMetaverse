@@ -1,0 +1,33 @@
+#script options:
+#	$ developer mode
+	
+command /setdance:
+	permission: is.pro
+	trigger:
+		set {dance.floor} to location of player
+		message "&aSet!"
+every real second:
+	{dancing} is true
+	loop all blocks in radius 10 of {dance.floor}:
+		loop-block is locked chest
+	#	set {_randomid} to random integer 95:0 or 95:14 or 95:15 or 95:11
+	#	set {_randomglass} to "95:%{_randomid}%"
+		# set the colour of loop-block to red
+		# set block at loop-block to locked chest
+		chance of 35%: 
+			set block at loop-block to 95:0
+	#	chance of 45%: 
+	#		set block at loop-block to 95:11
+		chance of 45%: 
+			set block at loop-block to 95:14
+		chance of 20%: 
+			set block at loop-block to 95:15
+command /dancing:
+	permission: essentials.socialspy
+	trigger:
+		if {dancing} is true:
+			set {dancing} to false
+			message "&cTurned off dancing. =/"
+		else:
+			set {dancing} to true
+			message "&aTurned on dancing. =]"

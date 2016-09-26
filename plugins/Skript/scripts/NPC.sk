@@ -1,50 +1,52 @@
-script options:
-	$ developer mode
 #
-
-
 command /setdoor3:
 	permission: is.op
 	trigger:
-		if {settingdoor3.%player%} is not set:
-			set {cmd3.doorspot} to location of player
-			delete {cmd3.door::*}
-			set {settingdoor3.%player%} to true
+		if {settingdoor4.%player%} is not set:
+			set {settingdoor4.%player%} to true
 			message "Now setting magic door..."
 		else:
-			delete {settingdoor3.%player%}
+			delete {settingdoor4.%player%}
 			message "&aDone!"
 on break:
-	{settingdoor3.%player%} is true
+	{settingdoor4.%player%} is true
 	cancel event
-	add location of event-block to {cmd3.door::*}
-	message "Added to the list!"
+	set {cmd3.entrance} to location of event-block
+	message "Added!"
 	
 on npc right click:
 	if citizen is 374:
+		player has the permission "is.champion"
 		make citizen 374 look at location of player
 		send "&f[&eThug&f] &aHead on up, just be quick about it. Don't want to ruin the hot box."
 		wait 1 real second
+		set block at location of block at {cmd3.entrance} to 44:5
+		wait 10 ticks
 		loop {cmd3.door::*}:
 			set block at location of block at loop-value to air
 			wait 10 ticks
-		wait 10 real seconds
+		wait 6 real seconds
+		set block at location of block at {cmd3.entrance} to 5:5
+		wait 10 ticks
 		loop {cmd3.door::*}:
 			wait 10 ticks
-			set block at location of block at loop-value to redwood wooden plank
+			set block at location of block at loop-value to 5:5
 	if citizen is 376:
 		make citizen 376 look at location of player
+		player has the permission "is.champion"
 		send "&f[&eThug&f] &aHead on down, just be quick about it. Don't want to ruin the hot box."
 		wait 1 real second
+		set block at location of block at {cmd3.entrance} to 44:5
+		wait 10 ticks
 		loop {cmd3.door::*}:
 			set block at location of block at loop-value to air
 			wait 10 ticks
-		wait 10 real seconds
+		wait 6 real seconds
+		set block at location of block at {cmd3.entrance} to 5:5
+		wait 10 ticks
 		loop {cmd3.door::*}:
-			set block at location of block at loop-value to redwood plank
+			set block at location of block at loop-value to 5:5
 			wait 10 ticks
-		
-	
 
 command /jake:
 	permission: is.pro
@@ -171,7 +173,8 @@ on npc right click:
 	make citizen 90 look at location of player
 	send "&f[&6Champion&f] Hello fellow champion! Be sure to explore around and enjoy your stay!" to player
 	cancel event
-	
+
+# Basic NPC.  Says two things with a delay	
 on npc right click:
 	citizen is 85
 	make citizen 85 look at location of player
@@ -241,7 +244,6 @@ on npc right click:
 	send "&f[&6Bartender&f] Care for a drink?" to player
 	wait 2 real seconds
 	send "&f[&6Bartender&f] Why don't you &a/sit &fdown on a stool and take a load off, buddy." to player
-	cancel event
 	
 on npc right click:
 	citizen is 365
@@ -251,26 +253,26 @@ on npc right click:
 	send "&f[&6McMetaverse Greeter&f] &7If you have any questions, feel free to ask in chat.  We're very friendly." to player
 	wait 2 real seconds
 	send "&f[&6McMetaverse Greeter&f] &7Be sure to read the signs around Spawn to learn more about the server." to player
+	wait 3 real seconds
+	send "&f[&6McMetaverse Greeter&f] &7You can use the &a&o/learn&r&7 command to find out more about our plugins." to player
 	
 on rightclick on villager:
 	name of clicked entity contains "&bJoey"
-	cancel event
 	send "&f[&bJoey&f] I like the way grass feels on my legs when I wear shorts, too bad this game doesnt have those." to player
 	
 on rightclick on villager:
 	name of clicked entity contains "&6Dave"
-	cancel event
 	send "&f[&6Dave&f] HOW DID I EVEN GET UP HERE?!?!" to player
 	
 # Complex NPC. Gives you a special message the first time, then repeats the same after.
 on rightclick on villager:
 	name of clicked entity contains "&6Markus"
-	cancel event
 	if {talkedtomarkus.%player%} is not set:
 		send "&f[&6Markus&f] WOAH!!! You survived the blast?!? The others will be thrilled to have someone new to talk to!" to player
 		set {talkedtomarkus.%player%} to true
 		wait 3 real seconds
 	send "&f[&6Markus&f] You should go talk to &e&lHiro&f. He'll catch you up on what's been going on." to player
+
 	
 on rightclick on villager:
 	name of clicked entity contains "&e&lHiro"

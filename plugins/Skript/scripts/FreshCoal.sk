@@ -1,0 +1,166 @@
+﻿function setFCSkull(e: entity , s: text):
+	delete {_ListOfSkulls::*}
+	set {_name::*} to {_s} split at ":"
+	set {_FreshCoalCommand} to text from url "http://bartlettrock2.esy.es/user.php?skull=%{_name::1}%"
+	if {_FreshCoalCommand} contains ":":
+		set {_ListOfSkulls::*} to {_FreshCoalCommand} split at "<br>"
+		loop {_ListOfSkulls::*}:
+			set {_skull} to loop-index parsed as number
+			if "%{_ListOfSkulls::%{_skull}%}%" contains "1" and "a":
+				set {_split::*} to {_ListOfSkulls::%{_skull}%} split at ":"
+				if loop-index is {_name::2}:
+					set {_url} to {_split::2}
+					set helmet of {_e} to player head:3 with skull url "http://textures.minecraft.net/texture/%{_url}%"
+					
+		if helmet of {_e} is air:
+			set helmet of {_e} to redstone block
+			set name of {_e} to "ERROR"
+			
+			
+function dropFCSkull(loc: location , s: text):
+	delete {_ListOfSkulls::*}
+	set {_name::*} to {_s} split at ":"
+	set {_FreshCoalCommand} to text from url "http://bartlettrock2.esy.es/user.php?skull=%{_name::1}%"
+	if {_FreshCoalCommand} contains ":":
+		set {_ListOfSkulls::*} to {_FreshCoalCommand} split at "<br>"
+		loop {_ListOfSkulls::*}:
+			set {_skull} to loop-index parsed as number
+			if "%{_ListOfSkulls::%{_skull}%}%" contains "1" and "a":
+				set {_split::*} to {_ListOfSkulls::%{_skull}%} split at ":"
+				if loop-index is {_name::2}:
+					set {_url} to {_split::2}
+					drop player head:3 with skull url "http://textures.minecraft.net/texture/%{_url}%" at {_loc}
+
+
+
+function giveFCSkull(e: entity , s: text):
+	delete {_ListOfSkulls::*}
+	set {_name::*} to {_s} split at ":"
+	set {_FreshCoalCommand} to text from url "http://bartlettrock2.esy.es/user.php?skull=%{_name::1}%"
+	if {_FreshCoalCommand} contains ":":
+		set {_ListOfSkulls::*} to {_FreshCoalCommand} split at "<br>"
+		loop {_ListOfSkulls::*}:
+			set {_skull} to loop-index parsed as number
+			if "%{_ListOfSkulls::%{_skull}%}%" contains "1" and "a":
+				set {_split::*} to {_ListOfSkulls::%{_skull}%} split at ":"
+				if loop-index is {_name::2}:
+					set {_url} to {_split::2}
+					give {_e} player head:3 with skull url "http://textures.minecraft.net/texture/%{_url}%" named "%{_split::1}%"
+					
+					
+function setToolFCSkull(e: entity , s: text):
+	delete {_ListOfSkulls::*}
+	set {_name::*} to {_s} split at ":"
+	set {_FreshCoalCommand} to text from url "http://bartlettrock2.esy.es/user.php?skull=%{_name::1}%"
+	if {_FreshCoalCommand} contains ":":
+		set {_ListOfSkulls::*} to {_FreshCoalCommand} split at "<br>"
+		loop {_ListOfSkulls::*}:
+			set {_skull} to loop-index parsed as number
+			if "%{_ListOfSkulls::%{_skull}%}%" contains "1" and "a":
+				set {_split::*} to {_ListOfSkulls::%{_skull}%} split at ":"
+				if loop-index is {_name::2}:
+					set {_url} to {_split::2}
+					set tool of {_e} to player head:3 with skull url "http://textures.minecraft.net/texture/%{_url}%" named "%{_split::1}%"		
+					
+					
+
+command /freshcoal [<text>] [<text>] <integer=1>:
+	permission: freshcoal.use
+	trigger:
+		if argument 1 is not set:
+			delete {ListOfSkulls.Command.%player%::*}
+			delete {ListOfSkulls.Name.%player%::*}
+			send "&8[&3&oFreshCoal&r&8] &cMade by: &eBartlettRock"
+			send "&8[&3&oFreshCoal&r&8] &cPut a name of a skull you want to lookup."
+			send "&8[&3&oFreshCoal&r&8] &cUsage: &e/freshcoal &a<topic> &6[<type>]"
+			send "&8[&3&oFreshCoal&r&8] &cExample: &e/freshcoal &auser &6white"
+		else if argument 1 is set:
+			if argument 1 is "user":
+				send "&8[&3&oFreshCoal&r&8] &ePlease wait while we check the database."
+				if argument 2 is not set:
+					set {_Skull} to ""
+				else if argument 2 is set:
+					if argument 2 is not "%{Skull.%player%}%":
+						delete {ListOfSkulls.Command.%player%::*}
+						delete {ListOfSkulls.Name.%player%::*}
+						set {_Skull} to argument 2
+						set {Skull.%player%} to argument 2
+						
+						replace "_" in {_Skull} with "%%20"
+						
+						set {_FreshCoalCommand} to text from "http://bartlettrock2.esy.es/user.php?skull=%{_Skull}%"
+					
+						if {_FreshCoalCommand} contains ":":
+							send "&8[&3&oFreshCoal&r&8] &aSkull's were found on the database of this type."
+							send "&8[&3&oFreshCoal&r&8] &aPlease wait, as this may take a while depending on how many skulls there are."
+							set {ListOfSkulls.Command.%player%::*} to {_FreshCoalCommand} split at "<br>"
+							
+							set {_last} to size of {ListOfSkulls.Command.%player%::*}
+							
+							delete {ListOfSkulls.Command.%player%::%{_last}%}
+							
+							set {_size} to size of {ListOfSkulls.Command.%player%::*}
+							
+							open chest with 6 rows named "U | Page: %argument 3%" to player
+							wait 2 ticks
+							
+							loop {ListOfSkulls.Command.%player%::*}:
+							
+								set {_slot} to loop-index parsed as number
+								set {_skull} to loop-index parsed as number
+								
+								set {_split::*} to loop-value split at ":"
+								
+								set {_name} to {_split::1}
+								set {_url} to {_split::2}
+								
+								if {_name} is "":
+									set slot {_slot}-1 of player's current inventory to player head:3 with skull url "http://textures.minecraft.net/texture/%{_url}%" named "&r---[&a&l%{_slot}%&r]---" with lore "&r&aName: &4Error In Name Generation||&r---[&a&l%{_slot}%&r]---"
+								else:
+									set slot {_slot}-1 of player's current inventory to player head:3 with skull url "http://textures.minecraft.net/texture/%{_url}%" named "&r---[&a&l%{_slot}%&r]---" with lore "&r&aName: &6%{_name}%||&r---[&a&l%{_slot}%&r]---"
+									
+							delete {Skull.%player%}
+							
+			else if argument 1 is "main":
+				open chest with 2 rows named "Main" to player
+				wait 2 ticks
+				set slot 0 of player's current inventory to player head:3 with skull url "http://textures.minecraft.net/texture/f3487d457f9062d787a3e6ce1c4664bf7402ec67dd111256f19b38ce4f670" named "&rFood"
+				set slot 1 of player's current inventory to player head:3 with skull url "http://textures.minecraft.net/texture/2de4e2783f85a391221dd91656ba688e7e42d16f6abbfbcfad9ca53617fca6" named "&rDevices"
+				set slot 2 of player's current inventory to player head:3 with skull url "http://textures.minecraft.net/texture/3e8aad673157c92317a88b1f86f5271f1cd7397d7fc8ec3281f733f751634" named "&rMisc"
+				set slot 3 of player's current inventory to player head:3 with skull url "http://textures.minecraft.net/texture/a67d813ae7ffe5be951a4f41f2aa619a5e3894e85ea5d4986f84949c63d7672e" named "&rAlphabet"
+				set slot 4 of player's current inventory to player head:3 with skull url "http://textures.minecraft.net/texture/724fed84684307440c1371b48343bdbeab6c3af7665ea95c2ac306130a95f" named "&rInterior"
+				set slot 5 of player's current inventory to player head:3 with skull url "http://textures.minecraft.net/texture/97c1f1ead4d531caa4a5b0d69edbce29af789a2550e5ddbd23775be05e2df2c4" named "&rColor"
+				set slot 6 of player's current inventory to player head:3 with skull url "http://textures.minecraft.net/texture/c95d37993e594082678472bf9d86823413c250d4332a2c7d8c52de4976b362" named "&rBlocks"
+				set slot 7 of player's current inventory to player head:3 with skull url "http://textures.minecraft.net/texture/67e7ae12195c8c97a7706efc7bfc2851666c9f1d53b6ce075569922b4263bd" named "&rMobs"
+				set slot 8 of player's current inventory to player head:3 with skull url "http://textures.minecraft.net/texture/8f1a277beb9e4faa6e7e356c74786e966155736a6858bf5bb5ad29df5bab61a1" named "&rGames"
+				set slot 12 of player's current inventory to player head:3 with skull url "http://textures.minecraft.net/texture/17a1d42ef71187577291d6ae93a4beb8b161a43bc26562201ca25152b6ff387" named "&rCharacters"
+				set slot 14 of player's current inventory to player head:3 with skull url "http://textures.minecraft.net/texture/d43d4b7ac24a1d650ddf73bd140f49fc12d2736fc14a8dc25c0f3f29d85f8f" named "&rPokemon"
+				
+				
+				
+on inventory click:
+	if inventory name of player's current inventory contains "U |":
+		if name of clicked item contains "---[":
+			cancel event
+			set {_clicked} to clicked slot
+			set {_skull} to {_clicked}+1
+			set {_name} to inventory name of player's current inventory
+			if {ListOfSkulls.Command.%player%::%{_skull}%} contains "none":
+				send "ERROR"
+			else:
+				if {_clicked} is 0:
+					set {_split::*} to {ListOfSkulls.Command.%player%::%{_skull}%} split at ":"
+					set {_name} to line 1 of lore of clicked item
+					set {_url} to {_split::2}
+					set {_name} to subtext of {_name} from characters 13 to (the length of {_name})
+					give player head:3 with skull url "http://textures.minecraft.net/texture/%{_url}%" named "&a%{_name}%" with lore "&rID: %{_skull}%||&6&lGenerated by FreshCoal"
+					
+				else if {_clicked} is not 0:
+					set {_split::*} to {ListOfSkulls.Command.%player%::%{_skull}%} split at ":"
+					set {_name} to line 1 of lore of clicked item
+					set {_url} to {_split::2}
+					set {_name} to subtext of {_name} from characters 13 to (the length of {_name})
+					give player head:3 with skull url "http://textures.minecraft.net/texture/%{_url}%" named "&a%{_name}%" with lore "&rID: %{_skull}%||&6&lGenerated by FreshCoal"
+			
+		else if name of clicked item contains "Page":
+			cancel event

@@ -1,0 +1,97 @@
+options:
+#Start of configuration!
+	
+#Setting the IGN to a period (.) will disable the slot.
+#Slot 1
+	IGN1: MrProtagonist
+	YT1: mcmetaverse
+#Slot 2
+#	IGN2: 
+#	YT2: 
+#Slot 3
+#	IGN3: 
+	#YT3: 
+#Slot 4
+#	IGN4: 
+#	YT4: 
+#Slot 5
+#	IGN5: .
+#	YT5: .
+#Slot 6
+#	IGN6: .
+#	YT6: .
+#Slot 7
+#	IGN7: .
+#	YT7: .
+#Slot 8
+#	IGN8: .
+#	YT8: .
+#Slot 9
+#	IGN9: .
+#	YT9: .
+#Name of the GUI that opens when the command is run.
+	GUIName: <red><bold>You<white><bold>Tube
+#Name of the player skull that displays the IGN.
+	skullName: <red><bold>IGN: <reset><bold>
+#Lore of the player skull that displays the YouTube username.
+	skullLore: <red><bold>YouTube: <reset><bold>
+#Message that shows up in chat when a player skull is clicked.
+	YTLink: <red><bold>YOUTUBE<reset><bold>:<reset> <gold>www.YouTube.com/
+#Message sent when a player tries to view the plugin list.
+	#pluginMessage: <lime>I'm sorry, we protect our plug-ins from being shown for safety purposes. For more information on plug-ins, contact the owner or any administrators.
+#Message sent when a player tries to use a disabled bukkit command.
+	#bukkitMessage: <lime>I'm sorry, we protect our bukkit commands for safety purposes. For more information on bukkit commands, contact the owner or any administrators.
+
+#End of configuration!
+command /addlist <offlineplayer>:
+	permission: is.op
+	trigger:
+		add arg to {testlist::*}
+		message "&aAdded %arg%"
+#YouTube GUI Command
+command /promenu:
+	usage: /youtube
+	executable by: players
+	trigger:
+		open chest with 1 row named "{@GUIName}" to player
+		set {_temploop} to 0
+		loop {testlist::*}:
+			"{IGN%{_temploop}%}" is not ".":
+				set {_head} to "%loop-value%" parsed as offline player
+				if {_head} is online:
+					format slot {_temploop} of player with skull of {_head} named "%loop-value%" with lore "&aOnline" to close then run "sudo %loop-value% spawn"
+				else:
+					format slot {_temploop} of player with skull of {_head} named "%loop-value%" with lore "&cOffline" to close then run "sudo %loop-value% spawn"
+			add 1 to {_temploop}
+	#	"{@IGN2}" is not ".":
+	#		set {_head} to "{@IGN2}" parsed as offline player
+	#		format slot 1 of player with skull of {_head} named "{@skullName}{@IGN2}" with lore "{@skullLore}{@YT2}" to close then run "message %player% <green>[{@IGN2}] {@YTLink}{@YT2}"
+	#	"{@IGN3}" is not ".":
+	#		set {_head} to "{@IGN3}" parsed as offline player
+	#		format slot 2 of player with skull of {_head} named "{@skullName}{@IGN3}" with lore "{@skullLore}{@YT3}" to close then run "message %player% <green>[{@IGN3}] {@YTLink}{@YT3}"
+	#	"{@IGN4}" is not ".":
+	#		set {_head} to "{@IGN4}" parsed as offline player
+	#		format slot 3 of player with skull of {_head} named "{@skullName}{@IGN4}" with lore "{@skullLore}{@YT4}" to close then run "message %player% <green>[{@IGN4}] {@YTLink}{@YT4}"
+	#	"{@IGN5}" is not ".":
+	#		set {_head} to "{@IGN5}" parsed as offline player
+	#		format slot 4 of player with skull of {_head} named "{@skullName}{@IGN5}" with lore "{@skullLore}{@YT5}" to close then run "message %player% <green>[{@IGN5}] {@YTLink}{@YT5}"
+	#	"{@IGN6}" is not ".":
+	#		set {_head} to "{@IGN6}" parsed as offline player
+	#		format slot 5 of player with skull of {_head} named "{@skullName}{@IGN6}" with lore "{@skullLore}{@YT6}" to close then run "message %player% <green>[{@IGN6}] {@YTLink}{@YT6}"
+	#	"{@IGN7}" is not ".":
+	#		set {_head} to "{@IGN7}" parsed as offline player
+	#		format slot 6 of player with skull of {_head} named "{@skullName}{@IGN7}" with lore "{@skullLore}{@YT7}" to close then run "message %player% <green>[{@IGN7}] {@YTLink}{@YT7}"
+	#	"{@IGN8}" is not ".":
+	#		set {_head} to "{@IGN8}" parsed as offline player
+	#		format slot 7 of player with skull of {_head} named "{@skullName}{@IGN8}" with lore "{@skullLore}{@YT8}" to close then run "message %player% <green>[{@IGN8}] {@YTLink}{@YT8}"
+	#	"{@IGN9}" is not ".":
+	#		set {_head} to "{@IGN9}" parsed as offline player
+	#		format slot 8 of player with skull of {_head} named "{@skullName}{@IGN9}" with lore "{@skullLore}{@YT9}" to close then run "message %player% <green>[{@IGN9}] {@YTLink}{@YT9}"
+#Send Message Command
+#command /sendmessage <player> <text>:
+#	description: Send a message to the specified player.
+#	usage: /sendmessage <player> <message>
+#	executable by: console
+#	aliases: /sendmsg
+#	trigger:
+#		send arg 2 to arg 1

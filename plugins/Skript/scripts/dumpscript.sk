@@ -1,3 +1,20 @@
+﻿#on world change:
+#	wait 3 ticks
+#	if the player's world is "skyworld" or "skyworld_nether":
+#		if {skyblock.%player%} is not set:
+#			set {skyblock.%player%} to true
+#			execute console command "manuaddp %player% -mcmmo.ability.all"
+#			execute console command "manuaddp %player% -mcmmo.skill.all"
+#			execute console command "manuaddp %player% -scavenger.*"
+#			execute console command "manuaddp %player% -tryme.*"
+#	else:
+#		if {skyblock.%player%} is true:
+#			execute console command "manudelp %player% -mcmmo.ability.all"
+#			execute console command "manudelp %player% -mcmmo.skill.all"
+#			execute console command "manudelp %player% -scavenger.*"
+#			execute console command "manudelp %player% -tryme.*"
+#			delete {skyblock.%player%}
+
 command /end:
 	trigger:
 		run player command "mvtp MetaSanctus_the_end" as op
@@ -8,11 +25,46 @@ command /setend:
 			message "Set!"
 command /endremoveall:
 	trigger:
-		loop all players in world "MetaOmega_the_end":
-			make loop-player execute "spawn"
-			make loop-player execute "spawn"
+		loop all players:
+			if the loop-player's world is "MetaOmega_the_end":
+				make loop-player execute "spawn"
+				wait 2 ticks
+				make loop-player execute "spawn"
 			
+command /checkcash:
+	trigger:
+		message "%player's money%"
+
 			
+command /togglequis:
+	trigger:
+		player is op
+		if {quis.namechange} is not set:
+			set {quis.namechange} to true
+			message "Removed"
+		else:
+			delete {quis.namechange}
+			message "MrsProtagonist is now Quisalas"
+on chat:
+	{quis.namechange} is not set
+	player is "MrsProtagonist"
+	cancel event
+	loop all players:
+		send "&c❤ &f[&9Admin&f] &cQuisalas &f[&dDev&5inatrix&f]: %message%" to the loop-player
+on join:
+	{quis.namechange} is not set
+	player is "MrsProtagonist"
+	set join message to "&eQuisalas has joined for the Honor of Grayskull!"
+on quit:
+	{quis.namechange} is not set
+	player is "MrsProtagonist"
+	set leave message to "&eQuisalas has left, probably to get some sleep."
+every 2 ticks:
+	{quis.namechange} is not set
+	loop all players:
+		loop-player is "MrsProtagonist"
+		set the loop-player's tablist name to "&cQuisalas"
+
 command /rider:
 	trigger:
 		if player is "craftio":
@@ -22,23 +74,6 @@ command /rider:
 			else:
 				delete {rider}
 				message "stop riding"
-#command /craftifreeze <player>:
-#	trigger:
-#		if {frozen.%arg%} is not set:
-#			set {frozen.%arg%} to true
-#		else:
-#			delete {frozen.%arg%}
-#command /craftirocket <player>:
-#	trigger:
-#		push the argument upwards with force 200
-#		wait 2 real seconds
-#		push the argument upwards with force 200
-#		wait 2 real seconds
-#		push the argument upwards with force 200
-#on any move:
-#	if {frozen.%player%} is set:
-#		cancel event
-#		message "Sorry Cap, courtesy of craft. no moving!"
 command /rideplayer <player>:
 	trigger:
 		if player is {rider}:
@@ -63,12 +98,14 @@ on place of armor stand:
 #	if the player's world is "Minigame":
 #		if player is "FunyunRob":
 #			execute console command "gm 1 %player%"
-on step over 19:
+on step over sponge:
 	if "%region at player%" contains "funyun":
 		wait 1 tick
 		push the player upwards at speed 1
+		wait 1 tick
+		push the player forward with speed 5
 		message "Up you go!"
-on step over 19:1:
+on step over sponge:1:
 	if "%region at player%" contains "funyun":
 		wait 1 tick
 		thrust player upwards with force 0.4

@@ -1,0 +1,612 @@
+command /skyblock:
+	trigger:
+		message "&a&oYou are now at Spawn."
+		set {lastwarp.%player%} to now
+		teleport the player to {skyspawn}
+		
+		
+command /skytoken [<player>] [<integer>]:
+	permission: is.op
+	trigger:
+		if arg 2 is set:
+		#	player has the permission "is.op"
+			send "&bYou earned &6%arg 2% &b&lSky&6&lToken&b!" to arg 1
+			add arg 2 to {skytokens.%uuid of player%}
+		else:
+			if {skytokens.%uuid of player%} is not set:
+				set {skytokens.%uuid of player%} to 0
+			message "&b&lSky&6&lTokens&f: %{skytokens.%uuid of player%}%"
+every 2 seconds in world "skyworld":
+	loop all players:
+		loop-player is in world "skyworld"
+		loop-player is flying
+		loop-player's gamemode is survival
+		execute console command "fly %loop-player% off"
+on command:
+	player's world is "skyworld" or "skynether"
+	player does not have the permission "is.op"
+	command is not "is" or "is trust" or "is invite" or "island" or "usb" or "skyshop" or "kiss" or "gimmehearts" or "back" or "rules" or "agree" or "colors" or "chat" or "spawn" or "hyper" or "meta" or "list" or "login" or "hug" or "kiss" or "kissdeath" or "claimslist" or "transferclaim" or "trust" or "untrust" or "buyclaimblocks" or "sellclaimblocks" or "permissiontrust" or "trustlist" or "accesstrust" or "containertrust" or "abandonclaim" or "msg" or "m" or "r" or "reply" or "message" or "tell" or "mail" or "ping" or "me" or "suicide" or "ticket" or "replyticket" or "tickets" or "a" or "vote" or "c" or "altar" or "premium" or "trails" or "trail" or "greeting" or "farewell" or "death" or "head" or "hat" or "rename" or "name" or "lore" or "changelog" or "bottle" or "bottlemax" or "ranks"
+	cancel event
+	message "&cThis command is not allowed in this world!"			
+			
+on npc right click:
+	citizen is 400
+	make citizen 400 look at location of player
+	send "&f[&6Samael&f] &7SkyBlock is like survival island, but your island is isolated in the sky and you can't just dig down for resources." to player
+	wait 1 real second
+	send "&f[&6Samael&f] &7I can give you more information on it, but you can also look online for strategies and explanations." to player
+	wait 1 real second
+	message " "
+	json("%player%", "&f[&aI'm brand new to SkyBlock, what do I do?&f]||cmd:/islandrules noob")
+	json("%player%", "&f[&aI've played some but not in a while&f]||cmd:/islandrules medium")
+	json("%player%", "&f[&aI've played lots of SkyBlock, just tell me what's special here.&f]||cmd:/islandrules expert")
+	
+on npc right click:
+	citizen is 402
+	make citizen 402 look at location of player
+	send "&f[&6Uriel&f] &7The rules are pretty simple.  You don't get much, gotta make it on your own." to player
+	wait 1 real second
+	json("%player%", "&f[&aI've new to McMetaverse, what are the chat rules?&f]||cmd:/islandrules metarules")
+	json("%player%", "&f[&aHow are SkyBlock rules different from Meta?&f]||cmd:/islandrules skyrules")
+	
+# Usage: /custombuy player amount itemid price
+# Example: /custombuy MrProtagonist 1 2 1 - 1 grass for 1 token
+command /custombuy <player> <integer> <integer> <integer>:
+	permission: is.console
+	trigger:
+		if {skytokens.%uuid of argument-player-1%} is greater than or equal to arg 4:
+			loop arg 2 times:
+				execute console command "give %arg 1% %arg 3% 1"
+			subtract arg 4 from {skytokens.%uuid of argument-player-1%}
+			send "&aComplete!" to arg 1
+		else:
+			send "&cInsufficient Skytokens!" to argument-player-1
+	#	wait 10 ticks
+		if {lastmenu.%argument-player-1%} is "block":
+			make arg 1 execute "skyblockshop"
+		if {lastmenu.%argument-player-1%} is "loot":
+			make arg 1 execute "skylootshop"
+		if {lastmenu.%argument-player-1%} is "farm":
+			make arg 1 execute "skyfarmshop"
+		if {lastmenu.%argument-player-1%} is "decor":
+			make arg 1 execute "skydecorshop"
+		# make arg 1 execute "skyshop"
+
+command /customsell <player> <integer> <items> <integer>:
+	permission: is.console
+	trigger:
+		set {_tempnuma} to 0
+		loop arg 2 times:
+			if argument-player-1's inventory contains arg 3:
+				add 1 to {_tempnuma}
+				remove 1 of arg 3 from argument-player-1's inventory
+				if arg 2 is {_tempnuma}:
+			#	loop arg 2 times:
+					add arg 4 to {skytokens.%uuid of argument-player-1%}
+					send "&aComplete!" to arg 1
+			else:
+				send "&cInsufficient items!" to argument-player-1
+				loop {_tempnuma} times:
+					execute console command "give %argument-player-1% %arg 3% 1"
+				stop
+	#	wait 10 ticks
+		if {lastmenu.%argument-player-1%} is "block":
+			make arg 1 execute "skyblockshop"
+		if {lastmenu.%argument-player-1%} is "loot":
+			make arg 1 execute "skylootshop"
+		if {lastmenu.%argument-player-1%} is "farm":
+			make arg 1 execute "skyfarmshop"
+		if {lastmenu.%argument-player-1%} is "decor":
+			make arg 1 execute "skydecorshop"
+		# make arg 1 execute "skyshop"
+on death of player:
+	victim is player
+	victim is in world "skyworld" or "skynether"
+	if {skydeaths.%uuid of victim%} is not set:
+		set {skydeaths.%uuid of victim%} to 0
+	if {skydeaths.total} is not set:
+		set {skydeaths.total} to 3
+	add 1 to {skydeaths.total}
+command /skyshop:
+	trigger:
+		player is in world "skyworld" or "skynether"
+		wait 10 ticks
+		open chest with 3 rows named "&4&l%{skytokens.%uuid of player%}% Skytokens" to player
+		format slot 0 of player with grass named "&9Block Shop" with lore "&b Buy and Sell Blocks" to close then run "sudo %player% skyblockshop"
+		format slot 2 of player with bone named "&9Mob Drops" with lore "&b Sell Mob Loot" to close then run "sudo %player% skylootshop"
+		format slot 4 of player with sapling named "&9Farming" with lore "&b Sell Crops" to close then run "sudo %player% skyfarmshop"
+		format slot 6 of player with rose named "&9Decorative" with lore "&b Buy Decorative Blocks & Items" to close then run "sudo %player% skydecorshop"
+		format slot 8 of player with grass named "&cSell 1 Grass" with lore "&a1 Skytoken" to close then run "customsell %player% 1 2 1"
+command /skyblockshop:
+	trigger:
+		player is in world "skyworld" or "skynether"
+		wait 10 ticks	
+		set {lastmenu.%player%} to "block"
+		open chest with 5 rows named "&4&l%{skytokens.%uuid of player%}% Skytokens" to player
+		format slot 4 of player with glass named "&aBuy &f-&c Sell" to close
+		format slot 13 of player with glass named "&aBuy &f-&c Sell" to close
+		format slot 22 of player with glass named "&aBuy &f-&c Sell" to close
+		format slot 31 of player with glass named "&aBuy &f-&c Sell" to close
+		format slot 40 of player with glass named "&aBuy &f-&c Sell" to close
+		format slot 0 of player with grass named "&aBuy 1 Grass" with lore "&c1 Skytoken" to close then run "custombuy %player% 1 2 1"
+		format slot 8 of player with grass named "&cSell 1 Grass" with lore "&a1 Skytoken" to close then run "customsell %player% 1 2 1"
+		format slot 44 of player with nether star named "&9SkyShop Menu" with lore "&bBack to SkyShop" to close then run "sudo %player% skyshop"
+command /skylootshop:
+	trigger:
+		player is in world "skyworld" or "skynether"
+		wait 10 ticks	
+		set {lastmenu.%player%} to "loot"
+		open chest with 2 rows named "&4&l%{skytokens.%uuid of player%}% Skytokens" to player
+		format slot 0 of player with bone named "&cSell 64 Bones" with lore "&a1 Skytoken" to close then run "customsell %player% 64 352 1"
+		format slot 8 of player with grass named "&cSell 1 Grass" with lore "&a1 Skytoken" to close then run "customsell %player% 1 2 1"
+		format slot 17 of player with nether star named "&9SkyShop Menu" with lore "&bBack to SkyShop" to close then run "sudo %player% skyshop"
+command /skyfarmshop:
+	trigger:
+		player is in world "skyworld" or "skynether"
+		wait 10 ticks	
+		set {lastmenu.%player%} to "farm"
+		open chest with 2 rows named "&4&l%{skytokens.%uuid of player%}% Skytokens" to player
+		format slot 0 of player with wheat named "&cSell 64 Wheat" with lore "&a10 Skytoken" to close then run "customsell %player% 64 296 10"
+		format slot 8 of player with grass named "&cSell 1 Grass" with lore "&a1 Skytoken" to close then run "customsell %player% 1 2 1"
+		format slot 17 of player with nether star named "&9SkyShop Menu" with lore "&bBack to SkyShop" to close then run "sudo %player% skyshop"
+command /skydecorshop:
+	trigger:
+		player is in world "skyworld" or "skynether"
+		wait 10 ticks	
+		set {lastmenu.%player%} to "decor"
+		open chest with 2 rows named "&4&l%{skytokens.%uuid of player%}% Skytokens" to player
+		format slot 0 of player with rose named "&aBuy 1 Red Poppy" with lore "&c5 Skytoken" to close then run "custombuy %player% 1 38 5"
+		format slot 8 of player with grass named "&cSell 1 Grass" with lore "&a1 Skytoken" to close then run "customsell %player% 1 2 1"
+		format slot 17 of player with nether star named "&9SkyShop Menu" with lore "&bBack to SkyShop" to close then run "sudo %player% skyshop"
+		
+command /islandrules <text>:
+	permission: is.champion
+	trigger:
+		if arg is "metarules":
+			message " "
+			json("%player%", "             &f[&a1&f] &e&oRule 1 is about griefing.&f&o  It doesn't apply in %new line%&f&o             Skyblock because you can only build on your plot.")
+			json("%player%", "             &f[&a2&f] &oNo use of xray, hacking, cheating||ttp:&exray:&f Mods or texture packs that make blocks invisible.%new line%&eHacking: &fBypassing claims, modded fly, breaking blocks too fast.%new line%&eCheating: &fDuping, giving money, giving items.")
+			json("%player%", "             &f[&a3&f] &oBe respectful and use common sense||ttp:&eHarassing:&f Rudeness, offensive slurs, or hate speech.%new line%Continuing a line of conversation you were asked to drop.%new line%&b(purposely renaming your account to that of a staffmember applies to that as well)")
+			json("%player%", "             &f[&a4&f] &oNo unnecessary drama or rage quitting||ttp:&eDrama:&f Petty personal fights played out in public.%new line%&eRage quitting:&f Closing the game if you die, get punished, or don't get what you want.")
+			json("%player%", "             &f[&a5&f] &oNo spam or excessive CAPS||ttp:&eSpam:&f Saying more than a message a second.%new line%&eExcessive CAPS:&f Consecutive words in all CAPS.")
+			json("%player%", "             &f[&a6&f] &oNo advertising||ttp:&eAdvertising:&f Posting the website or IP of a server we don't run.%new line%&bThis includes in chat, pm, private chat, our website, and our TeamSpeak.")
+			json("%player%", "             &f[&a7&f] &oNo bugs, exploits, mods or boosting||ttp:&eBugs:&f Anything that doesn't function as intended and benefits you.%new line%&eExploits:&f Tricking normal game mechanics for your gain.%new line%&eMods:&f Something that alters your game which gives you an advantage over others.%new line%&eBoosting:&f Gaining experience, levels, items, etc. in any abnormally fast way.")
+			json("%player%", "             &f[&a8&f] &oNo arguing with staff||ttp:&eWhy?&f It is inappropriate to argue with staff in chat.%new line%&fIf you question a decision, you may &a/msg&f that staff.%new line%&fIf you got punished, create an appeal on the website for all staff to review.")
+			json("%player%", "             &f[&a9&f] &e&oRule 9 is about PVP &f&oand doesn't apply here.%new line%&f&o             You can't PVP unless someone lets you on their island %new line%&f&o             and you both turn PVP on. ")
+			json("%player%", "             &f[&a10&f] &oNo asking for handouts||ttp:&eHandouts:&f Anything you did not earn or attempt to trade for.%new line%&bWe encourage fair trades between players.")
+			json("%player%", "             &f[&a11&f] &oNo PVP unless both parties agree to it||ttp:&ePVP:&f Both parties must agree to the PVP.%new line%Both parties must agree to the terms of the PVP.%new line%You are expected to return items unless you both agree otherwise.%new line%&bPVP must be enabled, by default PVP is off in /meta.")
+			json("%player%", "             &f[&a12&f] &oNo being an asshole||ttp:&fLaughing at deaths, talking down to people.%new line%Intentionally pushing peoples buttons.%new line%&bIf are you asked to stop talking about something, do so.")
+			json("%player%", "             &f[&a13&f] &oKeep public chat in English||ttp:&fIf you need to chat in another language,%new line%join a /chat room or use /msg.%new line%&bThis is so Staff can regulate chat.") 
+			message " "
+		if arg is "skyrules":
+			json("%player%", "   &fYou are allowed to make mob spawn areas.||ttp:Do not AFK at spawn areas or build up mob numbers.")
+			json("%player%", "   &fYou are allowed to make iron golem farms.||ttp:If lag becomes an issue, we will limit iron golem numbers.")
+			json("%player%", "   &fYou are allowed to make pig zombie portal farms.||ttp:If lag becomes an issue, we will limit portal size and number.")
+			json("%player%", "   &fYou are allowed to make villager farms.||ttp:If lag becomes an issue, we will limit villager numbers.")
+			json("%player%", "   &fYou are not allowed to fly at all.||ttp:&fIf your fly is active, go to &a&o/meta&f and turn it off and come back.%new line% &fThis will be severely punished if exploited.")
+			json("%player%", "   &fRedstone contraptions still require an off switch.||ttp:&fIf your contraption causes lag you may be asked to modify it.")
+		if arg is "noob":
+			message " "
+			json("%player%", "   &fYou have a small island with few resources to start with.%new line%   &fMake a cobblestone generator to gain blocks and expand.%new line%   &fUse the &a&o/challenges&f menu to see goals and gain rewards.%new line%   &fUse the nether portal at spawn to access the Nether.")
+			json("%player%", "   &f[&aMore info Here&f]||cmd:/islandrules medium")
+		if arg is "medium":
+			message " "
+			json("%player%", "   &fSet up large normal farms and an area for mobs to spawn.%new line%   &fThere's a chance for cobblestone to turn into rare ores.%new line%   &fYou can submit the same challenge again to get rewards.%new line%   &fIf you did a challenge recently, the costs go up.%new line%   &fUse lava and water to build down to height 1 - use F3!")
+			json("%player%", "   &f[&aMore info Here&f]||cmd:/islandrules expert")
+		if arg is "expert":
+			message " " 
+			json("%player%", "   &fYou get a claim of about 128x128, from height 1 to 250.%new line%   &fUse the animal spawners at spawn to gain resources.%new line%   &fUse the mob spawners at spawn to gain loot & experience.%new line%   &fYou can work together with your neighbors or work alone.%new line%   &fBe careful who you trust! We will &lnot &freturn items lost%new line%     &fthrough either PVP or griefing in this world.")
+			message " "
+			send "&f[&6Samael&f] &7Hopefully that clears things up for you.  Let me know if you need more help." to player
+command /givekey <player>:
+	permission: is.op
+	trigger:
+		execute console command "/give %arg% 131 1 0 {display:{Name:&9&lMeta&5&lKey,Lore:[Rewards vary per world you vote in.,Redeem at crate near spawn.]}}"
+		
+
+options:
+	name: "&9&lMeta&5&lCrate"
+
+on rightclick on chest:
+	location of event-block is {partyblock} or {partyblock2} or {partyblock3}
+	if player has tripwire hook named "&9&lMeta&5&lKey" with lore "Rewards vary per world you vote in.||Redeem at crate near spawn.":
+		remove a tripwire hook named "&9&lMeta&5&lKey" with lore "Rewards vary per world you vote in.||Redeem at crate near spawn." from player's inventory
+		message "&aYou used a &9&lMeta&5&lKey&a to open the &9&lMeta&5&lCrate&a!"
+		{chest.%player%} is not set
+		set {chest.%player%} to true
+		set {armor::%player%::helmet} to the helmet of the player
+		set {armor::%player%::chestplate} to the chestplate of the player
+		set {armor::%player%::leggings} to the leggings of the player
+		set {armor::%player%::boots} to the boots of the player
+		cancel event
+		open chest with 6 rows named {@name} to player
+		wait a tick
+		#!Add your items below
+		if player is in world "MetaSanctus" or "Hyperverse3":
+			add dragon head to {_roll::*}	
+		else:
+			add 10 sand to {_roll::*}
+			add 10 sand to {_roll::*}
+			add 10 sand to {_roll::*}
+			add 10 sand to {_roll::*}
+			add 10 sand to {_roll::*}
+		if player is in world "MetaSanctus" or "Hyperverse3":
+			add 10 xp bottle to {_roll::*}
+			add 10 xp bottle to {_roll::*}
+			add 10 xp bottle to {_roll::*}
+			add 10 xp bottle to {_roll::*}
+			add 10 xp bottle to {_roll::*}
+		else:
+			add 10 dirt to {_roll::*}
+			add 10 dirt to {_roll::*}
+			add 10 dirt to {_roll::*}
+			add 10 dirt to {_roll::*}
+			add 10 dirt to {_roll::*}
+		add 3 diamond to {_roll::*}
+		add 3 diamond to {_roll::*}
+		add 3 diamond to {_roll::*}
+		add 1 diamond sword to {_roll::*}
+		add 1 diamond sword to {_roll::*}
+		add 1 diamond sword to {_roll::*}
+		add beacon to {_roll::*}
+		add 3 book to {_roll::*}
+		add 3 book to {_roll::*}
+		add 3 book to {_roll::*}
+		add 3 emerald to {_roll::*}
+		add 3 emerald to {_roll::*}
+		add 10 prismarine to {_roll::*}
+		add 3 sea lantern to {_roll::*}
+		add 10 slimeball to {_roll::*}
+		add lava bucket to {_roll::*}
+		add 3 obsidian to {_roll::*}
+		if player is in world "MetaSanctus" or "Hyperverse3":
+			add villager spawn egg to {_roll::*}
+		else:
+			add mob spawner to {_roll::*}
+		#!Speed option safety net, so running 0 ticks doesn't crash your server
+		set {_speedFinal} to 2
+		#!Selector settings
+		set {_Selector1} to 4
+		set {_Selector2} to 22
+		#!Main code below. This random integer is the length of the crate opening, which is random
+		loop (random integer between 20 and 40) times:
+			if inventory name of player's current inventory is not {@name}:
+				stop
+			#The 11 tells the script how many items to save
+			set {_sel} to 11
+			loop 11 times:
+				#!This is the data saving for the scroll effect
+				set {_sel2} to {_sel} - 1
+				set {_item::%{_sel}%} to {_item::%{_sel2}%}
+				subtract 1 from {_sel}
+			set {_item::1} to a random element out of {_roll::*}
+			#!This below just updates the GUI (53 means max slots per chest)
+			loop integers between 0 and 53:
+				if loop-number-2 is {_Selector1} or {_Selector2}:
+					set slot loop-number-2 of player's current inventory to white stained glass pane named " "
+				else:
+					set slot loop-number-2 of player's current inventory to black stained glass pane named " "
+				loop 11 times:
+					if loop-number-3 = 1:
+						set slot 46 of player's current inventory to {_item::%loop-number-3%}
+					else if loop-number-3 = 2:
+						set slot 37 of player's current inventory to {_item::%loop-number-3%}
+					else if loop-number-3 = 3:
+						set slot 28 of player's current inventory to {_item::%loop-number-3%}
+					else if loop-number-3 = 4:
+						set slot 20 of player's current inventory to {_item::%loop-number-3%}
+					else if loop-number-3 = 5:
+						set slot 12 of player's current inventory to {_item::%loop-number-3%}
+					else if loop-number-3 = 6:
+						set slot 13 of player's current inventory to {_item::%loop-number-3%}
+					else if loop-number-3 = 7:
+						set slot 14 of player's current inventory to {_item::%loop-number-3%}
+					else if loop-number-3 = 8:
+						set slot 24 of player's current inventory to {_item::%loop-number-3%}
+					else if loop-number-3 = 9:
+						set slot 34 of player's current inventory to {_item::%loop-number-3%}
+					else if loop-number-3 = 10:
+						set slot 43 of player's current inventory to {_item::%loop-number-3%}
+					else if loop-number-3 = 11:
+						set slot 52 of player's current inventory to {_item::%loop-number-3%}
+			#!This below causes the crate to slow down when it gets closer to the end of the animation. The more the percent, the longer the tick delay will be.
+			add 1 to {_speed}
+			#!This below is the ticks per lowering. Meaning it will lower the speed per every X number of loops
+			if {_speed} is 5:
+				set {_speed} to 0
+				add 1 to {_speedFinal}
+			loop {_speedFinal} times:
+				wait a tick
+		#!This is where you can give players or test for which item has won.
+		message "&aYou won %slot 13 of player's current inventory% from the &9&lMeta&5&lCrate&a!"
+		give player slot 13 of player's current inventory
+		wait 2 ticks
+		set the helmet of the player to {armor::%player%::helmet}
+		set the chestplate of the player to {armor::%player%::chestplate}
+		set the leggings of the player to {armor::%player%::leggings}
+		set the boots of the player to {armor::%player%::boots}
+		delete {chest.%player%}
+	else:
+		message "&cYou don't have a &9&lMeta&5&lKey&c!."
+		make player execute "vote"
+		cancel event
+		stop
+#on place of sign:
+#	player has the permission "is.op"
+#	if player is in world "MetaSanctus":
+#		set {magicsign2} to location of event-block
+#	if player is in world "Hyperverse3":
+#		set {magicsign3} to location of event-block
+#	message "&aAdded =]"
+#	set line 2 of event-block to "&9&lMeta&5&lCrate"
+#	set line 3 of event-block to "&cRequires a Key"
+every 10 ticks in "skyworld":
+	set {_randdd} to random integer between 1 and 9
+	set line 2 of block at location of {magicsign} to "&9&lMeta&5&lCrate"
+	set line 3 of block at location of {magicsign} to "&4&oRequires a Key"
+	if {_randdd} is 1:
+		set line 1 of block at location of {magicsign} to colored "&1----------------"
+		set line 4 of block at location of {magicsign} to colored "&1----------------"
+	if {_randdd} is 2:
+		set line 1 of block at location of {magicsign} to colored "&2----------------"
+		set line 4 of block at location of {magicsign} to colored "&2----------------"
+	if {_randdd} is 3:
+		set line 1 of block at location of {magicsign} to colored "&3----------------"
+		set line 4 of block at location of {magicsign} to colored "&3----------------"
+	if {_randdd} is 4:
+		set line 1 of block at location of {magicsign} to colored "&4----------------"
+		set line 4 of block at location of {magicsign} to colored "&4----------------"
+	if {_randdd} is 5:
+		set line 1 of block at location of {magicsign} to colored "&5----------------"
+		set line 4 of block at location of {magicsign} to colored "&5----------------"
+	if {_randdd} is 6:
+		set line 1 of block at location of {magicsign} to colored "&6----------------"
+		set line 4 of block at location of {magicsign} to colored "&6----------------"
+	if {_randdd} is 7:
+		set line 1 of block at location of {magicsign} to colored "&7----------------"
+		set line 4 of block at location of {magicsign} to colored "&7----------------"
+	if {_randdd} is 8:
+		set line 1 of block at location of {magicsign} to colored "&8----------------"
+		set line 4 of block at location of {magicsign} to colored "&8----------------"
+	if {_randdd} is 9:
+		set line 1 of block at location of {magicsign} to colored "&9----------------"
+		set line 4 of block at location of {magicsign} to colored "&9----------------"
+every 10 ticks in "MetaSanctus":
+	set {_randdd} to random integer between 1 and 9
+	set line 2 of block at location of {magicsign2} to "&9&lMeta&5&lCrate"
+	set line 3 of block at location of {magicsign2} to "&4&oRequires a Key"
+	if {_randdd} is 1:
+		set line 1 of block at location of {magicsign2} to colored "&1----------------"
+		set line 4 of block at location of {magicsign2} to colored "&1----------------"
+	if {_randdd} is 2:
+		set line 1 of block at location of {magicsign2} to colored "&2----------------"
+		set line 4 of block at location of {magicsign2} to colored "&2----------------"
+	if {_randdd} is 3:
+		set line 1 of block at location of {magicsign2} to colored "&3----------------"
+		set line 4 of block at location of {magicsign2} to colored "&3----------------"
+	if {_randdd} is 4:
+		set line 1 of block at location of {magicsign2} to colored "&4----------------"
+		set line 4 of block at location of {magicsign2} to colored "&4----------------"
+	if {_randdd} is 5:
+		set line 1 of block at location of {magicsign2} to colored "&5----------------"
+		set line 4 of block at location of {magicsign2} to colored "&5----------------"
+	if {_randdd} is 6:
+		set line 1 of block at location of {magicsign2} to colored "&6----------------"
+		set line 4 of block at location of {magicsign2} to colored "&6----------------"
+	if {_randdd} is 7:
+		set line 1 of block at location of {magicsign2} to colored "&7----------------"
+		set line 4 of block at location of {magicsign2} to colored "&7----------------"
+	if {_randdd} is 8:
+		set line 1 of block at location of {magicsign2} to colored "&8----------------"
+		set line 4 of block at location of {magicsign2} to colored "&8----------------"
+	if {_randdd} is 9:
+		set line 1 of block at location of {magicsign2} to colored "&9----------------"
+		set line 4 of block at location of {magicsign2} to colored "&9----------------"
+every 10 ticks in "Hyperverse3":
+	set {_randdd} to random integer between 1 and 9
+	set line 2 of block at location of {magicsign3} to "&9&lMeta&5&lCrate"
+	set line 3 of block at location of {magicsign3} to "&4&oRequires a Key"
+	if {_randdd} is 1:
+		set line 1 of block at location of {magicsign3} to colored "&1----------------"
+		set line 4 of block at location of {magicsign3} to colored "&1----------------"
+	if {_randdd} is 2:
+		set line 1 of block at location of {magicsign3} to colored "&2----------------"
+		set line 4 of block at location of {magicsign3} to colored "&2----------------"
+	if {_randdd} is 3:
+		set line 1 of block at location of {magicsign3} to colored "&3----------------"
+		set line 4 of block at location of {magicsign3} to colored "&3----------------"
+	if {_randdd} is 4:
+		set line 1 of block at location of {magicsign3} to colored "&4----------------"
+		set line 4 of block at location of {magicsign3} to colored "&4----------------"
+	if {_randdd} is 5:
+		set line 1 of block at location of {magicsign3} to colored "&5----------------"
+		set line 4 of block at location of {magicsign3} to colored "&5----------------"
+	if {_randdd} is 6:
+		set line 1 of block at location of {magicsign3} to colored "&6----------------"
+		set line 4 of block at location of {magicsign3} to colored "&6----------------"
+	if {_randdd} is 7:
+		set line 1 of block at location of {magicsign3} to colored "&7----------------"
+		set line 4 of block at location of {magicsign3} to colored "&7----------------"
+	if {_randdd} is 8:
+		set line 1 of block at location of {magicsign3} to colored "&8----------------"
+		set line 4 of block at location of {magicsign3} to colored "&8----------------"
+	if {_randdd} is 9:
+		set line 1 of block at location of {magicsign3} to colored "&9----------------"
+		set line 4 of block at location of {magicsign3} to colored "&9----------------"
+#on place of chest:
+#	player has the permission "is.op"
+#	if player is in world "MetaSanctus":
+#		set {partyblock2} to location of event-block
+#	if player is in world "Hyperverse3":
+#		set {partyblock3} to location of event-block
+on inventory click:
+	if inventory name of player's current inventory is {@name}:
+		cancel event
+on inventory close:
+	if inventory name of player's current inventory is {@name}:
+		delete {chest.%player%}
+		
+#on place of chest:
+#	name of event-player is "MrProtagonist"
+#	set {altar.spot} to location of event-block
+#	message "&aSet Altar!"
+#	set {altar.paid} to 0
+	
+on left click on chest:
+	location of event-block is {altar.spot}
+	cancel event
+	if {altar.active} is true:
+		message "&f-&b-&f-&b-&f-&b-&f-&b-&f-&b-&f-&b-&f-&b-&f-&b-&f-&b-&f-&b-&f-&b-&f-&b-&f-&b-&f-&b-&f-&b-"
+		message "&a&lAltar is active!"
+		message "&f-&b-&f-&b-&f-&b-&f-&b-&f-&b-&f-&b-&f-&b-&f-&b-&f-&b-&f-&b-&f-&b-&f-&b-&f-&b-&f-&b-&f-&b-"
+		message "&fTime Left: &c%{altar.time}% minutes"
+		message "&6Altar Bonuses:"
+		message "&e- x2 xp"
+		message "&e- x2 McMMO xp"
+		message "&e- 1/2 McMMO Cooldowns"
+		message "&e- Lucky McMMO Perks"
+		message "&e- x2 Mob Money"
+		message "&e- Some /Premium Permissions"
+	else:
+		message "&6Altar Tributes:"
+		message "$%{altar.paid}% &c/&r $300,000"
+		message "&6Altar Bonuses:"
+		message "&e- x2 xp"
+		message "&e- x2 McMMO xp"
+		message "&e- 1/2 McMMO Cooldowns"
+		message "&e- Lucky McMMO Perks"
+		message "&e- x2 Mob Money"
+		message "&e- Some /Premium Permissions"
+
+on right click on chest:
+	location of event-block is {altar.spot}
+	cancel event
+	if {altar.active} is false:
+		if player's balance is greater than or equal to 1000:
+			execute console command "eco take %player% 1000"
+			add 1000 to {altar.paid}
+		else:
+			message "&cInsufficient funds!"
+	else:
+		message "&f-&b-&f-&b-&f-&b-&f-&b-&f-&b-&f-&b-&f-&b-&f-&b-&f-&b-&f-&b-&f-&b-&f-&b-&f-&b-&f-&b-&f-&b-"
+		message "&a&lAltar is active!"
+		message "&f-&b-&f-&b-&f-&b-&f-&b-&f-&b-&f-&b-&f-&b-&f-&b-&f-&b-&f-&b-&f-&b-&f-&b-&f-&b-&f-&b-&f-&b-"
+every real second:
+	if {altar.paid} is greater than or equal to 300000:
+		execute console command "setaltar on"
+		set {altar.paid} to 0
+on join:
+	{altar.active} is true
+	wait 20 real seconds
+	message "&f-&b-&f-&b-&f-&b-&f-&b-&f-&b-&f-&b-&f-&b-&f-&b-&f-&b-&f-&b-&f-&b-&f-&b-&f-&b-&f-&b-&f-&b-"
+	message "&a&lAltar is active!"
+	message "&f-&b-&f-&b-&f-&b-&f-&b-&f-&b-&f-&b-&f-&b-&f-&b-&f-&b-&f-&b-&f-&b-&f-&b-&f-&b-&f-&b-&f-&b-"
+	message "&e- x2 xp"
+	message "&e- x2 McMMO xp"
+	message "&e- 1/2 McMMO Cooldowns"
+	message "&e- Lucky McMMO Perks"
+	message "&e- x2 Mob Money"
+	message "&e- Some /Premium Permissions"
+	
+every real minute:
+	{altar.active} is true
+	subtract 1 from {altar.time}
+	if {altar.time} is 0:
+		execute console command "setaltar off"
+every 8 real minutes:
+	{altar.active} is true
+	set {_diff} to difference between {altar.time} and 0
+	loop all players:
+		execute console command "tm amsg %loop-player% &aAltar expires in: &f%{altar.time}% minutes"
+	
+command /altar [<integer>]:
+	trigger:
+		if arg is set:
+			{altar.active} is false
+			if player's balance is greater than or equal to arg:
+				execute console command "eco take %player% %arg%"
+				message "&aYou donated $%arg% to the Altar."
+				add arg to {altar.paid}
+			else:
+				message "&cInsufficient funds!"
+		else:
+			if {altar.active} is false:
+				message "&f-&4-&f-&4-&f-&4-&f-&4-&f-&4-&f-&4-&f-&4-&f-&4-&f-&4-&f-&4-&f-&4-&f-&4-&f-&4-&f-&4-&f-&4-"
+				message "&c&lAltar currently deactivated!"
+				message "&f-&4-&f-&4-&f-&4-&f-&4-&f-&4-&f-&4-&f-&4-&f-&4-&f-&4-&f-&4-&f-&4-&f-&4-&f-&4-&f-&4-&f-&4-"
+				message "&6Altar Tributes:"
+				message "$%{altar.paid}% &c/&r $300,000"
+				message "&6Altar Bonuses:"
+				message "&e- x2 xp"
+				message "&e- x2 McMMO xp"
+				message "&e- 1/2 McMMO Cooldowns"
+				message "&e- Lucky McMMO Perks"
+				message "&e- x2 Mob Money"
+				message "&e- Some /Premium Permissions"
+			else:
+				message "&f-&b-&f-&b-&f-&b-&f-&b-&f-&b-&f-&b-&f-&b-&f-&b-&f-&b-&f-&b-&f-&b-&f-&b-&f-&b-&f-&b-&f-&b-"
+				message "&a&lAltar activated!"
+				message "&f-&b-&f-&b-&f-&b-&f-&b-&f-&b-&f-&b-&f-&b-&f-&b-&f-&b-&f-&b-&f-&b-&f-&b-&f-&b-&f-&b-&f-&b-"
+				message "&6Remaining Time: &c%{altar.time}% minutes"
+				message "&6Altar Bonuses:"
+				message "&e- x2 xp"
+				message "&e- x2 McMMO xp"
+				message "&e- 1/2 McMMO Cooldowns"
+				message "&e- Lucky McMMO Perks"
+				message "&e- x2 Mob Money"
+				message "&e- Some /Premium Permissions"
+command /testaltar:
+	trigger:
+		message "%{altar.time}% - %{altar.active}%"
+command /setaltar <text>:
+	permission: is.pro
+	trigger:
+		if arg is "on":
+			execute console command "manselect MetaSanctus"
+			execute console command "mangaddp visitor mcmmo.perks.xp.double"
+			execute console command "mangaddp visitor mcmmo.perks.lucky.*"
+			execute console command "mangaddp visitor mcmmo.perks.cooldowns.halved"
+			execute console command "mangaddp visitor killermoney.multiplier.2"
+			execute console command "mangaddp visitor doubleurexp.multiplier.2"
+			execute console command "mangaddp visitor is.premium"
+			execute console command "mangaddp visitor trailgui.inventory.*"
+			execute console command "mangaddp visitor trailgui.command.*"
+			set {altar.time} to 60
+			set {altar.active} to true
+			execute console command "tm bc -stay=40 &aAltar Activated! <nl>Remains active for 1 hour."
+			loop all players:
+				json("%loop-player%", "&f-&b-&f-&b-&f-&b-&f-&b-&f-&b-&f-&b-&f-&b-&f-&b-&f-&b-&f-&b-&f-&b-&f-&b-&f-&b-&f-&b-&f-&b-||ttp:&bGlobal Bonuses for 1 hour:%new line%&e- x2 McMMO xp%new line%&e - 1/2 McMMO Cooldowns%new line%&e - Lucky McMMO Perks%new line%&e - x2 Mob Money%new line%&e - Some /Premium Permissions")
+				json("%loop-player%", "&a&lAltar activated! &fHover for info||ttp:&bGlobal Bonuses for 1 hour:%new line%&e- x2 xp%new line%&e- x2 McMMO xp%new line%&e - 1/2 McMMO Cooldowns%new line%&e - Lucky McMMO Perks%new line%&e - x2 Mob Money%new line%&e - Some /Premium Permissions")
+				json("%loop-player%", "&f-&b-&f-&b-&f-&b-&f-&b-&f-&b-&f-&b-&f-&b-&f-&b-&f-&b-&f-&b-&f-&b-&f-&b-&f-&b-&f-&b-&f-&b-||ttp:&bGlobal Bonuses for 1 hour:%new line%&e- x2 McMMO xp%new line%&e - 1/2 McMMO Cooldowns%new line%&e - Lucky McMMO Perks%new line%&e - x2 Mob Money%new line%&e - Some /Premium Permissions")
+		else:
+			execute console command "tm bc -stay=50 &cAltar Expired! <nl>All perks disabled."
+			broadcast "&f-&4-&f-&4-&f-&4-&f-&4-&f-&4-&f-&4-&f-&4-&f-&4-&f-&4-&f-&4-&f-&4-&f-&4-&f-&4-&f-&4-&f-&4-"
+			broadcast "&c&lAltar has expired!"
+			broadcast "&f-&4-&f-&4-&f-&4-&f-&4-&f-&4-&f-&4-&f-&4-&f-&4-&f-&4-&f-&4-&f-&4-&f-&4-&f-&4-&f-&4-&f-&4-"
+			execute console command "manselect MetaSanctus"
+			execute console command "mangdelp visitor mcmmo.perks.xp.double"
+			execute console command "mangdelp visitor mcmmo.perks.lucky.*"
+			execute console command "mangdelp visitor mcmmo.perks.cooldowns.halved"
+			execute console command "mangdelp visitor doubleurexp.multiplier.2"
+			execute console command "mangdelp visitor killermoney.multiplier.2"
+			execute console command "mangdelp visitor is.premium"
+			execute console command "mangdelp visitor trailgui.inventory.*"
+			execute console command "mangdelp visitor trailgui.command.*"
+			wait 1 tick
+			loop all players:
+				loop-player does not have the permission "trailgui.inventory.*"
+				execute console command "trail clearall %loop-player%"
+			set {altar.active} to false
+
+	
+# https://forums.skunity.com/t/double-xp/8426
+#on experience spawn:
+	# {altar.active} is true
+#	loop players:
+	#	loop-player has permission "xpboost.x2"
+	# This one seems to exponentially scale or keep stacking...?
+	#	add dropped experience to dropped experience
+	
+	# This one just doesnt want to work...?
+	#set dropped xp to dropped xp * 2
+	#

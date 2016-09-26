@@ -1,0 +1,45 @@
+options:
+	offset1: - 1
+	offset2: - 0
+	prefix: &5[&72WayBlocks&5] &r
+	message: &6Added &aBefore %arg 1% &6and &cAfter %arg 2% &6for %location of target block%
+	helpmessage: &6/2wayblocks <beforeBlock> <afterBlock> &7- Make sure your target block is set
+	command: /2wayblocks
+	aliases: /2way, /2wayblock
+	permission: 2wayblocks.admin
+on any movement:
+	loop {2way::locations::*}:
+		if x-coordinate of player >= x-coordinate of loop-value {@offset1}:
+			make player see block at loop-value as {2way::before::%loop-value%}
+		if x-coordinate of player <= x-coordinate of loop-value {@offset2}:
+			make player see block at loop-value as {2way::after::%loop-value%}
+#If this would work go ahead and try it. Doesn't work for me.
+#on script unload:
+	#restore all updates
+#on quit:
+	#loop {2way::locations::*}:
+		#restore updates to loop-value for player
+command {@command} [<item>] [<item>]:
+	aliases: {@aliases}
+	permission: {@permission}
+	trigger:
+		if arg 1 and arg 2 are set:
+			if target block is set:
+				add location of target block to {2way::locations::*}
+				set {2way::before::%location of target block%} to arg 1
+				set {2way::after::%location of target block%} to arg 2
+				message "{@prefix}{@message}"
+		else:
+			message "{@prefix}{@helpmessage}"
+			
+command /change:
+	trigger:
+		loop all blocks in radius 20 of player:
+			loop-block is stone brick
+			make player see block at location of loop-block as 20
+			
+command /remove2way:
+	permission: is.pro
+	trigger:
+		delete {2way::*}
+		

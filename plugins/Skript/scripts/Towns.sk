@@ -59,7 +59,9 @@ command /certify:
 			delete {certify.%player%}
 			message "&f[&aSERVER&f] &a&oTown submitted! Please allow up to 72 hours for your submission to be reviewed."
 			stop
-
+on click on sign:
+	1st line of event-block contains "Town of:"
+	make event-player execute "town view %line 2 of event-block%"
 on chat:
 	if {certify.%player%} is 1:
 		cancel event
@@ -81,8 +83,16 @@ command /quit:
 		{certify.%player%} is set
 		delete {certify.%player%}
 		message "&f[&aSERVER&f] &cCanceled application."
-
-command /townwarp <integer>:
+command /townwarp:
+	executable by: players
+	trigger:
+		open chest with 1 row named "&4&lTown Warps" to player
+		set {_temploopa} to 0
+		loop {towns.name::*}:
+			set {_head} to "%{towns.owner::%loop-index%}%" parsed as offline player
+			format slot {_temploopa} of player with skull of {_head} named "%loop-value%" with lore "%{towns.desc::%loop-index%}%||&fOwner:&e %{_head}%" to close then run "sudo %player% townwarpy %loop-index%"
+			add 1 to {_temploopa}
+command /townwarpy <integer>:
 	trigger:
 		message "&a&oNow traveling to &6%{towns.name::%arg%}%&a."
 		wait 5 ticks
@@ -254,7 +264,7 @@ command /town [<text>] [<text>]:
 					message "&e Residents:"
 					loop {towns.residents.%loop-index%::*}:
 						message "  &f  - &f&o%loop-value-2%"
-					message "&e Prefered Blocks:"
+					message "&e Preferred Blocks:"
 					loop {towns.theme.%loop-index%::*}:
 						message "  &f  - &f&o%loop-value-2%"
 					message "&e Last certified: &f%{towns.certified::%loop-index%}%"
@@ -262,7 +272,7 @@ command /town [<text>] [<text>]:
 				message "&e&lALL OFFICAL TOWNS:"
 				loop {towns.name::*}:
 					message "&a&l%loop-index%. &b%loop-value%"
-					stop
+				stop
 			else:
 				message "&e&lALL OFFICAL TOWNS:"
 				loop {towns.name::*}:

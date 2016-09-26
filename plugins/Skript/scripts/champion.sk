@@ -1,5 +1,5 @@
 #script options:
-#   $ developer mode
+#	$ developer mode
 on quit:
 	delete {riding.%player%}
 	loop all horses in radius 3 of player:
@@ -18,8 +18,8 @@ on walk on silverfish block:
 	#		spawn an unique "skeleton horse" horse colored "chestnut" with patterns of "whitefield" at player
 	#	if arg is "chestnut":
 	#		spawn an unique "horse" horse colored "chestnut" with patterns of "whitefield" at player
-  #   if arg is "undead":
-  #	   spawn an unique "undead horse" horse colored "chestnut" with patterns of "whitefield" at player
+  #	if arg is "undead":
+  #		spawn an unique "undead horse" horse colored "chestnut" with patterns of "whitefield" at player
 #		if arg is "white":
 #			spawn an unique "horse" horse colored "white" with patterns of "none" at player
 #		if arg is "black":
@@ -50,8 +50,7 @@ on right click on sign:
 	if line 1 of clicked block contains "Horse":
 		set {horse.%player%} to "%line 2 of clicked block%"
 		message "&aSet your horse type to %line 2 of clicked block%"
-		
-		
+	
 command /ride:
 	permission: is.champion
 	trigger:
@@ -60,8 +59,8 @@ command /ride:
 			spawn an unique "skeleton horse" horse colored "chestnut" with patterns of "whitefield" at player
 		if {horse.%player%} contains "chestnut":
 			spawn an unique "horse" horse colored "chestnut" with patterns of "whitefield" at player
-  #   if {horse.%player%} contains "undead":
-  #	   spawn an unique "undead horse" horse colored "chestnut" with patterns of "whitefield" at player
+  #	if {horse.%player%} contains "undead":
+  #		spawn an unique "undead horse" horse colored "chestnut" with patterns of "whitefield" at player
 		if {horse.%player%} contains "white":
 			spawn an unique "horse" horse colored "white" with patterns of "none" at player
 		if {horse.%player%} contains "black":
@@ -86,44 +85,55 @@ command /ride:
 		set {riding.%player%} to true
 		make player ride last spawned unique horse
 on vehicle steer:
-#   player is "craftio"
+#	player is "craftio"
 	"%uncoloured name of player's vehicle%" contains "polar bear"
-	if {_blockjump} is not set:
-		event-button is space
-		push vehicle of player upwards at speed 0.8
-		set {_blockjump} to true
-		wait 1 second
-		delete {_blockjump}
+	make vehicle of player pathfind to player with speed 0.3
+	event-button is space:
+		if vehicle of player is not on ground:
+			stop
+		else:
+			push vehicle of player upwards at speed 0.6
+			set yaw of vehicle of player to yaw of player
 	event-button is w:
-		push vehicle of player in the direction of player at speed 1
+		push vehicle of player in the direction of player at speed 0.8
+		set yaw of vehicle of player to yaw of player
 	event-button is a:
 		push vehicle of player to the left at speed 0.3
+		set yaw of vehicle of player to yaw of player
 	event-button is d:
 		push vehicle of player to the right at speed 0.3
+		set yaw of vehicle of player to yaw of player
 	event-button is s:
 		push vehicle of player backwards at speed 0.5
+		set yaw of vehicle of player to yaw of player
 # polar bear shit
-#on rightclick on creature:
-#   name of entity contains "polar"
-#   make player ride entity
-#   set name of entity to "%player%'s Polar Bear"
-#   set the maximum health of the entity to 1000
-#   make player leash entity
-#   while entity exists:
-#	   change yaw of vehicle of player to yaw of player
-#	   change pitch of vehicle of player to pitch of player
-#	   heal the entity
-#	   wait 1 tick
-#on target:
-#   entity is a polar bear:
-#	   message "Rawr!" to target of entity
-#on vehicle exit:
-#   "%uncoloured name of player's vehicle%" contains "polar bear"
-#   message "debug"
-#   wait 2 ticks
-#   loop all entities in radius 2 of player:
-#	   loop-entity is not a player
-#	   delete loop-entity
+on rightclick on creature:
+	name of entity contains "polar"
+	make player ride entity
+	set name of entity to "%player%'s Polar Bear"
+	set the maximum health of the entity to 1000
+	make player leash entity
+	while entity exists:
+		change yaw of vehicle of player to yaw of player
+		change pitch of vehicle of player to pitch of player
+#		heal the entity
+		wait 2 tick
+on vehicle exit:
+	"%uncoloured name of player's vehicle%" contains "polar bear"
+	message "debug"
+	wait 2 ticks
+	loop all entities in radius 2 of player:
+		loop-entity is not a player
+		delete loop-entity
+command /killtestbear [<text>]:
+	trigger:
+		player is op
+		if argument is not set:
+			json("%player%", "Are you sure you want to kill the entities in radius 5 around you?||cmd:/killtestbear true")
+		else:
+			if arg is "true":
+				loop all entities in radius 5 of player:
+					kill loop-entity
 every real second:
 	loop all players:
 		{riding.%loop-player%} is true
@@ -176,7 +186,7 @@ every real second:
 command /firewalk:
 	trigger:
 		delete {fire.path::*}
-#	   message "&aLighting the way."
+#		message "&aLighting the way."
 		loop 70 times:
 			wait 5 ticks
 			loop all blocks in radius 7 of player:
@@ -185,7 +195,7 @@ command /firewalk:
 				add location of loop-block to {fire.path::*}
 		loop {fire.path::*}:
 			set the block at location of block 1 meter above loop-value to air
-#	   message "&cBack to normal."
+#		message "&cBack to normal."
 command /setchampa:
 	trigger:
 		set {champion.start} to location of player

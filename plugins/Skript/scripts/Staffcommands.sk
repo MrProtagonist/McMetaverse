@@ -28,6 +28,33 @@ every 2 ticks:
 		set block at location of block at {prospots::%loop-index%} to cyan stained clay
 		delete {prosteps::%loop-index%}
 		delete {prospots::%loop-index%}
+on break of rose:
+	set {dropping::%location of event-block%} to true
+	{evilspots::%location of event-block%} is set
+	cancel event
+	set block at location of event-block to air
+#	clear drops
+#	clear entity at event-block
+on block physics:
+	block is orchid
+	if {evilspots::%location of event-block%} is set:
+		wait 2 ticks
+		set block at location of event-block to air
+		loop all entities in radius 2 of event-block:
+			loop-entity is not a player or cow or pig or chicken or horse or donkey or sheep
+			clear loop-entity
+on walk on path:
+	"%region at player%" contains "eviltown"
+	wait 2 ticks
+	add now to {evilspots::%location of block 2 meters above event-block%}
+	set block at location of block 2 meters above event-block to orchid
+every 2 ticks:
+	loop {evilspots::*}:
+		difference between {evilspots::%loop-index%} and now is greater than or equal to 40 ticks
+		set block at location of block at {evilspots::%loop-index%} to air
+		difference between {evilspots::%loop-index%} and now is greater than or equal to 50 ticks
+		delete {evilspots::%loop-index%}
+
 on walk on locked chest:
 	"%region at player%" contains "valkyria"
 	apply potion of speed 2 to the player for 1 second

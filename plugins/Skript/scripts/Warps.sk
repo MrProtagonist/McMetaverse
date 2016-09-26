@@ -93,11 +93,19 @@ command /spawn:
 #		execute console command "/playsound random.explode %player% ~0 ~0 ~0 20 50"
 #		execute console command "consolewarp %player%"
 #		wait 38 ticks
-		message "&a&oYou are now at Spawn"
-		set {lastwarp.%player%} to now
-#		push the player upwards at speed 10
-#		wait 38 ticks
-		teleport the player to {spawn}
+		if player is in world "skyworld" or "skyworld_nether":
+			message "&a&oYou are now at Spawn."
+			set {lastwarp.%player%} to now
+			teleport the player to {skyspawn}
+			wait 10 ticks
+			message "&cTo leave skyblock and go to the main world, type &a/meta"
+			
+		else:
+			message "&a&oYou are now at Spawn"
+			set {lastwarp.%player%} to now
+	#		push the player upwards at speed 10
+	#		wait 38 ticks
+			teleport the player to {spawn}
 
 # every 2 ticks:
 #	spawn 30 of portal data 1 offset with 2, 2, 2 at {spawn}

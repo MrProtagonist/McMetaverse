@@ -1,5 +1,99 @@
-command /allplayers:
+#
+#
+#      |    ,---.          
+# ,---.|__/ |    ,---.,-.-.
+# `---.|  \ |    ,---|| | |    skCam Version 0.1 Beta
+# `---'`   ``---'`---^` ' '
+# 
+# made by:
+# kevin19961
+#
+# skCam is a plugin to record teleport movements and make great movies or intros for it.
+# You could use it to let users view all of your creations.
+#
+# INFORMATION: The recordings are not completely smooth.
+# You can play and edit the number at "wait 0.065 seconds" but I do not recommend
+# to edit the number at "wait 0.1 seconds"
+# Its your turn!
+# Please leave a like at my forum topics.
+#
+#
+#
+# ##################################################
+# YOUTUBE Channel (german): youtube.com/kevin19961
+# ##################################################
+#
+# HINT: For smoother recordings set your sensivity to 50% and your fly speed to 0.02!
+# Your recording will be played faster after recording!
+#
+# Save this file as "name.sk" under SERVERFOLDER\plugins\Skript\scripts
+
+
+command /record <text> <integer>:
+	permission: record.record
+	usage: /record <name of record> <recording time in seconds>
 	trigger:
-		player is op
-		loop all players:
-			message "%loop-player%"
+		# Countdown start
+		message "&2&lRecording starts in 5 seconds..."
+		wait 1 second
+		message "&a&l4..."
+		wait 1 second
+		message "&6&l3..."
+		wait 1 second
+		message "&e&l2..."
+		wait 1 second
+		message "&c&l1..."
+		wait 1 second
+		message "&4&lRecording started started!"
+		
+		# Recording start
+		set {_duration} to arg 2 * 10 # Every 0.1 seconds an "frame"
+		set {_pos} to 0 # Current position
+		clear {record.%arg 1%::*} # if record with the name already exist you need to clear the list var
+		set {record.%arg 1%.duration} to arg 2 # recording time
+		set {record.%arg 1%} to true # for later checks
+		set {pos.%arg 1%.%{_pos}%} to location of player # save location
+		add {_pos} to {record.%arg 1%::*} # save the position "id"
+		
+		# main recording
+		while {_duration} is bigger than 0:
+			add 1 to {_pos}
+			set {pos.%arg 1%.%{_pos}%} to location of player
+			add {_pos} to {record.%arg 1%::*}
+			add 1 to {_records}
+			remove 1 from {_duration}
+			wait 0.1 seconds
+		message "&2Recording &a%arg 1% &2ended. &a%{_records}% &2Positions saved."
+		
+		
+		
+command /recordmode:
+	permission: record.mode
+	trigger:
+		if {recordmode.%player%} is set:
+			delete {recordmode.%player%}
+			set fly-speed of player to 0.1
+			message "&4OFF &6Recordingmode disabled. You can now set your sensitivity (under 'Controls') back to what you want."
+		else:
+			set {recordmode.%player%} to true
+			set fly-speed of player to 0.02
+			message "&2ON &6Recordingmode enabled! Please set your sensitivity (under 'Controls') to 50."
+
+
+
+command /playrecord <text>:
+	permission: record.play
+	trigger:
+		set {_lastloc} to location of player
+		message "&2Playing started."
+		if {record.%arg%} is true:
+			set {_dauer} to {record.%arg%.dauer}
+			loop {record.%arg%::*}:
+				teleport player to {pos.%arg 1%.%loop-value%}
+				wait 0.065 seconds
+			message "&2Playing ended."
+		else:
+			message "&4This recording does not exist."
+		teleport player to {_lastloc}
+
+# UPDATE 0.1.1 - Added /recordmode command

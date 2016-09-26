@@ -120,13 +120,13 @@ command /prize [<player>]:
 				delete {prize.scores::*}
 				delete {prize.players::*}
 				loop all players:
-				#	broadcast "&f[&aPRIZEROOM DEBUG&f] &aFound %loop-player%."
-				#	broadcast "&f[&aPRIZEROOM DEBUG&f] &fOpt-out: &e%{optout.%loop-player%}%"
-				#	broadcast "&f[&aPRIZEROOM DEBUG&f] &fTimes Visited: &e%{prizeroom.%loop-player%.times}%"
+					log "&f[&aPRIZEROOM DEBUG&f] &aFound %loop-player%."
+					log "&f[&aPRIZEROOM DEBUG&f] &fOpt-out: &e%{optout.%loop-player%}%"
+					log "&f[&aPRIZEROOM DEBUG&f] &fTimes Visited: &e%{prizeroom.%loop-player%.times}%"
 					if {prizeroom.%loop-player%.last} is not set:
 						set {prizeroom.%loop-player%.last} to now
 					set {_difference} to difference between {prizeroom.%loop-player%.last} and now
-				#	broadcast "&f[&aPRIZEROOM DEBUG&f] &e%loop-player% last went %{_difference}% ago."
+					log "&f[&aPRIZEROOM DEBUG&f] &e%loop-player% last went %{_difference}% ago."
 					add 1 to {_playercount}
 					{optout.%loop-player%} is not true
 					loop-player's gamemode is not creative
@@ -138,19 +138,19 @@ command /prize [<player>]:
 						set {prizeroom.%loop-player%.times} to 0
 					add {prizeroom.%loop-player%.times} to {prize.scores::*}
 					add loop-player to {prize.players::*}
-				#	broadcast "&f[&aPRIZEROOM DEBUG&f] &a%loop-player% meets list of requirements!"
-			#	broadcast "&f[&aPRIZEROOM DEBUG&f] &e%{_playercount}% players qualified to be considered. Needs 4."
+					log "&f[&aPRIZEROOM DEBUG&f] &a%loop-player% meets list of requirements!"
+				log "&f[&aPRIZEROOM DEBUG&f] &e%{_playercount}% players qualified to be considered. Needs 4."
 				{_playercount} is greater than 4
 				loop 15 times:
 					loop {prize.scores::*}:
 						if loop-value-2 is less than {_tempscore}:
 							set {_tempscore} to loop-value-2
-					#		broadcast "&a%{prize.players::%loop-index%}% passed!"
-					#	if loop-value-2 is {_tempscore}:
-					#		broadcast "&f[&aPRIZEROOM DEBUG&f] &a%{prize.players::%loop-index%}% is the running leader!"
+							log "&a%{prize.players::%loop-index%}% passed!"
+						if loop-value-2 is {_tempscore}:
+							log "&f[&aPRIZEROOM DEBUG&f] &a%{prize.players::%loop-index%}% is the running leader!"
 						else:
 							delete {prize.scores::%loop-index%}
-					#		broadcast "&f[&aPRIZEROOM DEBUG&f] &cDisqualified %{prize.players::%loop-index%}%!"
+							log "&f[&aPRIZEROOM DEBUG&f] &cDisqualified %{prize.players::%loop-index%}%!"
 							delete {prize.players::%loop-index%}
 					wait 1 tick
 				loop {prize.players::*}:

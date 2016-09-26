@@ -1,4 +1,4 @@
-on login:
+on join:
 	set {joinedparty.%player%} to false
 	add 1 to {login.dropparty}
 	{login.dropparty} is 12
@@ -11,6 +11,17 @@ on login:
 	wait 2 real seconds
 	execute console command "/startdrop"
 	
+every real minute:
+	set {_playercount} to 0
+	loop all players:
+		add 1 to {_playercount}
+	set {login.dropparty} to {_playercount}
+command /debugdrop:
+	permission: is.op
+	trigger:
+		message "%{login.dropparty}%"
+		message "%{dropparty.donetoday}%"
+		message "%{dropparty.starting}%"
 command /forcedropparty:
 	permission: is.op
 	trigger:

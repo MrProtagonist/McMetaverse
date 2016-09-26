@@ -352,6 +352,45 @@ command /pet [<text>] [<text>]:
 					message "&d-------------------------------------------------"
 			else:
 				message "&cYou have no active pet. You can get a new one at the Champion Hall."
+on right click on entity:
+	if {pet.%player%} is set:
+		if name of entity contains "%player%":
+			make player ride entity
+			apply slowness 100000 to entity
+on vehicle steer:
+	if {pet.%player%} is set:
+		if "%name of vehicle of player%" contains "%player%":
+			make vehicle of player pathfind to player with speed 1
+			set yaw of vehicle of player to yaw of player
+			event-button is space:
+				if vehicle of player is not on ground:
+					stop
+				else:
+					push the vehicle of the player upwards at speed 0.8
+					push the vehicle of the player in the direction of the player at speed 0.3
+					wait 1 second
+			event-button is w:
+				if vehicle of player is not on ground:
+					stop
+				else:
+					push vehicle of player in the direction of player at speed 0.8
+					set yaw of vehicle of player to yaw of player
+					wait 1 second
+#			event-button is a:
+#				if vehicle of player is not on ground:
+#					stop
+#				else:
+#					push vehicle of player left at speed 0.5
+			event-button is s:
+				if vehicle of player is not on ground:
+					stop
+				else:
+					push vehicle of player in the direction of player at speed -0.8
+#			event-button is d:
+#				if vehicle of player is not on ground:
+#					stop
+#				else:
+#					push vehicle of player right at speed 0.5
 on damage:
 	{owner.%victim%} is set:
 		if damage cause is fall:
